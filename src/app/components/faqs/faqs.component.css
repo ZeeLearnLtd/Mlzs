@@ -1,0 +1,286 @@
+/* .desktopList {
+    display: block;
+}
+
+.faq_content {
+    width: 100%;
+    position: absolute;
+    margin-top: -37px;
+    padding: 0px 30px 0px 50px;
+}
+
+.faq_content .title {
+    margin-top:9rem;
+}
+.sub_faq_content{
+    width: 80%;
+    margin: auto;
+}
+.leftFaqs {
+    width: 100%;
+}
+
+.faqsText {
+    cursor: pointer;
+}
+
+.accordion-button,
+.accordion-body {
+    background-color: #DFCFFF !important;
+    cursor: pointer;
+}
+
+.accordion-body {
+    padding-top: 0;
+}
+
+.faqsText {
+    color: #90228D;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    overflow: hidden;
+    margin-left: 30px;
+}
+
+.rightFaqs {
+    width: 100%;
+}
+
+.mobileListDiv {
+    display: none;
+}
+
+.accordion-button::after {
+    background-image: url("../../../assets/img/pluseIcon.png");
+    transform: scale(.7) !important;
+
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("../../../assets/img/Nagetive_icon.png");
+}
+
+.accordion-button::after {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.accordion-button label {
+    margin-left: 10px;
+}
+
+.accordion {
+    --bs-accordion-bg: none !important
+}
+
+.accordion-item {
+    border: none;
+}
+
+@media screen and (max-width: 600px) {
+    ::ng-deep.mat-content {
+
+        width: 100%;
+        height:auto !important;
+        align-items: center;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        overflow: hidden;
+        color: #FFF200;
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 14px !important;
+        padding: 35px 0px 10px 35px !important;
+        line-height: normal;
+    }
+    ::ng-deep.mat-expansion-indicator {
+        transform: rotate(0deg);
+        position: absolute;
+        margin-top: 28px;
+        right: 0.3rem !important;
+    }
+    .mat-expansion-panel-header:not([aria-disabled=true]) {
+        cursor: pointer;
+        padding: 10px 0px !important;
+        overflow: hidden !important;
+        position: relative;
+        right: 1.5rem;
+    }
+    .faq_content{
+        width: 100%;
+        position: relative;
+        margin-top:0px;
+        padding: 0px 30px 0px 50px;
+    }
+    .faq_content .title {
+        margin-top:35px !important;
+    }
+    .chocolate_img_content{
+        position: absolute;
+        z-index: 9;
+        width: 10% !important;
+       left: 1rem;
+    }
+
+  ::ng-deep.mat-content {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      overflow: hidden;
+      color: #90228D;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+    .rightFaqs {
+        padding: 7px;
+    }
+
+    ul {
+        padding: 0px;
+    }
+
+    .leftFaqs {
+        width: 100%;
+        padding: 7px;
+    }
+
+    .desktopList {
+        display: none;
+    }
+
+    .faq_content {
+        padding: 0;
+    }
+
+    .mobileListDiv {
+        background-image: url('../../../assets/img/mobileWaves2.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        width: 100%;
+        height:auto;
+        margin: auto;
+        display: block;
+    }
+
+}
+
+::ng-deep.mat-content{
+    background-image: url('../../../assets/img/new-kidzee/faq_bg.svg');
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    overflow: hidden;
+    color:#FFF200;
+    font-style: normal;
+    font-size: 16px;
+    padding: 24px 45px 0px 45px;
+    line-height: normal;
+}
+
+::ng-deep.mat-expansion-panel-header:not([aria-disabled=true]){
+    cursor: pointer;
+    padding: 0px 24px !important;
+    overflow: hidden !important;
+}
+mat-expansion-panel:nth-child(odd){
+    position: relative;
+    left:10px !important;
+}
+
+::ng-deep.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: none !important;
+}
+
+::ng-deep.mat-expansion-panel-content {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    font-family: var(--mat-expansion-container-text-font);
+    font-size: var(--mat-expansion-container-text-size);
+    font-weight: var(--mat-expansion-container-text-weight);
+    line-height: var(--mat-expansion-container-text-line-height);
+    letter-spacing: var(--mat-expansion-container-text-tracking);
+  }
+
+::ng-deep.mat-expansion-indicator{
+    transform: rotate(0deg);
+    position: absolute;
+    right:40px;
+    margin-top: 28px;
+}
+
+::ng-deep.mat-expansion-indicator::after {
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    display: inline-block;
+    padding: 5px !important;
+    transform: rotate(45deg);
+    vertical-align: super !important;
+    color: #9f8f8f !important;
+}
+
+::ng-deep.mat-expansion-panel-body {
+    padding: 0 50px 16px;
+    overflow: hidden !important;
+}
+
+.details{
+    height:100px;
+    overflow-y: auto;
+    font-size: 11px;
+}
+
+.dall_girl_content{
+  position: relative;
+  z-index: 9;
+  width: 5%;
+  top: 11rem;
+  left: 3rem;
+}
+
+.chocolate_img_content{
+    position: absolute;
+    z-index: 9;
+    width: 4%;
+    right: 10rem;
+}
+
+.faq_content{
+    overflow: hidden;
+} */
+
+.faq_content{
+    width: 100%;
+    padding: 55px 0px;
+    background-color: #004878;
+}
+
+.text_bg{
+    width:10%;
+    position: relative;
+    bottom:1.3rem;
+    z-index: 1;
+    height: 30px;
+}
+
+.mat-accordion .mat-expansion-panel{
+    background-color: #fff;
+    padding: 11px 5px 7px 0px;
+    border: none;
+    margin: 7px 0px;
+    border-radius:5px;
+}

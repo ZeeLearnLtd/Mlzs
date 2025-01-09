@@ -1,0 +1,25 @@
+section{
+    background-image: url('../../../assets/img/MLZS/programm_bg.png');
+    background-size: cover;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+  }
+
+  h1{
+    font-family: 'Montserrat_bold';
+  }
+
+  .text_bg{
+    width: 28%;
+    height: 25px;
+    position: relative;
+    bottom: 1.8rem;
+    left: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+.fr_img_content{
+margin-top: 20px;
+}
+
+}

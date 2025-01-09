@@ -1,0 +1,189 @@
+.mainDiv {
+    background-color: #EBE1FF;
+    padding: 0px 0px 45px;
+}
+
+.banner_content {
+    background-image: url('../../../assets/img/banner/Banner10.png');
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    display: grid;
+    place-content: center;
+}
+
+.subMenu_content {
+    position: absolute;
+    top: 11rem;
+    left: 4rem;
+}
+
+.subContent {
+    width: 80%;
+    margin: auto;
+}
+
+.dropDownList {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    padding: 15px;
+}
+
+select {
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.form-control {
+    font-size: 12px !important;
+}
+
+.search_input {
+    border-radius: 20px;
+    border: 2px solid #65318E;
+    background-color: #65318E;
+    color: #FFF;
+    padding: 9px;
+}
+
+.search_icon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    right: 31px;
+    top: 11px;
+}
+
+.card_content {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.card_title {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    font-family: 'Sniglet';
+}
+
+.location_img {
+    width: 13px;
+    height: 15px;
+    margin-top: 3px;
+}
+
+.locationIcon {
+    display: flex;
+    border-bottom: 2px solid #6D2A93;
+    height: 85px;
+}
+
+.locationIcon p {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #6D6D6D;
+}
+
+a {
+    color: #6D6D6D;
+}
+
+.iconList {
+    width: 16px;
+    height: 16px;
+}
+
+.map_btn {
+    border-radius: 5px;
+    width: 100%;
+    background: linear-gradient(205.61deg, #B259E4 -1.17%, #6D2A93 99.41%);
+    color: #FFF;
+    font-size: 12px;
+    float: right;
+    margin: 0px 0px 0px 10px;
+    padding: 5px 10px 5px 10px;
+    transition: all ease 0.2s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.search_btn {
+    padding: 5px 45px 5px 45px;
+}
+
+.centers_title {
+    color: #65318E;
+    font-size: 1.5rem;
+    padding: 0px 20px;
+    font-size: 2.5rem;
+    font-family: 'Fredoka';
+}
+.numb_list_mob{
+    display: none;       
+   }
+   .desk_content{
+   display: block;
+   }
+@media screen and (max-width: 600px) {
+.numb_list_mob{
+ display: block;       
+}
+
+.desk_content{
+    display: none;
+    }
+    .res_input {
+        margin-top: 7px;
+    }
+
+    .map_btn {
+        border-radius: 5px;
+        width: 100%;
+        background: linear-gradient(205.61deg, #B259E4 -1.17%, #6D2A93 99.41%);
+        color: #FFF;
+        font-size: 12px;
+        float: right;
+        margin: 0px 0px 0px 10px;
+        padding: 5px 10px 5px 10px;
+        transition: all ease 0.2s;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .card_title {
+        font-size: 16px;
+    }
+
+    .dayCardImg {
+        display: flex;
+        justify-content: center;
+    }
+
+    .banner_content {
+        background-size: 100% 100%;
+        min-height: 200px;
+    }
+
+    .subMenu_content {
+        position: absolute;
+        top: 4rem;
+        left: 0rem;
+    }
+
+    
+}

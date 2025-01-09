@@ -1,0 +1,290 @@
+.mainDiv {
+    background-color: #EBE1FF;
+    padding: 0px 0px 45px;
+}
+
+.subMenu_content {
+    position: absolute;
+    top: 11rem;
+    left: 4rem;
+}
+
+.programTitle {
+    color: #0E2C53;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.kidzee_session {
+    padding-left: 80px;
+}
+
+.infoContent {
+    width: 60%;
+    display: flex;
+}
+
+.text1 {
+    border-right: 2px solid #90228D;
+    width: 100%;
+    color: #90228D;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.text2 {
+    width: 100%;
+    color: #90228D;
+    font-size: 13px;
+    font-style: normal;
+    padding-left:25px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.rightBorder {
+    border-right: 2px solid #90228D;
+}
+
+.paraText {
+    color: #282828;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 0px 60px 0px 0px;
+}
+
+.listTitle {
+    color: #282828;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal
+}
+
+ul {
+    padding: 0;
+}
+li{
+    list-style-position: inside;
+    list-style-type: square;
+}
+
+.contentList {
+    margin: 65px 90px;
+}
+
+.text_content {
+    padding: 0px 30px;
+}
+
+.yello_bg_img{
+    float: right;
+    width: 65%;
+    display: block;
+}
+.three_child{
+    width: 36%;
+    position: absolute;
+    right: 140px;
+    top: 5rem;
+    display: block;
+}
+.left_img{
+    width:5%;
+    position:absolute;
+    left:0;
+    margin-top: 9rem;
+    display: block;
+}
+.whiteTitle {
+    font-style: normal;
+    line-height: normal;
+    margin-top: 160px;
+    margin-left:4.5rem;
+    color: #6D2A93;
+    position: relative;
+    font-weight: bold;
+    bottom:2rem;
+}
+.btr_fly_img{
+    position: relative;
+    width:5%;
+    left: 16rem;
+}
+.paper_content{
+    background-image: url('../../../assets/img/new-kidzee/paper_img.png');
+    background-position: center;
+    background-size: 100% 100%;
+    width: 700px;
+    height: 230px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .chocolate_img{
+        width: 4%;
+        position: absolute;
+        right: 7rem;
+        margin-top: 5rem;
+    }
+    .sub_content{
+        width: 80%;
+        margin: auto;
+    }
+    .bag_img{
+        width:35px;
+        position: absolute;
+        left: 6rem;
+    }
+    .yello_bg_img_mobile {
+        display: none;
+    }
+@media screen and (max-width: 600px) {
+    .mainDiv {
+        background-color: #EBE1FF;
+        padding: 0px 0px 45px;
+        margin-top: 38px;
+    }
+    .text2{
+        width: 100%;
+        color: #90228D;
+        font-size: 13px;
+        font-style: normal;
+        padding-left: 14px;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+    .sub_text_black {
+        color: #000;
+        font-size: 12px !important;
+        text-align: left;
+    }
+    .sub_text {
+        font-style: normal;
+        line-height: normal;
+        color: #6D2A93;
+        font-weight: bold !important;
+        font-size:13px !important;
+        text-align: left;
+    }
+    .left_img {
+        display: none;
+    }
+    .three_child {
+        display: none;
+    }
+    .yello_bg_img {
+        display: none;
+    }
+    .yello_bg_img_mobile {
+        width: 100%;
+        display: block;
+        position: relative;
+        top: 0;
+        z-index: 9;
+    }
+    .chocolate_img{
+        width: 12%;
+        position: absolute;
+        left: 1rem;
+        margin-top: 8rem;
+    }
+    .text_content{
+        padding: 0px 0px;
+    }
+    .bag_img{
+        width: 35px;
+        position: absolute;
+        right: 1rem;
+    }
+    .paper_content{
+        background-position: center;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 150px;
+        padding: 0px 29px;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btr_fly_img{
+        position: relative;
+        width:12%;
+        left: 20rem;
+    }
+    .whiteTitle{
+        font-style: normal;
+        line-height: normal;
+        margin-top: 0px;
+        margin-left: 2.5rem;
+        color: #6D2A93;
+        position: relative;
+        font-weight: bold;
+        bottom: 1rem;
+    }
+    .kidzee_session {
+        padding: 0;
+    }
+
+    .bottomMonkey {
+        display: none;
+    }
+
+    .contentList {
+        margin: 65px 20px;
+    }
+
+    .infoContent {
+        width: 100%;
+        display: flex;
+    }
+
+    .banner_content {
+        background-size: 100% 100%;
+        min-height: 200px;
+    }
+
+    .subMenu_content {
+        position: absolute;
+        top: 26rem;
+        left: 0rem;
+    }
+
+    .paraText {
+        padding: 20px;
+        text-align: center;
+    }
+    .listTitle{
+        text-align: center;
+        color: #282828;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .chocolate_img_content{
+        position: absolute;
+        z-index: 9;
+        width: 11%;
+        right: 3rem;
+    }
+    .infoContent {
+        text-align: center;
+    }
+
+    .text1 {
+        width: 100%;
+    }
+}

@@ -1,0 +1,452 @@
+
+.rightDiv {
+    padding: 10px 50px 0px 15px;
+}
+
+.leftDiv1 {
+    padding: 15px 15px 0px 80px;
+}
+
+section {
+    background-color: #EBE1FF;
+}
+
+.buttonList_content {
+    width: 55%;
+    margin: auto;
+}
+
+ul li {
+    overflow: hidden;
+}
+
+.yearsListTab {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    margin: 25px 0px 0px 25px;
+}
+
+.active_years {
+    color: #FAC216;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.years {
+    color: rgba(102, 103, 104, 0.50);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    /* 107.692% */
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.years:hover {
+    color: #FAC216;
+    font-size: 20px;
+}
+
+
+.title_kidzee {
+    color: #65318E;
+    font-size: 2rem;
+    font-family: 'Sniglet';
+    font-weight: 700;
+    line-height: normal;
+    width: 85%;
+    margin: auto;
+}
+
+.legacy_btn {
+    border-radius: 0px 53px 53px 20px;
+    background: #65318E;
+    border: #65318E;
+    padding: 5px 20px 5px 20px;
+    color: #FFF;
+}
+
+.subTitle_kidzee {
+    color: #282828;
+    font-size: 1.5rem;
+    font-family: 'Sniglet';
+    font-weight: 600;
+    line-height: normal;
+    margin: 35px 0px 0px 78px;
+}
+
+.listTitle {
+    color: #282828;
+    font-size: 18px;
+    font-family: 'Sniglet';
+    font-weight: 700;
+    line-height: normal;
+    margin: 35px 0px 0px 78px;
+}
+
+.leftDiv {
+    width: 28rem;
+    height: 28rem;
+    float: right;
+    margin-right: 45px;
+}
+
+.leftDiv_whiteImg {
+    width: 28rem;
+    height: 28rem;
+    float: right;
+    margin-right: 45px;
+}
+
+.paperaeroplane {
+    width: 28rem;
+    height: 28rem;
+    float: right;
+    margin-right: 45px;
+}
+
+.sun_paperaeroplane {
+    width: 28rem;
+    height: 28rem;
+    margin-left: 85px;
+}
+
+.awardImg {
+    width: 28rem;
+    height: 28rem;
+    margin-left: 85px;
+}
+
+.award_standingMonkey {
+    display: flex;
+    width: 15rem;
+    height: 20rem;
+    margin: auto;
+}
+
+.legancyMonkey {
+    background-image: url('../../../assets/img/legancyMonkey.png');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 10rem;
+    height: 12rem;
+    position: absolute;
+    right: 100px;
+    margin-top: -45px;
+    display: block;
+}
+
+.standingMonkey {
+    background-image: url('../../../assets/img/standingMonkey.png');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 17rem;
+    height: 24rem;
+    margin: auto;
+}
+
+ul {
+    padding: 0;
+}
+
+.dot {
+    font-size: 3rem;
+}
+
+/* .grey_btn:active,
+.grey_btn:focus {
+    background: #65318E;
+    border: #65318E;
+} */
+
+.yearContentList li {
+    line-height: 20px;
+    padding: 10px 0px 0px 35px;
+    color: #282828;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.legancy_content_res {
+    display: none;
+}
+.subMenu_content{
+    margin:0px 50px;
+}
+.yello_bg_img{
+    float: right;
+    width: 65%;
+}
+.three_child{
+    width: 35%;
+    position: absolute;
+    right: 100px;
+    top: 62px;
+    z-index:9;
+}
+.left_img{
+    width:5%;
+    position:absolute;
+    left:0;
+    margin-top: 9rem;
+}
+.whiteTitle {
+    font-style: normal;
+    line-height: normal;
+    margin-top: 165px;
+    margin-left:3rem;
+    color: #6D2A93;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bag_img{
+    position:absolute;
+    left:50px;  
+    width:4%;
+}
+.chocolate_img{
+    position:absolute;
+    right:100px;
+    width:5%;
+}
+.mouse_img{
+    top:0px;
+    width:8%;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-top: 5rem;
+}
+.fruit_img{
+    right: 100px;
+    width: 3%;
+    position: absolute;
+}
+
+.mainDiv{
+width: 80%;
+margin: auto;
+}
+ul li{
+    list-style-position: inside;
+    list-style-type: square;
+}
+
+
+.award_list_content ::ng-deep.owl-carousel .owl-stage {
+    position: relative;
+    touch-action: manipulation;
+    height:160px;
+    overflow: hidden;
+}
+.img_content {
+    width: 100%;
+    margin: auto;
+}
+
+.award_list_content ::ng-deep.owl-theme .owl-nav {
+    margin-top:10px !important;
+    font-size: 25px !important;
+    font-weight: bold !important;
+    color: #6D2A93 !important;
+}
+
+@media screen and (max-width: 600px) {
+    .award_list_content ::ng-deep.owl-carousel .owl-stage {
+        position: relative;
+        touch-action: manipulation;
+        height:auto !important;
+        overflow: hidden;
+    }
+    .yearsListTab{
+        overflow: hidden;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width:100%;
+        margin: 25px 0px 0px 25px;
+    }
+    .chocolate_img{
+        position: absolute;
+        right: 100px;
+        width: 9%;
+    }
+    .bag_img{
+        position: absolute;
+        left: 7px;
+        width: 9%;
+        margin-top: 9rem;
+    }
+    .fruit_img{
+        right: 20px;
+        width: 9%;
+        position: absolute;
+        margin-top: 16rem;
+    }
+    .mouse_img {
+         width: 16%;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-top: 0px;
+    }
+    .mainDiv{
+        width: 90%;
+        margin: auto;
+        }
+    .whiteTitle{
+        font-style: normal;
+        line-height: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 1rem;
+        color: #6D2A93;
+        font-weight: bold;
+        text-align: center;
+        text-align: center !important;
+    }
+
+    .three_child{
+        width: 65%;
+        position: absolute;
+        right: 2px;
+        top: 37px;
+        z-index:9;
+    }
+    .yello_bg_img{
+        float: right;
+        width: 100%;
+    }
+    .rightDiv {
+        padding: 10px 0px 0px 0px;
+    }
+
+    .buttonList_content {
+        width: 90%;
+        margin: auto;
+        margin-top: 3rem;
+    }
+
+    /* .grey_btn {
+        font-size: 12px;
+        padding: 10px 20px 10px 10px;
+        margin-top: 10px;
+    } */
+
+    .legacy_btn {
+        border-radius: 0px 53px 53px 20px;
+        background: #65318E;
+        border: #65318E;
+        color: #FFF;
+        margin-top: 10px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .leftDiv {
+        width: 22rem;
+        height: 24rem;
+    }
+
+    .legancyMonkey {
+        display: none;
+    }
+
+    .paragraph_content {
+        padding: 10px;
+    }
+
+    .leftDiv_whiteImg {
+        width: 25rem;
+        height: 25rem;
+        margin: auto;
+    }
+
+    .subTitle_kidzee {
+        margin: 35px 10px 10px 5px;
+    }
+
+    .leftDiv1 {
+        padding: 10px;
+    }
+
+    .listTitle {
+        margin: 10px;
+    }
+
+    .paperaeroplane {
+        margin: auto;
+        width: 23rem;
+        height: 25rem;
+    }
+
+    .sun_paperaeroplane {
+        margin: auto;
+        width: 23rem;
+        height: 25rem;
+    }
+
+    .title_kidzee {
+        width: 100%;
+    }
+    .title_kidzee {
+        color: #65318E;
+        font-size:1.7rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        width: 85%;
+        margin: auto;
+    }
+    .awardImg {
+        width: 18rem;
+        height: 22rem;
+        margin: auto;
+    }
+
+    .legancy_content_res {
+        background-image: url('../../../assets/img/banner/resBanner1.png');
+        position: relative;
+        width: 100%;
+        height: 125px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-blend-mode: screen;
+        display: grid;
+        place-content: center;
+    }
+
+    .whiteTitle {
+        color: #6D2A93;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 15px;
+        text-align: center;
+    }
+    .subMenu_content {
+        position: absolute;
+        top: 16rem;
+        left: 0rem;
+        margin:0;
+    }
+}

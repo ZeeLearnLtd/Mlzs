@@ -1,0 +1,134 @@
+<!-- <div class="desktopList" *ngIf="faqdata != undefined">
+    <div class="faq_content">
+        <img src="../../../assets/img/new-kidzee/dall_girl.png" class="dall_girl_content" alt="">
+        <div class="sub_faq_content">
+        <h1 class="title text-center">
+            FAQs
+        </h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="leftFaqs">
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let dt of faqdata;">
+                                <mat-expansion-panel-header>
+                                    {{dt.Title}}
+                                </mat-expansion-panel-header>
+                                <span [innerHTML]="dt.Short"></span>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="714" viewBox="0 0 1440 714" fill="none">
+        <g filter="url(#filter0_d_489_3315)">
+            <path
+                d="M713.333 72.1106C230.723 -75.398 0.000122097 137.115 0.000122097 137.115L0 596.845C0 596.845 290.716 801.943 837.865 616.148C1182.44 499.139 1440 629.149 1440 629.149L1435.5 49.1079C1435.5 49.1079 1036.73 170.956 713.333 72.1106Z"
+                fill="#DFCFFF" />
+        </g>
+        <defs>
+            <filter id="filter0_d_489_3315" x="-20" y="0" width="1480" height="714" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha" />
+                <feOffset />
+                <feGaussianBlur stdDeviation="10" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_489_3315" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_489_3315" result="shape" />
+            </filter>
+        </defs>
+    </svg>
+</div>
+<div class="mobileListDiv" *ngIf="faqdata != undefined">
+    <div class="faq_content">
+        <div class="title text-center">
+            FAQs
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="leftFaqs">
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let dt of faqdata;let even = even;let i=index">
+                                <mat-expansion-panel-header  *ngIf="even ==true">
+                                    {{dt.Title}}
+                                </mat-expansion-panel-header>
+                                <span [innerHTML]="dt.Short"></span>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="rightFaqs">
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let dt of faqdata;let odd = odd;let i=index">
+                                <mat-expansion-panel-header  *ngIf="odd ==true">
+                                    {{dt.Title}}
+                                </mat-expansion-panel-header>
+                                <span [innerHTML]="dt.Short"></span>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<img src="../../../assets/img/new-kidzee/chocolate_img.png" class="chocolate_img_content" alt=""> -->
+
+
+<section>
+    <div class="faq_content">
+        <div class="title_content text-center">
+            <h2 class="text-white"><b>FAQ</b></h2>
+            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
+            <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
+        </div>
+        <div class="box mt-3">
+            <mat-accordion>
+                <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <h6>Which board is offered in Mount Litera Zee Schools in India?</h6>
+                        </mat-expansion-panel-header>
+                        <span>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
+                        </span>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <h6>What are the steps involved in the direct admission process for CBSE schools?</h6>
+                    </mat-expansion-panel-header>
+                    <span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
+                    </span>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <h6>How many Mount Litera Zee schools are there in India?</h6>
+                </mat-expansion-panel-header>
+                <span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
+                </span>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <h6>Do CBSE schools have a provision for mid-year admissions?</h6>
+            </mat-expansion-panel-header>
+            <span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
+            </span>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <h6>Is it possible to transfer my child from a state board school to a CBSE school during the academic year?</h6>
+        </mat-expansion-panel-header>
+        <span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
+        </span>
+</mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,38 @@
+.text_bg {
+    width: 28%;
+    position: relative;
+    bottom: 1.5rem;
+    z-index: 1;
+    height: 30px;
+}
+
+.blog_main_img img {
+    width: 75%;
+    border-radius: 10px;
+}
+
+.blog_main_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.blog_sub_img img {
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .blog_sub_img img {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    .blog_sub_img {
+        margin-top: 10px;
+    }
+}

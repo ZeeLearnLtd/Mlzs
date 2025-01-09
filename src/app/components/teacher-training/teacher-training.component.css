@@ -1,0 +1,239 @@
+.mainDiv {
+    background-color: #EBE1FF;
+    padding: 0px 0px 45px;
+}
+
+.subMenu_content{
+    position: absolute;
+    top: 14.5rem;
+    left: 4rem;
+}
+
+.programTitle {
+    color: #0E2C53;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+ul li {
+    overflow: hidden;
+    list-style-position: inside;
+    list-style-type: square;
+}
+.infoContent {
+    width: 60%;
+    display: flex;
+}
+
+.text1 {
+    border-right: 2px solid #90228D;
+    width: 100%;
+    color: #90228D;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.text2 {
+    width: 100%;
+    color: #90228D;
+    font-size: 13px;
+    font-style: normal;
+    padding-left: 40px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.rightBorder{
+    border-right: 2px solid #90228D;
+}
+
+.paraText {
+    color: #282828;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 0px 60px 0px 0px;
+}
+.listTitle{
+color: #282828;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal
+}
+ul{
+    padding: 0;
+}
+.contentList{
+    margin: 65px 90px;
+}
+.text_content{
+    padding: 0px 30px;
+}
+
+.yello_bg_img{
+    float: right;
+    width: 65%;
+    display: block;
+}
+.yello_bg_img_mobile {
+    display: none;
+}
+.three_child{
+    width: 36%;
+    position: absolute;
+    right: 140px;
+    top: 5rem;
+    display: block;
+}
+.left_img{
+    width:5%;
+    position:absolute;
+    left:0;
+    margin-top: 9rem;
+    display: block;
+}
+.whiteTitle {
+    font-style: normal;
+    line-height: normal;
+    margin-top: 160px;
+    margin-left: 4.5rem;
+    color: #6D2A93;
+    position: relative;
+    font-weight: bold;
+    bottom: 2rem;
+}
+.btr_fly_img{
+    position: relative;
+    width:5%;
+    left: 16rem;
+}
+.paper_content{
+    background-image: url('../../../assets/img/new-kidzee/paper_img.png');
+    background-position: center;
+    background-size: 100% 100%;
+    width:500px;
+    height: 150px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .chocolate_img{
+        width: 4%;
+        position: absolute;
+        right: 7rem;
+        margin-top: 5rem;
+    }
+    .sub_content{
+        width: 80%;
+        margin: auto;
+    }
+    .bag_img{
+        width:35px;
+    }
+    .text_list_banner{
+        background-image: url('../../../assets/img/new-kidzee/basic_paper.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 400px;
+        padding: 60px 50px 50px 50px;
+    }
+    .li_ul{
+        line-height: 30px;
+    }
+    /* h1{
+        font-size: 2.5rem;
+    } */
+@media screen and (max-width: 600px) {
+    .mainDiv {
+        background-color: #EBE1FF;
+        padding: 0px 0px 45px;
+        margin-top: 38px;
+    }
+    .btr_fly_img{
+        position: relative;
+        width:12%;
+        left: 16rem;
+    }
+    .listTitle{
+        color: #282828;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: center !important;
+    }
+    .whiteTitle{
+        font-style: normal;
+        line-height: normal;
+        margin-top:0px;
+        margin-left:0rem;
+        color: #6D2A93;
+        position: relative;
+        font-weight: bold;
+        bottom: 2rem;
+        text-align: center;
+    }
+    .left_img {
+        display: none;
+    }
+    .three_child{
+        display: none;
+    }
+    .yello_bg_img {
+        display: none;
+    }
+
+    .yello_bg_img_mobile {
+        width: 100%;
+        display: block;
+        position: relative;
+        top: 0;
+        z-index: 9;
+    }
+    .bottomMonkey{
+        display: none;
+           }
+    .contentList{
+        margin: 65px 20px;
+    }
+    .infoContent {
+        width: 100%;
+        display: flex;
+    }
+
+    .banner_content {
+        background-size: 100% 100%;
+        min-height: 200px;
+    }
+
+    .subMenu_content {
+        position: absolute;
+        top: 27rem;
+        left:2rem;
+    }
+    .text_content{
+        padding: 0px 0px;
+    }
+    .paraText {
+        padding: 0px !important;
+        text-align: center;
+    }
+
+    .infoContent {
+        text-align: center;
+    }
+
+    .text1 {
+        width: 100%;
+    }
+}

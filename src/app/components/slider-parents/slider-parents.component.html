@@ -1,0 +1,43 @@
+<section>
+    <div class="happyParents">
+         <div class="slider_content">
+            <h1 class="title text-center day_care_color">Our happy parents</h1> 
+            <div class="cascade-slider_container" id="cascade-slider" >
+                
+                <div class="cascade-slider_slides" *ngFor="let slide of testimonydata; let i = index">
+                    
+                  <div class="cascade-slider_item">
+                    
+                   <div class='card align' *ngFor="let a of slide.files">
+                    
+                        <img src="{{a.url}}" width="100%" alt="">
+                        
+                   </div>           
+                  </div>                
+                </div>
+                
+                <span class="cascade-slider_arrow cascade-slider_arrow-left" data-action="prev" (click)="goToPrevSlide()"><img src="../../../assets/img/new-kidzee/prev.png"></span>
+                <span class="cascade-slider_arrow cascade-slider_arrow-right" data-action="next"  (click)="goToNextSlide()"><img src="../../../assets/img/new-kidzee/next.png" type="image/svg+xml"></span>
+              </div>
+              <!-- <div  *ngFor="let slide of testimonydata; let i = index">
+                {{slide.Title}}
+              <div  *ngFor="let dt of slide.files">
+                
+               <div class='card align' >
+                
+                    <img src="{{dt.url}}" width="200px" height="200px" alt="">
+                    
+               </div>           
+              </div>                
+            </div> -->
+              <div class="slider_info">
+                <h5 class="text-center text-white">{{profile_title}}</h5>
+                <p class="text-center text-white">{{subProfileInfo}}</p>
+              </div>
+        </div>
+    
+    
+    </div>
+
+
+</section>

@@ -1,0 +1,137 @@
+
+.monkeyContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutUs {
+    position: relative;
+    margin-top:35px;
+    overflow: hidden;
+}
+
+.right_content1 {
+    width: 100%;
+    padding: 15px 50px 0px 15px;
+}
+.mainDiv2 .right_content1 {
+    padding: 15px 50px 0px 60px;
+}
+.sub_content{
+    width: 80%;
+    margin: auto;
+}
+.fruit_img_content{
+    position: absolute;
+    z-index: 9;
+    width: 3%;
+    left:4rem;
+}
+.bottom_img_content{
+    width: 25%;
+    position: relative;
+    left: 30px;
+    bottom: 15px;
+}
+.scale_img{
+    width: 10%;
+    position: relative;
+}
+.bag_img_content{
+    width: 3%;
+    position: absolute;
+    right: 6rem;
+}
+.mouse_img_content{
+    width: 4%;
+    position: absolute;
+    right: 1rem;
+}
+.fruit_img_content{
+    width: 8%;
+    position: relative;
+    z-index: 9;
+    left: 15rem;
+}
+.pen_img_content{
+    width: 8%;
+    position: relative;
+    z-index: 9;
+}
+.monkey1{
+    display: block;
+}
+@media screen and (max-width: 600px) {
+    .fruit_img_content{
+        width: 10%;
+        position: relative;
+        z-index: 9;
+        left:0rem;
+    }
+    .pen_img_content{
+        width: 8%;
+        position: relative;
+        z-index: 9;
+        left: 11rem;
+    }
+    .fruit_img_content{
+        width: 10%;
+        position: absolute;
+        z-index: 9;
+        left: 2rem;
+        top: 1px;
+    }
+    .bag_img_content{
+        width: 10%;
+        position: absolute;
+        right: 1rem;
+        top: 42rem;
+    }
+    .right_circal_img_content{
+        position: absolute;
+        width: 6%;
+        right: 0;
+    }
+    .bag_img_content{
+        width: 10%;
+        position: absolute;
+        right: 1rem;
+    }
+    .monkey1{
+        display: none;
+    }
+    .sub_content{
+        width: 90%;
+        margin: auto;
+    }
+    .aboutUs {
+        position: relative;
+        margin-top:0px;
+        overflow: hidden;
+    }
+.monkeyContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutUs {
+    margin-top:0rem;
+}
+.bottom_img_content{
+    width: 35%;
+    position: relative;
+    left: 0;
+    bottom: 10px;
+    object-fit: cover;
+}
+.monkey1 {
+    margin-right: 0px;
+}
+.right_content1 {
+    width: 100%;
+    padding: 10px 20px;
+}
+.mainDiv2 .right_content1 {
+    padding: 10px 15px;
+}
+}

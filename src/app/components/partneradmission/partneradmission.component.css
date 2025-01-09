@@ -1,0 +1,302 @@
+.admissionForm {
+    margin: 45px 45px 45px;
+}
+.num {
+    width: 6rem;
+    height: 6rem;
+}
+.textList {
+    color: #65318E;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 15px 0px;
+}
+.submit_btn {
+  border-radius: 5px;
+  width:40%;
+  background: linear-gradient(205.61deg, #B259E4 -1.17%, #6D2A93 99.41%);
+  color: #FFF;
+  font-size: 13px;
+  float: right;
+  margin: 0px 0px 0px 10px;
+  padding: 5px 10px 5px 10px;
+  transition: all ease 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.captcha_content_flex{
+    width: 70%;
+}
+.submit_btn:active{
+    scale: 0.9;
+}
+.form_content {
+    width:55%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.70);
+    /* box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.18); */
+    padding:5px 10px 5px 10px;
+}
+
+input[type='text'] {
+    border-radius: 20px;
+    border-radius: 20px;
+    padding:4px 10px 4px 20px;
+}
+
+select {
+    border-radius: 20px;
+    padding: 4px 8px 4px 20px;
+}
+
+.form-control {
+    font-size: 12px;
+    color: #9c9292;
+}
+
+.lebel_text {
+    color: #65318E;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+.h1{
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+
+  font-family: 'Sniglet';
+}
+.validMsg{
+    font-size: 13px;
+    color: green;
+    text-align: right;
+    margin-top: 3px;
+}
+.inValidMsg{
+    font-size: 13px;
+    color: red;
+    text-align: right;
+    margin-top: 3px;
+}
+input{
+    color: #222020 !important;
+    font-size: 14px !important;
+}
+select{
+    color: #504848 !important;
+    font-size: 14px !important;
+}
+.msgPopup{
+    width:45%;
+   padding: 30px;
+    background-color: #65318E;
+    color: #FFF200;
+    position: fixed;
+    z-index: 9999;
+    position: absolute;
+    border-radius: 15px;
+    font-size: 20px;
+    top: 140%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+}
+
+.box {
+    margin: auto;
+    border-radius: 15px;
+    transition: all .5s ease-in-out;
+  }
+  
+  .box-CAPTCHA, .box-done {transition: all .5s ease-in-out;}
+  
+  .CAPTCHA{
+      border: 1px solid;
+      width: 80px;
+      height: 30px;
+      padding: 10px 10px;
+      margin: 5px;
+      font-size: 14px;
+      color: #65318E;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      font-weight: bold;
+      margin-top:0px;
+}
+  .box-CAPTCHA{
+    display: flex;
+    justify-content: space-between;
+  }
+  .reload {
+    float: left;
+    margin-top: 80px;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    outline: none;
+    border: none;
+    background: #FFF;
+    display: none;
+    cursor: pointer;
+    border: 1px solid #444;
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+  }
+  #wrong{
+ font-size: 13px;
+  }
+  .reload:hover {
+    background: #f2f2f2;
+  }
+  
+  .reload i {
+    font-size: 20px;
+    margin-left: -4px;
+    font-weight: bold;
+    transform: rotateY(180deg);
+  }
+  
+  input#input {
+    width: 100%;
+    border: 1px solid #CCC;
+    height: 30px;
+    color: #444;
+    transition: all .5s ease-in-out;
+    margin-top: 0px;
+  }
+  
+  .submit {
+    outline: none;
+    border: none;
+    width: 120px;
+    height: 40px;
+    margin: 10px 120px;
+    cursor: pointer;
+    background: #3792e2;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid #444;
+    transition: all .5s ease-in-out;    
+  }
+  
+  .submit:hover {
+    background: #1b7ed6;
+  }
+  
+  .submit:active {
+    background: #0d4779;
+  }
+  
+  .box-done h1 {
+      position: absolute;
+      color: #444;
+      margin: 110px 90px;
+      font-size: 50px;
+  }
+  
+  .box-done h1 i {
+      font-size: 42px;
+      background: #080;
+      color: #fff;
+      border-radius: 50%;
+      margin-right: 10px;
+      width: 45px;
+      height: 45px;
+      font-weight: bold;
+  }
+  
+  .back {
+    outline: none;
+    border: none;
+    width: 120px;
+    height: 40px;
+    bottom: 10px;
+    margin: 220px 120px;
+    cursor: pointer;
+    background: #3792e2;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid #444;
+    transition: all .5s ease-in-out;    
+  }
+  
+  .back:hover {
+    background: #1b7ed6;
+  }
+  
+  .back:active {
+    background: #0d4779;
+  }
+  
+@media screen and (max-width: 600px) {
+    .msgPopup{
+    padding: 30px;
+    background-color: #65318E;
+    color: #FFF200;
+    position: fixed;
+    z-index: 9999;
+    position: absolute;
+    border-radius: 15px;
+    font-size: 20px;
+    top: 140%;
+    left: 15%;
+    margin: -50px 0 0 -50px;
+    }
+    .admissionForm {
+        margin: 45px 0px 45px 0px;
+    }
+    
+    .list_content {
+        margin: 0px 0px 30px 0px;
+    }
+    .num {
+        width: 4rem;
+        height: 4rem;
+    }
+    .textList {
+        color: #65318E;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 15px 10px;
+    }
+    .form_content {
+        width: 100%;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.70);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.18);
+        padding: 30px;
+        margin-top: 30rem;
+        /* margin-top:0rem; */
+       
+    }
+
+    .submit_btn{
+      border-radius: 5px;
+      width:100%;
+      background: linear-gradient(205.61deg, #B259E4 -1.17%, #6D2A93 99.41%);
+      color: #FFF;
+      font-size: 13px;
+      float: right;
+      margin: 0px 0px 0px 10px;
+      padding: 5px 10px 5px 10px;
+      transition: all ease 0.2s;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+  }
+
+    form{
+        padding:15px;
+    }
+}

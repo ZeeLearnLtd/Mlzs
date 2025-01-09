@@ -1,0 +1,17 @@
+.tex_menu{
+    color: #6D2A93;
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+span a{
+    color: #6D2A93;
+    text-decoration: none;
+    margin-right: 8px;
+}
+span a:hover{
+    color: #6D2A93;
+    cursor: pointer;
+}
+  

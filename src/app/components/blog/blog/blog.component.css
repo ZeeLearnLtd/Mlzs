@@ -1,0 +1,286 @@
+/* .banner_content {
+    background-image: url('../../../../assets/img/banner/Banner3.png');
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    display: grid;
+    place-content: center;
+} */
+ .girl_img_content{
+    position: relative;
+    z-index: 9;
+    float: right;
+    bottom: 20rem;
+    right: 13rem;
+    width: 320px;
+    height: 310px !important;
+ }
+.blog_content{
+    margin-top:23rem;
+    /* height: 400px;
+    overflow-y: auto; */
+}
+.mainDiv {
+    background-color: #EBE1FF;
+    padding: 0px 0px 45px;
+}
+.top_header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.top_header img{
+    height: 400px;
+}
+.search_content {
+    width:35%;
+    float: right;
+    margin-right: 50px;
+}
+
+.search_input {
+    margin-right: 50px;
+    height: 35px;
+    border-radius: 20px;
+    border: 2px solid #65318E;
+    background-color: #65318E;
+    color: #FFF;
+    padding: 6px 0px 10px 15px;
+}
+
+.subMenu_content {
+    position: absolute;
+    top: 11rem;
+    left: 4rem;
+}
+
+.search_icon {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    bottom: 31px;
+    left: 195px;
+}
+
+::placeholder {
+    color: #FFF;
+    font-size: 12px;
+}
+
+.title {
+    width: 70%;
+    margin: auto;
+}
+
+.blog_details_content {
+    width: 90%;
+    margin: auto;
+}
+
+.pancil_group {
+    width: 100%;
+}
+
+.text_para {
+    color: #282828;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.preeSchooImg {
+    width: 100%;
+}
+
+.child_img {
+    height: 450px;
+}
+
+.all_blog {
+    /* width: 90%; */
+    margin: auto;
+}
+
+.education_content {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    color: #282828;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.list_content{
+    color: #282828;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 60px 0px 10px 80px;
+}
+
+.list_content p{
+    cursor: pointer;
+}
+.studying_monkey{
+    width: 12rem;
+    height: 14rem;
+    margin: 0rem 11rem;
+}
+.monkey_img_content{
+    background-color: #EBE1FF;
+}
+.monkey_img_content{
+    display: block;
+}
+.banner_content{
+    position: absolute;
+    z-index: 9;
+    left: 13rem;
+    margin-top: 3rem;
+    overflow: hidden;
+}
+.whiteTitle{
+    font-size: 32px;
+    font-weight:600;
+    margin-top: 50px;
+}
+
+.pluce_icon_content{
+    position: relative;
+    z-index: 9;
+    width: 2%;
+    top: 8rem;
+    left: 4rem;
+}
+.fish_img_content{
+    position: relative;
+    z-index: 9;
+    width: 4%;
+    top: 13rem;
+    left: 36rem;
+}
+.search_content {
+    margin: auto;
+    float: none;
+    margin-top: 15px;
+    position: relative;
+    left: 0;
+    top: 25rem;
+  }
+  .search_input {
+    margin-right: 50px;
+    height: 35px;
+    border-radius: 20px;
+    border:none;
+    background-color: #65318E;
+    color: #FFF;
+    padding: 6px 0px 10px 15px;
+  }
+  .search_icon {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    bottom: 31px;
+    left: 195px;
+  }
+
+  .fa-angle-down{
+    position: relative;
+    bottom: 27px;
+    left: 195px;
+    font-size: 20px;
+    color: #FFF;
+  }
+  select{
+    font-size: 12px !important;
+  }
+@media screen and (max-width: 600px) {
+    .blog_content{
+        margin-top: 7rem;
+    }
+    .top_header{
+        position: absolute;
+        top: 50px;
+        width: 100%;
+    }
+    .girl_img_content{
+        position: relative;
+        z-index: 9;
+        float: right;
+        bottom: 10rem;
+        right: 3rem;
+        width: 40%;
+        height: 310px !important;
+    }
+    .top_header img{
+        height: auto !important;
+    }
+    .monkey_img_content{
+        display: none;
+    }
+    .right_div{
+        margin-top: 45px;
+    }
+    .education_content{
+        width:70%;
+    }
+    .title {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .child_img {
+        height: auto;
+    }
+    .search_content{
+        margin: auto;
+        float: none;
+        margin-top: 15px;
+        position: relative;
+        left: 0;
+        top: 11rem;
+    }
+    .search_content {
+        width: 65%;
+        margin: auto;
+        float: none;
+        margin-top: 15px;
+    }
+
+    .subMenu_content {
+        position: absolute;
+        top: 4rem;
+        left: 0rem;
+    }
+
+    /* .banner_content {
+        background-size: 100% 100%;
+        min-height: 180px;
+    } */
+        .readMoreBtn {
+          background-color: #65318E;
+          color: #FFF;
+          text-align: center;
+          font-size: 11px;
+          font-style: normal;
+          border: none;
+          font-weight: 500;
+          padding: 7px 8px 7px 8px;
+          border-radius: 0px 53px 53px 20px;
+          margin-top: 6px;
+          transition: all ease 0.2s;
+        }
+
+        .readMoreBtn:active {
+          scale: 0.9;
+        }
+}

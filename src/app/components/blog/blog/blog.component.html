@@ -1,0 +1,52 @@
+<!-- <app-common-header></app-common-header> -->
+<section>
+    <div class="mainDiv">
+      <img src="../../../../assets/img/new-kidzee/pluce_img.png" class="pluce_icon_content" alt="">
+        <div class="banner_content">
+            <div class="whiteTitle">{{headerTitle}}</div>
+            <div class="subMenu_content">
+                <app-sub-menu></app-sub-menu>
+            </div>
+            
+        </div>
+        <img src="../../../../assets/img/new-kidzee/yellow_fish_color.png" class="fish_img_content" alt="">
+     <div class="top_header">
+      <img src="../../../../assets/img/new-kidzee/blog-top-bg-header.png" width="100%" alt="">
+      <img src="../../../../assets/img/new-kidzee/girl_img.png" class="girl_img_content" alt="">
+     </div>
+     <div class="search_content">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text"
+            class="form-control search_input" placeholder="search"> <img
+            srcset="../../../../assets/img/search.png" class="search_icon" loading="lazy" alt="">
+          </div>
+          <div class="col-md-6">
+            <select type="text"
+            class="form-control search_input">
+          <option value="">Select</option>
+          </select> 
+            <i class="fa fa-angle-down"></i>
+          </div>
+        </div>
+          
+      </div>
+  </div>
+<div class="blog_content">
+  <div class="all_blog mt-5" *ngIf="allBlogs">    
+    <app-all-blog></app-all-blog>
+
+  </div>
+  <div class="blog_imgGallery mt-5" *ngIf="!allBlogs">
+    <app-blog-details></app-blog-details>
+  </div>
+</div>
+
+    </div>
+    <!-- <div class="monkey_img_content">
+        <img srcset="../../../../assets/img/standingMonkey.png" alt="" loading="lazy" class="studying_monkey">
+    </div> -->
+
+</section>
+<!-- <app-footer></app-footer> -->

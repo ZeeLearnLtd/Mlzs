@@ -1,0 +1,226 @@
+.mainDiv {
+    background-color: #EBE1FF;
+    padding: 0px 0px 45px;
+}
+
+.subMenu_content {
+    position: absolute;
+    top: 11rem;
+    left: 4rem;
+}
+
+.dayCardImg {
+    width: 100%;
+}
+
+.schoolGirlImg {
+    width: 400px;
+    height: 410px;
+    float: right;
+    margin-right: 15px;
+}
+
+.subTitle {
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.right_content1 {
+    width: 100%;
+    padding: 15px 50px 0px 15px;
+}
+
+.paragraph_content1 {
+    width: 450px;
+    position: absolute;
+    right: 0;
+    top: 240px;
+    margin: 0px 111px 0px 0px;
+}
+
+.dayCareImg {
+    width: 50%;
+    padding: 20px 50px;
+}
+
+.listTitle {
+    color: #282828 !important;
+    font-size: 18px;
+    font-style: normal;
+    text-align: left;
+    font-weight: 700;
+    line-height: normal;
+    padding-left: 45px;
+}
+
+.kizeeList {
+    width: 80%;
+    margin: auto;
+}
+
+.yello_bg_img {
+    float: right;
+    width: 65%;
+    display: block;
+}
+
+.dayCareImgContent {
+    display: flex;
+    justify-content: center;
+}
+
+.three_child {
+    width: 36%;
+    position: absolute;
+    right: 140px;
+    top: 5rem;
+    display: block;
+}
+
+.left_img {
+    width: 5%;
+    position: absolute;
+    left: 0;
+    margin-top: 9rem;
+    display: block;
+}
+
+.whiteTitle {
+    font-style: normal;
+    line-height: normal;
+    margin-top: 160px;
+    margin-left: 4.5rem;
+    color: #6D2A93;
+    position: relative;
+    font-weight: bold;
+    bottom: 2rem;
+}
+ul li {
+    overflow: hidden;
+    list-style-position: inside;
+    list-style-type: square;
+}
+.btr_fly_img {
+    position: relative;
+    width: 5%;
+    left: 16rem;
+}
+
+.paper_content {
+    background-image: url('../../../assets/img/new-kidzee/paper_img.png');
+    background-position: center;
+    background-size: 100% 100%;
+    width: 500px;
+    height: 150px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chocolate_img {
+    width: 4%;
+    position: absolute;
+    right: 7rem;
+    margin-top: 5rem;
+}
+
+.sub_content {
+    width: 80%;
+    margin: auto;
+}
+
+.bag_img {
+    width: 35px;
+}
+.yello_bg_img_mobile {
+    display: none;
+}
+.kizeeList{
+    width: 100%;
+    margin: auto;
+}
+@media screen and (max-width: 600px) {
+    .mainDiv {
+        background-color: #EBE1FF;
+        padding: 0px 0px 45px;
+        margin-top: 38px;
+    }
+    .btr_fly_img{
+        position: absolute;
+        width: 14%;
+        left: 16rem;
+        bottom: 6rem;
+    }
+    .listTitle{
+        color: #282828 !important;
+        font-size: 18px;
+        font-style: normal;
+        text-align: left;
+        font-weight: 700;
+        line-height: normal;
+        padding-left:0px;
+        text-align: center;
+    }
+    .right_content1{
+        width: 100%;
+        padding: 0px 0px 0px 0px;
+    }
+    .paragraph_content{
+        text-align: center;
+    }
+    .kizeeList{
+        width:100%;
+        margin: auto;
+    }
+    .left_img{
+        display: none;
+    }
+    ul{
+     padding-left: 0px;
+    }
+    .three_child {
+        display: none;
+    }
+    .yello_bg_img {
+        display:none;
+    }
+    .yello_bg_img_mobile {
+        width: 100%;
+        display: block;
+        position: relative;
+        top: 0;
+        z-index: 9;
+    }
+    .dayCareImg {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .schoolGirlImg {
+        width: 22rem;
+        height: 22rem;
+        margin: auto;
+    }
+
+    .dayCardImg {
+        display: flex;
+        justify-content: center;
+    }
+
+    .banner_content {
+        background-size: 100% 100%;
+        min-height: 200px;
+    }
+
+    .subMenu_content {
+        position: absolute;
+        top:25rem;
+        left: 2rem;
+    }
+  
+}

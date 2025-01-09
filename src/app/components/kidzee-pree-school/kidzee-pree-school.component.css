@@ -1,0 +1,181 @@
+.preSchoolbgImg_content {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* top: 4rem; */
+}
+
+
+.preSchoolbgImg {
+    width: 100%;
+    height: 1000px;
+    margin: auto;
+}
+
+.paragraph_content1 {
+    width: 450px;
+    position: absolute;
+    right: 0;
+    top: 240px;
+    margin: 0px 111px 0px 0px;
+}
+
+.smallGroupImg {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    bottom: 130px;
+    right: 63px;
+}
+.maskImg{
+    width: 100%;
+    height:750px;
+    position: relative;
+}
+.paragraph_content1 {
+    width: 450px;
+    position: absolute;
+    right: 0;
+    top: 240px;
+    margin: 0px 111px 0px 0px;
+}
+
+.subImg{
+    width:100%;
+    height:360px;
+    position: relative;
+}
+
+.title_right {
+    float: right;
+    color: #65318E;
+    top: 0;
+    margin: 130px 216px 10px 10px;
+    right: 0;
+    font-size: 2.5rem;
+    position: absolute;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.sub_content{
+    width: 80%;
+    margin: auto;
+}
+.img_box{
+    height: 255px;
+    overflow: hidden;
+}
+.home_img_content{
+    width: 4%;
+    position: relative;
+}
+.day_care_color{
+    color: #FFF200 !important;
+    }
+    .mouse_img_content{
+        position: relative;
+        width: 5%;
+        z-index: 9;
+        float: right;
+    }
+    .mobileView{
+        display: none;
+    }
+    .img_list{
+        background-image: url('../../../assets/img/new-kidzee/all_group.png');
+        width: 100%;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+@media screen and (max-width: 600px) {
+    .main_box{
+        padding: 40px;
+    }
+    .home_img_content{
+        width: 12%;
+        position: relative;
+    }
+    .subImg{
+        width: 100%;
+        height: 360px;
+        position: absolute;
+        top: 335px;
+    }
+    .paragraph_content1 {
+        top: 170px;
+        margin: auto;
+        text-align: justify;
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .preSchoolbgImg_content {
+        display: none;
+    }
+    .mobileView{
+        display: block;
+        width: 100%;
+        /* position: absolute; */
+    }
+    .img_box{
+        height: auto;
+        overflow: hidden;
+    }
+    .maskImg .paragraph_content1{
+        margin: 0;
+        width: 100%;
+        padding: 10px;
+        position: static;
+    }
+    .title_right{
+        margin: 55px 0px 0px 0px;
+        text-align: center;
+        color: #65318E;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        width: 100%;
+        line-height: normal;
+    }
+    .maskImg .paragraph_content1{
+        margin: 0;
+        width: 100%;
+        padding: 10px;
+        position: static;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width:7px;
+    height:7px;
+    border-radius: 50%;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 50px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #5f5858;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 0rem;
+    margin-left: 15%;
+}

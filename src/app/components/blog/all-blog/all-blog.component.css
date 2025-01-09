@@ -1,0 +1,211 @@
+
+.blogsDiv{
+  padding:0px 50px 10px 50px;
+  margin-top: 12rem;
+}
+.whiteBg {
+    width: 250px;
+    height: 250px;
+    background-color: #FFF;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.readMoreBtn {
+    border-radius: 5px;
+  width:40%;
+  background: linear-gradient(205.61deg, #B259E4 -1.17%, #6D2A93 99.41%);
+  color: #FFF;
+  font-size: 13px;
+  float: right;
+  margin: 0px 0px 0px 10px;
+  padding: 5px 10px 5px 10px;
+  transition: all ease 0.2s;
+  border: none;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  position: absolute;
+  left: 0px;
+  bottom: 12px;
+}
+.spinner{
+    position: absolute;
+    margin-left: 50%;
+    margin-right: 50%;
+    overflow: hidden;
+    margin-top: 13rem;
+}
+
+.readMoreBtn:active{
+    scale: 0.9;
+}
+
+.box input {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.box p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.box input:focus~label {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.box input:checked+p {
+    -webkit-line-clamp: unset;
+}
+
+.box input:checked~label {
+    display: none;
+}
+
+
+.box {
+    width: 100%;
+}
+
+.box p {
+    margin: 0;
+}
+
+.date {
+    color: #282828;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.infoContent {
+    padding: 25px 10px 25px 10px;
+}
+
+.para {
+    overflow: hidden;
+    color: #282828;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.text1 {
+    color: #65318E;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    min-height:50px ;
+}
+.upperBg{
+    background-image:url('../../../../assets/img/bg2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 16rem;
+    height: 17rem;
+    display: flex;
+    justify-content: center;
+    margin:auto
+}
+/* .upperBg:hover{
+    filter: drop-shadow(13px 0px 6px #FFF);
+} */
+.btrfly_img_content{
+width: 4%;
+position: relative;
+}
+.fruit_img_content{
+    width: 2%;
+    position: absolute;
+    right: 0;
+    }
+    .mouse_img_content{
+        width: 4%;
+        position: absolute;
+        right: 0;
+        margin-top: 20rem;
+        }
+        .fish_img_content{
+            width: 4%;
+            position: absolute;
+            left: 0;
+            top: 15rem;
+            }
+            .text_para {
+width: 92%;
+margin: auto;
+            }
+.img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        transition: transform .5s ease;
+    }
+
+.img:hover{
+    transform:scale(1.05);
+    cursor: pointer;
+}
+.profile_content{
+    background-color:url('../../../../assets/img/new-kidzee/white_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-top-right-radius: 10px;
+    width:270px;
+}
+.profile_text{
+    background-image:url('../../../../assets/img/new-kidzee/white_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    bottom: 15px;
+    height: 185px;
+    overflow: hidden;
+}
+.mobile_res_content{
+    display: none;
+}
+/* .desk_contanier{
+    display: block;
+} */
+@media screen and (max-width: 600px) {
+    .mobile_res_content{
+        display: block;
+    }
+    .blogsDiv{
+        padding:0;
+      }
+      .desk_contanier{
+        display: none;
+    }
+    .profile_content{
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-top-right-radius: 10px;
+        width: 100%;
+        height: auto;
+        padding: 0px 55px;
+    }
+
+    .profile_text{
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        bottom: 15px;
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+    }
+    .img_content {
+        width: 100% !important;
+        margin: auto;
+    }
+}

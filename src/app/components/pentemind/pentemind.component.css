@@ -1,0 +1,322 @@
+.mainDiv {
+    background-color: #EBE1FF;
+    padding: 0px 0px 45px;
+}
+
+ .banner_content_slider{
+    position: absolute;
+    top: 0;
+  }
+.subMenu_content {
+    position: absolute;
+    top: 11rem;
+    left: 4rem;
+}
+.pentamind_img_content{
+  position: absolute;
+  top: 5.7rem;
+  right: -1rem;
+}
+
+.pentaminde_img{
+   width:70%;
+}
+.pentemindImg{
+    width: 180px;
+    height: 220px;
+    float: right;
+}
+.pentemindeContent{
+color: #282828;
+font-size:16px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+padding: 0px 60px 0px 60px;
+}
+.img_contentText{
+color: #282828;
+text-align: center;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.monkeyImgList{
+    width: 160px;
+    height: 170px;
+}
+.learningMindImgList{
+margin-top: 55px;
+}
+.learningTitle{
+color: #000;
+font-size:23px;
+font-style: normal;
+font-weight: 800;
+line-height: 28px;
+}
+.subContent{
+    margin-top:39rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.whiteTitle {
+    color: #FFF;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 160px;
+    position: absolute;
+    z-index: 9;
+    font-size:2.5rem;
+    font-weight: 600;
+    left: 10rem;
+}
+.home_icon_content{
+    position: absolute;
+    z-index: 99;
+    width: 3%;
+    top: 14rem;
+    left: 3rem;
+    object-fit: cover;
+}
+.carousel-control-prev-icon {
+    background-image: url('../../../assets/img/new-kidzee/left_arrow.png');
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 32rem;
+    left: 8rem;
+    z-index: 99;
+}
+.carousel-control-prev {
+    left:30rem;
+  }
+  .bag_content{
+    position: absolute;
+    left: 6rem;
+  }
+  .carousel-control-next-icon {
+    background-image: url('../../../assets/img/new-kidzee/next_btn.png');
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 32rem;
+    left: 8rem;
+    z-index: 99;
+}
+.carousel-control-next {
+    right:37rem;
+  }
+  .chocolate_img{
+    position: absolute;
+    right: 9rem;
+  }
+  .btr_fly_img{
+    position: absolute;
+    right:5rem;
+  }
+  .fruit_img{
+    position: absolute;
+    left:3rem;
+  }
+  .mouse_img{
+    position: absolute;
+    right:8rem;
+  }
+  .more_fish_content{
+    position: absolute;
+    right:8rem;
+  }
+  .fish_img{
+    position: absolute;
+    left:4rem;
+  }
+  .chocolate_img{
+    position: absolute;
+  }
+  .color_text{
+    font-weight: bold;
+    color: #7E7E7E;
+  }
+  .desk_pt{
+    display: block;
+  }
+  .res_pt{
+    display: none !important;
+  }
+  .pentamind_img_content{
+    display: block;
+  }
+  .desk_scr{
+    display: block;
+  }
+  .mob_scr{
+    display: none;
+  }
+  .icon_list{
+    width: 80%;
+  }
+@media screen and (max-width: 600px) {
+  p{
+    text-align: justify;
+  }
+  .mainDiv {
+    background-color: #EBE1FF;
+    padding: 0px 0px 45px;
+    position: relative;
+    top: 3rem;
+}
+  .col-1{
+    width: 0 !important;
+  }
+  .chocolate_img{
+    position: absolute;
+    right: 1rem;
+    width: 13%;
+}
+.bag_content{
+  position: absolute;
+  left: 1rem;
+  width: 12%;
+  top: 35rem;
+}
+  .carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width:12px;
+    height:12px;
+    border-radius: 50%;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 50px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #5f5858;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 0rem;
+    margin-left: 15%;
+}
+  .icon_list{
+    width:35%;
+  }
+  .desk_scr{
+    display: none;
+  }
+  .mob_scr{
+    display: block;
+  }
+  .subContent{
+    margin-top:25rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  .carousel-control-prev-icon {
+    background-image: url('../../../assets/img/new-kidzee/left_arrow.png');
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 32rem;
+    left: 0rem;
+    z-index: 99;
+}
+.carousel-control-prev {
+  left: 0.6rem;
+  top: -2rem;
+}
+
+.carousel-control-next-icon {
+    background-image: url('../../../assets/img/new-kidzee/next_btn.png');
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 30rem;
+    left: 0rem;
+    z-index: 99;
+}
+
+.carousel-control-next {
+    right: 0rem;
+    top: 0rem;
+}
+  .whiteTitle{
+    color: #FFF;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 130px;
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+    width: 100%;
+    left: auto;
+  }
+  .pentemindeContent{
+    color: #282828;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 0px;
+    text-align: center;
+}
+  .desk_pt{
+    display: none !important;
+  }
+  .pentamind_img_content{
+    display: none;
+  }
+  .res_pt{
+    display: block !important;
+  }
+.banner_content {
+    background-size: 100% 100%;
+    min-height:200px;
+}
+.subMenu_content {
+    position: absolute;
+    top: 4rem;
+    left: 0rem;
+}
+.pentemindeLogo{
+    width: 180px;
+    margin: auto;
+    margin-top: 45px;
+}
+.learningMonkey{
+    width: 160px;
+    margin: auto;
+}
+.img_contentText{
+    padding: 0px 40px;
+}
+}

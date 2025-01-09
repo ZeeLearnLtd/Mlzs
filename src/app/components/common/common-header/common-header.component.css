@@ -1,0 +1,286 @@
+.btn_header {
+    background-color: #65318E;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 7px;
+}
+
+.btn_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white_btn:active {
+    scale: 0.9;
+}
+.startBtn:active{
+    scale: 0.9;
+}
+.white_btn {
+    background-color: #FFF;
+    padding: 5px 10px 5px 10px;
+    border-radius: 0px 53px 53px 53px;
+    border: none;
+    color: #65318E;
+    font-weight: 500;
+    margin: 5px;
+    transition: all ease 0.2s;
+}
+.startBtn{
+    background-color: #FFF;
+    padding: 5px 10px 5px 10px;
+    border-radius: 0px 53px 53px 53px;
+    border: none;
+    color: #65318E;
+    font-weight: 500;
+    margin: 5px;
+    transition: all ease 0.2s;
+}
+.whiteHeader_dark {
+    top: 0px;
+    position: fixed;
+    background-color: #65318E;
+    color: #fff;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: none;
+}
+
+.whiteHeader {
+    top:75px;
+    position: absolute;
+    color: #fff;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+ul li a {
+    color: #FFF;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.header_logo {
+    background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 130px;
+    height: 35px;
+    margin: 0px 0px 0px 60px;
+    cursor: pointer;
+}
+
+.ul_content {
+    margin: auto;
+}
+
+.nav-item {
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.navbar1 {
+    display: none;
+}
+
+.dropdown-menu a{
+    color: #FFF;
+    font-weight: normal;
+    cursor: pointer;
+    background-color: #a19bad;
+}
+.dropdown-menu a:hover{
+    color: #FFF;
+    font-weight: normal;
+    cursor: pointer;
+    background-color: #65318E;
+}
+/* dropdown menu css */
+
+@media (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 767px) {
+    .dropdown:hover .dropdown-menu {
+        display: none;
+        margin-top: auto;
+    }
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: fixed;
+    background-color: #a19bad;
+}
+
+.dropdown-item {
+    color: #FFF !important;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dropdown-item:hover {
+    background-color: #65318E;
+}
+
+#headerLogo {
+    display: none;
+}
+
+#mobileMenu {
+    display: none;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+.navbar-toggler {
+    display: none;
+}
+.nav-sub-item{
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 13px;
+}
+@media screen and (max-width: 600px) {
+    .btn_content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 35px;
+    }
+    
+    .white_btn {
+        background-color: #FFF;
+        padding: 5px 3px 5px 3px;
+        border-radius: 0px 53px 53px 53px;
+        border: none;
+        color: #65318E;
+        font-weight: 500;
+        font-size: 8px;
+        margin: 5px;
+        transition: all ease 0.2s;
+    }
+    .startBtn{
+        font-size:8px;
+        margin: 5px 5px 5px 5px;
+    }
+
+    #headerLogo {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobileMenu {
+        display: block;
+    }
+
+    #navbarNav {
+        margin-top: 30px;
+    }
+
+    .whiteHeader_dark {
+        padding: 10px;
+    }
+
+    .header_logo {
+        background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width:60px;
+        height: 20px;
+        margin: 0px 0px 0px 5px;
+        position: fixed;
+        top: 15px;
+        left: 0px;
+        cursor: pointer;
+    }
+
+    .navbar-toggler-icon {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        background-image: var(--bs-navbar-toggler-icon-bg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        cursor: pointer;
+    }
+
+    .navbar-toggler {
+        position: fixed;
+        display: block;
+        width: 9%;
+        height: 33px;
+        right: 9px;
+        top: 9px;
+     }
+
+    .menu_icon {
+        background-image: url('../../../../assets/img/menu.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        width: 4px;
+        height: 16px;
+        position: fixed;
+        top: 18px;
+        right: 25px;
+    }
+
+    .toggle {
+        border: 1px solid;
+        height: 20px;
+        width: 20px;
+    }
+
+    #navbarNav {
+        background-color: #65318E;
+        color: #FFF;
+    }
+
+    .navbar1 {
+        position: fixed;
+        top: 150px;
+        left: 0;
+        right: 0;
+        top: 50px;
+        z-index: 9999;
+        padding: 0;
+        color: #FFF;
+        background-color: #65318E;
+        display: block;
+    }
+
+    .nav_body {
+        background-color: #492f5e;
+        color: #FFF;
+        position: relative;
+        z-index: 9999;
+    }
+    #closeMenu{
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu{
+        display: block;
+        margin-top: 0;
+        cursor: pointer;
+    }
+
+}

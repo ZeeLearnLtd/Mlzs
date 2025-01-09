@@ -1,0 +1,111 @@
+<div class="blogs_content">
+<div class="row">
+  <div class="col-md-12">
+    <div class="left_div">
+      <div class="title text-left w-100">{{blogdetails?.MetaTitle}}</div>
+    </div>
+    <div class="education_content mt-4">
+      <div class="">{{blogdetails?.dateCreated}}</div>
+    </div>
+    <div class="pancil_img_content mt-4">
+      <div *ngFor="let dt of blogdetails?.files">
+        <img *ngIf="dt.type=='OtherFiles'" src={{dt.url}} loading="lazy" width="100%" height="100%" class="img img-responsive" alt={{dt.filename}}>
+      </div>      
+      <div class="text_para mt-3">
+        <p>{{blogdetails?.Short}}</p>
+      </div>
+    </div>
+
+    <div class="text_para mt-3">
+      <img src="../../../../assets/img/new-kidzee/btrfly_img.png" class="btrfly_img_content" alt="">
+      <img src="../../../../assets/img/new-kidzee/fruit_img.png" class="fruit_img_content" alt="">
+      <img src="../../../../assets/img/new-kidzee/mouse_img.png" class="mouse_img_content" alt="">
+      <img src="../../../../assets/img/new-kidzee/fish_img.png" class="fish_img_content" alt="">
+     
+      <p [innerHTML]="blogdetails?.long1"></p>
+    </div>
+  </div>
+</div>
+</div>
+<app-faqs ></app-faqs>
+<img src="../../../../assets/img/new-kidzee/btrfly_img.png" class="btrfly_img_content" alt="">
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+
+<!-- <section>
+  <div class="blogsDiv">
+      <div class="row mt-5 desk_contanier">
+          <div class="col-md-4 d-flex justify-content-center align-items-center" *ngFor="let item of blogdata ;let i=index">
+              <div class="profile_content">
+                  <div class="img_content">
+                      <img src={{item.files[0].url}} loading="lazy" width="100%" class="img" alt={{item.files[0].filename}}>
+                  </div>
+                  <div class="profile_text">
+                      <div class="infoContent">
+                          <div class="date">{{item.FromDate}}</div>
+                          <div class="text1">{{item.Title}}</div>
+                          <div class="para">
+                              <div class="box">
+                                  <input type="checkbox" id="{{i}}">
+                                  <p>{{item.Short}}</p>
+                              </div>
+                              <a class="" role="button" routerLink="/blog/{{item.slug}}"><button
+                                      class="btn readMoreBtn">Read More</button></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="mobile_res_content">
+          <div id="carouselExampleDark2" class="carousel carousel-dark slide">
+              <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                      aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                      aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                      aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                  <div class="carousel-item" [ngClass]="(i === 0) ? 'active' : ''" data-bs-interval="10000" *ngFor="let item of blogdata ;let i=index">
+                      <div class="profile_content">
+                          <div class="img_content">
+                              <img src={{item.files[0].url}} loading="lazy" width="100%" class="img" alt={{item.files[0].filename}}>
+                          </div>
+                          <div class="profile_text">
+                              <div class="infoContent">
+                                  <div class="date">{{item.FromDate}}</div>
+                                  <div class="text1">{{item.Title}}</div>
+                                  <div class="para">
+                                      <div class="box">
+                                          <input type="checkbox" id="{{i}}">
+                                          <p>{{item.Short}}</p>
+                                      </div>
+                                      <a class="" role="button" routerLink="/blog/{{item.slug}}"><button
+                                              class="btn readMoreBtn">Read More</button></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+      
+      
+          </div>
+      </div>
+  </div>
+</section> -->

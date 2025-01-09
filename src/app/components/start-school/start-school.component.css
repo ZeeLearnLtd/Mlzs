@@ -1,0 +1,110 @@
+.start_school_banner{
+    background-image: url('../../../assets/img/MLZS/start_school_banner.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-top: 8rem;
+    height: 500px;
+}
+
+.francine_form{
+    width:25%;
+    float: right;
+    /* height: 400px; */
+    margin: 10px 15px 10px 10px;
+    padding: 10px;
+}
+
+.verify_otp_btn{
+    font-size: 10px;
+    padding: 2px 5px !important;
+    float: right;
+    margin: 7px 0px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+.menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left: 5.5rem;
+    padding: 10px;
+}
+
+.about_content{
+    width: 100%;
+    padding: 55px 0px;
+    background-color: #004878;
+}
+
+.title_content h2{
+    position: relative;
+    z-index: 9;
+}
+.text_bg{
+    width: 10%;
+    height: 25px;
+    position: relative;
+    bottom: 1.9rem;
+    z-index: 1;
+
+}
+
+.about_img_content img{
+width: 80%;
+}
+
+.fr_img_content img{
+width: 80%;
+}
+
+.what_we_offer{
+background-color: #004878;
+color: #fff;
+}
+
+.businessPartners{
+    background-color: #004878;
+    color: #fff;
+}
+
+.read_mode {
+    background-color: #44C8F5;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.read_mode:hover{
+    background-color: #44C8F5;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    font-size: 13px;
+}
+
+.award_content .read_mode{
+width:25%;
+margin: 10px 20px;
+}

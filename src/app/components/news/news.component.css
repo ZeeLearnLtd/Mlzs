@@ -1,0 +1,79 @@
+.about_content{
+    width: 100%;
+    padding: 55px 0px;
+    background-color: #004878;
+}
+
+.title_content h2{
+    position: relative;
+    z-index: 9;
+}
+.title_content p{
+    margin: 0;
+}
+.text_bg{
+    width:23%;
+    position: relative;
+    bottom:1.3rem;
+    z-index: 1;
+    height: 30px;
+}
+
+.about_img_content img{
+width: 80%;
+}
+
+.counter_text p{
+    font-size: 12px;
+}
+
+
+.home-demo .item {
+    background: transparent;
+    width: 95%;
+    margin: auto;
+    height: 335px;
+    border-radius: 5px;
+    padding: 30px 15px;
+}
+.home-demo h2 {
+    color: #FFF;
+    text-align: center;
+    /* padding: 5rem 0; */
+    margin: 0;
+    font-style: italic;
+    font-weight: 300;
+}
+
+::ng-deep.owl-carousel .owl-stage {
+    position: relative;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+    height:320px;
+    overflow: hidden;
+}
+
+.item_text h6{
+    color: #014876;
+}
+.item_text p{
+    font-size: 11px;
+    color: #014876;
+}
+
+.item_img_content img{
+    width: 100%;
+    height:159px;
+}
+
+hr{
+    margin: 15px 0px 0px 0px;
+}
+
+
+  ::ng-deep .center{
+    background-color: #FFF !important;  /* Change background color of the active item */ 
+  }
+  ::ng-deep .owl-item{
+    background-color: #44C8F5;
+  }

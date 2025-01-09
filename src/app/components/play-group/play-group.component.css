@@ -1,0 +1,369 @@
+.mainDiv {
+    background-color: #EBE1FF;
+    padding: 0px 0px 45px;
+}
+.yello_bg_img{
+    float: right;
+    width: 65%;
+    display: block;
+}
+.three_child{
+    width: 36%;
+    position: absolute;
+    right: 140px;
+    top: 5rem;
+    display: block;
+}
+.subMenu_content {
+    position: absolute;
+    top: 11rem;
+    left: 4rem;
+}
+
+.programTitle {
+    color: #0E2C53;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.infoContent {
+    width:70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text1 {
+    border-right: 2px solid #90228D;
+    width:100%;
+    text-align: center;
+    color: #90228D;
+    font-size: 14px;
+     font-weight: bold;
+    }
+
+
+.text2 {
+    width: 100%;
+    color: #90228D;
+    font-size: 14px;
+    padding-left: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.kidzee_session{
+    padding-left:80px;
+}
+.paraText {
+    color: #282828;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 0px 60px 0px 0px;
+}
+.listTitle{
+color: #282828;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal
+}
+ul{
+    padding: 0;
+}
+ul li {
+    overflow: hidden;
+    list-style-position: inside;
+    list-style-type: square;
+}
+.contentList{
+ width: 80%;
+ margin: auto;
+}
+.paper_content{
+background-image: url('../../../assets/img/new-kidzee/paper_img.png');
+background-position: center;
+background-size: 100% 100%;
+width:500px;
+height: 150px;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.paper_img{
+    width: 100%;
+}
+.text_content{
+    padding: 0px 30px;
+}
+.monkeyImgList{
+    width: 13rem;
+    height: 14rem;
+    margin: 0rem 0rem 0rem 12rem;
+}
+.bottomMonkey{
+    background-color: #EBE1FF;
+    display: block
+}
+.left_img{
+    width:5%;
+    position:absolute;
+    left:0;
+    margin-top: 9rem;
+}
+.whiteTitle {
+    font-style: normal;
+    line-height: normal;
+    margin-top: 160px;
+    margin-left:4.5rem;
+    color: #6D2A93;
+    position: relative;
+    font-weight: bold;
+    bottom:2rem;
+}
+.sub_content{
+    width: 80%;
+    margin: auto;
+}
+.btr_fly_img{
+    position: relative;
+    width:5%;
+    left: 16rem;
+}
+.chocolate_img{
+    width: 4%;
+    position: absolute;
+    right: 7rem;
+    margin-top: 5rem;
+}
+.bag_img{
+    width: 3%;
+    position: absolute;
+    margin-top: 7rem;
+    left: 5rem;
+}
+.fruit_img{
+    position: relative;
+    width: 3%;
+    left: 10rem;
+    bottom: 10rem;
+}
+.mouse_img{
+    position: absolute;
+    right:5rem;
+    width: 5%;
+}
+.ptang_img{
+    position: relative;
+    left: 5rem;
+    width: 4%;
+    bottom: 25rem;
+}
+.fish_img{
+    position:absolute;
+    right: 2rem;
+    margin-top: 6rem;
+    width: 4%;
+}
+.dall_img{
+    position:relative;
+    width: 5%;
+    left: 5rem;
+}
+    .yello_bg_img_mobile{
+    display: none;
+}
+.left_img{
+    display: block;
+}
+@media screen and (max-width: 600px) {
+    .mainDiv {
+        background-color: #EBE1FF;
+        padding: 0px 0px 45px;
+        margin-top: 38px;
+    }
+    .text2{
+        width: 100%;
+        color: #90228D;
+        font-size: 13px !important;
+        font-style: normal;
+        padding-left: 14px;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+
+    .sub_text {
+        font-style: normal;
+        line-height: normal;
+        color: #6D2A93;
+        font-weight: bold !important;
+        font-size: 12px !important;
+        text-align: left;
+    }
+    .sub_text_black {
+        color: #000;
+        font-size: 12px !important;
+        text-align: left;
+    }
+    .left_img{
+        display:none;
+    }
+    .btr_fly_img{
+        position: relative;
+        width:12%;
+        left:20rem;
+    }
+    .chocolate_img{
+        width: 12%;
+        position: absolute;
+        left: 1rem;
+        margin-top: 8rem;
+    }
+    .bag_img{
+        position: absolute !important;
+            width: 9%;
+            margin-top: 34rem;
+            right: 2rem !important;
+    }
+    .fruit_img{
+        position: relative;
+        width: 9%;
+        left: 1rem;
+        bottom: 0rem;
+    }
+    .chocolate_img_content{
+        position: absolute;
+        z-index: 9;
+        width: 11%;
+        right: 10rem;
+    }
+    .mouse_img{
+        position: absolute;
+        right:5rem;
+        width: 12%;
+    }
+    .ptang_img{
+        position: relative;
+        left: 1rem;
+        width: 12%;
+        bottom: 14rem;
+    }
+    .fish_img{
+        position:absolute;
+        right: 2rem;
+        margin-top: 4rem;
+        width: 12%;
+    }
+    .dall_img{
+        position:relative;
+        width: 12%;
+        left: 5rem;
+    }
+    .yello_bg_img{
+        display: none;
+    }
+    .yello_bg_img_mobile{
+        width:100%;
+        display: block;
+        position: relative;
+        top: 0;
+        z-index:9;
+    }
+    .three_child{
+        width: 52%;
+        position: absolute;
+        right: 25px;
+        top: 46px;
+        display: none;
+    }
+    .kidzee_session{
+        padding:0px;
+    }
+    .paraText{
+        color: #282828;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        padding:0px;
+        text-align: center;
+    }
+    .listTitle{
+        color: #282828;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: center;
+    }
+    .bottomMonkey{
+        display: none;
+           }
+    .contentList{
+        margin: 65px 20px;
+    }
+    .infoContent {
+        width: 72%;
+        display: flex;
+        text-align: center;
+    }
+
+    .banner_content {
+        background-size: 100% 100%;
+        min-height:200px;
+    }
+
+    .subMenu_content {
+        position: absolute;
+        top: 26rem;
+        left: 0rem;
+    }
+    .whiteTitle{
+        font-style: normal;
+        line-height: normal;
+        margin-top:0px;
+        margin-left: 2.5rem;
+        color: #6D2A93;
+        position: relative;
+        font-weight: bold;
+        bottom: 1rem;
+    }
+    .left_img{
+        width: 10%;
+        position: absolute;
+        left: 0;
+        margin-top: 8rem;
+    }
+    .sub_content{
+        width:90%;
+        margin: auto;
+    }
+    .text_content{
+        padding: 0px;
+    }
+    .paper_content{
+        background-position: center;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 150px;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* .paraText {
+        padding: 20px;
+    } */
+
+
+    .text1 {
+        width: 100%;
+    }
+}

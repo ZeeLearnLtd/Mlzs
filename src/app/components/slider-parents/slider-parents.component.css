@@ -1,0 +1,858 @@
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 15px;
+  width: 15px;
+  outline: black;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.carousel-control-prev-icon {
+  background-image: url('../../../assets/img/new-kidzee/left_arrow.png');
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 32rem;
+  left: 8rem;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.carousel-control-prev {
+  left: 26rem;
+  top: -6rem;
+  overflow: hidden;
+}
+
+.bag_content {
+  position: absolute;
+  left: 6rem;
+}
+
+.carousel-control-next-icon {
+  background-image: url('../../../assets/img/new-kidzee/next_btn.png');
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 32rem;
+  left: 8rem;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.carousel-control-next {
+  right: 36rem;
+  top: -6rem;
+  overflow: hidden;
+}
+
+.home_girl_img {
+  position: absolute;
+  width: 35%;
+  top: 5rem;
+  right: 7rem;
+  z-index: 9;
+}
+
+.carousel-bg {
+  background-color: #EBE1FF;
+  
+}
+
+.banner_title_content {
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  top: 12rem;
+  left: 12rem;
+}
+
+.admission_open {
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  top: 21rem;
+  left: 12rem;
+  color: #FFF;
+  font-size: 18px;
+  transition: 0.6s;
+}
+
+.admission_open:hover {
+  color: #FFF200;
+  cursor: pointer;
+}
+
+.happyParents {
+  background-image: url('../../../assets/img/new-kidzee/happy_parants_bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  width: 100%;
+  padding: 0px 50px;
+  background-color: #EBE1FF;
+}
+.slider_content {
+  margin-top: 14rem;
+}
+
+.cascade-slider_container {
+  position: relative;
+  width: 100%;
+  height:255px;
+  /* margin: 25px auto; */
+  padding-top: 150px;
+  overflow-x: hidden;
+}
+
+.cascade-slider_item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) scale(0.3);
+  transition: all 1s ease;
+  opacity: 0;
+  z-index: -1;
+  text-align: center;
+}
+
+.cascade-slider_item.next {
+  left: 50%;
+  transform: translateY(-50%) translateX(-135%) scale(0.8);
+  filter: brightness(85%);
+  opacity: 1;
+  z-index: 1;
+}
+
+.cascade-slider_item.prev {
+  left: 50%;
+  transform: translateY(-50%) translateX(35%) scale(0.8);
+  filter: brightness(85%);
+  opacity: 1;
+  z-index: 1;
+}
+
+.cascade-slider_item.now {
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) scale(1);
+  opacity: 1;
+  z-index: 5;
+}
+
+.cascade-slider_arrow {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.cascade-slider_arrow-left {
+  left: 15rem;
+}
+
+.cascade-slider_arrow-right {
+  right: 15rem;
+}
+
+.cascade-slider_arrow-left img {
+  height: 40px;
+  left: 40px;
+}
+
+.cascade-slider_arrow-right img {
+  height: 40px;
+  left: 40px;
+}
+
+.cascade-slider_nav {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.cascade-slider_dot {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #4196EF;
+  margin: 3px;
+  transition: all 0.5s;
+  background: none;
+  list-style: none;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.cascade-slider_dot:hover {
+  background: #2c8fab;
+}
+
+.cascade-slider_dot.cur {
+  background: #2c8fab;
+  width: 17px;
+  height: 17px;
+
+}
+
+/*Profile card classes*/
+.card {
+  background-color: #fff;
+  color: #243C82;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0px 25px;
+  transition: all 1s 0s;
+  vertical-align: middle;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.photo {
+  width: 50%;
+  vertical-align: middle;
+  display: inline;
+}
+
+.photo img {
+  transform: translateY(-35px) translateX(-10px);
+
+}
+
+.info {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+
+.info h2 {
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  font-size: 26px;
+  color: #4196EF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 98%;
+  text-align: center;
+  letter-spacing: 0.055em;
+  color: #243C82;
+}
+
+.content {
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+.button {
+  transform: translateX(23px) translateY(15px);
+  position: absolute;
+  padding: 12px 17px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #243C82;
+}
+
+.cascade-slider_arrow img {
+  background-color: transparent !important;
+  width: 55px;
+  height: 20px;
+}
+
+@media (min-width: 460px) and (max-width: 680px) {
+  .card {
+    background-color: #fff;
+    color: #243C82;
+    width:auto !important;
+    height:auto !important;
+    border-radius: 50%;
+    margin: 0px 25px;
+    transition: all 1s 0s;
+    vertical-align: middle;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  }
+  .cascade-slider_item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%) scale(0.3);
+      transition: all 1s ease;
+      opacity: 0;
+      z-index: -1;
+      text-align: center;
+  }
+
+  .cascade-slider_item.next {
+      left: 50%;
+      transform: translateY(-50%) translateX(-90%) scale(0.4);
+      filter: brightness(70%);
+      opacity: 1;
+      z-index: 1;
+  }
+
+  .cascade-slider_item.prev {
+      left: 50%;
+      transform: translateY(-50%) translateX(-10%) scale(0.4);
+      filter: brightness(70%);
+      opacity: 1;
+      z-index: 1;
+  }
+
+  .cascade-slider_item.now {
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%) scale(0.6);
+      opacity: 1;
+      z-index: 5;
+  }
+
+  .cascade-slider_arrow-left img {
+      height: 30px;
+      left: 30px;
+  }
+
+  .cascade-slider_arrow-right img {
+      height: 30px;
+      left: 30px;
+  }
+
+  .cascade-slider_nav {
+      display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .card {
+    background-color: #fff;
+    color: #243C82;
+    width:auto !important;
+    height:auto !important;
+    border-radius: 50%;
+    margin: 0px 25px;
+    transition: all 1s 0s;
+    vertical-align: middle;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  }
+  .cascade-slider_item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%) scale(0.3);
+      transition: all 1s ease;
+      opacity: 0;
+      z-index: -1;
+      text-align: center;
+  }
+
+  .cascade-slider_item.next {
+      left: 50%;
+      transform: translateY(-50%) translateX(-80%) scale(0.3);
+      filter: brightness(70%);
+      opacity: 1;
+      z-index: 1;
+  }
+
+  .cascade-slider_item.prev {
+      left: 50%;
+      transform: translateY(-50%) translateX(-20%) scale(0.3);
+      filter: brightness(70%);
+      opacity: 1;
+      z-index: 1;
+  }
+
+  .cascade-slider_item.now {
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%) scale(0.5);
+      opacity: 1;
+      z-index: 5;
+  }
+
+  .cascade-slider_arrow-left img {
+      height: 30px;
+      left: 30px;
+  }
+
+  .cascade-slider_arrow-right img {
+      height: 30px;
+      left: 30px;
+  }
+
+  .cascade-slider_nav {
+      display: none;
+  }
+
+}
+
+.banner_content_slider {
+  display: block;
+}
+
+.mobile_res {
+  display: none;
+}
+.schoolGirlImg{
+  display:block;
+}
+.pentemind_content img{
+  width: 10%;
+  transition: 0.6s;
+}
+.pentemind_content img:hover{
+  width: 11%;
+}
+
+@media screen and (max-width: 769px) {
+
+  .carousel-bg {
+      background-color: #EBE1FF;
+      margin-top: 55px;
+  }
+  .cascade-slider_item.now{
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%) scale(1);
+      opacity: 1;
+      z-index: 5;
+  }
+  .mainDiv3 .title{
+      position: relative;
+      top: 13rem;
+      text-align: center;
+  }
+  .know_more img{
+      width:95%;
+      margin-left:0;
+      cursor: pointer;
+      transition: 0.6s;
+  }
+  .pt_know_more{
+      position: relative;
+      bottom: 10rem;
+  }
+  .know_more{
+      width: 35%;
+      margin-left: 7rem;
+      cursor: pointer;
+      transition: 0.6s;
+      position: absolute;
+      bottom: 8rem;
+      z-index: 99;
+  }
+
+  .pentemind_content img{
+      width: 35%;
+  }
+  .happyParents {
+      background-image: url('../../../assets/img/new-kidzee/happy_parants_bg_mobile.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 100%;
+      padding:40px 15px;
+      background-color: #EBE1FF;
+  }
+  .slider_content{
+      margin-top: 4rem;
+  }
+  .cascade-slider_container{
+      position: relative;
+      width: 100%;
+      /* height:auto; */
+      margin: 25px auto;
+      padding-top: 150px;
+      overflow-x: hidden;
+  }
+  .border_left {
+      border-bottom: 1px solid #6D2A93;
+      border-right: none;
+      color: #6D2A93;
+      margin-top: 20px !important;
+  }
+
+  .paragraph_content {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 182px;
+  }
+
+  .pentemindgroupImg {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      height: auto !important;
+      margin-top: 320px;
+      width: 100%;
+      padding: 0px 25px;
+  }
+
+  .dayCareContent1 {
+      background-image: url('../../../assets/img/new-kidzee/FranchiseOpportunity_mobile_bg.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      position: relative;
+      width: 100%;
+  }
+
+  .mainDiv4 {
+      background-color: #EBE1FF;
+      min-height: auto;
+  }
+
+  .bird_img_content {
+      position: absolute;
+      width: 10%;
+      left: 70%;
+      right: 30%;
+      margin-top: 2rem;
+  }
+
+  .circal_img_content {
+      position: relative;
+      width: 5%;
+      left: 0;
+      bottom: 13rem;
+  }
+
+  .pentemindGroup {
+      width: 100%;
+      padding-top:7rem;
+  }
+
+
+
+  .day_care_bg {
+      position: absolute;
+      top: 110rem;
+      width: auto;
+      display: none;
+  }
+  .day_care_bg_mobile {
+      position: absolute;
+      top: 140rem;
+      width: auto;
+      width: 100%;
+      display: block;
+  }
+  .schoolGirlImg{
+      display: none;
+  }
+
+  .carousel-control-prev-icon {
+      background-image: url('../../../assets/img/new-kidzee/left_arrow.png');
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      top: 32rem;
+      left: 0.6rem;
+      z-index: 99;
+  }
+  .carousel-control-prev {
+      left: 0;
+      top: 0;
+      z-index: 9;
+  }
+
+  .carousel-control-next-icon {
+      background-image: url('../../../assets/img/new-kidzee/next_btn.png');
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      top: 32rem;
+      left: 0rem;
+      z-index: 99;
+  }
+
+  .carousel-control-next {
+      right: 0rem;
+      top: 0rem;
+      z-index: 9;
+  }
+
+  .slider_banner {
+      width: 100%;
+  }
+
+  .banner_title {
+      color: #FFF;
+      font-size: 30px;
+      font-family: 'Fredoka';
+      letter-spacing: 1px;
+      line-height: 32px;
+      overflow: hidden;
+  }
+
+  .admission_open {
+      position: absolute;
+      z-index: 9;
+      top: 34rem;
+      color: #FFF;
+      font-size: 18px;
+      transition: 0.6s;
+      left: 0;
+      width: 100%;
+      text-align: center;
+  }
+
+  .enroll_now_img {
+      position: absolute;
+      z-index: 9;
+      width: 30% !important;
+      top: 38rem;
+      object-fit: cover;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  .banner_title_content {
+      position: absolute;
+      z-index: 9;
+      top: 27rem;
+      width: 100%;
+      text-align: center;
+      left: 0;
+  }
+
+  .mobile_res {
+      display: block;
+  }
+
+  .banner_content_slider {
+      display: none;
+  }
+
+  .text1 {
+      width: 100%;
+  }
+
+  .infoContent {
+      width: 100%;
+      display: flex;
+  }
+
+  .infoContent {
+      text-align: center;
+  }
+
+  .mainDiv21 {
+      background-color: #EBE1FF;
+      min-height: 500px;
+  }
+
+  .desktop_viwe_banner {
+      display: none;
+  }
+
+  .mobile_banner {
+      display: block;
+  }
+
+  .banner_div_slider {
+      margin-top: 3rem;
+  }
+
+  .slider_img {
+      width: 100%;
+      height: auto;
+      border-radius: 0px;
+  }
+
+  .dayCardImg {
+      display: flex;
+      justify-content: center;
+  }
+
+  .mainDiv {
+      min-height: 780px;
+  }
+
+  .mobileHeader {
+      display: block;
+  }
+
+  .desktopHeader {
+      display: none;
+  }
+
+  .whiteHeader {
+      background-image: url('../../../assets/img/banner/Banner1.png');
+      background-position: center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 250px;
+      position: absolute;
+  }
+
+  .mainDiv6 {
+      background-color: #EBE1FF;
+      min-height:auto;
+  }
+
+  .right_content1 {
+      width: 100%;
+      padding: 10px 0px;
+  }
+
+
+  .bgWaves {
+      background-image: url('../../../assets/img/mobileWaves.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      min-height: 1200px;
+  }
+
+  .mobileWaves {
+      display: block;
+  }
+
+  .mobResponciveDiv {
+      position: absolute;
+      margin-top: 65px;
+  }
+
+
+  .listImg2 {
+      height: 120px;
+      width: 120px;
+      background-size: 100% 100%;
+  }
+
+  .listImg3 {
+      height: 120px;
+      width: 120px;
+      background-size: 100% 100%;
+  }
+
+  .listImg4 {
+      height: 120px;
+      width: 120px;
+      background-size: 100% 100%;
+  }
+
+  .mainDiv2 {
+      background-color: #EBE1FF;
+      min-height: 700px;
+  }
+
+  .schoolGirlImg {
+      width: 22rem;
+      height: 22rem;
+      margin: auto;
+  }
+
+  .mainDiv2 .right_content1 {
+      padding: 15px 15px 0px 15px;
+
+  }
+
+  .pentemindgroupImg {
+      /* background-image: url('../../../assets/img/allMonkey.png'); */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      /* width: 22rem; */
+      height: 18rem;
+      margin-top:130px;
+  }
+
+  .mobileView {
+      display: block;
+      width: 100%;
+      position: absolute;
+  }
+
+  .mainDiv3 {
+      background-color: #EBE1FF;
+      min-height:615px;
+  }
+
+  .franchiseImg {
+      width: 17rem;
+      height: 17rem;
+      margin: auto;
+      float: none;
+  }
+
+  .desktopList {
+      display: none;
+  }
+
+  .mobileListDiv {
+      background-image: url('../../../assets/img/mobileWaves2.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+      width: 100%;
+      height: 1100px;
+      margin: auto;
+      display: block;
+  }
+
+  .mainDiv5 {
+      min-height: 840px;
+  }
+
+  .faq_content {
+      padding: 0;
+  }
+
+  .dayCareContent1 {
+      margin-top: 10px;
+  }
+
+  .mainDiv21 .title {
+      margin-top: 18rem;
+  }
+  .mainDiv7{
+      background-color: #EBE1FF;
+      min-height: auto;
+  }
+  .cascade-slider_arrow-left{
+      left: 1rem;
+  }
+  .cascade-slider_arrow-right{
+      right: 1rem;
+  }
+}
+
+/* .profile_inf{
+  position: absolute;
+} */
+
+.subTitle_div{
+  color: #fff;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  bottom: 6rem;
+  text-align: center;
+}
+.day_care_color {
+  color: #FFF200 !important;
+}

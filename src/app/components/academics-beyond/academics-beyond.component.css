@@ -1,0 +1,26 @@
+.multi_img_group{
+    display: flex;
+    justify-content: center;
+}
+
+.multi_img_group img{
+width: 80%;
+}
+
+section{
+    background-image: url('../../../assets/img/MLZS/main_bg.png');
+    background-size: contain;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+  }
+  .programmes_main_page{
+    margin-top:8.6rem;
+}
+
+.menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left: 5.5rem;
+    padding: 10px;
+}

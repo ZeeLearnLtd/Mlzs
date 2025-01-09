@@ -1,0 +1,138 @@
+<!-- <section>
+  <div class="mainDiv">
+        <div>
+
+    </div>
+
+  <div class="blog_details_content">
+           <div class="search_content">
+            <div class="form-group">
+
+                <input type="text"  #searchInput  (keyup)="onChange(searchInput.value)"   class="form-control search_input" placeholder="search">  <img srcset="../../../../assets/img/search.png" class="search_icon" loading="lazy" alt="">
+                <div class="mt-5">
+                    <ul class="list-group p-0">
+                        <li class="list-group-item list-group-item-action" [class.active]="selectedcategory===0" (click)="getblogbycategory(0,'')">All</li>
+                        <li class="list-group-item list-group-item-action" [class.active]="selectedcategory==dt.categoryId" *ngFor="let dt of categorydata;let i=index">
+                            <div (click)="getblogbycategory(dt.categoryId,i)" >{{dt.categoryname}}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+            <div class="preSchoolContent mt-5">
+                 <div class="row" *ngFor="let item of filteredblogList ;let i=index">
+                    <div class="col-md-6 mt-5" >
+                        <div class="img_content">
+                            <span *ngIf="item?.files">
+                                <img src="{{item?.files[0]?.url}}" loading="lazy" class="img blogImg" alt={{item?.files[0]?.filename}}>
+                            </span>
+                            <span *ngIf="!item?.files">
+                                <img src="../../../../assets/img/KidzeeFooterLogo.png" loading="lazy" class="img blogImg1" alt="No Image">
+                                
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6  mt-5">
+                        <div class="text_content" routerLink="/blog/{{item.slug}}">
+                            <div class="sub_title text-left w-100">{{item.Title}}</div>
+                            <div class="text_para mt-3">
+                                <p>{{item.Short}}</p>
+                               </div>
+                                <a class="" role="button" href="/blog/{{item.slug}}"><button class="btn readMoreBtn">Read More</button></a>
+                        </div>
+                    </div>
+                 </div>
+                 <div *ngIf="!filteredblogList" class="text-center mt-100">
+                   <h2>No Data Found</h2>
+                 </div>
+            </div>
+
+        </div>
+
+    </div>
+        </section> -->
+
+
+        <section>
+  <div class="blogsDiv">
+      <div class="row mt-5 desk_contanier">
+          <div class="col-md-4 d-flex justify-content-center align-items-center" *ngFor="let item of blogList ;let i=index">
+              <div class="profile_content">
+                  <div class="img_content">
+                      <img src={{item.files[0].url}} loading="lazy" width="100%" class="img" alt={{item.files[0].filename}}>
+                  </div>
+                  <div class="profile_text">
+                      <div class="infoContent">
+                          <div class="date">{{item.FromDate}}</div>
+                          <div class="text1">{{item.Title}}</div>
+                          <div class="para">
+                              <div class="box">
+                                  <input type="checkbox" id="{{i}}">
+                                  <p>{{item.Short}}</p>
+                              </div>
+                              <a class="" role="button" routerLink="/blog/{{item.slug}}"><button
+                                      class="btn readMoreBtn">Read More</button></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- <div class="mobile_res_content">
+          <div id="carouselExampleDark2" class="carousel carousel-dark slide">
+              <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                      aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                      aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                      aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                  <div class="carousel-item" [ngClass]="(i === 0) ? 'active' : ''" data-bs-interval="10000" *ngFor="let item of filteredblogList ;let i=index">
+                      <div class="profile_content">
+                          <div class="img_content">
+                              <img src={{item.files[0].url}} loading="lazy" width="100%" class="img" alt={{item.files[0].filename}}>
+                          </div>
+                          <div class="profile_text">
+                              <div class="infoContent">
+                                  <div class="date">{{item.FromDate}}</div>
+                                  <div class="text1">{{item.Title}}</div>
+                                  <div class="para">
+                                      <div class="box">
+                                          <input type="checkbox" id="{{i}}">
+                                          <p>{{item.Short}}</p>
+                                      </div>
+                                      <a class="" role="button" routerLink="/blog/{{item.slug}}"><button
+                                              class="btn readMoreBtn">Read More</button></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+      
+             
+          </div>
+        
+      </div> -->
+  </div>
+  <div class="showMore_content text-center mt-5">
+    <label for="" class="count_label">Showing {{tindex}} records of {{this.totalrecord}}</label>
+    <a class="showMore_btn" *ngIf="more" (click)="setcentrelistclick()">Show More</a>
+</div>
+</section>

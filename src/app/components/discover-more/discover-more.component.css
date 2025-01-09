@@ -1,0 +1,117 @@
+.top_banner{
+    margin-top:8.6rem;
+}
+
+section{
+    background-image: url('../../../assets/img/MLZS/our_parents_bg.png');
+    background-size: cover;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+}
+
+.map_content img{
+    width:90%;
+    margin: auto;
+}
+.text_bg{
+    width: 15%;
+    position: relative;
+    bottom: 1.7rem;
+    z-index: 1;
+    left: 0rem;
+    height: 30px;
+}
+
+.text_bg1{
+    width: 20%;
+    position: relative;
+    bottom: 3.8rem;
+    z-index: 1;
+    left: 5rem;
+    height: 25px;
+}
+
+
+.reset_btn{
+    background-color: #44C8F5;
+    width: 100%;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.media_icon{
+    width: 45px;
+    height:45px;
+}
+
+textarea{
+    font-size: 13px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  
+}
+
+.item {
+    background: #3CB9E9;
+    width: 95%;
+    margin: auto;
+    height: 325px;
+    border-radius: 5px;
+    padding: 30px 15px;
+}
+
+.item_white_bg{
+    background: #FFF;
+    width: 95%;
+    margin: auto;
+    height: 325px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+    padding: 30px 15px;
+    box-shadow: 0px -9px 10px -1px #CCC;
+}
+
+.item_white_bg h6{
+    color: #004878 !important;
+    text-align: left;
+}
+
+.item_text h6{
+    color: #FFF;
+    text-align: left;
+}
+.item_text p{
+    font-size: 11px;
+    color: #014876;
+}
+
+.item_img_content img{
+    width: 100%;
+    height: 165px;
+}
+.item_text img{
+    width: 25px;
+}
+
+hr{
+    margin: 0px 0px 0px 0px;
+}
