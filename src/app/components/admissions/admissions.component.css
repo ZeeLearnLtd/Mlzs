@@ -82,3 +82,52 @@ label{
 .about_img_content img{
 width: 80%;
 }
+
+.desktop_content{
+    display: block;
+}
+
+.mobile_content{
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .icon_list{
+        position: relative;
+        top: 0rem;
+        left: 0rem;
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0rem;
+    }
+    .desktop_content{
+        display: none;
+    }
+    .francine_form{
+        width: 85%;
+        float: right;
+        margin: 10px 15px 55px 10px;
+        padding: 10px 25px;
+        background-color: #C4DEFD;
+    }
+    .mobile_content{
+        background-color: #184A8C;
+        display: block;
+    }
+    .menu_content{
+        width: 100%;
+    }
+
+    h1{
+        font-family: 'Montserrat_bold';
+    }
+    .bannerTitle{
+        text-align: center;
+        margin-top: 5rem;
+        
+    }
+    .year{
+        color: #48C7F4;
+        font-family: Montserrat;
+    }
+}

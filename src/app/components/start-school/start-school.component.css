@@ -1,4 +1,4 @@
-.start_school_banner{
+.start_school_banner {
     background-image: url('../../../assets/img/MLZS/start_school_banner.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -6,15 +6,15 @@
     height: 500px;
 }
 
-.francine_form{
-    width:25%;
+.francine_form {
+    width: 25%;
     float: right;
     /* height: 400px; */
     margin: 10px 15px 10px 10px;
     padding: 10px;
 }
 
-.verify_otp_btn{
+.verify_otp_btn {
     font-size: 10px;
     padding: 2px 5px !important;
     float: right;
@@ -38,7 +38,7 @@
 }
 
 
-.menu_content{
+.menu_content {
     width: 40%;
     height: 50px;
     position: relative;
@@ -46,17 +46,18 @@
     padding: 10px;
 }
 
-.about_content{
+.about_content {
     width: 100%;
     padding: 55px 0px;
     background-color: #004878;
 }
 
-.title_content h2{
+.title_content h2 {
     position: relative;
     z-index: 9;
 }
-.text_bg{
+
+.text_bg {
     width: 10%;
     height: 25px;
     position: relative;
@@ -65,20 +66,20 @@
 
 }
 
-.about_img_content img{
-width: 80%;
+.about_img_content img {
+    width: 80%;
 }
 
-.fr_img_content img{
-width: 80%;
+.fr_img_content img {
+    width: 80%;
 }
 
-.what_we_offer{
-background-color: #004878;
-color: #fff;
+.what_we_offer {
+    background-color: #004878;
+    color: #fff;
 }
 
-.businessPartners{
+.businessPartners {
     background-color: #004878;
     color: #fff;
 }
@@ -94,7 +95,7 @@ color: #fff;
     padding: 10px;
 }
 
-.read_mode:hover{
+.read_mode:hover {
     background-color: #44C8F5;
     color: #FFF;
     display: flex;
@@ -104,7 +105,53 @@ color: #fff;
     font-size: 13px;
 }
 
-.award_content .read_mode{
-width:25%;
-margin: 10px 20px;
+.award_content .read_mode {
+    width: 25%;
+    margin: 10px 20px;
+}
+
+.desktop_content {
+    display: block;
+}
+
+.mobile_content {
+    display: none;
+}
+h4{
+    font-family: Poppins;
+    overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+    .about_img_content{
+        margin-top: 10px;
+    }
+    .award_content .read_mode {
+        width: 100%;
+        margin: 10px 0px;
+    }
+    .read_mode{
+        background-color: #44C8F5;
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.6s;
+        font-size: 18px;
+        padding: 10px;
+    }
+    .francine_form {
+        width: 100%;
+        float: none;
+        margin: 2rem 0 0 0;
+        padding: 10px;
+        background-color: #004878;
+    }
+
+    .desktop_content {
+        display: none;
+    }
+
+    .mobile_content {
+        display: block;
+    }
 }

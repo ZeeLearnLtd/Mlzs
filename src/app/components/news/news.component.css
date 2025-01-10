@@ -45,11 +45,11 @@ width: 80%;
     font-weight: 300;
 }
 
-::ng-deep.owl-carousel .owl-stage {
+.news ::ng-deep.owl-carousel .owl-stage {
     position: relative;
     touch-action: manipulation;
     -moz-backface-visibility: hidden;
-    height:320px;
+    height:320px !important;
     overflow: hidden;
 }
 
@@ -69,6 +69,7 @@ width: 80%;
 hr{
     margin: 15px 0px 0px 0px;
 }
+
 
 
   ::ng-deep .center{

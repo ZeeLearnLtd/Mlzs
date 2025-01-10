@@ -16,3 +16,9 @@ section{
   .programmes_main_page{
     margin-top:8.6rem;
 }
+
+@media screen and (max-width: 600px) {
+.programmes_main_page{
+  margin-top: 10px;
+}
+}

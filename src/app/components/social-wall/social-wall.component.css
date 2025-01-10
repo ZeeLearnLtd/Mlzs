@@ -214,11 +214,19 @@
     }
 
     .cascade-slider_nav {
-        display: none;
+        display: block;
     }
 }
 
 @media (max-width: 460px) {
+    .cascade-slider_container {
+        position: relative;
+        width: 100%;
+        height: auto !important;
+        margin: 45px auto;
+        padding-top: 150px;
+        overflow-x: hidden;
+    }
     .cascade-slider_item {
         position: absolute;
         top: 50%;
@@ -265,7 +273,7 @@
     }
 
     .cascade-slider_nav {
-        display: none;
+        display: block;
     }
 
 }

@@ -22,3 +22,12 @@ width: 80%;
 .counter_text p{
     font-size: 12px;
 }
+
+@media screen and (max-width: 600px) {
+.about_content{
+margin-top: 4rem;
+}
+.about_img_content{
+margin-top: 10px;
+}
+}
