@@ -67,7 +67,9 @@ textarea{
 }
 
 @media screen and (max-width: 600px) {
-  
+    .top_banner{
+        margin-top: 0.8rem;
+    }
 }
 
 .item {

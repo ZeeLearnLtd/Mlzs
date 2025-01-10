@@ -31,12 +31,13 @@ width: 80%;
 
 
 .home-demo .item {
-    background: #3CB9E9;
+    background: transparent;
     width: 95%;
     margin: auto;
     height: 305px;
     border-radius: 5px;
     padding: 30px 15px;
+
 }
 .home-demo h2 {
     color: #FFF;
@@ -47,10 +48,10 @@ width: 80%;
     font-weight: 300;
 }
 
-::ng-deep.owl-carousel .owl-stage {
+.testimonials ::ng-deep.owl-carousel .owl-stage {
     position: relative;
     touch-action: manipulation;
-    height:320px;
+    height:320px !important;
     overflow: hidden;
 }
 
@@ -73,3 +74,11 @@ width: 80%;
 hr{
     margin: 15px 0px 0px 0px;
 }
+
+::ng-deep .center{
+    background-color: #FFF !important;  /* Change background color of the active item */ 
+    box-shadow: 0px 0px 10px 0px #0000003b !important;
+  }
+  ::ng-deep .owl-item{
+    background-color: #44C8F5;
+  }
