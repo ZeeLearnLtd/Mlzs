@@ -33,7 +33,7 @@ import { ProgrammesComponent } from './components/programmes/programmes.componen
 import { AdmissionsFormComponent } from './components/admissions-form/admissions-form.component';
 import { CentersInAgartalaComponent } from './components/centers-in-agartala/centers-in-agartala.component';
 import { PartnerLandingComponent } from './components/partner-landing/partner-landing.component';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonHeaderComponent } from './components/common/common-header/common-header.component';
 import { AdmissionThankyouComponent } from './components/thank-you/admission-thankyou/admission-thankyou.component';
@@ -43,7 +43,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { InnewsComponent } from './components/innews/innews.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { PreschoolInCityComponent } from './components/preschool-in-city/preschool-in-city.component';
 import { PartneradmissionComponent } from './components/partneradmission/partneradmission.component';
 import { ProgrammesListComponent } from './components/programmes-list/programmes-list.component';
@@ -60,6 +60,16 @@ import { ParentsCornerComponent } from './components/parents-corner/parents-corn
 import { ContectUsComponent } from './components/contect-us/contect-us.component';
 import { LocateASchoolComponent } from './components/locate-aschool/locate-aschool.component';
 import { DiscoverMoreComponent } from './components/discover-more/discover-more.component';
+import { OurPedagogyComponent } from './our-pedagogy/our-pedagogy.component';
+import { OurLegacyComponent } from './components/about-us-sub-page/our-legacy/our-legacy.component';
+import { OurVisionComponent } from './components/about-us-sub-page/our-vision/our-vision.component';
+import { OurPhilosophyComponent } from './components/about-us-sub-page/our-philosophy/our-philosophy.component';
+import { AwardsAndRecognitionsComponent } from './components/about-us-sub-page/awards-and-recognitions/awards-and-recognitions.component';
+import { LiteraFoundationalStage1Component } from './components/programmes-sub-page/litera-foundational-stage1/litera-foundational-stage1.component';
+import { LiteraFoundationalStage2Component } from './components/programmes-sub-page/litera-foundational-stage2/litera-foundational-stage2.component';
+import { LiteraPreparatoryStageComponent } from './components/programmes-sub-page/litera-preparatory-stage/litera-preparatory-stage.component';
+import { LiteraMiddleStageComponent } from './components/programmes-sub-page/litera-middle-stage/litera-middle-stage.component';
+import { LiteraSecondaryStageComponent } from './components/programmes-sub-page/litera-secondary-stage/litera-secondary-stage.component';
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -118,7 +128,17 @@ interface NgxSpinnerConfig {
     ParentsCornerComponent,
     ContectUsComponent,
     LocateASchoolComponent,
-    DiscoverMoreComponent
+    DiscoverMoreComponent,
+    OurPedagogyComponent,
+    OurLegacyComponent,
+    OurVisionComponent,
+    OurPhilosophyComponent,
+    AwardsAndRecognitionsComponent,
+    LiteraFoundationalStage1Component,
+    LiteraFoundationalStage2Component,
+    LiteraPreparatoryStageComponent,
+    LiteraMiddleStageComponent,
+    LiteraSecondaryStageComponent
   ],
   imports: [
     BrowserModule,
@@ -135,5 +155,5 @@ interface NgxSpinnerConfig {
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
 

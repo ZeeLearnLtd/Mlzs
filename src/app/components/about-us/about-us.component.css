@@ -1,13 +1,29 @@
-.about_content{
-    width: 100%;
-    padding: 55px 0px;
-    /* background-color: #004878; */
+.multi_img_group{
+    display: flex;
+    justify-content: center;
 }
 
-.title_content h2{
-    position: relative;
-    z-index: 9;
+.multi_img_group img{
+width: 80%;
 }
+
+section{
+    background-image: url('../../../assets/img/MLZS/main_bg.png');
+    background-size: cover;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+  }
+  .programmes_main_page{
+    margin-top:8.6rem;
+}
+
+@media screen and (max-width: 600px) {
+.programmes_main_page{
+  margin-top: 10px;
+}
+}
+
+
 .text_bg{
     width:23%;
     position: relative;
@@ -15,19 +31,58 @@
     z-index: 1;
 }
 
-.about_img_content img{
-width: 80%;
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#FFF;
+    font-size: 13px;
+    padding: 5px 25px;
+    background-color:#014876;
+    margin: 5px;
 }
 
-.counter_text p{
-    font-size: 12px;
+.nav-link:focus, .nav-link{
+    color:#014876;
+    font-size: 13px;
+    padding: 5px 25px;
+    background-color: #44C8F5;
+    margin: 5px;
 }
+.programm_img_content img{
+    width: 80%;
+    }
 
-@media screen and (max-width: 600px) {
-.about_content{
-margin-top: 4rem;
-}
-.about_img_content{
-margin-top: 10px;
-}
-}
+    .liter_img{
+        width: 50%;
+    }
+
+    .liter_content{
+        margin-left: 57px;
+    }
+
+  .fr_img_content img{
+    width: 80%;
+  }
+
+  .title_content ul{
+    padding: 0; 
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+  li{
+    width: 100%;
+  }
+
+  li button{
+    width: 100%;
+  }
+  }
+
+  .subMenu_content{
+    margin-top: 1rem;
+    width: 85%;
+    margin: auto;
+  }
+
+  p{
+    margin-bottom: 0.5rem;
+  }

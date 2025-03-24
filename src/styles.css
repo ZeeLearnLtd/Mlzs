@@ -148,6 +148,14 @@ section {
     width: 55%;
     margin: auto;
 }
+
+
+.subMenu_content{
+    margin-top: 1rem;
+    width: 85%;
+    margin: auto;
+  }
+
 @media screen and (max-width: 600px) {
     
     .buttonList_content{
@@ -276,7 +284,7 @@ li {
 
 .read_mode{
     background-color: #44C8F5;
-    color: #FFF;
+    color: #004877;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -286,7 +294,7 @@ li {
 
     .read_mode:hover{
         background-color: #35a9cf;
-        color: #FFF;
+        color: #004877;
         display: flex;
         justify-content: center;
         align-items: center;
