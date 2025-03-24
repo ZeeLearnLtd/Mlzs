@@ -29,12 +29,22 @@ import { StartSchoolComponent } from './components/start-school/start-school.com
 import { ParentsCornerComponent } from './components/parents-corner/parents-corner.component';
 import { ContectUsComponent } from './components/contect-us/contect-us.component';
 import { DiscoverMoreComponent } from './components/discover-more/discover-more.component';
+import { OurLegacyComponent } from './components/about-us-sub-page/our-legacy/our-legacy.component';
+import { AwardsAndRecognitionsComponent } from './components/about-us-sub-page/awards-and-recognitions/awards-and-recognitions.component';
+import { OurPhilosophyComponent } from './components/about-us-sub-page/our-philosophy/our-philosophy.component';
+import { OurVisionComponent } from './components/about-us-sub-page/our-vision/our-vision.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { LiteraFoundationalStage1Component } from './components/programmes-sub-page/litera-foundational-stage1/litera-foundational-stage1.component';
+import { LiteraFoundationalStage2Component } from './components/programmes-sub-page/litera-foundational-stage2/litera-foundational-stage2.component';
+import { LiteraMiddleStageComponent } from './components/programmes-sub-page/litera-middle-stage/litera-middle-stage.component';
+import { LiteraPreparatoryStageComponent } from './components/programmes-sub-page/litera-preparatory-stage/litera-preparatory-stage.component';
+import { LiteraSecondaryStageComponent } from './components/programmes-sub-page/litera-secondary-stage/litera-secondary-stage.component';
 const routes: Routes = [
   // { path: '', component: HomeComponent },
   // { path: 'blog/:name', component: BlogComponent },
   // { path: 'blog', component: BlogDetailsComponent },
-  
-  
+
+
   // { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   // { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
   {
@@ -42,13 +52,23 @@ const routes: Routes = [
     component: HeaderComponent,
     children: [
       { path: '', component: HomeComponent },
-      {path:'programmes',component:ProgrammesMainPageComponent},
-      {path:'academics-beyond', component:AcademicsBeyondComponent},
-      {path:'start-school', component:StartSchoolComponent},
-      {path:'parents-corner', component:ParentsCornerComponent},
-      {path:'admissions', component:AdmissionsComponent},
-      {path:'contect-us', component:ContectUsComponent},
-      {path:'discover-more', component:DiscoverMoreComponent}
+      { path: 'programmes', component: ProgrammesMainPageComponent },
+      { path: 'academics-beyond', component: AcademicsBeyondComponent },
+      { path: 'start-school', component: StartSchoolComponent },
+      { path: 'parents-corner', component: ParentsCornerComponent },
+      { path: 'admissions', component: AdmissionsComponent },
+      { path: 'contect-us', component: ContectUsComponent },
+      { path: 'discover-more', component: DiscoverMoreComponent },
+      { path: 'about-us/our-legacy', component: OurLegacyComponent },
+      { path: 'about-us/our-vision', component: OurVisionComponent },
+      { path: 'about-us/our-philosophy', component: OurPhilosophyComponent },
+      { path: 'about-us/awards-and-recognitions', component: AwardsAndRecognitionsComponent },
+      { path: 'programmes/litera-foundational-stage-1', component: LiteraFoundationalStage1Component },
+      { path: 'programmes/litera-foundational-stage-2', component: LiteraFoundationalStage2Component },
+      { path: 'programmes/litera-preparatory-stage', component: LiteraPreparatoryStageComponent },
+      { path: 'programmes/litera-middle-stage', component: LiteraMiddleStageComponent },
+      { path: 'programmes/litera-secondary-stage', component: LiteraSecondaryStageComponent }
+      // { path: 'about-us', component: AboutUsComponent }
       // { path: 'pentemind', component: PentemindComponent },
       // { path: 'innews', component: InnewsComponent },
       // { path: 'blog/:name', component: BlogComponent },
@@ -75,7 +95,7 @@ const routes: Routes = [
       // { path: ':city', component: PreschoolInCityComponent },
     ],
   },
-  
+
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
 

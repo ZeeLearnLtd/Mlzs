@@ -123,6 +123,12 @@ h4 {
 }
 
 @media screen and (max-width: 600px) {
+    .owl-carousel .item {
+        height:auto !important;
+        background: #EEE;
+        padding: 1rem;
+    }
+    
     .fr_img_content {
         margin-top: 20px;
     }

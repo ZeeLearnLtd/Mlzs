@@ -32,12 +32,12 @@ nav{
 }
 .kidzee_logo_img{
     position: relative;
-    left: 4rem;
+    left: 0rem;
     cursor: pointer;
 }
 .brand_icon{
     position: relative;
-    right: 4rem;
+    right: 0rem;
 }
 .convert_btn{
     font-size: 12px;
@@ -47,7 +47,7 @@ nav{
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
     border: none;
-    color: #65318E;
+    color: #004878;
     font-weight: 500;
     margin: 5px;
     transition: all ease 0.2s;
@@ -57,7 +57,7 @@ nav{
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
     border: none;
-    color: #65318E;
+    color: #004878;
     font-weight: 500;
     margin: 5px;
     transition: all ease 0.2s;
@@ -65,7 +65,7 @@ nav{
 .whiteHeader_dark {
     top: 0px;
     position: fixed;
-    background-color: #65318E;
+    background-color: #004878;
     color: #fff;
     left: 0;
     right: 0;
@@ -130,13 +130,13 @@ ul li a {
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #a19bad;
+    background-color: #004878 ;
 }
 .dropdown-menu a:hover{
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #65318E;
+    background-color: #004878;
 }
 /* dropdown menu css */
 
@@ -157,17 +157,18 @@ ul li a {
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: fixed;
-    background-color: #a19bad;
+    background-color: #004878 ;
 }
 
 .dropdown-item {
     color: #FFF !important;
     font-size: 13px;
     font-weight: 600;
+    background-color: #004878;
 }
 
-.dropdown-item:hover {
-    background-color: #65318E;
+.dropdown-item:hover{
+    background-color: #004878;
 }
 
 #headerLogo {
@@ -211,7 +212,7 @@ ul li a {
         padding: 5px 3px 5px 3px;
         border-radius: 0px 53px 53px 53px;
         border: none;
-        color: #65318E;
+        color: #004878;
         font-weight: 500;
         font-size: 8px;
         margin: 5px;
@@ -306,7 +307,7 @@ ul li a {
     }
 
     #navbarNav {
-        background-color: #65318E;
+        background-color: #004878;
         color: #FFF;
     }
 
@@ -318,7 +319,7 @@ ul li a {
         z-index: 9999;
         padding: 0;
         color: #FFF;
-        background-color: #65318E;
+        background-color: #004878;
         display: block;
     }
 
@@ -354,7 +355,7 @@ ul li a {
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
     border: none;
-    color: #65318E;
+    color: #004878;
     font-weight: 500;
     margin: 5px;
     transition: all ease 0.2s;
@@ -364,7 +365,7 @@ ul li a {
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
     border: none;
-    color: #65318E;
+    color: #004878;
     font-weight: 500;
     margin: 5px;
     transition: all ease 0.2s;
@@ -437,13 +438,13 @@ ul li a {
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #a19bad;
+    background-color: #004878 ;
 }
 .dropdown-menu a:hover{
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #65318E;
+    background-color: #004878;
 }
 /* dropdown menu css */
 
@@ -464,7 +465,7 @@ ul li a {
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: fixed;
-    background-color: #a19bad;
+    background-color: #004878 ;
 }
 
 .dropdown-item {
@@ -474,7 +475,7 @@ ul li a {
 }
 
 .dropdown-item:hover {
-    background-color: #65318E;
+    background-color: #004878;
 }
 
 #headerLogo {
@@ -549,7 +550,7 @@ ul li a {
         padding: 5px 3px 5px 3px;
         border-radius: 0px 53px 53px 53px;
         border: none;
-        color: #65318E;
+        color: #004878;
         font-weight: 500;
         font-size: 8px;
         margin: 5px;
@@ -621,7 +622,7 @@ ul li a {
             width: 30px;
             padding: 0px;
             border-radius: 50%;
-            background-color: #FFF200;
+            /* background-color: #FFF200; */
         }
 .navbar {
     overflow: hidden;
@@ -634,7 +635,7 @@ ul li a {
     }
 
     #navbarNav{
-        background-color: #65318E;
+        background-color: #004878;
         color: #FFF;
         position: fixed;
         left:0px;
@@ -651,7 +652,7 @@ ul li a {
         z-index: 9999;
         padding: 0;
         color: #FFF;
-        background-color: #65318E;
+        background-color: #004878;
         display: block;
     }
 

@@ -77,6 +77,10 @@ textarea{
 }
 
 @media screen and (max-width: 600px) {
+    .media_icon{
+        width: 35px;
+        height:35px;
+    }
     .locat_form{
         width:100%;
         background-color: #014876;

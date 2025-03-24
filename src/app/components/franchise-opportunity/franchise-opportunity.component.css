@@ -17,7 +17,9 @@ section{
     bottom: 1.8rem;
     left: 2rem;
 }
-
+.fr_img_content img{
+  width: 75%;
+}
 @media screen and (max-width: 600px) {
 .fr_img_content{
 margin-top: 20px;
