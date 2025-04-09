@@ -75,4 +75,12 @@ section{
   li button{
     width: 100%;
   }
+  .programm_para{
+    margin:38px 30px !important;
+    text-align: justify;
+  }
+  }
+  .programm_para{
+    margin:38px 52px;
+    text-align: justify;
   }

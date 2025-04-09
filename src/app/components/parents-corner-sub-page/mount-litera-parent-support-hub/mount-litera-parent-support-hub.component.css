@@ -1,0 +1,158 @@
+.multi_img_group{
+    display: flex;
+    justify-content: center;
+}
+
+.multi_img_group img{
+width: 80%;
+}
+
+section{
+    background-image: url('../../../../assets/img/MLZS/main_bg.png');
+    background-size: contain;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+  }
+  .programmes_main_page{
+    margin-top:8.6rem;
+}
+
+.menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left: 5.5rem;
+    padding: 10px;
+}
+
+  .text_bg{
+    width:23%;
+    position: relative;
+    bottom:1.5rem;
+    z-index: 1;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#FFF;
+    font-size: 13px;
+    padding: 12px 25px;
+    background-color:#014876;
+    margin: 5px;
+}
+
+.nav-link:focus, .nav-link{
+    color:#FFF;
+    font-size: 13px;
+    padding: 12px 25px;
+    background-color: #44C8F5;
+    margin: 5px;
+}
+.programm_img_content img{
+    width: 80%;
+    }
+
+    .liter_img{
+        width: 50%;
+    }
+
+    .liter_content{
+        margin-left: 57px;
+    }
+
+  .fr_img_content img{
+    width: 80%;
+  }
+
+  .title_content ul{
+    padding: 0; 
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .programmes_main_page{
+        margin-top:14px;
+    }
+    .start_school_banner{
+      margin-top: 2rem;
+    }
+    .tab_btn{
+      color: #FFF;
+      width: 100%;
+      height: 52px;
+      font-size: 14px;
+      padding:0;
+      background-color: #44C8F5;
+      margin: 5px;
+  }
+  .tab_btn:hover{
+      color: #FFF;
+      width: 100%;
+      height: 52px;
+      font-size: 14px;
+      padding:0;
+      background-color: #44C8F5;
+      margin: 5px;
+  }
+
+    .programm_para{
+      margin:38px 30px !important;
+      text-align: justify;
+    }
+    }
+  
+    .programm_para{
+      margin:38px 52px;
+      text-align: justify;
+    }
+
+    .home-demo .item {
+      background:transparent;
+      width: 95%;
+      margin: auto;
+      height: 305px;
+      border-radius: 5px;
+      padding: 30px 15px;
+  }
+  .home-demo h2 {
+      color: #FFF;
+      text-align: center;
+      /* padding: 5rem 0; */
+      margin: 0;
+      font-style: italic;
+      font-weight: 300;
+  }
+  
+  ::ng-deep.owl-carousel .owl-stage {
+      position: relative;
+      touch-action: manipulation;
+      height:320px;
+      overflow: hidden;
+  }
+  
+  .item_text h6{
+      color: #FFF;
+  }
+  .item_text p{
+      font-size: 11px;
+      color: #014876;
+  }
+  
+  .item_img_content img{
+      width: 100%;
+      height: 139px;
+  }
+  .item_text img{
+      width: 25px;
+  }
+  
+  hr{
+      margin: 15px 0px 0px 0px;
+  }
+  
+  ::ng-deep .center{
+      background-color: #FFF !important;  /* Change background color of the active item */ 
+    }
+    ::ng-deep .owl-item{
+      background-color: #44C8F5;
+    }
+  

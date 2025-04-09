@@ -1,0 +1,84 @@
+.multi_img_group{
+    display: flex;
+    justify-content: center;
+}
+
+.multi_img_group img{
+width: 80%;
+}
+
+section{
+    background-image: url('../../../../assets/img/MLZS/main_bg.png');
+    background-size: contain;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+  }
+  .programmes_main_page{
+    margin-top:8.6rem;
+}
+
+.menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left: 5.5rem;
+    padding: 10px;
+}
+
+  .text_bg{
+    width:23%;
+    position: relative;
+    bottom:1.5rem;
+    z-index: 1;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#FFF;
+    font-size: 13px;
+    padding: 12px 25px;
+    background-color:#014876;
+    margin: 5px;
+}
+
+.nav-link:focus, .nav-link{
+    color:#FFF;
+    font-size: 13px;
+    padding: 12px 25px;
+    background-color: #44C8F5;
+    margin: 5px;
+}
+.programm_img_content img{
+    width: 80%;
+    }
+
+    .liter_img{
+        width: 50%;
+    }
+
+    .liter_content{
+        margin-left: 57px;
+    }
+
+  .fr_img_content img{
+    width: 80%;
+  }
+
+  .title_content ul{
+    padding: 0; 
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .programm_para{
+      margin:38px 30px !important;
+      text-align: justify;
+    }
+    .programmes_main_page{
+      margin-top:13px;
+  }
+    }
+  
+    .programm_para{
+      margin:38px 52px;
+      text-align: justify;
+    }

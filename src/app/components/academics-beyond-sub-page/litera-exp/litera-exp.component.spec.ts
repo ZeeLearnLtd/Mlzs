@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InnewsComponent } from './innews.component';
+import { LiteraExpComponent } from './litera-exp.component';
 
-describe('InnewsComponent', () => {
-  let component: InnewsComponent;
-  let fixture: ComponentFixture<InnewsComponent>;
+describe('LiteraExpComponent', () => {
+  let component: LiteraExpComponent;
+  let fixture: ComponentFixture<LiteraExpComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InnewsComponent]
+      declarations: [LiteraExpComponent]
     });
-    fixture = TestBed.createComponent(InnewsComponent);
+    fixture = TestBed.createComponent(LiteraExpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
