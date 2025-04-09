@@ -163,7 +163,6 @@ ul li a {
 .dropdown-item {
     color: #FFF !important;
     font-size: 13px;
-    font-weight: 600;
     background-color: #004878;
 }
 
@@ -471,7 +470,6 @@ ul li a {
 .dropdown-item {
     color: #FFF !important;
     font-size: 13px;
-    font-weight: 600;
 }
 
 .dropdown-item:hover {

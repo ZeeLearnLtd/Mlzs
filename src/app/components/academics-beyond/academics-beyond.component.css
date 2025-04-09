@@ -24,3 +24,10 @@ section{
     left: 5.5rem;
     padding: 10px;
 }
+
+
+@media screen and (max-width: 600px) {
+    .programmes_main_page{
+      margin-top:14px;
+  }
+}

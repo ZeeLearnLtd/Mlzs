@@ -156,6 +156,10 @@ section {
     margin: auto;
   }
 
+  .owl-item{
+    border-radius: 7px !important;
+  }
+
 @media screen and (max-width: 600px) {
     
     .buttonList_content{

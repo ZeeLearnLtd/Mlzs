@@ -41,7 +41,6 @@ import { FranchiseThankyouComponent } from './components/thank-you/franchise-tha
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { InnewsComponent } from './components/innews/innews.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PreschoolInCityComponent } from './components/preschool-in-city/preschool-in-city.component';
@@ -70,6 +69,17 @@ import { LiteraFoundationalStage2Component } from './components/programmes-sub-p
 import { LiteraPreparatoryStageComponent } from './components/programmes-sub-page/litera-preparatory-stage/litera-preparatory-stage.component';
 import { LiteraMiddleStageComponent } from './components/programmes-sub-page/litera-middle-stage/litera-middle-stage.component';
 import { LiteraSecondaryStageComponent } from './components/programmes-sub-page/litera-secondary-stage/litera-secondary-stage.component';
+import { CoCurricularAndEnrichmentProgrammesComponent } from './components/academics-beyond-sub-page/co-curricular-and-enrichment-programmes/co-curricular-and-enrichment-programmes.component';
+import { LiteraNovaAppComponent } from './components/academics-beyond-sub-page/litera-nova-app/litera-nova-app.component';
+import { LiteratiComponent } from './components/academics-beyond-sub-page/literati/literati.component';
+import { LiteraExpComponent } from './components/academics-beyond-sub-page/litera-exp/litera-exp.component';
+import { ChildDevelopmentComponent } from './components/parents-corner-sub-page/child-development/child-development.component';
+import { MountLiteraExpertConnectComponent } from './components/parents-corner-sub-page/mount-litera-expert-connect/mount-litera-expert-connect.component';
+import { MountLiteraParentSupportHubComponent } from './components/parents-corner-sub-page/mount-litera-parent-support-hub/mount-litera-parent-support-hub.component';
+import { ParentsTestimonialsComponent } from './components/parents-corner-sub-page/parents-testimonials/parents-testimonials.component';
+import { DiscoverEventsComponent } from './components/discover-sub-page/discover-events/discover-events.component';
+import { DiscoverGalleryComponent } from './components/discover-sub-page/discover-gallery/discover-gallery.component';
+import { DiscoverNewsComponent } from './components/discover-sub-page/discover-news/discover-news.component';
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -113,7 +123,6 @@ interface NgxSpinnerConfig {
     FranchiseThankyouComponent,
     AdmissionThankyouComponent,
     PagenotfoundComponent,
-    InnewsComponent,
     PrivacyPolicyComponent,
     PartneradmissionComponent,
     ProgrammesListComponent,
@@ -138,7 +147,18 @@ interface NgxSpinnerConfig {
     LiteraFoundationalStage2Component,
     LiteraPreparatoryStageComponent,
     LiteraMiddleStageComponent,
-    LiteraSecondaryStageComponent
+    LiteraSecondaryStageComponent,
+    CoCurricularAndEnrichmentProgrammesComponent,
+    LiteraNovaAppComponent,
+    LiteratiComponent,
+    LiteraExpComponent,
+    ChildDevelopmentComponent,
+    MountLiteraExpertConnectComponent,
+    MountLiteraParentSupportHubComponent,
+    ParentsTestimonialsComponent,
+    DiscoverEventsComponent,
+    DiscoverGalleryComponent,
+    DiscoverNewsComponent
   ],
   imports: [
     BrowserModule,
