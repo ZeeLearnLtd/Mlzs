@@ -54,7 +54,10 @@ width: 80%;
     height:320px !important;
     overflow: hidden;
 }
-
+.testimonials{
+    width: 85%;
+    margin: auto;
+}
 /* .item_text h6{
     color: #FFF;
 } */

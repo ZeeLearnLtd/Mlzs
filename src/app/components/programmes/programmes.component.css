@@ -43,6 +43,9 @@
   }
 
   @media screen and (max-width: 600px) {
+    .programm_img_content{
+       margin-top: 15px;
+    }
   li{
     width: 100%;
   }
