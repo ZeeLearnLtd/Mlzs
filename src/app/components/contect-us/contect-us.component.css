@@ -7,3 +7,99 @@
     margin-top: 2rem;
 }
 }
+
+/* locut us css */
+
+section{
+    background-image: url('../../../assets/img/MLZS/our_parents_bg.png');
+    background-size: cover;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+}
+
+.map_content img{
+    width:90%;
+    margin: auto;
+}
+.text_bg{
+    width: 10%;
+    position: relative;
+    bottom: 1.7rem;
+    z-index: 1;
+    left: 5rem;
+    height: 30px;
+}
+
+.text_bg1{
+    width: 20%;
+    position: relative;
+    bottom: 3.8rem;
+    z-index: 1;
+    left: 5rem;
+    height: 25px;
+}
+
+.fa-angle-down{
+    position: absolute;
+    margin-left:5.5rem;
+    margin-top: -1.7rem;
+    font-size: 20px;
+}
+
+.locat_form{
+    width:58%;
+    background-color: #014876;
+    margin: auto;
+    padding:35px;
+    border-radius:10px;
+}
+
+.reset_btn{
+    background-color: #44C8F5;
+    width: 100%;
+    color: #004877;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.media_icon{
+    width: 45px;
+    height:45px;
+}
+
+textarea{
+    font-size: 13px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .locat_form{
+        width:100%;
+        background-color: #014876;
+        margin: auto;
+        padding: 35px;
+        border-radius: 10px;
+    }
+}
+
+.locat_school{
+    width: 100%;
+    padding: 55px 0px;
+    /* background-color: #004878; */
+}

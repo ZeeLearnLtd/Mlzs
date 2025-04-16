@@ -185,8 +185,23 @@ ul li a {
 .navbar-toggler {
     display: none;
 }
-
+.desktop_nav{
+    display: block;
+}
+.mobile_nav{
+    display: none;
+}
 @media screen and (max-width: 600px) {
+    .label_menu{
+        border: 1px solid #fff;
+        width: 30%;
+    }
+    .desktop_nav{
+        display: none;
+    }
+    .mobile_nav{
+        display: block;
+    }
     .top_header{
         width: 100%;
         position: fixed;
@@ -470,10 +485,12 @@ ul li a {
 .dropdown-item {
     color: #FFF !important;
     font-size: 13px;
+    transition: 0.6s;
 }
 
 .dropdown-item:hover {
     background-color: #004878;
+    color: #b5adad !important;
 }
 
 #headerLogo {
@@ -508,7 +525,7 @@ ul li a {
     top: 0px;
     left: auto !important;
     right: 10px !important;
-    width: 22%;
+    width: 20%;
    }
     .ul_content {
         background-image: none !important;
@@ -638,7 +655,7 @@ ul li a {
         position: fixed;
         left:0px;
         right:0px;
-        top:1.5rem;
+        top:1.4rem;
     }
 
     .navbar1 {

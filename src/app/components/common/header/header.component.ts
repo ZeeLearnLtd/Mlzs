@@ -6,23 +6,26 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
-  scrollPosition:any
-constructor(private _router:Router){}
+export class HeaderComponent implements OnInit {
+  scrollPosition: any
+  constructor(private _router: Router) { }
 
-gotPage(){
-  document.getElementById("trigger-overlay")?.click();
-}
+  gotPage() {
+    document.getElementById("trigger-overlay")?.click();
+  }
 
-ngOnInit(): void {
-  // this.scrollPosition = window.scrollY;
-}
+  ngOnInit(): void {
+    // this.scrollPosition = window.scrollY;
+  }
 
-// scroll_hide(){
-//   console.log('scroll')
-//   if (this.scrollPosition > 100) {
-//     document.getElementById('ab_id')?.remove();
-//      }
-// }
+  // scroll_hide(){
+  //   console.log('scroll')
+  //   if (this.scrollPosition > 100) {
+  //     document.getElementById('ab_id')?.remove();
+  //      }
+  // }
 
+  closeMenu() {
+    document.getElementById("dropdown_menu")?.click();
+  }
 }

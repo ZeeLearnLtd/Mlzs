@@ -67,7 +67,6 @@ section{
     padding: 0; 
     line-height: 30px;
   }
-
   @media screen and (max-width: 600px) {
     .programmes_main_page{
         margin-top:14px;
