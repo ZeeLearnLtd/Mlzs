@@ -14,8 +14,10 @@ declare var $: any;  // Declare jQuery
 export class BlogsComponent implements OnInit {
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
-  blogdata:any;
-  spinner:boolean=true
+  blogdata: any;
+  spinner: boolean = true
+  top_blog: any;
+  top_blog_img: any;
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -35,16 +37,16 @@ export class BlogsComponent implements OnInit {
         nav: false,
         dots: true
       });
-    },2000);
-   
+    }, 2000);
+
     this.subscriptionnav = this.projectService
       .onblogMessage()
       .subscribe((message) => {
-        this.spinner=false
+        this.spinner = false
         if (message) {
-      
           this.blogdata = message.text;
-         // console.log('blog single',this.blogdata)
+          this.top_blog = this.blogdata[0]
+          this.top_blog_img = this.top_blog.files[0]
         }
       });
   }

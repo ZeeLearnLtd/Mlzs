@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, of, switchMap, tap,Subscription } from 'rxjs';
+import { Observable, of, switchMap, tap, Subscription } from 'rxjs';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { HomeSeoService } from 'src/app/services/homeseo.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
@@ -15,9 +15,9 @@ declare var $: any;  // Declare jQuery
 })
 export class HomeComponent implements OnInit {
   project$: Observable<any> | undefined;
-  subProfileInfo:any;
+  subProfileInfo: any;
   subscriptionnav!: Subscription;
-  testimonydata: any=[];
+  testimonydata: any = [];
   profile_title: any;
   constructor(
     private sanitizer: DomSanitizer,
@@ -30,30 +30,29 @@ export class HomeComponent implements OnInit {
   ) {
 
   }
-  
+
 
   ngAfterViewInit(): void {
-    setTimeout(()=>{
+    setTimeout(() => {
       var owl = $(".count_owl");
-    owl.owlCarousel({
-      margin: 10,
-      loop: true,
-      nav: false,
-      center: true,
-      responsive: {
-        0: {
-          items: 3, // On mobile (0px and up), show 1 item
-        },
-        600: {
-          items: 3, // On tablets (600px and up), show 2 items
-        },
-        1000: {
-          items: 3, // On larger screens (1000px and up), show 3 items
-        },
-      }
-    });
-    },1000)
-  
+      owl.owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: false,
+        center: true,
+        responsive: {
+          0: {
+            items: 3, // On mobile (0px and up), show 1 item
+          },
+          600: {
+            items: 3, // On tablets (600px and up), show 2 items
+          },
+          1000: {
+            items: 3, // On larger screens (1000px and up), show 3 items
+          },
+        }
+      });
+    }, 1000)
   }
 
   sanitizeUrl(url: string): SafeUrl {
