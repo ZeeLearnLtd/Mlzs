@@ -193,8 +193,7 @@ ul li a {
 }
 @media screen and (max-width: 600px) {
     .label_menu{
-        border: 1px solid #fff;
-        width: 30%;
+         width: 45%;
     }
     .desktop_nav{
         display: none;
@@ -529,13 +528,14 @@ ul li a {
    }
     .ul_content {
         background-image: none !important;
-        width:100%;
+        width:90%;
         margin: auto;
         padding: 0px 16px 0px 0px;
         display: flex;
         justify-content:start !important;
         align-items:normal !important;
         padding: 26px 0px 26px 0px;
+        left: 0px;
     }
 
     .whiteHeader{

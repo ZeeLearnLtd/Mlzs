@@ -161,7 +161,9 @@ section {
   }
 
 @media screen and (max-width: 600px) {
-    
+    p{
+        text-align: justify;
+    }
     .buttonList_content{
         overflow: auto;
         width: 100%;
