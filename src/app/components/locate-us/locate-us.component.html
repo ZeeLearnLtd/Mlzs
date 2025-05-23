@@ -40,31 +40,67 @@
                 </div>
                 <div class="col-md-6">
                     <div class="locat_form">
+                        <form [formGroup]="enquireForm">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                               <input type="text" class="form-control" placeholder="Your Name" name="" id="">
+                               <input type="text" class="form-control" placeholder="Your Name" name="" id=""
+                               formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.name.touched || submitted) && f.name.errors?.required">
+                                        name is required
+                                    </span>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group mt-3">
-                                    <input type="text" class="form-control"  placeholder="Your Email" name="" id="">
+                                    <input type="text" class="form-control"  placeholder="Your Email" name="" id=""
+                                    formControlName="email"
+                                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                   <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                                        Email is required
+                                    </span>
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="f.email.touched && f.email.errors?.email">
+                                        Enter a valid email address
+                                    </span>
                                 </div>
+                                  </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group mt-3">
-                                    <input type="text" class="form-control"  placeholder="Your Phone" name="" id="">
+                                    <input type="text" class="form-control"  placeholder="Your Phone" name="" id=""
+                                     formControlName="mobile"
+                                   [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
+                                   <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <textarea name="" id="" class="w-100"  placeholder="Your Massage"></textarea>
+                                <textarea name="" id="" class="w-100"  placeholder="Your Massage"
+                                formControlName="massege"
+                                [ngClass]="{ 'is-invalid': submitted && f.massege.errors }"></textarea>
+                                <div *ngIf="submitted && f.massege.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.massege.touched || submitted) && f.massege.errors?.required">
+                                        massege is required
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group mt-4">
-                               <button class="btn reset_btn">Recet <i class="fa fa-long-arrow-right mx-2"></i></button>
+                               <button class="btn reset_btn" (click)="validationForm();">Recet <i class="fa fa-long-arrow-right mx-2"></i></button>
                                 </div>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>

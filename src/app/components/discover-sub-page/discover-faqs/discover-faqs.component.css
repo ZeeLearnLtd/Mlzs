@@ -1,0 +1,129 @@
+.multi_img_group{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .multi_img_group img{
+  width: 80%;
+  }
+  
+  section{
+    background-image: url('../../../../assets/img/MLZS/main_bg.png');
+    background-size: cover;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+  }
+  .programmes_main_page{
+    margin-top:8.6rem;
+  }
+  
+  @media screen and (max-width: 600px) {
+  .programmes_main_page{
+  margin-top: 10px;
+  }
+  .right_card{
+  margin-top:20px;
+  }
+  }
+  
+  
+  .text_bg{
+    width:23%;
+    position: relative;
+    bottom:1.5rem;
+    z-index: 1;
+  }
+  
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#FFF;
+    font-size: 13px;
+    padding: 5px 25px;
+    background-color:#014876;
+    margin: 5px;
+  }
+  
+  .nav-link:focus, .nav-link{
+    color:#014876;
+    font-size: 13px;
+    padding: 5px 25px;
+    background-color: #44C8F5;
+    margin: 5px;
+  }
+  .programm_img_content img{
+    width: 80%;
+    }
+  
+    .liter_img{
+        width: 50%;
+    }
+  
+    .liter_content{
+        margin-left: 57px;
+    }
+  
+  .fr_img_content img{
+    width: 80%;
+  }
+  
+  .title_content ul{
+    padding: 0; 
+    line-height: 30px;
+  }
+  
+  @media screen and (max-width: 600px) {
+  li{
+    width: 100%;
+  }
+  
+  li button{
+    width: 100%;
+  }
+  }
+  
+  .subMenu_content{
+    margin-top: 1rem;
+    width: 85%;
+    margin: auto;
+  }
+  
+  p{
+    margin-bottom: 0.5rem;
+  }
+  .text_bg{
+    width: 10%;
+    position: relative;
+    bottom: 1.5rem;
+    z-index: 1;
+    height: 21px;
+  }
+  
+  h2{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #494a4b;
+    appearance:auto;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+  
+  .date_text{
+    font-size: 12px;
+    color: #3f3d3d;
+  }
+  
+  .input{
+    height: 30px;
+    font-size:14px;
+  }

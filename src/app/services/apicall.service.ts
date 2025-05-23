@@ -7,7 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ApicallService {
-  constructor(private httpClient: HttpClient) {}
+
+  form_baseUrl = environment.api_url
+  constructor(private httpClient: HttpClient) { }
 
   getGetseo(tbody: any) {
     let headers: HttpHeaders = new HttpHeaders();
@@ -39,9 +41,13 @@ export class ApicallService {
         })
       );
   }
-  
-  checkMicrosite(data:any):Observable<any>{
-    return this.httpClient.post(environment.cmsapi_url +'checkIsmicrosite',data);
-    
+
+  checkMicrosite(data: any): Observable<any> {
+    return this.httpClient.post(environment.cmsapi_url + 'checkIsmicrosite', data);
+
+  }
+
+  saveEnquiryData(obj: any): Observable<any> {
+    return this.httpClient.post<any>(this.form_baseUrl + 'V1/ZeeEnquiry', obj);
   }
 }

@@ -7,6 +7,7 @@ import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-home',
@@ -19,14 +20,15 @@ export class HomeComponent implements OnInit {
   subscriptionnav!: Subscription;
   testimonydata: any = [];
   profile_title: any;
+
   constructor(
     private sanitizer: DomSanitizer,
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
     private projectService: ProjectSeoService,
     private apiService: ApicallService,
-    private ngxSpinner: NgxSpinnerService
-
+    private ngxSpinner: NgxSpinnerService,
+    private fb: FormBuilder
   ) {
 
   }
@@ -61,6 +63,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getseo();
   }
+
+
+
   getseo() {
     let tbody = {
       slug: 'home',
