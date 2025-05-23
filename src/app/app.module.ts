@@ -80,6 +80,10 @@ import { ParentsTestimonialsComponent } from './components/parents-corner-sub-pa
 import { DiscoverEventsComponent } from './components/discover-sub-page/discover-events/discover-events.component';
 import { DiscoverGalleryComponent } from './components/discover-sub-page/discover-gallery/discover-gallery.component';
 import { DiscoverNewsComponent } from './components/discover-sub-page/discover-news/discover-news.component';
+import { DiscoverFaqsComponent } from './components/discover-sub-page/discover-faqs/discover-faqs.component';
+import { DiscoverBlogsComponent } from './components/discover-sub-page/discover-blogs/discover-blogs.component';
+import { DiscoverTestimonialsComponent } from './components/discover-sub-page/discover-testimonials/discover-testimonials.component';
+import { DiscoverAchievementsComponent } from './components/discover-sub-page/discover-achievements/discover-achievements.component';
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -158,7 +162,11 @@ interface NgxSpinnerConfig {
     ParentsTestimonialsComponent,
     DiscoverEventsComponent,
     DiscoverGalleryComponent,
-    DiscoverNewsComponent
+    DiscoverNewsComponent,
+    DiscoverFaqsComponent,
+    DiscoverBlogsComponent,
+    DiscoverTestimonialsComponent,
+    DiscoverAchievementsComponent
   ],
   imports: [
     BrowserModule,

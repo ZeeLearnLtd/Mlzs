@@ -75,7 +75,9 @@ textarea{
     font-size: 13px;
     padding: 10px;
 }
-
+.msg_txt{
+    font-size: 12px;
+  }
 @media screen and (max-width: 600px) {
     .media_icon{
         width: 35px;

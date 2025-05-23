@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../service/common.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'app-locate-us',
   templateUrl: './locate-us.component.html',
@@ -29,15 +28,15 @@ export class LocateUsComponent implements OnInit {
   ucenterList: any;
   more: boolean = true;
   lgd: any;
-
+  submitted: boolean = false
   indiaCountry: any = [];
   searchForm: FormGroup;
   findex: number = 0;
   tindex: number = 50
   totalrecord: number = 0;
   virtual_url: any;
-
- segment:any
+  enquireForm: FormGroup
+  segment: any
 
   constructor(private _service: CommonService, private fb: FormBuilder, private ngxSpinner: NgxSpinnerService, public sanitizer: DomSanitizer,
     private projectService: ProjectSeoService, private router: Router,
@@ -49,14 +48,20 @@ export class LocateUsComponent implements OnInit {
       state: [''],
       location: [''],
     })
+    this.enquireForm = fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mobile: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      massege: ['', Validators.required],
+    })
   }
 
   ngOnInit(): void {
     const urlSegments = this.activatedRoute.snapshot.url;
     this.segment = urlSegments[0]?.path;
 
-    if(this.segment == 'contect-us'){
-    (document.getElementById('school_id')as HTMLElement).style.display = 'none'
+    if (this.segment == 'contect-us') {
+      (document.getElementById('school_id') as HTMLElement).style.display = 'none'
     }
 
     this.tindex = 50;
@@ -275,4 +280,55 @@ export class LocateUsComponent implements OnInit {
     })
 
   }
+
+  get f() {
+    return this.enquireForm.controls;
+  }
+
+  validationForm() {
+    this.submitted = true;
+    if (this.enquireForm.invalid) {
+      return;
+    } else {
+      this.submitForm()
+    }
+
+  }
+
+  submitForm() {
+    let obj = {
+      "City": '',
+      "Country": "India",
+      "Email": this.enquireForm.get('email')?.value,
+      "FirstName": this.enquireForm.get('name')?.value,
+      "HaveSpace": "",
+      "LastName": '',
+      "Location": "",
+      "Mobile": this.enquireForm.get('mobile')?.value,
+      "PinCode": '',
+      "Product": "0",
+      "ProjectId": "3607",
+      "SoonStartsIn": "",
+      "Source": "gclid",
+      "gclid": "gclid",
+      "State": '',
+      "Type": "F",
+      "WillingToInvest": "",
+      "utm_compaign": "Website",
+      "utm_medium": "Website",
+      "utm_source": "Website",
+      "utm_ad": "Website",
+      "utm_Content": "Website",
+      "utm_Term": "Website",
+    }
+
+    this.apiService.saveEnquiryData(obj).subscribe(
+      res => {
+
+        alert(res);
+      }
+    )
+  }
+
+
 }

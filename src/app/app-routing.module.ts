@@ -49,6 +49,11 @@ import { ParentsTestimonialsComponent } from './components/parents-corner-sub-pa
 import { DiscoverEventsComponent } from './components/discover-sub-page/discover-events/discover-events.component';
 import { DiscoverGalleryComponent } from './components/discover-sub-page/discover-gallery/discover-gallery.component';
 import { DiscoverNewsComponent } from './components/discover-sub-page/discover-news/discover-news.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { DiscoverFaqsComponent } from './components/discover-sub-page/discover-faqs/discover-faqs.component';
+import { DiscoverBlogsComponent } from './components/discover-sub-page/discover-blogs/discover-blogs.component';
+import { DiscoverTestimonialsComponent } from './components/discover-sub-page/discover-testimonials/discover-testimonials.component';
+import { DiscoverAchievementsComponent } from './components/discover-sub-page/discover-achievements/discover-achievements.component';
 const routes: Routes = [
   // { path: '', component: HomeComponent },
   // { path: 'blog/:name', component: BlogComponent },
@@ -68,6 +73,7 @@ const routes: Routes = [
       { path: 'parents-corner', component: ParentsCornerComponent },
       { path: 'admissions', component: AdmissionsComponent },
       { path: 'contact-us', component: ContectUsComponent },
+      { path: 'about-us', component: AboutUsComponent },
       { path: 'discover-more', component: DiscoverMoreComponent },
       { path: 'about-us/legacy', component: OurLegacyComponent },
       { path: 'about-us/vision', component: OurVisionComponent },
@@ -90,8 +96,10 @@ const routes: Routes = [
       { path: 'news', component: DiscoverNewsComponent },
       { path: 'events', component: DiscoverEventsComponent },
       { path: 'gallery', component: DiscoverGalleryComponent },
-
-
+      { path: 'blogs', component: DiscoverBlogsComponent },
+      { path: 'faqs', component: DiscoverFaqsComponent },
+      { path: 'testimonials', component: DiscoverTestimonialsComponent },
+      { path: 'achievements', component: DiscoverAchievementsComponent },
       // { path: 'about-us', component: AboutUsComponent }
       // { path: 'pentemind', component: PentemindComponent },
       // { path: 'blog/:name', component: BlogComponent },
