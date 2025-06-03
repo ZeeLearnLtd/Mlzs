@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const directoryPath = './dist/kidzeeweb/browser';
+const directoryPath = './dist/mlzs/browser';
 
 fs.readdir(directoryPath, (err, files) => {
   if (err) {

@@ -13,8 +13,8 @@ const fs = require('fs');
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
-  const distFolder = join(process.cwd(), 'dist/kidzeeweb/browser');
-const _dir = process.cwd();
+  const distFolder = join(process.cwd(), 'dist/mlzs/browser');
+  const _dir = process.cwd();
   const indexHtml = fs.existsSync(path.join(distFolder, 'index.original.html'))
     ? path.join(distFolder, 'index.original.html')
     : 'index';
@@ -34,7 +34,7 @@ const _dir = process.cwd();
     maxAge: '1y'
   }));
   server.use(
-    expressStaticGzip(path.join(__dirname, 'dist', 'kidzeeweb', 'browser'), {
+    expressStaticGzip(path.join(__dirname, 'dist', 'mlzs', 'browser'), {
       enableBrotli: true, // Enable Brotli compression
       orderPreference: ['br', 'gz'], // Compression preference order (Brotli will be preferred if available)
 

@@ -54,6 +54,7 @@ import { DiscoverFaqsComponent } from './components/discover-sub-page/discover-f
 import { DiscoverBlogsComponent } from './components/discover-sub-page/discover-blogs/discover-blogs.component';
 import { DiscoverTestimonialsComponent } from './components/discover-sub-page/discover-testimonials/discover-testimonials.component';
 import { DiscoverAchievementsComponent } from './components/discover-sub-page/discover-achievements/discover-achievements.component';
+import { TestimonialComponent } from './components/testimonial/testimonial.component';
 const routes: Routes = [
   // { path: '', component: HomeComponent },
   // { path: 'blog/:name', component: BlogComponent },
@@ -68,7 +69,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'programmes', component: ProgrammesMainPageComponent },
-      { path: 'academics-beyond', component: AcademicsBeyondComponent },
+      { path: 'academics-beyond/litera-enrichment-programmes', component: AcademicsBeyondComponent },
       { path: 'start-school', component: StartSchoolComponent },
       { path: 'parents-corner', component: ParentsCornerComponent },
       { path: 'admissions', component: AdmissionsComponent },
@@ -82,17 +83,17 @@ const routes: Routes = [
       { path: 'programmes/litera-foundational-stage-1', component: LiteraFoundationalStage1Component },
       { path: 'programmes/litera-foundational-stage-2', component: LiteraFoundationalStage2Component },
       { path: 'programmes/litera-preparatory-stage', component: LiteraPreparatoryStageComponent },
-      { path: 'programmes/litera-middle-stage', component: LiteraMiddleStageComponent },
-      { path: 'programmes/litera-secondary-stage', component: LiteraSecondaryStageComponent },
+      { path: 'programmes/middle-school', component: LiteraMiddleStageComponent },
+      { path: 'programmes/secondary-school', component: LiteraSecondaryStageComponent },
       { path: 'academics/students-experience', component: LiteraExpComponent },
       { path: 'academics/co-curricular-activities', component: CoCurricularAndEnrichmentProgrammesComponent },
-      { path: 'academics/nova', component: LiteraNovaAppComponent },
-      { path: 'academics/literati', component: LiteratiComponent },
+      { path: 'academics/literati', component: LiteraNovaAppComponent },
+      { path: 'academics/nova', component: LiteratiComponent },
 
-      { path: 'parents-corner/childs-development', component: ChildDevelopmentComponent },
-      { path: 'parents-corner/personalized-guidance', component: MountLiteraExpertConnectComponent },
-      { path: 'parents-corner/support', component: MountLiteraParentSupportHubComponent },
-      { path: 'parents-corner/parents-experience', component: ParentsTestimonialsComponent },
+      { path: 'parent-corners/child-development', component: ChildDevelopmentComponent },
+      { path: 'parent-corners/personalized-guidance', component: MountLiteraExpertConnectComponent },
+      { path: 'parent-corners/support', component: MountLiteraParentSupportHubComponent },
+      { path: 'parent-corners/parents-experience', component: ParentsTestimonialsComponent },
       { path: 'news', component: DiscoverNewsComponent },
       { path: 'events', component: DiscoverEventsComponent },
       { path: 'gallery', component: DiscoverGalleryComponent },
@@ -100,6 +101,7 @@ const routes: Routes = [
       { path: 'faqs', component: DiscoverFaqsComponent },
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
       { path: 'achievements', component: DiscoverAchievementsComponent },
+      { path: 'testTestimonial', component: TestimonialComponent }
       // { path: 'about-us', component: AboutUsComponent }
       // { path: 'pentemind', component: PentemindComponent },
       // { path: 'blog/:name', component: BlogComponent },

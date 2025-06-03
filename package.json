@@ -1,20 +1,20 @@
 {
-  "name": "kidzeeweb",
+  "name": "mlzs",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "stop": "pm2 stop dist/kidzeeweb/server/main.js",
-    "start": " pm2 start dist/kidzeeweb/server/main.js",
-    "restart": "pm2 restart dist/kidzeeweb/server/main.js",
+    "stop": "pm2 stop dist/mlzs/server/main.js",
+    "start": " pm2 start dist/mlzs/server/main.js",
+    "restart": "pm2 restart dist/mlzs/server/main.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve:prerender": "http-server -g-c-1 dist/kidzeeweb/browser",
-    "dev:ssr": "ng run kidzeeweb:serve-ssr",
-    "serve:ssr": "node dist/kidzeeweb/server/main.js",
-    "build:ssr": "ng build --configuration production && ng run kidzeeweb:server:production",
-    "prerender": "ng run kidzeeweb:prerender --routes-file routes.txt && node remove-non-compressed-files.js"
+    "serve:prerender": "http-server -g-c-1 dist/mlzs/browser",
+    "dev:ssr": "ng run mlzs:serve-ssr",
+    "serve:ssr": "node dist/mlzs/server/main.js",
+    "build:ssr": "ng build --configuration production && ng run mlzs:server:production",
+    "prerender": "ng run mlzs:prerender --routes-file routes.txt && node remove-non-compressed-files.js"
   },
   "private": true,
   "dependencies": {

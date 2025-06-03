@@ -82,3 +82,19 @@ section{
       margin:38px 52px;
       text-align: justify;
     }
+
+
+    .pdf-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+    .pdf-row {
+      margin-bottom: 30px;
+    }
+    .pdf-title {
+      font-weight: bold;
+    }
+    .subtitle {
+      color: #555;
+    }

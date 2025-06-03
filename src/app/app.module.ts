@@ -84,6 +84,7 @@ import { DiscoverFaqsComponent } from './components/discover-sub-page/discover-f
 import { DiscoverBlogsComponent } from './components/discover-sub-page/discover-blogs/discover-blogs.component';
 import { DiscoverTestimonialsComponent } from './components/discover-sub-page/discover-testimonials/discover-testimonials.component';
 import { DiscoverAchievementsComponent } from './components/discover-sub-page/discover-achievements/discover-achievements.component';
+import { MapviewComponent } from './components/mapview/mapview.component';
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -166,7 +167,8 @@ interface NgxSpinnerConfig {
     DiscoverFaqsComponent,
     DiscoverBlogsComponent,
     DiscoverTestimonialsComponent,
-    DiscoverAchievementsComponent
+    DiscoverAchievementsComponent,
+    MapviewComponent
   ],
   imports: [
     BrowserModule,
