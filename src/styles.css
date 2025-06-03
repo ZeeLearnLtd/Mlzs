@@ -283,7 +283,7 @@ li {
     margin: auto;
 }
 
-.title_content h2{
+.title_content h1{
     position: relative;
     z-index: 9;
 }
@@ -308,7 +308,7 @@ li {
         }
     
 
-    .title_content h2{
+    .title_content h1{
         position: relative;
         z-index: 9;
         font-family: 'Montserrat_bold';

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { json } from 'express';
 import { Observable, Subscription, of, switchMap, tap } from 'rxjs';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { HomeSeoService } from 'src/app/services/homeseo.service';
@@ -12,12 +13,13 @@ declare var $: any;  // Declare jQuery
   styleUrls: ['./blogs.component.css'],
 })
 export class BlogsComponent implements OnInit {
+  projectId = environment.projectid
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
   blogdata: any;
   spinner: boolean = true
-  top_blog: any;
   top_blog_img: any;
+  top_blog: any;
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -27,6 +29,7 @@ export class BlogsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     setTimeout(() => {
       $('#carousel1').owlCarousel({
         items: 1, // Number of items to show
@@ -44,11 +47,27 @@ export class BlogsComponent implements OnInit {
       .subscribe((message) => {
         this.spinner = false
         if (message) {
+
           this.blogdata = message.text;
-          this.top_blog = this.blogdata[0]
-          this.top_blog_img = this.top_blog.files[0]
         }
       });
+    this.getblog_data();
+  }
+
+
+  getblog_data() {
+    let tbody = {
+      Type: "blog",
+      pageurl: '',
+      Project_Id: this.projectId
+    };
+    this.apiService.getContentDataList(tbody).subscribe((data: any) => {
+      this.blogdata = JSON.parse(data.data[0].contentData);
+      this.top_blog_img = this.blogdata[0].logofiles[0].url;
+      this.top_blog = this.blogdata[0];
+      this.top_blog = this.blogdata[0];
+    });
+
   }
 
 }

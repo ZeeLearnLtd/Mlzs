@@ -18,8 +18,8 @@ export class FranchiseOpportunityComponent implements OnInit {
   year20: boolean = false
   year19: boolean = false
   awards: boolean = false
-  year18:boolean = false
-  year23:boolean=true
+  year18: boolean = false
+  year23: boolean = true
   otp_ValidMsg: boolean = false
   otp_inValidMsg: boolean = false
   submitted: boolean = false
@@ -31,7 +31,7 @@ export class FranchiseOpportunityComponent implements OnInit {
   cityList: any;
   franchiseeList: any;
 
-  constructor(private fb: FormBuilder,private ngxSpinner:NgxSpinnerService, private _servie: CommonService, private _activeRoute: ActivatedRoute, private router: Router,
+  constructor(private fb: FormBuilder, private ngxSpinner: NgxSpinnerService, private _servie: CommonService, private _activeRoute: ActivatedRoute, private router: Router,
     private projectService: ProjectSeoService,
     private apiService: ApicallService) {
     this.admissionForm = fb.group({
@@ -48,7 +48,7 @@ export class FranchiseOpportunityComponent implements OnInit {
   }
   ngOnInit(): void {
     this.selectCountry_State_cityList();
-    
+
   }
 
 
@@ -86,7 +86,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         (document.getElementById('year5') as HTMLElement).style.fontSize = "18px",
         (document.getElementById('year0') as HTMLElement).style.color = "#FAC216",
         (document.getElementById('year0') as HTMLElement).style.fontSize = "20px",
-      this.year22 = false
+        this.year22 = false
       this.year21 = false
       this.year20 = false
       this.year19 = false
@@ -106,7 +106,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         (document.getElementById('year5') as HTMLElement).style.fontSize = "18px",
         (document.getElementById('year0') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
         (document.getElementById('year0') as HTMLElement).style.fontSize = "18px",
-      this.year22 = true
+        this.year22 = true
       this.year21 = false
       this.year20 = false
       this.year19 = false
@@ -126,7 +126,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         (document.getElementById('year5') as HTMLElement).style.fontSize = "18px",
         (document.getElementById('year0') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
         (document.getElementById('year0') as HTMLElement).style.fontSize = "18px",
-      this.year22 = false
+        this.year22 = false
       this.year21 = true
       this.year20 = false
       this.year19 = false
@@ -146,7 +146,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         (document.getElementById('year5') as HTMLElement).style.fontSize = "18px",
         (document.getElementById('year0') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
         (document.getElementById('year0') as HTMLElement).style.fontSize = "18px",
-      this.year22 = false
+        this.year22 = false
       this.year21 = false
       this.year20 = true
       this.year19 = false
@@ -166,7 +166,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         (document.getElementById('year1') as HTMLElement).style.fontSize = "18px",
         (document.getElementById('year0') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
         (document.getElementById('year0') as HTMLElement).style.fontSize = "18px",
-      this.year22 = false
+        this.year22 = false
       this.year21 = false
       this.year20 = false
       this.year19 = true
@@ -187,7 +187,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         (document.getElementById('year1') as HTMLElement).style.fontSize = "18px",
         (document.getElementById('year0') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
         (document.getElementById('year0') as HTMLElement).style.fontSize = "18px",
-      this.year22 = false
+        this.year22 = false
       this.year21 = false
       this.year20 = false
       this.year18 = true
@@ -247,7 +247,7 @@ export class FranchiseOpportunityComponent implements OnInit {
             this.admissionForm.reset();
             this.submitted = false
           },
-          error=>{
+          error => {
             this.ngxSpinner.hide();
             console.log(error);
           }
@@ -283,7 +283,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         this.ngxSpinner.hide();
         this.otpInput = true;
       },
-      error=>{
+      error => {
         this.ngxSpinner.hide();
         console.log(error);
       }
@@ -312,7 +312,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         })
         this.stateList = filterState[0].State
       })
-      this.getseo();
+    this.getseo();
   }
 
   selectState(selectVal: any) {

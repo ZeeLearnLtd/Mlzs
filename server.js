@@ -16,7 +16,7 @@ app.use(express.json());
 //   })
 // );
 const _dir = process.cwd();
- const distFolder = path.join(process.cwd(), "dist/kidzeeweb/browser");
+ const distFolder = path.join(process.cwd(), "dist/mlzs/browser");
  //console.log(fs.existsSync(path.join(distFolder, "index.original.html")));
 const indexHtml = fs.existsSync(path.join(distFolder, "index.original.html"))
   ? path.join(distFolder, "index.original.html")
@@ -29,7 +29,7 @@ app.use(
   })
 );
 // Enable gzip compression for server responses
-app.use(expressStaticGzip(path.join(__dirname, 'dist', 'kidzeeweb','browser'), {
+app.use(expressStaticGzip(path.join(__dirname, 'dist', 'mlzs','browser'), {
   enableBrotli: true, // Enable Brotli compression
   orderPreference: ['br', 'gz'], // Compression preference order (Brotli will be preferred if available)
   setHeaders: (res) => {

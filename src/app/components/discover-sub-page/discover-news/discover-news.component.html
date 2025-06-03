@@ -36,7 +36,22 @@
             <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and updates about Mount Litera Zee School from our community.</p>
        
             <div class="news_list mt-5">
-                <div class="row">
+                <div class="row" *ngFor="let a of newsData">
+                    <div class="col-md-3">
+                        <img src="../../../../assets/img/MLZS/news_img.png" width="100%" alt="">
+                    </div>
+                    <div class="col-md-9">
+                       <div class="news_text">
+                        <h5><b>{{a.Title}}</b></h5>
+                        <p [innerHTML]="a.short"></p>
+                        <p class="p-0 m-0"><small>Publisher - Zee News</small></p>
+                        <p class="date_text p-0 m-0">Date: {{a.CreatedDate}}</p>
+                        <button class="btn read_mode mt-4">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
+                       </div>
+                    </div>
+                </div>
+
+                <!-- <div class="row mt-5">
                     <div class="col-md-3">
                         <img src="../../../../assets/img/MLZS/news_img.png" width="100%" alt="">
                     </div>
@@ -94,22 +109,7 @@
                         <button class="btn read_mode mt-4">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
                        </div>
                     </div>
-                </div>
-
-                <div class="row mt-5">
-                    <div class="col-md-3">
-                        <img src="../../../../assets/img/MLZS/news_img.png" width="100%" alt="">
-                    </div>
-                    <div class="col-md-9">
-                       <div class="news_text">
-                        <h5><b>Oberon Shaw, MCH</b></h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has surviv</p>
-                        <p class="p-0 m-0"><small>Publisher - Zee News</small></p>
-                        <p class="date_text p-0 m-0">Date: 14 May 2024</p>
-                        <button class="btn read_mode mt-4">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
-                       </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
        
         </div>

@@ -14,18 +14,15 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <!-- <div class="blog_main_img" *ngFor="let img of a.files">
-                        <img src="{{img.url}}" alt="blog_main_img">
-                    </div> -->
                     <div class="image-container">
                         <div>
-                        <img src="{{top_blog_img.url}}" alt="Image with overlay" />
+                        <img src="{{top_blog_img}}" alt="Image with overlay" />
                     </div>
                     
                         <div class="text-overlay">
                             <div class="sub_text_content">
-                            <div class="date">{{top_blog.FromDate}}</div>
-                            <div class="sub_text">{{top_blog.Title}}</div>
+                            <div class="date">{{top_blog?.FromDate}}</div>
+                            <div class="sub_text">{{top_blog?.Title}}</div>
                         </div>
                         </div>
                       </div>
@@ -34,49 +31,19 @@
 
             <div class="row mt-4">
                 <div class="col-md-4" *ngFor="let a of blogdata">
-                    <!-- <div class="blog_sub_img d-flex justify-content-center">
-                        <div *ngFor="let img of a.files">
-                        <img src="{{img.url}}" alt="">
-                    </div>
-                        <div class="overlay-text">
-                            <div class="date">{{a.FromDate}}</div>
-                           <div class="sub_text">{{a.Title}}</div>
-                        </div>
-                    </div> -->
-
                     <div class="image-container">
                         <div *ngFor="let img of a.files">
-                        <img src="{{img.url}}" alt="Image with overlay" />
+                        <img src="{{img?.url}}" alt="Image with overlay" />
                     </div>
                     
                         <div class="text-overlay">
                             <div class="sub_text_content">
-                            <div class="date">{{a.FromDate}}</div>
-                            <div class="sub_text">{{a.Title}}</div>
+                            <div class="date">{{a?.FromDate}}</div>
+                            <div class="sub_text">{{a?.Title}}</div>
                         </div>
                         </div>
                       </div>
                 </div>
-                <!-- <div class="col-md-4">
-                    <div class="blog_sub_img d-flex justify-content-center">
-                        <img src="../../../assets/img/MLZS/blog2.png" alt="">
-                        <div class="overlay-text">
-                            <div class="date">24-02-2024</div>
-                           <div class="sub_text">How Many Letters are</div>
-                           <div class="sub_text">There in Alphabets?</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog_sub_img d-flex justify-content-center">
-                        <img src="../../../assets/img/MLZS/blog3.png" alt="">
-                        <div class="overlay-text">
-                            <div class="date">23-02-2024</div>
-                           <div class="sub_text">How Many Letters are</div>
-                           <div class="sub_text">There in Alphabets?</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>

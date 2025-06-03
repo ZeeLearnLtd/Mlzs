@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ApicallService } from 'src/app/services/apicall.service';
+import { ProjectSeoService } from 'src/app/services/projectseo.service';
+import { environment } from 'src/environments/environment';
 declare var $: any;  // Declare jQuery
 
 @Component({
@@ -7,48 +10,52 @@ declare var $: any;  // Declare jQuery
   styleUrls: ['./parents-testimonials.component.css']
 })
 export class ParentsTestimonialsComponent {
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      var owl = $(".parent_owl");
-      owl.owlCarousel({
-        items: 3,
-        margin: 25,
-        loop: true,
-        nav: false,
-        center: true,
-        responsive: {
-          0: {
-            items: 1, // On mobile (0px and up), show 1 item
-          },
-          600: {
-            items: 2, // On tablets (600px and up), show 2 items
-          },
-          1000: {
-            items: 3, // On larger screens (1000px and up), show 3 items
-          },
-        }
-      });
 
-      var owl = $(".parent_owl");
-      owl.owlCarousel({
-        items: 3,
-        margin: 25,
-        loop: true,
-        nav: false,
-        center: true,
-        responsive: {
-          0: {
-            items: 1, // On mobile (0px and up), show 1 item
-          },
-          600: {
-            items: 2, // On tablets (600px and up), show 2 items
-          },
-          1000: {
-            items: 3, // On larger screens (1000px and up), show 3 items
-          },
-        }
-      });
-    }, 1000)
 
+  constructor(private apiService: ApicallService, private projectService: ProjectSeoService,) { }
+
+  onInit(): void {
+    this.getseo();
   }
+
+
+  ngAfterViewInit(): void {
+    console.log('call owl')
+    setTimeout(() => {
+      var owl = $(".news_owl");
+      owl.owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: false,
+        center: true,
+        responsive: {
+          0: {
+            items: 1, // On mobile (0px and up), show 1 item
+          },
+          600: {
+            items: 2, // On tablets (600px and up), show 2 items
+          },
+          1000: {
+            items: 3, // On larger screens (1000px and up), show 3 items
+          },
+        }
+      });
+    }, 4000)
+  }
+
+  getseo() {
+    let tbody = {
+      slug: 'parent-corners/parents-experience',
+      Projectid: environment.projectid,
+    };
+    this.apiService.getGetseo(tbody).subscribe((data: any) => {
+      this.projectService.sendMessagebread(data.data.breadcrumb);
+      this.projectService.sendMessageblog(data?.data?.blog);
+      this.projectService.sendMessageseo(data?.data?.testimony);
+      this.projectService.sendMessageFaqs(data?.data?.faq);
+      // this.projectService.setmeta(data?.data);
+
+    });
+  }
+
 }
