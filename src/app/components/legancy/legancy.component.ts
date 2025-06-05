@@ -1,15 +1,15 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
-
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 @Component({
   selector: 'app-legancy',
   templateUrl: './legancy.component.html',
   styleUrls: ['./legancy.component.css'],
 })
-export class LegancyComponent implements OnInit,AfterViewInit {
+export class LegancyComponent implements OnInit, AfterViewInit {
   // active:boolean=false
   deactive: boolean = false;
   eduction: boolean = false;
@@ -24,17 +24,20 @@ export class LegancyComponent implements OnInit,AfterViewInit {
   year18: boolean = false;
   year23: boolean = true;
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private route: ActivatedRoute,
     private projectService: ProjectSeoService,
     private apiService: ApicallService
   ) { }
   ngAfterViewInit(): void {
     setTimeout(() => {
-      window.scrollTo({
-        top: 400,
-        left: 0,
-        behavior: 'smooth'
-      });
+      if (isPlatformServer(this.platformId)) {
+        window.scrollTo({
+          top: 400,
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
     }, 100);
     throw new Error('Method not implemented.');
   }
@@ -43,7 +46,7 @@ export class LegancyComponent implements OnInit,AfterViewInit {
     //this.scrollToPosition();
     this.legacyvisible();
     this.getseo();
-    
+
   }
   getseo() {
     let tbody = {
@@ -110,7 +113,7 @@ export class LegancyComponent implements OnInit,AfterViewInit {
         ((document.getElementById('year0') as HTMLElement).style.fontSize =
           '20px'),
         ((document.getElementById('year1') as HTMLElement).style.color =
-        'rgba(102, 103, 104, 0.50)'),
+          'rgba(102, 103, 104, 0.50)'),
         ((document.getElementById('year1') as HTMLElement).style.fontSize =
           '20px'),
         ((document.getElementById('year2') as HTMLElement).style.fontSize =
@@ -138,7 +141,7 @@ export class LegancyComponent implements OnInit,AfterViewInit {
         ((document.getElementById('year0') as HTMLElement).style.fontSize =
           '20px'),
         ((document.getElementById('year1') as HTMLElement).style.color =
-        '#FAC216'),
+          '#FAC216'),
         ((document.getElementById('year1') as HTMLElement).style.fontSize =
           '20px'),
         ((document.getElementById('year2') as HTMLElement).style.fontSize =
@@ -159,7 +162,7 @@ export class LegancyComponent implements OnInit,AfterViewInit {
       this.year20 = false;
       this.year19 = false;
       this.year18 = false;
-      
+
     }
     if (value == 2) {
       ((document.getElementById('year1') as HTMLElement).style.color =
@@ -232,7 +235,7 @@ export class LegancyComponent implements OnInit,AfterViewInit {
           '#FAC216'),
         ((document.getElementById('year4') as HTMLElement).style.fontSize =
           '20px'),
-          ((document.getElementById('year5') as HTMLElement).style.color =
+        ((document.getElementById('year5') as HTMLElement).style.color =
           'rgba(102, 103, 104, 0.50)'),
         ((document.getElementById('year5') as HTMLElement).style.fontSize =
           '20px'),
@@ -285,11 +288,12 @@ export class LegancyComponent implements OnInit,AfterViewInit {
 
 
   scrollToPosition() {
-    console.log('scroll')
-    window.scrollTo({
-      top: 500,  // Scroll to the top of the page
-      left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)
-      behavior: 'smooth'  // Smooth scrolling effect
-    });
+    if (isPlatformServer(this.platformId)) {
+      window.scrollTo({
+        top: 500,  // Scroll to the top of the page
+        left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)
+        behavior: 'smooth'  // Smooth scrolling effect
+      });
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription, of, switchMap, tap } from 'rxjs';
 import { ApicallService } from 'src/app/services/apicall.service';
@@ -6,6 +6,7 @@ import { HomeSeoService } from 'src/app/services/homeseo.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-discover-testimonials',
@@ -21,6 +22,7 @@ export class DiscoverTestimonialsComponent {
   testimonialData: any = [];
   testimonialDataList: any;
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
     private projectService: ProjectSeoService,
@@ -34,7 +36,29 @@ export class DiscoverTestimonialsComponent {
 
   ngOnInit(): void {
     this.getseo()
-
+    if (isPlatformServer(this.platformId)) {
+      setTimeout(() => {
+        var owl = $(".news_owl");
+        owl.owlCarousel({
+          margin: 10,
+          loop: true,
+          nav: false,
+          center: true,
+          responsive: {
+            0: {
+              items: 1, // On mobile (0px and up), show 1 item
+            },
+            600: {
+              items: 2, // On tablets (600px and up), show 2 items
+            },
+            1000: {
+              items: 3, // On larger screens (1000px and up), show 3 items
+            },
+          }
+        });
+      }
+        , 1000)
+    }
   }
 
   getseo() {
@@ -53,42 +77,50 @@ export class DiscoverTestimonialsComponent {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      var owl = $(".news_owl");
-      owl.owlCarousel({
-        margin: 10,
-        loop: true,
-        nav: false,
-        center: true,
-        responsive: {
-          0: {
-            items: 1, // On mobile (0px and up), show 1 item
-          },
-          600: {
-            items: 2, // On tablets (600px and up), show 2 items
-          },
-          1000: {
-            items: 3, // On larger screens (1000px and up), show 3 items
-          },
-        }
-      });
-    }, 1000)
+
+    // setTimeout(() => {
+    //   // if (isPlatformServer(this.platformId)) {
+    //   var owl = $(".news_owl");
+    //   owl.owlCarousel({
+    //     margin: 10,
+    //     loop: true,
+    //     nav: false,
+    //     center: true,
+    //     responsive: {
+    //       0: {
+    //         items: 1, // On mobile (0px and up), show 1 item
+    //       },
+    //       600: {
+    //         items: 2, // On tablets (600px and up), show 2 items
+    //       },
+    //       1000: {
+    //         items: 3, // On larger screens (1000px and up), show 3 items
+    //       },
+    //     }
+    //   });
+    // }
+    //   // }
+    //   , 1000)
 
   }
 
   gettestimonial_data() {
+    console.log('testimonial data')
     let tbody = {
       Type: "student testimonial",
       pageurl: '',
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
+      console.log('testimonial data1', data)
       let res = data.data[0].contentData
       this.testimonialData = JSON.parse(res);
+
       this.testimonialDataList = this.testimonialData.map((video: any) => ({
         title: video.Title,
         safeUrl: this.getSafeEmbedUrl(video.slug)
       }));
+      console.log('testimonial data2', this.testimonialDataList)
     });
 
   }

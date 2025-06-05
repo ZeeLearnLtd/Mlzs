@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonService } from '../service/common.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 @Component({
   selector: 'app-locate-us',
   templateUrl: './locate-us.component.html',
@@ -38,7 +39,12 @@ export class LocateUsComponent implements OnInit {
   enquireForm: FormGroup
   segment: any
 
-  constructor(private _service: CommonService, private fb: FormBuilder, private ngxSpinner: NgxSpinnerService, public sanitizer: DomSanitizer,
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private _service: CommonService,
+    private fb: FormBuilder,
+    private ngxSpinner: NgxSpinnerService,
+    public sanitizer: DomSanitizer,
     private projectService: ProjectSeoService, private router: Router,
     private apiService: ApicallService,
     private activatedRoute: ActivatedRoute) {
@@ -266,11 +272,15 @@ export class LocateUsComponent implements OnInit {
       next: (resp: any) => {
         if (resp.data) {
           if (resp.data[0]?.url) {
-            window.open(resp.data[0].url, "_blank");
+            if (isPlatformServer(this.platformId)) {
+              window.open(resp.data[0].url, "_blank");
+            }
           }
           else {
-            this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
-            this.router.navigateByUrl('/admissions');
+            if (isPlatformServer(this.platformId)) {
+              this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
+              this.router.navigateByUrl('/admissions');
+            }
           }
         }
       },

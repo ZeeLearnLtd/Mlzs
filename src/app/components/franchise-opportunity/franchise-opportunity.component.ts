@@ -48,7 +48,6 @@ export class FranchiseOpportunityComponent implements OnInit {
   }
   ngOnInit(): void {
     this.selectCountry_State_cityList();
-
   }
 
 
@@ -312,7 +311,7 @@ export class FranchiseOpportunityComponent implements OnInit {
         })
         this.stateList = filterState[0].State
       })
-    this.getseo();
+    // this.getseo();
   }
 
   selectState(selectVal: any) {

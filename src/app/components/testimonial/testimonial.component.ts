@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription, of, switchMap, tap } from 'rxjs';
 import { ApicallService } from 'src/app/services/apicall.service';
@@ -6,6 +6,7 @@ import { HomeSeoService } from 'src/app/services/homeseo.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-testimonial',
@@ -20,6 +21,7 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
   testimonialData: any = [];
   testimonialDataList: any;
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
     private projectService: ProjectSeoService,
@@ -31,26 +33,29 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
+
     setTimeout(() => {
-      var owl = $(".news_owl");
-      owl.owlCarousel({
-        items: 3,
-        margin: 25,
-        loop: true,
-        nav: false,
-        center: true,
-        responsive: {
-          0: {
-            items: 1, // On mobile (0px and up), show 1 item
-          },
-          600: {
-            items: 2, // On tablets (600px and up), show 2 items
-          },
-          1000: {
-            items: 3, // On larger screens (1000px and up), show 3 items
-          },
-        }
-      });
+      if (isPlatformServer(this.platformId)) {
+        var owl = $(".news_owl");
+        owl.owlCarousel({
+          items: 3,
+          margin: 25,
+          loop: true,
+          nav: false,
+          center: true,
+          responsive: {
+            0: {
+              items: 1, // On mobile (0px and up), show 1 item
+            },
+            600: {
+              items: 2, // On tablets (600px and up), show 2 items
+            },
+            1000: {
+              items: 3, // On larger screens (1000px and up), show 3 items
+            },
+          }
+        });
+      }
     }, 1000)
 
   }

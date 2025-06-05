@@ -31,10 +31,27 @@
             <div class="news_list mt-5">
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="../../../../assets/img/MLZS/gallery_img.png" width="100%" alt="">
+                        <div>
+                        <img src="{{firstBlog.value}}" width="100%" alt="">
+                        </div>
                     </div>
                     <div class="col-md-7">
-                        <div class="row right_card">
+                        <div class="row right_card" *ngFor="let a of blogsData">
+                            <div class="col-md-4">
+                                <div *ngFor="let img of a.OtherFiles">
+                                <img src="{{img.value}}" width="100%" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                               <div class="news_text">
+                                <h5><b>{{a.Title}}</b></h5>
+                                <p class="m-0 p-0" [innerHTML]="a.Long1"></p>
+                                <p class="m-0 p-0 date_content"><i>Date: {{a.StartDate}}</i></p>
+                                <!-- <button class="btn read_mode mt-4">Know More <i class="fa fa-long-arrow-right mx-2"></i></button> -->
+                               </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row mt-4">
                             <div class="col-md-4">
                                 <img src="../../../../assets/img/MLZS/sub_gallery.png" width="100%" alt="">
                             </div>
@@ -43,7 +60,6 @@
                                 <h5><b>Oberon Shaw, MCH</b></h5>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
                                 <small>Date: 14 May 2024</small>
-                                <!-- <button class="btn read_mode mt-4">Know More <i class="fa fa-long-arrow-right mx-2"></i></button> -->
                                </div>
                             </div>
                         </div>
@@ -56,23 +72,9 @@
                                 <h5><b>Oberon Shaw, MCH</b></h5>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
                                 <small>Date: 14 May 2024</small>
-                                <!-- <button class="btn read_mode mt-4">Know More <i class="fa fa-long-arrow-right mx-2"></i></button> -->
                                </div>
                             </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-4">
-                                <img src="../../../../assets/img/MLZS/sub_gallery.png" width="100%" alt="">
-                            </div>
-                            <div class="col-md-8">
-                               <div class="news_text">
-                                <h5><b>Oberon Shaw, MCH</b></h5>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                                <small>Date: 14 May 2024</small>
-                                <!-- <button class="btn read_mode mt-4">Know More <i class="fa fa-long-arrow-right mx-2"></i></button> -->
-                               </div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-our-parents',
@@ -6,19 +7,26 @@ declare var $: any;  // Declare jQuery
   styleUrls: ['./our-parents.component.css']
 })
 export class OurParentsComponent {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {
 
+  }
 
   ngAfterViewInit(): void {
-    setTimeout(()=>{
-      $('.vertical_carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        items: 1,
-        nav:false,
-      animateOut: 'slideOutUp',
-      animateIn: 'slideInUp'
-    })
-    },1000)
+
+    setTimeout(() => {
+      if (isPlatformServer(this.platformId)) {
+        $('.vertical_carousel').owlCarousel({
+          loop: true,
+          margin: 10,
+          items: 1,
+          nav: false,
+          animateOut: 'slideOutUp',
+          animateIn: 'slideInUp'
+        })
+      }
+    }, 1000)
 
   }
 }

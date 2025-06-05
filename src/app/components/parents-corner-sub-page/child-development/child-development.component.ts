@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { environment } from 'src/environments/environment';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-child-development',
@@ -10,51 +11,56 @@ declare var $: any;  // Declare jQuery
 })
 export class ChildDevelopmentComponent {
 
-  constructor(private apiService: ApicallService,
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private apiService: ApicallService,
     private projectService: ProjectSeoService,
   ) { }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      var owl = $(".parent_owl");
-      owl.owlCarousel({
-        items: 3,
-        margin: 25,
-        loop: true,
-        nav: false,
-        center: true,
-        responsive: {
-          0: {
-            items: 1, // On mobile (0px and up), show 1 item
-          },
-          600: {
-            items: 2, // On tablets (600px and up), show 2 items
-          },
-          1000: {
-            items: 3, // On larger screens (1000px and up), show 3 items
-          },
-        }
-      });
 
-      var owl = $(".parent_owl");
-      owl.owlCarousel({
-        items: 3,
-        margin: 25,
-        loop: true,
-        nav: false,
-        center: true,
-        responsive: {
-          0: {
-            items: 1, // On mobile (0px and up), show 1 item
-          },
-          600: {
-            items: 2, // On tablets (600px and up), show 2 items
-          },
-          1000: {
-            items: 3, // On larger screens (1000px and up), show 3 items
-          },
-        }
-      });
+    setTimeout(() => {
+      if (isPlatformServer(this.platformId)) {
+        var owl = $(".parent_owl");
+        owl.owlCarousel({
+          items: 3,
+          margin: 25,
+          loop: true,
+          nav: false,
+          center: true,
+          responsive: {
+            0: {
+              items: 1, // On mobile (0px and up), show 1 item
+            },
+            600: {
+              items: 2, // On tablets (600px and up), show 2 items
+            },
+            1000: {
+              items: 3, // On larger screens (1000px and up), show 3 items
+            },
+          }
+        });
+
+        var owl = $(".parent_owl");
+        owl.owlCarousel({
+          items: 3,
+          margin: 25,
+          loop: true,
+          nav: false,
+          center: true,
+          responsive: {
+            0: {
+              items: 1, // On mobile (0px and up), show 1 item
+            },
+            600: {
+              items: 2, // On tablets (600px and up), show 2 items
+            },
+            1000: {
+              items: 3, // On larger screens (1000px and up), show 3 items
+            },
+          }
+        });
+      }
     }, 1000)
 
   }

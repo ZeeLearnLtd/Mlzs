@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 @Component({
   selector: 'app-our-approach',
   templateUrl: './our-approach.component.html',
@@ -20,29 +21,34 @@ export class OurApproachComponent implements OnInit {
   year19: boolean = false
   awards: boolean = false
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private projectService: ProjectSeoService,
     private apiService: ApicallService
   ) {
 
   }
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.scrollToPosition();
-    }, 100);
+    if (isPlatformServer(this.platformId)) {
+      setTimeout(() => {
+        this.scrollToPosition();
+      }, 100);
+    }
     throw new Error('Method not implemented.');
- }
+  }
   ngOnInit() {
-    
+
     this.advantagevisible();
     this.getseo();
-    
+
   }
   scrollToPosition() {
-    window.scrollTo({
-      top: 400,  // Scroll to the top of the page
-      left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)
-      behavior: 'smooth'  // Smooth scrolling effect
-    });
+    if (isPlatformServer(this.platformId)) {
+      window.scrollTo({
+        top: 400,  // Scroll to the top of the page
+        left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)
+        behavior: 'smooth'  // Smooth scrolling effect
+      });
+    }
   }
 
   getseo() {
