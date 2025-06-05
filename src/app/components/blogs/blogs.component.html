@@ -32,8 +32,8 @@
             <div class="row mt-4">
                 <div class="col-md-4" *ngFor="let a of blogdata">
                     <div class="image-container">
-                        <div *ngFor="let img of a.files">
-                        <img src="{{img?.url}}" alt="Image with overlay" />
+                        <div *ngFor="let img of a.OtherFiles">
+                        <img src="{{img?.value}}" alt="Image with overlay" />
                     </div>
                     
                         <div class="text-overlay">

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../service/common.service';
-import { ActivatedRoute, Router,Params } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
-
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 @Component({
   selector: 'app-admissions-form',
   templateUrl: './admissions-form.component.html',
@@ -20,24 +20,25 @@ export class AdmissionsFormComponent implements OnInit {
   countryList: any;
   stateList: any;
   cityList: any;
-  selectedDevice:string="";
+  selectedDevice: string = "";
   franchiseeList: any;
   studentID: any;
   program_id: any;
   gen_captcha: any;
   filterFranchisee: any;
   locationName: any;
-  selectedcountry:string="";
-  selectedstate:string="";
-  selectedCity:string="";
-  selectedpincode:string="";
-  franchiseeMobileNo:string="";
-  form_title:boolean=true;
-  generatedcaptcha:string="";
-  captchaText: any =[]
+  selectedcountry: string = "";
+  selectedstate: string = "";
+  selectedCity: string = "";
+  selectedpincode: string = "";
+  franchiseeMobileNo: string = "";
+  form_title: boolean = true;
+  generatedcaptcha: string = "";
+  captchaText: any = []
   captchaEntered: String = ""
-  constructor(private fb: FormBuilder, private _servie: CommonService, private ngxSpinner:NgxSpinnerService,
-    private activatedRoute: ActivatedRoute,private _activeRoute: ActivatedRoute, private router: Router) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object, private fb: FormBuilder, private _servie: CommonService, private ngxSpinner: NgxSpinnerService,
+    private activatedRoute: ActivatedRoute, private _activeRoute: ActivatedRoute, private router: Router) {
     this.admissionForm = fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
@@ -50,7 +51,7 @@ export class AdmissionsFormComponent implements OnInit {
       otp: ['', Validators.required],
       location: ['', Validators.required]
     })
-  
+
   }
 
   ngOnInit(): void {
@@ -58,60 +59,60 @@ export class AdmissionsFormComponent implements OnInit {
     this.createCaptcha();
     this.selectCountry_State_cityList();
     //
-    
+
   }
   get f() {
     return this.admissionForm.controls;
   }
 
-  setaddress(data:any){
+  setaddress(data: any) {
     let filterState = this.countryList.filter((x: any) => {
       return x.Country_Name == data.Country_Name;
     });
-    
+
     this.stateList = filterState[0].State;
-    this.selectedcountry=data.Country_Name;
+    this.selectedcountry = data.Country_Name;
 
     let filterCity = this.stateList.filter((x: any) => {
       return x.State_Name == data.State_Name
     })
     this.cityList = filterCity[0].City
-    this.selectedstate=data.State_Name;
+    this.selectedstate = data.State_Name;
 
 
     this.filterFranchisee = this.cityList.filter((x: any) => {
       return x.City_Name == data.City_Name
     })
-    this.selectedCity=data.City_Name;
+    this.selectedCity = data.City_Name;
 
-    if(!Array.isArray(this.filterFranchisee[0].Franchisee))
-    {
-    this.franchiseeList = [this.filterFranchisee[0].Franchisee];
-    this.locationName=this.franchiseeList[0].Franchisee_Name;
-    this.franchiseeMobileNo=this.franchiseeList[0].Mobile_No;  
+    if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
+      this.franchiseeList = [this.filterFranchisee[0].Franchisee];
+      this.locationName = this.franchiseeList[0].Franchisee_Name;
+      this.franchiseeMobileNo = this.franchiseeList[0].Mobile_No;
     }
-    else
-    {
+    else {
       this.franchiseeList = this.filterFranchisee[0].Franchisee;
-      let dt=this.franchiseeList.filter((dt:any)=>{
-        return dt.Franchisee_Code==data.Franchisee_Code
-      }).map((obj:any)=>{
+      let dt = this.franchiseeList.filter((dt: any) => {
+        return dt.Franchisee_Code == data.Franchisee_Code
+      }).map((obj: any) => {
         return obj
-      })     
-      this.locationName= dt[0].Franchisee_Name;
-      this.franchiseeMobileNo=dt[0].Mobile_No;
-      
+      })
+      this.locationName = dt[0].Franchisee_Name;
+      this.franchiseeMobileNo = dt[0].Mobile_No;
+
     }
-  
-    this.selectedpincode=data.Pin_Code;
-    this.selectedDevice=data.Franchisee_Code;
+
+    this.selectedpincode = data.Pin_Code;
+    this.selectedDevice = data.Franchisee_Code;
     //this.locationName=this.franchiseeList[0].Franchisee_Name;
-    window.sessionStorage.removeItem('uddixadd');
+    if (isPlatformServer(this.platformId)) {
+      window.sessionStorage.removeItem('uddixadd');
+    }
   }
 
   validationForm() {
     this.submitted = true;
- 
+
     if (this.admissionForm.valid) {
       this.submit_captcha();
     } else {
@@ -151,33 +152,33 @@ export class AdmissionsFormComponent implements OnInit {
           // "utm_Term": "Website",
 
 
-            "City": this.admissionForm.get('city')?.value,
-            "Country": this.admissionForm.get('country')?.value,
-            "Email": this.admissionForm.get('email')?.value,
-            "FirstName": this.admissionForm.get('fname')?.value,
-            "HaveSpace": "",
-            "LastName": this.admissionForm.get('lname')?.value,
-            "Location": this.admissionForm.get('location')?.value,
-            "Location_name": this.locationName,
-            "Mobile": this.admissionForm.get('mobile')?.value,
-            "PinCode": this.admissionForm.get('pinCode')?.value,
-            "class":"",
-            "Product": "259262000004729208",
-            "ProjectId": "1",
-            "SoonStartsIn": "",
-            "Source": "gclid",
-            "gclid": "gclid",
-            "State": this.admissionForm.get('state')?.value,
-            "Type": "P",
-            "WillingToInvest": "",
-            "utm_compaign": "Website",
-            "utm_medium": "Website",
-            "utm_source": "Website",
-            "utm_ad": "Website",
-            "utm_Content": "Website",
-            "utm_Term": "Website",
-            "Stream":"", 
-            "Franchise_Mobile": this.franchiseeMobileNo    
+          "City": this.admissionForm.get('city')?.value,
+          "Country": this.admissionForm.get('country')?.value,
+          "Email": this.admissionForm.get('email')?.value,
+          "FirstName": this.admissionForm.get('fname')?.value,
+          "HaveSpace": "",
+          "LastName": this.admissionForm.get('lname')?.value,
+          "Location": this.admissionForm.get('location')?.value,
+          "Location_name": this.locationName,
+          "Mobile": this.admissionForm.get('mobile')?.value,
+          "PinCode": this.admissionForm.get('pinCode')?.value,
+          "class": "",
+          "Product": "259262000004729208",
+          "ProjectId": "1",
+          "SoonStartsIn": "",
+          "Source": "gclid",
+          "gclid": "gclid",
+          "State": this.admissionForm.get('state')?.value,
+          "Type": "P",
+          "WillingToInvest": "",
+          "utm_compaign": "Website",
+          "utm_medium": "Website",
+          "utm_source": "Website",
+          "utm_ad": "Website",
+          "utm_Content": "Website",
+          "utm_Term": "Website",
+          "Stream": "",
+          "Franchise_Mobile": this.franchiseeMobileNo
         }
         this._servie.saveData(obj).subscribe(
           res => {
@@ -188,12 +189,12 @@ export class AdmissionsFormComponent implements OnInit {
             this.admissionForm.reset();
             this.submitted = false
           },
-          error=>{
+          error => {
             this.ngxSpinner.hide();
             console.log(error);
           }
         )
-        
+
         this.otp_ValidMsg = true;
         this.otp_inValidMsg = false;
 
@@ -206,30 +207,28 @@ export class AdmissionsFormComponent implements OnInit {
 
 
   }
-  selectCentet(getCenter:any){
-    
-  if(!Array.isArray(this.filterFranchisee[0].Franchisee))
-    {
-    this.franchiseeList = [this.filterFranchisee[0].Franchisee];
-    this.locationName=this.franchiseeList[0].Franchisee_Name;  
-    this.franchiseeMobileNo=this.franchiseeList[0].Mobile_No;  
+  selectCentet(getCenter: any) {
+
+    if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
+      this.franchiseeList = [this.filterFranchisee[0].Franchisee];
+      this.locationName = this.franchiseeList[0].Franchisee_Name;
+      this.franchiseeMobileNo = this.franchiseeList[0].Mobile_No;
     }
-    else
-    {
+    else {
       this.franchiseeList = this.filterFranchisee[0].Franchisee;
-      let dt=this.franchiseeList.filter((dt:any)=>{
-        return dt.Franchisee_Code==getCenter
-      }).map((obj:any)=>{
+      let dt = this.franchiseeList.filter((dt: any) => {
+        return dt.Franchisee_Code == getCenter
+      }).map((obj: any) => {
         return obj
-      })     
-      this.locationName= dt[0].Franchisee_Name;
-      this.franchiseeMobileNo=dt[0].Mobile_No;
+      })
+      this.locationName = dt[0].Franchisee_Name;
+      this.franchiseeMobileNo = dt[0].Mobile_No;
     }
   }
 
 
   getMobileNO() {
-   if ((this.admissionForm.get('mobile')?.value).length == 10) {
+    if ((this.admissionForm.get('mobile')?.value).length == 10) {
       this.sendMobNO();
     }
   }
@@ -247,7 +246,7 @@ export class AdmissionsFormComponent implements OnInit {
         this.ngxSpinner.hide();
         this.otpInput = true;
       },
-      error=>{
+      error => {
         this.ngxSpinner.hide();
         console.log(error);
       }
@@ -267,15 +266,15 @@ export class AdmissionsFormComponent implements OnInit {
 
   selectCountry_State_cityList() {
     this._servie.getState_countryList().subscribe(
-      res => {        
+      res => {
         this.countryList = res.root.subroot;
         console.log(this.countryList)
-        let address=this._servie.getencrypt(this._servie.getsession("uddixadd")!);
-        if(this._servie.getsession("uddixadd")!){
-           let dt=JSON.parse(address);    
-           this.setaddress(dt);
+        let address = this._servie.getencrypt(this._servie.getsession("uddixadd")!);
+        if (this._servie.getsession("uddixadd")!) {
+          let dt = JSON.parse(address);
+          this.setaddress(dt);
         }
-      })      
+      })
   }
 
   selectCountry(selectVal: any) {
@@ -300,13 +299,13 @@ export class AdmissionsFormComponent implements OnInit {
     this.filterFranchisee = this.cityList.filter((x: any) => {
       return x.City_Name == city
     })
-    if(!Array.isArray(this.filterFranchisee[0].Franchisee)){
+    if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
       this.franchiseeList = [this.filterFranchisee[0].Franchisee]
     }
-    else{
+    else {
       this.franchiseeList = this.filterFranchisee[0].Franchisee
     }
-    
+
   }
 
   generateCAPTCHA() {
@@ -333,28 +332,24 @@ export class AdmissionsFormComponent implements OnInit {
     }
   }
 
-  
-  createCaptcha()
-{
-  let possible= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-  const lengthOfCode = 1
 
-  for (let i=0; i< 6; i++)
-  {
-    let captchaChar = this.makeRandom (lengthOfCode, possible)
-    this.captchaText[i] = captchaChar
+  createCaptcha() {
+    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    const lengthOfCode = 1
+
+    for (let i = 0; i < 6; i++) {
+      let captchaChar = this.makeRandom(lengthOfCode, possible)
+      this.captchaText[i] = captchaChar
+    }
+    this.gen_captcha = this.captchaText.join('').toString();
   }
-  this.gen_captcha=this.captchaText.join('').toString();
-}
-makeRandom(lengthOfCode: number, possible: string)
-{
+  makeRandom(lengthOfCode: number, possible: string) {
     let text = "";
-    for(let i = 0; i< lengthOfCode; i++)
-    {
+    for (let i = 0; i < lengthOfCode; i++) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
+    }
     return text;
-}
+  }
 
 
   // captcha function
@@ -362,7 +357,7 @@ makeRandom(lengthOfCode: number, possible: string)
   submit_captcha() {
     console.log('1');
     if ((document.getElementById("input") as HTMLInputElement).value === "") {
-      
+
       (document.getElementById("wrong") as HTMLInputElement).style.display = "block";
 
       (document.getElementById("done") as HTMLInputElement).style.display = "none";

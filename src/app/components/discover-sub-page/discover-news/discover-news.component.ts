@@ -14,9 +14,6 @@ import { json } from 'express';
   styleUrls: ['./discover-news.component.css']
 })
 export class DiscoverNewsComponent {
-
-
-
   projectId = environment.projectid
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
