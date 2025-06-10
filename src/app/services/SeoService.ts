@@ -135,8 +135,6 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:url', content: url });
 
     this.setAlternateLinks(path);
-
-    console.log(url);
   }
 
   protected setAlternateLinks(path: string) {
@@ -158,14 +156,11 @@ export class SeoService {
       const hreflang = n.language + (n.region ? '-' + n.region : '');
       this._alternateLinks[i].setAttribute('href', url);
       this._alternateLinks[i].setAttribute('hreflang', hreflang);
-
-      console.log(this._alternateLinks[i].getAttribute('href'));
-      console.log(this._alternateLinks[i].getAttribute('hreflang'));
     });
   }
   protected setkeyword(keyword: string) {
     //this._canonicalLink.setAttribute('href', url);
-     this.meta.updateTag({ name: 'keywords', content: keyword });
+    this.meta.updateTag({ name: 'keywords', content: keyword });
   }
   protected setcurl(url: string) {
     this._canonicalLink.setAttribute('href', url);
@@ -203,7 +198,6 @@ export class SeoService {
     });
     this.meta.updateTag({ property: 'og:image', content: _imageUrl });
     this.meta.updateTag({ property: 'twitter:image', content: _imageUrl });
-    //console.log(_imageUrl);
   }
 
   protected updateJsonSnippet(schema: any) {

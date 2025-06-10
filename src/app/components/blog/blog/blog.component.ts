@@ -22,13 +22,12 @@ export class BlogComponent implements OnInit {
     private projectService: ProjectSeoService,
     private apiService: ApicallService,
     private ngxSpinner: NgxSpinnerService
-  ) {}
+  ) { }
   ngOnInit(): void {
     let params = this.route.snapshot.paramMap.get('name')!;
 
     this.route.params.subscribe((params: any) => {
       params = params['name'];
-      // console.log('all params', params);
       if (params == 'all') {
         this.blogDetails = true;
         this.allBlogs = false;

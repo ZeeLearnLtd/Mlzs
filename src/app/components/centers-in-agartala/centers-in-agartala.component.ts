@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-centers-in-agartala',
   templateUrl: './centers-in-agartala.component.html',
@@ -101,13 +101,13 @@ export class CentersInAgartalaComponent implements OnInit {
       next: (resp: any) => {
         if (resp.data) {
           if (resp.data[0]?.url) {
-            if (isPlatformServer(this.platformId)) {
+            if (isPlatformBrowser(this.platformId)) {
               window.open(resp.data[0].url, "_blank");
             }
           }
           else {
             //this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
-            if (isPlatformServer(this.platformId)) {
+            if (isPlatformBrowser(this.platformId)) {
               this.router.navigateByUrl(`best-preschool-in-${this.cityname}/${data.Franchisee_Name}`)
             }
           }

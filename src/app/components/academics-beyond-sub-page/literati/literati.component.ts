@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class LiteratiComponent {
   constructor(private apiService: ApicallService, private projectService: ProjectSeoService,) { }
 
-  onInit(): void {
+  ngOnInit(): void {
     this.getseo();
   }
 
@@ -25,7 +25,7 @@ export class LiteratiComponent {
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      // this.projectService.setmeta(data?.data);
+      this.projectService.setmeta(data?.data);
 
     });
   }

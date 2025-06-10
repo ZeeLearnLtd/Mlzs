@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 declare var $: any;  // Declare jQuery
 @Component({
@@ -22,8 +22,8 @@ export class ProgrammesComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         $('#carousel2').owlCarousel({
           items: 1,
           margin: 20,
@@ -33,14 +33,13 @@ export class ProgrammesComponent implements OnInit {
           nav: false,
           dots: true
         });
-      }
-    }, 2000)
+      }, 2000)
+    }
   }
 
   ngOnInit(): void {
     const urlSegments = this.activatedRoute.snapshot.url;
     this.segment = urlSegments[0]?.path;
-
   }
 
 }

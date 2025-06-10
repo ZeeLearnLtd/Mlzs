@@ -40,7 +40,7 @@ export class AwardsAndRecognitionsComponent {
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      // this.projectService.setmeta(data?.data);
+      this.projectService.setmeta(data?.data);
 
     });
   }

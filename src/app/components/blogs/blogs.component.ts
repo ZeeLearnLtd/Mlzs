@@ -6,7 +6,7 @@ import { ApicallService } from 'src/app/services/apicall.service';
 import { HomeSeoService } from 'src/app/services/homeseo.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-blogs',
@@ -31,9 +31,8 @@ export class BlogsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         $('#carousel1').owlCarousel({
           items: 1, // Number of items to show
           margin: 10,
@@ -43,9 +42,8 @@ export class BlogsComponent implements OnInit {
           nav: false,
           dots: true
         });
-      }
-    }, 2000);
-
+      }, 2000);
+    }
     this.subscriptionnav = this.projectService
       .onblogMessage()
       .subscribe((message) => {
@@ -71,7 +69,5 @@ export class BlogsComponent implements OnInit {
       this.top_blog = this.blogdata[0];
       this.top_blog = this.blogdata[0];
     });
-
   }
-
 }

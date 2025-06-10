@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-play-group',
   templateUrl: './play-group.component.html',
@@ -24,7 +24,7 @@ export class PlayGroupComponent implements OnInit {
   }
 
   scrollToPosition() {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({
         top: 300,  // Scroll to the top of the page
         left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)

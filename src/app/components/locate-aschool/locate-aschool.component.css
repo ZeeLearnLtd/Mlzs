@@ -91,3 +91,8 @@ textarea{
     padding: 55px 0px;
     background-color: #004878;
 }
+
+h2{
+    position: relative;
+    z-index: 9;
+}

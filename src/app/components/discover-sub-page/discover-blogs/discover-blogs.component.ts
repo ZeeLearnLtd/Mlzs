@@ -45,6 +45,7 @@ export class DiscoverBlogsComponent {
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
       this.getnews_data();
+      this.projectService.sendMessagebread(data.data.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
@@ -61,8 +62,8 @@ export class DiscoverBlogsComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.blogsData = JSON.parse(res);
-      this.firstBlog = this.blogsData[0].OtherFiles[0]
-      console.log('res blogs', this.blogsData)
+      this.firstBlog = this.blogsData[0].OtherFiles[0].value
+      console.log('blog detils data', this.blogsData)
     });
 
   }

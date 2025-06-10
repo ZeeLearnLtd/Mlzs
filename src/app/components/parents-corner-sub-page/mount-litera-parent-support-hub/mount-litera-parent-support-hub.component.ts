@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 
 @Component({
@@ -18,9 +18,8 @@ export class MountLiteraParentSupportHubComponent {
   }
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         var owl = $(".parent_owl");
         owl.owlCarousel({
           items: 3,
@@ -60,15 +59,15 @@ export class MountLiteraParentSupportHubComponent {
             },
           }
         });
-      }
-    }, 1000)
 
+      }, 1000)
+    }
   }
 
 
   getseo() {
     let tbody = {
-      slug: 'parent-corners/support',
+      slug: 'parents-corner/support',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
@@ -76,7 +75,7 @@ export class MountLiteraParentSupportHubComponent {
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      // this.projectService.setmeta(data?.data);
+      this.projectService.setmeta(data?.data);
 
     });
   }

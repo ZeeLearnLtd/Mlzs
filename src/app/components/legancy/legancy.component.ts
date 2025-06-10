@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-legancy',
   templateUrl: './legancy.component.html',
@@ -31,7 +31,7 @@ export class LegancyComponent implements OnInit, AfterViewInit {
   ) { }
   ngAfterViewInit(): void {
     setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+      if (isPlatformBrowser(this.platformId)) {
         window.scrollTo({
           top: 400,
           left: 0,
@@ -288,7 +288,7 @@ export class LegancyComponent implements OnInit, AfterViewInit {
 
 
   scrollToPosition() {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({
         top: 500,  // Scroll to the top of the page
         left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)

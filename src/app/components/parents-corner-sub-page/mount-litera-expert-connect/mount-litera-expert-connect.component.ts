@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
@@ -21,9 +21,8 @@ export class MountLiteraExpertConnectComponent {
   }
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         var owl = $(".parent_owl");
         owl.owlCarousel({
           items: 3,
@@ -63,14 +62,13 @@ export class MountLiteraExpertConnectComponent {
             },
           }
         });
-      }
-    }, 1000)
-
+      }, 1000)
+    }
   }
 
   getseo() {
     let tbody = {
-      slug: 'parent-corners/personalized-guidance',
+      slug: 'parents-corner/personalized-guidance',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
@@ -78,7 +76,7 @@ export class MountLiteraExpertConnectComponent {
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      // this.projectService.setmeta(data?.data);
+      this.projectService.setmeta(data?.data);
 
     });
   }

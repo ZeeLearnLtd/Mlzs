@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID } from '@angular/
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-our-approach',
   templateUrl: './our-approach.component.html',
@@ -28,7 +28,7 @@ export class OurApproachComponent implements OnInit {
 
   }
   ngAfterViewInit(): void {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         this.scrollToPosition();
       }, 100);
@@ -42,7 +42,7 @@ export class OurApproachComponent implements OnInit {
 
   }
   scrollToPosition() {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({
         top: 400,  // Scroll to the top of the page
         left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)

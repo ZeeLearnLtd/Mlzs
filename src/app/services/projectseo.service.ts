@@ -73,14 +73,13 @@ export class ProjectSeoService extends SeoService {
 
     // set image
     this.setImage(meta?.MetaImageurl);
-    // console.log(meta.breadcrumb);
-    if (meta.breadcrumb != null && meta.breadcrumb != undefined) {
-      const arr = meta.breadcrumb.map((item: any) => {
+    if (meta?.breadcrumb != null && meta?.breadcrumb != undefined) {
+      const arr = meta?.breadcrumb.map((item: any) => {
         return {
           '@type': 'ListItem',
           position: item.position,
-          name: item.name,
-          item: item.url,
+          name: item?.name,
+          item: item?.url,
         };
       });
       this.updateJsonSnippet({
@@ -121,46 +120,46 @@ export class ProjectSeoService extends SeoService {
     // set image
     let imageurl = meta?.files[1].url;
     this.setImage(imageurl);
- if (meta.breadcrumb != null && meta.breadcrumb != undefined) {
-   const arr = meta.breadcrumb.map((item: any) => {
-     return {
-       '@type': 'ListItem',
-       position: item.position,
-       name: item.name,
-       item: item.url,
-     };
-   });
-   this.updateJsonSnippet({
-     '@type': 'BreadcrumbList',
-     itemListElement: arr,
-   });
- }
-
-      this.updateJsonSnippet({
-        '@type': 'BlogPosting',
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': meta?.MetaUrl,
-        },
-        headline: meta?.MetaTitle,
-        description: meta?.MetaDescription,
-        image: imageurl,
-        author: {
-          '@type': 'Organization',
-          name: 'Kidzee',
-          url: 'https://www.kidzee.com',
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'Kidzee',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'Zeelearn',
-          },
-        },
-        datePublished: meta?.dateCreated,
-        dateModified: meta?.dateCreated,
+    if (meta?.breadcrumb != null && meta?.breadcrumb != undefined) {
+      const arr = meta?.breadcrumb.map((item: any) => {
+        return {
+          '@type': 'ListItem',
+          position: item?.position,
+          name: item?.name,
+          item: item?.url,
+        };
       });
+      this.updateJsonSnippet({
+        '@type': 'BreadcrumbList',
+        itemListElement: arr,
+      });
+    }
+
+    this.updateJsonSnippet({
+      '@type': 'BlogPosting',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': meta?.MetaUrl,
+      },
+      headline: meta?.MetaTitle,
+      description: meta?.MetaDescription,
+      image: imageurl,
+      author: {
+        '@type': 'Organization',
+        name: 'Kidzee',
+        url: 'https://www.mountlitera.com/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Kidzee',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'Zeelearn',
+        },
+      },
+      datePublished: meta?.dateCreated,
+      dateModified: meta?.dateCreated,
+    });
 
     // empty first
     //this.emptyJsonSnippet();

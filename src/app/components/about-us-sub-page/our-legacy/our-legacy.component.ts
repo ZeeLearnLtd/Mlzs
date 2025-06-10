@@ -43,7 +43,6 @@ export class OurLegacyComponent {
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
       this.projectService.setmeta(data?.data);
-      console.log('legecy', data.data.breadcrumb)
     });
   }
 }

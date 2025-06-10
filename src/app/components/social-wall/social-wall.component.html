@@ -8,24 +8,21 @@
         <p class="text-center m-0">achievements, and moments shared by our students, staff, and community.</p>
         <div class="cascade-slider_container" id="cascade-slider">
             <div class="cascade-slider_slides">
-              <div class="cascade-slider_item">
+              <div class="cascade-slider_item" *ngFor="let a of socialData; let i = index" [attr.data-slide]="i">
                <div class='card align'>
-                <!-- <img src="../../../assets/img/MLZS/social_wall.png" width="100%" alt=""> -->
-                <iframe width="100%" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FKidzeeJonnyKids%2Fposts%2Fpfbid0yDs1DnPneQyxhDccg8vS1uya782K1fQ8U2dWzFqKJ7THaddjzNtnBLZmX7Y2oPV7l&amp;show_text=true&amp;width=500" width="500" height="684" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <iframe width="100%" [src]="a.slug | safeUrl" width="500" height="684" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
               </div>
-              <div class="cascade-slider_item">
+              <!-- <div class="cascade-slider_item">
                <div class='card align'>
-                <!-- <img src="../../../assets/img/MLZS/social_wall.png" width="100%" alt=""> -->
                 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FKidzeeJonnyKids%2Fposts%2Fpfbid02TAYL3NfFeer4Nccf6MHcVZyHr3PaUQuNsDHkVsojqzF5CaMs3MML6XoZnencmX3ql&amp;show_text=true&amp;width=500" width="500" height="665" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
               </div>
               <div class="cascade-slider_item">
                <div class='card align'>
-                <!-- <img src="../../../assets/img/MLZS/social_wall.png" width="100%" alt=""> -->
                 <iframe width="100%" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FKidzeeJonnyKids%2Fposts%2Fpfbid0yDs1DnPneQyxhDccg8vS1uya782K1fQ8U2dWzFqKJ7THaddjzNtnBLZmX7Y2oPV7l&amp;show_text=true&amp;width=500" width="500" height="684" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
-              </div>
+              </div> -->
              
             </div>
             <!-- <span class="cascade-slider_arrow cascade-slider_arrow-left" data-action="prev"><img src="https://agenciafagulha.com.br/wp-content/uploads/2019/12/chvron-left.svg" type="image/svg+xml"></span>

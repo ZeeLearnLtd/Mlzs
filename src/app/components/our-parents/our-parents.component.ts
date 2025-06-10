@@ -1,5 +1,5 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-our-parents',
@@ -14,9 +14,8 @@ export class OurParentsComponent {
   }
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         $('.vertical_carousel').owlCarousel({
           loop: true,
           margin: 10,
@@ -25,8 +24,9 @@ export class OurParentsComponent {
           animateOut: 'slideOutUp',
           animateIn: 'slideInUp'
         })
-      }
-    }, 1000)
+
+      }, 1000)
+    }
 
   }
 }

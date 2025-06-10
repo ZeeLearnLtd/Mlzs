@@ -6,7 +6,7 @@ import { HomeSeoService } from 'src/app/services/homeseo.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-discover-testimonials',
@@ -36,7 +36,34 @@ export class DiscoverTestimonialsComponent {
 
   ngOnInit(): void {
     this.getseo()
-    if (isPlatformServer(this.platformId)) {
+    // if (isPlatformBrowser(this.platformId)) {
+    //   setTimeout(() => {
+    //     var owl = $(".news_owl");
+    //     owl.owlCarousel({
+    //       margin: 10,
+    //       loop: true,
+    //       nav: false,
+    //       center: true,
+    //       responsive: {
+    //         0: {
+    //           items: 1, // On mobile (0px and up), show 1 item
+    //         },
+    //         600: {
+    //           items: 2, // On tablets (600px and up), show 2 items
+    //         },
+    //         1000: {
+    //           items: 3, // On larger screens (1000px and up), show 3 items
+    //         },
+    //       }
+    //     });
+    //   }
+    //     , 1000)
+    // }
+  }
+
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
@@ -56,8 +83,7 @@ export class DiscoverTestimonialsComponent {
             },
           }
         });
-      }
-        , 1000)
+      }, 2000);
     }
   }
 
@@ -75,44 +101,13 @@ export class DiscoverTestimonialsComponent {
 
     });
   }
-
-  ngAfterViewInit(): void {
-
-    // setTimeout(() => {
-    //   // if (isPlatformServer(this.platformId)) {
-    //   var owl = $(".news_owl");
-    //   owl.owlCarousel({
-    //     margin: 10,
-    //     loop: true,
-    //     nav: false,
-    //     center: true,
-    //     responsive: {
-    //       0: {
-    //         items: 1, // On mobile (0px and up), show 1 item
-    //       },
-    //       600: {
-    //         items: 2, // On tablets (600px and up), show 2 items
-    //       },
-    //       1000: {
-    //         items: 3, // On larger screens (1000px and up), show 3 items
-    //       },
-    //     }
-    //   });
-    // }
-    //   // }
-    //   , 1000)
-
-  }
-
   gettestimonial_data() {
-    console.log('testimonial data')
     let tbody = {
       Type: "student testimonial",
       pageurl: '',
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      console.log('testimonial data1', data)
       let res = data.data[0].contentData
       this.testimonialData = JSON.parse(res);
 
@@ -120,7 +115,6 @@ export class DiscoverTestimonialsComponent {
         title: video.Title,
         safeUrl: this.getSafeEmbedUrl(video.slug)
       }));
-      console.log('testimonial data2', this.testimonialDataList)
     });
 
   }

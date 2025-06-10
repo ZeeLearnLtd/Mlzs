@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-litera-nova-app',
@@ -16,14 +16,13 @@ export class LiteraNovaAppComponent implements AfterViewInit {
     private apiService: ApicallService,
     private projectService: ProjectSeoService,) { }
 
-  onInit(): void {
+  ngOnInit(): void {
     this.getseo();
   }
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
           items: 3,
@@ -43,9 +42,8 @@ export class LiteraNovaAppComponent implements AfterViewInit {
             },
           }
         });
-      }
-    }, 1000)
-
+      }, 1000)
+    }
   }
 
   getseo() {
@@ -58,7 +56,7 @@ export class LiteraNovaAppComponent implements AfterViewInit {
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      // this.projectService.setmeta(data?.data);
+      this.projectService.setmeta(data?.data);
 
     });
   }

@@ -44,11 +44,9 @@ export class StartSchoolComponent {
   }
 
   selectCountry_State_cityList() {
-    console.log('call center list')
     this.apiService.getState_countryList().subscribe(
       res => {
         this.countryList = res
-        console.log('state list', this.countryList);
         // let filterState = this.countryList.filter((x: any) => {
         //   return x.Country_Name == "India"
         // })
@@ -63,10 +61,11 @@ export class StartSchoolComponent {
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
+      this.projectService.sendMessagebread(data.data.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      // this.projectService.setmeta(data?.data);
+      this.projectService.setmeta(data?.data);
 
     });
   }

@@ -2,7 +2,7 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { environment } from 'src/environments/environment';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-child-development',
@@ -18,9 +18,8 @@ export class ChildDevelopmentComponent {
   ) { }
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         var owl = $(".parent_owl");
         owl.owlCarousel({
           items: 3,
@@ -60,8 +59,9 @@ export class ChildDevelopmentComponent {
             },
           }
         });
-      }
-    }, 1000)
+
+      }, 1000)
+    }
 
   }
 
@@ -72,7 +72,7 @@ export class ChildDevelopmentComponent {
 
   getseo() {
     let tbody = {
-      slug: 'parent-corners/child-development',
+      slug: 'parents-corner/childs-development',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

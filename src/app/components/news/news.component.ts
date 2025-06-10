@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 
 @Component({
@@ -16,9 +16,8 @@ export class NewsComponent {
   }
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
           margin: 10,
@@ -37,8 +36,9 @@ export class NewsComponent {
             },
           }
         });
-      }
-    }, 1000)
+
+      }, 1000)
+    }
 
   }
 }

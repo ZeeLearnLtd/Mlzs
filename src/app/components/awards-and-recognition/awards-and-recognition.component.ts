@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 
 @Component({
@@ -30,26 +30,22 @@ export class AwardsAndRecognitionComponent implements AfterViewInit {
 
   }
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         window.scrollTo({
           top: 400,
           left: 0,
           behavior: 'smooth'
         });
-
-      }
-    }, 100);
-
+      }, 100);
+    }
     throw new Error('Method not implemented.');
   }
 
 
   ngOnInit() {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         $('#carousel3').owlCarousel({
           margin: 10,
           loop: true,
@@ -71,16 +67,16 @@ export class AwardsAndRecognitionComponent implements AfterViewInit {
             }
           }
         });
-      }
-    }, 2000);
 
+      }, 2000);
+    }
 
     this.recognivisible();
     this.getseo();
     this.scrollToPosition();
   }
   scrollToPosition() {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({
         top: 500,  // Scroll to the top of the page
         left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)

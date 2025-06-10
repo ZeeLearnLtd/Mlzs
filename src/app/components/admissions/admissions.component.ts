@@ -20,9 +20,6 @@ export class AdmissionsComponent implements OnInit {
     this.getAdmissionFormData();
     // const urlSegments = this.activatedRoute.snapshot.url;
     // this.segment = urlSegments[0]?.path;
-
-    // console.log('url path',this.segment); 
-
     this._activeRoute.queryParams.subscribe(
       res => {
       }
@@ -48,7 +45,6 @@ export class AdmissionsComponent implements OnInit {
   getAdmissionFormData() {
     this.apiService.getAllAdmissionData().subscribe((
       res => {
-        console.log('admission form data', res);
       }
     ))
   }
