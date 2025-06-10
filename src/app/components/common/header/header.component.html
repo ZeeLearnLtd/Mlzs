@@ -1,7 +1,7 @@
 
 <div class="">
   <div class="top_header d-flex justify-content-center justify-align-center text-center" id="fix_header">
-    <button class="btn btn-sm admission_btn">Admissions now open at Mount Litera Zee School</button>
+    <button class="btn btn-sm admission_btn" routerLink="/admissions">Admissions now open at Mount Litera Zee School</button>
     <button class="btn btn-sm text-white right_botder_btn mx-3">Partner with us</button>
     <button class="btn btn-sm text-white convert_btn">Convert to an MLZS</button>
   </div>
@@ -11,7 +11,9 @@
         <div class="container-fluid">
           <div class="menu_icon" data-bs-toggle="collapse" data-bs-target="#navbarNav"></div>
           <div class="collapse navbar-collapse " id="navbarNav">
-            <img src="../../../../assets/img/MLZS/mtl.png" routerLink="" width="13%" class="kidzee_logo_img" alt="">
+            <a href="" class="nav_logo">
+            <img src="../../../../assets/img/MLZS/mtl.png" width="80%" class="kidzee_logo_img" alt="">
+            </a>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown" >
                 <a routerLink="/about-us" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,7 +28,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" routerLink="/programmes" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   PROGRAMMES
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -58,10 +60,10 @@
                   PARENTS CORNER
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li class="dropdown-item" routerLink="/parent-corners/child-development">Child Development</li>
-                  <li class="dropdown-item" routerLink="/parent-corners/personalized-guidance">Mount Litera Expert Connect</li>
-                  <li class="dropdown-item" routerLink="/parent-corners/support">Mount Litera Parent Support Hub</li>
-                  <li class="dropdown-item" routerLink="/parent-corners/parents-experience">Parents' Testimonials</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/childs-development">Child Development</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/personalized-guidance">Mount Litera Expert Connect</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/support">Mount Litera Parent Support Hub</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/parents-experience">Parents' Testimonials</li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -142,10 +144,10 @@
                   <label class="label_menu"> PARENTS CORNER</label>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li class="dropdown-item" routerLink="/parent-corners/child-development" (click)="closeMenu()">Child Development</li>
-                  <li class="dropdown-item" routerLink="/parent-corners/personalized-guidance" (click)="closeMenu()">Mount Litera Expert Connect</li>
-                  <li class="dropdown-item" routerLink="/parent-corners/support" (click)="closeMenu()">Mount Litera Parent Support Hub</li>
-                  <li class="dropdown-item" routerLink="/parent-corners/parents-experience" (click)="closeMenu()">Parents' Testimonials</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/childs-development" (click)="closeMenu()">Child Development</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/personalized-guidance" (click)="closeMenu()">Mount Litera Expert Connect</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/support" (click)="closeMenu()">Mount Litera Parent Support Hub</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/parents-experience" (click)="closeMenu()">Parents' Testimonials</li>
                 </ul>
               </li>
               <li class="nav-item">

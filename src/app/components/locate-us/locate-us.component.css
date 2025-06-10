@@ -91,3 +91,8 @@ textarea{
         border-radius: 10px;
     }
 }
+
+h2{
+    position: relative;
+    z-index: 9;
+}

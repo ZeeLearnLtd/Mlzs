@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../service/common.service';
-import { ActivatedRoute, Router,Params } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
@@ -10,8 +10,8 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ['./partneradmission.component.css']
 })
 export class PartneradmissionComponent {
-  @Input() centername!:string;
-  @Input() cityname!:string;
+  @Input() centername!: string;
+  @Input() cityname!: string;
   admissionForm: FormGroup;
   submitted = false;
   randomOtp: any;
@@ -22,27 +22,27 @@ export class PartneradmissionComponent {
   countryList: any;
   stateList: any;
   cityList: any;
-  selectedDevice:string="";
+  selectedDevice: string = "";
   franchiseeList: any;
   studentID: any;
   program_id: any;
   gen_captcha: any;
   filterFranchisee: any;
   locationName: any;
-  selectedcountry:string="";
-  selectedstate:string="";
-  selectedCity:string="";
-  selectedpincode:string="";
-  franchiseeMobileNo:string="";
-  alldata:any=[];
-  selectedcenter:any=[];
-  selectedcityarr:any=[];
-  form_title:boolean=true;
-  captchaText: any =[]
-  location:string="";
+  selectedcountry: string = "";
+  selectedstate: string = "";
+  selectedCity: string = "";
+  selectedpincode: string = "";
+  franchiseeMobileNo: string = "";
+  alldata: any = [];
+  selectedcenter: any = [];
+  selectedcityarr: any = [];
+  form_title: boolean = true;
+  captchaText: any = []
+  location: string = "";
   captchaEntered: String = ""
-  constructor(private fb: FormBuilder, private _servie: CommonService, private ngxSpinner:NgxSpinnerService,
-    private activatedRoute: ActivatedRoute,private _activeRoute: ActivatedRoute, private router: Router) {
+  constructor(private fb: FormBuilder, private _servie: CommonService, private ngxSpinner: NgxSpinnerService,
+    private activatedRoute: ActivatedRoute, private _activeRoute: ActivatedRoute, private router: Router) {
     this.admissionForm = fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
@@ -55,98 +55,95 @@ export class PartneradmissionComponent {
       otp: ['', Validators.required],
       location: ['']
     })
-  
+
   }
 
   ngOnInit(): void {
-    console.log('cityname',this.cityname);
-    if(this.cityname){
+    if (this.cityname) {
       //this.admissionForm.get('pinCode')?.clearValidators();  
-      this.admissionForm.get('country')?.clearValidators();      
-      this.admissionForm.get('state')?.clearValidators();              
-      this.admissionForm.get('city')?.clearValidators();  
-      this.admissionForm.get('location')?.clearValidators(); 
-    } else if(this.cityname){                
+      this.admissionForm.get('country')?.clearValidators();
+      this.admissionForm.get('state')?.clearValidators();
+      this.admissionForm.get('city')?.clearValidators();
+      this.admissionForm.get('location')?.clearValidators();
+    } else if (this.cityname) {
       //this.admissionForm.get('pinCode')?.addValidators(Validators.required);  
-      this.admissionForm.get('country')?.clearValidators();      
-      this.admissionForm.get('state')?.clearValidators();              
-      this.admissionForm.get('city')?.clearValidators();  
-      this.admissionForm.get('location')?.addValidators(Validators.required);               
+      this.admissionForm.get('country')?.clearValidators();
+      this.admissionForm.get('state')?.clearValidators();
+      this.admissionForm.get('city')?.clearValidators();
+      this.admissionForm.get('location')?.addValidators(Validators.required);
     }
-    else{
+    else {
       //this.admissionForm.get('pinCode')?.addValidators(Validators.required);  
-      this.admissionForm.get('country')?.addValidators(Validators.required);             
-      this.admissionForm.get('state')?.addValidators(Validators.required);               
-      this.admissionForm.get('city')?.addValidators(Validators.required);               
-      this.admissionForm.get('location')?.addValidators(Validators.required);                
-    }  
+      this.admissionForm.get('country')?.addValidators(Validators.required);
+      this.admissionForm.get('state')?.addValidators(Validators.required);
+      this.admissionForm.get('city')?.addValidators(Validators.required);
+      this.admissionForm.get('location')?.addValidators(Validators.required);
+    }
     //this.generateCAPTCHA(); 
     this.createCaptcha();
     this.getcenterdetails();
     //this.selectCountry_State_cityList();
-      
+
   }
   get f() {
     return this.admissionForm.controls;
   }
 
-  setaddress(dt:any){
-    let data:any
-    if(Array.isArray(dt)){
-      data=dt[0];
+  setaddress(dt: any) {
+    let data: any
+    if (Array.isArray(dt)) {
+      data = dt[0];
     }
-    else{
-      data=dt;
+    else {
+      data = dt;
     }
     let filterState = this.countryList.filter((x: any) => {
       return x.Country_Name == data.Country_Name;
     })
 
     this.stateList = filterState[0].State;
-    this.selectedcountry=data.Country_Name;
+    this.selectedcountry = data.Country_Name;
 
     let filterCity = this.stateList.filter((x: any) => {
       return x.State_Name == data.State_Name
     })
     this.cityList = filterCity[0].City
-    this.selectedstate=data.State_Name;
+    this.selectedstate = data.State_Name;
 
 
     this.filterFranchisee = this.cityList.filter((x: any) => {
       return x.City_Name == data.City_Name
     })
-    this.selectedCity=data.City_Name;
-   
-        if(!Array.isArray(this.filterFranchisee[0].Franchisee))
-        {
-        this.franchiseeList = [this.filterFranchisee[0].Franchisee];
-        this.locationName=this.franchiseeList[0].Franchisee_Name;
-        this.franchiseeMobileNo=this.franchiseeList[0].Mobile_No;  
-        }
-        else
-        {
-          this.franchiseeList = this.filterFranchisee[0].Franchisee;
-          let dt=this.franchiseeList.filter((dt:any)=>{
-            return dt.Franchisee_Code==data.Franchisee_Code
-          }).map((obj:any)=>{
-            return obj
-          })  
-          this.locationName=dt[0].Franchisee_Name;
-          this.location=dt[0].Franchisee_Code;
-          this.franchiseeMobileNo=dt[0].Mobile_No;  
-        }
-      
-        //this.selectedpincode=data.Pin_Code;
-        this.selectedDevice=data.Franchisee_Code;
-    
-    
+    this.selectedCity = data.City_Name;
+
+    if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
+      this.franchiseeList = [this.filterFranchisee[0].Franchisee];
+      this.locationName = this.franchiseeList[0].Franchisee_Name;
+      this.franchiseeMobileNo = this.franchiseeList[0].Mobile_No;
+    }
+    else {
+      this.franchiseeList = this.filterFranchisee[0].Franchisee;
+      let dt = this.franchiseeList.filter((dt: any) => {
+        return dt.Franchisee_Code == data.Franchisee_Code
+      }).map((obj: any) => {
+        return obj
+      })
+      this.locationName = dt[0].Franchisee_Name;
+      this.location = dt[0].Franchisee_Code;
+      this.franchiseeMobileNo = dt[0].Mobile_No;
+    }
+
+    //this.selectedpincode=data.Pin_Code;
+    this.selectedDevice = data.Franchisee_Code;
+
+
     //this.locationName=this.franchiseeList[0].Franchisee_Name;
     //window.sessionStorage.removeItem('uddixadd');
   }
 
   validationForm() {
     this.submitted = true;
- 
+
     if (this.admissionForm.valid) {
       this.submit_captcha();
     } else {
@@ -154,50 +151,46 @@ export class PartneradmissionComponent {
     }
 
   }
-    createCaptcha()
-{
-  let possible= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-  const lengthOfCode = 1
+  createCaptcha() {
+    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    const lengthOfCode = 1
 
-  for (let i=0; i< 6; i++)
-  {
-    let captchaChar = this.makeRandom (lengthOfCode, possible)
-    this.captchaText[i] = captchaChar
+    for (let i = 0; i < 6; i++) {
+      let captchaChar = this.makeRandom(lengthOfCode, possible)
+      this.captchaText[i] = captchaChar
+    }
+    this.gen_captcha = this.captchaText.join('').toString();
   }
-  this.gen_captcha=this.captchaText.join('').toString();
-}
-makeRandom(lengthOfCode: number, possible: string)
-{
+  makeRandom(lengthOfCode: number, possible: string) {
     let text = "";
-    for(let i = 0; i< lengthOfCode; i++)
-    {
+    for (let i = 0; i < lengthOfCode; i++) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
+    }
     return text;
-}
+  }
 
 
 
-  setcity(data:any){
+  setcity(data: any) {
     let filterState = this.countryList.filter((x: any) => {
       return x.Country_Name == data.Country_Name;
     })
 
     this.stateList = filterState[0].State;
-    this.selectedcountry=data.Country_Name;
+    this.selectedcountry = data.Country_Name;
 
 
     let filterCity = this.stateList.filter((x: any) => {
       return x.State_Name == data.State_Name
     })
     this.cityList = filterCity[0].City
-    this.selectedstate=data.State_Name;
+    this.selectedstate = data.State_Name;
 
 
     this.filterFranchisee = this.cityList.filter((x: any) => {
       return x.City_Name == data.City_Name
     })
-    this.selectedCity=data.City_Name;
+    this.selectedCity = data.City_Name;
     this.selectCity(this.selectedCity);
   }
 
@@ -206,33 +199,33 @@ makeRandom(lengthOfCode: number, possible: string)
       if (this.randomOtp == this.admissionForm.get('otp')?.value) {
         this.ngxSpinner.show();
         let obj = {
-            "City": this.selectedCity=="" ? this.admissionForm.get('city')?.value : this.selectedCity,
-            "Country": this.selectedcountry =="" ? this.admissionForm.get('country')?.value:this.selectedcountry,
-            "Email": this.admissionForm.get('email')?.value,
-            "FirstName": this.admissionForm.get('fname')?.value,
-            "HaveSpace": "",
-            "LastName": this.admissionForm.get('lname')?.value,
-            "Location": this.location==""? this.admissionForm.get('location')?.value : this.location,
-            "Location_name": this.locationName,
-            "Mobile": this.admissionForm.get('mobile')?.value,
-            "PinCode": this.admissionForm.get('pinCode')?.value,
-            "class":"",
-            "Product": "259262000004729208",
-            "ProjectId": "1",
-            "SoonStartsIn": "",
-            "Source": "gclid",
-            "gclid": "gclid",
-            "State": this.selectedstate=="" ? this.admissionForm.get('state')?.value:this.selectedstate,
-            "Type": "P",
-            "WillingToInvest": "",
-            "utm_compaign": "Website",
-            "utm_medium": "Website",
-            "utm_source": "Website",
-            "utm_ad": "Website",
-            "utm_Content": "Website",
-            "utm_Term": "Website",
-            "Stream":"", 
-            "Franchise_Mobile": this.franchiseeMobileNo    
+          "City": this.selectedCity == "" ? this.admissionForm.get('city')?.value : this.selectedCity,
+          "Country": this.selectedcountry == "" ? this.admissionForm.get('country')?.value : this.selectedcountry,
+          "Email": this.admissionForm.get('email')?.value,
+          "FirstName": this.admissionForm.get('fname')?.value,
+          "HaveSpace": "",
+          "LastName": this.admissionForm.get('lname')?.value,
+          "Location": this.location == "" ? this.admissionForm.get('location')?.value : this.location,
+          "Location_name": this.locationName,
+          "Mobile": this.admissionForm.get('mobile')?.value,
+          "PinCode": this.admissionForm.get('pinCode')?.value,
+          "class": "",
+          "Product": "259262000004729208",
+          "ProjectId": "1",
+          "SoonStartsIn": "",
+          "Source": "gclid",
+          "gclid": "gclid",
+          "State": this.selectedstate == "" ? this.admissionForm.get('state')?.value : this.selectedstate,
+          "Type": "P",
+          "WillingToInvest": "",
+          "utm_compaign": "Website",
+          "utm_medium": "Website",
+          "utm_source": "Website",
+          "utm_ad": "Website",
+          "utm_Content": "Website",
+          "utm_Term": "Website",
+          "Stream": "",
+          "Franchise_Mobile": this.franchiseeMobileNo
         }
         this._servie.saveData(obj).subscribe(
           res => {
@@ -243,12 +236,12 @@ makeRandom(lengthOfCode: number, possible: string)
             this.admissionForm.reset();
             this.submitted = false
           },
-          error=>{
+          error => {
             this.ngxSpinner.hide();
             console.log(error);
           }
         )
-        
+
         this.otp_ValidMsg = true;
         this.otp_inValidMsg = false;
 
@@ -261,30 +254,28 @@ makeRandom(lengthOfCode: number, possible: string)
 
 
   }
-  selectCentet(getCenter:any){
-    
-  if(!Array.isArray(this.filterFranchisee[0].Franchisee))
-    {
-    this.franchiseeList = [this.filterFranchisee[0].Franchisee];
-    this.locationName=this.franchiseeList[0].Franchisee_Name;  
-    this.franchiseeMobileNo=this.franchiseeList[0].Mobile_No;  
+  selectCentet(getCenter: any) {
+
+    if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
+      this.franchiseeList = [this.filterFranchisee[0].Franchisee];
+      this.locationName = this.franchiseeList[0].Franchisee_Name;
+      this.franchiseeMobileNo = this.franchiseeList[0].Mobile_No;
     }
-    else
-    {
+    else {
       this.franchiseeList = this.filterFranchisee[0].Franchisee;
-      let dt=this.franchiseeList.filter((dt:any)=>{
-        return dt.Franchisee_Code==getCenter
-      }).map((obj:any)=>{
+      let dt = this.franchiseeList.filter((dt: any) => {
+        return dt.Franchisee_Code == getCenter
+      }).map((obj: any) => {
         return obj
-      })     
-      this.locationName= dt[0].Franchisee_Name;
-      this.franchiseeMobileNo=dt[0].Mobile_No;
+      })
+      this.locationName = dt[0].Franchisee_Name;
+      this.franchiseeMobileNo = dt[0].Mobile_No;
     }
   }
 
 
   getMobileNO() {
-   if ((this.admissionForm.get('mobile')?.value).length == 10) {
+    if ((this.admissionForm.get('mobile')?.value).length == 10) {
       this.sendMobNO();
     }
   }
@@ -302,7 +293,7 @@ makeRandom(lengthOfCode: number, possible: string)
         this.ngxSpinner.hide();
         this.otpInput = true;
       },
-      error=>{
+      error => {
         this.ngxSpinner.hide();
         console.log(error);
       }
@@ -319,67 +310,67 @@ makeRandom(lengthOfCode: number, possible: string)
       }
     }
   }
-  getcenterdetails(){
+  getcenterdetails() {
     this.ngxSpinner.show();
-    this._servie.get_allCountryList().subscribe( 
+    this._servie.get_allCountryList().subscribe(
       res => {
         this.ngxSpinner.hide();
         this.alldata = res;
-        if(this.centername){
-          let data= this.alldata.filter((dt:any)=>{
-            return dt.Franchisee_Name==this.centername
-          }).map((obj:any)=>{
+        if (this.centername) {
+          let data = this.alldata.filter((dt: any) => {
+            return dt.Franchisee_Name == this.centername
+          }).map((obj: any) => {
             return obj;
           })
-          if(data.length==1){
-            this.selectedcenter=data;
-          }else if(data.length>1){
-            this.selectedcenter=data[0];
-          }else{
-            this.selectedcenter=[];
+          if (data.length == 1) {
+            this.selectedcenter = data;
+          } else if (data.length > 1) {
+            this.selectedcenter = data[0];
+          } else {
+            this.selectedcenter = [];
           }
-        }else if (this.cityname){
-          let data= this.alldata.filter((dt:any)=>{
-            return dt.City_Name==this.cityname
-          }).map((obj:any)=>{
+        } else if (this.cityname) {
+          let data = this.alldata.filter((dt: any) => {
+            return dt.City_Name == this.cityname
+          }).map((obj: any) => {
             return obj;
           })
-          if(data.length==1){
-            this.selectedcityarr=data;
-          }else if(data.length>1){
-            this.selectedcityarr=data[0];
-          }else{
-            this.selectedcityarr=[];
+          if (data.length == 1) {
+            this.selectedcityarr = data;
+          } else if (data.length > 1) {
+            this.selectedcityarr = data[0];
+          } else {
+            this.selectedcityarr = [];
           }
         }
-       
-        
-        
+
+
+
         // this.selectedcountry=data[0].Country_Name;
         // this.selectedstate=data[0].State_Name;
         // this.selectedCity=data[0].City_Name;
         // this.selectedDevice=data[0].Franchisee_Code;
       })
-      this.selectCountry_State_cityList();
+    this.selectCountry_State_cityList();
   }
 
   selectCountry_State_cityList() {
     this.ngxSpinner.show();
     this._servie.getState_countryList().subscribe(
-   
+
       res => {
         this.ngxSpinner.hide();
-       this.countryList= res.root.subroot;
-        if(this.centername){
+        this.countryList = res.root.subroot;
+        if (this.centername) {
           this.setaddress(this.selectedcenter);
         }
-        else if (this.cityname){
+        else if (this.cityname) {
           this.setcity(this.selectedcityarr);
         }
-        
-        
+
+
       })
-      
+
   }
 
   selectCountry(selectVal: any) {
@@ -401,19 +392,19 @@ makeRandom(lengthOfCode: number, possible: string)
 
   selectCity(selectVal: any) {
     let city = selectVal?.target?.value;
-    if(!city){
-      city =selectVal;
+    if (!city) {
+      city = selectVal;
     }
     this.filterFranchisee = this.cityList.filter((x: any) => {
       return x.City_Name == city
     })
-    if(!Array.isArray(this.filterFranchisee[0].Franchisee)){
+    if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
       this.franchiseeList = [this.filterFranchisee[0].Franchisee]
     }
-    else{
+    else {
       this.franchiseeList = this.filterFranchisee[0].Franchisee
     }
-    
+
   }
 
   generateCAPTCHA() {

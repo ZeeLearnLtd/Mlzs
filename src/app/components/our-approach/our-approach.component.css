@@ -85,3 +85,8 @@ hr{
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .title_content h2{
+    position: relative;
+    z-index: 9;
+  }

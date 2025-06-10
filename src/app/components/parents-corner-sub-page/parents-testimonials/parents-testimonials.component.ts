@@ -2,7 +2,7 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 
 @Component({
@@ -15,15 +15,14 @@ export class ParentsTestimonialsComponent {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private apiService: ApicallService, private projectService: ProjectSeoService,) { }
 
-  onInit(): void {
+  ngOnInit(): void {
     this.getseo();
   }
 
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
           margin: 10,
@@ -42,14 +41,14 @@ export class ParentsTestimonialsComponent {
             },
           }
         });
-      }
-    }, 4000)
+      }, 4000)
+    }
 
   }
 
   getseo() {
     let tbody = {
-      slug: 'parent-corners/parents-experience',
+      slug: 'parents-corner/parents-experience',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
@@ -57,7 +56,7 @@ export class ParentsTestimonialsComponent {
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      // this.projectService.setmeta(data?.data);
+      this.projectService.setmeta(data?.data);
 
     });
   }

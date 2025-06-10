@@ -8,7 +8,9 @@
     padding: 7px;
 }
 
-
+.nav_logo{
+    width: 16%;
+}
 
 .nav-sub-item{
     margin-left: 25px;

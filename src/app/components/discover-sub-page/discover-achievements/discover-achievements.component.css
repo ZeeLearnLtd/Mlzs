@@ -176,9 +176,10 @@
     background: transparent;
     width: 95%;
     margin: auto;
-    height: 335px;
+    height: 380px;
     border-radius: 5px;
     padding: 30px 15px;
+    overflow: hidden;
   }
   .home-demo h2 {
     color: #FFF;
@@ -201,7 +202,7 @@
     color: #014876;
   }
   .item_text p{
-    font-size: 11px;
+    font-size:14px;
     color: #014876;
   }
   

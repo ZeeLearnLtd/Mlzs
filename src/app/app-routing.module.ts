@@ -55,6 +55,8 @@ import { DiscoverBlogsComponent } from './components/discover-sub-page/discover-
 import { DiscoverTestimonialsComponent } from './components/discover-sub-page/discover-testimonials/discover-testimonials.component';
 import { DiscoverAchievementsComponent } from './components/discover-sub-page/discover-achievements/discover-achievements.component';
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
+import { NewsDetailsComponent } from './components/discover-sub-page/news-details/news-details.component';
+import { EventsDetailsComponent } from './components/discover-sub-page/events-details/events-details.component';
 const routes: Routes = [
   // { path: '', component: HomeComponent },
   // { path: 'blog/:name', component: BlogComponent },
@@ -69,6 +71,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'programmes', component: ProgrammesMainPageComponent },
+      { path: 'academics', component: LiteraExpComponent },
       { path: 'academics-beyond/litera-enrichment-programmes', component: AcademicsBeyondComponent },
       { path: 'start-school', component: StartSchoolComponent },
       { path: 'parents-corner', component: ParentsCornerComponent },
@@ -90,18 +93,21 @@ const routes: Routes = [
       { path: 'academics/literati', component: LiteraNovaAppComponent },
       { path: 'academics/nova', component: LiteratiComponent },
 
-      { path: 'parent-corners/child-development', component: ChildDevelopmentComponent },
-      { path: 'parent-corners/personalized-guidance', component: MountLiteraExpertConnectComponent },
-      { path: 'parent-corners/support', component: MountLiteraParentSupportHubComponent },
-      { path: 'parent-corners/parents-experience', component: ParentsTestimonialsComponent },
+      { path: 'parents-corner/childs-development', component: ChildDevelopmentComponent },
+      { path: 'parents-corner/personalized-guidance', component: MountLiteraExpertConnectComponent },
+      { path: 'parents-corner/support', component: MountLiteraParentSupportHubComponent },
+      { path: 'parents-corner/parents-experience', component: ParentsTestimonialsComponent },
       { path: 'news', component: DiscoverNewsComponent },
       { path: 'events', component: DiscoverEventsComponent },
       { path: 'gallery', component: DiscoverGalleryComponent },
       { path: 'blogs', component: DiscoverBlogsComponent },
+      { path: 'blog/:name', component: BlogDetailsComponent },
+      { path: 'news/:name', component: NewsDetailsComponent },
+      { path: 'events/:name', component: EventsDetailsComponent },
       { path: 'faqs', component: DiscoverFaqsComponent },
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
       { path: 'achievements', component: DiscoverAchievementsComponent },
-      { path: 'testTestimonial', component: TestimonialComponent }
+
       // { path: 'about-us', component: AboutUsComponent }
       // { path: 'pentemind', component: PentemindComponent },
       // { path: 'blog/:name', component: BlogComponent },

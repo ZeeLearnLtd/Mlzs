@@ -75,4 +75,9 @@ export class ApicallService {
   get_allCountryList(): Observable<any> {
     return this.httpClient.post<any>(this.form_baseUrl + 'V1/kidzeeList', {});
   }
+
+  getBlogsDetails(jdata: any): Observable<any> {
+    return this.httpClient.post(this.cmsBaseUrl + 'Getblogdata', jdata)
+  }
+
 }

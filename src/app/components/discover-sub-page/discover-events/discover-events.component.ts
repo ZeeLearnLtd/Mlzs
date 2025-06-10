@@ -13,7 +13,6 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./discover-events.component.css']
 })
 export class DiscoverEventsComponent {
-
   projectId = environment.projectid
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
@@ -29,12 +28,10 @@ export class DiscoverEventsComponent {
     private _service: ApicallService,
     private sanitizer: DomSanitizer
   ) {
-    //
   }
 
   ngOnInit(): void {
     this.getseo()
-
   }
 
   getseo() {
@@ -44,6 +41,7 @@ export class DiscoverEventsComponent {
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
       this.getnews_data();
+      this.projectService.sendMessagebread(data.data.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
@@ -60,7 +58,7 @@ export class DiscoverEventsComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.eventsData = JSON.parse(res);
-      console.log('res events', this.eventsData)
+      console.log('events data list', this.eventsData)
     });
 
   }

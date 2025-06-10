@@ -2,7 +2,7 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -33,7 +33,7 @@ export class CommonService {
   }
 
   public savesession(key: string, value: string): void {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       window.sessionStorage.removeItem(key);
       window.sessionStorage.setItem(key, value);
     }

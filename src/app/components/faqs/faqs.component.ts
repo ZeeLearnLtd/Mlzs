@@ -13,7 +13,6 @@ export class FaqsComponent {
   subscriptionnav: any;
   spinner: boolean = false
   faqdata: any;
-  @Input() faqdataList: any = ["test"];
   public isCollapsed: boolean[] = [];
   showBody: boolean = false;
   valCheck: boolean = false
@@ -24,37 +23,23 @@ export class FaqsComponent {
   constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
 
   ngOnInit(): void {
-    // this.faqdata = this.faqdataList
-    // console.log('call faqs')
-    // this.subscriptionnav = this.projectService
-    //   .onFaqsMessage()
-    //   .subscribe((message) => {
-    //     console.log('message', message)
-    //     this.spinner = false
-    //     if (message) {
-
-    //       this.faqdata = message.text
-    //       console.log('faqdata', this.faqdata);
-    //     }
-    //   });
-
     this.getfaqs_data();
   }
 
 
-  getseo() {
-    let tbody = {
-      slug: 'faqs',
-      Projectid: environment.projectid,
-    };
-    this._service.getGetseo(tbody).subscribe((data: any) => {
-      this.projectService.sendMessageblog(data?.data?.blog);
-      this.projectService.sendMessageseo(data?.data?.testimony);
-      this.projectService.sendMessageFaqs(data?.data?.faq);
-      this.projectService.setmeta(data?.data);
+  // getseo() {
+  //   let tbody = {
+  //     slug: 'faqs',
+  //     Projectid: environment.projectid,
+  //   };
+  //   this._service.getGetseo(tbody).subscribe((data: any) => {
+  //     this.projectService.sendMessageblog(data?.data?.blog);
+  //     this.projectService.sendMessageseo(data?.data?.testimony);
+  //     this.projectService.sendMessageFaqs(data?.data?.faq);
+  //     this.projectService.setmeta(data?.data);
 
-    });
-  }
+  //   });
+  // }
 
 
   getfaqs_data() {

@@ -45,6 +45,7 @@ export class DiscoverNewsComponent {
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
       this.getnews_data();
+      this.projectService.sendMessagebread(data.data.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
@@ -61,7 +62,7 @@ export class DiscoverNewsComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.newsData = JSON.parse(res);
-      console.log('res news', this.newsData)
+      console.log('newsData', this.newsData)
     });
 
   }

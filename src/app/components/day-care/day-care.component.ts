@@ -3,7 +3,7 @@ import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-day-care',
   templateUrl: './day-care.component.html',
@@ -24,7 +24,7 @@ export class DayCareComponent implements OnInit {
   }
 
   scrollToPosition() {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({
         top: 300,  // Scroll to the top of the page
         left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)

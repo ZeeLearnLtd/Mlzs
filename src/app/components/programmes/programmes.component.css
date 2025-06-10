@@ -54,3 +54,8 @@
     width: 100%;
   }
   }
+h2{
+  position: relative;
+  z-index: 9;
+  font-size: 2.5rem;
+}

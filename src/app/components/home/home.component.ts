@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-home',
@@ -37,9 +37,8 @@ export class HomeComponent implements OnInit {
 
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         var owl = $(".count_owl");
         owl.owlCarousel({
           margin: 10,
@@ -58,16 +57,15 @@ export class HomeComponent implements OnInit {
             },
           }
         });
-      }
-    }, 1000)
-
+      }, 1000)
+    }
   }
 
   sanitizeUrl(url: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
   ngOnInit(): void {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       this.getseo();
     }
 
@@ -79,13 +77,14 @@ export class HomeComponent implements OnInit {
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
-      if (isPlatformServer(this.platformId)) {
+      if (isPlatformBrowser(this.platformId)) {
         this.projectService.sendMessagebread(data.data.breadcrumb);
         this.projectService.sendMessageblog(data?.data?.blog);
         this.projectService.sendMessageseo(data?.data?.testimony);
         this.projectService.sendMessageFaqs(data?.data?.faq);
+        this.projectService.setmeta(data?.data);
       }
-      // this.projectService.setmeta(data?.data);
+
 
     });
   }

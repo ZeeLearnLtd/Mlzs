@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-locate-us',
   templateUrl: './locate-us.component.html',
@@ -272,12 +272,12 @@ export class LocateUsComponent implements OnInit {
       next: (resp: any) => {
         if (resp.data) {
           if (resp.data[0]?.url) {
-            if (isPlatformServer(this.platformId)) {
+            if (isPlatformBrowser(this.platformId)) {
               window.open(resp.data[0].url, "_blank");
             }
           }
           else {
-            if (isPlatformServer(this.platformId)) {
+            if (isPlatformBrowser(this.platformId)) {
               this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
               this.router.navigateByUrl('/admissions');
             }

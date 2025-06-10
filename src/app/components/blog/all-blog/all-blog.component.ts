@@ -13,24 +13,24 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class AllBlogComponent implements OnInit {
   project$: Observable<any> | undefined;
-  blogdetails:any
+  blogdetails: any
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
     private projectService: ProjectSeoService,
     private apiService: ApicallService,
-    private ngxSpinner : NgxSpinnerService
+    private ngxSpinner: NgxSpinnerService
   ) {
     //
   }
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
-       this.getblogdata(params['name']);
+      this.getblogdata(params['name']);
     });
 
 
   }
-  getblogdata(param:string) {
+  getblogdata(param: string) {
     this.ngxSpinner.show();
     let tbody = {
       slug: param,
@@ -38,12 +38,10 @@ export class AllBlogComponent implements OnInit {
     };
     this.apiService.getGetblog(tbody).subscribe((data: any) => {
       this.ngxSpinner.hide();
-      this.blogdetails=data.data;
+      this.blogdetails = data.data;
       this.projectService.sendMessageblog(data.data.blog);
-      //console.log(this.blogdetails);
       this.projectService.setmetablog(this.blogdetails);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      console.log('faqs',data?.data?.faq)
     });
   }
 }

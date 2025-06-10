@@ -4,7 +4,7 @@ import { Location, PopStateEvent } from "@angular/common";
 import { ApicallService } from "./services/apicall.service";
 import { environment } from "src/environments/environment";
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       this.location.subscribe((ev: PopStateEvent) => {
         console.log(ev.url);
 
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
       this._router.events.subscribe((ev: any) => {
         if (ev instanceof NavigationStart) {
           if (ev.url != this.lastPoppedUrl)
-            if (isPlatformServer(this.platformId)) {
+            if (isPlatformBrowser(this.platformId)) {
               this.yScrollStack.push(window.scrollY);
             }
         } else if (ev instanceof NavigationEnd) {
@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
               //window.scrollTo(0, this.yScrollStack.pop());
             }
           } else
-            if (isPlatformServer(this.platformId)) {
+            if (isPlatformBrowser(this.platformId)) {
               window.scrollTo(0, 0);
             }
         }

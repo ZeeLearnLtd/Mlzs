@@ -6,7 +6,7 @@ import { HomeSeoService } from 'src/app/services/homeseo.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-testimonial',
@@ -33,9 +33,8 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
-
-    setTimeout(() => {
-      if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
           items: 3,
@@ -55,29 +54,14 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
             },
           }
         });
-      }
-    }, 1000)
+      }, 1000)
+    }
 
   }
   ngOnInit(): void {
-    this.getseo()
-
+    this.gettestimonial_data();
   }
 
-  getseo() {
-    let tbody = {
-      slug: 'testimonial',
-      Projectid: environment.projectid,
-    };
-    this.apiService.getGetseo(tbody).subscribe((data: any) => {
-      this.gettestimonial_data();
-      this.projectService.sendMessageblog(data?.data?.blog);
-      this.projectService.sendMessageseo(data?.data?.testimony);
-      this.projectService.sendMessageFaqs(data?.data?.faq);
-      this.projectService.setmeta(data?.data);
-
-    });
-  }
 
   gettestimonial_data() {
     let tbody = {

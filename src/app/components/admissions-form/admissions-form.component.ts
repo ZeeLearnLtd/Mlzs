@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../service/common.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-admissions-form',
   templateUrl: './admissions-form.component.html',
@@ -105,7 +105,7 @@ export class AdmissionsFormComponent implements OnInit {
     this.selectedpincode = data.Pin_Code;
     this.selectedDevice = data.Franchisee_Code;
     //this.locationName=this.franchiseeList[0].Franchisee_Name;
-    if (isPlatformServer(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       window.sessionStorage.removeItem('uddixadd');
     }
   }
@@ -268,7 +268,6 @@ export class AdmissionsFormComponent implements OnInit {
     this._servie.getState_countryList().subscribe(
       res => {
         this.countryList = res.root.subroot;
-        console.log(this.countryList)
         let address = this._servie.getencrypt(this._servie.getsession("uddixadd")!);
         if (this._servie.getsession("uddixadd")!) {
           let dt = JSON.parse(address);
@@ -355,7 +354,6 @@ export class AdmissionsFormComponent implements OnInit {
   // captcha function
 
   submit_captcha() {
-    console.log('1');
     if ((document.getElementById("input") as HTMLInputElement).value === "") {
 
       (document.getElementById("wrong") as HTMLInputElement).style.display = "block";

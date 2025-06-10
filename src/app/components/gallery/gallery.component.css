@@ -16,7 +16,10 @@
     position: relative;
     bottom: 2rem;
 }
-
+.title_content h2{
+    position: relative;
+    z-index: 9;
+}
 @media screen and (max-width: 600px) {
 
 }

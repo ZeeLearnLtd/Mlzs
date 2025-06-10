@@ -1,0 +1,112 @@
+.multi_img_group{
+    display: flex;
+    justify-content: center;
+}
+
+.multi_img_group img{
+width: 80%;
+}
+
+section{
+    background-image: url('../../../../assets/img/MLZS/main_bg.png');
+    background-size: cover;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+  }
+  .programmes_main_page{
+    margin-top:6.5rem;
+}
+.date_content{
+  font-size: 12px;
+  color: #4c4a4a;
+  text-align: right;
+}
+.right_card{
+  margin-bottom:20px;
+}
+@media screen and (max-width: 600px) {
+.programmes_main_page{
+  margin-top: 10px;
+}
+.right_card{
+  margin-top:20px;
+}
+}
+
+
+.text_bg{
+    width:23%;
+    position: relative;
+    bottom:1.5rem;
+    z-index: 1;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#FFF;
+    font-size: 13px;
+    padding: 5px 25px;
+    background-color:#014876;
+    margin: 5px;
+}
+
+.nav-link:focus, .nav-link{
+    color:#014876;
+    font-size: 13px;
+    padding: 5px 25px;
+    background-color: #44C8F5;
+    margin: 5px;
+}
+  .title_content ul{
+    padding: 0; 
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+  li{
+    width: 100%;
+  }
+
+  li button{
+    width: 100%;
+  }
+  }
+
+  .subMenu_content{
+    margin-top: 1rem;
+    width: 85%;
+    margin: auto;
+  }
+
+  p{
+    margin-bottom: 0.5rem;
+  }
+  .text_bg{
+    width: 10%;
+    position: relative;
+    bottom: 1.5rem;
+    z-index: 1;
+    height: 21px;
+}
+
+h2{
+    position: relative;
+    z-index: 2;
+}
+.date_text{
+    font-size: 12px;
+    color: #3f3d3d;
+}
+
+
+.carousel-inner{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 400px;
+}
+
+.carousel-item img{
+    object-fit: contain;
+      height: 400px;
+      width: 100%;
+}

@@ -13,7 +13,7 @@ export class LiteraSecondaryStageComponent {
   constructor(private apiService: ApicallService, private projectService: ProjectSeoService,) { }
 
 
-  onInit(): void {
+  ngOnInit(): void {
     this.getseo();
   }
 
@@ -23,10 +23,11 @@ export class LiteraSecondaryStageComponent {
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
+      this.projectService.sendMessagebread(data.data.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      // this.projectService.setmeta(data?.data);
+      this.projectService.setmeta(data?.data);
 
     });
   }

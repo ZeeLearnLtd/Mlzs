@@ -29,8 +29,6 @@ export class SubMenuComponent implements OnInit {
       .subscribe((message) => {
         if (message) {
           this.breaddata = message.text;
-
-          console.log('bitcrm',this.breaddata)
         }
       });
   }
