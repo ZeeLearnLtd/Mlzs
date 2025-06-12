@@ -16,7 +16,9 @@ export class DiscoverGalleryComponent {
   contentData: any;
   photoGalleryData: any;
   getFirstData: any;
-
+alldata:any=[];
+Selectedcategory:string="";
+Assinedcategory:any=[];
   constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
 
   ngOnInit(): void {
@@ -47,10 +49,54 @@ export class DiscoverGalleryComponent {
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      let res = data.data[0].contentData
-      this.photoGalleryData = JSON.parse(res);
-      this.getFirstData = this.photoGalleryData[0].OtherFiles[0].value;
-      console.log('photo gallery Data:', this.photoGalleryData);
+      
+       if(data?.data[0]?.contentData){
+        let res = data.data[0].contentData
+        this.photoGalleryData = JSON.parse(res);
+        //this.getFirstData = this.photoGalleryData[0].OtherFiles[0].value;
+        this.getFirstData = this.photoGalleryData[0].OtherFiles ? this.photoGalleryData[0].OtherFiles : this.photoGalleryData[0].logofiles;
+        this.alldata=JSON.parse(res);
+      }else{
+          this.photoGalleryData=[];
+          this.alldata=[];
+      }    
+      if(data?.data[0]?.AssignCategory){
+        this.Assinedcategory=JSON.parse(data?.data[0]?.AssignCategory)
+      } else{
+        this.Assinedcategory=[];
+      }   
     });
   }
+
+  
+  
+  onSearchChange(event: Event) {
+  const value = (event.target as HTMLInputElement).value;
+  console.log('Search input changed:', value);
+  
+  this.photoGalleryData = this.alldata.filter((item:any) =>
+    item?.Title?.toLowerCase().includes(value?.toLowerCase()) 
+  );  
+   //this.getFirstData = this.photoGalleryData[0].OtherFiles[0].value;
+   this.getFirstData = this.photoGalleryData[0].OtherFiles ? this.photoGalleryData[0].OtherFiles : this.photoGalleryData[0].logofiles;
+}
+
+  onchangecategory(id:string){
+     if(id!=""){
+      this.photoGalleryData=this.alldata.filter((dt:any)=>{
+        return  dt.category.includes(id);
+         
+      }).map((obj:any)=>{
+        return obj;
+      });      
+       //this.getFirstData = this.photoGalleryData[0].OtherFiles[0].value;
+       this.getFirstData = this.photoGalleryData[0].OtherFiles ? this.photoGalleryData[0].OtherFiles : this.photoGalleryData[0].logofiles;
+    }
+    else{
+      this.photoGalleryData=this.alldata;
+      //this.getFirstData = this.photoGalleryData[0].OtherFiles[0].value;
+      this.getFirstData = this.photoGalleryData[0].OtherFiles ? this.photoGalleryData[0].OtherFiles : this.photoGalleryData[0].logofiles;
+    }   
+  }
+
 }
