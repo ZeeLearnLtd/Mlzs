@@ -11,13 +11,14 @@
             <div class="dropdown_tab">
                 <div class="row">
                     <div class="col-md-4">
-                        <select name="" id="" class="form-control">
-                            <option value="">Select Category</option>
+                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (click)="onchangecategory(ddlcategory.value)">
+                            <option value="">All</option>
+                            <option value="{{a.categoryId}}" *ngFor="let a of blogcategory">{{a.categoryname}}</option>
                         </select>
                     </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <input name="" id="" placeholder="Search" class="form-control">
+                        <input name="" id="" placeholder="Search" class="form-control" (input)="onSearchChange($event)">
                     </div>
                 </div>
             </div>
@@ -31,8 +32,15 @@
             <div class="news_list mt-5">
                 <div class="row">
                     <div class="col-md-5">
-                        <div>
-                        <img src="{{firstBlog}}" width="100%" alt="">
+                         <div *ngIf="firstBlog && firstBlog.length">
+                            <a [href]="firstBlog[0].value" data-fancybox="gallery1" class="fancybox">
+                                <img [src]="firstBlog[0].value" class="pinchzoom_img" id="image" width="100%"
+                                    alt="Image" />
+                            </a>
+                            <ng-container *ngFor="let a of firstBlog.slice(1)">
+                                <a [href]="a.value" data-fancybox="gallery1" style="display: none;"
+                                    class="fancybox"></a>
+                            </ng-container>
                         </div>
                     </div>
                     <div class="col-md-7">

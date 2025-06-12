@@ -11,14 +11,16 @@
             <div class="dropdown_tab">
                 <div class="row">
                     <div class="col-md-4">
-                        <select name="" id="" class="form-control">
-                            <option value="">Select Category</option>
+                        <select #ddlcategory name="" id="" class="form-control" [(ngModel)]="selectedcategory" (click)="onchangecategory(ddlcategory.value)">
+                            <option value="">All</option>
+                            <option value="{{data?.categoryId}}" *ngFor="let data of AssignCategory">{{data.categoryname}}</option>
                         </select>
                     </div>
-                    <div class="col-md-4">
-                        <select name="" id="" class="form-control">
-                            <option value="">Select Years</option>
-                        </select>
+                     <div class="col-md-4">
+                        <select #ddlyear name="" id="" [(ngModel)]="Selectedyear" class="form-control" (click)="onyearchange(ddlyear.value)">
+                            <option value="">All</option>
+                            <option value="{{year}}" *ngFor="let year of distinctYears">{{year}}</option>
+                        </select>                        
                     </div>
                 </div>
             </div>

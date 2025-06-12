@@ -21,6 +21,9 @@ export class DiscoverBlogsComponent {
   testimonialDataList: any;
   blogsData: any;
   firstBlog: any;
+  Selectedcategory:string="";
+  blogcategory:any=[];
+  alldata:any=[];
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -60,12 +63,49 @@ export class DiscoverBlogsComponent {
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      let res = data.data[0].contentData
-      this.blogsData = JSON.parse(res);
-      this.firstBlog = this.blogsData[0].OtherFiles[0].value
-      console.log('blog detils data', this.blogsData)
+      if(data?.data[0]?.contentData){
+        let res = data.data[0].contentData
+        this.blogsData = JSON.parse(res);
+        this.firstBlog = this.blogsData[0].OtherFiles ? this.blogsData[0].OtherFiles : this.blogsData[0].logofiles;
+        this.alldata=JSON.parse(res);
+      }else{
+          this.blogsData=[];
+          this.alldata=[];
+      }    
+      if(data?.data[0]?.AssignCategory){
+        this.blogcategory=JSON.parse(data?.data[0]?.AssignCategory)
+      } else{
+        this.blogcategory=[];
+      }   
     });
 
+  }
+
+  onSearchChange(event: Event) {
+  const value = (event.target as HTMLInputElement).value;
+  console.log('Search input changed:', value);
+  
+  this.blogsData = this.alldata.filter((item:any) =>
+    item?.Title?.toLowerCase().includes(value?.toLowerCase()) 
+  );
+  this.firstBlog = this.blogsData[0].OtherFiles ? this.blogsData[0].OtherFiles : this.blogsData[0].logofiles;
+}
+
+  onchangecategory(id:string){
+     if(id!=""){
+      this.blogsData=this.alldata.filter((dt:any)=>{
+        return  dt.category.includes(id);
+         
+      }).map((obj:any)=>{
+        return obj;
+      });
+      this.firstBlog = this.blogsData[0].OtherFiles ? this.blogsData[0].OtherFiles : this.blogsData[0].logofiles;
+    }
+    else{
+      this.blogsData=this.alldata;
+      this.firstBlog = this.blogsData[0].OtherFiles ? this.blogsData[0].OtherFiles : this.blogsData[0].logofiles;
+    }
+   
   }
 
 }

@@ -19,7 +19,12 @@ export class DiscoverEventsComponent {
   testimonydata: any;
   testimonialData: any = [];
   testimonialDataList: any;
+  AssignCategory:any=[];
+  alldata:any=[];
+  selectedcategory:string="";
+  distinctYears:any=[];
   eventsData: any;
+  Selectedyear:string="";
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -56,10 +61,59 @@ export class DiscoverEventsComponent {
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      let res = data.data[0].contentData
-      this.eventsData = JSON.parse(res);
-      console.log('events data list', this.eventsData)
+      if(data?.data[0]?.contentData){
+         let res = data.data[0].contentData
+        this.eventsData = JSON.parse(res);
+        this.alldata=JSON.parse(res);
+        this.distinctYears = Array.from(
+          new Set(
+            this.alldata.map((item:any) => new Date(item.CreatedDate).getFullYear())
+          )
+        );
+      }else{
+        this.eventsData = [];
+        this.alldata=[];
+      }
+
+      if(data?.data[0]?.AssignCategory){
+        this.AssignCategory=JSON.parse(data?.data[0]?.AssignCategory);
+      }else{
+        this.AssignCategory=[];
+      }
+     
     });
 
+  }
+
+  onyearchange(id:string){
+  if(id!=""){
+      this.eventsData=this.alldata.filter((dt:any)=>{
+        return ( //dt.category.includes(id);
+         (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
+         (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
+        );
+      }).map((obj:any)=>{
+        return obj;
+      });
+    }
+    else{
+      this.eventsData=this.alldata
+    }
+  }
+
+  onchangecategory(id:string){
+   if(id!=""){
+      this.eventsData=this.alldata.filter((dt:any)=>{
+        return ( //dt.category.includes(id);
+         (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
+         (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
+        );
+      }).map((obj:any)=>{
+        return obj;
+      });
+    }
+    else{
+      this.eventsData=this.alldata
+    }
   }
 }
