@@ -39,7 +39,7 @@
             <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and updates about Mount Litera Zee School from our community.</p>
        
             <div class="news_list mt-5">
-                <div class="row" *ngFor="let a of newsData">
+                <div class="row" *ngFor="let a of newsData">                   
                     <div class="col-md-3">
                         <div *ngFor="let img of a?.logofiles">
                             <img src="{{img.value}}" width="100%" alt="">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-md-9">
                        <div class="news_text">
-                        <h5><b>{{a?.Title}}</b></h5>
+                        <a href="/blog/{{a?.slug}}" target="_blank"></a><h5><b>{{a?.Title}}</b></h5>
                         <p [innerHTML]="a.short"></p>
                         <p class="p-0 m-0"><small>Publisher - Zee News</small></p>
                         <p class="date_text p-0 m-0"><i>Date: {{a?.CreatedDate}}</i></p>

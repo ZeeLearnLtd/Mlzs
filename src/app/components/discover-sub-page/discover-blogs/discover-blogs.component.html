@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="row right_card" *ngFor="let a of blogsData">
-                            <div class="col-md-4">
+                            <div class="col-md-4" routerLink="/blog/{{a?.slug}}">
                                 <div *ngFor="let img of a.OtherFiles">
                                 <img src="{{img.value}}" width="100%" alt="">
                                 </div>

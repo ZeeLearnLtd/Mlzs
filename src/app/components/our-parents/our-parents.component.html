@@ -18,25 +18,25 @@
         <div class="col-md-6">
           <div class="fr_img_content">
             <div class="owl-carousel owl-theme vertical_carousel">
-              <div class="item">
+              <div class="item" *ngFor="let a of ParentTestimonial">
                 <div class="row">
                   <div class="col-2 d-flex justify-content-center align-items-center">
                     <div class="item_img">
-                      <img src="../../../assets/img/MLZS/fr_img1.png" alt="">
+                      <!-- <img src="../../../assets/img/MLZS/fr_img1.png" alt=""> -->
+                       <iframe class="text_bg" [src]="a.safeUrl" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                   </div>
 
                   <div class="col-10">
                     <div class="item_text">
-                      <p>“Mount Litera Zee Schools all across the country promise the children a new kind of education
-                        that is based on latest research.”</p>
-                      <h6>Mr Rohit Bihani</h6>
-                      <span>01 June 2023</span>
+                      <p>“{{a.short}}”</p>
+                      <h6>{{a.title}}</h6>
+                      <span>{{a.CreatedDate}}</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="item">
+              <!-- <div class="item">
                 <div class="row">
                   <div class="col-2 d-flex justify-content-center align-items-center">
                     <div class="item_img">
@@ -69,7 +69,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
              
             </div>
           </div>
