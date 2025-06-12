@@ -12,20 +12,20 @@
                 <div class="row">
                     <div class="col-md-4">
                         <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (click)="onchangecategory(ddlcategory.value)">
-                            <option value="">All</option>
+                            <option value="">All Category</option>
                             <option value="{{a.categoryId}}" *ngFor="let a of newscategory">{{a.categoryname}}</option>
                         </select>
                     </div>
                     <div class="col-md-4">
                         <select #ddlyear name="" id="" [(ngModel)]="Selectedyear" class="form-control" (click)="onyearchange(ddlyear.value)">
-                            <option value="">All</option>
+                            <option value="">All Year</option>
                             <option value="{{year}}" *ngFor="let year of distinctYears">{{year}}</option>
                         </select>
                         
                     </div>
                     <div class="col-md-4">
                         <select #ddlpublisher name="" id="" [(ngModel)]="Selectedpublisher" class="form-control" (click)="onpublisherchange(ddlpublisher.value)">
-                            <option value="">All</option>
+                            <option value="">All Publishers</option>
                             <option value="{{pub}}" *ngFor="let pub of distinctKeywards">{{pub}}</option>
                         </select>
                     </div>
