@@ -19,7 +19,9 @@ export class DiscoverFaqsComponent {
   faqsData: any;
   img_content: any;
   contentData: any;
-
+faqscategory:any=[];
+alldata:any=[];
+Selectedcategory:string="";
   constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
 
   ngOnInit(): void {
@@ -52,8 +54,45 @@ export class DiscoverFaqsComponent {
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      let res = data.data[0].contentData
-      this.faqsData = JSON.parse(res);
+     
+      if(data?.data[0]?.contentData){
+        let res = data.data[0].contentData
+        this.faqsData = JSON.parse(res);
+        this.alldata=JSON.parse(res);
+      }else{
+          this.faqsData=[];
+          this.alldata=[];
+      }    
+      if(data?.data[0]?.AssignCategory){
+        this.faqscategory=JSON.parse(data?.data[0]?.AssignCategory)
+      } else{
+        this.faqscategory=[];
+      }   
     });
   }
+
+  
+  onSearchChange(event: Event) {
+  const value = (event.target as HTMLInputElement).value;
+  console.log('Search input changed:', value);
+  
+  this.faqdata = this.alldata.filter((item:any) =>
+    item?.Title?.toLowerCase().includes(value?.toLowerCase()) 
+  );  
+}
+
+  onchangecategory(id:string){
+     if(id!=""){
+      this.faqdata=this.alldata.filter((dt:any)=>{
+        return  dt.category.includes(id);
+         
+      }).map((obj:any)=>{
+        return obj;
+      });      
+    }
+    else{
+      this.faqdata=this.alldata;
+    }   
+  }
+
 }

@@ -11,19 +11,22 @@
             <div class="dropdown_tab">
                 <div class="row">
                     <div class="col-md-4">
-                        <select name="" id="" class="form-control">
-                            <option value="">Select Category</option>
+                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (click)="onchangecategory(ddlcategory.value)">
+                            <option value="">All Category</option>
+                            <option value="{{a.categoryId}}" *ngFor="let a of newscategory">{{a.categoryname}}</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <select name="" id="" class="form-control">
-                            <option value="">Select Years</option>
+                        <select #ddlyear name="" id="" [(ngModel)]="Selectedyear" class="form-control" (click)="onyearchange(ddlyear.value)">
+                            <option value="">All Year</option>
+                            <option value="{{year}}" *ngFor="let year of distinctYears">{{year}}</option>
                         </select>
                         
                     </div>
                     <div class="col-md-4">
-                        <select name="" id="" class="form-control">
-                            <option value="">Select Publisher</option>
+                        <select #ddlpublisher name="" id="" [(ngModel)]="Selectedpublisher" class="form-control" (click)="onpublisherchange(ddlpublisher.value)">
+                            <option value="">All Publishers</option>
+                            <option value="{{pub}}" *ngFor="let pub of distinctKeywards">{{pub}}</option>
                         </select>
                     </div>
                 </div>
@@ -36,7 +39,7 @@
             <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and updates about Mount Litera Zee School from our community.</p>
        
             <div class="news_list mt-5">
-                <div class="row" *ngFor="let a of newsData">
+                <div class="row" *ngFor="let a of newsData">                   
                     <div class="col-md-3">
                         <div *ngFor="let img of a?.logofiles">
                             <img src="{{img.value}}" width="100%" alt="">
@@ -45,7 +48,7 @@
                     </div>
                     <div class="col-md-9">
                        <div class="news_text">
-                        <h5><b>{{a?.Title}}</b></h5>
+                        <a href="/blog/{{a?.slug}}" target="_blank"></a><h5><b>{{a?.Title}}</b></h5>
                         <p [innerHTML]="a.short"></p>
                         <p class="p-0 m-0"><small>Publisher - Zee News</small></p>
                         <p class="date_text p-0 m-0"><i>Date: {{a?.CreatedDate}}</i></p>

@@ -36,7 +36,7 @@ export class SocialWallComponent {
 
   getnews_data() {
     let tbody = {
-      Type: "Social Links",
+      Type: "Social Post",
       pageurl: '',
       Project_Id: this.projectId
     };

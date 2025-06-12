@@ -21,6 +21,13 @@ export class DiscoverNewsComponent {
   testimonialData: any = [];
   testimonialDataList: any;
   newsData: any;
+  alldata:any=[];
+  newscategory:any=[];
+  distinctKeywards:any=[];
+  distinctYears:any=[];
+  Selectedpublisher:string="";
+  Selectedyear:string="";
+  Selectedcategory:string="";
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -60,11 +67,81 @@ export class DiscoverNewsComponent {
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      let res = data.data[0].contentData
-      this.newsData = JSON.parse(res);
-      console.log('newsData', this.newsData)
+      if(data?.data[0]?.contentData){
+        let res = data.data[0].contentData
+        this.newsData = JSON.parse(res);
+        this.alldata=JSON.parse(res);
+        this.distinctYears = Array.from(
+          new Set(
+            this.alldata.map((item:any) => new Date(item.CreatedDate).getFullYear())
+          )
+        );
+        this.distinctKeywards = Array.from(
+          new Set(
+            this.alldata.map((item:any) => item.Keywards))
+        )
+      }else{
+          this.newsData=[];
+      }    
+      if(data?.data[0]?.AssignCategory){
+        this.newscategory=JSON.parse(data?.data[0]?.AssignCategory)
+      } else{
+        this.newscategory=[];
+      }   
     });
 
   }
 
+  
+
+  onchangecategory(id:string){
+    if(id!=""){
+      this.newsData=this.alldata.filter((dt:any)=>{
+        return ( //dt.category.includes(id);
+         (this.Selectedcategory === '' || dt?.category.includes(this.Selectedcategory)) &&
+         (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear) &&
+         (this.Selectedpublisher === '' || dt?.Keywards.includes(this.Selectedpublisher))
+        );
+      }).map((obj:any)=>{
+        return obj;
+      });
+    }
+    else{
+      this.newsData=this.alldata
+    }
+   
+  }
+  onpublisherchange(id:string){
+if(id!=""){
+      this.newsData=this.alldata.filter((dt:any)=>{
+        return ( //dt.category.includes(id);
+         (this.Selectedcategory === '' || dt?.category.includes(this.Selectedcategory)) &&
+         (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear) &&
+         (this.Selectedpublisher === '' || dt?.Keywards.includes(this.Selectedpublisher))
+        );
+      }).map((obj:any)=>{
+        return obj;
+      });
+    }
+    else{
+      this.newsData=this.alldata
+    }
+  }
+
+  onyearchange(id:string){
+  if(id!=""){
+      this.newsData=this.alldata.filter((dt:any)=>{
+        return ( //dt.category.includes(id);
+         (this.Selectedcategory === '' || dt?.category.includes(this.Selectedcategory)) &&
+         (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear) &&
+         (this.Selectedpublisher === '' || dt?.Keywards.includes(this.Selectedpublisher))
+        );
+      }).map((obj:any)=>{
+        return obj;
+      });
+    }
+    else{
+      this.newsData=this.alldata
+    }
+  }
 }
