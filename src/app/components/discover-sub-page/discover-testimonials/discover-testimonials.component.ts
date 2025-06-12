@@ -137,8 +137,7 @@ export class DiscoverTestimonialsComponent {
 
 onSearchChange(event: Event) {
   const value = (event.target as HTMLInputElement).value;
-  console.log('Search input changed:', value);
-  
+    
   this.SchoolTestimnoal = this.alldata.filter((item:any) =>
     item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(107)
   );
@@ -156,7 +155,7 @@ onSearchChange(event: Event) {
         return dt.category.includes(107);         //School
     }).map((obj:any)=>{
          return {
-            title: obj.Title,
+            title: obj.short,
             safeUrl: this.getSafeEmbedUrl(obj.slug)
          };
     });
@@ -165,7 +164,7 @@ onSearchChange(event: Event) {
         return dt.category.includes(108);         //Student
     }).map((obj:any)=>{
         return {
-            title: obj.Title,
+            title: obj.short,
             safeUrl: this.getSafeEmbedUrl(obj.slug)
          };
     });
@@ -174,13 +173,10 @@ onSearchChange(event: Event) {
         return dt.category.includes(109);         //Parent
     }).map((obj:any)=>{
          return {
-            title: obj.Title,
-            safeUrl: this.getSafeEmbedUrl(obj.slug)
+            title: obj.short,
+            safeUrl: this.getSafeEmbedUrl(obj?.slug)
          };
     });
-
-
-    
   }
 
 
