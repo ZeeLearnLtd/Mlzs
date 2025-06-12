@@ -34,7 +34,7 @@ width: 80%;
     background: transparent;
     width: 95%;
     margin: auto;
-    height: 305px;
+    height: 330px;
     border-radius: 5px;
     padding: 30px 15px;
 
@@ -62,7 +62,7 @@ width: 80%;
     color: #FFF;
 } */
 .item_text p{
-    font-size: 11px;
+    font-size: 13px;
     color: #014876;
 }
 
