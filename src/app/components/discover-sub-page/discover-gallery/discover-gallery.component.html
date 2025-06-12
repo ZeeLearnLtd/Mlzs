@@ -37,8 +37,8 @@
                     <div class="col-md-5">
                         <!-- <img src="{{getFirstData}}" width="100%" alt=""> -->                       
                         <div *ngIf="getFirstData && getFirstData.length">
-                            <a [href]="getFirstData[0].value" data-fancybox="gallery1" class="fancybox">
-                                <img [src]="getFirstData[0].value" class="pinchzoom_img" id="image" width="100%"
+                            <a [href]="getFirstData[0]?.value" data-fancybox="gallery1" class="fancybox">
+                                <img [src]="getFirstData[0]?.value" class="pinchzoom_img" id="image" width="100%"
                                     alt="Image" />
                             </a>
                             <ng-container *ngFor="let a of getFirstData.slice(1)">
