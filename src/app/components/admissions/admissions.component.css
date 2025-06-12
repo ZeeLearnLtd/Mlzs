@@ -19,7 +19,21 @@
     float: right;
     margin: 7px 0px;
 }
-
+.validMsg{
+    font-size: 12px;
+    color: green;
+    text-align: right;
+    margin-top: 3px;
+}
+.inValidMsg{
+    font-size: 12px;
+    color: red;
+    text-align: right;
+    margin-top: 3px;
+}
+.msg_txt{
+    font-size: 12px;
+}
 label{
     font-size: 12px;
 }

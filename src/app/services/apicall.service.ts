@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class ApicallService {
 
   form_baseUrl = environment.api_url
-  mountliteraBaseUrl = environment.mountlitera_url;
+  globelApi = environment.api_url;
   cmsBaseUrl = environment.cmsapi_url;
   constructor(private httpClient: HttpClient) { }
 
@@ -54,7 +54,7 @@ export class ApicallService {
   }
 
   getAllAdmissionData(): Observable<any> {
-    return this.httpClient.post<any>(this.mountliteraBaseUrl + 'AdminRoute/GetFranchiseeDetailsepf', {});
+    return this.httpClient.post<any>(this.globelApi + 'api/V1/GetFranchiseeDetailsepf', {});
   }
 
   getContentDataList(jdata: any): Observable<any> {
@@ -66,7 +66,8 @@ export class ApicallService {
   }
 
   getOtp(mobNo: any): Observable<any> {
-    return this.httpClient.post<any>(this.form_baseUrl + 'V1/SendSms_Clientbcbc', mobNo);
+    // return this.httpClient.post<any>(this.form_baseUrl + 'V1/SendSms_Clientbcbc', mobNo);
+    return this.httpClient.post<any>(this.globelApi + 'Kidzeewebapi/V1/SendSms_Clientbcbc', mobNo)
   }
   getState_countryList(): Observable<any> {
     return this.httpClient.post<any>('https://partner.mountlitera.com/AdminRoute/GetFranchiseeDetailselp', {});
@@ -80,4 +81,7 @@ export class ApicallService {
     return this.httpClient.post(this.cmsBaseUrl + 'Getblogdata', jdata)
   }
 
+  postAdmissionForm(obj: any): Observable<any> {
+    return this.httpClient.post(this.globelApi + 'api/V1/mlzsadmission', obj)
+  }
 }

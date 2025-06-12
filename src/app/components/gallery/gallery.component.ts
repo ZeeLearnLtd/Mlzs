@@ -50,7 +50,6 @@ export class GalleryComponent {
       let res = data.data[0].contentData
       this.photoGalleryData = JSON.parse(res);
       this.getFirstData = this.photoGalleryData[0].OtherFiles[0].value;
-      console.log('photo gallery Data:', this.photoGalleryData);
     });
   }
 }

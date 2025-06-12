@@ -88,7 +88,7 @@ import { MapviewComponent } from './components/mapview/mapview.component';
 import { NewsDetailsComponent } from './components/discover-sub-page/news-details/news-details.component';
 import { EventsDetailsComponent } from './components/discover-sub-page/events-details/events-details.component';
 import { SafeUrlPipe } from './components/pipe/safe-url.pipe';
-
+import { ToastrModule } from 'ngx-toastr';
 interface NgxSpinnerConfig {
   type?: string;
 }
@@ -174,7 +174,7 @@ interface NgxSpinnerConfig {
     MapviewComponent,
     NewsDetailsComponent,
     EventsDetailsComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
   ],
   imports: [
     BrowserModule,
@@ -187,6 +187,11 @@ interface NgxSpinnerConfig {
     NgxSpinnerModule,
     MatExpansionModule,
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent],

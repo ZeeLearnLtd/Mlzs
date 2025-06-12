@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   locationId: 2354,
-  api_url: 'https://globalapi.zeelearn.com/Kidzeewebapi/',
+  api_url: 'https://globalapi.zeelearn.com/',
   mountlitera_url: "https://admission.mountlitera.com/",
   // api_url: 'https://kubapi.zeelearn.com/V1/cmsapi/api/CMS/',
   cmsapi_url: 'https://kubapi.zeelearn.com/V1/cmsapi/api/CMS/',//'https://cmsapi.zeelearn.com/api/CMS/',
