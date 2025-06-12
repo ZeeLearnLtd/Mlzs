@@ -35,6 +35,7 @@
               "node_modules/ngx-spinner/animations/ball-scale-multiple.css", 
               "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
               "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css", 
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -108,7 +109,8 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css" , 
+              "node_modules/bootstrap/dist/css/bootstrap.min.css" ,
+              "node_modules/ngx-toastr/toastr.css", 
               "src/styles.scss"
             ],
             "scripts": [

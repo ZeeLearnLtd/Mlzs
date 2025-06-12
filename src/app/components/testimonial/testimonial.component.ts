@@ -65,7 +65,7 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
 
   gettestimonial_data() {
     let tbody = {
-      Type: "student testimonial",
+      Type: "testimonial",
       pageurl: '',
       Project_Id: this.projectId
     };
@@ -73,6 +73,7 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
       let res = data.data[0].contentData
       this.testimonialData = JSON.parse(res);
       this.testimonialDataList = this.testimonialData.map((video: any) => ({
+        ...video,
         title: video.Title,
         safeUrl: this.getSafeEmbedUrl(video.slug)
       }));

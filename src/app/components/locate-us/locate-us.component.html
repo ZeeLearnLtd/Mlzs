@@ -84,19 +84,19 @@
                                 </div>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <textarea name="" id="" class="w-100"  placeholder="Your Massage"
+                                <textarea name="" id="" class="w-100"  placeholder="Your Message*"
                                 formControlName="massege"
                                 [ngClass]="{ 'is-invalid': submitted && f.massege.errors }"></textarea>
                                 <div *ngIf="submitted && f.massege.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.massege.touched || submitted) && f.massege.errors?.required">
-                                        massege is required
+                                        Message is required
                                     </span>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group mt-4">
-                               <button class="btn reset_btn" (click)="validationForm();">Recet <i class="fa fa-long-arrow-right mx-2"></i></button>
+                               <button class="btn reset_btn" (click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
                                 </div>
                             </div>
                         </div>

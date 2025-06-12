@@ -10,12 +10,12 @@ section{
     margin: auto;
 }
 .text_bg{
-    width: 10%;
+    width: 16%;
     position: relative;
     bottom: 1.7rem;
     z-index: 1;
-    left: 5rem;
-    height: 30px;
+    left: 1rem;
+    height: 21px;
 }
 
 .text_bg1{

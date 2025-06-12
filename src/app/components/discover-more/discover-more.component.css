@@ -13,24 +13,18 @@ section{
     width:90%;
     margin: auto;
 }
+h2{
+  position: relative;
+  z-index: 9;
+}
 .text_bg{
     width: 15%;
     position: relative;
     bottom: 1.7rem;
     z-index: 1;
     left: 0rem;
-    height: 30px;
+    height: 26px;
 }
-
-.text_bg1{
-    width: 20%;
-    position: relative;
-    bottom: 3.8rem;
-    z-index: 1;
-    left: 5rem;
-    height: 25px;
-}
-
 
 .reset_btn{
     background-color: #44C8F5;
@@ -96,14 +90,18 @@ textarea{
     color: #004878 !important;
     text-align: left;
 }
-
+h6{
+    font-weight: 600;
+}
 .item_text h6{
     color: #FFF;
     text-align: left;
+
 }
 .item_text p{
-    font-size: 11px;
+    font-size: 13px;
     color: #014876;
+    text-align: left;
 }
 
 .item_img_content img{
@@ -116,4 +114,12 @@ textarea{
 
 hr{
     margin: 0px 0px 0px 0px;
+}
+
+.item_white_bg{
+    cursor: pointer;
+}
+
+.item{
+    cursor: pointer;
 }
