@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <select #ddlcategory name="" id="" class="form-control" [(ngModel)]="selectedcategory" (click)="onchangecategory(ddlcategory.value)">
-                        <option value="">All</option>
+                        <option value="">All Category</option>
                         <option value="{{data?.categoryId}}" *ngFor="let data of AssignCategory">{{data.categoryname}}</option>
                     </select>
                 </div>
