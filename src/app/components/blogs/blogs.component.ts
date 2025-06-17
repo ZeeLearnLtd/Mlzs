@@ -67,7 +67,8 @@ export class BlogsComponent implements OnInit {
       this.blogdata = JSON.parse(data.data[0].contentData);
       this.top_blog_img = this.blogdata[0].OtherFiles[0].value;
       this.top_blog = this.blogdata[0];
-      this.top_blog = this.blogdata[0];
+      // this.top_blog = this.blogdata[0];
+      console.log('blogdata', this.blogdata)
     });
   }
 }

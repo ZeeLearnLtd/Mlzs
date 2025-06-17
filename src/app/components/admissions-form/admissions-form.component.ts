@@ -265,15 +265,15 @@ export class AdmissionsFormComponent implements OnInit {
   }
 
   selectCountry_State_cityList() {
-    this._servie.getState_countryList().subscribe(
-      res => {
-        this.countryList = res.root.subroot;
-        let address = this._servie.getencrypt(this._servie.getsession("uddixadd")!);
-        if (this._servie.getsession("uddixadd")!) {
-          let dt = JSON.parse(address);
-          this.setaddress(dt);
-        }
-      })
+    // this._servie.getState_countryList().subscribe(
+    //   res => {
+    //     this.countryList = res.root.subroot;
+    //     let address = this._servie.getencrypt(this._servie.getsession("uddixadd")!);
+    //     if (this._servie.getsession("uddixadd")!) {
+    //       let dt = JSON.parse(address);
+    //       this.setaddress(dt);
+    //     }
+    //   })
   }
 
   selectCountry(selectVal: any) {

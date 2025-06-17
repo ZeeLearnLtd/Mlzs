@@ -16,11 +16,13 @@ declare var $: any;  // Declare jQuery
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  projectId = environment.projectid
   project$: Observable<any> | undefined;
   subProfileInfo: any;
   subscriptionnav!: Subscription;
   testimonydata: any = [];
   profile_title: any;
+  bannerList: any;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -71,6 +73,18 @@ export class HomeComponent implements OnInit {
 
   }
 
+  getBanner() {
+    let tbody = {
+      Type: "banner",
+      pageurl: '',
+      Project_Id: this.projectId
+    };
+    this.apiService.getContentDataList(tbody).subscribe((data: any) => {
+      let bannerData = data.data[0].contentData
+      this.bannerList = JSON.parse(bannerData)
+    })
+  }
+
   getseo() {
     let tbody = {
       slug: 'home',
@@ -78,14 +92,13 @@ export class HomeComponent implements OnInit {
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
       if (isPlatformBrowser(this.platformId)) {
+        this.getBanner()
         this.projectService.sendMessagebread(data.data.breadcrumb);
         this.projectService.sendMessageblog(data?.data?.blog);
         this.projectService.sendMessageseo(data?.data?.testimony);
         this.projectService.sendMessageFaqs(data?.data?.faq);
         this.projectService.setmeta(data?.data);
       }
-
-
     });
   }
 }

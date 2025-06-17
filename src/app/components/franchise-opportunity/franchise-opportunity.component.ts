@@ -302,15 +302,15 @@ export class FranchiseOpportunityComponent implements OnInit {
   }
 
   selectCountry_State_cityList() {
-    this._servie.getState_countryList().subscribe(
-      res => {
-        this.countryList = res.root.subroot
+    // this._servie.getState_countryList().subscribe(
+    //   res => {
+    //     this.countryList = res.root.subroot
 
-        let filterState = this.countryList.filter((x: any) => {
-          return x.Country_Name == "India"
-        })
-        this.stateList = filterState[0].State
-      })
+    //     let filterState = this.countryList.filter((x: any) => {
+    //       return x.Country_Name == "India"
+    //     })
+    //     this.stateList = filterState[0].State
+    //   })
     // this.getseo();
   }
 

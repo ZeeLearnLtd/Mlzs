@@ -92,14 +92,14 @@ export class ContectUsComponent {
   }
   getAllDataList() {
     this.ngxSpinner.show();
-    this._service.get_allCountryList().subscribe(
-      res => {
-        this.ngxSpinner.hide();
-        this.all_data_list = res
-        this.india_country();
-        this.setcountry();
-      }
-    )
+    // this._service.get_allCountryList().subscribe(
+    //   res => {
+    //     this.ngxSpinner.hide();
+    //     this.all_data_list = res
+    //     this.india_country();
+    //     this.setcountry();
+    //   }
+    // )
   }
 
   india_country() {

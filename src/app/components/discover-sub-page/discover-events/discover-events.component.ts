@@ -19,12 +19,12 @@ export class DiscoverEventsComponent {
   testimonydata: any;
   testimonialData: any = [];
   testimonialDataList: any;
-  AssignCategory:any=[];
-  alldata:any=[];
-  selectedcategory:string="";
-  distinctYears:any=[];
+  AssignCategory: any = [];
+  alldata: any = [];
+  selectedcategory: string = "";
+  distinctYears: any = [];
   eventsData: any;
-  Selectedyear:string="";
+  Selectedyear: string = "";
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -45,7 +45,7 @@ export class DiscoverEventsComponent {
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
-      this.getnews_data();
+      this.getEvents_data();
       this.projectService.sendMessagebread(data.data.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
@@ -54,66 +54,66 @@ export class DiscoverEventsComponent {
 
     });
   }
-  getnews_data() {
+  getEvents_data() {
     let tbody = {
       Type: "events",
       pageurl: '',
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      if(data?.data[0]?.contentData){
-         let res = data.data[0].contentData
+      if (data?.data[0]?.contentData) {
+        let res = data.data[0].contentData
         this.eventsData = JSON.parse(res);
-        this.alldata=JSON.parse(res);
+        this.alldata = JSON.parse(res);
         this.distinctYears = Array.from(
           new Set(
-            this.alldata.map((item:any) => new Date(item.CreatedDate).getFullYear())
+            this.alldata.map((item: any) => new Date(item.CreatedDate).getFullYear())
           )
         );
-      }else{
+      } else {
         this.eventsData = [];
-        this.alldata=[];
+        this.alldata = [];
       }
 
-      if(data?.data[0]?.AssignCategory){
-        this.AssignCategory=JSON.parse(data?.data[0]?.AssignCategory);
-      }else{
-        this.AssignCategory=[];
+      if (data?.data[0]?.AssignCategory) {
+        this.AssignCategory = JSON.parse(data?.data[0]?.AssignCategory);
+      } else {
+        this.AssignCategory = [];
       }
-     
+
     });
 
   }
 
-  onyearchange(id:string){
-  if(id!=""){
-      this.eventsData=this.alldata.filter((dt:any)=>{
+  onyearchange(id: string) {
+    if (id != "") {
+      this.eventsData = this.alldata.filter((dt: any) => {
         return ( //dt.category.includes(id);
-         (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
-         (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
+          (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
+          (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
         );
-      }).map((obj:any)=>{
+      }).map((obj: any) => {
         return obj;
       });
     }
-    else{
-      this.eventsData=this.alldata
+    else {
+      this.eventsData = this.alldata
     }
   }
 
-  onchangecategory(id:string){
-   if(id!=""){
-      this.eventsData=this.alldata.filter((dt:any)=>{
+  onchangecategory(id: string) {
+    if (id != "") {
+      this.eventsData = this.alldata.filter((dt: any) => {
         return ( //dt.category.includes(id);
-         (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
-         (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
+          (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
+          (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
         );
-      }).map((obj:any)=>{
+      }).map((obj: any) => {
         return obj;
       });
     }
-    else{
-      this.eventsData=this.alldata
+    else {
+      this.eventsData = this.alldata
     }
   }
 }

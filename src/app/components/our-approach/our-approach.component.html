@@ -13,56 +13,20 @@
                 </div>
                 <div class="home-demo mt-3">
                     <div class="owl-carousel owl-theme news_owl" id="">
-                      <div class="item">
-                        <div class="item_img_content">
-                            <img class="text_bg" src="../../../assets/img/MLZS/news2.png">
+                      <div class="item" *ngFor="let a of eventsData">
+                        <div routerLink="/events/{{a?.slug}}">
+                        <div class="item_img_content" *ngFor="let img of a.logofiles">
+                            <img class="text_bg" src="{{img.value}}" width="100%" alt="">
                         </div>
                         <hr>
                         <div class="item_text mt-2">
-                          <h6 class="mt-2">Empowering Education with Modern Technology</h6>
-                          <p class="item_content">From online classes and a dedicated mobile app to smart classrooms, we provide every student with cutting-edge tools for comprehensive academic support.</p>
+                          <h6 class="mt-2">{{a?.Title}}</h6>
+                          <!-- <p class="shortPara" [innerHTML]="a.Long1"></p> -->
+                            <p class="shortPara" [innerHTML]="a.short"></p>
+                        </div>
                         </div>
                       </div>
-                      <div class="item">
-                        <div class="item_img_content">
-                            <img class="text_bg" src="../../../assets/img/MLZS/news3.png">
-                        </div>
-                        <hr>
-                        <div class="item_text mt-2">
-                          <h6 class="mt-2">Balanced Academic Workload</h6>
-                          <p class="item_content">Our thoughtfully designed curriculum, combined with personalised student support, ensures a well-balanced academic experience for every learner.</p>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="item_img_content">
-                            <img class="text_bg" src="../../../assets/img/MLZS/news3.png">
-                        </div>
-                        <hr>
-                        <div class="item_text mt-2">
-                          <h6 class="mt-2">Hear from our parent at Mount Litera Zee School.</h6>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="item_img_content">
-                            <img class="text_bg" src="../../../assets/img/MLZS/news1.png">
-                        </div>
-                        <hr>
-                        <div class="item_text mt-2">
-                          <h6 class="mt-2">Zee Learn as the Most Trusted Education Brand</h6>
-                         
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="item_img_content">
-                          <img class="text_bg" src="../../../assets/img/MLZS/news1.png">
-                      </div>
-                        <hr>
-                        <div class="item_text mt-2">
-                            <!-- <img src="../../../assets/img/MLZS/Quote.png" alt=""> -->
-                          <h6 class="mt-2">CBSE-affiliated School</h6>
-                          <p class="item_content">A CBSE-affiliated school offering education up to the Senior Secondary level, with an outstanding academic track record year after year.</p>
-                         </div>
-                      </div>
+                       
                     </div>
                   </div>
             </div>
