@@ -37,13 +37,13 @@ export class CentersInAgartalaComponent implements OnInit {
 
   getAllDataList() {
     this.ngxSpinner.show();
-    this._service.get_allCountryList().subscribe(
-      res => {
-        this.ngxSpinner.hide();
-        this.all_data_list = res;
-        this.getcenterlist();
-      }
-    )
+    // this._service.get_allCountryList().subscribe(
+    //   res => {
+    //     this.ngxSpinner.hide();
+    //     this.all_data_list = res;
+    //     this.getcenterlist();
+    //   }
+    // )
   }
 
   oncitychange(val: any) {

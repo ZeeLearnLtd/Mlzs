@@ -186,6 +186,7 @@ interface NgxSpinnerConfig {
     BrowserAnimationsModule,
     NgxSpinnerModule,
     MatExpansionModule,
+
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     ToastrModule.forRoot({
       timeOut: 3000,

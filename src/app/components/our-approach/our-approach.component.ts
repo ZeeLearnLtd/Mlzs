@@ -9,6 +9,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./our-approach.component.css']
 })
 export class OurApproachComponent implements OnInit {
+  projectId = environment.projectid
   active: boolean = false
   deactive: boolean = false
   eduction: boolean = false
@@ -20,6 +21,8 @@ export class OurApproachComponent implements OnInit {
   year20: boolean = false
   year19: boolean = false
   awards: boolean = false
+  eventsDetailsData: any;
+  eventsData: any;
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private projectService: ProjectSeoService,
@@ -27,150 +30,22 @@ export class OurApproachComponent implements OnInit {
   ) {
 
   }
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => {
-        this.scrollToPosition();
-      }, 100);
-    }
-    throw new Error('Method not implemented.');
-  }
-  ngOnInit() {
-
-    this.advantagevisible();
-    this.getseo();
-
-  }
-  scrollToPosition() {
-    if (isPlatformBrowser(this.platformId)) {
-      window.scrollTo({
-        top: 400,  // Scroll to the top of the page
-        left: 0, // Horizontal scroll (set to 0 for no horizontal scroll)
-        behavior: 'smooth'  // Smooth scrolling effect
-      });
-    }
+  ngOnInit(): void {
+    this.getEvents_data()
   }
 
-  getseo() {
+  getEvents_data() {
     let tbody = {
-      slug: 'our-approach',
-      Projectid: environment.projectid,
+      Type: "events",
+      pageurl: '',
+      Project_Id: this.projectId
     };
-    this.apiService.getGetseo(tbody).subscribe((data: any) => {
-      this.projectService.sendMessagebread(data.data.breadcrumb);
-      this.projectService.sendMessageblog(data.data.blog);
-      this.projectService.sendMessageseo(data.data.testimony);
-      this.projectService.setmeta(data.data);
+    this.apiService.getContentDataList(tbody).subscribe((data: any) => {
+      if (data?.data[0]?.contentData) {
+        let res = data.data[0].contentData
+        this.eventsData = JSON.parse(res);
+      }
     });
-  }
-  legacyvisible() {
-    this.Legacy = true
-    this.kidzeeAdvantage = false
-    this.awards = false
-  }
-  advantagevisible() {
-    this.Legacy = false
-    this.kidzeeAdvantage = true;
-    this.deactive = true
-    this.active = false
-    this.eduction = false;
-    this.awards = false
-  }
-  visionvisible() {
-    this.eduction = true
-    this.kidzeeAdvantage = false;
-    this.deactive = true
-    this.active = false
-    this.Legacy = false
-    this.awards = false
-
-  }
-  recognivisible() {
-    this.eduction = false
-    this.kidzeeAdvantage = false;
-    this.deactive = true
-    this.active = false
-    this.Legacy = false
-    this.awards = true
-
-  }
-
-  openTab(value: any, title: any) {
-    if (value == 1) {
-      this.legacyvisible();
-      this.headerTitle = title
-    }
-    if (value == 2) {
-      this.advantagevisible();
-      this.headerTitle = title
-    }
-    if (value == 3) {
-      this.visionvisible();
-      this.headerTitle = title
-    }
-    if (value == 4) {
-      this.recognivisible();
-      this.headerTitle = title
-    }
-  }
-
-  clickYear(value: any) {
-    if (value == 1) {
-      (document.getElementById('year1') as HTMLElement).style.color = "#FAC216",
-        (document.getElementById('year1') as HTMLElement).style.fontSize = "20px",
-        (document.getElementById('year2') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year3') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year4') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year2') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year3') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year4') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)"
-      this.year22 = true
-      this.year21 = false
-      this.year20 = false
-      this.year19 = false
-    }
-    if (value == 2) {
-      (document.getElementById('year1') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year2') as HTMLElement).style.color = "#FAC216",
-        (document.getElementById('year2') as HTMLElement).style.fontSize = "20px",
-        (document.getElementById('year1') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year3') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year4') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year3') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year4') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)"
-      this.year22 = false
-      this.year21 = true
-      this.year20 = false
-      this.year19 = false
-    }
-    if (value == 3) {
-      (document.getElementById('year1') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year2') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year3') as HTMLElement).style.color = "#FAC216",
-        (document.getElementById('year3') as HTMLElement).style.fontSize = "20px",
-        (document.getElementById('year2') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year1') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year4') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year4') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)"
-      this.year22 = false
-      this.year21 = false
-      this.year20 = true
-      this.year19 = false
-    }
-    if (value == 4) {
-      (document.getElementById('year1') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year2') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year3') as HTMLElement).style.color = "rgba(102, 103, 104, 0.50)",
-        (document.getElementById('year4') as HTMLElement).style.color = "#FAC216",
-        (document.getElementById('year4') as HTMLElement).style.fontSize = "20px",
-        (document.getElementById('year2') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year3') as HTMLElement).style.fontSize = "18px",
-        (document.getElementById('year1') as HTMLElement).style.fontSize = "18px"
-      this.year22 = false
-      this.year21 = false
-      this.year20 = false
-      this.year19 = true
-    }
 
   }
 }

@@ -32,9 +32,10 @@ width: 80%;
     background: transparent;
     width: 95%;
     margin: auto;
-    height: 335px;
+    height: 312px;
     border-radius: 5px;
-    padding: 30px 15px;
+    padding: 10px 15px;
+    overflow: hidden;
 }
 .home-demo h2 {
     color: #FFF;
@@ -57,7 +58,7 @@ width: 80%;
     color: #014876;
 }
 .item_text p{
-    font-size: 11px;
+    font-size: 13px;
     color: #014876;
 }
 
@@ -77,4 +78,16 @@ hr{
   }
   ::ng-deep .owl-item{
     background-color: #44C8F5;
+  }
+
+  .short_para{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;      /* Show only 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+
+  .item{
+    cursor: pointer;
   }

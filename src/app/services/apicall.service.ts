@@ -62,7 +62,7 @@ export class ApicallService {
   }
 
   savefranchiseeData(obj: any): Observable<any> {
-    return this.httpClient.post<any>(this.form_baseUrl + 'V1/ZeeEnquiry', obj);
+    return this.httpClient.post<any>(this.globelApi + 'api/V1/mlzspartner', obj);
   }
 
   getOtp(mobNo: any): Observable<any> {
@@ -70,7 +70,7 @@ export class ApicallService {
     return this.httpClient.post<any>(this.globelApi + 'Kidzeewebapi/V1/SendSms_Clientbcbc', mobNo)
   }
   getState_countryList(): Observable<any> {
-    return this.httpClient.post<any>('https://partner.mountlitera.com/AdminRoute/GetFranchiseeDetailselp', {});
+    return this.httpClient.post<any>(this.globelApi + 'api/V1/GetFranchiseeDetailselp', {});
   }
 
   get_allCountryList(): Observable<any> {

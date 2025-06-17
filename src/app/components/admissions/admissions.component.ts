@@ -175,6 +175,8 @@ export class AdmissionsComponent implements OnInit {
     this.apiService.postAdmissionForm(obj).subscribe(
       res => {
         this.toastr.success('Admission submit successfully!');
+        this.otp_ValidMsg = false;
+        this.otp_inValidMsg = false;
         this.admissionForm.reset();
         this.submitted = false
       }
@@ -191,7 +193,7 @@ export class AdmissionsComponent implements OnInit {
     this.randomOtp = Math.floor(1000 + Math.random() * 9000);
     let mobNo = {
       "MobileNo": this.admissionForm.get('mobileNo')?.value,
-      "smsText": `To validate your interest in the MLZS Franchise, ${this.randomOtp}`,
+      "smsText": `To validate your interest in the MLZS Franchise ${this.randomOtp}`,
       "sResponse": ""
     }
 

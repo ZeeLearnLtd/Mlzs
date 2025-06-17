@@ -95,9 +95,8 @@
       <nav class="nav navbar navbar-expand-lg mobile_nav">
         <div class="container-fluid">
           <div class="menu_icon" data-bs-toggle="collapse" data-bs-target="#navbarNav" id="dropdown_menu"></div>
-          <div class="collapse navbar-collapse " id="navbarNav">
+          <div class="collapse navbar-collapse " id="navbarNav" #navbarCollapse>
             <img src="../../../../assets/img/MLZS/mtl.png" routerLink="" width="13%" class="kidzee_logo_img" alt="">
-            <!-- <img src="../../../../assets/img/MLZS/imtb.png" class="brand_icon" width="13%" alt=""> -->
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
                 <a routerLink="/about-us" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -116,11 +115,11 @@
                   <label class="label_menu"> PROGRAMMES</label>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li class="dropdown-item" routerLink="/programmes/pre-primary-school" (click)="closeMenu()">Litera Foundational Stage 1</li>
-                  <li class="dropdown-item" routerLink="/programmes/primary-school" (click)="closeMenu()">Litera Foundational Stage 2</li>
-                  <li class="dropdown-item" routerLink="/programmes/middle-school" (click)="closeMenu()">Litera Preparatory Stage</li>
-                  <li class="dropdown-item" routerLink="/programmes/secondary-school" (click)="closeMenu()">Litera Middle Stage</li>
-                  <li class="dropdown-item" routerLink="/programmes/higher-secondary-school" (click)="closeMenu()">Litera Secondary Stage</li>
+                  <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-1" (click)="closeMenu()">Litera Foundational Stage 1</li>
+                  <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-2" (click)="closeMenu()">Litera Foundational Stage 2</li>
+                  <li class="dropdown-item" routerLink="/programmes/litera-preparatory-stage" (click)="closeMenu()">Litera Preparatory Stage</li>
+                  <li class="dropdown-item" routerLink="/programmes/middle-school" (click)="closeMenu()">Litera Middle Stage</li>
+                  <li class="dropdown-item" routerLink="/programmes/secondary-school" (click)="closeMenu()">Litera Secondary Stage</li>
                 </ul>
               </li>
           

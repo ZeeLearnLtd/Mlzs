@@ -28,7 +28,11 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
+.insta{
+    background-color: #fff;
+    border-radius: 100%;
+    padding: 3px;
+}
 .zeeLearnText {
     color: #FFF;
     font-size: 20px;
