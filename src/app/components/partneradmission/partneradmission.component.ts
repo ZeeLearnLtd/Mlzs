@@ -312,64 +312,64 @@ export class PartneradmissionComponent {
   }
   getcenterdetails() {
     this.ngxSpinner.show();
-    this._servie.get_allCountryList().subscribe(
-      res => {
-        this.ngxSpinner.hide();
-        this.alldata = res;
-        if (this.centername) {
-          let data = this.alldata.filter((dt: any) => {
-            return dt.Franchisee_Name == this.centername
-          }).map((obj: any) => {
-            return obj;
-          })
-          if (data.length == 1) {
-            this.selectedcenter = data;
-          } else if (data.length > 1) {
-            this.selectedcenter = data[0];
-          } else {
-            this.selectedcenter = [];
-          }
-        } else if (this.cityname) {
-          let data = this.alldata.filter((dt: any) => {
-            return dt.City_Name == this.cityname
-          }).map((obj: any) => {
-            return obj;
-          })
-          if (data.length == 1) {
-            this.selectedcityarr = data;
-          } else if (data.length > 1) {
-            this.selectedcityarr = data[0];
-          } else {
-            this.selectedcityarr = [];
-          }
-        }
+    // this._servie.get_allCountryList().subscribe(
+    //   res => {
+    //     this.ngxSpinner.hide();
+    //     this.alldata = res;
+    //     if (this.centername) {
+    //       let data = this.alldata.filter((dt: any) => {
+    //         return dt.Franchisee_Name == this.centername
+    //       }).map((obj: any) => {
+    //         return obj;
+    //       })
+    //       if (data.length == 1) {
+    //         this.selectedcenter = data;
+    //       } else if (data.length > 1) {
+    //         this.selectedcenter = data[0];
+    //       } else {
+    //         this.selectedcenter = [];
+    //       }
+    //     } else if (this.cityname) {
+    //       let data = this.alldata.filter((dt: any) => {
+    //         return dt.City_Name == this.cityname
+    //       }).map((obj: any) => {
+    //         return obj;
+    //       })
+    //       if (data.length == 1) {
+    //         this.selectedcityarr = data;
+    //       } else if (data.length > 1) {
+    //         this.selectedcityarr = data[0];
+    //       } else {
+    //         this.selectedcityarr = [];
+    //       }
+    //     }
 
 
 
-        // this.selectedcountry=data[0].Country_Name;
-        // this.selectedstate=data[0].State_Name;
-        // this.selectedCity=data[0].City_Name;
-        // this.selectedDevice=data[0].Franchisee_Code;
-      })
+    //     // this.selectedcountry=data[0].Country_Name;
+    //     // this.selectedstate=data[0].State_Name;
+    //     // this.selectedCity=data[0].City_Name;
+    //     // this.selectedDevice=data[0].Franchisee_Code;
+    //   })
     this.selectCountry_State_cityList();
   }
 
   selectCountry_State_cityList() {
     this.ngxSpinner.show();
-    this._servie.getState_countryList().subscribe(
+    // this._servie.getState_countryList().subscribe(
 
-      res => {
-        this.ngxSpinner.hide();
-        this.countryList = res.root.subroot;
-        if (this.centername) {
-          this.setaddress(this.selectedcenter);
-        }
-        else if (this.cityname) {
-          this.setcity(this.selectedcityarr);
-        }
+    //   res => {
+    //     this.ngxSpinner.hide();
+    //     this.countryList = res.root.subroot;
+    //     if (this.centername) {
+    //       this.setaddress(this.selectedcenter);
+    //     }
+    //     else if (this.cityname) {
+    //       this.setcity(this.selectedcityarr);
+    //     }
 
 
-      })
+    //   })
 
   }
 

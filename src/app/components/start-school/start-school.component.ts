@@ -4,6 +4,7 @@ import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-start-school',
   templateUrl: './start-school.component.html',
@@ -22,6 +23,7 @@ export class StartSchoolComponent {
   cityList: any;
   franchiseeList: any;
   constructor(private apiService: ApicallService, private projectService: ProjectSeoService,
+    private toastr: ToastrService,
     private fb: FormBuilder,
     private ngxSpinner: NgxSpinnerService,) {
     this.admissionForm = fb.group({
@@ -46,11 +48,12 @@ export class StartSchoolComponent {
   selectCountry_State_cityList() {
     this.apiService.getState_countryList().subscribe(
       res => {
-        this.countryList = res
+        this.stateList = res.root.subroot
         // let filterState = this.countryList.filter((x: any) => {
         //   return x.Country_Name == "India"
         // })
         // this.stateList = filterState[0].State
+        console.log('countryList', this.stateList)
       })
     this.getseo();
   }
@@ -113,9 +116,10 @@ export class StartSchoolComponent {
   selectState(selectVal: any) {
     let state = selectVal.target.value
     let filterCity = this.stateList.filter((x: any) => {
-      return x.State_Name == state
+      return x.StateName == state
     })
     this.cityList = filterCity[0].City
+    console.log('citylist', this.cityList)
   }
 
   selectCity(selectVal: any) {
@@ -142,36 +146,33 @@ export class StartSchoolComponent {
       if (this.randomOtp == this.admissionForm.get('otp')?.value) {
         this.ngxSpinner.show();
         let obj = {
-          "City": this.admissionForm.get('city')?.value,
-          "Country": "India",
-          "Email": this.admissionForm.get('email')?.value,
-          "FirstName": this.admissionForm.get('fname')?.value,
-          "HaveSpace": "",
-          "LastName": this.admissionForm.get('lname')?.value,
-          "Location": "",
-          "Mobile": this.admissionForm.get('mobile')?.value,
-          "PinCode": this.admissionForm.get('pinCode')?.value,
-          "Product": "259262000000213037",
-          "ProjectId": this.projectId,
-          "SoonStartsIn": "",
-          "Source": "gclid",
-          "gclid": "gclid",
-          "State": this.admissionForm.get('state')?.value,
-          "Type": "F",
-          "WillingToInvest": "",
-          "utm_compaign": "Website",
           "utm_medium": "Website",
           "utm_source": "Website",
-          "utm_ad": "Website",
-          "utm_Content": "Website",
-          "utm_Term": "Website",
+          "utm_compaign": "Website",
+          "utm_term": null,
+          "utm_content": null,
+          "utm_ad": null,
+          "gclid": null,
+          "Type": "F",
+          "Source": "Website",
+          "FirstName": this.admissionForm.get('fname')?.value,
+          "Email": this.admissionForm.get('email')?.value,
+          "Mobile": this.admissionForm.get('mobile')?.value,
+          "State": this.admissionForm.get('state')?.value,
+          "City": this.admissionForm.get('city')?.value,
+          "LocationId": "",
+          "class": "",
+          "ProjectId": "3607",
+          "Location": "",
+          "Location_name": "",
+          "Country": "India",
+          "Product": "259262000039670041"
         }
         this.apiService.savefranchiseeData(obj).subscribe(
           res => {
-            this.ngxSpinner.hide();
+            this.toastr.success('Admission submit successfully!');
             this.otp_ValidMsg = false;
             this.otp_inValidMsg = false;
-            // this.router.navigate(['franchise/thankyou'])
             this.admissionForm.reset();
             this.submitted = false
           },
@@ -190,5 +191,7 @@ export class StartSchoolComponent {
       }
     }
   }
+
+
 
 }

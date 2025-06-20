@@ -175,6 +175,8 @@ export class AdmissionsComponent implements OnInit {
     this.apiService.postAdmissionForm(obj).subscribe(
       res => {
         this.toastr.success('Admission submit successfully!');
+        this.otp_ValidMsg = false;
+        this.otp_inValidMsg = false;
         this.admissionForm.reset();
         this.submitted = false
       }

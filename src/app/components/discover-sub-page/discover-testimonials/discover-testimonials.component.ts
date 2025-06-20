@@ -21,12 +21,12 @@ export class DiscoverTestimonialsComponent {
   testimonydata: any;
   testimonialData: any = [];
   testimonialDataList: any;
-  AssignCategory:any=[];
-  alldata:any=[];
-  SchoolTestimnoal:any=[];
-  StudentTestimonial:any=[];
-  ParentTestimonial:any=[];
-  selectedcategory:string="";
+  AssignCategory: any = [];
+  alldata: any = [];
+  SchoolTestimnoal: any = [];
+  StudentTestimonial: any = [];
+  ParentTestimonial: any = [];
+  selectedcategory: string = "";
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private route: ActivatedRoute,
@@ -42,29 +42,6 @@ export class DiscoverTestimonialsComponent {
 
   ngOnInit(): void {
     this.getseo()
-    // if (isPlatformBrowser(this.platformId)) {
-    //   setTimeout(() => {
-    //     var owl = $(".news_owl");
-    //     owl.owlCarousel({
-    //       margin: 10,
-    //       loop: true,
-    //       nav: false,
-    //       center: true,
-    //       responsive: {
-    //         0: {
-    //           items: 1, // On mobile (0px and up), show 1 item
-    //         },
-    //         600: {
-    //           items: 2, // On tablets (600px and up), show 2 items
-    //         },
-    //         1000: {
-    //           items: 3, // On larger screens (1000px and up), show 3 items
-    //         },
-    //       }
-    //     });
-    //   }
-    //     , 1000)
-    // }
   }
 
 
@@ -114,68 +91,68 @@ export class DiscoverTestimonialsComponent {
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      if(data?.data[0]?.contentData){
-         let res = data.data[0].contentData
-         this.testimonialData = JSON.parse(res);
-         this.alldata = JSON.parse(res);
-         this.assigndata();
+      if (data?.data[0]?.contentData) {
+        let res = data.data[0].contentData
+        this.testimonialData = JSON.parse(res);
+        this.alldata = JSON.parse(res);
+        this.assigndata();
         //  this.testimonialDataList = this.testimonialData.map((video: any) => ({
         //     title: video.Title,
         //     safeUrl: this.getSafeEmbedUrl(video.slug)
         //  }));
-      }else{
-         this.testimonialData=[];
+      } else {
+        this.testimonialData = [];
       }
 
-      if(data?.data[0]?.AssignCategory){
-        this.AssignCategory=JSON.parse(data?.data[0]?.AssignCategory);
-      }else{
-        this.AssignCategory=[];
+      if (data?.data[0]?.AssignCategory) {
+        this.AssignCategory = JSON.parse(data?.data[0]?.AssignCategory);
+      } else {
+        this.AssignCategory = [];
       }
     });
   }
 
-onSearchChange(event: Event) {
-  const value = (event.target as HTMLInputElement).value;
-    
-  this.SchoolTestimnoal = this.alldata.filter((item:any) =>
-    item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(107)
-  );
-  this.StudentTestimonial = this.alldata.filter((item:any) =>
-    item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(108)
-  );
-  this.ParentTestimonial = this.alldata.filter((item:any) =>
-    item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(109)
-  );
+  onSearchChange(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
 
-}
+    this.SchoolTestimnoal = this.alldata.filter((item: any) =>
+      item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(107)
+    );
+    this.StudentTestimonial = this.alldata.filter((item: any) =>
+      item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(108)
+    );
+    this.ParentTestimonial = this.alldata.filter((item: any) =>
+      item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(109)
+    );
 
-  assigndata(){
-    this.SchoolTestimnoal=this.alldata.filter((dt:any)=>{
-        return dt.category.includes(107);         //School
-    }).map((obj:any)=>{
-         return {
-            title: obj.short,
-            safeUrl: this.getSafeEmbedUrl(obj.slug)
-         };
+  }
+
+  assigndata() {
+    this.SchoolTestimnoal = this.alldata.filter((dt: any) => {
+      return dt.category.includes(107);         //School
+    }).map((obj: any) => {
+      return {
+        title: obj.short,
+        safeUrl: this.getSafeEmbedUrl(obj.slug)
+      };
     });
 
-    this.StudentTestimonial= this.alldata.filter((dt:any)=>{
-        return dt.category.includes(108);         //Student
-    }).map((obj:any)=>{
-        return {
-            title: obj.short,
-            safeUrl: this.getSafeEmbedUrl(obj.slug)
-         };
+    this.StudentTestimonial = this.alldata.filter((dt: any) => {
+      return dt.category.includes(108);         //Student
+    }).map((obj: any) => {
+      return {
+        title: obj.short,
+        safeUrl: this.getSafeEmbedUrl(obj.slug)
+      };
     });
 
-    this.ParentTestimonial= this.alldata.filter((dt:any)=>{
-        return dt.category.includes(109);         //Parent
-    }).map((obj:any)=>{
-         return {
-            title: obj.short,
-            safeUrl: this.getSafeEmbedUrl(obj?.slug)
-         };
+    this.ParentTestimonial = this.alldata.filter((dt: any) => {
+      return dt.category.includes(109);         //Parent
+    }).map((obj: any) => {
+      return {
+        title: obj.short,
+        safeUrl: this.getSafeEmbedUrl(obj?.slug)
+      };
     });
   }
 
@@ -195,16 +172,16 @@ onSearchChange(event: Event) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
   }
 
-  onchangecategory(id:string){
-    if(id!=""){
-      this.testimonydata=this.alldata.filter((dt:any)=>{
-        return dt.category.includes(id);         
-      }).map((obj:any)=>{
+  onchangecategory(id: string) {
+    if (id != "") {
+      this.testimonydata = this.alldata.filter((dt: any) => {
+        return dt.category.includes(id);
+      }).map((obj: any) => {
         return obj;
       });
     }
-    else{
-      this.testimonydata=this.alldata;
+    else {
+      this.testimonydata = this.alldata;
     }
 
     if (isPlatformBrowser(this.platformId)) {

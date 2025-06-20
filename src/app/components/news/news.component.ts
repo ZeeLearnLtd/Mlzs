@@ -1,5 +1,7 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { ApicallService } from 'src/app/services/apicall.service';
+import { environment } from 'src/environments/environment';
 declare var $: any;  // Declare jQuery
 
 @Component({
@@ -7,12 +9,19 @@ declare var $: any;  // Declare jQuery
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css']
 })
-export class NewsComponent {
+export class NewsComponent implements OnInit {
+  projectId = environment.projectid
   headerTitle = "In News"
+  eventsData: any;
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
+    private _service: ApicallService,
   ) {
 
+  }
+
+  ngOnInit(): void {
+    this.getEvents_data();
   }
 
   ngAfterViewInit(): void {
@@ -39,6 +48,21 @@ export class NewsComponent {
 
       }, 1000)
     }
+
+  }
+
+  getEvents_data() {
+    let tbody = {
+      Type: "events",
+      pageurl: '',
+      Project_Id: this.projectId
+    };
+    this._service.getContentDataList(tbody).subscribe((data: any) => {
+      if (data?.data[0]?.contentData) {
+        let res = data.data[0].contentData
+        this.eventsData = JSON.parse(res);
+      }
+    });
 
   }
 }
