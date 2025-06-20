@@ -1,5 +1,5 @@
 .btn_header {
-    background-color: #65318E;
+    background-color: #004878;
     position: fixed;
     top: 0;
     left: 0;
@@ -8,14 +8,18 @@
     padding: 7px;
 }
 
-
+.nav_logo{
+    width: 16%;
+}
 
 .nav-sub-item{
     margin-left: 25px;
     font-weight: 600;
     font-size: 13px;
 }
-
+nav{
+    padding: 0;
+}
 .btn_content {
     display: flex;
     justify-content: center;
@@ -30,15 +34,22 @@
 }
 .kidzee_logo_img{
     position: relative;
-    left:0rem;
+    left: 0rem;
     cursor: pointer;
+}
+.brand_icon{
+    position: relative;
+    right: 0rem;
+}
+.convert_btn{
+    font-size: 12px;
 }
 .white_btn {
     background-color: #FFF;
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
     border: none;
-    color: #65318E;
+    color: #004878;
     font-weight: 500;
     margin: 5px;
     transition: all ease 0.2s;
@@ -48,7 +59,7 @@
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
     border: none;
-    color: #65318E;
+    color: #004878;
     font-weight: 500;
     margin: 5px;
     transition: all ease 0.2s;
@@ -56,7 +67,7 @@
 .whiteHeader_dark {
     top: 0px;
     position: fixed;
-    background-color: #65318E;
+    background-color: #004878;
     color: #fff;
     left: 0;
     right: 0;
@@ -65,8 +76,8 @@
 }
 
 .whiteHeader {
-    top: 2rem;
-    position: absolute;
+    top: 2.7rem;
+    position: fixed;
     color: #fff;
     left: 0;
     right: 0;
@@ -121,13 +132,13 @@ ul li a {
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #a19bad;
+    background-color: #004878 ;
 }
 .dropdown-menu a:hover{
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #65318E;
+    background-color: #004878;
 }
 /* dropdown menu css */
 
@@ -148,17 +159,17 @@ ul li a {
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: fixed;
-    background-color: #a19bad;
+    background-color: #004878 ;
 }
 
 .dropdown-item {
     color: #FFF !important;
     font-size: 13px;
-    font-weight: 600;
+    background-color: #004878;
 }
 
-.dropdown-item:hover {
-    background-color: #65318E;
+.dropdown-item:hover{
+    background-color: #004878;
 }
 
 #headerLogo {
@@ -176,13 +187,39 @@ ul li a {
 .navbar-toggler {
     display: none;
 }
-
+.desktop_nav{
+    display: block;
+}
+.mobile_nav{
+    display: none;
+}
 @media screen and (max-width: 600px) {
+    .label_menu{
+         width: 45%;
+    }
+    .desktop_nav{
+        display: none;
+    }
+    .mobile_nav{
+        display: block;
+    }
+    .top_header{
+        width: 100%;
+        position: fixed;
+        padding: 10px;
+        top:auto !important;
+        bottom: 0 !important;
+        z-index: 999;
+        background-color:#004878; 
+     }
     .btn_content {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 35px;
+    }
+    .nav-link{
+        color: #FFF !important;
     }
     
     .white_btn {
@@ -190,7 +227,7 @@ ul li a {
         padding: 5px 3px 5px 3px;
         border-radius: 0px 53px 53px 53px;
         border: none;
-        color: #65318E;
+        color: #004878;
         font-weight: 500;
         font-size: 8px;
         margin: 5px;
@@ -285,7 +322,7 @@ ul li a {
     }
 
     #navbarNav {
-        background-color: #65318E;
+        background-color: #004878;
         color: #FFF;
     }
 
@@ -297,7 +334,7 @@ ul li a {
         z-index: 9999;
         padding: 0;
         color: #FFF;
-        background-color: #65318E;
+        background-color: #004878;
         display: block;
     }
 
@@ -333,7 +370,7 @@ ul li a {
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
     border: none;
-    color: #65318E;
+    color: #004878;
     font-weight: 500;
     margin: 5px;
     transition: all ease 0.2s;
@@ -343,7 +380,7 @@ ul li a {
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
     border: none;
-    color: #65318E;
+    color: #004878;
     font-weight: 500;
     margin: 5px;
     transition: all ease 0.2s;
@@ -385,24 +422,27 @@ ul li a {
 	
 	&:hover,
 	&:focus {
-		background-color: #FFF200;
-		color: #000;
+		/* background-color: #FFF200; */
+		color: #004878;
+        font-weight: 700;
 	}
 }
 
 .navbar-nav li.active > a {
-	background-color: #FFF200;
-	color: #000;
+	/* background-color: #FFF200; */
+    color: #004878;
+    font-weight: 700;
 }
 .nav-item {
-    margin-left:10px;
+    margin-left: 2px;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 12px;
+    font-family: 'Poppins';
 }
 .nav-sub-item{
     margin-left:10px;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .navbar1 {
@@ -413,13 +453,13 @@ ul li a {
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #a19bad;
+    background-color: #004878 ;
 }
 .dropdown-menu a:hover{
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #65318E;
+    background-color: #004878;
 }
 /* dropdown menu css */
 
@@ -440,17 +480,18 @@ ul li a {
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: fixed;
-    background-color: #a19bad;
+    background-color: #004878 ;
 }
 
 .dropdown-item {
     color: #FFF !important;
     font-size: 13px;
-    font-weight: 600;
+    transition: 0.6s;
 }
 
 .dropdown-item:hover {
-    background-color: #65318E;
+    background-color: #004878;
+    color: #b5adad !important;
 }
 
 #headerLogo {
@@ -482,20 +523,21 @@ ul li a {
     }
    .kidzee_logo_img{
     position: fixed;
-    top: 5px;
+    top: 0px;
     left: auto !important;
     right: 10px !important;
-    width: 35%;
+    width: 20%;
    }
     .ul_content {
         background-image: none !important;
-        width:100%;
+        width:90%;
         margin: auto;
         padding: 0px 16px 0px 0px;
         display: flex;
         justify-content:start !important;
         align-items:normal !important;
         padding: 26px 0px 26px 0px;
+        left: 0px;
     }
 
     .whiteHeader{
@@ -525,7 +567,7 @@ ul li a {
         padding: 5px 3px 5px 3px;
         border-radius: 0px 53px 53px 53px;
         border: none;
-        color: #65318E;
+        color: #004878;
         font-weight: 500;
         font-size: 8px;
         margin: 5px;
@@ -597,7 +639,7 @@ ul li a {
             width: 30px;
             padding: 0px;
             border-radius: 50%;
-            background-color: #FFF200;
+            /* background-color: #FFF200; */
         }
 .navbar {
     overflow: hidden;
@@ -610,12 +652,12 @@ ul li a {
     }
 
     #navbarNav{
-        background-color: #65318E;
+        background-color: #004878;
         color: #FFF;
         position: fixed;
         left:0px;
         right:0px;
-        top:2rem;
+        top:1.4rem;
     }
 
     .navbar1 {
@@ -627,7 +669,7 @@ ul li a {
         z-index: 9999;
         padding: 0;
         color: #FFF;
-        background-color: #65318E;
+        background-color: #004878;
         display: block;
     }
 
@@ -661,7 +703,16 @@ ul li a {
 border: 1px solid #FFF;
 border-radius:5px;
 font-size: 12px;
+color: #FFF;
+transition: 0.6s;
 }
+
+.admission_btn:hover{
+    background-color:#FFF;
+    border-radius:5px;
+    color: #004878;
+    font-size: 12px;
+    }
 
 .right_botder_btn{
 border-right: 1px solid #FFF;
@@ -675,5 +726,6 @@ border-radius:0;
     left: 0;
     right: 0;
     top: 0;
+    z-index: 999;
     background-color:#004878; 
  }

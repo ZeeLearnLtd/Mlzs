@@ -63,8 +63,8 @@ const routes: Routes = [
   // { path: 'blog', component: BlogDetailsComponent },
 
 
-  // { path: 'admission/thankyou', component: AdmissionThankyouComponent },
-  // { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
+  { path: 'admission/thankyou', component: AdmissionThankyouComponent },
+  { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
   {
     path: '',
     component: HeaderComponent,
@@ -107,10 +107,6 @@ const routes: Routes = [
       { path: 'faqs', component: DiscoverFaqsComponent },
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
       { path: 'achievements', component: DiscoverAchievementsComponent },
-
-      { path: 'admission/thankyou', component: AdmissionThankyouComponent },
-      { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
-
       // { path: 'about-us', component: AboutUsComponent }
       // { path: 'pentemind', component: PentemindComponent },
       // { path: 'blog/:name', component: BlogComponent },
@@ -137,7 +133,8 @@ const routes: Routes = [
       // { path: ':city', component: PreschoolInCityComponent },
     ],
   },
-
+  { path: 'admission/thankyou', component: AdmissionThankyouComponent },
+  { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
 
