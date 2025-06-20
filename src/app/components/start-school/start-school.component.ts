@@ -5,6 +5,7 @@ import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-start-school',
   templateUrl: './start-school.component.html',
@@ -23,7 +24,7 @@ export class StartSchoolComponent {
   cityList: any;
   franchiseeList: any;
   constructor(private apiService: ApicallService, private projectService: ProjectSeoService,
-    private toastr: ToastrService,
+    private toastr: ToastrService, private router: Router,
     private fb: FormBuilder,
     private ngxSpinner: NgxSpinnerService,) {
     this.admissionForm = fb.group({
@@ -53,7 +54,7 @@ export class StartSchoolComponent {
         //   return x.Country_Name == "India"
         // })
         // this.stateList = filterState[0].State
-        console.log('countryList', this.stateList)
+        
       })
     this.getseo();
   }
@@ -85,8 +86,9 @@ export class StartSchoolComponent {
     this.randomOtp = Math.floor(1000 + Math.random() * 9000);
     let mobNo = {
       "MobileNo": this.admissionForm.get('mobile')?.value,
-      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}`,
-      "sResponse": ""
+      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}`+`. Think Education. Think Zee Learn.`,
+      "sResponse": "",
+      "header":"ZLMLZS"
     }
     this.apiService.getOtp(mobNo).subscribe(
       res => {
@@ -118,7 +120,6 @@ export class StartSchoolComponent {
       return x.StateName == state
     })
     this.cityList = filterCity[0].City
-    console.log('citylist', this.cityList)
   }
 
   selectCity(selectVal: any) {
@@ -165,13 +166,14 @@ export class StartSchoolComponent {
           "Location": "",
           "Location_name": "",
           "Country": "India",
-          "Product": "259262000039670041"
+          "Product": "259262000000213037"
         }
         this.apiService.savefranchiseeData(obj).subscribe(
           res => {
             this.toastr.success('Admission submit successfully!');
             this.otp_ValidMsg = false;
             this.otp_inValidMsg = false;
+            this.router.navigate(['franchise/thankyou'])
             this.admissionForm.reset();
             this.submitted = false
           },

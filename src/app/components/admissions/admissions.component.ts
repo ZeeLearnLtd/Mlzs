@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { ApicallService } from 'src/app/services/apicall.service';
@@ -35,7 +35,7 @@ export class AdmissionsComponent implements OnInit {
   cityListName: any;
   stateListName: any;
   constructor(private _activeRoute: ActivatedRoute,
-    private projectService: ProjectSeoService,
+    private projectService: ProjectSeoService, private router: Router,
     private fb: FormBuilder,
     private apiService: ApicallService,
     private toastr: ToastrService,
@@ -177,6 +177,7 @@ export class AdmissionsComponent implements OnInit {
         this.toastr.success('Admission submit successfully!');
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;
+         this.router.navigate(['admission/thankyou'])
         this.admissionForm.reset();
         this.submitted = false
       }
@@ -193,8 +194,9 @@ export class AdmissionsComponent implements OnInit {
     this.randomOtp = Math.floor(1000 + Math.random() * 9000);
     let mobNo = {
       "MobileNo": this.admissionForm.get('mobileNo')?.value,
-      "smsText": `To validate your interest in the MLZS Franchise ${this.randomOtp}`,
-      "sResponse": ""
+      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}`+`. Think Education. Think Zee Learn.`,
+      "sResponse": "",
+      "header":"ZLMLZS"
     }
 
     this.apiService.getOtp(mobNo).subscribe(
