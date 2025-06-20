@@ -6,6 +6,7 @@ import { HomeSeoService } from 'src/app/services/homeseo.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-events-details',
@@ -24,6 +25,7 @@ export class EventsDetailsComponent {
     private projectService: ProjectSeoService,
     private apiService: ApicallService,
     private ngxSpinner: NgxSpinnerService,
+    private sanitizer: DomSanitizer,
   ) {
 
   }
@@ -45,6 +47,10 @@ export class EventsDetailsComponent {
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
       this.eventsDetailsData = data.data
     });
+  }
+
+  getsanitizehtml(data:any){
+    return this.sanitizer.bypassSecurityTrustHtml(data);
   }
 
 }

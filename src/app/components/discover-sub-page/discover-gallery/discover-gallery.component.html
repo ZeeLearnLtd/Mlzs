@@ -49,9 +49,15 @@
                     </div>
                     <div class="col-md-7">
                         <div class="row mb-4 right_card" *ngFor="let a of photoGalleryData">
-                            <div class="col-md-4">
-                                <div *ngFor="let img of a.logofiles">
+                            <div class="col-md-4"*ngFor="let img of a.logofiles">
+                                <div *ngIf="!img?.value?.includes('yout.')">
                                     <img src="{{img.value}}" width="100%" alt="">
+                                </div>
+                                <div *ngIf="img?.value?.includes('yout.')">
+                                   <iframe width="560" height="315"
+                                        [src]="getsanitizeurl(img.value)"
+                                        frameborder="0" allowfullscreen>
+                                    </iframe>
                                 </div>
                             </div>
                             <div class="col-md-8">
