@@ -108,6 +108,9 @@ const routes: Routes = [
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
       { path: 'achievements', component: DiscoverAchievementsComponent },
 
+      { path: 'admission/thankyou', component: AdmissionThankyouComponent },
+      { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
+
       // { path: 'about-us', component: AboutUsComponent }
       // { path: 'pentemind', component: PentemindComponent },
       // { path: 'blog/:name', component: BlogComponent },
