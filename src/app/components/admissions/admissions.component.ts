@@ -193,8 +193,9 @@ export class AdmissionsComponent implements OnInit {
     this.randomOtp = Math.floor(1000 + Math.random() * 9000);
     let mobNo = {
       "MobileNo": this.admissionForm.get('mobileNo')?.value,
-      "smsText": `To validate your interest in the MLZS Franchise ${this.randomOtp}`,
-      "sResponse": ""
+      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}`+`. Think Education. Think Zee Learn.`,
+      "sResponse": "",
+      "header":"ZLMLZS"
     }
 
     this.apiService.getOtp(mobNo).subscribe(
