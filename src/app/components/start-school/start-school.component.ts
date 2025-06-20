@@ -82,8 +82,9 @@ export class StartSchoolComponent {
     this.randomOtp = Math.floor(1000 + Math.random() * 9000);
     let mobNo = {
       "MobileNo": this.admissionForm.get('mobile')?.value,
-      "smsText": `Your Kidzee Verification code is : ${this.randomOtp}`,
-      "sResponse": ""
+      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}`+`. Think Education. Think Zee Learn.`,
+      "sResponse": "",
+      "header":"ZLMLZS"
     }
     this.apiService.getOtp(mobNo).subscribe(
       res => {
