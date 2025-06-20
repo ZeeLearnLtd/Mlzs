@@ -133,7 +133,8 @@ export class DiscoverTestimonialsComponent {
     }).map((obj: any) => {
       return {
         title: obj.short,
-        safeUrl: this.getSafeEmbedUrl(obj.slug)
+        safeUrl: this.getSafeEmbedUrl(obj.slug),
+        logofiles:obj?.logofiles,
       };
     });
 
@@ -142,7 +143,8 @@ export class DiscoverTestimonialsComponent {
     }).map((obj: any) => {
       return {
         title: obj.short,
-        safeUrl: this.getSafeEmbedUrl(obj.slug)
+        safeUrl: this.getSafeEmbedUrl(obj.slug),
+        logofiles:obj?.logofiles,
       };
     });
 
@@ -151,7 +153,8 @@ export class DiscoverTestimonialsComponent {
     }).map((obj: any) => {
       return {
         title: obj.short,
-        safeUrl: this.getSafeEmbedUrl(obj?.slug)
+        safeUrl: this.getSafeEmbedUrl(obj?.slug),
+        logofiles:obj?.logofiles,
       };
     });
   }
@@ -159,7 +162,9 @@ export class DiscoverTestimonialsComponent {
 
   getSafeEmbedUrl(url: string): SafeResourceUrl {
     let videoId = '';
-
+    if(url == undefined){
+      return ''
+    }
     if (url.includes('youtu.be/')) {
       videoId = url.split('youtu.be/')[1];
     } else if (url.includes('watch?v=')) {

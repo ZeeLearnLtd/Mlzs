@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-discover-gallery',
@@ -19,7 +20,7 @@ export class DiscoverGalleryComponent {
 alldata:any=[];
 Selectedcategory:string="";
 Assinedcategory:any=[];
-  constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
+  constructor(private projectService: ProjectSeoService,private sanitizer: DomSanitizer, private _service: ApicallService) { }
 
   ngOnInit(): void {
     this.getseo();
@@ -98,5 +99,20 @@ Assinedcategory:any=[];
       this.getFirstData = this.photoGalleryData[0].OtherFiles ? this.photoGalleryData[0].OtherFiles : this.photoGalleryData[0].logofiles;
     }   
   }
+  getsanitizeurl(url: string): SafeResourceUrl {
+     let videoId = '';
+    if(url == undefined){
+      return ''
+    }
+    if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1];
+    } else if (url.includes('watch?v=')) {
+      videoId = new URL(url).searchParams.get('v') || '';
+    } else if (url.includes('embed/')) {
+      videoId = url.split('embed/')[1];
+    }
 
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+  }
 }

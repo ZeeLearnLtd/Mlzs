@@ -49,12 +49,18 @@
                     </div>
                     <div class="col-md-7">
                         <div class="row mb-4 right_card" *ngFor="let a of photoGalleryData">
-                            <div class="col-md-4">
-                                <div *ngFor="let img of a.logofiles">
+                            <div class="col-md-5" *ngFor="let img of a.logofiles">
+                                <div *ngIf="!img?.value?.includes('youtu.')">
                                     <img src="{{img.value}}" width="100%" alt="">
                                 </div>
+                                <div *ngIf="img?.value?.includes('youtu.')">
+                                   <iframe 
+                                        [src]="getsanitizeurl(img.value)"
+                                        frameborder="0" allowfullscreen>
+                                    </iframe>
+                                </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 <div class="news_text">
                                     <h5><b>{{a.Title}}</b></h5>
                                     <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p> -->
