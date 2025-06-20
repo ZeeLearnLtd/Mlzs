@@ -87,8 +87,8 @@
 
   .back_btn {
     background-color: #65318E;
-    padding: 5px 10px 5px 10px;
-    border-radius: 0px 53px 53px 53px;
+    padding: 3px 10px 3px 10px;
+    border-radius:5;
     width:25%;
     border: none;
     color: #FFF;
