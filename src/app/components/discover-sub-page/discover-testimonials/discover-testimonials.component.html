@@ -22,7 +22,7 @@
             </div>
         <div class="mt-3">
           
-            <div *ngIf="selectedcategory == '107' || selectedcategory == ''" class="news_list mt-5">
+            <div *ngIf="(selectedcategory == '107' || selectedcategory == '') && SchoolTestimnoal.length" class="news_list mt-5">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title_content text-center">
@@ -51,6 +51,7 @@
                         <div class="item_text mt-2">
                         <img src="../../../assets/img/MLZS/Quote.png" alt="">
                           <h6 class="mt-2">{{a.title}}</h6>
+                          <p [innerHTML]="a.short"></p>
                         </div>
                       </div>
                             </div>
@@ -58,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div *ngIf="selectedcategory == '108' || selectedcategory == ''" class="news_list mt-5">
+            <div *ngIf="(selectedcategory == '108' || selectedcategory == '') && StudentTestimonial.length" class="news_list mt-5">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title_content text-center">
@@ -86,6 +87,7 @@
                         <div class="item_text mt-2">
                         <img src="../../../assets/img/MLZS/Quote.png" alt="">
                           <h6 class="mt-2">{{a.title}}</h6>
+                          <p [innerHTML]="a.short"></p>
                         </div>
                       </div>
                             </div>
@@ -93,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div *ngIf="selectedcategory == '109' || selectedcategory == ''" class="news_list mt-5">
+            <div *ngIf="(selectedcategory == '109' || selectedcategory == '') && ParentTestimonial.length" class="news_list mt-5">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title_content text-center">
@@ -122,6 +124,7 @@
                         <div class="item_text mt-2">
                         <img src="../../../assets/img/MLZS/Quote.png" alt="">
                           <h6 class="mt-2">{{a.title}}</h6>
+                          <p [innerHTML]="a.short"></p>
                         </div>
                       </div>
                             </div>
