@@ -7,9 +7,15 @@
         <p class="text-center">Give your child the best of the education they deserve with Mount Litera School International and let them learn to be the capable leaders of tomorrow.</p>
            <div class="gallery_content">
             <div class="row my-5">
-                <div class="col-md-4 d-flex justify-content-center" *ngFor="let a of photoGalleryData">
-                    <div class="box-img" *ngFor="let img of a.logofiles">
-                        <img src="{{img.value}}" alt="">
+                <div class="col-md-4 d-flex justify-content-center" *ngFor="let img of photoGalleryData">
+                    <div *ngIf="!img?.value?.includes('youtu.')">
+                                    <img src="{{img.value}}" width="100%" alt="">
+                    </div>
+                    <div *ngIf="img?.value?.includes('youtu.')">
+                        <iframe 
+                                        [src]="getsanitizeurl(img.value)"
+                                        frameborder="0" allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
                 <!-- <div class="col-md-4 d-flex justify-content-center">

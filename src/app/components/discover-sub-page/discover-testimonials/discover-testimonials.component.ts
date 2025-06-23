@@ -132,9 +132,10 @@ export class DiscoverTestimonialsComponent {
       return dt.category.includes(107);         //School
     }).map((obj: any) => {
       return {
-        title: obj.short,
+          ...obj,
+        title: obj.Title,
         safeUrl: this.getSafeEmbedUrl(obj.slug),
-        logofiles:obj?.logofiles,
+      
       };
     });
 
@@ -142,9 +143,10 @@ export class DiscoverTestimonialsComponent {
       return dt.category.includes(108);         //Student
     }).map((obj: any) => {
       return {
-        title: obj.short,
+          ...obj,
+        title: obj.Title,
         safeUrl: this.getSafeEmbedUrl(obj.slug),
-        logofiles:obj?.logofiles,
+        
       };
     });
 
@@ -152,9 +154,10 @@ export class DiscoverTestimonialsComponent {
       return dt.category.includes(109);         //Parent
     }).map((obj: any) => {
       return {
-        title: obj.short,
+        ...obj,
+        title: obj.Title,
         safeUrl: this.getSafeEmbedUrl(obj?.slug),
-        logofiles:obj?.logofiles,
+        
       };
     });
   }
