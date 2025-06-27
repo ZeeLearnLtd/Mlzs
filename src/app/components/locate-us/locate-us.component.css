@@ -96,3 +96,8 @@ h2{
     position: relative;
     z-index: 9;
 }
+
+::ng-deep iframe{
+    width: 90%;
+    margin: auto;
+}

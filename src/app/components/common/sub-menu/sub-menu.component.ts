@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 export class SubMenuComponent implements OnInit {
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
+  showName: any
   breaddata: any;
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +30,8 @@ export class SubMenuComponent implements OnInit {
       .subscribe((message) => {
         if (message) {
           this.breaddata = message.text;
+          console.log('Bread data:', this.breaddata);
+
         }
       });
   }

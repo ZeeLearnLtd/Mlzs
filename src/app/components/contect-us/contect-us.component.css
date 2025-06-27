@@ -118,3 +118,8 @@ a{
 p{
     font-size: 15px;
 }
+
+::ng-deep iframe{
+    width: 90%;
+    margin: auto;
+}

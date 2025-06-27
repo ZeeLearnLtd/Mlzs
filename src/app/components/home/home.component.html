@@ -1,5 +1,41 @@
 <section>
-    <div class="sec_box_content">
+   
+    <div class="banner_content">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <!-- <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div> -->
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let item of bannerList; let i = index"class="carousel-item"
+               [class.active]="i === 0">
+            <img [src]="item.logofiles[0].value" class="d-block" alt="admission_banner">
+          </div>
+
+          <div class="carousel-item">
+            <img src="../../../assets/img/MLZS/banner/create_banner2.png" class="d-block" alt="admission_banner">
+           </div>
+
+          <div class="carousel-item">
+            <img src="../../../assets/img/MLZS/banner/create_banner3.png" class="d-block" alt="admission_banner">
+           </div>
+          <div class="carousel-item">
+            <img src="../../../assets/img/MLZS/banner/create_banner4.png" class="d-block" alt="admission_banner">
+           </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+    </div>
+     <div class="sec_box_content">
        
        <div class="mobile_counter_content">
         <div class="owl-carousel owl-theme count_owl" id="">
@@ -122,41 +158,6 @@
         </div>
     </div>
       </div>
-    <div class="banner_content">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <!-- <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div> -->
-        <div class="carousel-inner">
-          <div class="carousel-item" *ngFor="let item of bannerList; let i = index"class="carousel-item"
-               [class.active]="i === 0">
-            <img [src]="item.logofiles[0].value" class="d-block" alt="admission_banner">
-          </div>
-
-          <div class="carousel-item">
-            <img src="../../../assets/img/MLZS/banner/create_banner2.png" class="d-block" alt="admission_banner">
-           </div>
-
-          <div class="carousel-item">
-            <img src="../../../assets/img/MLZS/banner/create_banner3.png" class="d-block" alt="admission_banner">
-           </div>
-          <div class="carousel-item">
-            <img src="../../../assets/img/MLZS/banner/create_banner4.png" class="d-block" alt="admission_banner">
-           </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      
-    </div>
     <div class="main_bg">
  <div class="box_content">
     <!-- <app-about-us></app-about-us> -->

@@ -1,6 +1,6 @@
 .tex_menu{
     color: #6D2A93;
-    margin-left: 10px;
+    margin-left:-3px;
     font-size: 12px;
     cursor: pointer;
 }
@@ -15,3 +15,11 @@ span a:hover{
     cursor: pointer;
 }
   
+.arrow{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bold-text {
+  font-weight: bold;
+}

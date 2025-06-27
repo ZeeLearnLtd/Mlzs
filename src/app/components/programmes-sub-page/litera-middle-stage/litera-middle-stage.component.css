@@ -28,7 +28,7 @@ section{
     width:23%;
     position: relative;
     bottom:1.5rem;
-    z-index: 1;
+    z-index: -1;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {

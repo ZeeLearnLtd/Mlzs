@@ -10,11 +10,11 @@ section{
     margin: auto;
 }
 .text_bg{
-    width: 16%;
+    width: 11%;
     position: relative;
     bottom: 1.7rem;
     z-index: 1;
-    left: 1rem;
+    left: 4rem;
     height: 21px;
 }
 
@@ -89,7 +89,7 @@ textarea{
 .locat_school{
     width: 100%;
     padding: 55px 0px;
-    background-color: #004878;
+    /* background-color: #004878; */
 }
 
 h2{

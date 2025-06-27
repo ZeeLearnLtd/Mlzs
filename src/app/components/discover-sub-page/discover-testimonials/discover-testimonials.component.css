@@ -134,7 +134,7 @@ h2{
 
  ::ng-deep.owl-carousel .owl-stage {
   position: relative;
-  height: 370px !important;
+  /* height: 370px !important; */
   overflow: hidden;
 }
 
@@ -176,7 +176,7 @@ width: 80%;
   background: transparent;
   width: 95%;
   margin: auto;
-  height: 335px;
+  height: 365px;
   border-radius: 5px;
   padding: 30px 15px;
 }
@@ -203,6 +203,11 @@ width: 80%;
 .item_text p{
   font-size: 11px;
   color: #014876;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;       /* Show only 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item_img_content img{
