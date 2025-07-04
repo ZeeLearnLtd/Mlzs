@@ -45,12 +45,14 @@
                     </div>
                     <div class="col-md-7">
                         <div class="row right_card" *ngFor="let a of blogsData">
-                            <div class="col-md-4" routerLink="/blog/{{a?.slug}}">
-                                <div *ngFor="let img of a.OtherFiles">
+                            <div class="col-md-5" routerLink="/blog/{{a?.slug}}">
+                                <div class="img_box">
+                                    <div *ngFor="let img of a.OtherFiles">
                                 <img src="{{img.value}}" width="100%" alt="">
                                 </div>
+                                </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                <div class="news_text">
                                 <h5><b>{{a.Title}}</b></h5>
                                 <p class="m-0 p-0" [innerHTML]="a.Long1"></p>

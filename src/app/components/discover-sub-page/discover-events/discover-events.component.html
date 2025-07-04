@@ -35,23 +35,45 @@
                 a nation-wide talent hunt for the best science talent in Grades 1-8.</p>
        
             <div class="news_list">
-                <div class="row mt-4" *ngFor="let a of eventsData">
+
+  <div class="row align-items-start mt-5" *ngFor="let a of eventsData">
+    <div class="col-md-5" routerLink="/events/{{a?.slug}}">
+        <div class="img_content">
+       <div *ngFor="let img of a.logofiles">
+      <img src="{{img.value}}" width="100%" alt="">
+      </div>
+        </div>
+      
+    </div>
+    <div class="col-md-7" routerLink="/events/{{a?.slug}}">
+      <h4 class="fw-bold">{{a?.Title}}</h4>
+      <p [innerHTML]="a.Long1"></p>
+    
+       <button class="btn read_mode mt-2" routerLink="/events/{{a.slug}}">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
+  </div>
+</div>
+
+
+                <!-- <div class="row">
+                <div class="mt-4" *ngFor="let a of eventsData">
                     <div routerLink="/events/{{a?.slug}}">
                     <div class="col-md-5">
                         <div *ngFor="let img of a.logofiles">
                         <img src="{{img.value}}" width="100%" alt="">
                         </div>
                     </div>
-                    <div class="col-md-7">
-                       <div class="news_text">
+                    </div>
+                    </div>
+                    <div class="col-md-7" *ngFor="let a of eventsData">
+                       <div class="news_text mt-3">
                         <h5><b>{{a?.Title}}</b></h5>
                         <p [innerHTML]="a.Long1"></p>
                       
                         <button class="btn read_mode mt-4" routerLink="/events/{{a.slug}}">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
                        </div>
-                    </div>
-                    </div>
+                    
                 </div>
+                </div> -->
             </div>
         </div>
     </div>

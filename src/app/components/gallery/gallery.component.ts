@@ -18,7 +18,7 @@ export class GalleryComponent {
   photoGalleryData: any;
   getFirstData: any;
 
-  constructor(private projectService: ProjectSeoService,private sanitizer: DomSanitizer, private _service: ApicallService) { }
+  constructor(private projectService: ProjectSeoService, private sanitizer: DomSanitizer, private _service: ApicallService) { }
 
   ngOnInit(): void {
     this.getseo();
@@ -50,24 +50,25 @@ export class GalleryComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.photoGalleryData = JSON.parse(res);
-      this.getFirstData = this.photoGalleryData[0]?.OtherFiles[0]?.value ? this.photoGalleryData[0]?.OtherFiles[0]?.value : this.photoGalleryData[0]?.OtherFiles[0]?.logofiles;
+      console.log('photoGalleryData', this.photoGalleryData);
+      // this.getFirstData = this.photoGalleryData[0]?.OtherFiles[0]?.value ? this.photoGalleryData[0]?.OtherFiles[0]?.value : this.photoGalleryData[0]?.OtherFiles[0]?.logofiles;
     });
   }
 
   getsanitizeurl(url: string): SafeResourceUrl {
-       let videoId = '';
-      if(url == undefined){
-        return ''
-      }
-      if (url.includes('youtu.be/')) {
-        videoId = url.split('youtu.be/')[1];
-      } else if (url.includes('watch?v=')) {
-        videoId = new URL(url).searchParams.get('v') || '';
-      } else if (url.includes('embed/')) {
-        videoId = url.split('embed/')[1];
-      }
-  
-      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-      return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+    let videoId = '';
+    if (url == undefined) {
+      return ''
     }
+    if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1];
+    } else if (url.includes('watch?v=')) {
+      videoId = new URL(url).searchParams.get('v') || '';
+    } else if (url.includes('embed/')) {
+      videoId = url.split('embed/')[1];
+    }
+
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+  }
 }

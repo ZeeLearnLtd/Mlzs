@@ -83,6 +83,12 @@ font-family: 'Montserrat_bold';
 }
 
 @media screen and (max-width: 600px) {
+    .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 160px !important;
+}
     .box_content{
         margin: 1rem;
     }
@@ -113,7 +119,11 @@ font-family: 'Montserrat_bold';
         overflow: hidden;
     }
     .sec_box_content{
-        top: 10rem;
+    width: 100%;
+    position: static;
+    margin-top: -2rem;
+    background: #fff;
+    opacity: 0.9;
     }
     .desktop_counter_content{
         display: none;
@@ -127,8 +137,8 @@ font-family: 'Montserrat_bold';
     }
 
     .banner_content{
-    margin-top: 5rem !important;
-}
+        margin-top: 2.5rem !important;
+    }
 
 }
 

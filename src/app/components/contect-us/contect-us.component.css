@@ -123,3 +123,30 @@ p{
     width: 90%;
     margin: auto;
 }
+
+.feedback-btn {
+    position: fixed;
+    right: 0;
+    top: 40%;
+    background: linear-gradient(90deg, #5EC6F5 0%, #007AFF 100%);
+    color: white;
+    padding: 20px 7px;
+    writing-mode: vertical-rl;
+    transform: rotate(0deg);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 13px;
+    z-index: 9999;
+    text-align: center;
+    cursor: pointer;
+    }
+
+    .feedback-btn i {
+      margin-top: 10px;
+      display: block;
+      transform: rotate(180deg); /* To keep icon upright */
+    }
+
+    .fb_icon{
+        width: 22px;
+    }

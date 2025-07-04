@@ -39,10 +39,12 @@
             <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and updates about Mount Litera Zee School from our community.</p>
        
             <div class="news_list mt-5">
-                <div class="row" *ngFor="let a of newsData">                   
+                <div class="row mt-3" *ngFor="let a of newsData">                   
                     <div class="col-md-3">
-                        <div *ngFor="let img of a?.logofiles">
+                        <div class="img_box">
+                            <div *ngFor="let img of a?.logofiles">
                             <img src="{{img.value}}" width="100%" alt="">
+                            </div>
                         </div>
                         
                     </div>

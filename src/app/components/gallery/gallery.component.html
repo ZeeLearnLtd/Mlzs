@@ -7,8 +7,11 @@
         <p class="text-center">Give your child the best of the education they deserve with Mount Litera School International and let them learn to be the capable leaders of tomorrow.</p>
            <div class="gallery_content">
             <div class="row my-5">
-                <div class="col-md-4 d-flex justify-content-center" *ngFor="let img of photoGalleryData">
-                    <div *ngIf="!img?.value?.includes('youtu.')">
+                <div class="col-md-3 d-flex justify-content-center" *ngFor="let img of photoGalleryData">
+                    <div class="mt-2" *ngFor="let a of img?.logofiles" >
+                        <img src="{{a?.value}}" alt="" class="gallery_img" >
+                    </div>
+                    <!-- <div class="img_box" *ngIf="!img?.value?.includes('youtu.')">
                                     <img src="{{img.value}}" width="100%" alt="">
                     </div>
                     <div *ngIf="img?.value?.includes('youtu.')">
@@ -16,33 +19,8 @@
                                         [src]="getsanitizeurl(img.value)"
                                         frameborder="0" allowfullscreen>
                         </iframe>
-                    </div>
+                    </div> -->
                 </div>
-                <!-- <div class="col-md-4 d-flex justify-content-center">
-                    <div class="box-img">
-                        <img src="../../../assets/img/MLZS/gl2.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="box-img">
-                        <img src="../../../assets/img/MLZS/gl3.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="box-img">
-                        <img src="../../../assets/img/MLZS/gl4.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="box-img">
-                        <img src="../../../assets/img/MLZS/gl5.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="box-img">
-                        <img src="../../../assets/img/MLZS/gl6.png" alt="">
-                    </div>
-                </div> -->
             </div>
            </div>
     </div>

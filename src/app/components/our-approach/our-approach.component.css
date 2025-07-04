@@ -40,7 +40,7 @@ width: 80%;
 ::ng-deep.owl-carousel .owl-stage {
     position: relative;
     touch-action: manipulation;
-    height:320px;
+    /* height:320px; */
     overflow: hidden;
 }
 
