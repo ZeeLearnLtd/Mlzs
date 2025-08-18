@@ -49,7 +49,7 @@ export class BlogDetailsComponent implements OnInit {
     let tbody = {
       Type: "blogs",
       slug: param,
-      Projectid: this.projectId
+      Projectid: 1   //this.projectId
     }
 
     this.apiService.getBlogsDetails

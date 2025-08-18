@@ -15,7 +15,7 @@ section{
     padding: 25px 0px 50px 0px;
   }
   .programmes_main_page{
-    margin-top:8.6rem;
+    margin-top:6.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -48,7 +48,7 @@ section{
     margin: 5px;
 }
 .programm_img_content img{
-    width: 80%;
+    width: 85%;
     object-fit: cover;
     }
 
@@ -97,7 +97,7 @@ section{
     height: 21px;
 }
 
-h2{
+h1{
     position: relative;
     z-index: 2;
 }

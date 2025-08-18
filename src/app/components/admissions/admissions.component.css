@@ -200,11 +200,13 @@ width: 80%;
     position: relative;
     z-index: 9;
 }
-.text_bg{
-    width:23%;
+.award_box .text_bg{
+    width: 8%;
+    height: 18px;
     position: relative;
-    bottom:1.5rem;
+    bottom: 1.7rem;
     z-index: 1;
+    left: 2rem;
 }
 
 .about_img_content img{

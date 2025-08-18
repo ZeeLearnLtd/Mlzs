@@ -1,7 +1,7 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-        <img src="../../../../assets/img/MLZS/banner/discover_banner.png" class="w-100" alt="">
+        <img src="../../../../assets/img/MLZS/banner/discover_blog.png" class="w-100" alt="">
     </div>
         <div class="subMenu_content">
             <app-sub-menu></app-sub-menu>
@@ -9,10 +9,17 @@
        
         <div class="box mt-3">
             <div class="text-center mt-5">
-                <h2 class="text-center"><b>{{blog_detailsData.Title}}</b></h2>
+                <h1 class="text-center"><b>{{blog_detailsData.Title}}</b></h1>
                 <img src="../../../../assets/img/MLZS/prg_text_bg.png" alt="" class="text_bg">
             </div>
-
+            <p class="author_text">Author Name: {{blog_detailsData.MetaAuthor}}</p>
+            <p class="date_text">Date: {{blog_detailsData.dateCreated}}</p>
+            <div class="row">
+              <div class="col-md-7">
+                <p class="text-center m-0 p-0" [innerHTML]="blog_detailsData.long1"></p>
+              </div>
+           
+<div class="col-md-5">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div
@@ -42,8 +49,8 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-            <p class="text-center mt-4" [innerHTML]="blog_detailsData.long1"></p>
+</div>
+            </div> 
         </div>
     </div>
 </section>

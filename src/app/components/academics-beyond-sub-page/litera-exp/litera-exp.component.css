@@ -14,7 +14,7 @@ section{
     padding: 25px 0px 50px 0px;
   }
   .programmes_main_page{
-    margin-top:8.6rem;
+    margin-top:6.5rem;
 }
 
 .menu_content{
@@ -26,16 +26,18 @@ section{
 }
 
   .text_bg{
-    width:23%;
+    width: 16%;
     position: relative;
-    bottom:1.5rem;
-    z-index: 1;
+    bottom: 1.8rem;
+    left: 6rem;
+    z-index: -1;
+    height: 23px;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color:#FFF;
     font-size: 13px;
-    padding: 12px 25px;
+    padding:8px 25px;
     background-color:#014876;
     margin: 5px;
 }
@@ -43,12 +45,12 @@ section{
 .nav-link:focus, .nav-link{
     color:#FFF;
     font-size: 13px;
-    padding: 12px 25px;
+    padding:8px 25px;
     background-color: #44C8F5;
     margin: 5px;
 }
 .programm_img_content img{
-    width: 80%;
+    width: 85%;
     }
 
     .liter_img{

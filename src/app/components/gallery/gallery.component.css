@@ -1,27 +1,36 @@
-.img_box img{
+.img_box img {
     object-fit: contain;
     width: 100%;
     height: 196px;
 }
 
-.text_bg{
+.text_bg {
     width: 13%;
     height: 25px;
     position: relative;
     bottom: 2rem;
 }
-.title_content h2{
+
+.title_content h2 {
     position: relative;
     z-index: 9;
 }
 
-.gallery_img{
-    width: 220px;
-    height:220px;
+.gallery_img {
+    width:100%;
+    height:350px;
     margin: auto;
-    border-radius: 5px;
+    border-radius:15px;
     object-fit: cover;
 }
-@media screen and (max-width: 600px) {
-
+.gallery_img_content {
+    width: 100%;
+   height:386px;
 }
+
+.gallery_content {
+    width: 85%;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {}

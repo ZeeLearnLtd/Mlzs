@@ -1,8 +1,18 @@
+ .banner {
+      position: relative;
+      background: url('../../../../assets/img/MLZS/banner/programme_img.png') no-repeat center center;
+      background-size: cover;
+      height: 35vh; /* responsive height */
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
 .multi_img_group{
     display: flex;
     justify-content: center;
 }
-
 .multi_img_group img{
 width: 80%;
 }
@@ -14,7 +24,7 @@ section{
     padding: 25px 0px 50px 0px;
   }
   .programmes_main_page{
-    margin-top:8.6rem;
+    margin-top:6.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -47,7 +57,7 @@ section{
     margin: 5px;
 }
 .programm_img_content img{
-    width: 80%;
+    width: 85%;
     }
 
     .liter_img{

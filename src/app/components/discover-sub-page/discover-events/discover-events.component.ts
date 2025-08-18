@@ -25,6 +25,9 @@ export class DiscoverEventsComponent {
   distinctYears: any = [];
   eventsData: any;
   Selectedyear: string = "";
+  newsList: any;
+  categoryNewsMap: any;
+  selectedCategoryId: any;
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -64,12 +67,15 @@ export class DiscoverEventsComponent {
       if (data?.data[0]?.contentData) {
         let res = data.data[0].contentData
         this.eventsData = JSON.parse(res);
+        console.log('category', JSON.parse(data?.data[0]?.AssignCategory))
+        console.log('eventsData', this.eventsData)
         this.alldata = JSON.parse(res);
         this.distinctYears = Array.from(
           new Set(
             this.alldata.map((item: any) => new Date(item.CreatedDate).getFullYear())
           )
         );
+
       } else {
         this.eventsData = [];
         this.alldata = [];
@@ -77,6 +83,7 @@ export class DiscoverEventsComponent {
 
       if (data?.data[0]?.AssignCategory) {
         this.AssignCategory = JSON.parse(data?.data[0]?.AssignCategory);
+        this.prepareCategoryNewsMap();
       } else {
         this.AssignCategory = [];
       }
@@ -87,7 +94,7 @@ export class DiscoverEventsComponent {
 
   onyearchange(id: string) {
     if (id != "") {
-      this.eventsData = this.alldata.filter((dt: any) => {
+      this.categoryNewsMap = this.alldata.filter((dt: any) => {
         return ( //dt.category.includes(id);
           (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
           (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
@@ -97,23 +104,66 @@ export class DiscoverEventsComponent {
       });
     }
     else {
-      this.eventsData = this.alldata
+      this.categoryNewsMap = this.AssignCategory.map((cat: any) => ({
+        ...cat,
+        news: this.alldata.filter((news: any) =>
+          news.category.split(',').map((c: any) => c.trim()).includes(cat.categoryId.toString())
+        )
+      }));
     }
   }
 
   onchangecategory(id: string) {
-    if (id != "") {
-      this.eventsData = this.alldata.filter((dt: any) => {
-        return ( //dt.category.includes(id);
-          (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
-          (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
-        );
-      }).map((obj: any) => {
-        return obj;
-      });
+
+    this.selectedCategoryId = Number(id);
+
+    this.selectedCategoryId = Number(id);
+    if (!this.selectedCategoryId) {
+      this.categoryNewsMap = this.AssignCategory.map((cat: any) => ({
+        ...cat,
+        news: this.alldata.filter((news: any) =>
+          (Array.isArray(news.category) && news.category.includes(cat.categoryId)) ||
+          (typeof news.category === 'string' && news.category.split(',').map(Number).includes(cat.categoryId)) ||
+          (typeof news.category === 'number' && news.category === cat.categoryId)
+        )
+      }));
+    } else {
+      this.categoryNewsMap = this.AssignCategory
+        .filter((cat: any) => cat.categoryId === this.selectedCategoryId)
+        .map((cat: any) => ({
+          ...cat,
+          news: this.alldata.filter((news: any) =>
+            (Array.isArray(news.category) && news.category.includes(cat.categoryId)) ||
+            (typeof news.category === 'string' && news.category.split(',').map(Number).includes(cat.categoryId)) ||
+            (typeof news.category === 'number' && news.category === cat.categoryId)
+          )
+        }));
+
     }
-    else {
-      this.eventsData = this.alldata
-    }
+
+    // if (id != "") {
+    //   this.eventsData = this.alldata.filter((dt: any) => {
+    //     return (
+    //       (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
+    //       (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
+    //     );
+    //   }).map((obj: any) => {
+    //     return obj;
+    //   });
+    // }
+    // else {
+    //   this.eventsData = this.alldata
+    // }
+  }
+
+  prepareCategoryNewsMap() {
+    this.categoryNewsMap = this.AssignCategory.map((cat: any) => ({
+      ...cat,
+      news: this.alldata.filter((news: any) =>
+        news.category.split(',').map((c: any) => c.trim()).includes(cat.categoryId.toString())
+      )
+    }));
+
+    console.log('Category News Map:', this.categoryNewsMap);
   }
 }

@@ -31,3 +31,60 @@ h2{
   position: relative;
   z-index: 9;
 }
+
+.about-section {
+      background: url('../../../assets/img/MLZS/partner-bg.png') center/cover no-repeat;
+      color: #002f5f;
+      width: 100%;
+    }
+    .overlay-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      max-width:55%;
+      margin: 3rem 0;
+    }
+    .overlay-box h1 {
+      font-weight: 800;
+    }
+    .stats-bar {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    .stat-number {
+      font-weight: 800;
+      font-size: 1.5rem;
+    }
+    .stat-text {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .btn-custom {
+      background: rgba(72, 199, 244, 1);
+      color: rgba(0, 72, 119, 1);
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      padding:4px 9px;
+    }
+    .btn-custom:hover {
+      background:rgba(72, 199, 244, 2);
+      color: rgba(0, 72, 119, 1)#fff;
+    }
+    h1{
+        overflow: hidden;
+        }
+
+    #about_content_bg h1{
+        position: relative;
+        z-index: 2;
+    }
+    #about_content_bg .text_bg{
+    width: 24%;
+    bottom: 1.6em;
+    height: 20px;
+    z-index: 1;
+    position: relative;
+}
+.container{
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,110 +1,178 @@
 <section>
-    <div class="locat_school mt-5">
-        <div class="box">
+    <div class="programmes_main_page">
+        <div class="banner_content">
+            <img src="../../../assets/img/MLZS/banner/Locate-Us.png" class="w-100" alt="">
+    </div>
+        <div class="subMenu_content">
+            <app-sub-menu></app-sub-menu>
+        </div>
+       
+        <div class="box mt-3">
+           
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="title_content"> 
-                        <h2><b>Get In Touch <br>With Us</b></h2>
-                        <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg1" alt="">
-                    </div>
-                   <p>Feel free to contact us anytime, and we’ll get back to you as soon as possible. 
-                    Your inquiries are important to us, and we look forward to connecting with you!
-                    </p>
-                    <div class="info_content mt-3">
-                        <div class="row">
-                            <div class="col-1">
-                                <img src="../../../assets/img/MLZS/home.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-11">
-                                <p><b>Our Location</b></p>
-                                <p>Zee Learn Limited,135, Continental Building,Dr. Annie Besant Road, Worli Mumbai - 400 018,Maharashtra.</p>
-                            </div>
-                            <div class="col-1">
-                                <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-11">
-                                <p><b>Phone Number</b></p>
-                                <p>93200 63100</p>
-                            </div>
-                            <div class="col-1">
-                                <img src="../../../assets/img/MLZS/mail.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-11">
-                                <p><b>Email Address</b></p>
-                                <p>partner&#64;mountlitera.com</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="locat_form">
-                        <form [formGroup]="enquireForm">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                               <input type="text" class="form-control" placeholder="Your Name" name="" id=""
-                               formControlName="name"
-                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
-                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.name.touched || submitted) && f.name.errors?.required">
-                                        name is required
-                                    </span>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group mt-3">
-                                    <input type="text" class="form-control"  placeholder="Your Email" name="" id=""
-                                    formControlName="email"
-                                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
-                                   <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
-                                        Email is required
-                                    </span>
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="f.email.touched && f.email.errors?.email">
-                                        Enter a valid email address
-                                    </span>
-                                </div>
-                                  </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group mt-3">
-                                    <input type="text" class="form-control"  placeholder="Your Phone" name="" id=""
-                                     formControlName="mobile"
-                                   [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
-                                   <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback msg_txt">
-                                    <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
-                                    <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <textarea name="" id="" class="w-100"  placeholder="Your Message*"
-                                formControlName="massege"
-                                [ngClass]="{ 'is-invalid': submitted && f.massege.errors }"></textarea>
-                                <div *ngIf="submitted && f.massege.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.massege.touched || submitted) && f.massege.errors?.required">
-                                        Message is required
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group mt-4">
-                               <button class="btn reset_btn" (click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    </div>
-                </div>
+            <div class="text-center mt-5">
+                <h1 class="text-center"><b>Locate Us</b></h1>
+                <img src="../../../../assets/img/MLZS/prg_text_bg.png" alt="" class="text_bg">
             </div>
-        
+            <p class="text-center">Discover a Mount Litera Zee School near you and take the first step towards excellence.</p>
+         <div class="dropDownList">
+                <form action="" [formGroup]="searchForm">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <select name="" id="" class="form-control  dropdown-toggle" formControlName="country"
+                                    (change)="selectCountry($any($event.target).value)">
+
+                                    <option value="{{country.Country_Id}}" *ngFor="let country of countryList">
+                                        {{country.Country_Name}}</option>
+                                </select>
+                                <i class="fa fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3 res_input">
+                            <div class="form-group">
+                                <select name="" id="" class="form-control  dropdown-toggle" formControlName="state"
+                                    (change)="selectState($any($event.target).value)">
+                                    <option value="">State/District</option>
+                                    <option value="{{state.State_Id}}" *ngFor="let state of stateList">
+                                        {{state.State_Name}}</option>
+                                </select>
+                                <i class="fa fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3 res_input">
+                            <div class="form-group">
+                                <select name="" id="" class="form-control  dropdown-toggle" formControlName="city"
+                                    (change)="selectCity($any($event.target).value)">
+                                    <option value="">Select City</option>
+                                    <option value="{{city.City_Id}}" *ngFor="let city of cityList">{{city.City_Name}}
+                                    </option>
+                                </select>
+                                <i class="fa fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3 res_input">
+                            <div class="form-group">
+                                <select name="" id="" class="form-control  dropdown-toggle" formControlName="location"
+                                    (change)="selectLocation($any($event.target).value)">
+                                    <option value="">Location</option>
+                                    <option value="{{location.Franchisee_Code}}"
+                                        *ngFor="let location of franchiseeList">{{location.Franchisee_Name}}</option>
+                                </select>
+                                 <i class="fa fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+<div class="row g-4 mb-5">
+    
+    <!-- Card Template -->
+    <div class="col-md-4 mt-5" *ngFor="let a of centerList">
+      <div class="school-card h-100">
+        <div class="subcard_content">
+        <h6><i class="fa fa-home"></i> {{a.Franchisee_Name}}</h6>
+        <p class="address">{{a.Address1}},{{a.Address2}},{{a.Place}}</p>
+        <p class="mb-1">
+          <a href="tel:{{a.Mobile_No}}" *ngIf="a.Mobile_No!=''"><i class="fa fa-phone"></i><span class="mx-2">{{a.Mobile_No}}</span></a>
+          &nbsp; 
+          <a href="tel:{{a.Mobile_No}}" *ngIf="a.Mobile_No!=''"><i class="fa fa-phone"></i><span class="mx-2">{{a.Mobile_No}}</span></a>
+        </p>
+        <p class="mb-3"><i class="fa fa-envelope"></i><span class="mx-2">{{a.Email_Id}}</span></p>
+      </div>
+        <div class="d-flex gap-2">
+          <a href="https://www.google.com/maps/search/?api=1&query={{a.Latitude}},{{a.Longitude}}"
+                                target="_blank"><button href="#" class="btn btn-light btn-sm btn-style rounded-2">Map Direction ➜</button></a>
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2" (click)="setaddress(a)">Enquire Now ➜</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-4 mt-5">
+      <div class="school-card h-100">
+        <h6><i class="fa fa-home"></i> Mount Litera Zee School - Nagothane</h6>
+        <p class="address">Pipe Nagar, NH 17, Nagothane, Sukeli,<br> Maharashtra 402126</p>
+        <p class="mb-1">
+          <i class="fa fa-phone"></i><span class="mx-2">+91 75069 70760</span>
+          &nbsp; 
+         <i class="fa fa-phone"></i><span>+91 75069 70760</span>
+        </p>
+        <p class="mb-3"><i class="fa fa-envelope"></i><span class="mx-2">partner&#64;mountlitera.com</span></p>
+        <div class="d-flex gap-2">
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Map Direction ➜</button>
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Enquire Now ➜</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-5">
+      <div class="school-card h-100">
+        <h6><i class="fa fa-home"></i> Mount Litera Zee School - Nagothane</h6>
+        <p class="address">Pipe Nagar, NH 17, Nagothane, Sukeli,<br> Maharashtra 402126</p>
+        <p class="mb-1">
+          <i class="fa fa-phone"></i><span class="mx-2">+91 75069 70760</span> 
+          &nbsp; 
+          <i class="fa fa-phone"></i><span>+91 75069 70760</span>
+        </p>
+        <p class="mb-3"><i class="fa fa-envelope"></i><span class="mx-2">partner&#64;mountlitera.com</span></p>
+        <div class="d-flex gap-2">
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Map Direction ➜</button>
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Enquire Now ➜</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-5" >
+      <div class="school-card h-100">
+        <h6><i class="fa fa-home"></i> Mount Litera Zee School - Nagothane</h6>
+        <p class="address">Pipe Nagar, NH 17, Nagothane, Sukeli,<br> Maharashtra 402126</p>
+        <p class="mb-1">
+          <i class="fa fa-phone"></i><span class="mx-2">+91 75069 70760</span> 
+          &nbsp; 
+          <i class="fa fa-phone"></i><span>+91 75069 70760</span>
+        </p>
+        <p class="mb-3"><i class="fa fa-envelope"></i><span class="mx-2">partner&#64;mountlitera.com</span></p>
+        <div class="d-flex gap-2">
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Map Direction ➜</button>
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Enquire Now ➜</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-5">
+      <div class="school-card h-100">
+        <h6><i class="fa fa-home"></i> Mount Litera Zee School - Nagothane</h6>
+        <p class="address">Pipe Nagar, NH 17, Nagothane, Sukeli,<br> Maharashtra 402126</p>
+        <p class="mb-1">
+          <i class="fa fa-phone"></i><span class="mx-2">+91 75069 70760</span>
+          &nbsp; 
+         <i class="fa fa-phone"></i><span>+91 75069 70760</span>
+        </p>
+        <p class="mb-3"><i class="fa fa-envelope"></i><span class="mx-2">partner&#64;mountlitera.com</span></p>
+        <div class="d-flex gap-2">
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Map Direction ➜</button>
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Enquire Now ➜</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-5">
+      <div class="school-card h-100">
+        <h6><i class="fa fa-home"></i> Mount Litera Zee School - Nagothane</h6>
+        <p class="address">Pipe Nagar, NH 17, Nagothane, Sukeli,<br> Maharashtra 402126</p>
+        <p class="mb-1">
+          <i class="fa fa-phone"></i><span class="mx-2">+91 75069 70760</span> 
+          &nbsp; 
+          <i class="fa fa-phone"></i><span>+91 75069 70760</span>
+        </p>
+        <p class="mb-3"><i class="fa fa-envelope"></i><span class="mx-2">partner&#64;mountlitera.com</span></p>
+        <div class="d-flex gap-2">
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Map Direction ➜</button>
+          <button href="#" class="btn btn-light btn-sm btn-style rounded-2">Enquire Now ➜</button>
+        </div>
+      </div>
+    </div> -->
+  </div>
         </div>
     </div>
 </section>

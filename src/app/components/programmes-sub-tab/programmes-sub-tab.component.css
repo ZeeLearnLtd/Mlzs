@@ -1,0 +1,108 @@
+.multi_img_group{
+    display: flex;
+    justify-content: center;
+}
+
+.multi_img_group img{
+width: 80%;
+}
+
+/* section{
+    background-image: url('../../../../assets/img/MLZS/main_bg.png');
+    background-size: cover;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
+  } */
+  /* .programmes_main_page{
+    margin-top:6.5rem;
+} */
+
+@media screen and (max-width: 600px) {
+/* .programmes_main_page{
+  margin-top: 10px;
+} */
+}
+
+
+.text_bg{
+    width:23%;
+    position: relative;
+    bottom:1.5rem;
+    z-index: -1;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#FFF;
+    font-size: 13px;
+    padding: 5px 25px;
+    background-color:#014876;
+    margin: 5px;
+}
+
+.nav-link:focus, .nav-link{
+    color:#014876;
+    font-size: 13px;
+    padding: 5px 25px;
+    background-color: #44C8F5;
+    margin: 5px;
+}
+
+.programm_img_content img{
+    width: 85%;
+    }
+
+    .liter_img{
+        width: 50%;
+    }
+
+    .liter_content{
+        margin-left: 57px;
+    }
+
+  .fr_img_content img{
+    width: 80%;
+  }
+
+  .title_content ul{
+    padding: 0; 
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+  li{
+    width: 100%;
+  }
+
+  li button{
+    width: 100%;
+  }
+  .programm_para{
+    margin:38px 30px !important;
+    text-align: justify;
+  }
+  }
+
+  .programm_text_content h6{
+    font-weight:700;
+  }
+
+  .programm_para{
+    margin:38px 52px;
+    text-align: justify;
+  }
+
+  .knowMore{
+    padding: 5px 10px;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius:5px;
+    background: #48C7F4;
+    color: #004877;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 23px;
+    border: none;
+  }

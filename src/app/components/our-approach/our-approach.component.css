@@ -101,3 +101,18 @@ hr{
 .item{
   cursor: pointer;
 }
+
+.ourApproach{
+  width: 80%;
+}
+
+.home-demo{
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .ourApproach{
+  width:100%;
+}
+}

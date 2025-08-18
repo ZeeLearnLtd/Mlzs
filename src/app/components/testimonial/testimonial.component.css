@@ -78,7 +78,7 @@ width: 80%;
     height: 139px;
 }
 .item_text img{
-    width: 25px;
+    width: 35px;
 }
 
 hr{
@@ -94,3 +94,9 @@ hr{
     background-color: #44C8F5;
     color: #fff;
   }
+
+  .item_img_content img {
+    width: 100%;
+    height: 159px;
+    object-fit: cover;
+}

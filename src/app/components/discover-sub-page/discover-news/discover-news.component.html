@@ -11,13 +11,13 @@
             <div class="dropdown_tab">
                 <div class="row">
                     <div class="col-md-4">
-                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (click)="onchangecategory(ddlcategory.value)">
+                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (change)="onchangecategory(ddlcategory.value)">
                             <option value="">All Category</option>
                             <option value="{{a.categoryId}}" *ngFor="let a of newscategory">{{a.categoryname}}</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <select #ddlyear name="" id="" [(ngModel)]="Selectedyear" class="form-control" (click)="onyearchange(ddlyear.value)">
+                        <select #ddlyear name="" id="" [(ngModel)]="Selectedyear" class="form-control" (change)="onyearchange(ddlyear.value)">
                             <option value="">All Year</option>
                             <option value="{{year}}" *ngFor="let year of distinctYears">{{year}}</option>
                         </select>
@@ -33,11 +33,11 @@
             </div>
 
             <div class="text-center mt-5">
-                <h2 class="text-center"><b>News</b></h2>
+                <h1 class="text-center"><b>Stay Updated</b></h1>
                 <img src="../../../../assets/img/MLZS/prg_text_bg.png" alt="" class="text_bg">
             </div>
             <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and updates about Mount Litera Zee School from our community.</p>
-       
+           <!-- <h4>{{category_name}}</h4> -->
             <div class="news_list mt-5">
                 <div class="row mt-3" *ngFor="let a of newsData">                   
                     <div class="col-md-3">

@@ -1,17 +1,18 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-        <img src="../../../../assets/img/MLZS/banner/discover_banner.png" class="w-100" alt="">
-    </div>
+            <img src="../../../../assets/img/MLZS/banner/discover_blog.png" class="w-100" alt="">
+        </div>
         <div class="subMenu_content">
             <app-sub-menu></app-sub-menu>
         </div>
-       
+
         <div class="box mt-3">
             <div class="dropdown_tab">
                 <div class="row">
                     <div class="col-md-4">
-                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (click)="onchangecategory(ddlcategory.value)">
+                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control"
+                            (change)="onchangecategory(ddlcategory.value)">
                             <option value="">All Category</option>
                             <option value="{{a.categoryId}}" *ngFor="let a of blogcategory">{{a.categoryname}}</option>
                         </select>
@@ -24,46 +25,93 @@
             </div>
 
             <div class="text-center mt-5">
-                <h2 class="text-center"><b>Blogs</b></h2>
+                <h1 class="text-center"><b>Learn What’s New</b></h1>
                 <img src="../../../../assets/img/MLZS/prg_text_bg.png" alt="" class="text_bg">
             </div>
-            <p class="text-center">Stay informed with the latest blogs from Mount Litera Zee School. Our blogs cover various topics, from educational insights to school updates, offering a deeper perspective into the experiences, achievements, and innovations that shape our community.</p>
-       
+            <p class="text-center">Stay informed with the latest blogs from Mount Litera Zee School. Our blogs cover
+                various topics, from educational insights to school updates, offering a deeper perspective into the
+                experiences, achievements, and innovations that shape our community.</p>
+
             <div class="news_list mt-5">
-                <div class="row">
+                <div class="row" *ngFor="let category of categoryWiseData">
+                    <h4>{{ category.categoryname }}</h4>
+
                     <div class="col-md-5">
-                         <div *ngIf="firstBlog && firstBlog.length">
-                            <a [href]="firstBlog[0]?.value" data-fancybox="gallery1" class="fancybox">
-                                <img [src]="firstBlog[0]?.value" class="pinchzoom_img" id="image" width="100%"
-                                    alt="Image" />
-                            </a>
-                            <ng-container *ngFor="let a of firstBlog.slice(1)">
-                                <a [href]="a.value" data-fancybox="gallery1" style="display: none;"
-                                    class="fancybox"></a>
-                            </ng-container>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="row right_card" *ngFor="let a of blogsData">
-                            <div class="col-md-5" routerLink="/blog/{{a?.slug}}">
-                                <div class="img_box">
-                                    <div *ngFor="let img of a.OtherFiles">
-                                <img src="{{img.value}}" width="100%" alt="">
+                        <div *ngFor="let blog of category.blogsContent; let i = index" class="blog-card mt-3">
+                            <div>
+                                <div class="img_box" *ngIf="i === 0">
+                                    <div *ngFor="let img of blog.OtherFiles">
+                                        <img src="{{img.value}}" width="100%" alt="">
+                                    </div>
                                 </div>
-                                </div>
-                            </div>
-                            <div class="col-md-7">
-                               <div class="news_text">
-                                <h5><b>{{a.Title}}</b></h5>
-                                <p class="m-0 p-0" [innerHTML]="a.Long1"></p>
-                                <p class="m-0 p-0 date_content"><i>Date: {{a.StartDate}}</i></p>
-                                <div class="d-flex justify-content-end">
-                                <button class="btn read_mode mt-4" routerLink="/blog/{{a.slug}}">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
-                            </div>   
-                            </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-7 category_blog_content">
+                        <div class="row right_card">
+                            <div *ngIf="category.blogsContent.length > 0">
+                                <div class="row blog-card mt-3" *ngFor="let blog of category.blogsContent">
+                                    <div class="col-md-5" routerLink="/blog/{{blog?.slug}}">
+                                        <div class="img_box">
+                                            <div *ngFor="let img of blog.OtherFiles">
+                                                <img src="{{img.value}}" width="100%" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="news_text">
+                                            <h6><strong>{{ blog.Title }}</strong></h6>
+                                            <p class="m-0 p-0 long_para">{{ blog.short }}</p>
+                                            <p class="m-0 p-0 date_content"><i>Date: {{blog.StartDate}}</i></p>
+                                            <div class="d-flex justify-content-start">
+                                                <button class="btn read_mode mt-2" routerLink="/blog/{{blog.slug}}">Know
+                                                    More <i class="fa fa-long-arrow-right mx-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  
+                         
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" *ngFor="let category of categoryWiseData">
+  <div class="carousel-indicators">
+    <button *ngFor="let blog of category.blogsContent let i = index"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      [attr.data-bs-slide-to]="i"
+      [class.active]="i === 0"
+      [attr.aria-current]="i === 0 ? 'true' : null"
+      [attr.aria-label]="'Slide ' + (i + 1)">
+    </button>
+  </div>
+  <div class="carousel-inner">
+    <div *ngFor="let blog of category.blogsContent  let i = index"
+         class="carousel-item"
+         [class.active]="i === 0">
+      <div class="card text-center p-4">
+        <h1>{{ blog.Title }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> -->
+
+                    </div>
+                    <hr>
                 </div>
             </div>
         </div>

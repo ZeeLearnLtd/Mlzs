@@ -57,6 +57,8 @@ import { DiscoverAchievementsComponent } from './components/discover-sub-page/di
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import { NewsDetailsComponent } from './components/discover-sub-page/news-details/news-details.component';
 import { EventsDetailsComponent } from './components/discover-sub-page/events-details/events-details.component';
+import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
 const routes: Routes = [
   // { path: '', component: HomeComponent },
   // { path: 'blog/:name', component: BlogComponent },
@@ -81,6 +83,7 @@ const routes: Routes = [
       { path: 'discover-more', component: DiscoverMoreComponent },
       { path: 'about-us/legacy', component: OurLegacyComponent },
       { path: 'about-us/vision', component: OurVisionComponent },
+      { path: 'locateUs', component: LocateUsComponent },
       { path: 'about-us/our-philosophy', component: OurPhilosophyComponent },
       { path: 'about-us/awards-recognitions', component: AwardsAndRecognitionsComponent },
       { path: 'programmes/litera-foundational-stage-1', component: LiteraFoundationalStage1Component },
@@ -107,6 +110,8 @@ const routes: Routes = [
       { path: 'faqs', component: DiscoverFaqsComponent },
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
       { path: 'achievements', component: DiscoverAchievementsComponent },
+      { path: 'curriculum', component: CurriculumComponent },
+      { path: 'partner-with-us', component: PartnerWithUsComponent },
       // { path: 'about-us', component: AboutUsComponent }
       // { path: 'pentemind', component: PentemindComponent },
       // { path: 'blog/:name', component: BlogComponent },
@@ -127,7 +132,7 @@ const routes: Routes = [
       //   path: 'awards-and-recognition',
       //   component: AwardsAndRecognitionComponent,
       // },
-      // { path: 'locateUs', component: LocateUsComponent },
+
       // {path:'PrivacyPolicy', component:PrivacyPolicyComponent},
       // { path: ':city/:partnerLanding', component: PartnerLandingComponent },
       // { path: ':city', component: PreschoolInCityComponent },
