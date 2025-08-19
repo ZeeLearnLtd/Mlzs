@@ -15,6 +15,20 @@ declare var $: any;  // Declare jQuery
   styleUrls: ['./our-parents.component.css']
 })
 export class OurParentsComponent {
+
+  originalSlides = [
+    { text: '“This is a brand-new school with an already fantastic reputation and facilities.”', author: 'Jagdish Sharma' },
+    { text: '“What I love most is how the school encourages creativity. From science projects to stage performances, I’ve gained so much confidence and had fun doing it all!”', author: 'Mira Singh' },
+    { text: '“I am impressed with the fantastic atmosphere at the school and how you quickly transformed it into not just a centre of learning, but a central point for the whole community.”', author: 'Sukhdeep' },
+    { text: '“Teachers are very supportive and caring. My child enjoys learning every day.”', author: 'Ravi Patel' },
+    { text: '“The school focuses on overall development, not just academics. Very happy!”', author: 'Priya Kapoor' }
+  ];
+
+  slides: any[] = [];
+  currentIndex = 1; // center active initially
+  interval: any;
+
+
   projectId = environment.projectid;
   alldata: any = [];
   ParentTestimonial: any = [];
@@ -30,6 +44,12 @@ export class OurParentsComponent {
 
   }
   ngOnInit(): void {
+    this.slides = [
+      this.originalSlides[this.originalSlides.length - 1],
+      ...this.originalSlides,
+      this.originalSlides[0]
+    ];
+    this.startAutoSlide();
     this.gettestimonial_data();
   }
 
@@ -73,6 +93,40 @@ export class OurParentsComponent {
 
   }
 
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
+  }
+  startAutoSlide() {
+    this.interval = setInterval(() => {
+      this.next();
+    }, 3000);
+  }
+
+  next() {
+    this.currentIndex++;
+    if (this.currentIndex === this.slides.length - 1) {
+      setTimeout(() => {
+        this.currentIndex = 1; // reset to 1st real slide
+      }, 600); // after transition
+    }
+  }
+
+  prev() {
+    this.currentIndex--;
+    if (this.currentIndex === 0) {
+      setTimeout(() => {
+        this.currentIndex = this.slides.length - 2; // jump to last real slide
+      }, 600);
+    }
+  }
+
+  moveToSlide(index: number) {
+    this.currentIndex = index + 1; // adjust because of clone
+  }
+
+  get translateY(): string {
+    return `translateY(-${(this.currentIndex - 1) * 140}px)`;
+  }
   gettestimonial_data() {
     let tbody = {
       Type: "testimonial",
@@ -83,7 +137,7 @@ export class OurParentsComponent {
       if (data?.data[0]?.contentData) {
         let res = data.data[0].contentData;
         this.alldata = JSON.parse(res);
-        // console.log('testimonial list', this.alldata)
+        console.log('testimonial list', this.alldata)
         this.assigndata();
       } else {
         this.alldata = [];
@@ -101,11 +155,31 @@ export class OurParentsComponent {
         safeUrl: this.getSafeEmbedUrl(obj.slug)
       };
     });
-    // console.log('ParentTestimonial', this.ParentTestimonial)
+    console.log('ParentTestimonial', this.ParentTestimonial)
   }
 
 
-  getSafeEmbedUrl(url: string): SafeResourceUrl {
+  //   getSafeEmbedUrl(url: string): SafeResourceUrl {
+  //     let videoId = '';
+
+  //     if (url.includes('youtu.be/')) {
+  //       videoId = url.split('youtu.be/')[1];
+  //     } else if (url.includes('watch?v=')) {
+  //       videoId = new URL(url).searchParams.get('v') || '';
+  //     } else if (url.includes('embed/')) {
+  //       videoId = url.split('embed/')[1];
+  //     }
+
+  //     const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  //     return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+  //   }
+
+  getSafeEmbedUrl(url: string | undefined): SafeResourceUrl {
+    if (!url || typeof url !== 'string') {
+      // return a safe empty URL or some fallback
+      return this.sanitizer.bypassSecurityTrustResourceUrl('');
+    }
+
     let videoId = '';
 
     if (url.includes('youtu.be/')) {

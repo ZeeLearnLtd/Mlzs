@@ -3,11 +3,11 @@
     position: absolute;
     background-color: #004878;
 }
-.desktopResponsive{
+/* .desktopResponsive{
     display: block;
-}
+} */
 .footer_left img{
-   width: 32%;
+   width: 100%;
 }
 .right_text{
     margin: 0rem 2rem;
@@ -128,9 +128,9 @@ hr{
     margin-left: 35px;
 }
 
-.mobileResponsive{
+/* .mobileResponsive{
     display: none;
-}
+} */
 
 img, svg {
     vertical-align: middle;
@@ -244,7 +244,6 @@ color: #FFF;
      .footerContent{
         width: 100%;
         position: absolute;
-        background-color: #641C8C;
         padding: 35px 15px 100px 15px;
     }
     .fb_insta_icon_content{
@@ -275,18 +274,9 @@ color: #FFF;
         background-size: 100% 100%;
         margin: auto;
     }
-    .mobileResponsive{
-        /* background-image: url('../../../../assets/img/responsiveFooter.png');
-       width: 100%;
-       height: 1000px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%; */
+    /* .mobileResponsive{
         display: block;
-    } 
-    .desktopResponsive{
-        display: none;
-    }
+    }  */
     .detailsContent{
         width:100%;
         margin-top: 20px;
@@ -333,4 +323,11 @@ ul li{
 
 .tab_text{
 font-size: 13px;
+}
+
+.calling_btn{
+    position: fixed;
+    bottom: 1.5rem;
+    right: -45px;
+    z-index: 99;
 }

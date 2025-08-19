@@ -1,6 +1,6 @@
 <section>
     <div class="blogs py-4">
-        <div class="box mt-5">
+        <!-- <div class="box mt-5">
             <div class="row">
                 <div class="col-md-6">
                     <div class="blog_text_content">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="image-container" routerLink="/blog/{{top_blog_img?.slug}}">
+                    <div class="image-container" routerLink="/blog/{{top_blog?.slug}}">
                         <div>
                         <img src="{{top_blog_img}}" alt="Image with overlay" />
                     </div>
@@ -45,6 +45,42 @@
                       </div>
                 </div>
             </div>
+        </div> -->
+    <div class="box">
+     <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+             <h2><b>Blogs</b></h2>
+                        <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+                        <p>
+                            Read up engaging stories and articles, helpful tips, and updates, offering a unique glimpse into the exciting events and experiences that define life at Mount Litera Zee School.
+                        </p>
         </div>
+        <div class="col-lg-7">
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="blog-card" style="height:300px;">
+                         <img src="{{top_blog_img}}" alt="Image with overlay" />
+                        <div class="blog-overlay">
+                            <div class="blog-date">{{top_blog?.CreatedDate}}</div>
+                            <div class="blog-title">{{top_blog?.Title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                <div class="col-md-4 col-sm-6 col-12" *ngFor="let a of blogdata">
+                    <div class="blog-card" style="height:250px;" routerLink="/blog/{{a.slug}}">
+                        <div *ngFor="let img of a.OtherFiles">
+                         <img src="{{img?.value}}" alt="Image with overlay" />
+                        </div>
+                        <div class="blog-overlay">
+                            <div class="blog-date">{{a?.CreatedDate}}</div>
+                            <div class="blog-title">{{a?.Title}}</div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    </div>
     </div>
 </section>

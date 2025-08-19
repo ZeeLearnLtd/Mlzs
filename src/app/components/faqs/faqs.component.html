@@ -1,53 +1,21 @@
 
 <section>
     <div class="faq_content">
-        <div class="title_content text-center">
-            <h1 class="text-white"><b>FAQ</b></h1>
+        <!-- <div class="title_content text-center">
+            <h2 class="text-white"><b>FAQ</b></h2>
             <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
             <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
-        </div>
+        </div> -->
         <div class="box mt-3">
             <mat-accordion>
                 <mat-expansion-panel *ngFor="let faq of faqsData">
                         <mat-expansion-panel-header>
-                            <h6>{{faq.Title}}</h6>
+                            <div class="faq_title">{{faq.Title}}</div>
                         </mat-expansion-panel-header>
                         <span>
                             <p [innerHTML]="faq.Long1"></p>
                         </span>
                 </mat-expansion-panel>
-                <!-- <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                        <h6>What are the steps involved in the direct admission process for CBSE schools?</h6>
-                    </mat-expansion-panel-header>
-                    <span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
-                    </span>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <h6>How many Mount Litera Zee schools are there in India?</h6>
-                </mat-expansion-panel-header>
-                <span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
-                </span>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <h6>Do CBSE schools have a provision for mid-year admissions?</h6>
-            </mat-expansion-panel-header>
-            <span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
-            </span>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <h6>Is it possible to transfer my child from a state board school to a CBSE school during the academic year?</h6>
-        </mat-expansion-panel-header>
-        <span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et saepe ea alias! At dolorem, perspiciatis sequi obcaecati impedit inventore similique officiis sunt iure adipisci quibusdam, provident repellendus accusamus itaque.</p>
-        </span>
-</mat-expansion-panel> -->
             </mat-accordion>
         </div>
     </div>

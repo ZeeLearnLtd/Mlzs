@@ -29,47 +29,27 @@ export class LocateUsComponent implements OnInit {
   ucenterList: any;
   more: boolean = true;
   lgd: any;
-  submitted: boolean = false
+
   indiaCountry: any = [];
   searchForm: FormGroup;
   findex: number = 0;
   tindex: number = 50
   totalrecord: number = 0;
   virtual_url: any;
-  enquireForm: FormGroup
-  segment: any
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    private _service: CommonService,
-    private fb: FormBuilder,
-    private ngxSpinner: NgxSpinnerService,
-    public sanitizer: DomSanitizer,
+
+  constructor(private _service: CommonService, private fb: FormBuilder, private ngxSpinner: NgxSpinnerService, public sanitizer: DomSanitizer,
     private projectService: ProjectSeoService, private router: Router,
-    private apiService: ApicallService,
-    private activatedRoute: ActivatedRoute) {
+    private apiService: ApicallService) {
     this.searchForm = fb.group({
       country: [''],
       city: [''],
       state: [''],
       location: [''],
     })
-    this.enquireForm = fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      mobile: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      massege: ['', Validators.required],
-    })
   }
 
   ngOnInit(): void {
-    const urlSegments = this.activatedRoute.snapshot.url;
-    this.segment = urlSegments[0]?.path;
-
-    if (this.segment == 'contect-us') {
-      (document.getElementById('school_id') as HTMLElement).style.display = 'none'
-    }
-
     this.tindex = 50;
     this.getAllDataList();
     this.getseo();
@@ -77,7 +57,7 @@ export class LocateUsComponent implements OnInit {
 
   getseo() {
     let tbody = {
-      slug: 'locateUs',
+      slug: 'locateus',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
@@ -90,13 +70,15 @@ export class LocateUsComponent implements OnInit {
     });
   }
   getAllDataList() {
-    // this._service.get_allCountryList().subscribe(
-    //   res => {
-    //     this.all_data_list = res
-    //     this.india_country();
-    //     this.setcountry();
-    //   }
-    // )
+    this.ngxSpinner.show();
+    this._service.get_allCountryList().subscribe(
+      res => {
+        this.ngxSpinner.hide();
+        this.all_data_list = res
+        this.india_country();
+        this.setcountry();
+      }
+    )
   }
 
   india_country() {
@@ -125,6 +107,7 @@ export class LocateUsComponent implements OnInit {
   setcountry(): any {
     const key = 'Country_Name';
     this.countryList = [...new Map(this.all_data_list.map((item: any) => [item[key], item])).values()]
+    console.log('countryList', this.countryList);
   }
 
   selectCountry(contryId: any) {
@@ -215,7 +198,6 @@ export class LocateUsComponent implements OnInit {
   }
 
   filterData() {
-
     this.centerList = ['']
     if (this.getContryId != undefined) {
       this.lgd = this.all_data_list.filter((lg: any) => {
@@ -262,7 +244,6 @@ export class LocateUsComponent implements OnInit {
     this.virtual_url = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
   setaddress(data: any) {
-
     let jdata = {
       "franchisecode": data.Franchisee_Code
     }
@@ -270,15 +251,11 @@ export class LocateUsComponent implements OnInit {
       next: (resp: any) => {
         if (resp.data) {
           if (resp.data[0]?.url) {
-            if (isPlatformBrowser(this.platformId)) {
-              window.open(resp.data[0].url, "_blank");
-            }
+            window.open(resp.data[0].url, "_blank");
           }
           else {
-            if (isPlatformBrowser(this.platformId)) {
-              this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
-              this.router.navigateByUrl('/admissions');
-            }
+            this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
+            this.router.navigateByUrl('/admissions');
           }
         }
       },
@@ -288,55 +265,5 @@ export class LocateUsComponent implements OnInit {
     })
 
   }
-
-  get f() {
-    return this.enquireForm.controls;
-  }
-
-  validationForm() {
-    this.submitted = true;
-    if (this.enquireForm.invalid) {
-      return;
-    } else {
-      this.submitForm()
-    }
-
-  }
-
-  submitForm() {
-    let obj = {
-      "City": '',
-      "Country": "India",
-      "Email": this.enquireForm.get('email')?.value,
-      "FirstName": this.enquireForm.get('name')?.value,
-      "HaveSpace": "",
-      "LastName": '',
-      "Location": "",
-      "Mobile": this.enquireForm.get('mobile')?.value,
-      "PinCode": '',
-      "Product": "0",
-      "ProjectId": "3607",
-      "SoonStartsIn": "",
-      "Source": "gclid",
-      "gclid": "gclid",
-      "State": '',
-      "Type": "F",
-      "WillingToInvest": "",
-      "utm_compaign": "Website",
-      "utm_medium": "Website",
-      "utm_source": "Website",
-      "utm_ad": "Website",
-      "utm_Content": "Website",
-      "utm_Term": "Website",
-    }
-
-    this.apiService.saveEnquiryData(obj).subscribe(
-      res => {
-
-        alert(res);
-      }
-    )
-  }
-
 
 }

@@ -29,7 +29,7 @@ export class CommonService {
   }
 
   get_allCountryList(): Observable<any> {
-    return this.http.post<any>(this.baseUrl + 'V1/kidzeeList', {});
+    return this.http.post<any>(this.baseUrl + '/Kidzeewebapi/V1/kidzeeList', {});
   }
 
   public savesession(key: string, value: string): void {

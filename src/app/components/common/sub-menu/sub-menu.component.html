@@ -1,11 +1,16 @@
 <section>
     <div class="subMenu">
-        <span class="tex_menu" *ngFor="let item of breaddata ;let i=index" >
-          <a href="{{item.url}}">{{item.name}}</a>
-          <span *ngIf="i!=2"> |</span>
+        <span class="tex_menu" *ngFor="let item of breaddata ;let i=index; let last = last" [ngClass]="{ 'bold-text': last }">
+          <a href="{{item.url}}">
+   <ng-container *ngIf="item.name.toLowerCase() === 'home'; else showName">
+        <img src="../../../../assets/img/MLZS/home-icon.png" alt="Home" class="mx-2" width="15" height="15"> <span class="arrow" *ngIf="item.length"> > {{item}} </span>
+      </ng-container>
+      <ng-template #showName>
+        <!-- <span> > </span> -->
+        {{ item.name }}
+        <span #showName *ngIf="i!=2" class="arrow"> > </span>
+      </ng-template>
+        </a>
         </span>
-        <!-- <span class="tex_menu">
-          <a>Home</a>
-        </span> -->
-    </div>
+        </div>
 </section>

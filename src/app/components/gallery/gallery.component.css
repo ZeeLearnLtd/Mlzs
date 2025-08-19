@@ -1,25 +1,36 @@
-.box-img{
-    width:90%;
-    height:310px;
-    margin-top: 1rem;
+.img_box img {
+    object-fit: contain;
+    width: 100%;
+    height: 196px;
 }
 
-.box-img img{
-    width:100%;
-    height:310px;
-    border-radius: 10px;
-}
-
-.text_bg{
+.text_bg {
     width: 13%;
     height: 25px;
     position: relative;
     bottom: 2rem;
 }
-.title_content h2{
+
+.title_content h2 {
     position: relative;
     z-index: 9;
 }
-@media screen and (max-width: 600px) {
 
+.gallery_img {
+    width:100%;
+    height:350px;
+    margin: auto;
+    border-radius:15px;
+    object-fit: cover;
 }
+.gallery_img_content {
+    width: 100%;
+   height:386px;
+}
+
+.gallery_content {
+    width: 85%;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {}

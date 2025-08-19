@@ -8,8 +8,7 @@
 
 .francine_form{
     width:70%;
-    float: right;
-    margin: 10px 15px 15px 10px;
+    margin: 10px 35px 15px 10px;
     padding: 10px 25px;
     background-color: #C4DEFD;
 }
@@ -53,7 +52,7 @@ label{
     display: block;
     width: 100%;
     padding: .375rem .75rem;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 1.5;
     color: var(--bs-body-color);
@@ -87,6 +86,7 @@ label{
 .title_content p{
     margin-bottom: 0;
     font-size: 14px;
+    text-align: center;
 }
 
 .text_bg{
@@ -130,7 +130,7 @@ width: 80%;
         background-color: #C4DEFD;
     }
     .mobile_content{
-        background-color: #184A8C;
+        /* background-color: #184A8C; */
         display: block;
     }
     .menu_content{
@@ -151,11 +151,11 @@ width: 80%;
     }
 }
 
-#about_content_bg{
+/* #about_content_bg{
     width: 100%;
     padding: 55px 0px;
-    /* background-color: rgb(0, 72, 120); */
-}
+    background-color: rgb(0, 72, 120);
+} */
 
 #about_content_bg .text_bg{
     width: 23%;
@@ -200,11 +200,13 @@ width: 80%;
     position: relative;
     z-index: 9;
 }
-.text_bg{
-    width:23%;
+.award_box .text_bg{
+    width: 8%;
+    height: 18px;
     position: relative;
-    bottom:1.5rem;
+    bottom: 1.7rem;
     z-index: 1;
+    left: 2rem;
 }
 
 .about_img_content img{
@@ -216,9 +218,44 @@ width: 80%;
 }
 
 @media screen and (max-width: 600px) {
-.about_content{
-margin-top: 4rem;
+    .menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left:0rem;
+    padding: 10px;
 }
+    .title_content h2{
+    position: relative;
+    z-index: 9;
+    text-align: center;
+}
+    .text_bg{
+    width: 23%;
+    position: relative;
+    bottom: 1.2rem;
+    left: 8rem;
+    z-index: 1;
+}
+    .read_mode{
+    background-color: #44C8F5;
+    color: #004877;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    font-size: 13px;
+    width: auto !important;
+    margin: 15px 15px;
+}
+    #title_content h2{
+    position: relative;
+    z-index: 9;
+    text-align: center;
+}
+/* .about_content{
+margin-top: 4rem;
+} */
 .about_img_content{
 margin-top: 10px;
 }

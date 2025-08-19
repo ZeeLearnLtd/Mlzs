@@ -26,11 +26,10 @@
             </div>
 
             <div class="text-center mt-5">
-                <h2 class="text-center"><b>Gallery</b></h2>
+                <h1 class="text-center"><b>Life in Frames</b></h1>
                 <img src="../../../../assets/img/MLZS/prg_text_bg.png" alt="" class="text_bg">
             </div>
-            <p class="text-center">Browse through the Mount Litera Zee School gallery to experience the heart of our
-                community, capturing the essence of learning, growth, and celebration.</p>
+            <p class="text-center">Browse through the Mount Litera Zee School gallery to experience the heart of our community, capturing the essence of learning, growth, and celebration.</p>
 
             <div class="news_list mt-5">
                 <div class="row">
@@ -50,7 +49,7 @@
                     <div class="col-md-7">
                         <div class="row mb-4 right_card" *ngFor="let a of photoGalleryData">
                             <div class="col-md-5" *ngFor="let img of a.logofiles">
-                                <div *ngIf="!img?.value?.includes('youtu.')">
+                                <div class="img_box" *ngIf="!img?.value?.includes('youtu.')">
                                     <img src="{{img.value}}" width="100%" alt="">
                                 </div>
                                 <div *ngIf="img?.value?.includes('youtu.')">

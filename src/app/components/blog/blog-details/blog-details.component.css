@@ -24,6 +24,11 @@ section{
 .right_card{
   margin-bottom:20px;
 }
+::ng-deep p{
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
 @media screen and (max-width: 600px) {
 .programmes_main_page{
   margin-top: 10px;
@@ -57,7 +62,7 @@ section{
     margin: 5px;
 }
 .programm_img_content img{
-    width: 80%;
+    width: 85%;
     }
 
     .liter_img{
@@ -104,11 +109,24 @@ section{
     height: 21px;
 }
 
-h2{
+h1{
     position: relative;
     z-index: 2;
+    font-size: 2rem;
 }
-
+::ng-deep p h2{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+::ng-deep p h3{
+  margin-top: 1rem;
+  text-align: left;
+}
+::ng-deep ul{
+  text-align: left;
+  padding-left: 0;
+}
 .form-control {
     display: block;
     width: 100%;
@@ -146,4 +164,12 @@ h2{
     object-fit: contain;
       height: 400px;
       width: 100%;
+}
+
+.author_text{
+  color: #014876;
+}
+
+.date_text{
+  color:#403C39;
 }

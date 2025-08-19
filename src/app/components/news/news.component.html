@@ -15,8 +15,10 @@
                     <div class="owl-carousel owl-theme news_owl" id="">
                       <div class="item" *ngFor="let a of eventsData">
                         <div routerLink="/events/{{a.slug}}">
-                        <div class="item_img_content" *ngFor="let img of a.logofiles">
+                        <div class="item_img_content">
+                          <div *ngFor="let img of a.logofiles">
                           <img src="{{img.value}}" alt="">
+                          </div>
                         </div>
                         <hr>
                         <div class="item_text mt-2">

@@ -14,7 +14,7 @@ section{
     padding: 25px 0px 50px 0px;
   }
   .programmes_main_page{
-    margin-top:8.6rem;
+    margin-top:6.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -34,7 +34,7 @@ section{
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color:#FFF;
     font-size: 13px;
-    padding: 5px 25px;
+    padding: 8px 25px;
     background-color:#014876;
     margin: 5px;
 }
@@ -42,12 +42,12 @@ section{
 .nav-link:focus, .nav-link{
     color:#014876;
     font-size: 13px;
-    padding: 5px 25px;
+    padding: 8px 25px;
     background-color: #44C8F5;
     margin: 5px;
 }
 .programm_img_content img{
-    width: 80%;
+    width: 85%;
     }
 
     .liter_img{

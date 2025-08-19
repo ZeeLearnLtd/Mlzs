@@ -144,27 +144,29 @@ section {
 ::-webkit-scrollbar-thumb:hover {
     background: #BCBCBC;
 }
+
 .buttonList_content {
     width: 55%;
     margin: auto;
 }
 
 
-.subMenu_content{
+.subMenu_content {
     margin-top: 1rem;
     width: 85%;
     margin: auto;
-  }
+}
 
-  .owl-item{
+.owl-item {
     border-radius: 7px !important;
-  }
+}
 
 @media screen and (max-width: 600px) {
-    p{
+    p {
         text-align: justify;
     }
-    .buttonList_content{
+
+    .buttonList_content {
         overflow: auto;
         width: 100%;
         margin: auto;
@@ -174,6 +176,7 @@ section {
         white-space: nowrap;
         display: inline;
     }
+
     .buttonList_content::-webkit-scrollbar {
         width: 5px;
         height: 10px;
@@ -209,7 +212,7 @@ section {
         margin-top: 20px;
         font-weight: bold;
         line-height: normal;
-        font-size:1.8rem;
+        font-size: 1.8rem;
     }
 
     .row {
@@ -232,29 +235,33 @@ html {
 
 body {
     /* background-color: #EBE1FF; */
-    font-family: 'Lato';
+    font-family: 'Poppins';
     overflow-x: hidden !important;
 }
 
-p {
-    font-family: 'Lato';
+p, 
+button{
+  font-family: 'Poppins' !important;
+  font-size: 14px !important;
 }
-
-li {
-    font-family: 'Lato';
+li{
+font-family: 'Poppins' !important;
 }
-.sub_text_black{
+h2,h6,h1{
+    overflow: hidden;
+}
+.sub_text_black {
     color: #000;
     font-size: 16px !important;
     text-align: left;
 }
 
-.sub_text{
+.sub_text {
     font-style: normal;
     line-height: normal;
     color: #6D2A93;
     font-weight: bold !important;
-    font-size: 20px ;
+    font-size: 20px;
     text-align: left;
 }
 
@@ -262,6 +269,7 @@ li {
     font-family: 'Sniglet';
     src: url('assets/font/Sniglet/Sniglet-Regular.ttf');
 }
+
 .grey_btn {
     border-radius: 15px 5px 15px 5px;
     padding: 5px 20px 5px 20px;
@@ -278,17 +286,17 @@ li {
     color: #FFF !important;
 }
 
-.box{
+.box {
     width: 85%;
     margin: auto;
 }
 
-.title_content h1{
+.title_content h1 {
     position: relative;
     z-index: 9;
 }
 
-.read_mode{
+.read_mode {
     background-color: #44C8F5;
     color: #004877;
     display: flex;
@@ -297,32 +305,97 @@ li {
     transition: 0.6s;
     padding: 4px 6px;
     font-size: 12px;
-    }
-
-    .read_mode:hover{
-        background-color: #35a9cf;
-        color: #004877;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 13px;
-        }
-    
-
-    .title_content h1{
-        position: relative;
-        z-index: 9;
-        font-family: 'Montserrat_bold';
-    }
-
-.shortPara{
-display: -webkit-box;
-  -webkit-line-clamp: 2;      /* Limit to 2 lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.date{
+.read_mode:hover {
+    background-color: #35a9cf;
+    color: #004877;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+
+.title_content h1 {
+    position: relative;
+    z-index: 9;
+    font-family: 'Montserrat_bold';
+}
+
+.title_content h2 {
+    position: relative;
+    z-index: 9;
+    font-family: 'Montserrat_bold';
+}
+
+.shortPara {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.date {
     font-size: 11px;
+}
+
+.tab_title {
+    color: rgba(137, 40, 144, 1);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.banner h1 {
+  font: bold clamp(1.5rem, 4vw, 3rem) 'Playfair Display', serif;
+  color: #8d3dad;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-left: 3.8rem;
+}
+
+.strong_title strong{
+    font-size: 1rem;
+}
+
+.faq_bg{
+    background-color:rgba(1, 72, 118, 1) !important;
+}
+.faq_bg .text_bg{
+    position: relative;
+    z-index: 1;
+    width: 7% !important;
+    bottom: 1.5rem !important;
+}
+
+.long_para{
+  display: -webkit-box; 
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  font-size: 14px;
+
+}
+
+.locat_us_content{
+background-color:rgba(0, 72, 120, 1)
+}
+
+.locat_us_content h2 {
+    font-weight: 700;
+    color: white;
+    position: relative;
+    z-index: 9;
+}
+
+.locat_us_content .text_bg {
+    width: 11%;
+    position: relative;
+    bottom: 1.7rem;
+    z-index: 0;
+    left: 4rem;
+    height:30px;
 }

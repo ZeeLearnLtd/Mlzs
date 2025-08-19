@@ -2,7 +2,7 @@
     width: 28%;
     position: relative;
     bottom: 1.5rem;
-    z-index: 1;
+    z-index: -1;
     height: 30px;
 }
 
@@ -10,83 +10,37 @@
     width: 75%;
     border-radius: 10px;
 }
-
-.blog_main_img {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-  .date{
-    font-size: 11px;
-    text-align: left;
-  }
-  .sub_text{
-    color: #fff;
-    font-size: 13px;
-  }
-@media screen and (max-width: 600px) {
-    .blog_sub_img img {
-        width: 80%;
-        height: auto;
-        margin: auto;
-        border-radius: 10px;
-    }
-
-    .blog_sub_img {
-        margin-top: 10px;
-    }
-}
-
-
-.image-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px; /* Adjust as needed */
-    border-radius: 8px;
-    height: 245px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .image-container img {
-    width: 100%;
-    height:244px;
-    display: block;
-  }
-  .sub_text_content{
-    position: relative;
-    top: 10rem;
-  }
-  .text-overlay {
-    position: absolute;
-    width: 100%;
-    top: 0%;
-    height: 244px;
-    left: 0%;
-    /* transform: translate(-50%, -50%); */
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .text-overlay h2 {
-    margin: 0;
-    font-size: 2rem;
-  }
-  
-  .text-overlay p {
-    margin: 10px 0 0;
-    font-size: 1rem;
-  } 
-
-  .title_content h2{
+   .title_content h2{
   position: relative;
   z-index: 9;
-  }
-  
-  
+   }
+
+   .blog-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    .blog-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .blog-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px;
+        background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+        color: #fff;
+    }
+    .blog-date {
+        font-size: 13px;
+        opacity: 0.9;
+    }
+    .blog-title {
+        font-weight: 700;
+        font-size: 15px;
+        margin-top: 2px;
+    }

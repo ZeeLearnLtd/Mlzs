@@ -1,137 +1,244 @@
-.carousel-caption p{
-color: #403C39;
-font-weight: 600;
-font-size: 14px;
+.carousel-caption p {
+    color: #403C39;
+    font-weight: 600;
+    font-size: 14px;
 }
 
-.main_bg{
-     /* background-image: url('../../../assets/img/MLZS/main_bg.png'); */
-        background-size: contain;
-        width: 100%;
-        padding: 25px 0px 50px 0px;
+.main_bg {
+    background-size: contain;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
 }
 
-.admission_text{
-color: #403C39;
-font-family: 'Montserrat_bold';
+.admission_text {
+    color: #403C39;
+    font-family: 'Montserrat_bold';
 }
 
-.year_text{
-color: #892890;
-font-family: 'Montserrat_bold';
+.year_text {
+    color: #892890;
+    font-family: 'Montserrat_bold';
 }
 
-.carousel-caption{
+.carousel-caption {
     position: absolute;
     left: 13rem;
     width: 100%;
     text-align: left;
     bottom: 14rem;
 }
-.carousel-item img{
+
+.carousel-item img {
     width: 100%;
     /* height: 480px; */
 }
 
-#about_content_bg{
+#about_content_bg {
     width: 100%;
     padding: 55px 0px;
     background-color: rgb(0, 72, 120);
 }
 
-#about_content_bg .text_bg{
-    width: 23%;
-    position: relative;
-    bottom: 1.5rem;
-    z-index: 1;
-}
 
 .text-white {
     position: relative;
     z-index: 2;
 }
 
-.sec_box_content{
+.sec_box_content {
     width: 100%;
     position: absolute;
-    top: 31rem;
+    margin-top: -5rem;
     background: #fff;
     opacity: 0.9;
     z-index: 9;
 }
 
-.img_box img{
-    width:12%;
+.img_box img {
+    width: 12%;
 }
-.title_content p{
+
+.title_content p {
     margin-bottom: 0;
     font-size: 14px;
     /* font-weight: 600; */
 }
 
-.mobile_counter_content{
+.mobile_counter_content {
     display: none;
 }
-.desktop_counter_content{
+
+.desktop_counter_content {
     display: block;
 }
 
-.count_content{
+.count_content {
     font-size: 22px;
-    margin-top:8px;
-    font-family:'Inter';
+    margin-top: 8px;
+    font-family: 'Inter';
 }
 
 @media screen and (max-width: 600px) {
-    .box_content{
+        .owl-carousel .owl-stage {
+        position: relative;
+        touch-action: manipulation;
+        height: auto !important;
+        overflow: hidden;
+    }
+    .carousel-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        height: 160px !important;
+    }
+
+    .box_content {
         margin: 1rem;
     }
-    .text-white{
+
+    .text-white {
         margin: 0px 10px;
         text-align: justify;
     }
-   
-    .img_box img{
+
+    .img_box img {
         width: auto !important;
     }
-    .img_box{
+
+    .img_box {
         display: flex;
         justify-content: center;
         align-items: center;
-      
+
     }
-    ::ng-deep .center{
-        background-color: #FFF !important;  /* Change background color of the active item */ 
-      }
-      ::ng-deep .owl-item{
+
+    ::ng-deep .center {
         background-color: #FFF !important;
-      }
+        /* Change background color of the active item */
+    }
+
+    ::ng-deep .owl-item {
+        background-color: #FFF !important;
+    }
+
     ::ng-deep.owl-carousel .owl-stage {
         position: relative;
         touch-action: manipulation;
-        height:100px !important;
+        height: 100px !important;
         overflow: hidden;
     }
-    .sec_box_content{
-        top: 10rem;
+
+    .sec_box_content {
+        width: 100%;
+        position: static;
+        margin-top: -2rem;
+        background: #fff;
+        opacity: 0.9;
     }
-    .desktop_counter_content{
+
+    .desktop_counter_content {
         display: none;
     }
-    .mobile_counter_content{
+
+    .mobile_counter_content {
         display: block;
     }
-    .carousel-item img{
+
+    .carousel-item img {
         width: 100%;
-        height:auto;
+        height: auto;
     }
 
-    .banner_content{
-    margin-top: 5rem !important;
-}
+    .banner_content {
+        margin-top: 2.5rem !important;
+    }
 
 }
 
-.banner_content{
-    margin-top:8.6rem;
+.banner_content {
+    margin-top: 8.6rem;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+}
+
+.carousel-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* About Us css */
+
+.about-section {
+    background: url('../../../assets/img/MLZS/about_us_bg.png') center/cover no-repeat;
+    color: rgba(1, 72, 118, 1);
+    width: 100%;
+}
+
+.overlay-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    max-width: 500px;
+    margin: 3rem 0;
+}
+
+.overlay-box h1 {
+    font-weight: 800;
+}
+
+.stats-bar {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-number {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.stat-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.btn-custom {
+    background: rgba(72, 199, 244, 1);
+    color: rgba(0, 72, 119, 1);
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 9px;
+}
+
+.btn-custom:hover {
+    background: rgba(72, 199, 244, 2);
+    color: rgba(0, 72, 119, 1)#fff;
+}
+
+h1 {
+    overflow: hidden;
+}
+
+#about_content_bg h1 {
+    position: relative;
+    z-index: 2;
+}
+
+#about_content_bg .text_bg {
+    width: 24%;
+    bottom: 1.6em;
+    height: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+.overlay-box p {
+    color: rgba(1, 72, 118, 1);
+}
+
+.counter_img {
+    width: 20%;
 }

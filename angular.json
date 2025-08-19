@@ -20,27 +20,26 @@
             "customWebpackConfig": {
               "path": "./custom-webpack.config.js",
               "replaceDuplicatePlugins": true
-           },
+            },
             "outputPath": "dist/mlzs/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css" , 
-              "node_modules/ngx-spinner/animations/ball-scale-multiple.css", 
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
               "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css", 
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
               "node_modules/ngx-toastr/toastr.css",
+              "node_modules/tiny-slider/dist/tiny-slider.css",
               "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/owl.carousel/dist/owl.carousel.min.js"
+              "node_modules/owl.carousel/dist/owl.carousel.min.js",
+              "node_modules/tiny-slider/dist/min/tiny-slider.js"
             ],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -103,19 +102,14 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css" ,
-              "node_modules/ngx-toastr/toastr.css", 
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
-             ]
+            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
           }
         },
         "e2e": {
@@ -173,9 +167,7 @@
           "options": {
             "browserTarget": "mlzs:build:production",
             "serverTarget": "mlzs:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}

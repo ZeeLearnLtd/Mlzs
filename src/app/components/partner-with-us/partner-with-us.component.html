@@ -1,0 +1,372 @@
+<section>
+    <div class="main_content">
+        <div class="start_school_banner desktop_content">
+            <div class="francine_form">
+                <h5 class="text-white text-left">Start your Mount Litera Zee School Franchise today!</h5>
+                <div class="form">
+                    <form [formGroup]="admissionForm">
+
+                        <div class="col-md-row">
+                            <div class="col-md-12 mt-1">
+                                <input type="text" placeholder="Name*" class="form-control" formControlName="fname"
+                                    [ngClass]="{ 'is-invalid': submitted && f.fname.errors }">
+                                <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                                    <span class="text-danger inValidMsg"
+                                        *ngIf="(f.fname.touched || submitted) && f.fname.errors?.required">
+                                        First name is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <input type="text" placeholder="Email*" class="form-control" placeholder="Email*"
+                                    formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <span class="text-danger inValidMsg"
+                                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                                        Email is required
+                                    </span>
+                                    <span class="text-danger inValidMsg"
+                                        *ngIf="f.email.touched && f.email.errors?.email">
+                                        Enter a valid email address
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <input type="text" placeholder="Mobile no*" class="form-control"
+                                    (keyup)="getMobileNO();" formControlName="mobile"
+                                    [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
+                                <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                                    <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
+                                <!-- <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button> -->
+                                <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
+                                    formControlName="otp" [ngClass]="{ 'is-invalid': submitted && f.otp.errors }">
+                                <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                                    <span class="inValidMsg" *ngIf="f.otp.errors?.required">OTP is required.</span>
+                                </div>
+                                <div *ngIf="otp_ValidMsg" class="validMsg">otp verified successfully</div>
+                                <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <select name="" id="" class="form-control" formControlName="state"
+                                (change)="selectState($event)"
+                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                                <option value="">State/District</option>
+                                <option value="{{state.StateName}}" *ngFor="let state of stateList">
+                                    {{state.StateName}}
+                                </option>
+                            </select>
+                            <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                <span class="text-danger inValidMsg"
+                                    *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
+                                    State/District is required
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <select name="" id="" class="form-control" formControlName="city"
+                                (change)="selectCity($event)" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                                <option value="">City</option>
+                                <option value="{{city.CityName}}" *ngFor="let city of cityList">
+                                    {{city.CityName}}</option>
+                            </select>
+                            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                <span class="text-danger inValidMsg"
+                                    *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
+                                    City is required
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <button class="btn read_mode w-100" (click)="validationForm()">Send</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="francine_form mobile_content">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="../../../assets/img/MLZS/banner/start_school_banner_mobile.png" width="100%" alt="">
+                </div>
+                <div class="col-md-12">
+                    <h4 class="text-white text-center text-left mt-4">Start a Francine</h4>
+                    <div class="form">
+                        <div class="col-md-row">
+                            <div class="col-md-12 mt-1">
+                                <input type="text" placeholder="Name*" class="form-control">
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <input type="text" placeholder="Email*" class="form-control">
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <input type="text" placeholder="Mobile no*" class="form-control">
+                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
+                                <input type="text" placeholder="OTP" class="form-control mt-2">
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <select name="" id="" class="form-control">
+                                    <option value="">State</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <select name="" id="" class="form-control">
+                                    <option value="">City</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 mt-4">
+                                <button class="btn read_mode w-100">Send <i
+                                        class="fa fa-long-arrow-right mx-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="menu_content">
+            <app-sub-menu></app-sub-menu>
+        </div>
+        <div class="box">
+            <div class="title_content text-center">
+                <h2 class="text-center"><b>Who We Are</b></h2>
+                <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="">
+                        <p>Mount Litera Zee School, a flagship venture by Zee Learn, is revolutionising school education with a commitment to excellence. As a leading school franchise, our mission is to empower children to unlock their unique potential through innovative pedagogy, modern infrastructure, and highly skilled educators.</p>
+                        <p>Recognised as the K-12 School Chain of the Year 2019 by the Indian Education Congress, Mount Litera Zee School has established itself as the fastest-growing school network in India. With over 130+ operational schools across 110+ cities, we are at the forefront of delivering quality education nationwide.</p>
+                        <p>Join our trusted school franchise network and become a part of this transformative journey. Together, we can shape the future of education and nurture the leaders of tomorrow.</p>
+                        <!-- <button class="btn read_mode" routerLink="/about-us">Know More <i
+                                class="fa fa-long-arrow-right mx-2"></i></button> -->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about_img_content w-10 d-flex justify-content-center">
+                        <img src="../../../assets/img/MLZS/about_img.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+  <div class="counter_box mt-5">
+                <section class="stats-section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-md-3 stat-box">
+        <div class="stat-icon"><img src="../../../assets/img/MLZS/school-white.png"></div>
+        <div class="stat-number">130+</div>
+        <div class="stat-label">Number of schools</div>
+      </div>
+      <div class="col-6 col-md-3 stat-box">
+        <div class="stat-icon"><img src="../../../assets/img/MLZS/state-white.png"></div>
+        <div class="stat-number">18+</div>
+        <div class="stat-label">Presence in number of states</div>
+      </div>
+      <div class="col-6 col-md-3 stat-box">
+        <div class="stat-icon"><img src="../../../assets/img/MLZS/educate-white.png"></div>
+        <div class="stat-number">25K+</div>
+        <div class="stat-label">Number of educators</div>
+      </div>
+      <div class="col-6 col-md-3 stat-box">
+        <div class="stat-icon"><img src="../../../assets/img/MLZS/nurturedi-white.png"></div>
+        <div class="stat-number">56,600+</div>
+        <div class="stat-label">Number of students nurtured</div>
+      </div>
+    </div>
+  </div>
+</section>
+            </div>
+        <div class="box mt-5">
+            <div class="title_content text-center">
+                <h2 class="text-center"><b> Why Start a School ?</b></h2>
+                <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="">
+                        <p>The private Indian education sector has witnessed remarkable growth over the years. In 2023, the market was valued at approximately US$ 48.9 billion and is projected to grow to US$ 125.8 billion by 2032, with a CAGR of 11.1%*. Within this, the K-12 education segment has shown significant expansion, reaching US$ 50.31 billion in 2024 and is anticipated to grow to US$ 89.45 billion by 2030, at a CAGR of 10.13%**. This growth is fueled by India’s increasing population, rising disposable incomes, and a growing demand for quality education.</p>
+                        <p><strong>Key factors contributing to the growth of the Indian education sector include:</strong></p>
+
+                        <div class="row mt-3">
+                            <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0"><strong>Rising Gross Enrolment Ratios (GER) -</strong> India’s GER in elementary education reached 100% by 2016 and has continued to grow steadily, ensuring a consistent flow of students across all educational levels. With the growing demand for education, this has bolstered enrolment rates across the country.</div>
+
+                            <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0"><strong>Demand for Quality Schools -</strong> The rapid growth in India's population and the increasing middle-class segment have escalated the need for quality schools. India requires an estimated 20,000–25,000 high-quality schools (NCERT) to meet the needs of its expanding educational sector. The K-12 segment, valued at US$ 50.31 billion in 2024, is expected to grow to US$ 89.45 billion by 2030, signaling a major shift toward high-quality education**.</div>
+
+                            <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0"><strong>Government Support -</strong> Policies such as the New Education Policy (NEP) have created a conducive environment for private players to enter the market. The government's push for increased private sector involvement continues to drive innovation, improvement in educational infrastructure, and investments in the sector.</div>
+
+                            <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0"><strong>Parental Preference for Private Schools -</strong> With over 40% of students vying for spots in just 20% of private schools, the demand for high-quality private education is growing. This preference reflects the increasing desire for world-class facilities and pedagogy among parents.</div>
+                        </div>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fr_img_content d-flex justify-content-center">
+                        <img src="../../../assets/img/MLZS/school_img.png" alt="">
+                    </div>
+                     <div class="row mt-2">
+                        <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0"><p><strong>Long-Term Parent Engagement -</strong> The commitment of parents to quality education is reflected in the long-term engagement they have with schools, with families often choosing institutions for their children’s entire 10 to 12-year academic journey. This fosters stability and supports the growth of schools, ensuring high retention and continual enrolment.</p>
+                            <p>Bring world-class education to your community with Mount Litera Zee School Franchise in India.</p>
+                            <p>Explore the opportunity to become a part of the most trusted school franchise in India with Mount Litera Zee School. Our well-established franchise model empowers aspiring partners to set up and operate high-quality schools that provide transformative, value-driven education. Together, we can meet the rising demand for quality schools in India and bring world-class learning to communities nationwide.</p>
+                            </div>
+             
+                     </div>
+                </div>
+            </div>
+            <div class="sources_content mt-3"><p class="sources m-0"><b>Sources:</b></p>
+            <p class="mb-0 mt-2">*GlobeNewswire – The School Market in India 2024–2032</p>
+            <p>**Research and Markets – India K–12 Market by Region, Competition, Forecast & Opportunities, 2030</p>
+            </div>
+        </div>
+
+        <div class="bg_box">
+            <div class="box my-5">
+                <div class="text-center title_content">
+                <h2 class="text-center text-white"><b>Why Choose Us?</b>
+                </h2>
+                 <img src="../../../assets/img/MLZS/text-bg.png" alt="" class="text_bg">
+                </div>
+                <div class="row">
+                     <div class="title_content">
+                            <p class="text-white">Mount Litera Zee School, a flagship venture of Zee Learn, presents an exceptional opportunity for those looking to invest in a school franchise in India. Our partners gain access to a tried-and-tested curriculum, operational expertise, and a prestigious national brand.</p>
+                        </div>
+                    <div class="fr_img_content d-flex justify-content-center">
+                            <img src="../../../assets/img/MLZS/mlzs-new.png" width="100%" alt="">
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box mt-5">
+            <div class="title_content text-center">
+                <h2 class="text-center"><b> What You Need to Become an MLZS<br>Franchise Partner</b></h2>
+                <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="fr_img_content d-flex justify-content-center">
+                        <img src="../../../assets/img/MLZS/FranchisePartner.png" width="100%" alt="">
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="">
+                        <p>Partner with India’s fastest-growing school network and unlock incredible opportunities </p>
+                        <p>Become a part of Mount Litera Zee School, one of the most rapidly expanding school networks
+                            in India and enjoy a rewarding partnership that offers both growth and impact.</p>
+                        <p><strong>What We Expect from Our Partners:</strong></p>
+
+                        <div class="row mt-3">
+                            <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0"><strong>Land Requirement:</strong> A minimum of 1.5 to 5 acres of land at a suitable location.</div>
+
+                            <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0">
+                                <p><strong>Investment:</strong> The construction of a minimum of 80,000 to 100,000 sq.ft., spread over 3-4 phases. The initial investment may vary depending on the school model, location, and various other factors.</p>
+                            </div>
+                            <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0">
+                                <p><strong>Capital Investment:</strong> Partners will need to invest both in capital and working capital to support the establishment and operational activities.</p>
+                            </div>
+                            <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                    height="15px" alt=""></div>
+                            <div class="col-11 p-0">
+                                <p><strong>Comprehensive Training and Support:</strong> All partners will undergo an extensive training programme covering business strategies for running a successful school. In addition, partners and their staff members will receive ongoing training on the Mount Litera Zee School curriculum and its unique delivery methods to ensure a high standard of education.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="faq_bg py-5">
+            <div class="faq-box">
+              <div class="title_content text-center">
+            <h2 class="faq_title text-white"><b>FAQs</b></h2>
+            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
+            <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
+            <app-faqs></app-faqs>
+        </div>
+        </div>
+        </div>
+         <div class="award_content my-3">
+            <div class="box my-3">
+                <div class="row mt-4">
+                    <div class="title_content text-left">
+                        <h2 class=""><b> Awards </b></h2>
+                        <img src="../../../assets/img/MLZS/prg_text_bg.png" class="award_bg_img" alt="">
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="">
+                            <p>At Mount Litera Zee School, our awards and recognitions are a testament to our dedication to educational excellence and innovation, setting new benchmarks in the academic world.</p>
+                            <p><strong>2023</strong></p>
+                            <div class="row mt-3">
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">Tech Circle Edge Insights - Business Transformation Award 2023</div>
+
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">The Economic Times Media Partner - Fortune Leadership Awards - Education Brand of the Year 2023</div>
+
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">Education Excellence Award</div>
+
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">Education Today - Ranked no. 1 for Best Sports Participation Opportunities</div>
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">Best CBSE School in North India</div>
+                              </div>
+
+                             <p class="mt-3"><strong>2024</strong></p>
+                            <div class="row mt-3">
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">Economic Times - Best Education Brands Zee Learn - 2024</div>
+
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">Elets World Education Summit 2024 - Excellence in Faculty Training</div>
+
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">Education Today - India School Merit Awards 2024</div>
+
+                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
+                                        height="15px" alt=""></div>
+                                <div class="col-11 p-0">India's Top CBSE Schools - Awarded for Holistic Education</div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="fr_img_content d-flex justify-content-center">
+                            <img src="../../../assets/img/MLZS/award.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

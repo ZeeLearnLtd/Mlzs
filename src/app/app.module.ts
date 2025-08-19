@@ -89,6 +89,10 @@ import { NewsDetailsComponent } from './components/discover-sub-page/news-detail
 import { EventsDetailsComponent } from './components/discover-sub-page/events-details/events-details.component';
 import { SafeUrlPipe } from './components/pipe/safe-url.pipe';
 import { ToastrModule } from 'ngx-toastr';
+import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { GetInTouchComponent } from './components/get-in-touch/get-in-touch.component';
+import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
+import { ProgrammesSubTabComponent } from './components/programmes-sub-tab/programmes-sub-tab.component';
 interface NgxSpinnerConfig {
   type?: string;
 }
@@ -174,9 +178,14 @@ interface NgxSpinnerConfig {
     MapviewComponent,
     NewsDetailsComponent,
     EventsDetailsComponent,
+    CurriculumComponent,
+    GetInTouchComponent,
+    PartnerWithUsComponent,
+    ProgrammesSubTabComponent,
     SafeUrlPipe,
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     NgbModule,

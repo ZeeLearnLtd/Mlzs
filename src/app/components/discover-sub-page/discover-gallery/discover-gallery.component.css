@@ -5,6 +5,7 @@
 
 .multi_img_group img{
 width: 80%;
+object-fit: cover;
 }
 
 section{
@@ -14,7 +15,7 @@ section{
     padding: 25px 0px 50px 0px;
   }
   .programmes_main_page{
-    margin-top:8.6rem;
+    margin-top:6.5rem;
 }
 small{
   font-size: 11px;
@@ -52,7 +53,8 @@ small{
     margin: 5px;
 }
 .programm_img_content img{
-    width: 80%;
+    width: 85%;
+    object-fit: cover;
     }
 
     .liter_img{
@@ -65,6 +67,7 @@ small{
 
   .fr_img_content img{
     width: 80%;
+    object-fit: cover;
   }
 
   .title_content ul{
@@ -99,7 +102,7 @@ small{
     height: 21px;
 }
 
-h2{
+h1{
     position: relative;
     z-index: 2;
 }
@@ -150,4 +153,17 @@ h2{
 .pinch_img_content{
     width:235px;
     height:180px;
+}
+
+.img_box img{
+    object-fit: contain;
+    width: 100%;
+    height: 196px;
+    border: 1px solid #eee;
+}
+
+iframe{
+    object-fit: contain;
+    width: 100%;
+    height: 196px;
 }
