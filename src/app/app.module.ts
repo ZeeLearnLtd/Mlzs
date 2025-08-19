@@ -185,6 +185,7 @@ interface NgxSpinnerConfig {
     SafeUrlPipe,
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     NgbModule,

@@ -247,7 +247,7 @@ button{
 li{
 font-family: 'Poppins' !important;
 }
-h2,h6{
+h2,h6,h1{
     overflow: hidden;
 }
 .sub_text_black {

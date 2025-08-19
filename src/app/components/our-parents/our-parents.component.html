@@ -11,20 +11,17 @@
               at Mount Litera Zee School has made a lasting impact on their educational paths, personal opinions and
               long-term success.</p>
             <button class="btn read_mode mt-4" routerLink="/testimonials">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
-
           </div>
         </div>
         <div class="col-md-6">
-          <div class="fr_img_content">
+          <!-- <div class="fr_img_content">
             <div class="owl-carousel owl-theme vertical_carousel">
               <div class="item" *ngFor="let a of ParentTestimonial">
                 <div class="row">
                   <div class="col-2 d-flex justify-content-center align-items-center">
                     <div class="item_img">
-                      <!-- <img src="../../../assets/img/MLZS/fr_img1.png" alt=""> -->
                         <a [href]="a.safeUrl" data-fancybox="gallery1" class="fancybox">
-                       <!-- <iframe class="video_iframe pinchzoom_img"  [src]="a.safeUrl" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-                 <img src="../../../assets/img/MLZS/youtube_img.png" class="video_iframe pinchzoom_img" alt="">
+                   <img src="../../../assets/img/MLZS/youtube_img.png" class="video_iframe pinchzoom_img" alt="">
                       </a>
                       </div>
                   </div>
@@ -38,43 +35,43 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="item">
-                <div class="row">
-                  <div class="col-2 d-flex justify-content-center align-items-center">
-                    <div class="item_img">
-                      <img src="../../../assets/img/MLZS/fr_2.png" alt="">
-                    </div>
-                  </div>
-
-                  <div class="col-10">
-                    <div class="item_text">
-                      <p>“MLZS provided my child with a well-rounded education and academic excellence. Truly grateful!”</p>
-                      <h6>Mrs Piya Patel</h6>
-                      <span>31 March 2023</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="row">
-                  <div class="col-2 d-flex justify-content-center align-items-center">
-                    <div class="item_img">
-                      <img src="../../../assets/img/MLZS/fr_3.png" alt="">
-                    </div>
-                  </div>
-
-                  <div class="col-10">
-                    <div class="item_text">
-                      <p>“MLZS is a friendly place for kids. It builds a transparent bridge between parents and teachers. The teachers are like second parents for the kids.”</p>
-                      <h6>P Srinivasa Rao</h6>
-                      <span>05 May 2023</span>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-             
             </div>
-          </div>
+          </div> -->
+
+<div class="slider">
+  <div class="slides" [style.transform]="translateY">
+    <div
+      class="slide item_text" *ngFor="let slide of ParentTestimonial; let i = index"
+      [class.active]="i === currentIndex">
+      <div class="row">
+        <div class="col-2">
+          <div class="item_img">
+            <a [href]="slide.safeUrl" data-fancybox="gallery1" class="fancybox">
+            <img src="../../../assets/img/MLZS/youtube_img.png" class="video_iframe pinchzoom_img" alt="youtube_img">
+            </a>
+            </div>
+        </div>
+      <div class="col-10">
+      <p>{{ slide.short }}</p>
+      <strong>{{ slide.title }}</strong>
+      </div>
+       <!-- <span>{{slide.CreatedDate}}</span> -->
+    </div>
+    </div>
+  </div>
+
+  <!-- dots -->
+  <div class="dots">
+    <div
+      class="dot"
+      *ngFor="let slide of originalSlides; let i = index"
+      [class.active]="i + 1 === currentIndex"
+      (click)="moveToSlide(i)"
+    ></div>
+  </div>
+</div>
+
+          
 
         </div>
       </div>
@@ -82,8 +79,8 @@
     </div>
 
 
-    <div class="box">
+    <!-- <div class="box">
       <app-social-wall></app-social-wall>
-    </div>
+    </div> -->
   </div>
 </section>
