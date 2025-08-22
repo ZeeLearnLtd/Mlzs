@@ -19,7 +19,7 @@ export class LiteraSecondaryStageComponent {
 
   getseo() {
     let tbody = {
-      slug: 'litera-secondary-stage',
+      slug: 'programmes/secondary-school',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

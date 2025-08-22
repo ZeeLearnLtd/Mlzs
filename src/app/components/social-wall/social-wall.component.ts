@@ -43,7 +43,6 @@ export class SocialWallComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.socialData = JSON.parse(res);
-      console.log('Social data list', this.socialData)
     });
 
   }

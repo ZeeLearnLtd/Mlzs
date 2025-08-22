@@ -14,13 +14,13 @@ export class ProjectSeoService extends SeoService {
   private breadsubject = new Subject<any>();
   private Faqssubject = new Subject<any>();
 
-  sendMessagenews(message: string) {
-    this.newssubject.next({ text: message });
-  }
+  // sendMessagenews(message: string) {
+  //   this.newssubject.next({ text: message });
+  // }
 
-  clearnewssubject() {
-    this.newssubject.next({});
-  }
+  // clearnewssubject() {
+  //   this.newssubject.next({});
+  // }
   sendMessageblog(message: string) {
     this.blogsubject.next({ text: message });
   }
@@ -30,11 +30,18 @@ export class ProjectSeoService extends SeoService {
   sendMessageFaqs(message: string) {
     this.Faqssubject.next({ text: message });
   }
+  sendMessageNews(message: string) {
+    this.newssubject.next({ text: message });
+  }
+
   clearbreadsubject() {
     this.breadsubject.next({});
   }
   clearFaqssubject() {
     this.Faqssubject.next({});
+  }
+  clearNewssubject() {
+    this.newssubject.next({});
   }
   clearblogsubject() {
     this.blogsubject.next({});
@@ -55,7 +62,7 @@ export class ProjectSeoService extends SeoService {
   onFaqsMessage(): Observable<any> {
     return this.Faqssubject.asObservable();
   }
-  onnewsMessage(): Observable<any> {
+  onNewsMessage(): Observable<any> {
     return this.newssubject.asObservable();
   }
   onseoMessage(): Observable<any> {

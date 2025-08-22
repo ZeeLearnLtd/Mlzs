@@ -64,9 +64,7 @@ export class SliderParentsComponent implements OnInit {
   }
 
   goToPrevSlide() {
-    console.log(this.currentSlideIndex < this.testimonydata.length + 1)
     if (this.currentSlideIndex < this.testimonydata.length + 1) {
-
       this.currentSlideIndex--;
       this.testimonydata.forEach((element: any) => {
         let getIndexNo = this.testimonydata.indexOf(element);

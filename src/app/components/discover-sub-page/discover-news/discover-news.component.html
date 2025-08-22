@@ -1,7 +1,7 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-            <img src="../../../../assets/img/MLZS/banner/discover_banner.png" class="w-100" alt="">
+            <img src="../../../../assets/img/MLZS/banner/news_top_banner.png" class="w-100" alt="">
     </div>
         <div class="subMenu_content">
             <app-sub-menu></app-sub-menu>
@@ -36,10 +36,10 @@
                 <h1 class="text-center"><b>Stay Updated</b></h1>
                 <img src="../../../../assets/img/MLZS/prg_text_bg.png" alt="" class="text_bg">
             </div>
-            <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and updates about Mount Litera Zee School from our community.</p>
+            <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and<br> updates about Mount Litera Zee School from our community.</p>
            <!-- <h4>{{category_name}}</h4> -->
-            <div class="news_list mt-5">
-                <div class="row mt-3" *ngFor="let a of newsData">                   
+            <div class="news_list">
+                <div class="row mt-5" *ngFor="let a of newsData">                   
                     <div class="col-md-3">
                         <div class="img_box">
                             <div *ngFor="let img of a?.logofiles">
@@ -50,11 +50,12 @@
                     </div>
                     <div class="col-md-9">
                        <div class="news_text">
-                        <a href="/blog/{{a?.slug}}" target="_blank"></a><h5><b>{{a?.Title}}</b></h5>
+                        <a href="/blog/{{a?.slug}}" target="_blank"></a><h6><b>{{a?.Title}}</b></h6>
                         <p [innerHTML]="a.short"></p>
+                        <p class="long_para" [innerHTML]="a?.Long1"></p>
                         <p class="p-0 m-0"><small>Publisher - Zee News</small></p>
                         <p class="date_text p-0 m-0"><i>Date: {{a?.CreatedDate}}</i></p>
-                        <button class="btn read_mode mt-4" routerLink="/news/{{a.slug}}">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
+                        <button class="btn read_mode mt-2" routerLink="/news/{{a.slug}}">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
                        </div>
                     </div>
                 </div>

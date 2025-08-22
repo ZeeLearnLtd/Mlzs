@@ -17,7 +17,7 @@ export class LiteraPreparatoryStageComponent {
 
   getseo() {
     let tbody = {
-      slug: 'litera-preparatory-stage',
+      slug: 'programmes/litera-preparatory-stage',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

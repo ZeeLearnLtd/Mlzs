@@ -21,6 +21,9 @@ section{
   width: 75%;
 }
 @media screen and (max-width: 600px) {
+  .overlay-box{
+    max-width:100% !important;
+ }
 .fr_img_content{
 margin-top: 20px;
 }

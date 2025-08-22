@@ -18,7 +18,9 @@
     z-index: 1;
     height: 30px;
 }
-
+a{
+    text-decoration: none;
+}
 .about_img_content img{
 width: 80%;
 }

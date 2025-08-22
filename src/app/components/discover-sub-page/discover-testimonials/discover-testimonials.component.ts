@@ -27,6 +27,9 @@ export class DiscoverTestimonialsComponent {
   StudentTestimonial: any = [];
   ParentTestimonial: any = [];
   selectedcategory: string = "";
+  originalSchoolTestimonial: any = [];
+  originalStudentTestimonial: any = [];
+  originalParentTestimonial: any = [];
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private route: ActivatedRoute,
@@ -53,6 +56,7 @@ export class DiscoverTestimonialsComponent {
           margin: 10,
           loop: true,
           nav: false,
+          dots: true,
           center: true,
           responsive: {
             0: {
@@ -113,18 +117,39 @@ export class DiscoverTestimonialsComponent {
   }
 
   onSearchChange(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
+    // const value = (event.target as HTMLInputElement).value;
+    // this.SchoolTestimnoal = this.SchoolTestimnoal.filter((item: any) =>
+    //   item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(107)
+    // );
+    // this.StudentTestimonial = this.StudentTestimonial.filter((item: any) =>
+    //   item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(108)
+    // );
+    // this.ParentTestimonial = this.ParentTestimonial.filter((item: any) =>
+    //   item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(109)
+    // );
 
-    this.SchoolTestimnoal = this.alldata.filter((item: any) =>
-      item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(107)
-    );
-    this.StudentTestimonial = this.alldata.filter((item: any) =>
-      item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(108)
-    );
-    this.ParentTestimonial = this.alldata.filter((item: any) =>
-      item?.title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(109)
+    const value = (event.target as HTMLInputElement).value.toLowerCase();
+
+    if (!value) {
+      console.log('[...this.originalSchoolTestimonial]', [...this.originalSchoolTestimonial])
+      console.log('[...this.originalStudentTestimonial]', [...this.originalStudentTestimonial])
+      console.log('[...this.originalParentTestimonial]', [...this.originalParentTestimonial])
+      this.SchoolTestimnoal = [...this.originalSchoolTestimonial];
+      this.StudentTestimonial = [...this.originalStudentTestimonial];
+      this.ParentTestimonial = [...this.originalParentTestimonial];
+    }
+
+    this.SchoolTestimnoal = this.originalSchoolTestimonial.filter((item: any) =>
+      item?.Title?.toLowerCase().includes(value) && item.category.includes(107)
     );
 
+    this.StudentTestimonial = this.originalStudentTestimonial.filter((item: any) =>
+      item?.Title?.toLowerCase().includes(value) && item.category.includes(108)
+    );
+
+    this.ParentTestimonial = this.originalParentTestimonial.filter((item: any) =>
+      item?.Title?.toLowerCase().includes(value) && item.category.includes(109)
+    );
   }
 
   assigndata() {
@@ -132,10 +157,10 @@ export class DiscoverTestimonialsComponent {
       return dt.category.includes(107);         //School
     }).map((obj: any) => {
       return {
-          ...obj,
+        ...obj,
         title: obj.Title,
         safeUrl: this.getSafeEmbedUrl(obj.slug),
-      
+
       };
     });
 
@@ -143,10 +168,10 @@ export class DiscoverTestimonialsComponent {
       return dt.category.includes(108);         //Student
     }).map((obj: any) => {
       return {
-          ...obj,
+        ...obj,
         title: obj.Title,
         safeUrl: this.getSafeEmbedUrl(obj.slug),
-        
+
       };
     });
 
@@ -157,15 +182,19 @@ export class DiscoverTestimonialsComponent {
         ...obj,
         title: obj.Title,
         safeUrl: this.getSafeEmbedUrl(obj?.slug),
-        
+
       };
     });
+
+    this.originalSchoolTestimonial = [...this.SchoolTestimnoal];
+    this.originalStudentTestimonial = [...this.StudentTestimonial];
+    this.originalParentTestimonial = [...this.ParentTestimonial];
   }
 
 
   getSafeEmbedUrl(url: string): SafeResourceUrl {
     let videoId = '';
-    if(url == undefined){
+    if (url == undefined) {
       return ''
     }
     if (url.includes('youtu.be/')) {

@@ -16,7 +16,7 @@ export class LiteraFoundationalStage2Component {
 
   getseo() {
     let tbody = {
-      slug: 'nova',
+      slug: 'programmes/litera-foundational-stage-2',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

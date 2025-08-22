@@ -79,6 +79,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .faq_bg .title_content{
+       padding: 0rem 1rem; 
+    } 
         .owl-carousel .owl-stage {
         position: relative;
         touch-action: manipulation;
@@ -150,13 +153,13 @@
     }
 
     .banner_content {
-        margin-top: 2.5rem !important;
+        margin-top: 2.7rem !important;
     }
 
 }
 
 .banner_content {
-    margin-top: 8.6rem;
+   margin-top: 6.5rem;
 }
 
 .carousel-inner {
