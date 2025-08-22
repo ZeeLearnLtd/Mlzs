@@ -59,12 +59,8 @@ import { NewsDetailsComponent } from './components/discover-sub-page/news-detail
 import { EventsDetailsComponent } from './components/discover-sub-page/events-details/events-details.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
+import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-mlzs.component';
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
-  // { path: 'blog/:name', component: BlogComponent },
-  // { path: 'blog', component: BlogDetailsComponent },
-
-
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
   {
@@ -79,6 +75,7 @@ const routes: Routes = [
       { path: 'parents-corner', component: ParentsCornerComponent },
       { path: 'admissions', component: AdmissionsComponent },
       { path: 'contact-us', component: ContectUsComponent },
+      { path: 'convert-to-an-mlzs', component: ConvertToMLZSComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'discover-more', component: DiscoverMoreComponent },
       { path: 'about-us/legacy', component: OurLegacyComponent },
@@ -112,30 +109,6 @@ const routes: Routes = [
       { path: 'achievements', component: DiscoverAchievementsComponent },
       { path: 'curriculum', component: CurriculumComponent },
       { path: 'partner-with-us', component: PartnerWithUsComponent },
-      // { path: 'about-us', component: AboutUsComponent }
-      // { path: 'pentemind', component: PentemindComponent },
-      // { path: 'blog/:name', component: BlogComponent },
-      // { path: 'legacy', component: LegancyComponent },
-      // { path: 'admissions', component: AdmissionsComponent },
-      // { path: 'partner-with-kidzee', component: FranchiseOpportunityComponent },
-      // { path: 'playgroup', component: PlayGroupComponent },
-      // { path: 'nursery', component: NurseryComponent },
-      // { path: 'kindergarten', component: KindergartenComponent },
-      // {
-      //   path: 'teacher-training-programme',
-      //   component: TeacherTrainingComponent,
-      // },
-      // { path: 'Daycare', component: DayCareComponent },
-      // { path: 'kidzee-advantage', component: OurApproachComponent },
-      // { path: 'vision', component: VisionComponent },
-      // {
-      //   path: 'awards-and-recognition',
-      //   component: AwardsAndRecognitionComponent,
-      // },
-
-      // {path:'PrivacyPolicy', component:PrivacyPolicyComponent},
-      // { path: ':city/:partnerLanding', component: PartnerLandingComponent },
-      // { path: ':city', component: PreschoolInCityComponent },
     ],
   },
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },

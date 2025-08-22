@@ -7,11 +7,11 @@ import { stringify } from 'querystring';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
-  selector: 'app-admissions',
-  templateUrl: './admissions.component.html',
-  styleUrls: ['./admissions.component.css']
+  selector: 'app-convert-to-mlzs',
+  templateUrl: './convert-to-mlzs.component.html',
+  styleUrls: ['./convert-to-mlzs.component.css']
 })
-export class AdmissionsComponent implements OnInit {
+export class ConvertToMLZSComponent {
   headerTitle = "Admissions";
   otpInput: boolean = false
   otp_msg: any;
@@ -46,8 +46,10 @@ export class AdmissionsComponent implements OnInit {
       mobileNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       state: ['', Validators.required],
       city: ['', Validators.required],
-      class: ['', Validators.required],
-      franchisee: ['', Validators.required],
+      schoolURL: ['', Validators.required],
+      schoolName: ['', Validators.required],
+      schoolCity: ['', Validators.required],
+      schoolLocality: ['', Validators.required],
       otp: ['', Validators.required],
     })
   }
@@ -65,7 +67,7 @@ export class AdmissionsComponent implements OnInit {
 
   getseo() {
     let tbody = {
-      slug: 'admissions',
+      slug: 'convert-to-an-mlzs',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
@@ -167,7 +169,7 @@ export class AdmissionsComponent implements OnInit {
       "ClassId": this.admissionForm.get('class')?.value,
       "ProjectId": "3607",
       "Location": this.selectFranchiseeCode,
-      "Location_name": this.admissionForm.get('franchisee')?.value,
+      "Location_name": this.admissionForm.get('schoolName')?.value,
       "Country": "India",
       "Product": "259262000039670041"
     }

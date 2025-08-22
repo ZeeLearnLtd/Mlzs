@@ -8,9 +8,10 @@ section {
     .card-404 {
       max-width: 700px;
       width: 100%;
+      height:60vh;
       border: 0;
       border-radius: 1.25rem;
-      margin-top: 3rem;
+      margin-top:7rem;
       text-align: center;
       overflow: hidden;
     }

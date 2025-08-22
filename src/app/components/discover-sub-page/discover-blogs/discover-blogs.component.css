@@ -231,11 +231,7 @@ h1{
 }
 
 .cascade-slide {
-  height: 220px; /* must match slideHeight in TS */
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 230px;
 }
 
 .cascade-slide .card {

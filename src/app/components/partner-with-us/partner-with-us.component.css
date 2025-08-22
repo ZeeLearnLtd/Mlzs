@@ -52,7 +52,10 @@
   position: relative;
   z-index: 1;
 }
-.text_bg { width: 7%; height: 20px; bottom: 1.8rem; }
+.text_bg {     
+  width: 18%;
+  height: 20px;
+  bottom: 1.8rem; }
 .award_bg_img { width: 15%; height: 20px; bottom: 1.7rem; }
 
 .about_img_content img, .fr_img_content img { width: 85%; }

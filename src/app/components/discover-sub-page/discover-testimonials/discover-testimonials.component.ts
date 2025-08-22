@@ -193,17 +193,17 @@ export class DiscoverTestimonialsComponent {
 
 
   getSafeEmbedUrl(url: string): SafeResourceUrl {
-    let videoId = '';
-    if (url == undefined) {
-      return ''
-    }
-    if (url.includes('youtu.be/')) {
-      videoId = url.split('youtu.be/')[1];
-    } else if (url.includes('watch?v=')) {
-      videoId = new URL(url).searchParams.get('v') || '';
-    } else if (url.includes('embed/')) {
-      videoId = url.split('embed/')[1];
-    }
+    let videoId = url;
+    // if (url == undefined) {
+    //   return ''
+    // }
+    // if (url.includes('youtu.be/')) {
+    //   videoId = url.split('youtu.be/')[1];
+    // } else if (url.includes('watch?v=')) {
+    //   videoId = new URL(url).searchParams.get('v') || '';
+    // } else if (url.includes('embed/')) {
+    //   videoId = url.split('embed/')[1];
+    // }
 
     const embedUrl = `https://www.youtube.com/embed/${videoId}`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);

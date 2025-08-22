@@ -1,0 +1,298 @@
+.start_school_banner{
+    background-image: url('../../../assets/img/MLZS/banner/conver_to_mlzs.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-top: 8rem;
+    /* height: 500px; */
+}
+
+.francine_form{
+    width:70%;
+    margin: 10px 35px 15px 10px;
+    padding: 10px 25px;
+    background-color: #fff;
+}
+.verify_otp_btn{
+    font-size: 10px;
+    padding: 2px 5px !important;
+    float: right;
+    margin: 7px 0px;
+}
+.validMsg{
+    font-size: 12px;
+    color: green;
+    text-align: right;
+    margin-top: 3px;
+}
+.inValidMsg{
+    font-size: 12px;
+    color: red;
+    text-align: right;
+    margin-top: 3px;
+}
+.msg_txt{
+    font-size: 12px;
+}
+label{
+    font-size: 12px;
+}
+.icon_list{
+    position: relative;
+    top:23rem;
+    left: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.title{
+  color: #014876;
+  font-family: 'Poppins' !important;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+.menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left: 5.5rem;
+    padding: 10px;
+}
+
+.about_content{
+    width: 100%;
+}
+
+.title_content h2{
+    position: relative;
+    z-index: 9;
+}
+.title_content p{
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.text_bg{
+    width: 10%;
+    height: 25px;
+    position: relative;
+    bottom: 1.9rem;
+    z-index: 1;
+
+}
+
+.about_img_content img{
+width: 80%;
+}
+
+.desktop_content{
+    display: block;
+}
+
+.mobile_content{
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .icon_list{
+        position: relative;
+        top: 0rem;
+        left: 0rem;
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0rem;
+    }
+    .desktop_content{
+        display: none;
+    }
+    .francine_form{
+        width: 85%;
+        float: right;
+        margin: 10px 15px 55px 10px;
+        padding: 10px 25px;
+        background-color: #C4DEFD;
+    }
+    .mobile_content{
+        /* background-color: #184A8C; */
+        display: block;
+    }
+    .menu_content{
+        width: 100%;
+    }
+
+    h1{
+        font-family: 'Montserrat_bold';
+    }
+    .bannerTitle{
+        text-align: center;
+        margin-top: 5rem;
+        
+    }
+    .year{
+        color: #48C7F4;
+        font-family: Montserrat;
+    }
+}
+
+/* #about_content_bg{
+    width: 100%;
+    padding: 55px 0px;
+    background-color: rgb(0, 72, 120);
+} */
+
+#about_content_bg .text_bg{
+    width: 23%;
+    position: relative;
+    bottom: 1.5rem;
+    z-index: 1;
+}
+
+.count_content{
+    font-size: 22px;
+    margin-top:8px;
+    font-family:'Inter';
+    color: #014876;
+}
+
+.title_content p{
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #212529;
+}
+
+.img_box img{
+    width: 12%;
+}
+
+#title_content h2{
+    position: relative;
+    z-index: 9;
+
+}
+
+
+/* our pedagogy css */
+
+.our_pedagogy_content{
+    width: 100%;
+    padding: 55px 0px;
+    background-color: rgb(0, 72, 120);
+}
+
+.title_content h2{
+    position: relative;
+    z-index: 9;
+}
+.award_box .text_bg{
+    width: 8%;
+    height: 18px;
+    position: relative;
+    bottom: 1.7rem;
+    z-index: 1;
+    left: 2rem;
+}
+
+.about_img_content img{
+width: 80%;
+}
+
+.counter_text p{
+    font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+    .menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left:0rem;
+    padding: 10px;
+}
+    .title_content h2{
+    position: relative;
+    z-index: 9;
+    text-align: center;
+}
+    .text_bg{
+    width: 23%;
+    position: relative;
+    bottom: 1.2rem;
+    left: 8rem;
+    z-index: 1;
+}
+    .read_mode{
+    background-color: #44C8F5;
+    color: #004877;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    font-size: 13px;
+    width: auto !important;
+    margin: 15px 15px;
+}
+    #title_content h2{
+    position: relative;
+    z-index: 9;
+    text-align: center;
+}
+/* .about_content{
+margin-top: 4rem;
+} */
+.about_img_content{
+margin-top: 10px;
+}
+}
+
+.img_box img{
+    width: 15%;
+}
+
+.gallery_box{
+    width: 85%;
+    margin: auto;
+}
+
+.read_mode {
+    background-color: #44C8F5;
+    color: #004877;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    font-size: 13px;
+    width: 30%;
+    margin: 15px 15px;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#FFF;
+    font-size: 13px;
+    padding: 10px 25px;
+    background-color:#014876;
+    margin: 5px;
+}
+
+.nav-link:focus, .nav-link{
+    color:#014876;
+    font-size: 13px;
+    padding: 10px 25px;
+    background-color: #44C8F5;
+    margin: 5px;
+}

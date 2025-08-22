@@ -139,7 +139,7 @@ export class OurParentsComponent {
         safeUrl: this.getSafeEmbedUrl(obj.slug)
       };
     });
-    console.log('this.ParentTestimonial')
+    console.log('this.ParentTestimonial', this.ParentTestimonial)
   }
 
 
@@ -164,15 +164,15 @@ export class OurParentsComponent {
       return this.sanitizer.bypassSecurityTrustResourceUrl('');
     }
 
-    let videoId = '';
+    let videoId = url;
 
-    if (url.includes('youtu.be/')) {
-      videoId = url.split('youtu.be/')[1];
-    } else if (url.includes('watch?v=')) {
-      videoId = new URL(url).searchParams.get('v') || '';
-    } else if (url.includes('embed/')) {
-      videoId = url.split('embed/')[1];
-    }
+    // if (url.includes('youtu.be/')) {
+    //   videoId = url.split('youtu.be/')[1];
+    // } else if (url.includes('watch?v=')) {
+    //   videoId = new URL(url).searchParams.get('v') || '';
+    // } else if (url.includes('embed/')) {
+    //   videoId = url.split('embed/')[1];
+    // }
 
     const embedUrl = `https://www.youtube.com/embed/${videoId}`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);

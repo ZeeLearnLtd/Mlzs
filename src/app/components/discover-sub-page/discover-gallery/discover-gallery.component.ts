@@ -186,16 +186,17 @@ export class DiscoverGalleryComponent {
   }
 
   getSafeEmbedUrl(url: string): SafeResourceUrl {
-    let videoId = '';
+    let videoId = url;
+    console.log('videoId1', videoId)
     if (url) {
-      if (url.includes('youtu.be/')) {
-        videoId = url.split('youtu.be/')[1];
-      } else if (url.includes('watch?v=')) {
-        videoId = new URL(url).searchParams.get('v') || '';
-      } else if (url.includes('embed/')) {
-        videoId = url.split('embed/')[1];
-      }
-
+      // if (url.includes('youtu.be/')) {
+      //   videoId = url.split('youtu.be/')[1];
+      // } else if (url.includes('watch?v=')) {
+      //   videoId = new URL(url).searchParams.get('v') || '';
+      // } else if (url.includes('embed/')) {
+      //   videoId = url.split('embed/')[1];
+      // }
+      console.log('videoId2', videoId)
       const embedUrl = `https://www.youtube.com/embed/${videoId}`;
       return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
     } else {

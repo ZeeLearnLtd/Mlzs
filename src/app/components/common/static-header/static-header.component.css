@@ -8,18 +8,21 @@
     padding: 7px;
 }
 
-.nav_logo{
+.nav_logo {
     width: 16%;
 }
 
-.nav-sub-item{
+
+.nav-sub-item {
     margin-left: 25px;
     font-weight: 600;
     font-size: 13px;
 }
-nav{
+
+nav {
     padding: 0;
 }
+
 .btn_content {
     display: flex;
     justify-content: center;
@@ -29,21 +32,22 @@ nav{
 .white_btn:active {
     scale: 0.9;
 }
-.startBtn:active{
+
+.startBtn:active {
     scale: 0.9;
 }
-.kidzee_logo_img{
+
+.kidzee_logo_img {
     position: relative;
     left: 0rem;
     cursor: pointer;
 }
-.brand_icon{
+
+.brand_icon {
     position: relative;
     right: 0rem;
 }
-.convert_btn{
-    font-size: 12px;
-}
+
 .white_btn {
     background-color: #FFF;
     padding: 5px 10px 5px 10px;
@@ -54,7 +58,8 @@ nav{
     margin: 5px;
     transition: all ease 0.2s;
 }
-.startBtn{
+
+.startBtn {
     background-color: #FFF;
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
@@ -64,6 +69,7 @@ nav{
     margin: 5px;
     transition: all ease 0.2s;
 }
+
 .whiteHeader_dark {
     top: 0px;
     position: fixed;
@@ -89,11 +95,13 @@ ul li a {
     font-weight: normal;
     cursor: pointer;
 }
+
 .whiteHeader_dark ul li a {
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
 }
+
 .header_logo {
     background-image: url('../../../../assets/img/KidzeeFooterLogo.png');
     background-position: center;
@@ -104,6 +112,7 @@ ul li a {
     margin: 0px 0px 0px 60px;
     cursor: pointer;
 }
+
 .header_logo_whiteText {
     background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
     background-position: center;
@@ -128,18 +137,21 @@ ul li a {
 .navbar1 {
     display: none;
 }
-.dropdown-menu a{
-    color: #FFF;
-    font-weight: normal;
-    cursor: pointer;
-    background-color: #004878 ;
-}
-.dropdown-menu a:hover{
+
+.dropdown-menu a {
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
     background-color: #004878;
 }
+
+.dropdown-menu a:hover {
+    color: #FFF;
+    font-weight: normal;
+    cursor: pointer;
+    background-color: #004878;
+}
+
 /* dropdown menu css */
 
 @media (min-width: 768px) {
@@ -159,7 +171,7 @@ ul li a {
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: fixed;
-    background-color: #004878 ;
+    background-color: #004878;
 }
 
 .dropdown-item {
@@ -168,7 +180,7 @@ ul li a {
     background-color: #004878;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
     background-color: #004878;
 }
 
@@ -187,41 +199,49 @@ ul li a {
 .navbar-toggler {
     display: none;
 }
-.desktop_nav{
+
+.desktop_nav {
     display: block;
 }
-.mobile_nav{
+
+.mobile_nav {
     display: none;
 }
+
 @media screen and (max-width: 600px) {
-    .label_menu{
-         width: 45%;
+    .label_menu {
+        width: 45%;
     }
-    .desktop_nav{
+
+    .desktop_nav {
         display: none;
     }
-    .mobile_nav{
+
+    .mobile_nav {
         display: block;
     }
-    .top_header{
+
+    .top_header {
         width: 100%;
         position: fixed;
         padding: 10px;
-        top:auto !important;
+        top: auto !important;
         bottom: 0 !important;
         z-index: 999;
-        background-color:#004878; 
-     }
+        background-color: #004878;
+    }
+
     .btn_content {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 35px;
     }
-    .nav-link{
+
+    .nav-link {
         color: #FFF !important;
     }
-    
+
     .white_btn {
         background-color: #FFF;
         padding: 5px 3px 5px 3px;
@@ -233,15 +253,18 @@ ul li a {
         margin: 5px;
         transition: all ease 0.2s;
     }
-    .startBtn{
-        font-size:8px;
+
+    .startBtn {
+        font-size: 8px;
         margin: 5px 5px 5px 5px;
     }
+
     .navbar1 ul li a {
         color: #FFF !important;
         font-weight: normal;
         cursor: pointer;
     }
+
     #headerLogo {
         display: block;
         cursor: pointer;
@@ -264,19 +287,20 @@ ul li a {
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        width:60px;
+        width: 60px;
         height: 20px;
         margin: 0px 0px 0px 5px;
         position: fixed;
         top: 15px;
         left: 0px;
     }
+
     .header_logo_whiteText {
         background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        width:60px;
+        width: 60px;
         height: 20px;
         margin: 0px 0px 0px 5px;
         position: fixed;
@@ -303,6 +327,7 @@ ul li a {
         right: 9px;
         top: 9px;
     }
+
     .menu_icon {
         background-image: url('../../../../assets/img/menu.png');
         background-repeat: no-repeat;
@@ -345,7 +370,7 @@ ul li a {
         z-index: 9999;
     }
 
-    .dropdown:hover .dropdown-menu{
+    .dropdown:hover .dropdown-menu {
         display: block;
         margin-top: 0;
         cursor: pointer;
@@ -362,9 +387,11 @@ ul li a {
 .white_btn:active {
     scale: 0.9;
 }
-.startBtn:active{
+
+.startBtn:active {
     scale: 0.9;
 }
+
 .white_btn {
     background-color: #FFF;
     padding: 5px 10px 5px 10px;
@@ -375,7 +402,8 @@ ul li a {
     margin: 5px;
     transition: all ease 0.2s;
 }
-.startBtn{
+
+.startBtn {
     background-color: #FFF;
     padding: 5px 10px 5px 10px;
     border-radius: 0px 53px 53px 53px;
@@ -385,6 +413,7 @@ ul li a {
     margin: 5px;
     transition: all ease 0.2s;
 }
+
 ul li a {
     color: #FFF;
     font-weight: normal;
@@ -415,32 +444,35 @@ ul li a {
     position: relative;
     left: 1.5rem;
 }
-.navbar-nav li > a {
-	text-transform: capitalize;
-	color: #403C39;
-	transition: background-color .2s, color .2s;
-	
-	&:hover,
-	&:focus {
-		/* background-color: #FFF200; */
-		color: #004878;
+
+.navbar-nav li>a {
+    text-transform: capitalize;
+    color: #403C39;
+    transition: background-color .2s, color .2s;
+
+    &:hover,
+    &:focus {
+        /* background-color: #FFF200; */
+        color: #004878;
         font-weight: 700;
-	}
+    }
 }
 
-.navbar-nav li.active > a {
-	/* background-color: #FFF200; */
+.navbar-nav li.active>a {
+    /* background-color: #FFF200; */
     color: #004878;
     font-weight: 700;
 }
+
 .nav-item {
     margin-left: 2px;
     font-weight: 600;
     font-size: 12px;
     font-family: 'Poppins';
 }
-.nav-sub-item{
-    margin-left:10px;
+
+.nav-sub-item {
+    margin-left: 10px;
     font-weight: 600;
     font-size: 12px;
 }
@@ -449,18 +481,20 @@ ul li a {
     display: none;
 }
 
-.dropdown-menu a{
-    color: #FFF;
-    font-weight: normal;
-    cursor: pointer;
-    background-color: #004878 ;
-}
-.dropdown-menu a:hover{
+.dropdown-menu a {
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
     background-color: #004878;
 }
+
+.dropdown-menu a:hover {
+    color: #FFF;
+    font-weight: normal;
+    cursor: pointer;
+    background-color: #004878;
+}
+
 /* dropdown menu css */
 
 @media (min-width: 768px) {
@@ -480,7 +514,7 @@ ul li a {
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: fixed;
-    background-color: #004878 ;
+    background-color: #004878;
 }
 
 .dropdown-item {
@@ -509,8 +543,9 @@ ul li a {
 .navbar-toggler {
     display: none;
 }
+
 @media screen and (max-width: 600px) {
-    .navbar-toggler{
+    .navbar-toggler {
         position: fixed;
         display: block;
         width: 9%;
@@ -521,26 +556,28 @@ ul li a {
         background-color: #FFF200;
         border-radius: 50%;
     }
-   .kidzee_logo_img{
-    position: fixed;
-    top: 0px;
-    left: auto !important;
-    right: 10px !important;
-    width: 20%;
-   }
+
+    .kidzee_logo_img {
+        position: fixed;
+        top: 0px;
+        left: auto !important;
+        right: 10px !important;
+        width: 20%;
+    }
+
     .ul_content {
         background-image: none !important;
-        width:90%;
+        width: 90%;
         margin: auto;
         padding: 0px 16px 0px 0px;
         display: flex;
-        justify-content:start !important;
-        align-items:normal !important;
+        justify-content: start !important;
+        align-items: normal !important;
         padding: 26px 0px 26px 0px;
         left: 0px;
     }
 
-    .whiteHeader{
+    .whiteHeader {
         top: 0px;
         position: fixed;
         color: #fff;
@@ -552,16 +589,17 @@ ul li a {
         display: block;
     }
 
-    .btn_header{
-     background-color: #EBE1FF;
+    .btn_header {
+        background-color: #EBE1FF;
     }
+
     .btn_content {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 35px;
     }
-    
+
     .white_btn {
         background-color: #FFF;
         padding: 5px 3px 5px 3px;
@@ -573,10 +611,12 @@ ul li a {
         margin: 5px;
         transition: all ease 0.2s;
     }
-    .startBtn{
-        font-size:8px;
+
+    .startBtn {
+        font-size: 8px;
         margin: 5px 5px 5px 5px;
     }
+
     #headerLogo {
         display: block;
         cursor: pointer;
@@ -587,7 +627,7 @@ ul li a {
     }
 
     #navbarNav {
-        margin-top:15px;
+        margin-top: 15px;
     }
 
     .whiteHeader_dark {
@@ -599,7 +639,7 @@ ul li a {
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        width:60px;
+        width: 60px;
         height: 20px;
         margin: 0px 0px 0px 5px;
         position: absolute;
@@ -619,6 +659,7 @@ ul li a {
         background-size: 100%;
         cursor: pointer;
     }
+
     .navbar-toggler {
         position: absolute;
         display: block;
@@ -626,38 +667,41 @@ ul li a {
         height: 33px;
         right: 9px;
         top: 9px;
-     }
+    }
+
     .menu_icon {
         background-image: url('../../../../assets/img/menu.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 32px;
-            position: static;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 30px;
-            width: 30px;
-            padding: 0px;
-            border-radius: 50%;
-            /* background-color: #FFF200; */
-        }
-.navbar {
-    overflow: hidden;
-    height: auto !important;
-}
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 32px;
+        position: static;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 30px;
+        width: 30px;
+        padding: 0px;
+        border-radius: 50%;
+        /* background-color: #FFF200; */
+    }
+
+    .navbar {
+        overflow: hidden;
+        height: auto !important;
+    }
+
     .toggle {
         border: 1px solid;
         height: 20px;
         width: 20px;
     }
 
-    #navbarNav{
+    #navbarNav {
         background-color: #004878;
         color: #FFF;
         position: fixed;
-        left:0px;
-        right:0px;
-        top:1.4rem;
+        left: 0px;
+        right: 0px;
+        top: 1.4rem;
     }
 
     .navbar1 {
@@ -679,16 +723,18 @@ ul li a {
         position: relative;
         z-index: 9999;
     }
-    #closeMenu{
+
+    #closeMenu {
         display: none;
     }
 
-    .dropdown:hover .dropdown-menu{
+    .dropdown:hover .dropdown-menu {
         display: block;
         margin-top: 0;
         cursor: pointer;
     }
-    .navbar1 .open{
+
+    .navbar1 .open {
         visibility: visible;
         -webkit-transform: translateY(0%);
         transform: translateY(0%);
@@ -699,27 +745,46 @@ ul li a {
 }
 
 /* mlzs css header */
-.admission_btn{
-border: 1px solid #FFF;
-border-radius:5px;
-font-size: 12px;
-color: #FFF;
-transition: 0.6s;
-}
-
-.admission_btn:hover{
-    background-color:#FFF;
-    border-radius:5px;
-    color: #004878;
+.admission_btn {
+    border-radius: 5px;
     font-size: 12px;
-    }
-
-.right_botder_btn{
-border-right: 1px solid #FFF;
-font-size: 12px;
-border-radius:0;
+    color: #FFF;
+    transition: 0.6s;
 }
-.top_header{
+
+.admission_btn:hover {
+    border-radius: 5px;
+    color: #dcd1d1;
+    font-size: 12px;
+}
+
+.right_botder_btn {
+    border-right: 1px solid #FFF;
+    border-left: 1px solid #fff;
+    font-size: 12px;
+    border-radius: 0;
+    transition: 0.6s;
+    color: #fff;
+}
+
+.right_botder_btn:hover {
+    font-size: 12px;
+    border-radius: 0;
+    color: #dcd1d1 !important;
+}
+
+.convert_btn{
+    font-size: 12px;
+    color: #fff;
+    transition: 0.6s;
+}
+.convert_btn:hover{
+    font-size: 12px;
+    color: #dcd1d1 !important;
+    
+}
+
+.top_header {
     width: 100%;
     position: fixed;
     padding: 10px;
@@ -727,5 +792,5 @@ border-radius:0;
     right: 0;
     top: 0;
     z-index: 999;
-    background-color:#004878; 
- }
+    background-color: #004878;
+}

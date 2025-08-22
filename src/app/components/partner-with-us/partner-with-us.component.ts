@@ -62,7 +62,7 @@ export class PartnerWithUsComponent {
 
   getseo() {
     let tbody = {
-      slug: 'start-school',
+      slug: 'partner-with-us',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
