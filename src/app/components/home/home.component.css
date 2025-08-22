@@ -245,3 +245,15 @@ h1 {
 .counter_img {
     width: 20%;
 }
+
+.banner_content .carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    border:none;
+    background-color: #004878;
+    border-radius: 100%;
+}

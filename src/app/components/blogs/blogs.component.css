@@ -19,9 +19,24 @@
         position: relative;
         overflow: hidden;
         border-radius: 15px;
+        width: 95%;
+        height:300px;
     }
     .blog-card img {
-        width: 100%;
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .sub_blog_card{
+         position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        height:300px;
+        width:95%;
+    }
+    .sub_blog_card img{
+     width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;

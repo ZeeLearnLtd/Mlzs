@@ -93,6 +93,7 @@ import { CurriculumComponent } from './components/curriculum/curriculum.componen
 import { GetInTouchComponent } from './components/get-in-touch/get-in-touch.component';
 import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
 import { ProgrammesSubTabComponent } from './components/programmes-sub-tab/programmes-sub-tab.component';
+import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-mlzs.component';
 interface NgxSpinnerConfig {
   type?: string;
 }
@@ -183,6 +184,7 @@ interface NgxSpinnerConfig {
     PartnerWithUsComponent,
     ProgrammesSubTabComponent,
     SafeUrlPipe,
+    ConvertToMLZSComponent
   ],
   imports: [
 

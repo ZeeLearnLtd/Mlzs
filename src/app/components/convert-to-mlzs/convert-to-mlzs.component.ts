@@ -1,0 +1,225 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProjectSeoService } from 'src/app/services/projectseo.service';
+import { environment } from 'src/environments/environment';
+import { ApicallService } from 'src/app/services/apicall.service';
+import { stringify } from 'querystring';
+import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+@Component({
+  selector: 'app-convert-to-mlzs',
+  templateUrl: './convert-to-mlzs.component.html',
+  styleUrls: ['./convert-to-mlzs.component.css']
+})
+export class ConvertToMLZSComponent {
+  headerTitle = "Admissions";
+  otpInput: boolean = false
+  otp_msg: any;
+  otp_ValidMsg: boolean = false
+  otp_inValidMsg: boolean = false
+  segment: any
+  stateContentDataList: any;
+  stateId: any;
+  selectCity: any;
+  cityList: any;
+  cityId: any;
+  selectFranchisee: any;
+  submitted: boolean = false
+  franchiseeCode: any;
+  selectClasslist: any;
+  admissionForm: FormGroup;
+  randomOtp: any;
+  selectFranchiseeCode: any;
+  classId: any;
+  selectClassName: any;
+  cityListName: any;
+  stateListName: any;
+  constructor(private _activeRoute: ActivatedRoute,
+    private projectService: ProjectSeoService, private router: Router,
+    private fb: FormBuilder,
+    private apiService: ApicallService,
+    private toastr: ToastrService,
+    private activatedRoute: ActivatedRoute) {
+    this.admissionForm = fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mobileNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      state: ['', Validators.required],
+      city: ['', Validators.required],
+      schoolURL: ['', Validators.required],
+      schoolName: ['', Validators.required],
+      schoolCity: ['', Validators.required],
+      schoolLocality: ['', Validators.required],
+      otp: ['', Validators.required],
+    })
+  }
+  ngOnInit(): void {
+    this.getAdmissionFormData();
+    // const urlSegments = this.activatedRoute.snapshot.url;
+    // this.segment = urlSegments[0]?.path;
+    this._activeRoute.queryParams.subscribe(
+      res => {
+      }
+    )
+    this.getseo();
+  }
+
+
+  getseo() {
+    let tbody = {
+      slug: 'convert-to-an-mlzs',
+      Projectid: environment.projectid,
+    };
+    this.apiService.getGetseo(tbody).subscribe((data: any) => {
+      this.projectService.sendMessagebread(data?.data?.breadcrumb);
+      this.projectService.sendMessageblog(data?.data?.blog);
+      this.projectService.sendMessageseo(data?.data?.testimony);
+      this.projectService.sendMessageFaqs(data?.data?.faq);
+      this.projectService.setmeta(data.data);
+    });
+  }
+
+  getAdmissionFormData() {
+    this.apiService.getAllAdmissionData().subscribe((
+      res => {
+        this.stateContentDataList = res.root.subroot;
+      }
+    ))
+  }
+
+  onChangeState(id: any) {
+    this.cityList = [];
+    this.stateId = id.value;
+    this.selectCity = this.stateContentDataList.filter((item: any) => {
+      return item.State_ID == this.stateId
+    })
+    this.cityList = this.selectCity[0].City;
+
+    if (typeof this.cityList.CityName === 'string') {
+      this.cityList = [this.cityList];
+    } else {
+      this.cityList = this.cityList;
+    }
+    this.stateListName = this.stateContentDataList.filter((item: any) => {
+      return item.State_ID == this.stateId
+    })
+
+    this.stateListName = this.stateListName[0].StateName
+  }
+
+  onChangeCity(id: any) {
+    this.cityId = id.value;
+    this.selectFranchisee = this.cityList.filter((item: any) => {
+      return item.CityID == this.cityId
+    })
+    this.selectFranchisee = [this.selectFranchisee[0].Franchisee]
+    this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
+    this.cityListName = this.cityList.filter((item: any) => {
+      return item.CityID == this.cityId
+    })
+
+    this.cityListName = this.cityListName[0].CityName
+  }
+  onChangeFranchisee(id: any) {
+    this.franchiseeCode = id.value;
+    this.selectClasslist = this.selectFranchisee.filter((item: any) => {
+      return item.Franchisee_Code == this.franchiseeCode
+    })
+    this.selectClasslist = this.selectClasslist[0].classlist
+  }
+
+  onchangeClass(id: any) {
+    this.classId = id.value
+    this.selectClassName = this.selectClasslist.filter((item: any) => {
+      return item.SchoolClassID == this.classId
+    })
+    this.selectClassName = this.selectClassName[0].ClassName
+  }
+
+  get f() {
+    return this.admissionForm.controls;
+  }
+  validationForm() {
+    this.submitted = true;
+    if (this.admissionForm.invalid) {
+      return;
+    } else {
+      this.onSubmit()
+    }
+
+  }
+  onSubmit() {
+    let obj = {
+      "utm_medium": "Website",
+      "utm_source": "Website",
+      "utm_compaign": "Website",
+      "utm_term": null,
+      "utm_content": null,
+      "utm_ad": null,
+      "gclid": null,
+      "Type": "P",
+      "Source": "Website",
+      "FirstName": this.admissionForm.get('name')?.value,
+      "Email": this.admissionForm.get('email')?.value,
+      "Mobile": this.admissionForm.get('mobileNo')?.value,
+      "State": this.stateListName,
+      "City": this.cityListName,
+      "LocationId": this.selectFranchiseeCode,
+      "class": this.selectClassName,
+      "ClassId": this.admissionForm.get('class')?.value,
+      "ProjectId": "3607",
+      "Location": this.selectFranchiseeCode,
+      "Location_name": this.admissionForm.get('schoolName')?.value,
+      "Country": "India",
+      "Product": "259262000039670041"
+    }
+
+    this.apiService.postAdmissionForm(obj).subscribe(
+      res => {
+        this.toastr.success('Admission submit successfully!');
+        this.otp_ValidMsg = false;
+        this.otp_inValidMsg = false;
+        this.router.navigate(['admission/thankyou'])
+        this.admissionForm.reset();
+        this.submitted = false
+      }
+    )
+  }
+
+  getMobileNO() {
+    if ((this.admissionForm.get('mobileNo')?.value).length == 10) {
+      this.sendMobNO();
+    }
+  }
+
+  sendMobNO() {
+    this.randomOtp = Math.floor(1000 + Math.random() * 9000);
+    let mobNo = {
+      "MobileNo": this.admissionForm.get('mobileNo')?.value,
+      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}` + `. Think Education. Think Zee Learn.`,
+      "sResponse": "",
+      "header": "ZLMLZS"
+    }
+
+    this.apiService.getOtp(mobNo).subscribe(
+
+      res => {
+        this.otpInput = true;
+      },
+      error => {
+      }
+    )
+  }
+
+  verifyOTP() {
+    if ((this.admissionForm.get('otp')?.value).length == 4) {
+      if (this.randomOtp == this.admissionForm.get('otp')?.value) {
+        this.otp_ValidMsg = true;
+        this.otp_inValidMsg = false;
+      } else {
+        this.otp_inValidMsg = true;
+        this.otp_ValidMsg = false;
+      }
+    }
+  }
+}

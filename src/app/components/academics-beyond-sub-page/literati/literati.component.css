@@ -67,7 +67,10 @@ section{
     padding: 0; 
     line-height: 30px;
   }
-
+.programm_para{
+    margin: 38px 52px;
+    text-align: justify;
+}
   @media screen and (max-width: 600px) {
     .programm_para{
       margin:38px 30px !important;

@@ -760,6 +760,7 @@ ul li a {
 
 .right_botder_btn {
     border-right: 1px solid #FFF;
+    border-left: 1px solid #fff;
     font-size: 12px;
     border-radius: 0;
     transition: 0.6s;

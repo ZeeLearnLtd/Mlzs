@@ -162,6 +162,17 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+    .faq_bg {
+    background-color: rgba(1, 72, 118, 1) !important;
+    margin-top: 2rem;
+    }
+    .faq_bg p{
+        padding:0rem 2rem;
+    }
+    .programm_img_content img{
+        width: 100% !important;
+        margin-top: 1rem;
+    }
     .news_text{
     padding: 0rem 1.3rem 0rem 0rem;
     text-align: left;

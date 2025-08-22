@@ -130,7 +130,7 @@ export class DiscoverBlogsComponent {
     let tbody = {
       Type: "blog",
       pageurl: '',
-      Project_Id: 1
+      Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       if (data?.data[0]?.contentData) {

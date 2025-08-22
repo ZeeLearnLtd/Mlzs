@@ -50,6 +50,7 @@ export class BlogsComponent implements OnInit {
         if (message) {
 
           this.blogdata = message.text;
+          console.log('blogdata', this.blogdata)
         }
       });
     this.getblog_data();
