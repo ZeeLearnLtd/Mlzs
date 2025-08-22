@@ -26,6 +26,38 @@ section{
   margin-bottom:20px;
 }
 @media screen and (max-width: 600px) {
+  .img_box_big img{
+    object-fit: cover;
+    width: 100%;
+    height: auto !important;
+    border: 1px solid #eee;
+}
+  .img_box_big{
+    width: 100%;
+    height: auto !important;
+    border: 1px solid #eee;
+}
+.category_blog_content{
+    height:auto !important;
+    margin-bottom: 2rem;
+    overflow-y: auto;
+}
+  .cascade-slider_container{
+    width: 100%;
+    height: 79rem !important;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+}
+  .news_text{
+    padding: 0rem 1.3rem 0rem 0rem;
+    text-align: left;
+    margin: 1rem 0;
+}
+  .cascade-slide{
+    height:auto !important;
+    margin-top: 1rem;
+}
 .programmes_main_page{
   margin-top: 10px;
 }
@@ -165,7 +197,105 @@ h1{
     border: 1px solid #eee;
 }
 
+
+.img_box_big img{
+    object-fit: cover;
+    width: 100%;
+    height:700px;
+    border: 1px solid #eee;
+}
+.img_box_big{
+  overflow: hidden;
+    width: 100%;
+    height:700px;
+    border: 1px solid #eee;
+}
+
 .category_blog_content{
-  height: 700px;
+  height: 750px;
   overflow-y: auto;
+}
+
+.cascade-slider_container {
+  width: 100%;
+  height: 660px; /* 3 * slideHeight */
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.cascade-slider_slides {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s ease-in-out;
+}
+
+.cascade-slide {
+  height: 220px; /* must match slideHeight in TS */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cascade-slide .card {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cascade-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.cascade-controls button {
+  margin: 4px 0;
+  border: none;
+  background: #eee;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.cascade-controls button:hover {
+  background: #ddd;
+}
+
+.cascade-dots {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s, height 0.3s;
+}
+
+.dot.active {
+    background: #673ab7;
+    height: 25px;
+    border-radius: 10px;
+}
+
+.news_text{
+  padding: 0 1.3rem 0 0;
+  text-align: left;
 }

@@ -6,6 +6,7 @@ import { HomeSeoService } from 'src/app/services/homeseo.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { NgxSpinnerService } from "ngx-spinner";
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { tns } from 'tiny-slider/src/tiny-slider';
@@ -16,6 +17,7 @@ declare var $: any;  // Declare jQuery
   styleUrls: ['./discover-blogs.component.css']
 })
 export class DiscoverBlogsComponent {
+  slides: any[] = [];
   projectId = environment.projectid
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
@@ -29,7 +31,12 @@ export class DiscoverBlogsComponent {
   alldata: any = [];
   categoriesList: any;
   categoryWiseData: any;
+  totalPages: number = 0;
   selectedCategoryId: any;
+  currentIndex = 0;
+  interval: any;
+  searchValue: string = '';
+  currentIndexMap: { [categoryId: string]: number } = {};
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -37,59 +44,71 @@ export class DiscoverBlogsComponent {
     private apiService: ApicallService,
     private _service: ApicallService,
     private sanitizer: DomSanitizer,
+    private spinner: NgxSpinnerService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    //
-  }
-  slides = [
-    { id: 0 }, { id: 1 }, { id: 2 },
-    { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }
-  ];
-  ngAfterViewInit(): void {
-    setTimeout(() => { // wait for *ngFor DOM render
-      this.categoryWiseData.forEach((_: any, index: any) => {
-        tns({
-          container: `#slider-${index}`,
-          items: 3,
-          axis: 'vertical',
-          swipeAngle: true,
-          speed: 400,
-          mouseDrag: true,
-          controls: true,
-          nav: false
-        });
-      });
-    }, 0);
-  }
 
-
-  // ngAfterViewInit(): void {
-  //   if (isPlatformBrowser(this.platformId)) {
-  //     setTimeout(() => {
-  //       const owl = $('.news_owl');
-  //       owl.owlCarousel({
-  //         items: 3,
-  //         margin: 25,
-  //         loop: true,
-  //         nav: false,
-  //         dots: true,
-  //         autoplay: true,
-  //         autoplayTimeout: 3000,
-  //         smartSpeed: 500,
-  //         responsive: {
-  //           0: { items: 1 },
-  //           600: { items: 2 },
-  //           1000: { items: 3 }
-  //         }
-  //       });
-  //     }, 500);
-  //   }
-  // }
+  }
   ngOnInit(): void {
-    // this.getBlogContentData();
     this.getseo()
 
   }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        $('.vertical_carousel').owlCarousel({
+          loop: true,
+          margin: 10,
+          items: 1,
+          nav: false,
+          animateOut: 'slideOutUp',
+          animateIn: 'slideInUp'
+        })
+
+      }, 1000)
+
+      if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => {
+          var owl = $(".news_owl");
+          owl.owlCarousel({
+            margin: 10,
+            loop: true,
+            nav: false,
+            center: true,
+            responsive: {
+              0: {
+                items: 1, // On mobile (0px and up), show 1 item
+              },
+              600: {
+                items: 2, // On tablets (600px and up), show 2 items
+              },
+              1000: {
+                items: 3, // On larger screens (1000px and up), show 3 items
+              },
+            }
+          });
+        }, 2000);
+      }
+    }
+
+  }
+
+  prepareCategoryWiseData() {
+    this.categoryWiseData = this.categoryWiseData.map((x: any) => ({
+      ...x,
+      totalPages: Math.ceil(x.blogsContent.length / 3)
+    }));
+  }
+  moveToSlide(categoryId: any, pageIndex: number) {
+    // this.currentIndex = pageIndex * 3;
+    this.currentIndexMap[categoryId] = pageIndex * 3;
+  }
+  getTranslateY(categoryId: any): string {
+    const index = this.currentIndexMap[categoryId] || 0;
+    return `translateY(-${index * 180}px)`;
+  }
+
 
   getseo() {
     let tbody = {
@@ -107,6 +126,7 @@ export class DiscoverBlogsComponent {
     });
   }
   getnews_data() {
+    this.spinner.show();
     let tbody = {
       Type: "blog",
       pageurl: '',
@@ -127,7 +147,8 @@ export class DiscoverBlogsComponent {
             (typeof news.category === 'number' && news.category === cat.categoryId)
           )
         }));
-
+        this.prepareCategoryWiseData();
+        this.spinner.hide();
       } else {
         this.blogsData = [];
         this.alldata = [];
@@ -143,14 +164,25 @@ export class DiscoverBlogsComponent {
 
   onSearchChange(event: Event) {
     const value = (event.target as HTMLInputElement).value;
-//    console.log('Search input changed:', value);
-
-    this.blogsData = this.alldata.filter((item: any) =>
+    this.categoryWiseData = this.categoryWiseData.blogsContent.filter((item: any) =>
       item?.Title?.toLowerCase().includes(value?.toLowerCase())
     );
     this.firstBlog = this.blogsData[0].OtherFiles ? this.blogsData[0].OtherFiles : this.blogsData[0].logofiles;
   }
 
+
+  // filterBlogs(category: any) {
+  //   if (!this.searchValue) {
+  //     category.blogsContent = this.categoryWiseData.find((c: any) => c.categoryId === category.categoryId).blogsContent;
+  //     return;
+  //   }
+
+  //   category.blogsContent = this.categoryWiseData
+  //     .find((c: any) => c.categoryId === category.categoryId)
+  //     .blogsContent.filter((blog: any) =>
+  //       blog.Title.toLowerCase().includes(this.searchValue.toLowerCase())
+  //     );
+  // }
   onchangecategory(id: any) {
     this.selectedCategoryId = Number(id);
     if (!this.selectedCategoryId) {
@@ -162,6 +194,7 @@ export class DiscoverBlogsComponent {
           (typeof news.category === 'number' && news.category === cat.categoryId)
         )
       }));
+      this.prepareCategoryWiseData();
     } else {
       this.categoryWiseData = this.categoriesList
         .filter((cat: any) => cat.categoryId === this.selectedCategoryId)
@@ -173,6 +206,7 @@ export class DiscoverBlogsComponent {
             (typeof news.category === 'number' && news.category === cat.categoryId)
           )
         }));
+      this.prepareCategoryWiseData();
     }
   }
 

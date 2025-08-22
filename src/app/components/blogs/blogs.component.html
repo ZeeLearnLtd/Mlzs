@@ -59,9 +59,11 @@
             <div class="row g-4">
                 <div class="col-12">
                     <div class="blog-card" style="height:300px;">
-                         <img src="{{top_blog_img}}" alt="Image with overlay" />
+                        <div *ngFor="let img of top_blog?.files">
+                         <img src="{{img.url}}" alt="Image with overlay" />
+                         </div>
                         <div class="blog-overlay">
-                            <div class="blog-date">{{top_blog?.CreatedDate}}</div>
+                            <div class="blog-date">{{top_blog?.FromDate}}</div>
                             <div class="blog-title">{{top_blog?.Title}}</div>
                         </div>
                     </div>
@@ -70,12 +72,12 @@
         </div>
         
                 <div class="col-md-4 col-sm-6 col-12" *ngFor="let a of blogdata">
-                    <div class="blog-card" style="height:250px;" routerLink="/blog/{{a.slug}}">
-                        <div *ngFor="let img of a.OtherFiles">
-                         <img src="{{img?.value}}" alt="Image with overlay" />
+                    <div class="blog-card" style="height:250px;" routerLink="/blog/{{a?.slug}}">
+                        <div *ngFor="let img of a?.files">
+                         <img src="{{img?.url}}" alt="Image with overlay" />
                         </div>
                         <div class="blog-overlay">
-                            <div class="blog-date">{{a?.CreatedDate}}</div>
+                            <div class="blog-date">{{a?.FromDate}}</div>
                             <div class="blog-title">{{a?.Title}}</div>
                         </div>
                     </div>

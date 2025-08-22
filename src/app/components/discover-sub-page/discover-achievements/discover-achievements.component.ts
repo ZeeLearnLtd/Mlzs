@@ -20,12 +20,12 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
   achievementData: any;
-  alldata:any=[];
-  Studentachievement:any=[];
-  Teacherachievement:any=[];
-  Schoolachievement:any=[];
-  AssignCategory:any=[];
-  selectedcategory:string="";
+  alldata: any = [];
+  Studentachievement: any = [];
+  Teacherachievement: any = [];
+  Schoolachievement: any = [];
+  AssignCategory: any = [];
+  selectedcategory: string = "";
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private apiService: ApicallService,
@@ -45,20 +45,17 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
       setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
-          margin: 10,
           loop: true,
-          nav: false,
-          center: true,
+          margin: 10,
+          nav: true,       // previous/next arrows
+          dots: true,
+          center: true,   // show dots
+          autoplay: true,
+          autoplayTimeout: 5000,
           responsive: {
-            0: {
-              items: 1, // On mobile (0px and up), show 1 item
-            },
-            600: {
-              items: 2, // On tablets (600px and up), show 2 items
-            },
-            1000: {
-              items: 3, // On larger screens (1000px and up), show 3 items
-            },
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 3 }
           }
         });
 
@@ -88,46 +85,45 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-      if(data?.data[0]?.contentData){
+      if (data?.data[0]?.contentData) {
         let res = data.data[0].contentData
         this.achievementData = JSON.parse(res);
         this.alldata = JSON.parse(res);
         this.assigndata();
       }
-      else{
+      else {
         this.achievementData = [];
-        this.alldata=[];
+        this.alldata = [];
       }
 
-      if(data?.data[0]?.AssignCategory){
-        this.AssignCategory=JSON.parse(data?.data[0]?.AssignCategory);
-      }else{
-        this.AssignCategory=[];
+      if (data?.data[0]?.AssignCategory) {
+        this.AssignCategory = JSON.parse(data?.data[0]?.AssignCategory);
+      } else {
+        this.AssignCategory = [];
       }
     });
 
   }
 
 
-onSearchChange(event: Event) {
-  const value = (event.target as HTMLInputElement).value;
-  //console.log('Search input changed:', value);
-  if(value){
-    this.Schoolachievement = this.alldata.filter((item:any) =>
-    item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(104)
-  );
-  this.Teacherachievement = this.alldata.filter((item:any) =>
-    item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(105)
-  );
-  this.Studentachievement = this.alldata.filter((item:any) =>
-    item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(106)
-  );
-  }else{
-    this.assigndata();
-  }
-  
+  onSearchChange(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    if (value) {
+      this.Schoolachievement = this.alldata.filter((item: any) =>
+        item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(104)
+      );
+      this.Teacherachievement = this.alldata.filter((item: any) =>
+        item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(105)
+      );
+      this.Studentachievement = this.alldata.filter((item: any) =>
+        item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(106)
+      );
+    } else {
+      this.assigndata();
+    }
 
-  if (isPlatformBrowser(this.platformId)) {
+
+    if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
@@ -151,66 +147,66 @@ onSearchChange(event: Event) {
       }, 1000)
     }
 
-}
-
-
-
-assigndata(){
-    this.Schoolachievement=this.alldata.filter((dt:any)=>{
-        return dt.category.includes(104);         //School
-    }).map((obj:any)=>{
-         return obj;
-    });
-
-    this.Teacherachievement=this.alldata.filter((dt:any)=>{
-        return dt.category.includes(105);         //Teacher
-    }).map((obj:any)=>{
-        return obj;
-    });
-
-    this.Studentachievement=this.alldata.filter((dt:any)=>{
-        return dt.category.includes(106);         //Student
-    }).map((obj:any)=>{
-        return obj;
-    });
-
-    
   }
 
-  onchangecategory(id:string){
-      if(id!=""){
-        this.achievementData=this.alldata.filter((dt:any)=>{
-          return dt.category.includes(id);         
-        }).map((obj:any)=>{
-          return obj;
-        });
-      }
-      else{
-        this.achievementData=this.alldata;
-      }
-  
-      if (isPlatformBrowser(this.platformId)) {
-        setTimeout(() => {
-          var owl = $(".news_owl");
-          owl.owlCarousel({
-            margin: 10,
-            loop: true,
-            nav: false,
-            center: true,
-            responsive: {
-              0: {
-                items: 1, // On mobile (0px and up), show 1 item
-              },
-              600: {
-                items: 2, // On tablets (600px and up), show 2 items
-              },
-              1000: {
-                items: 3, // On larger screens (1000px and up), show 3 items
-              },
-            }
-          });
-        }, 2000);
-      }
+
+
+  assigndata() {
+    this.Schoolachievement = this.alldata.filter((dt: any) => {
+      return dt.category.includes(104);         //School
+    }).map((obj: any) => {
+      return obj;
+    });
+
+    this.Teacherachievement = this.alldata.filter((dt: any) => {
+      return dt.category.includes(105);         //Teacher
+    }).map((obj: any) => {
+      return obj;
+    });
+
+    this.Studentachievement = this.alldata.filter((dt: any) => {
+      return dt.category.includes(106);         //Student
+    }).map((obj: any) => {
+      return obj;
+    });
+
+
+  }
+
+  onchangecategory(id: string) {
+    if (id != "") {
+      this.achievementData = this.alldata.filter((dt: any) => {
+        return dt.category.includes(id);
+      }).map((obj: any) => {
+        return obj;
+      });
     }
+    else {
+      this.achievementData = this.alldata;
+    }
+
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        var owl = $(".news_owl");
+        owl.owlCarousel({
+          margin: 10,
+          loop: true,
+          nav: false,
+          center: true,
+          responsive: {
+            0: {
+              items: 1, // On mobile (0px and up), show 1 item
+            },
+            600: {
+              items: 2, // On tablets (600px and up), show 2 items
+            },
+            1000: {
+              items: 3, // On larger screens (1000px and up), show 3 items
+            },
+          }
+        });
+      }, 2000);
+    }
+  }
 
 }

@@ -18,39 +18,20 @@ export class FaqsComponent {
   valCheck: boolean = false
   faqsData: any;
   img_content: any;
-  contentData: any;
 
   constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
 
   ngOnInit(): void {
     this.getfaqs_data();
   }
-
-
-  // getseo() {
-  //   let tbody = {
-  //     slug: 'faqs',
-  //     Projectid: environment.projectid,
-  //   };
-  //   this._service.getGetseo(tbody).subscribe((data: any) => {
-  //     this.projectService.sendMessageblog(data?.data?.blog);
-  //     this.projectService.sendMessageseo(data?.data?.testimony);
-  //     this.projectService.sendMessageFaqs(data?.data?.faq);
-  //     this.projectService.setmeta(data?.data);
-
-  //   });
-  // }
-
-
   getfaqs_data() {
-    let tbody = {
-      Type: "faqs",
-      pageurl: '',
-      Project_Id: this.projectId
-    };
-    this._service.getContentDataList(tbody).subscribe((data: any) => {
-      let res = data.data[0].contentData
-      this.faqsData = JSON.parse(res);
-    });
+    this.subscriptionnav = this.projectService
+      .onFaqsMessage()
+      .subscribe((message) => {
+        this.spinner = false
+        if (message) {
+          this.faqsData = message.text
+        }
+      });
   }
 }

@@ -1,137 +1,108 @@
-.multi_img_group{
-    display: flex;
-    justify-content: center;
+.multi_img_group,
+.programm_img_content,
+.fr_img_content {
+  display: flex;
+  justify-content: center;
 }
 
-.multi_img_group img{
-width: 80%;
-object-fit: cover;
+.multi_img_group img,
+.programm_img_content img,
+.fr_img_content img,
+.img_box img {
+  width:100%;
+  height: 196px;
+  object-fit: cover;
+}
+.long_para{
+   display: -webkit-box;
+  -webkit-line-clamp: 2;    /* show only 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;      /* adjust line height */
+  max-height: 3rem; 
+}
+.read_mode{
+  font-size: 12px !important;
+}
+section {
+  background: url('../../../../assets/img/MLZS/main_bg.png') no-repeat center/cover;
+  width: 100%;
+  padding: 25px 0 50px;
 }
 
-section{
-    background-image: url('../../../../assets/img/MLZS/main_bg.png');
-    background-size: cover;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
-  }
-  .programmes_main_page{
-    margin-top:6.5rem;
+.programmes_main_page { margin-top: 6.5rem; }
+
+@media (max-width: 600px) {
+  .programmes_main_page { margin-top: 10px; }
+  li, li button { width: 100%; }
 }
 
-@media screen and (max-width: 600px) {
-.programmes_main_page{
-  margin-top: 10px;
-}
-}
-
-
-.text_bg{
-    width:23%;
+.text_bg {
+    width: 12%;
     position: relative;
-    bottom:1.5rem;
-    z-index: 1;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color:#FFF;
-    font-size: 13px;
-    padding: 5px 25px;
-    background-color:#014876;
-    margin: 5px;
-}
-
-.nav-link:focus, .nav-link{
-    color:#014876;
-    font-size: 13px;
-    padding: 5px 25px;
-    background-color: #44C8F5;
-    margin: 5px;
-}
-.programm_img_content img{
-    width: 85%;
-    object-fit: cover;
-    }
-
-    .liter_img{
-        width: 50%;
-    }
-
-    .liter_content{
-        margin-left: 57px;
-    }
-
-  .fr_img_content img{
-    width: 80%;
-    object-fit: cover;
-  }
-
-  .title_content ul{
-    padding: 0; 
-    line-height: 30px;
-  }
-
-  @media screen and (max-width: 600px) {
-  li{
-    width: 100%;
-  }
-
-  li button{
-    width: 100%;
-  }
-  }
-
-  .subMenu_content{
-    margin-top: 1rem;
-    width: 85%;
-    margin: auto;
-  }
-
-  p{
-    margin-bottom: 0.5rem;
-  }
-  .text_bg{
-    width: 10%;
-    position: relative;
-    bottom: 1.5rem;
+    bottom: 1.9rem;
+    left: 4rem;
     z-index: 1;
     height: 21px;
 }
 
-h1{
-    position: relative;
-    z-index: 2;
+.nav-pills .nav-link,
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  font-size: 13px;
+  padding: 5px 25px;
+  margin: 5px;
 }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background: #014876;
+}
+
+.nav-link,
+.nav-link:focus {
+  color: #014876;
+  background: #44C8F5;
+}
+
+.liter_img { width: 50%; }
+.liter_content { margin-left: 57px; }
+
+.title_content ul {
+  padding: 0;
+  line-height: 30px;
+}
+
+.subMenu_content {
+  margin: 1rem auto 0;
+  width: 85%;
+}
+
+p { margin-bottom: 0.5rem; }
+
+h1 { position: relative; z-index: 2; }
 
 .form-control {
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #494a4b;
-    appearance:auto;
-    background-color: var(--bs-body-bg);
-    background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #494a4b;
+  background-color: var(--bs-body-bg);
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.date_text{
-    font-size: 12px;
-    color: #3f3d3d;
-}
+.date_text { font-size: 12px; color: #3f3d3d; }
 
-.img_box img{
-    object-fit: contain;
-    width: 100%;
-    height: 196px;
-    border: 1px solid #eee;
-}
-.img_box{
+.img_box {
   overflow: hidden;
-    width: 100%;
-    height: 196px;
-    border: 1px solid #eee;
+  width: 100%;
+  height: 196px;
+  border: 1px solid #eee;
 }

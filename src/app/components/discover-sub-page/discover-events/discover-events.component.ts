@@ -67,8 +67,6 @@ export class DiscoverEventsComponent {
       if (data?.data[0]?.contentData) {
         let res = data.data[0].contentData
         this.eventsData = JSON.parse(res);
-       // console.log('category', JSON.parse(data?.data[0]?.AssignCategory))
-        //console.log('eventsData', this.eventsData)
         this.alldata = JSON.parse(res);
         this.distinctYears = Array.from(
           new Set(
@@ -163,7 +161,5 @@ export class DiscoverEventsComponent {
         news.category.split(',').map((c: any) => c.trim()).includes(cat.categoryId.toString())
       )
     }));
-
-    console.log('Category News Map:', this.categoryNewsMap);
   }
 }

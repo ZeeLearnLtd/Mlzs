@@ -17,7 +17,7 @@ export class LiteratiComponent {
 
   getseo() {
     let tbody = {
-      slug: 'academics/literati',
+      slug: 'academics/nova',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

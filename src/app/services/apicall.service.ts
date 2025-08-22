@@ -54,7 +54,8 @@ export class ApicallService {
   }
 
   getAllAdmissionData(): Observable<any> {
-    return this.httpClient.post<any>(this.globelApi + 'api/V1/GetFranchiseeDetailsepf', {});
+    //return this.httpClient.post<any>(this.globelApi + 'api/V1/GetFranchiseeDetailsepf', {});
+    return this.httpClient.post<any>(this.globelApi + 'api/V1/GetFranchiseeDetailsepfWebsite', {});
   }
 
   getContentDataList(jdata: any): Observable<any> {

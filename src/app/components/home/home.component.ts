@@ -49,13 +49,13 @@ export class HomeComponent implements OnInit {
           center: true,
           responsive: {
             0: {
-              items: 3, // On mobile (0px and up), show 1 item
+              items: 3,
             },
             600: {
-              items: 3, // On tablets (600px and up), show 2 items
+              items: 3,
             },
             1000: {
-              items: 3, // On larger screens (1000px and up), show 3 items
+              items: 3,
             },
           }
         });
@@ -97,7 +97,9 @@ export class HomeComponent implements OnInit {
         this.projectService.sendMessageblog(data?.data?.blog);
         this.projectService.sendMessageseo(data?.data?.testimony);
         this.projectService.sendMessageFaqs(data?.data?.faq);
+        this.projectService.sendMessageNews(data?.data?.news);
         this.projectService.setmeta(data?.data);
+        console.log('home news', data?.data?.news);
       }
     });
   }

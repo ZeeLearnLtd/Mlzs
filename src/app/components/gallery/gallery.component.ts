@@ -21,25 +21,25 @@ export class GalleryComponent {
   constructor(private projectService: ProjectSeoService, private sanitizer: DomSanitizer, private _service: ApicallService) { }
 
   ngOnInit(): void {
-    this.getseo();
+    this.getPhoto_data();
+    // this.getseo();
   }
 
 
-  getseo() {
-    let tbody = {
-      slug: 'gallery',
-      Projectid: environment.projectid,
-    };
-    this._service.getGetseo(tbody).subscribe((data: any) => {
-      this.getPhoto_data();
-      this.projectService.sendMessagebread(data.data.breadcrumb);
-      this.projectService.sendMessageblog(data?.data?.blog);
-      this.projectService.sendMessageseo(data?.data?.testimony);
-      this.projectService.sendMessageFaqs(data?.data?.faq);
-      this.projectService.setmeta(data?.data);
+  // getseo() {
+  //   let tbody = {
+  //     slug: 'gallery',
+  //     Projectid: environment.projectid,
+  //   };
+  //   this._service.getGetseo(tbody).subscribe((data: any) => {
+  //     this.projectService.sendMessagebread(data.data.breadcrumb);
+  //     this.projectService.sendMessageblog(data?.data?.blog);
+  //     this.projectService.sendMessageseo(data?.data?.testimony);
+  //     this.projectService.sendMessageFaqs(data?.data?.faq);
+  //     this.projectService.setmeta(data?.data);
 
-    });
-  }
+  //   });
+  // }
 
   getPhoto_data() {
     let tbody = {
@@ -50,8 +50,6 @@ export class GalleryComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.photoGalleryData = JSON.parse(res);
-      //console.log('photoGalleryData', this.photoGalleryData);
-      // this.getFirstData = this.photoGalleryData[0]?.OtherFiles[0]?.value ? this.photoGalleryData[0]?.OtherFiles[0]?.value : this.photoGalleryData[0]?.OtherFiles[0]?.logofiles;
     });
   }
 

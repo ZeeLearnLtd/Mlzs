@@ -15,15 +15,6 @@ declare var $: any;  // Declare jQuery
   styleUrls: ['./our-parents.component.css']
 })
 export class OurParentsComponent {
-
-  originalSlides = [
-    { text: '“This is a brand-new school with an already fantastic reputation and facilities.”', author: 'Jagdish Sharma' },
-    { text: '“What I love most is how the school encourages creativity. From science projects to stage performances, I’ve gained so much confidence and had fun doing it all!”', author: 'Mira Singh' },
-    { text: '“I am impressed with the fantastic atmosphere at the school and how you quickly transformed it into not just a centre of learning, but a central point for the whole community.”', author: 'Sukhdeep' },
-    { text: '“Teachers are very supportive and caring. My child enjoys learning every day.”', author: 'Ravi Patel' },
-    { text: '“The school focuses on overall development, not just academics. Very happy!”', author: 'Priya Kapoor' }
-  ];
-
   slides: any[] = [];
   currentIndex = 1; // center active initially
   interval: any;
@@ -44,12 +35,6 @@ export class OurParentsComponent {
 
   }
   ngOnInit(): void {
-    this.slides = [
-      this.originalSlides[this.originalSlides.length - 1],
-      ...this.originalSlides,
-      this.originalSlides[0]
-    ];
-    this.startAutoSlide();
     this.gettestimonial_data();
   }
 
@@ -77,13 +62,13 @@ export class OurParentsComponent {
             center: true,
             responsive: {
               0: {
-                items: 1, // On mobile (0px and up), show 1 item
+                items: 1,
               },
               600: {
-                items: 2, // On tablets (600px and up), show 2 items
+                items: 2,
               },
               1000: {
-                items: 3, // On larger screens (1000px and up), show 3 items
+                items: 3,
               },
             }
           });
@@ -137,7 +122,6 @@ export class OurParentsComponent {
       if (data?.data[0]?.contentData) {
         let res = data.data[0].contentData;
         this.alldata = JSON.parse(res);
-        console.log('testimonial list', this.alldata)
         this.assigndata();
       } else {
         this.alldata = [];
@@ -155,7 +139,7 @@ export class OurParentsComponent {
         safeUrl: this.getSafeEmbedUrl(obj.slug)
       };
     });
-    console.log('ParentTestimonial', this.ParentTestimonial)
+    console.log('this.ParentTestimonial')
   }
 
 

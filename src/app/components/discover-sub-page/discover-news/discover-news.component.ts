@@ -71,6 +71,7 @@ export class DiscoverNewsComponent {
       if (data?.data[0]?.contentData) {
         let res = data.data[0].contentData
         this.newsData = JSON.parse(res);
+        console.log('newsData', this.newsData)
         this.alldata = JSON.parse(res);
         this.distinctYears = Array.from(
           new Set(
@@ -90,7 +91,7 @@ export class DiscoverNewsComponent {
         this.newscategory = [];
       }
     });
-
+    console.log('this.distinctKeywards', this.distinctKeywards)
   }
 
 

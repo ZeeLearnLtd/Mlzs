@@ -19,7 +19,7 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
   subscriptionnav!: Subscription;
   testimonydata: any;
   testimonialData: any = [];
-  testimonialDataList: any;
+  testimonialDataList: any = [];
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private route: ActivatedRoute,
@@ -31,7 +31,9 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
   ) {
     //
   }
+  ngOnInit(): void {
 
+  }
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
@@ -41,65 +43,60 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
           margin: 25,
           loop: true,
           nav: false,
+          dots: true,
           center: true,
           responsive: {
             0: {
-              items: 1, // On mobile (0px and up), show 1 item
+              items: 1,
             },
             600: {
-              items: 2, // On tablets (600px and up), show 2 items
+              items: 2,
             },
             1000: {
-              items: 3, // On larger screens (1000px and up), show 3 items
+              items: 3,
             },
           }
         });
       }, 1000)
     }
-
-  }
-  ngOnInit(): void {
     this.gettestimonial_data();
   }
 
 
-  gettestimonial_data() {
-    let tbody = {
-      Type: "testimonial",
-      pageurl: '',
-      Project_Id: this.projectId
-    };
-    this._service.getContentDataList(tbody).subscribe((data: any) => {
-      let res = data.data[0].contentData
-      this.testimonialData = JSON.parse(res);
-      this.testimonialDataList = this.testimonialData.map((video: any) => ({
-        ...video,
-        title: video.Title,
-        safeUrl: this.getSafeEmbedUrl(video.slug),
-        
-      }));
-    });
 
+  gettestimonial_data() {
+    this.subscriptionnav = this.projectService
+      .onseoMessage()
+      .subscribe((message) => {
+        if (message) {
+          this.testimonialData = message.text
+        }
+        this.testimonialDataList = this.testimonialData.map((video: any) => ({
+          ...video,
+          title: video.Title,
+          safeUrl: this.getSafeEmbedUrl(video.slug),
+        }));
+      });
   }
 
 
   getSafeEmbedUrl(url: string): SafeResourceUrl {
     let videoId = '';
-if(url){
-if (url.includes('youtu.be/')) {
-      videoId = url.split('youtu.be/')[1];
-    } else if (url.includes('watch?v=')) {
-      videoId = new URL(url).searchParams.get('v') || '';
-    } else if (url.includes('embed/')) {
-      videoId = url.split('embed/')[1];
+    if (url) {
+      if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1];
+      } else if (url.includes('watch?v=')) {
+        videoId = new URL(url).searchParams.get('v') || '';
+      } else if (url.includes('embed/')) {
+        videoId = url.split('embed/')[1];
+      }
+
+      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+      return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+    } else {
+      return ''
     }
 
-    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
-  }else{
-    return ''
   }
 
-}
-    
 }

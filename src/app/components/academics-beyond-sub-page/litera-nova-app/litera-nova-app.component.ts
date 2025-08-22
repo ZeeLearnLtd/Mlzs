@@ -48,7 +48,7 @@ export class LiteraNovaAppComponent implements AfterViewInit {
 
   getseo() {
     let tbody = {
-      slug: 'academics/nova',
+      slug: 'academics/literati',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

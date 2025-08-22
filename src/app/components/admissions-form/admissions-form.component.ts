@@ -34,11 +34,12 @@ export class AdmissionsFormComponent implements OnInit {
   franchiseeMobileNo: string = "";
   form_title: boolean = true;
   generatedcaptcha: string = "";
+  
   captchaText: any = []
   captchaEntered: String = ""
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object, private fb: FormBuilder, private _servie: CommonService, private ngxSpinner: NgxSpinnerService,
-    private activatedRoute: ActivatedRoute, private _activeRoute: ActivatedRoute, private router: Router) {
+    private activatedRoute: ActivatedRoute,private _activeRoute: ActivatedRoute, private router: Router) {
     this.admissionForm = fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
@@ -56,6 +57,7 @@ export class AdmissionsFormComponent implements OnInit {
 
   ngOnInit(): void {
     //this.generateCAPTCHA(); 
+    
     this.createCaptcha();
     this.selectCountry_State_cityList();
     //
@@ -274,6 +276,7 @@ export class AdmissionsFormComponent implements OnInit {
     //       this.setaddress(dt);
     //     }
     //   })
+    
   }
 
   selectCountry(selectVal: any) {

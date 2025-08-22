@@ -156,11 +156,12 @@ h2{
   margin: 0;
 }
 .text_bg{
-  width:23%;
+  width: 14%;
   position: relative;
-  bottom:1.3rem;
+  bottom: 2rem;
   z-index: 1;
-  height: 30px;
+  left: 13rem;
+  height: 25px;
 }
 
 .about_img_content img{
@@ -230,9 +231,46 @@ hr{
 
 .item_img_content iframe{
     width: 100%;
-    height: 139px;
+    height:152px;
 }
-
+.item_img_content{
+  width: 100%;
+    height:159px;
+    overflow: hidden;
+}
 .item_text img{
     width: 25px;
+}
+
+  ::ng-deep .news_owl .owl-dots {
+  display: block !important;   /* Force display */
+  text-align: center;           /* Center the dots */
+  margin-top: 15px;
+      box-shadow: none !important;
+}
+.student-demo .item{
+    background: transparent;
+    width: 95%;
+    margin: auto;
+    height: 190px !important;
+    border-radius: 5px;
+    padding: 30px 15px;
+    overflow: hidden;
+}
+::ng-deep .news_owl .owl-theme .owl-dots .owl-dot span{
+    width: 10px;
+    height: 10px;
+    margin:0 !important;
+    background:#fff !important;
+    box-shadow: none !important;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+
+::ng-deep .owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+    box-shadow: none !important;
 }
