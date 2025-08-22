@@ -129,6 +129,7 @@ export class LocateUsComponent implements OnInit {
 
 
   selectState(stateId: any) {
+     if(stateId){
     this.getStateId = stateId
     let lgd = this.all_data_list.filter(function (lg: any) {
       return lg.State_Id === Number(stateId);
@@ -140,10 +141,15 @@ export class LocateUsComponent implements OnInit {
     this.cityList = this.cityList.sort((a: any, b: any) =>
       a.City_Name !== b.City_Name ? (a.City_Name < b.City_Name ? -1 : 1) : 0
     );
+    this.franchiseeList=[''];
     this.filterData();
+    }else{
+      this.india_country();
+    } 
   }
 
   selectCity(cityId: any) {
+     if(cityId){
     this.getCityId = cityId
     let lgd = this.all_data_list.filter(function (lg: any) {
       return lg.City_Id === Number(cityId);
@@ -153,6 +159,9 @@ export class LocateUsComponent implements OnInit {
     const key = 'Franchisee_Name';
     this.franchiseeList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
     this.filterData();
+      }else{
+        this.selectState(this.searchForm.get('state')?.value);
+    }    
   }
 
   setcentrelist() {
@@ -193,8 +202,13 @@ export class LocateUsComponent implements OnInit {
     //this.centerList=data;
   }
   selectLocation(locationId: any) {
-    this.getLocationId = locationId
-    this.filterData();
+    if(locationId){
+        this.getLocationId = locationId
+        this.filterData();
+     }
+    else{
+      this.selectCity(this.searchForm.get('city')?.value);
+    } 
   }
 
   filterData() {
@@ -244,26 +258,26 @@ export class LocateUsComponent implements OnInit {
     this.virtual_url = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
   setaddress(data: any) {
-    let jdata = {
-      "franchisecode": data.Franchisee_Code
-    }
-    return this.apiService.checkMicrosite(jdata).subscribe({
-      next: (resp: any) => {
-        if (resp.data) {
-          if (resp.data[0]?.url) {
-            window.open(resp.data[0].url, "_blank");
-          }
-          else {
-            this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
-            this.router.navigateByUrl('/admissions');
-          }
-        }
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
-
+    // let jdata = {
+    //   "franchisecode": data.Franchisee_Code
+    // }
+    // return this.apiService.checkMicrosite(jdata).subscribe({
+    //   next: (resp: any) => {
+    //     if (resp.data) {
+    //       if (resp.data[0]?.url) {
+    //         window.open(resp.data[0].url, "_blank");
+    //       }
+    //       else {
+    //         this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
+    //         this.router.navigateByUrl('/admissions');
+    //       }
+    //     }
+    //   },
+    //   error: (error) => {
+    //     console.log(error);
+    //   }
+    // })
+       this.router.navigate(['/admissions',data?.Franchisee_Code])
   }
 
 }

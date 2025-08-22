@@ -4,13 +4,13 @@ let pool;
 
 const poolConfig = (dbid) =>
 {
- console.log("in pool");
+ //console.log("in pool");
  const SQL_SERVER = process.env.SQL_SERVER;
  const SQL_DATABASE = process.env.SQL_DATABASE;
  const SQL_UID = process.env.SQL_UID;
  const SQL_PWD = process.env.SQL_PWD;
  const port = process.env.sqlport;
- console.log(SQL_DATABASE);
+ //console.log(SQL_DATABASE);
 
     data = {
       driver: process.env.SQL_DRIVER,
@@ -72,9 +72,9 @@ const run = async (name, command, inputs = [], headers , outputs = []) => {
 };
 
 const connect = async (dbid) => {
- console.log('coonect');
+// console.log('coonect');
     pool = new mssql.ConnectionPool(poolConfig(1));
-     console.log(!pool.connected)
+  //   console.log(!pool.connected)
     if (!pool.connected) {
         const SQL_DATABASE = process.env.SQL_DATABASE;
         await pool.connect();

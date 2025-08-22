@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
@@ -6,6 +6,10 @@ import { ApicallService } from 'src/app/services/apicall.service';
 import { stringify } from 'querystring';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonService } from '../service/common.service';
+import { isPlatformBrowser } from '@angular/common';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 @Component({
   selector: 'app-admissions',
   templateUrl: './admissions.component.html',
@@ -30,16 +34,19 @@ export class AdmissionsComponent implements OnInit {
   admissionForm: FormGroup;
   randomOtp: any;
   selectFranchiseeCode: any;
+  selectedfranchisee_name:any
   classId: any;
   selectClassName: any;
   cityListName: any;
+  _franchise_code: string = "";
   stateListName: any;
-  constructor(private _activeRoute: ActivatedRoute,
+  constructor(private _activeRoute: ActivatedRoute,private spinner:NgxSpinnerService,
+    @Inject(PLATFORM_ID) private platformId: Object,
     private projectService: ProjectSeoService, private router: Router,
     private fb: FormBuilder,
     private apiService: ApicallService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute, private common: CommonService) {
     this.admissionForm = fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -49,9 +56,11 @@ export class AdmissionsComponent implements OnInit {
       class: ['', Validators.required],
       franchisee: ['', Validators.required],
       otp: ['', Validators.required],
+      autorization:['']
     })
   }
   ngOnInit(): void {
+    this._franchise_code = this.activatedRoute.snapshot.paramMap.get('frcode')!;
     this.getAdmissionFormData();
     // const urlSegments = this.activatedRoute.snapshot.url;
     // this.segment = urlSegments[0]?.path;
@@ -64,25 +73,103 @@ export class AdmissionsComponent implements OnInit {
 
 
   getseo() {
+     this.spinner.show();
     let tbody = {
       slug: 'admissions',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
+       this.spinner.hide();
       this.projectService.sendMessagebread(data?.data?.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
       this.projectService.setmeta(data.data);
     });
+     this.spinner.hide();
   }
 
   getAdmissionFormData() {
     this.apiService.getAllAdmissionData().subscribe((
       res => {
         this.stateContentDataList = res.root.subroot;
+        console.log('this.stateContentDataList', this.stateContentDataList);
+        if (this._franchise_code) {
+          this.setaddress();
+        }
       }
     ))
+  }
+
+  setaddress() {
+
+    let alldata=this.stateContentDataList
+    const filteredFranchisees = alldata.flatMap((state: any) => {
+  const cities = Array.isArray(state.City) ? state.City : state.City ? [state.City] : [];
+
+  return cities.flatMap((city: any) => {
+    const franchisees = Array.isArray(city.Franchisee)
+      ? city.Franchisee
+      : city.Franchisee
+        ? [city.Franchisee]
+        : [];
+
+    return franchisees.filter((fr: any) => fr.Address1 === this._franchise_code);
+  });
+});
+      console.log('filteredFranchisees', filteredFranchisees);
+     
+    let data
+
+    if (filteredFranchisees.length) {
+      data = filteredFranchisees[0];  
+      this.stateId  = data?.State_Id;
+      this.admissionForm.get('state')?.patchValue(data?.State_Id);
+      this.admissionForm.get('state')?.disable();
+      this.selectCity = this.stateContentDataList.filter((item: any) => {
+        return item.State_ID == this.stateId
+      })
+      this.cityList = this.selectCity[0].City;
+
+      if (typeof this.cityList.CityName === 'string') {
+        this.cityList = [this.cityList];
+      } else {
+        this.cityList = this.cityList;
+      }
+      this.stateListName = this.stateContentDataList.filter((item: any) => {
+        return item.State_ID == this.stateId
+      })
+
+      this.stateListName = this.stateListName[0].StateName
+
+      this.cityId = data?.cityid;
+      this.admissionForm.get('city')?.patchValue(data?.cityid);
+       this.admissionForm.get('city')?.disable();
+      this.selectFranchisee = this.cityList.filter((item: any) => {
+        return item.CityID == this.cityId
+      })
+       if(Array.isArray(this.selectFranchisee[0].Franchisee)){
+          this.selectFranchisee = this.selectFranchisee[0].Franchisee
+          this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
+          this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
+       }else{
+         this.selectFranchisee = [this.selectFranchisee[0].Franchisee]
+          this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
+          this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
+       }
+     
+      this.cityListName = this.cityList.filter((item: any) => {
+        return item.CityID == this.cityId
+      })
+
+      this.cityListName = this.cityListName[0].CityName;
+
+      this.franchiseeCode = data?.Franchisee_Code;
+     
+      this.selectClasslist = data?.classlist;
+      this.admissionForm.get('franchisee')?.patchValue(data?.Franchisee_Code);
+      this.admissionForm.get('franchisee')?.disable();
+    }
   }
 
   onChangeState(id: any) {
@@ -112,6 +199,7 @@ export class AdmissionsComponent implements OnInit {
     })
     this.selectFranchisee = [this.selectFranchisee[0].Franchisee]
     this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
+    this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
     this.cityListName = this.cityList.filter((item: any) => {
       return item.CityID == this.cityId
     })
@@ -166,22 +254,24 @@ export class AdmissionsComponent implements OnInit {
       "class": this.selectClassName,
       "ClassId": this.admissionForm.get('class')?.value,
       "ProjectId": "3607",
-      "Location": this.selectFranchiseeCode,
-      "Location_name": this.admissionForm.get('franchisee')?.value,
+      "Location": this.selectedfranchisee_name,
+      "Location_name": this.selectedfranchisee_name,//this.admissionForm.get('franchisee')?.value,
       "Country": "India",
       "Product": "259262000039670041"
     }
-
+    this.spinner.show();
     this.apiService.postAdmissionForm(obj).subscribe(
       res => {
+        this.spinner.hide();
         this.toastr.success('Admission submit successfully!');
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;
-         this.router.navigate(['admission/thankyou'])
+        this.router.navigate(['admission/thankyou'])
         this.admissionForm.reset();
         this.submitted = false
       }
     )
+    this.spinner.hide();
   }
 
   getMobileNO() {
@@ -194,9 +284,9 @@ export class AdmissionsComponent implements OnInit {
     this.randomOtp = Math.floor(1000 + Math.random() * 9000);
     let mobNo = {
       "MobileNo": this.admissionForm.get('mobileNo')?.value,
-      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}`+`. Think Education. Think Zee Learn.`,
+      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}` + `. Think Education. Think Zee Learn.`,
       "sResponse": "",
-      "header":"ZLMLZS"
+      "header": "ZLMLZS"
     }
 
     this.apiService.getOtp(mobNo).subscribe(

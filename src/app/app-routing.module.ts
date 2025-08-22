@@ -78,6 +78,7 @@ const routes: Routes = [
       { path: 'start-school', component: StartSchoolComponent },
       { path: 'parents-corner', component: ParentsCornerComponent },
       { path: 'admissions', component: AdmissionsComponent },
+      { path: 'admissions/:frcode', component: AdmissionsComponent },
       { path: 'contact-us', component: ContectUsComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'discover-more', component: DiscoverMoreComponent },

@@ -10,9 +10,9 @@ import { ApicallService } from 'src/app/services/apicall.service';
 })
 export class AboutUsComponent implements OnInit {
   segment:any
-constructor(
+  constructor(
     private activatedRoute: ActivatedRoute){
-    }
+  }
 
     ngOnInit(): void {
       const urlSegments = this.activatedRoute.snapshot.url;

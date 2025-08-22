@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.location.subscribe((ev: PopStateEvent) => {
-        console.log(ev.url);
+       // console.log(ev.url);
 
         this.lastPoppedUrl = ev.url!;
       });
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
             this.lastPoppedUrl = 'undefined';
             if (this.yScrollStack.pop() != undefined) {
               let y = this.yScrollStack.pop();
-              console.log(this.yScrollStack.pop());
+             // console.log(this.yScrollStack.pop());
               //window.scrollTo(0, this.yScrollStack.pop());
             }
           } else
