@@ -192,7 +192,7 @@
                                     <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
                             </div>
                             <div class="col-md-12 mt-1">
-                               <select name="" id="" class="form-control"
+                               <select name="" id="" class="form-control" 
                                formControlName="state" (change)="onChangeState($event.target)"
                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
                                 <option value="">Which state are you searching for schools in?</option>
@@ -250,12 +250,14 @@
                              <div class="col-md-12 mt-1">
                                 <div class="row">
                                     <div class="col-1">
-                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                        <input type="checkbox" id="chk1" name="chk1" formControlName="autorization" value="false">
                                     </div>
                                     <div class="col-11">
-                                        <label for="vehicle1">I authorize MLZS and its representatives to Call, SMS, Email or WhatsApp me about Admission Proccess. This consent overrides any registration for DNC/NDNC.</label>
+                                        <label for="chk1">I authorize MLZS and its representatives to Call, SMS, Email or WhatsApp me about Admission Proccess. This consent overrides any registration for DNC/NDNC.</label>
                                     </div>
+                                    
                                 </div>
+                                
                             </div>
                              <div class="col-md-12 mt-1">
                                 <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
@@ -507,3 +509,4 @@
 </div>
     </div>
 </section>
+<ngx-spinner type="ball-climbing-dot"></ngx-spinner>
