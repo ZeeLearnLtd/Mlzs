@@ -50,7 +50,7 @@ export class GalleryComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.photoGalleryData = JSON.parse(res);
-      console.log('photoGalleryData', this.photoGalleryData);
+      //console.log('photoGalleryData', this.photoGalleryData);
       // this.getFirstData = this.photoGalleryData[0]?.OtherFiles[0]?.value ? this.photoGalleryData[0]?.OtherFiles[0]?.value : this.photoGalleryData[0]?.OtherFiles[0]?.logofiles;
     });
   }

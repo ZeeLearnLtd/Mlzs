@@ -143,7 +143,7 @@ export class DiscoverBlogsComponent {
 
   onSearchChange(event: Event) {
     const value = (event.target as HTMLInputElement).value;
-    console.log('Search input changed:', value);
+//    console.log('Search input changed:', value);
 
     this.blogsData = this.alldata.filter((item: any) =>
       item?.Title?.toLowerCase().includes(value?.toLowerCase())

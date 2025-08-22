@@ -111,7 +111,7 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
 
 onSearchChange(event: Event) {
   const value = (event.target as HTMLInputElement).value;
-  console.log('Search input changed:', value);
+  //console.log('Search input changed:', value);
   if(value){
     this.Schoolachievement = this.alldata.filter((item:any) =>
     item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(104)
