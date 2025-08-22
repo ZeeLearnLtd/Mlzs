@@ -39,6 +39,19 @@
   color: #fff;
 }
 
+.businessPartners iframe{
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+::ng-deep .businessPartners .owl-carousel .owl-stage {
+    position: relative;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+    overflow: hidden;
+}
+
 .title_content h2, .bg_box h2 > b {
   position: relative;
   z-index: 10;

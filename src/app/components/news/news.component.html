@@ -14,19 +14,19 @@
                 <div class="home-demo mt-3">
                     <div class="owl-carousel owl-theme news_owl" id="">
                       <div class="item" *ngFor="let a of eventsData">
-                        <div routerLink="/events/{{a.slug}}">
+                        <a href="{{a.slug}}" target="_blank">
                         <div class="item_img_content">
-                          <div *ngFor="let img of a.logofiles">
-                          <img src="{{img.value}}" alt="">
+                          <div *ngFor="let img of a.files">
+                          <img src="{{img.url}}" alt="{{img.filename}}">
                           </div>
                         </div>
                         <hr>
                         <div class="item_text mt-2">
                           <h6>{{a.Title}}</h6>
-                          <p class="short_para" [innerHTML]="a.short"></p>
-                          <p class="p-0 m-0">{{a.CreatedDate}}</p>
+                          <p class="short_para" [innerHTML]="a.Short"></p>
+                          <p class="p-0 m-0">{{a.FromDate}}</p>
                         </div>
-                        </div>
+                      </a>
                       </div>
                     </div>
                   </div>

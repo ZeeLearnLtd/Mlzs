@@ -15,11 +15,11 @@
                     <div class="owl-carousel owl-theme news_owl" id="">
                       <div class="item" *ngFor="let a of testimonialDataList">
                         <div class="item_img_content" *ngIf="a.safeUrl">
-                            <iframe class="text_bg" [src]="a.safeUrl" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe class="" [src]="a.safeUrl" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <div class="item_img_content" *ngIf="!a.safeUrl">
-                            <div *ngFor="let dat of a.logofiles">
-                            <img src="{{dat.value}}" alt="">
+                            <div *ngFor="let dat of a.files">
+                            <img src="{{dat.url}}" alt="{{a.filename}}">
                             </div>
                         </div>
                         <hr>

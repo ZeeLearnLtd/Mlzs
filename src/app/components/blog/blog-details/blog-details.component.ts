@@ -53,10 +53,8 @@ export class BlogDetailsComponent implements OnInit {
     }
 
     this.apiService.getBlogsDetails
-
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
       this.blog_detailsData = data.data
-      console.log('data blog', this.blog_detailsData)
     });
   }
 

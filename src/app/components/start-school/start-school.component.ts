@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from 'ngx-toastr';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+declare var $: any;
 @Component({
   selector: 'app-start-school',
   templateUrl: './start-school.component.html',
@@ -23,8 +26,13 @@ export class StartSchoolComponent {
   stateList: any;
   cityList: any;
   franchiseeList: any;
+  school_video_list: any;
+  filtered_School_video: any;
+  videoGalleryList: any;
   constructor(private apiService: ApicallService, private projectService: ProjectSeoService,
     private toastr: ToastrService, private router: Router,
+    private sanitizer: DomSanitizer,
+    @Inject(PLATFORM_ID) private platformId: Object,
     private fb: FormBuilder,
     private ngxSpinner: NgxSpinnerService,) {
     this.admissionForm = fb.group({
@@ -41,7 +49,34 @@ export class StartSchoolComponent {
   ngOnInit(): void {
     this.selectCountry_State_cityList()
   }
-
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        var owl = $(".news_owl1");
+        owl.owlCarousel({
+          items: 1,
+          margin: 25,
+          loop: true,
+          nav: false,
+          dots: true,
+          center: true,
+          touchDrag: true,
+          mouseDrag: true,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 1,
+            },
+            1000: {
+              items: 1,
+            },
+          }
+        });
+      }, 1000)
+    }
+  }
   get f() {
     return this.admissionForm.controls;
   }
@@ -70,11 +105,20 @@ export class StartSchoolComponent {
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
       this.projectService.setmeta(data?.data);
-
+      this.school_video_list = data?.data?.testimony;
+      this.filterVideoCategory();
     });
   }
 
-
+  filterVideoCategory() {
+    this.filtered_School_video = this.school_video_list.filter((item: any) => item.category.includes("107"));
+    this.videoGalleryList = this.filtered_School_video.map((video: any) => ({
+      ...video,
+      title: video.Title,
+      safeUrl: this.getSafeEmbedUrl(video.slug),
+    }));
+    console.log('videoGalleryList', this.videoGalleryList)
+  }
   getMobileNO() {
     if ((this.admissionForm.get('mobile')?.value).length == 10) {
       this.sendMobNO();
@@ -111,9 +155,6 @@ export class StartSchoolComponent {
       }
     }
   }
-
-
-
   selectState(selectVal: any) {
     let state = selectVal.target.value
     let filterCity = this.stateList.filter((x: any) => {
@@ -138,10 +179,7 @@ export class StartSchoolComponent {
       this.submitForm()
     }
   }
-
-
   submitForm() {
-
     if ((this.admissionForm.get('otp')?.value).length == 4) {
       if (this.randomOtp == this.admissionForm.get('otp')?.value) {
         this.ngxSpinner.show();
@@ -191,5 +229,25 @@ export class StartSchoolComponent {
         this.otp_ValidMsg = false;
       }
     }
+  }
+
+
+  getSafeEmbedUrl(url: string): SafeResourceUrl {
+    let videoId = '';
+    if (url) {
+      if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1];
+      } else if (url.includes('watch?v=')) {
+        videoId = new URL(url).searchParams.get('v') || '';
+      } else if (url.includes('embed/')) {
+        videoId = url.split('embed/')[1];
+      }
+
+      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+      return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+    } else {
+      return ''
+    }
+
   }
 }

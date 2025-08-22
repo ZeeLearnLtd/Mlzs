@@ -106,7 +106,6 @@ export class LocateASchoolComponent {
   setcountry(): any {
     const key = 'Country_Name';
     this.countryList = [...new Map(this.all_data_list.map((item: any) => [item[key], item])).values()]
-    console.log('countryList', this.countryList);
   }
 
   selectCountry(contryId: any) {

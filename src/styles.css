@@ -162,6 +162,11 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+    .news_text{
+    padding: 0rem 1.3rem 0rem 0rem;
+    text-align: left;
+    margin: 1rem 0;
+    }
     p {
         text-align: justify;
     }
@@ -234,7 +239,6 @@ html {
 }
 
 body {
-    /* background-color: #EBE1FF; */
     font-family: 'Poppins';
     overflow-x: hidden !important;
 }
@@ -247,7 +251,7 @@ button{
 li{
 font-family: 'Poppins' !important;
 }
-h2,h6,h1{
+h2,h6,h1,h5,h4{
     overflow: hidden;
 }
 .sub_text_black {

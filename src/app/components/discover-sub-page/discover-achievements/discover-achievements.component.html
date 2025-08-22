@@ -1,7 +1,7 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-        <img src="../../../../assets/img/MLZS/banner/discover_banner.png" class="w-100" alt="">
+        <img src="../../../../assets/img/MLZS/banner/achievement_top_banner.png" class="w-100" alt="">
     </div>
         <div class="subMenu_content">
             <app-sub-menu></app-sub-menu>
@@ -26,8 +26,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title_content text-center">
-                            <h2><b>Achievements</b></h2>
-                            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
+                            <h2><b>Moments of Glory</b></h2>
+                            <img src="../../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
                             <div>
                                 <p>Explore the exceptional achievements of Mount Litera Zee School, where every milestone highlights our commitment to nurturing talent, fostering excellence in education, and driving student success through innovation and holistic growth.</p>
                                 <h5 class="text-center mt-2"><b>School's Achievements</b></h5>
@@ -44,48 +44,13 @@
                                   <img src="{{img.value}}" alt="{{a.Title}}">
                                   </div>
                                 </div>
-                                <hr>
                                 <div class="item_text mt-2">
                                   <h6>{{a.Title}}</h6>
                                   <p class="shortPara" [innerHTML]="a.short"></p>
-                                  <p class="date">Date:{{a.StartDate}}</p>
+                                  <!-- <p class="date">Date:{{a.StartDate}}</p> -->
                                 </div>
                               </div>
                            
-                            </div>
-                          </div>
-                    </div>
-                </div>
-            </div>
-              <div *ngIf="selectedcategory == '105' || selectedcategory == ''" class="news_list mt-5">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="title_content text-center">
-                            <h2><b>Achievements</b></h2>
-                            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
-                            <div>
-                                <p>Explore the exceptional achievements of Mount Litera Zee School, where every milestone highlights our commitment to nurturing talent, fostering excellence in education, and driving student success through innovation and holistic growth.</p>
-                                <h5 class="text-center mt-2"><b>Teacher's Achievements</b></h5>
-                                <p class="text-center">Celebrating the milestones and accolades that showcase our school's commitment to excellence and growth.</p>
-                            
-                            </div>
-                        </div>
-        
-                        <div class="home-demo mt-3">
-                            <div class="owl-carousel owl-theme news_owl" id="">
-                              <div class="item" *ngFor="let a of Teacherachievement">
-                                <div class="item_img_content">
-                                  <div *ngFor="let img of a.OtherFiles">
-                                  <img src="{{img.value}}" alt="{{a.Title}}">
-                                  </div>
-                                </div>
-                                <hr>
-                                <div class="item_text mt-2">
-                                  <h6>{{a.Title}}</h6>
-                                  <p class="shortPara" [innerHTML]="a.short"></p>
-                                  <p class="date">Date:{{a.StartDate}}</p>
-                                </div>
-                              </div>                             
                             </div>
                           </div>
                     </div>
@@ -95,16 +60,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title_content text-center">
-                            <h2><b>Achievements</b></h2>
-                            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
                             <div>
-                                <p>Explore the exceptional achievements of Mount Litera Zee School, where every milestone highlights our commitment to nurturing talent, fostering excellence in education, and driving student success through innovation and holistic growth.</p>
                                 <h5 class="text-center mt-2"><b>Student's Achievements</b></h5>
                                 <p class="text-center">Celebrating the milestones and accolades that showcase our school's commitment to excellence and growth.</p>
-                            
                             </div>
                         </div>
-        
                         <div class="home-demo mt-3">
                             <div class="owl-carousel owl-theme news_owl" id="">
                               <div class="item" *ngFor="let a of Studentachievement">
@@ -113,11 +73,10 @@
                                   <img src="{{img.value}}" alt="{{a.Title}}">
                                   </div>
                                 </div>
-                                <hr>
                                 <div class="item_text mt-2">
                                   <h6>{{a.Title}}</h6>
                                   <p class="shortPara" [innerHTML]="a.short"></p>
-                                  <p class="date">Date:{{a.StartDate}}</p>
+                                  <!-- <p class="date">Date:{{a.StartDate}}</p> -->
                                 </div>
                               </div>
                              
@@ -128,6 +87,36 @@
 
 
                 
+            </div>
+            
+              <div *ngIf="selectedcategory == '105' || selectedcategory == ''" class="news_list mt-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title_content text-center">
+                            <div>
+                                <h5 class="text-center mt-2"><b>Teacher's Achievements</b></h5>
+                                <p class="text-center">Celebrating the milestones and accolades that showcase our school's commitment to excellence and growth.</p>
+                            
+                            </div>
+                        </div>
+                        <div class="home-demo mt-3">
+                            <div class="owl-carousel owl-theme news_owl" id="">
+                              <div class="item" *ngFor="let a of Teacherachievement">
+                                <div class="item_img_content">
+                                  <div *ngFor="let img of a.OtherFiles">
+                                  <img src="{{img.value}}" alt="{{a.Title}}">
+                                  </div>
+                                </div>
+                                <div class="item_text mt-2">
+                                  <h6>{{a.Title}}</h6>
+                                  <p class="shortPara" [innerHTML]="a.short"></p>
+                                  <!-- <p class="date">Date:{{a.StartDate}}</p> -->
+                                </div>
+                              </div>                             
+                            </div>
+                          </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

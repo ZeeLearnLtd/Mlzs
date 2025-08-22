@@ -34,11 +34,10 @@ export class BlogsComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         $('#carousel1').owlCarousel({
-          items: 1, // Number of items to show
+          items: 1,
           margin: 10,
           loop: true,
           autoplay: false,
-          // autoplayTimeout: 2000,
           nav: false,
           dots: true
         });
@@ -58,17 +57,16 @@ export class BlogsComponent implements OnInit {
 
 
   getblog_data() {
-    let tbody = {
-      Type: "blog",
-      pageurl: '',
-      Project_Id: this.projectId
-    };
-    this.apiService.getContentDataList(tbody).subscribe((data: any) => {
-      this.blogdata = JSON.parse(data.data[0].contentData);
-      this.top_blog_img = this.blogdata[0].OtherFiles[0].value;
-      this.top_blog = this.blogdata[0];
-      // this.top_blog = this.blogdata[0];
-      console.log('blogdata', this.top_blog)
-    });
+    this.subscriptionnav = this.projectService
+      .onblogMessage()
+      .subscribe((message) => {
+        this.spinner = false
+        if (message) {
+          this.blogdata = message.text;
+          this.top_blog_img = this.blogdata[0].files[0].url;
+          this.top_blog = this.blogdata[0];
+        }
+      })
   }
 }
+

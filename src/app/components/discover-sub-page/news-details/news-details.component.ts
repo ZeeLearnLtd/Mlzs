@@ -45,7 +45,6 @@ export class NewsDetailsComponent {
     this.apiService.getBlogsDetails
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
       this.newsDetailsData = data.data
-      console.log('data blog', this.newsDetailsData)
     });
   }
 

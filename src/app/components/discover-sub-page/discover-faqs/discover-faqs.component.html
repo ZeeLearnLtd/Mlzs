@@ -1,7 +1,7 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-        <img src="../../../../assets/img/MLZS/banner/discover_banner.png" class="w-100" alt="">
+        <img src="../../../../assets/img/MLZS/banner/faqs_top_banner.png" class="w-100" alt="">
     </div>
         <div class="subMenu_content">
             <app-sub-menu></app-sub-menu>
@@ -9,7 +9,7 @@
         <div class="box dropdown_tab mt-4">
             <div class="row">
                 <div class="col-md-4">
-                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (click)="onchangecategory(ddlcategory.value)">
+                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (change)="onchangecategory(ddlcategory.value)">
                             <option value="">All Category</option>
                             <option value="{{a.categoryId}}" *ngFor="let a of faqscategory">{{a.categoryname}}</option>
                         </select>
@@ -24,9 +24,9 @@
             <div class="news_list mt-5">
     <div class="faq_content">
         <div class="title_content text-center">
-            <h1 class="text-white"><b>FAQ</b></h1>
+            <h1 class="text-white"><b>All You Need to Know</b></h1>
             <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
-            <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
+            <p class="m-0 text-white">Do you have any questions about Mount Litera Zee School? Our FAQ section provides clear answers to all your queries, from admissions to campus life.</p>
         </div>
         <div class="box mt-3">
             <mat-accordion>
