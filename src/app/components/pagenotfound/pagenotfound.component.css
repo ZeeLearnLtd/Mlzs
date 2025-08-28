@@ -4,7 +4,9 @@ section {
       justify-content: center;
       padding: 2rem;
     }
-
+a{
+  text-decoration: none;
+}
     .card-404 {
       max-width: 700px;
       width: 100%;

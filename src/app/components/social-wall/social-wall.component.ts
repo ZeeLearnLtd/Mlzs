@@ -14,11 +14,11 @@ declare var $: any;  // Declare jQuery
   styleUrls: ['./social-wall.component.css']
 })
 export class SocialWallComponent {
-
   projectId = environment.projectid
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
   socialData: any;
+  currentIndex = 0;
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -33,7 +33,17 @@ export class SocialWallComponent {
     this.getnews_data();
   }
 
+  get prevIndex() {
+    return (this.currentIndex - 1 + this.socialData.length) % this.socialData.length;
+  }
 
+  get nextIndex() {
+    return (this.currentIndex + 1) % this.socialData.length;
+  }
+
+  goToSlide(index: number) {
+    this.currentIndex = index;
+  }
   getnews_data() {
     let tbody = {
       Type: "Social Post",

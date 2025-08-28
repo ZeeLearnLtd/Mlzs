@@ -71,7 +71,6 @@ export class NewsComponent implements OnInit {
       .subscribe((message) => {
         if (message) {
           this.eventsData = message.text;
-          console.log('news list', this.eventsData)
         }
       })
   }

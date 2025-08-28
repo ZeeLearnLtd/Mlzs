@@ -47,7 +47,7 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
         owl.owlCarousel({
           loop: true,
           margin: 10,
-          nav: true,       // previous/next arrows
+          nav: false,       // previous/next arrows
           dots: true,
           center: true,   // show dots
           autoplay: true,
@@ -65,7 +65,7 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
 
   getseo() {
     let tbody = {
-      slug: 'achievement',
+      slug: 'achievements',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

@@ -4,7 +4,9 @@
   display: flex;
   justify-content: center;
 }
-
+a{
+  text-decoration: none;
+}
 .multi_img_group img,
 .programm_img_content img,
 .fr_img_content img,

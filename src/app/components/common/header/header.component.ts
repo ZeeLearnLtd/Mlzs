@@ -18,18 +18,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     // this.scrollPosition = window.scrollY;
   }
-
-  // scroll_hide(){
-  //   console.log('scroll')
-  //   if (this.scrollPosition > 100) {
-  //     document.getElementById('ab_id')?.remove();
-  //      }
-  // }
-
-  closeMenu() {
-    // document.getElementById("dropdown_menu")?.click();
+  toggleMenu() {
     const element = this.navbarCollapse.nativeElement;
-    const bsCollapse = Collapse.getInstance(element) || new Collapse(element);
-    bsCollapse.hide(); // Close the menu
+    const bsCollapse = Collapse.getInstance(element) || new Collapse(element, { toggle: false });
+    bsCollapse.toggle();
+  }
+  closeMenu() {
+    const element = this.navbarCollapse.nativeElement;
+    const bsCollapse = Collapse.getInstance(element) || new Collapse(element, { toggle: false });
+    bsCollapse.hide();
   }
 }

@@ -2,12 +2,10 @@
   display: flex;
   justify-content: center;
 }
-
 .multi_img_group img {
   width: 80%;
   object-fit: cover;
 }
-
 section {
   background-image: url('../../../../assets/img/MLZS/main_bg.png');
   background-size: cover;
@@ -192,19 +190,14 @@ h1 {
   border: 1px solid #eee;
 }
 
-iframe {
-  object-fit: cover;
+.video_gallery_content iframe{
   width: 100%;
-  height: 196px;
-}
-.item_img_content iframe{
-  object-fit: cover;
-  width: 100%;
-  height:400px;
+  height: 400px;
+  overflow: hidden;
 }
 .cascade-slider_container {
   width: 100%;
-  height: 640px; /* 3 * slideHeight */
+  height: 640px;
   overflow: hidden;
   margin: auto;
   position: relative;

@@ -207,7 +207,11 @@ ul li a {
 .mobile_nav {
     display: none;
 }
-
+ @media (orientation: landscape) and (max-height: 440px){
+       .desktop_nav {
+        display: block !important;
+    }
+ }
 @media screen and (max-width: 600px) {
     .label_menu {
         width: 45%;
@@ -559,7 +563,7 @@ ul li a {
 
     .kidzee_logo_img {
         position: fixed;
-        top: 0px;
+        top: -5px !important;
         left: auto !important;
         right: 10px !important;
         width: 20%;
@@ -793,4 +797,16 @@ ul li a {
     top: 0;
     z-index: 999;
     background-color: #004878;
+}
+
+.mobile_nav .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 2.255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    height: 2px;
 }

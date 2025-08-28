@@ -17,6 +17,9 @@ export class ChildDevelopmentComponent {
     private projectService: ProjectSeoService,
   ) { }
 
+  ngOnInit(): void {
+    this.getseo();
+  }
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
@@ -66,9 +69,6 @@ export class ChildDevelopmentComponent {
   }
 
 
-  ngOnInit(): void {
-    this.getseo();
-  }
 
   getseo() {
     let tbody = {

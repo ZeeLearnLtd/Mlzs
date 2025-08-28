@@ -2,10 +2,9 @@
     <div class="main_content">
         <div class="start_school_banner desktop_content">
             <div class="francine_form">
-                <h5 class="text-white text-left">Start your Mount Litera Zee School Franchise today!</h5>
+                <strong class="text-white text-left">Start your Mount Litera Zee School Franchise today!</strong>
                 <div class="form">
                     <form [formGroup]="admissionForm">
-
                         <div class="col-md-row">
                             <div class="col-md-12 mt-1">
                                 <input type="text" placeholder="Name*" class="form-control" formControlName="fname"
@@ -94,36 +93,86 @@
                     <img src="../../../assets/img/MLZS/banner/start_school_banner_mobile.png" width="100%" alt="">
                 </div>
                 <div class="col-md-12">
-                    <h4 class="text-white text-center text-left mt-4">Start a Francine</h4>
-                    <div class="form">
+                    <h4 class="text-white text-center text-left mt-4">Start your Mount Litera Zee School Franchise today!</h4>
+                     <form [formGroup]="admissionForm">
                         <div class="col-md-row">
                             <div class="col-md-12 mt-1">
-                                <input type="text" placeholder="Name*" class="form-control">
+                                <input type="text" placeholder="Name*" class="form-control" formControlName="fname"
+                                    [ngClass]="{ 'is-invalid': submitted && f.fname.errors }">
+                                <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                                    <span class="text-danger inValidMsg"
+                                        *ngIf="(f.fname.touched || submitted) && f.fname.errors?.required">
+                                        First name is required
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <input type="text" placeholder="Email*" class="form-control">
+                                <input type="text" placeholder="Email*" class="form-control" placeholder="Email*"
+                                    formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <span class="text-danger inValidMsg"
+                                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                                        Email is required
+                                    </span>
+                                    <span class="text-danger inValidMsg"
+                                        *ngIf="f.email.touched && f.email.errors?.email">
+                                        Enter a valid email address
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <input type="text" placeholder="Mobile no*" class="form-control">
-                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
-                                <input type="text" placeholder="OTP" class="form-control mt-2">
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <select name="" id="" class="form-control">
-                                    <option value="">State</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <select name="" id="" class="form-control">
-                                    <option value="">City</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 mt-4">
-                                <button class="btn read_mode w-100">Send <i
-                                        class="fa fa-long-arrow-right mx-2"></i></button>
+                                <input type="text" placeholder="Mobile no*" class="form-control"
+                                    (keyup)="getMobileNO();" formControlName="mobile"
+                                    [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
+                                <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                                    <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
+                                <!-- <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button> -->
+                                <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
+                                    formControlName="otp" [ngClass]="{ 'is-invalid': submitted && f.otp.errors }">
+                                <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                                    <span class="inValidMsg" *ngIf="f.otp.errors?.required">OTP is required.</span>
+                                </div>
+                                <div *ngIf="otp_ValidMsg" class="validMsg">otp verified successfully</div>
+                                <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
                             </div>
                         </div>
-                    </div>
+                        <div class="col-md-12 mt-3">
+                            <select name="" id="" class="form-control" formControlName="state"
+                                (change)="selectState($event)"
+                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                                <option value="">State/District</option>
+                                <option value="{{state.StateName}}" *ngFor="let state of stateList">
+                                    {{state.StateName}}
+                                </option>
+                            </select>
+                            <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                <span class="text-danger inValidMsg"
+                                    *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
+                                    State/District is required
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <select name="" id="" class="form-control" formControlName="city"
+                                (change)="selectCity($event)" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                                <option value="">City</option>
+                                <option value="{{city.CityName}}" *ngFor="let city of cityList">
+                                    {{city.CityName}}</option>
+                            </select>
+                            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                <span class="text-danger inValidMsg"
+                                    *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
+                                    City is required
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <button class="btn read_mode w-100" (click)="validationForm()">Send</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -331,70 +380,7 @@
             </div>
         </div>
         <div class="award_content my-3">
-            <div class="box my-3">
-
-                <div class="row mt-4">
-                    <div class="title_content text-left">
-                        <h2 class=""><b> Awards </b></h2>
-                        <img src="../../../assets/img/MLZS/prg_text_bg.png" class="award_bg_img" alt="">
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="">
-                            <p>At Mount Litera Zee School, our awards and recognitions are a testament to our dedication to educational excellence and innovation, setting new benchmarks in the academic world.</p>
-                            <p><strong>2023</strong></p>
-                            <div class="row mt-3">
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">Tech Circle Edge Insights - Business Transformation Award 2023</div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">The Economic Times Media Partner - Fortune Leadership Awards - Education Brand of the Year 2023</div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">Education Excellence Award</div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">Education Today - Ranked no. 1 for Best Sports Participation Opportunities</div>
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">Best CBSE School in North India</div>
-                                <!-- <button class="btn read_mode" routerLink="/about-us/awards-recognitions">Know More <i
-                                        class="fa fa-long-arrow-right mx-2"></i></button> -->
-                            </div>
-
-                             <p class="mt-3"><strong>2024</strong></p>
-                            <div class="row mt-3">
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">Economic Times - Best Education Brands Zee Learn - 2024</div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">Elets World Education Summit 2024 - Excellence in Faculty Training</div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">Education Today - India School Merit Awards 2024</div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" width="15px"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0">India's Top CBSE Schools - Awarded for Holistic Education</div>
-                                
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="fr_img_content d-flex justify-content-center">
-                            <img src="../../../assets/img/MLZS/award.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <app-awards-sub-page></app-awards-sub-page>
         </div>
           <div class="businessPartners my-5">
             <div class="box py-5">
@@ -408,10 +394,15 @@
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                   <!-- <div class="owl-carousel owl-theme news_owl1" id="">
+                    <div class="item" *ngFor="let a of videoGalleryList">
+                    <iframe width="1082" height="609" [src]="a.safeUrl" title="School Teacher vs Tuition Teacher | Hindi Stories | Hindi Cartoon | हिंदी कार्टून | Puntoon Kids" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    </div> -->
                     <div class="owl-carousel owl-theme news_owl1" id="">
                       <div class="item" *ngFor="let a of videoGalleryList">
-                        <div class="item_img_content" *ngIf="a.safeUrl">
-                            <iframe class="" [src]="a.safeUrl" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="video_content" *ngIf="a.safeUrl">
+                            <iframe width="1082" height="609" loading="lazy" [src]="a.safeUrl" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                       </div>
                     </div>
@@ -437,11 +428,12 @@
         </div>
         </div>
         </div>
+          <div class="">
+            <app-testimonial></app-testimonial>
+        </div>
         <div class="">
             <app-blogs></app-blogs>
         </div>
-        <div class="">
-            <app-testimonial></app-testimonial>
-        </div>
+      
     </div>
 </section>

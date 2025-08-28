@@ -16,7 +16,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./contect-us.component.css']
 })
 export class ContectUsComponent {
-  headerTitle = "Locate Us"
+  headerTitle = "Contect Us"
   all_data_list: any;
   countryList: any = [];
   stateList: any = [];
@@ -72,16 +72,16 @@ export class ContectUsComponent {
     }
 
     this.tindex = 50;
-    this.getAllDataList();
     this.getseo();
   }
 
   getseo() {
     let tbody = {
-      slug: 'locateUs',
+      slug: 'contact-us',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
+      this.getAllDataList();
       if (data.data != undefined) {
         this.projectService.sendMessagebread(data.data.breadcrumb);
         this.projectService.sendMessageblog(data.data.blog);
@@ -91,7 +91,7 @@ export class ContectUsComponent {
     });
   }
   getAllDataList() {
-    this.ngxSpinner.show();
+    // this.ngxSpinner.show();
     // this._service.get_allCountryList().subscribe(
     //   res => {
     //     this.ngxSpinner.hide();

@@ -6,7 +6,9 @@
     left: 4rem;
     height:30px;
 }
-
+.subcard_content strong{
+    font-size: 1rem;
+}
 @media screen and (max-width: 600px) {
     
 }

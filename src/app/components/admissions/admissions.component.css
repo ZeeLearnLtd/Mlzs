@@ -12,6 +12,9 @@
     padding: 10px 25px;
     background-color: #C4DEFD;
 }
+.francine_form strong{
+    color: rgba(1, 72, 118, 1);
+}
 .verify_otp_btn{
     font-size: 10px;
     padding: 2px 5px !important;
@@ -111,6 +114,10 @@ width: 80%;
 }
 
 @media screen and (max-width: 600px) {
+    .francine_form strong{
+    color: rgba(1, 72, 118, 1);
+    font-size: 1rem;
+}
     .icon_list{
         position: relative;
         top: 0rem;
@@ -123,14 +130,14 @@ width: 80%;
         display: none;
     }
     .francine_form{
-        width: 85%;
+        width:100%;
         float: right;
-        margin: 10px 15px 55px 10px;
+        margin: 10px 15px 0px 10px;
         padding: 10px 25px;
         background-color: #C4DEFD;
     }
     .mobile_content{
-        /* background-color: #184A8C; */
+        margin-top: 2.4rem;
         display: block;
     }
     .menu_content{
@@ -181,7 +188,7 @@ width: 80%;
     width: 12%;
 }
 
-#title_content h2{
+#title_content h1{
     position: relative;
     z-index: 9;
 
@@ -218,6 +225,10 @@ width: 80%;
 }
 
 @media screen and (max-width: 600px) {
+    .title_content{
+     text-align: center;
+     margin-top: 1rem;
+    }
     .menu_content{
     width: 40%;
     height: 50px;
@@ -225,7 +236,7 @@ width: 80%;
     left:0rem;
     padding: 10px;
 }
-    .title_content h2{
+    .title_content h1{
     position: relative;
     z-index: 9;
     text-align: center;
@@ -234,7 +245,7 @@ width: 80%;
     width: 23%;
     position: relative;
     bottom: 1.2rem;
-    left: 8rem;
+    left: -2rem;
     z-index: 1;
 }
     .read_mode{
@@ -248,7 +259,7 @@ width: 80%;
     width: auto !important;
     margin: 15px 15px;
 }
-    #title_content h2{
+    #title_content h1{
     position: relative;
     z-index: 9;
     text-align: center;

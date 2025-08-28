@@ -34,13 +34,13 @@ export class AdmissionsComponent implements OnInit {
   admissionForm: FormGroup;
   randomOtp: any;
   selectFranchiseeCode: any;
-  selectedfranchisee_name:any
+  selectedfranchisee_name: any
   classId: any;
   selectClassName: any;
   cityListName: any;
   _franchise_code: string = "";
   stateListName: any;
-  constructor(private _activeRoute: ActivatedRoute,private spinner:NgxSpinnerService,
+  constructor(private _activeRoute: ActivatedRoute, private spinner: NgxSpinnerService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private projectService: ProjectSeoService, private router: Router,
     private fb: FormBuilder,
@@ -56,7 +56,7 @@ export class AdmissionsComponent implements OnInit {
       class: ['', Validators.required],
       franchisee: ['', Validators.required],
       otp: ['', Validators.required],
-      autorization:['']
+      autorization: ['']
     })
   }
   ngOnInit(): void {
@@ -73,27 +73,26 @@ export class AdmissionsComponent implements OnInit {
 
 
   getseo() {
-     this.spinner.show();
+    this.spinner.show();
     let tbody = {
       slug: 'admissions',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
-       this.spinner.hide();
+      this.spinner.hide();
       this.projectService.sendMessagebread(data?.data?.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
       this.projectService.setmeta(data.data);
     });
-     this.spinner.hide();
+    this.spinner.hide();
   }
 
   getAdmissionFormData() {
     this.apiService.getAllAdmissionData().subscribe((
       res => {
         this.stateContentDataList = res.root.subroot;
-        console.log('this.stateContentDataList', this.stateContentDataList);
         if (this._franchise_code) {
           this.setaddress();
         }
@@ -103,27 +102,26 @@ export class AdmissionsComponent implements OnInit {
 
   setaddress() {
 
-    let alldata=this.stateContentDataList
+    let alldata = this.stateContentDataList
     const filteredFranchisees = alldata.flatMap((state: any) => {
-  const cities = Array.isArray(state.City) ? state.City : state.City ? [state.City] : [];
+      const cities = Array.isArray(state.City) ? state.City : state.City ? [state.City] : [];
 
-  return cities.flatMap((city: any) => {
-    const franchisees = Array.isArray(city.Franchisee)
-      ? city.Franchisee
-      : city.Franchisee
-        ? [city.Franchisee]
-        : [];
+      return cities.flatMap((city: any) => {
+        const franchisees = Array.isArray(city.Franchisee)
+          ? city.Franchisee
+          : city.Franchisee
+            ? [city.Franchisee]
+            : [];
 
-    return franchisees.filter((fr: any) => fr.Address1 === this._franchise_code);
-  });
-});
-      console.log('filteredFranchisees', filteredFranchisees);
-     
+        return franchisees.filter((fr: any) => fr.Address1 === this._franchise_code);
+      });
+    });
+
     let data
 
     if (filteredFranchisees.length) {
-      data = filteredFranchisees[0];  
-      this.stateId  = data?.State_Id;
+      data = filteredFranchisees[0];
+      this.stateId = data?.State_Id;
       this.admissionForm.get('state')?.patchValue(data?.State_Id);
       this.admissionForm.get('state')?.disable();
       this.selectCity = this.stateContentDataList.filter((item: any) => {
@@ -144,20 +142,20 @@ export class AdmissionsComponent implements OnInit {
 
       this.cityId = data?.cityid;
       this.admissionForm.get('city')?.patchValue(data?.cityid);
-       this.admissionForm.get('city')?.disable();
+      this.admissionForm.get('city')?.disable();
       this.selectFranchisee = this.cityList.filter((item: any) => {
         return item.CityID == this.cityId
       })
-       if(Array.isArray(this.selectFranchisee[0].Franchisee)){
-          this.selectFranchisee = this.selectFranchisee[0].Franchisee
-          this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
-          this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
-       }else{
-         this.selectFranchisee = [this.selectFranchisee[0].Franchisee]
-          this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
-          this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
-       }
-     
+      if (Array.isArray(this.selectFranchisee[0].Franchisee)) {
+        this.selectFranchisee = this.selectFranchisee[0].Franchisee
+        this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
+        this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
+      } else {
+        this.selectFranchisee = [this.selectFranchisee[0].Franchisee]
+        this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
+        this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
+      }
+
       this.cityListName = this.cityList.filter((item: any) => {
         return item.CityID == this.cityId
       })
@@ -165,7 +163,7 @@ export class AdmissionsComponent implements OnInit {
       this.cityListName = this.cityListName[0].CityName;
 
       this.franchiseeCode = data?.Franchisee_Code;
-     
+
       this.selectClasslist = data?.classlist;
       this.admissionForm.get('franchisee')?.patchValue(data?.Franchisee_Code);
       this.admissionForm.get('franchisee')?.disable();

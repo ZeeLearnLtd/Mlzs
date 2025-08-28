@@ -84,10 +84,10 @@
 
         <div class="box mt-5">
             <div class="video_gallery_content">
-                 <div class="owl-carousel owl-theme news_owl" id="">
+                    <div class="owl-carousel owl-theme news_owl" id="">
                       <div class="item" *ngFor="let a of videoGalleryList">
-                        <div class="item_img_content" *ngIf="a.safeUrl">
-                            <iframe class="" [src]="a.safeUrl" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="video_content" *ngIf="a.safeUrl">
+                            <iframe width="1082" height="609" [src]="a.safeUrl" loading="lazy" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                       </div>
                     </div>

@@ -94,6 +94,7 @@ import { GetInTouchComponent } from './components/get-in-touch/get-in-touch.comp
 import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
 import { ProgrammesSubTabComponent } from './components/programmes-sub-tab/programmes-sub-tab.component';
 import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-mlzs.component';
+import { AwardsSubPageComponent } from './components/awards-sub-page/awards-sub-page.component';
 interface NgxSpinnerConfig {
   type?: string;
 }
@@ -184,7 +185,8 @@ interface NgxSpinnerConfig {
     PartnerWithUsComponent,
     ProgrammesSubTabComponent,
     SafeUrlPipe,
-    ConvertToMLZSComponent
+    ConvertToMLZSComponent,
+    AwardsSubPageComponent
   ],
   imports: [
 
