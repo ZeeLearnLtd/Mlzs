@@ -1,0 +1,15 @@
+.award_content .read_mode { width: 25%; margin: 10px 20px; }
+.title_content h2{
+  position: relative;
+  z-index: 10;
+}
+
+.text_bg, .award_bg_img {
+  position: relative;
+  z-index: 1;
+}
+ .fr_img_content img { width: 100%; }
+.award_bg_img { width: 15%; height: 20px; bottom: 1.7rem; }
+@media (max-width: 600px) {
+ .award_content .read_mode { width: 100%; margin: 10px 0; }
+}

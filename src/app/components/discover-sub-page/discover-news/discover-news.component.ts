@@ -71,11 +71,10 @@ export class DiscoverNewsComponent {
       if (data?.data[0]?.contentData) {
         let res = data.data[0].contentData
         this.newsData = JSON.parse(res);
-        console.log('newsData', this.newsData)
         this.alldata = JSON.parse(res);
         this.distinctYears = Array.from(
           new Set(
-            this.alldata.map((item: any) => new Date(item.CreatedDate).getFullYear())
+            this.alldata.map((item: any) => new Date(item.StartDate).getFullYear())
           )
         );
         this.distinctKeywards = Array.from(
@@ -91,7 +90,6 @@ export class DiscoverNewsComponent {
         this.newscategory = [];
       }
     });
-    console.log('this.distinctKeywards', this.distinctKeywards)
   }
 
 
@@ -101,7 +99,7 @@ export class DiscoverNewsComponent {
       this.newsData = this.alldata.filter((dt: any) => {
         return ( //dt.category.includes(id);
           (this.Selectedcategory === '' || dt?.category.includes(this.Selectedcategory)) &&
-          (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear) &&
+          (this.Selectedyear === '' || new Date(dt.StartDate).getFullYear().toString() === this.Selectedyear) &&
           (this.Selectedpublisher === '' || dt?.Keywards.includes(this.Selectedpublisher))
         );
       }).map((obj: any) => {
@@ -118,7 +116,7 @@ export class DiscoverNewsComponent {
       this.newsData = this.alldata.filter((dt: any) => {
         return ( //dt.category.includes(id);
           (this.Selectedcategory === '' || dt?.category.includes(this.Selectedcategory)) &&
-          (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear) &&
+          (this.Selectedyear === '' || new Date(dt.StartDate).getFullYear().toString() === this.Selectedyear) &&
           (this.Selectedpublisher === '' || dt?.Keywards.includes(this.Selectedpublisher))
         );
       }).map((obj: any) => {
@@ -135,7 +133,7 @@ export class DiscoverNewsComponent {
       this.newsData = this.alldata.filter((dt: any) => {
         return ( //dt.category.includes(id);
           (this.Selectedcategory === '' || dt?.category.includes(this.Selectedcategory)) &&
-          (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear) &&
+          (this.Selectedyear === '' || new Date(dt.StartDate).getFullYear().toString() === this.Selectedyear) &&
           (this.Selectedpublisher === '' || dt?.Keywards.includes(this.Selectedpublisher))
         );
       }).map((obj: any) => {

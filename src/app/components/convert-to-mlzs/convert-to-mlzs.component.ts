@@ -107,26 +107,26 @@ export class ConvertToMLZSComponent {
     this.stateListName = this.stateListName[0].StateName
   }
 
-  onChangeCity(id: any) {
-    this.cityId = id.value;
-    this.selectFranchisee = this.cityList.filter((item: any) => {
-      return item.CityID == this.cityId
-    })
-    this.selectFranchisee = [this.selectFranchisee[0].Franchisee]
-    this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
-    this.cityListName = this.cityList.filter((item: any) => {
-      return item.CityID == this.cityId
-    })
+  // onChangeCity(id: any) {
+  //   this.cityId = id.value;
+  //   this.selectFranchisee = this.cityList.filter((item: any) => {
+  //     return item.CityID == this.cityId
+  //   })
+  //   this.selectFranchisee = [this.selectFranchisee[0].Franchisee]
+  //   this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
+  //   this.cityListName = this.cityList.filter((item: any) => {
+  //     return item.CityID == this.cityId
+  //   })
 
-    this.cityListName = this.cityListName[0].CityName
-  }
-  onChangeFranchisee(id: any) {
-    this.franchiseeCode = id.value;
-    this.selectClasslist = this.selectFranchisee.filter((item: any) => {
-      return item.Franchisee_Code == this.franchiseeCode
-    })
-    this.selectClasslist = this.selectClasslist[0].classlist
-  }
+  //   this.cityListName = this.cityListName[0].CityName
+  // }
+  // onChangeFranchisee(id: any) {
+  //   this.franchiseeCode = id.value;
+  //   this.selectClasslist = this.selectFranchisee.filter((item: any) => {
+  //     return item.Franchisee_Code == this.franchiseeCode
+  //   })
+  //   this.selectClasslist = this.selectClasslist[0].classlist
+  // }
 
   onchangeClass(id: any) {
     this.classId = id.value
@@ -157,29 +157,27 @@ export class ConvertToMLZSComponent {
       "utm_content": null,
       "utm_ad": null,
       "gclid": null,
-      "Type": "P",
+      "Type": "F",
       "Source": "Website",
       "FirstName": this.admissionForm.get('name')?.value,
       "Email": this.admissionForm.get('email')?.value,
       "Mobile": this.admissionForm.get('mobileNo')?.value,
-      "State": this.stateListName,
-      "City": this.cityListName,
-      "LocationId": this.selectFranchiseeCode,
-      "class": this.selectClassName,
-      "ClassId": this.admissionForm.get('class')?.value,
+      "State": this.admissionForm.get('state')?.value,
+      "City": this.admissionForm.get('city')?.value,
+      "LocationId": "",
+      "class": "",
       "ProjectId": "3607",
-      "Location": this.selectFranchiseeCode,
-      "Location_name": this.admissionForm.get('schoolName')?.value,
+      "Location": "",
+      "Location_name": "",
       "Country": "India",
-      "Product": "259262000039670041"
+      "Product": "259262000000213037"
     }
-
-    this.apiService.postAdmissionForm(obj).subscribe(
+    this.apiService.savefranchiseeData(obj).subscribe(
       res => {
-        this.toastr.success('Admission submit successfully!');
+        this.toastr.success('Form submit successfully!');
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;
-        this.router.navigate(['admission/thankyou'])
+        this.router.navigate(['franchise/thankyou'])
         this.admissionForm.reset();
         this.submitted = false
       }

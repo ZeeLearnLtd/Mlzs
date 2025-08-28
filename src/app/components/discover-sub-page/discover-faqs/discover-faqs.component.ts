@@ -87,11 +87,9 @@ export class DiscoverFaqsComponent {
       }).map((obj: any) => {
         return obj;
       });
-      console.log('this.faqdata', this.faqdata);
     }
     else {
       this.faqsData = this.alldata;
-      console.log('this.faqdata', this.faqdata);
     }
   }
 

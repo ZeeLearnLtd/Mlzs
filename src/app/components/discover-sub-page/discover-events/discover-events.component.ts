@@ -70,7 +70,7 @@ export class DiscoverEventsComponent {
         this.alldata = JSON.parse(res);
         this.distinctYears = Array.from(
           new Set(
-            this.alldata.map((item: any) => new Date(item.CreatedDate).getFullYear())
+            this.alldata.map((item: any) => new Date(item.StartDate).getFullYear())
           )
         );
 
@@ -95,7 +95,7 @@ export class DiscoverEventsComponent {
       this.categoryNewsMap = this.alldata.filter((dt: any) => {
         return ( //dt.category.includes(id);
           (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
-          (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
+          (this.Selectedyear === '' || new Date(dt.StartDate).getFullYear().toString() === this.Selectedyear)
         );
       }).map((obj: any) => {
         return obj;
@@ -143,7 +143,7 @@ export class DiscoverEventsComponent {
     //   this.eventsData = this.alldata.filter((dt: any) => {
     //     return (
     //       (this.selectedcategory === '' || dt?.category.includes(this.selectedcategory)) &&
-    //       (this.Selectedyear === '' || new Date(dt.CreatedDate).getFullYear().toString() === this.Selectedyear)
+    //       (this.Selectedyear === '' || new Date(dt.StartDate).getFullYear().toString() === this.Selectedyear)
     //     );
     //   }).map((obj: any) => {
     //     return obj;

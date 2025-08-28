@@ -120,8 +120,10 @@ hr{
 
 .item_white_bg{
     cursor: pointer;
+    overflow: hidden;
 }
 
 .item{
     cursor: pointer;
+    overflow: hidden;
 }

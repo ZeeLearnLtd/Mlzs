@@ -81,7 +81,7 @@ const routes: Routes = [
       { path: 'discover-more', component: DiscoverMoreComponent },
       { path: 'about-us/legacy', component: OurLegacyComponent },
       { path: 'about-us/vision', component: OurVisionComponent },
-      { path: 'locateUs', component: LocateUsComponent },
+      { path: 'locate-us', component: LocateUsComponent },
       { path: 'about-us/our-philosophy', component: OurPhilosophyComponent },
       { path: 'about-us/awards-recognitions', component: AwardsAndRecognitionsComponent },
       { path: 'programmes/litera-foundational-stage-1', component: LiteraFoundationalStage1Component },

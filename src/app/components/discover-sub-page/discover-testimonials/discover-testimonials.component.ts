@@ -81,6 +81,7 @@ export class DiscoverTestimonialsComponent {
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
       this.gettestimonial_data();
+      this.projectService.sendMessagebread(data.data.breadcrumb);
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);

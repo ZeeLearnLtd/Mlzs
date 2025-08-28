@@ -57,7 +57,7 @@ export class LocateUsComponent implements OnInit {
 
   getseo() {
     let tbody = {
-      slug: 'locateus',
+      slug: 'locate-us',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
@@ -129,39 +129,39 @@ export class LocateUsComponent implements OnInit {
 
 
   selectState(stateId: any) {
-     if(stateId){
-    this.getStateId = stateId
-    let lgd = this.all_data_list.filter(function (lg: any) {
-      return lg.State_Id === Number(stateId);
-    }).map(function (lg: any) {
-      return lg;
-    })
-    const key = 'City_Name';
-    this.cityList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
-    this.cityList = this.cityList.sort((a: any, b: any) =>
-      a.City_Name !== b.City_Name ? (a.City_Name < b.City_Name ? -1 : 1) : 0
-    );
-    this.franchiseeList=[''];
-    this.filterData();
-    }else{
+    if (stateId) {
+      this.getStateId = stateId
+      let lgd = this.all_data_list.filter(function (lg: any) {
+        return lg.State_Id === Number(stateId);
+      }).map(function (lg: any) {
+        return lg;
+      })
+      const key = 'City_Name';
+      this.cityList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
+      this.cityList = this.cityList.sort((a: any, b: any) =>
+        a.City_Name !== b.City_Name ? (a.City_Name < b.City_Name ? -1 : 1) : 0
+      );
+      this.franchiseeList = [''];
+      this.filterData();
+    } else {
       this.india_country();
-    } 
+    }
   }
 
   selectCity(cityId: any) {
-     if(cityId){
-    this.getCityId = cityId
-    let lgd = this.all_data_list.filter(function (lg: any) {
-      return lg.City_Id === Number(cityId);
-    }).map(function (lg: any) {
-      return lg;
-    })
-    const key = 'Franchisee_Name';
-    this.franchiseeList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
-    this.filterData();
-      }else{
-        this.selectState(this.searchForm.get('state')?.value);
-    }    
+    if (cityId) {
+      this.getCityId = cityId
+      let lgd = this.all_data_list.filter(function (lg: any) {
+        return lg.City_Id === Number(cityId);
+      }).map(function (lg: any) {
+        return lg;
+      })
+      const key = 'Franchisee_Name';
+      this.franchiseeList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
+      this.filterData();
+    } else {
+      this.selectState(this.searchForm.get('state')?.value);
+    }
   }
 
   setcentrelist() {
@@ -202,13 +202,13 @@ export class LocateUsComponent implements OnInit {
     //this.centerList=data;
   }
   selectLocation(locationId: any) {
-    if(locationId){
-        this.getLocationId = locationId
-        this.filterData();
-     }
-    else{
+    if (locationId) {
+      this.getLocationId = locationId
+      this.filterData();
+    }
+    else {
       this.selectCity(this.searchForm.get('city')?.value);
-    } 
+    }
   }
 
   filterData() {
@@ -277,7 +277,7 @@ export class LocateUsComponent implements OnInit {
     //     console.log(error);
     //   }
     // })
-       this.router.navigate(['/admissions',data?.Franchisee_Code])
+    this.router.navigate(['/admissions', data?.Franchisee_Code])
   }
 
 }

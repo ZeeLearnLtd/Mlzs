@@ -18,8 +18,17 @@ section{
 }
 
 @media screen and (max-width: 600px) {
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height:auto !important;
+}
 .programmes_main_page{
   margin-top: 10px;
+}
+h4{
+  margin-top: 0.8rem;
 }
 }
 

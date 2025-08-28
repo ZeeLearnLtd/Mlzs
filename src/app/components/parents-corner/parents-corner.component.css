@@ -9,7 +9,9 @@
 .start_school_banner{
     margin-top: 9rem;
 }
-
+.faq_bg h2{
+    color: #fff !important;
+}
 .tab_btn{
     color: #FFF;
     width: 23%;
@@ -40,7 +42,7 @@
     /* background-color: #004878; */
 }
 
-.title_content h2{
+.parents_corner h2{
     position: relative;
     z-index: 9;
     color: #212529 !important;

@@ -3,7 +3,6 @@
   margin-top: 8rem;
   height: 500px;
 }
-
 .francine_form {
   width: 25%;
   float: right;
@@ -28,7 +27,6 @@
   width: 40%;
   height: 50px;
   position: relative;
-  left: 5.5rem;
   padding: 10px;
 }
 
@@ -56,6 +54,9 @@
   position: relative;
   z-index: 10;
 }
+.francine_form strong{
+  font-size: 1rem;
+}
 
 .faq_title, .sources, .sources_content p {
   color: #014876;
@@ -68,7 +69,7 @@
 .text_bg { width: 7%; height: 20px; bottom: 1.8rem; }
 .award_bg_img { width: 15%; height: 20px; bottom: 1.7rem; }
 
-.about_img_content img, .fr_img_content img { width: 85%; }
+.about_img_content img { width: 85%; }
 
 .read_mode {
   background-color: #44C8F5;
@@ -82,13 +83,12 @@
 }
 .read_mode:hover { color: #FFF; }
 
-.award_content .read_mode { width: 25%; margin: 10px 20px; }
+
 
 .desktop_content { display: block; }
 .mobile_content { display: none; }
 
 h4 { font-family: Poppins; overflow: hidden; }
-
 .validMsg, .inValidMsg {
   font-size: 12px;
   text-align: right;
@@ -96,31 +96,46 @@ h4 { font-family: Poppins; overflow: hidden; }
 }
 .validMsg { color: green; }
 .inValidMsg { color: red; }
-
 .stats-section { background: #0a4c78; color: #fff; padding: 50px 0; }
 .stat-box { text-align: center; }
 .stat-icon img { width: 50px; margin-bottom: 15px; }
 .stat-number { font-size: 2rem; font-weight: bold; }
 .stat-label { font-size: 0.9rem; opacity: 0.8; }
-
 .what-we-offer .col-1 {
   width: 6%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .bg_box { background-color: rgba(1, 72, 118, 1); }
+.news_owl1 .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.video_content{
+  width: 96%; height: 100%;
+}
 @media (max-width: 600px) {
+  .short_text p {
+    margin-bottom: 0 !important;
+    padding: 0px 12px;
+}
+  .row{
+   text-align: justify;
+  }
+  p{
+    text-align: justify !important;
+  }
   .what-we-offer .col-1 { width: auto; }
   .about_img_content { margin-top: 10px; }
-  .award_content .read_mode { width: 100%; margin: 10px 0; }
+ 
   .read_mode { font-size: 18px; color: #FFF; }
   .francine_form {
     width: 100%;
     float: none;
-    margin-top: 2rem;
+    margin:0px 2px 0px 2px;
     background-color: #004878;
   }
   .desktop_content { display: none; }

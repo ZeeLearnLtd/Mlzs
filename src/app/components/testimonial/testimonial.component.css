@@ -172,3 +172,12 @@ hr{
   pointer-events: auto;    
   transform: scale(1);     
 }
+
+@media screen and (max-width: 600px) {
+   ::ng-deep .testimonials .owl-carousel .owl-stage {
+        position: relative;
+        touch-action: manipulation;
+        height:100% !important;
+        overflow: hidden;
+    }
+  }

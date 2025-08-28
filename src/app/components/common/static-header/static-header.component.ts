@@ -16,17 +16,6 @@ export class StaticHeaderComponent {
     document.getElementById("trigger-overlay")?.click();
   }
 
-  ngOnInit(): void {
-    // this.scrollPosition = window.scrollY;
-  }
-
-  // scroll_hide(){
-  //   console.log('scroll')
-  //   if (this.scrollPosition > 100) {
-  //     document.getElementById('ab_id')?.remove();
-  //      }
-  // }
-
   closeMenu() {
     // document.getElementById("dropdown_menu")?.click();
     const element = this.navbarCollapse.nativeElement;

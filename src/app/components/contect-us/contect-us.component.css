@@ -1,8 +1,21 @@
 .top_banner{
     margin-top:6.5rem;
 }
-
+.menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left: 5.5rem;
+    padding: 10px;
+}
 @media screen and (max-width: 600px) {
+     .menu_content{
+    width: 40%;
+    height: 50px;
+    position: relative;
+    left:0rem;
+    padding: 10px;
+}
 .top_banner{
     margin-top: 2rem;
 }
@@ -33,9 +46,9 @@ section{
 .text_bg1{
     width: 25%;
     position: relative;
-    bottom: 1.8rem;
+    bottom: 4.8rem;
     z-index: 1;
-    left: 1rem;
+    left: 9rem;
     height: 25px;
 }
 
@@ -104,7 +117,7 @@ textarea{
     /* background-color: #004878; */
 }
 
-.title_content h2{
+.title_content h1{
     position:relative;
     z-index: 9;
 }

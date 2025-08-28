@@ -117,7 +117,6 @@ export class StartSchoolComponent {
       title: video.Title,
       safeUrl: this.getSafeEmbedUrl(video.slug),
     }));
-    console.log('videoGalleryList', this.videoGalleryList)
   }
   getMobileNO() {
     if ((this.admissionForm.get('mobile')?.value).length == 10) {

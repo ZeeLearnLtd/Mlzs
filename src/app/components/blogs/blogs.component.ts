@@ -48,9 +48,7 @@ export class BlogsComponent implements OnInit {
       .subscribe((message) => {
         this.spinner = false
         if (message) {
-
           this.blogdata = message.text;
-          console.log('blogdata', this.blogdata)
         }
       });
     this.getblog_data();

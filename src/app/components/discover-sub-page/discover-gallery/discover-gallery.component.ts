@@ -175,19 +175,16 @@ export class DiscoverGalleryComponent {
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       this.videoList = JSON.parse(data.data[0].contentData)
-      console.log('videoList', this.videoList)
       this.videoGalleryList = this.videoList.map((video: any) => ({
         ...video,
         title: video.Title,
         safeUrl: this.getSafeEmbedUrl(video.slug),
       }));
-      console.log('this.videoGalleryList ', this.videoGalleryList)
     });
   }
 
   getSafeEmbedUrl(url: string): SafeResourceUrl {
     let videoId = url;
-    console.log('videoId1', videoId)
     if (url) {
       // if (url.includes('youtu.be/')) {
       //   videoId = url.split('youtu.be/')[1];

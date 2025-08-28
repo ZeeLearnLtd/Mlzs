@@ -162,22 +162,44 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+    .menu_content{
+    width: 100% !important;
+    height: 50px;
+    position: relative;
+    left: 1rem !important;
+    padding: 10px;
+}
+    .faq_bg .text_bg {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 14% !important;
+    bottom: 0.5rem !important;
+    height: 24px !important;
+}
     .faq_bg {
-    background-color: rgba(1, 72, 118, 1) !important;
-    margin-top: 2rem;
+        background-color: rgba(1, 72, 118, 1) !important;
+        margin-top: 2rem;
     }
-    .faq_bg p{
-        padding:0rem 2rem;
+.mat-expansion-panel-header{
+    padding: 0 10px !important;
+}
+    .faq_bg p {
+        padding: 0rem 5px;
     }
-    .programm_img_content img{
+   .mat-expansion-panel-body {
+    padding: 0 0px 0px !important;
+     }
+    .programm_img_content img {
         width: 100% !important;
         margin-top: 1rem;
     }
-    .news_text{
-    padding: 0rem 1.3rem 0rem 0rem;
-    text-align: left;
-    margin: 1rem 0;
+
+    .news_text {
+        padding: 0rem 1.3rem 0rem 0rem;
+        text-align: left;
+        margin: 1rem 0;
     }
+
     p {
         text-align: justify;
     }
@@ -254,17 +276,24 @@ body {
     overflow-x: hidden !important;
 }
 
-p, 
-button{
-  font-family: 'Poppins' !important;
-  font-size: 14px !important;
+p,
+button {
+    font-family: 'Poppins' !important;
+    font-size: 14px !important;
 }
-li{
-font-family: 'Poppins' !important;
+
+li {
+    font-family: 'Poppins' !important;
 }
-h2,h6,h1,h5,h4{
+
+h2,
+h6,
+h1,
+h5,
+h4 {
     overflow: hidden;
 }
+
 .sub_text_black {
     color: #000;
     font-size: 16px !important;
@@ -364,39 +393,40 @@ h2,h6,h1,h5,h4{
 }
 
 .banner h1 {
-  font: bold clamp(1.5rem, 4vw, 3rem) 'Playfair Display', serif;
-  color: #8d3dad;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-left: 3.8rem;
+    font: bold clamp(1.5rem, 4vw, 3rem) 'Playfair Display', serif;
+    color: #8d3dad;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 3.8rem;
 }
 
-.strong_title strong{
+.strong_title strong {
     font-size: 1rem;
 }
 
-.faq_bg{
-    background-color:rgba(1, 72, 118, 1) !important;
+.faq_bg {
+    background-color: rgba(1, 72, 118, 1) !important;
 }
-.faq_bg .text_bg{
+
+.faq_bg .text_bg {
     position: relative;
     z-index: 1;
     width: 7% !important;
     bottom: 1.5rem !important;
 }
 
-.long_para{
-  display: -webkit-box; 
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  font-size: 14px;
+.long_para {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
 
 }
 
-.locat_us_content{
-background-color:rgba(0, 72, 120, 1)
+.locat_us_content {
+    background-color: rgba(0, 72, 120, 1)
 }
 
 .locat_us_content h2 {
@@ -405,12 +435,17 @@ background-color:rgba(0, 72, 120, 1)
     position: relative;
     z-index: 9;
 }
-
+.subMenu{
+    margin-top: 1rem;
+}
 .locat_us_content .text_bg {
     width: 11%;
     position: relative;
     bottom: 1.7rem;
     z-index: 0;
     left: 4rem;
-    height:30px;
+    height: 30px;
+}
+.menu_content{
+    overflow: hidden;
 }
