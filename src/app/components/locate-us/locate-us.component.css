@@ -1,16 +1,19 @@
 .text_bg {
-    width: 23%;
+    width: 11%;
     position: relative;
-    bottom: 1.5rem;
+    bottom: 1.8rem;
     z-index: 1;
+    height: 20px;
 }
-
+/* section{
+  background: url("../../../assets/img/MLZS/bg_svg/Convert-to-an.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  } */
 h1 {
     position: relative;
     z-index: 9;
-}
-.programmes_main_page{
-    margin-top: 7.5rem;
 }
 .school-card {
     border-radius: 10px;
@@ -36,8 +39,9 @@ h1 {
   color: #fff;
 }
 .school-card:hover .btn-style{
- background:#fff;
- color: rgba(0, 72, 119, 1);
+ border:1px solid#fff;
+ background-color:transparent;
+ color: #fff;
 }
 
 .school-card h6{
@@ -48,26 +52,17 @@ font-weight: 600;
     color: rgba(1, 72, 118, 1);
     text-decoration: none;
 }
-.subcard_content{
-    min-height:170px;
-    overflow: hidden;
-}
-
 .btn-style{
      color: rgba(0, 72, 119, 1);
      background: rgba(72, 199, 244, 1);
 }
-
-/* .address{
-    margin-left: 20px;
-} */
 select{
     font-size: 13px;
     height: 30px;
 }
 .subcard_content{
-    min-height:170px;
-    overflow: hidden;
+  min-height: clamp(170px, 15vw, 250px);
+  overflow: hidden;
 }
 .select-arrow {
   position: relative;

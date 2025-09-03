@@ -3,9 +3,6 @@ section{
     width: 100%;
     padding: 25px 0px 50px 0px;
   }
-  .programmes_main_page{
-    margin-top:6.5rem;
-}
 
 .menu_content{
     width: 40%;
@@ -28,7 +25,4 @@ h2{
     font-weight: 800;
 }
   @media screen and (max-width: 600px) {
-    .programmes_main_page{
-      margin-top:13px;
-  }
     }

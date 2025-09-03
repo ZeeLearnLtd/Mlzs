@@ -1,87 +1,80 @@
-.multi_img_group{
-    display: flex;
-    justify-content: center;
+.multi_img_group {
+  display: flex;
+  justify-content: center;
 }
 
-.multi_img_group img{
-width: 80%;
+.multi_img_group img {
+  width: 80%;
 }
 
-section{
-    background-image: url('../../../../assets/img/MLZS/main_bg.png');
-    background-size: cover;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
-  }
-  .programmes_main_page{
-    margin-top:6.5rem;
+section {
+  background: url("../../../../assets/img/MLZS/bg_svg/Programms-page-bg.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {}
+
+.text_bg {
+  width: 23%;
+  position: relative;
+  bottom: 1.5rem;
+  z-index: -1;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #fff;
+  background: #014876;
+  font-size: clamp(13px, 1vw, 14px);
+  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  margin: clamp(5px, 0.5vw, 6px);
+  border-radius: 6px;
+}
+
+.nav-link:focus,
+.nav-link {
+  color: #014876;
+  font-size: clamp(13px, 1vw, 14px);
+  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  margin: clamp(5px, 0.5vw, 6px);
+  background-color: #44C8F5;
+}
+
+.liter_img {
+  width: 50%;
+}
+
+.liter_content {
+  margin-left: 57px;
+}
+
+.fr_img_content img {
+  width: 80%;
+}
+
+.title_content ul {
+  padding: 0;
+  line-height: 30px;
 }
 
 @media screen and (max-width: 600px) {
-.programmes_main_page{
-  margin-top: 10px;
-}
-}
-
-
-.text_bg{
-    width:23%;
-    position: relative;
-    bottom:1.5rem;
-    z-index: -1;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color:#FFF;
-    font-size: 13px;
-    padding: 5px 25px;
-    background-color:#014876;
-    margin: 5px;
-}
-
-.nav-link:focus, .nav-link{
-    color:#014876;
-    font-size: 13px;
-    padding: 5px 25px;
-    background-color: #44C8F5;
-    margin: 5px;
-}
-.programm_img_content img{
-    width: 85%;
-    }
-
-    .liter_img{
-        width: 50%;
-    }
-
-    .liter_content{
-        margin-left: 57px;
-    }
-
-  .fr_img_content img{
-    width: 80%;
-  }
-
-  .title_content ul{
-    padding: 0; 
-    line-height: 30px;
-  }
-
-  @media screen and (max-width: 600px) {
-  li{
+  li {
     width: 100%;
   }
 
-  li button{
+  li button {
     width: 100%;
   }
-  .programm_para{
-    margin:38px 30px !important;
-    text-align: justify;
-  }
-  }
 
-  .programm_para{
-    margin:38px 52px;
+  .programm_para {
+    margin: 38px 30px !important;
     text-align: justify;
   }
+}
+
+.programm_para {
+  margin: 38px 52px;
+  text-align: justify;
+}

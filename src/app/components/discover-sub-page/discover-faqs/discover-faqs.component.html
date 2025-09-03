@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="mt-3">
-            <div class="news_list mt-5">
+            <div class="news_list my-5">
     <div class="faq_content">
         <div class="title_content text-center">
             <h1 class="text-white"><b>All You Need to Know</b></h1>
@@ -32,7 +32,7 @@
             <mat-accordion>
                 <mat-expansion-panel *ngFor="let faq of faqsData">
                         <mat-expansion-panel-header>
-                            <h6>{{faq.Title}}</h6>
+                            <h6><div class="faq_title">{{faq.Title}}</div></h6>
                         </mat-expansion-panel-header>
                         <span>
                             <p [innerHTML]="faq.Long1"></p>

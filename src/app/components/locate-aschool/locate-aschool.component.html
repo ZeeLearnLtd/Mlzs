@@ -1,88 +1,88 @@
 <section>
-<div class="container text-center">
+  <div class="container text-center">
     <form action="" [formGroup]="searchForm">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <select name="" id="" class="form-control  dropdown-toggle" formControlName="country"
-                                    (change)="selectCountry($any($event.target).value)">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <select name="" id="" class="form-control  dropdown-toggle" formControlName="country"
+              (change)="selectCountry($any($event.target).value)">
 
-                                    <option value="{{country.Country_Id}}" *ngFor="let country of countryList">
-                                        {{country.Country_Name}}</option>
-                                </select>
-                                <i class="fa fa-chevron-down select-arrow"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3 res_input">
-                            <div class="form-group">
-                                <select name="" id="" class="form-control  dropdown-toggle" formControlName="state"
-                                    (change)="selectState($any($event.target).value)">
-                                    <option value="">State/District</option>
-                                    <option value="{{state.State_Id}}" *ngFor="let state of stateList">
-                                        {{state.State_Name}}</option>
-                                </select>
-                                <i class="fa fa-chevron-down select-arrow"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3 res_input">
-                            <div class="form-group">
-                                <select name="" id="" class="form-control  dropdown-toggle" formControlName="city"
-                                    (change)="selectCity($any($event.target).value)">
-                                    <option value="">Select City</option>
-                                    <option value="{{city.City_Id}}" *ngFor="let city of cityList">{{city.City_Name}}
-                                    </option>
-                                </select>
-                                <i class="fa fa-chevron-down select-arrow"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-3 res_input">
-                            <div class="form-group">
-                                <select name="" id="" class="form-control  dropdown-toggle" formControlName="location"
-                                    (change)="selectLocation($any($event.target).value)">
-                                    <option value="">Location</option>
-                                    <option value="{{location.Franchisee_Code}}"
-                                        *ngFor="let location of franchiseeList">{{location.Franchisee_Name}}</option>
-                                </select>
-                                 <i class="fa fa-chevron-down select-arrow"></i>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-  <div class="row g-4">
- <ng-container *ngFor="let a of centerList; let i = index">
-  <div class="col-md-4 mt-5" *ngIf="i < 3">
-    <div class="school-card h-100">
-      <div class="subcard_content">
-        <strong><i class="fa fa-home"></i> {{a.Franchisee_Name}}</strong>
-        <p class="address">{{a.Address1}},{{a.Address2}},{{a.Place}}</p>
-        <p class="mb-1">
-          <a href="tel:{{a.Mobile_No}}" *ngIf="a.Mobile_No != ''">
-            <i class="fa fa-phone"></i><span class="mx-2">{{a.Mobile_No}}</span>
-          </a>
-          &nbsp;
-          <a href="tel:{{a.Mobile_No}}" *ngIf="a.Mobile_No != ''">
-            <i class="fa fa-phone"></i><span class="mx-2">{{a.Mobile_No}}</span>
-          </a>
-        </p>
-        <p class="mb-3">
-          <i class="fa fa-envelope"></i><span class="mx-2">{{a.Email_Id}}</span>
-        </p>
+              <option value="{{country.Country_Id}}" *ngFor="let country of countryList">
+                {{country.Country_Name}}</option>
+            </select>
+            <i class="fa fa-chevron-down select-arrow"></i>
+          </div>
+        </div>
+        <div class="col-md-3 res_input">
+          <div class="form-group">
+            <select name="" id="" class="form-control  dropdown-toggle" formControlName="state"
+              (change)="selectState($any($event.target).value)">
+              <option value="">State/District</option>
+              <option value="{{state.State_Id}}" *ngFor="let state of stateList">
+                {{state.State_Name}}</option>
+            </select>
+            <i class="fa fa-chevron-down select-arrow"></i>
+          </div>
+        </div>
+        <div class="col-md-3 res_input">
+          <div class="form-group">
+            <select name="" id="" class="form-control  dropdown-toggle" formControlName="city"
+              (change)="selectCity($any($event.target).value)">
+              <option value="">Select City</option>
+              <option value="{{city.City_Id}}" *ngFor="let city of cityList">{{city.City_Name}}
+              </option>
+            </select>
+            <i class="fa fa-chevron-down select-arrow"></i>
+          </div>
+        </div>
+        <div class="col-md-3 res_input">
+          <div class="form-group">
+            <select name="" id="" class="form-control  dropdown-toggle" formControlName="location"
+              (change)="selectLocation($any($event.target).value)">
+              <option value="">Location</option>
+              <option value="{{location.Franchisee_Code}}" *ngFor="let location of franchiseeList">
+                {{location.Franchisee_Name}}</option>
+            </select>
+            <i class="fa fa-chevron-down select-arrow"></i>
+          </div>
+        </div>
       </div>
-      <div class="d-flex gap-2">
-        <a href="https://www.google.com/maps/search/?api=1&query={{a.Latitude}},{{a.Longitude}}" target="_blank">
-          <button class="btn btn-light btn-sm btn-style rounded-2">Map Direction ➜</button>
-        </a>
-        <button class="btn btn-light btn-sm btn-style rounded-2" (click)="setaddress(a)">Enquire Now ➜</button>
+    </form>
+
+    <div class="row g-4">
+      <ng-container *ngFor="let a of centerList; let i = index">
+        <div class="col-md-4 mt-5" *ngIf="i < 3">
+          <div class="school-card h-100">
+            <div class="subcard_content">
+              <strong><i class="fa fa-home"></i> {{a.Franchisee_Name}}</strong>
+              <p class="address">{{a.Address1}},{{a.Address2}},{{a.Place}}</p>
+              <p class="mb-1">
+                <a href="tel:{{a.Mobile_No}}" *ngIf="a.Mobile_No != ''">
+                  <i class="fa fa-phone"></i><span class="mx-2">{{a.Mobile_No}}</span>
+                </a>
+                &nbsp;
+                <a href="tel:{{a.Mobile_No}}" *ngIf="a.Mobile_No != ''">
+                  <i class="fa fa-phone"></i><span class="mx-2">{{a.Mobile_No}}</span>
+                </a>
+              </p>
+              <p class="mb-3">
+                <i class="fa fa-envelope"></i><span class="mx-2">{{a.Email_Id}}</span>
+              </p>
+            </div>
+            <div class="d-flex gap-2">
+              <a href="https://www.google.com/maps/search/?api=1&query={{a.Latitude}},{{a.Longitude}}" target="_blank">
+                <button class="btn btn-light btn-sm btn-style rounded-2">Map Direction ➜</button>
+              </a>
+              <button class="btn btn-light btn-sm btn-style rounded-2" (click)="setaddress(a)">Enquire Now ➜</button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mt-4 d-flex justify-content-center">
+        <button class="btn btn-custom-white" routerLink="/locateUs">Know More ➜</button>
       </div>
     </div>
   </div>
-</ng-container>
-  </div>
-   <div class="row">
-  <div class="col-md-12 mt-4 d-flex justify-content-center">
-    <button class="btn know-more-btn btn-custom" routerLink="/locateUs">Know More ➜</button>
-  </div>
-  </div>
-</div>
 </section>

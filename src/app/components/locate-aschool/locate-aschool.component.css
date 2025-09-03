@@ -79,9 +79,6 @@ p {
     background-color: #33a0ca;
 }
 
-/* section {
-    background-color: rgba(0, 72, 120, 1);
-} */
 .school-card h6{
 font-weight: 600;
 }
@@ -90,14 +87,14 @@ font-weight: 600;
 }
 
 .school-card {
-    border-radius: 10px;
-    border: 1px solid#eee;
-    padding: 20px;
-    background: #fff;
-    color: rgba(1, 72, 118, 1);
-    transition: 0.3s;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    text-align: left;
+ border: 1px solid #eee;
+  border-radius: 10px;
+  padding: clamp(12px, 1.2vw, 16px);
+  background: #fff;
+  color: #014876;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .school-card:hover {
@@ -114,9 +111,14 @@ font-weight: 600;
 }
 .school-card:hover .btn-style{
  background:#fff;
- color: rgba(0, 72, 119, 1);
+  border:rgba(1, 72, 118, 1);
+ color:rgba(1, 72, 118, 1)
 }
-
+.rounded-2:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
 .school-card h6{
 font-weight: 600;
 }
@@ -126,26 +128,25 @@ font-weight: 600;
     text-decoration: none;
 }
 .subcard_content{
-    min-height:170px;
-    overflow: hidden;
+   min-height: clamp(170px, 20vh, 220px);
+  overflow: hidden;
 }
 
 .btn-style{
-     color: rgba(0, 72, 119, 1);
-     background: rgba(72, 199, 244, 1);
+    color: rgba(0, 72, 119, 1);
+    background: rgba(72, 199, 244, 1);
+    font-size: 12px;
+    padding: 5px 10px
 }
 
-/* .address{
-    margin-left: 20px;
-} */
 select{
-    font-size: 13px;
-    height: 30px;
+ font-size: clamp(12px, 1vw, 14px);
+  height: clamp(30px, 4vh, 34px);
 }
 .select-arrow {
   position: relative;
   bottom: 1.6rem;
-  left: 7.3rem;
+  left: 6.7rem;
   pointer-events: none;
   color: #888;
   font-weight: 100;

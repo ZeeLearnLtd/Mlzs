@@ -23,12 +23,12 @@
 
 /* locut us css */
 
-section{
-    background-image: url('../../../assets/img/MLZS/our_parents_bg.png');
-    background-size: cover;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
-}
+/* section{
+   background: url("../../../assets/img/MLZS/bg_svg/Admissions-bg.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+} */
 
 .map_content img{
     width:90%;
@@ -60,11 +60,13 @@ section{
 }
 
 .locat_form{
-    width:58%;
-    background-color: #014876;
-    margin: auto;
-    padding:35px;
-    border-radius:10px;
+  width: clamp(90%, 60vw, 58%);
+  margin: auto;
+  padding: clamp(15px, 3vw, 35px);
+  background: #014876;
+  border-radius: 10px;
+  min-height: 200px;
+  height: auto;
 }
 
 .reset_btn{

@@ -3,10 +3,10 @@
 }
 
 section{
-    background-image: url('../../../assets/img/MLZS/our_parents_bg.png');
-    background-size: cover;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
+  background: url("../../../assets/img/MLZS/bg_svg/Discover-more.svg") no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .map_content img{
@@ -77,14 +77,23 @@ textarea{
 }
 
 .item_white_bg{
-    background: #FFF;
+    /* background: #FFF;
     width: 95%;
     margin: auto;
     height: 325px;
     border: 1px solid #EEE;
     border-radius: 5px;
     padding: 30px 15px;
-    box-shadow: 0px -9px 10px -1px #CCC;
+    box-shadow: 0px -9px 10px -1px #CCC; */
+     background: #fff;
+  width: 95%;
+  margin: auto;
+  min-height: 200px;
+  height: clamp(325px, 40vh, 400px);
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 2rem 1rem;
+  box-shadow: 0 -9px 10px -1px #ccc;
 }
 
 .item_white_bg h6{
@@ -105,10 +114,18 @@ h6{
     text-align: left;
 }
 
+.item_img_content{
+    width: 100%;
+    height: clamp(165px, 25vh, 165px) !important;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
 .item_img_content img{
     width: 100%;
-    height: 165px;
-    object-fit: cover;
+    height: clamp(165px, 25vh, 165px) !important;
+    overflow: hidden;
+    margin-top: 1rem;
 }
 .item_text img{
     width: 25px;

@@ -1,7 +1,17 @@
 .start_school_banner {
-  background: url('../../../assets/img/MLZS/banner/start_school_banner.png') no-repeat center/100% 100%;
-  margin-top: 8rem;
-  height: 500px;
+   background: url('../../../assets/img/MLZS/banner/start_school_banner.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 40vw; /* makes height relative to screen width */
+  min-height: 400px; 
+  max-height: 755px;
+ margin-top: clamp(2rem, 10vw, 10.2rem);
+}
+section{
+   background: url("../../../assets/img/MLZS/bg_svg/start-school-bg.svg") no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  min-height: 100vh;
 }
 .francine_form {
   width: 25%;
@@ -23,16 +33,26 @@
   font-size: 13px;
 }
 
-.menu_content {
-  width: 40%;
-  height: 50px;
-  position: relative;
-  padding: 10px;
+.menu_content{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    left: 5.5rem;
+    padding: 10px;
 }
+.businessPartners .title_content{
+  height:50px;
+  overflow: hidden;
+}
+.gallery-box .title_content{
+  height:50px;
+  overflow: hidden;
+}
+
+
 
 .about_content, .what_we_offer, .businessPartners {
   width: 100%;
-  padding: 55px 0;
   background-color: #004878;
   color: #fff;
 }
@@ -66,9 +86,20 @@
   position: relative;
   z-index: 1;
 }
-.text_bg { width: 7%; height: 20px; bottom: 1.8rem; }
+.text_bg {    width: 12%; height: 32px; bottom: 1.8rem; left: 4rem; } 
 .award_bg_img { width: 15%; height: 20px; bottom: 1.7rem; }
-
+.faq_bg_white .text_bg {
+    width: 50px;
+    height: 20px;
+    bottom: 1.8rem;
+    left: 1.5rem;
+}
+.businessPartners .text_bg{
+    width:130px;
+    height: 34px;
+    bottom: 1.6rem;
+    left: -1rem;
+}
 .about_img_content img { width: 85%; }
 
 .read_mode {
@@ -139,5 +170,56 @@ h4 { font-family: Poppins; overflow: hidden; }
     background-color: #004878;
   }
   .desktop_content { display: none; }
-  .mobile_content { display: block; }
+  .mobile_content { display: block; margin-top: 3rem;}
+  .text_bg{
+    width: 35%;
+    height: 20px;
+    bottom: 1.8rem;
+}
+}
+
+.text_bg1 {
+    position: relative;
+    width: 50px;
+    height: 20px;
+    bottom: 1.9rem;
+    left: 1rem;
+}
+
+.text_bg2{
+    width: 125px;
+    position: relative;
+    height: 23px;
+    bottom: 1.8rem;
+    left: 6rem;
+}
+
+.text_bg3{
+    width: 135px;
+    position: relative;
+    height: 38px;
+    bottom: 1.8rem;
+    left: 1rem;
+}
+
+.text_bg4 {
+    position: relative;
+    width: 135px;
+    height: 26px;
+    bottom: 1.8rem;
+    left: -3rem;
+}
+.text_bg5{
+    position: relative;
+    width: 200px;
+    height: 32px;
+    bottom: 1.8rem;
+    left: 0.5rem;
+}
+.text_bg6{
+  position: relative;
+    width: 101px;
+    height: 32px;
+    bottom: 1.8rem;
+    left: 2rem;
 }

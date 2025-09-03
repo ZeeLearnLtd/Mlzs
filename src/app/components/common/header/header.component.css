@@ -43,10 +43,10 @@ nav {
     cursor: pointer;
 }
 
-.brand_icon {
+/* .brand_icon {
     position: relative;
     right: 0rem;
-}
+} */
 
 .white_btn {
     background-color: #FFF;
@@ -128,12 +128,6 @@ ul li a {
     margin: auto;
 }
 
-.nav-item {
-    margin-left: 25px;
-    font-weight: 600;
-    font-size: 13px;
-}
-
 .navbar1 {
     display: none;
 }
@@ -175,9 +169,9 @@ ul li a {
 }
 
 .dropdown-item {
-    color: #FFF !important;
+  color: rgba(64, 60, 57, 0.80);
     font-size: 13px;
-    background-color: #004878;
+    background-color: #fff;
 }
 
 .dropdown-item:hover {
@@ -442,43 +436,37 @@ ul li a {
     margin: auto;
     padding: 0px 16px 0px 0px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 5px 0px 5px 0px;
     position: relative;
-    left: 1.5rem;
+    left: 0rem;
 }
 
 .navbar-nav li>a {
     text-transform: capitalize;
-    color: #403C39;
+    color: rgba(64, 60, 57, 0.80);
     transition: background-color .2s, color .2s;
-
     &:hover,
     &:focus {
         /* background-color: #FFF200; */
-        color: #004878;
+       color: #014876;
         font-weight: 700;
+        text-decoration: underline;
     }
 }
 
 .navbar-nav li.active>a {
     /* background-color: #FFF200; */
-    color: #004878;
+   color: rgba(64, 60, 57, 0.80);
     font-weight: 700;
 }
 
 .nav-item {
-    margin-left: 2px;
+    margin-left: 25px;
     font-weight: 600;
-    font-size: 12px;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
     font-family: 'Poppins';
-}
-
-.nav-sub-item {
-    margin-left: 10px;
-    font-weight: 600;
-    font-size: 12px;
 }
 
 .navbar1 {
@@ -489,7 +477,7 @@ ul li a {
     color: #FFF;
     font-weight: normal;
     cursor: pointer;
-    background-color: #004878;
+    background-color: #fff;
 }
 
 .dropdown-menu a:hover {
@@ -518,18 +506,23 @@ ul li a {
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: fixed;
-    background-color: #004878;
+    background-color: #fff;
+    border: none;
+    border-radius: 0px 10px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
 }
 
 .dropdown-item {
-    color: #FFF !important;
+   color: rgba(64, 60, 57, 0.80);
     font-size: 13px;
     transition: 0.6s;
 }
 
 .dropdown-item:hover {
-    background-color: #004878;
-    color: #b5adad !important;
+    background-color: #5dc9f0;;
+    color: rgba(64, 60, 57, 0.80);
+    border-radius:7px;
 }
 
 #headerLogo {
@@ -586,7 +579,7 @@ ul li a {
         position: fixed;
         color: #fff;
         left: 0;
-        background-color: #EBE1FF !important;
+        background-color: #fff !important;
         right: 0;
         z-index: 999;
         padding: 4px;

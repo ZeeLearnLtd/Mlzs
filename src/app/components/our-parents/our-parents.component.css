@@ -19,12 +19,19 @@
 .text_bg1 {
     position: relative;
     z-index: 1;
-    height: 30px;
+    height: 28px;
     width: 28%;
-    left: 8rem;
-    bottom: 4rem;
+    left: -3rem;
+    bottom: 2rem;
 }
-
+.text_bg2 {
+    position: relative;
+    z-index: 1;
+    height: 28px;
+    width: 24%;
+    left: 10rem;
+    bottom: 4.3rem;
+}
 .title_content h2 {
     position: relative;
     z-index: 9;
@@ -128,6 +135,22 @@ h4 {
 }
 
 @media screen and (max-width: 600px) {
+    .text_bg1{
+        position: relative;
+        z-index: 1;
+        height: 28px;
+        width: 49% !important;
+        left: 0rem !important;
+        bottom: 10rem !important;
+}
+.text_bg2{
+    position: relative;
+    z-index: 1;
+    height: 28px;
+    width: 60% !important;
+    left: 6rem !important;
+    bottom: 5.3rem !important;
+}
 .slider{
     position: relative;
     height: 420px;
@@ -184,11 +207,10 @@ h4 {
 
 
 .slider {
-    position: relative;
-    height: 420px;
-    /* fits 3 items */
-    width: 500px;
-    overflow: hidden;
+  position: relative;
+  width: min(90%, 600px);      
+  height: clamp(420px, 40vh, 500px);
+  overflow: hidden;
 }
 
 .slides {
@@ -204,7 +226,7 @@ h4 {
     border-radius: 8px;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0.6;
+    /* opacity: 0.6; */
     transform: scale(0.95);
     transition: all 0.3s ease;
 }

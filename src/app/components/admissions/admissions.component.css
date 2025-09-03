@@ -1,16 +1,25 @@
 .start_school_banner{
-    background-image: url('../../../assets/img/MLZS/banner/admissionForm-banner.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    margin-top: 8rem;
-    /* height: 500px; */
+  background: url('../../../assets/img/MLZS/banner/admissionForm-banner.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 40vw;
+  min-height: 400px; 
+  max-height: 755px;
+ margin-top: clamp(2rem, 10vw, 10.2rem);
 }
-
+section{
+  background: url("../../../assets/img/MLZS/bg_svg/Admissions-bg.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+}
 .francine_form{
-    width:70%;
-    margin: 10px 35px 15px 10px;
-    padding: 10px 25px;
-    background-color: #C4DEFD;
+  width: 100%;
+  max-width: 70%;
+  margin: 0rem 1.5rem;
+  padding: clamp(10px, 2vw, 25px);
+  background-color: #C4DEFD;
+  border-radius: 8px;
 }
 .francine_form strong{
     color: rgba(1, 72, 118, 1);
@@ -130,7 +139,7 @@ width: 80%;
         display: none;
     }
     .francine_form{
-        width:100%;
+        max-width:100% !important;
         float: right;
         margin: 10px 15px 0px 10px;
         padding: 10px 25px;
@@ -217,7 +226,9 @@ width: 80%;
 }
 
 .about_img_content img{
-width: 80%;
+  width: clamp(60%, 0%, 90%);
+  height: auto;
+  object-fit: contain;
 }
 
 .counter_text p{

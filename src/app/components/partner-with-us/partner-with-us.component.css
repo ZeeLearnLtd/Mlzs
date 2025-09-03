@@ -1,7 +1,11 @@
 .start_school_banner {
-  background: url('../../../assets/img/MLZS/banner/start_school_banner.png') no-repeat center/100% 100%;
-  margin-top: 8rem;
-  height: 500px;
+  background: url('../../../assets/img/MLZS/banner/start_school_banner.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 40vw;
+  min-height: 400px; 
+  max-height: 755px;
+ margin-top: clamp(2rem, 10vw, 10.2rem);
 }
 
 .francine_form {
@@ -53,9 +57,10 @@
   z-index: 1;
 }
 .text_bg {     
-  width: 18%;
-  height: 20px;
-  bottom: 1.8rem; }
+  width: clamp(100px, 18%, 300px);
+  height: clamp(28px, 2vw, 40px);
+  bottom: clamp(0.5rem, 2vw, 2rem);
+}
 .award_bg_img { width: 15%; height: 20px; bottom: 1.7rem; }
 
 .about_img_content img, .fr_img_content img { width: 85%; }

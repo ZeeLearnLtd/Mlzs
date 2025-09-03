@@ -1,61 +1,77 @@
 .text_bg {
-    width: 28%;
+    width:100px;
     position: relative;
-    bottom: 1.5rem;
-    z-index: -1;
-    height: 30px;
+    bottom: 2rem;
+    z-index: 1;
+    height: 19px;
 }
 
 .blog_main_img img {
     width: 75%;
     border-radius: 10px;
 }
-   .title_content h2{
-  position: relative;
-  z-index: 9;
-   }
 
-   .blog-card {
-        position: relative;
-        overflow: hidden;
-        border-radius: 15px;
-        width: 95%;
-        height:300px;
+
+.blog-title-content h2{
+    position: relative;
+    z-index: 9;
+    color: #212529 !important;
+}
+
+.blog-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 95%;
+    height: clamp(300px, 35vh, 420px);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sub_blog_card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 95%;
+    height: clamp(300px, 35vh, 400px);
+    background-color: #fff;
+}
+
+.sub_blog_card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: #fff;
+}
+
+.blog-date {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.blog-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+@media screen and (max-width: 600px) {
+    .blog-title-content {
+        text-align: center;
     }
-    .blog-card img {
-        width:100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-    .sub_blog_card{
-         position: relative;
-        overflow: hidden;
-        border-radius: 15px;
-        height:300px;
-        width:95%;
-    }
-    .sub_blog_card img{
-     width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-    .blog-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 15px;
-        background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-        color: #fff;
-    }
-    .blog-date {
-        font-size: 13px;
-        opacity: 0.9;
-    }
-    .blog-title {
-        font-weight: 700;
-        font-size: 15px;
-        margin-top: 2px;
-    }
+}

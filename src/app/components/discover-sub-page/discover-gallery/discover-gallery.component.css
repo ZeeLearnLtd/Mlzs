@@ -7,14 +7,10 @@
   object-fit: cover;
 }
 section {
-  background-image: url('../../../../assets/img/MLZS/main_bg.png');
+  background: url("../../../../assets/img/MLZS/bg_svg/Discover-more.svg") no-repeat center center;
   background-size: cover;
   width: 100%;
-  padding: 25px 0px 50px 0px;
-}
-
-.programmes_main_page {
-  margin-top: 6.5rem;
+  min-height: 100vh;
 }
 
 small {
@@ -40,9 +36,6 @@ small {
     text-align: left;
     margin: 1rem 0;
 }
-  .programmes_main_page {
-    margin-top: 10px;
-  }
 
   .right_card {
     margin-top: 20px;
@@ -166,11 +159,17 @@ h1 {
 }
 
 .pinchzoom_img {
-  height:750px;
+  /* height:750px;
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+   width: 100%;
+  height: clamp(750px, 50vw, 750px); /* min 200px, max 750px */
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: rgba(0,0,0,0.16) 0 3px 6px, rgba(0,0,0,0.23) 0 3px 6px;
+
 }
 
 .edit_img_content {
