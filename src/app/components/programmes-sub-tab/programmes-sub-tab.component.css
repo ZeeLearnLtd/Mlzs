@@ -7,23 +7,8 @@
 width: 80%;
 }
 
-/* section{
-    background-image: url('../../../../assets/img/MLZS/main_bg.png');
-    background-size: cover;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
-  } */
-  /* .programmes_main_page{
-    margin-top:6.5rem;
-} */
-
 @media screen and (max-width: 600px) {
-/* .programmes_main_page{
-  margin-top: 10px;
-} */
 }
-
-
 .text_bg{
     width:23%;
     position: relative;
@@ -31,7 +16,7 @@ width: 80%;
     z-index: -1;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+/* .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color:#FFF;
     font-size: 13px;
     padding: 5px 25px;
@@ -45,13 +30,30 @@ width: 80%;
     padding: 5px 25px;
     background-color: #44C8F5;
     margin: 5px;
+} */
+
+.nav-pills
+.nav-link.active,
+.nav-pills
+.show > 
+.nav-link{
+  color: #fff;
+  background: #014876;
+  font-size: clamp(13px, 1vw, 14px);
+  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  margin: clamp(5px, 0.5vw, 6px);
+  border-radius: 6px;
 }
 
-.programm_img_content img{
-    width: 85%;
-    }
-
-    .liter_img{
+.nav-link:focus,
+.nav-link {
+  color: #014876;
+  font-size: clamp(13px, 1vw, 14px);
+  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  margin: clamp(5px, 0.5vw, 6px);
+  background-color: #44C8F5;
+}
+.liter_img{
         width: 50%;
     }
 

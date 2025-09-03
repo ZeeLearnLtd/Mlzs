@@ -8,19 +8,12 @@
   }
   
   section{
-    background-image: url('../../../../assets/img/MLZS/main_bg.png');
-    background-size: cover;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
+  background: url("../../../../assets/img/MLZS/bg_svg/Discover-more.svg") no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  min-height: 100vh;
   }
-  .programmes_main_page{
-    margin-top:6.5rem;
-  }
-  
   @media screen and (max-width: 600px) {
-  .programmes_main_page{
-  margin-top: 10px;
-  }
   .right_card{
   margin-top:20px;
   }
@@ -143,13 +136,20 @@
 }
 
 .mat-accordion .mat-expansion-panel{
-    background-color: #fff;
+    /* background-color: #fff;
     padding: 11px 5px 7px 0px;
     border: none;
     margin: 7px 0px;
-    border-radius:5px;
+    border-radius:5px; */
+      background-color: #fff;
+  padding: clamp(11px, 1vw, 12px) clamp(2px, 1vw, 10px);
+  margin: clamp(7px, 0.5vw, 10px) 0;
+  border: none;
+  border-radius: 5px;
 }
-
+h6{
+  margin-bottom: 0px !important;
+}
 @media screen and (max-width: 600px) {
 .faq_content{
     width: 100%;

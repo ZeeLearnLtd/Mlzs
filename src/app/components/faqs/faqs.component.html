@@ -1,17 +1,13 @@
 
 <section>
     <div class="faq_content">
-        <!-- <div class="title_content text-center">
-            <h2 class="text-white"><b>FAQ</b></h2>
-            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
-            <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
-        </div> -->
         <div class="box mt-3">
             <mat-accordion>
                 <mat-expansion-panel *ngFor="let faq of faqsData">
                         <mat-expansion-panel-header>
                             <div class="faq_title">{{faq.Title}}</div>
                         </mat-expansion-panel-header>
+                        <hr>
                         <span>
                             <p class="short_text" [innerHTML]="faq.Short"></p>
                         </span>

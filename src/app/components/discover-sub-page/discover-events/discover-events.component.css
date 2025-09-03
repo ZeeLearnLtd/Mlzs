@@ -8,14 +8,11 @@ width: 80%;
 }
 
 section{
-    background-image: url('../../../../assets/img/MLZS/main_bg.png');
-    background-size: cover;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
+  background: url("../../../../assets/img/MLZS/bg_svg/Discover-more.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
   }
-  .programmes_main_page{
-    margin-top:6.5rem;
-}
 
 @media screen and (max-width: 600px) {
   .carousel-inner {
@@ -23,9 +20,6 @@ section{
     width: 100%;
     overflow: hidden;
     height:auto !important;
-}
-.programmes_main_page{
-  margin-top: 10px;
 }
 h4{
   margin-top: 0.8rem;
@@ -139,16 +133,20 @@ h1{
 }
 
 .img_content{
-  width: 100%;
+  /* width: 100%;
   height:300px;
+  overflow: hidden;
+  border: 1px solid #EEE; */
+   width: 100%;
+  height: clamp(300px, 25vw, 350px);
   overflow: hidden;
   border: 1px solid #EEE;
 }
 
 .img_content img{
-  width: 100%;
-  object-fit: cover;
-  height:300px;
+width: 100%;
+height: clamp(300px, 25vw, 350px);
+object-fit: cover;
 }
 .carousel-indicators {
     position: absolute;

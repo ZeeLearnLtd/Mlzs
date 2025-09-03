@@ -1,177 +1,187 @@
-
-.text_bg{
-    width:23%;
-    position: relative;
-    bottom:1.5rem;
-    z-index: 1;
+.text_bg {
+  width: 23%;
+  position: relative;
+  bottom: 1.5rem;
+  z-index: 1;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color:#FFF;
-    font-size: 13px;
-    padding: 5px 25px;
-    background-color:#014876;
-    margin: 5px;
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #FFF;
+  font-size: 13px;
+  padding: 5px 25px;
+  background-color: #014876;
+  margin: 5px;
 }
 
-.nav-link:focus, .nav-link{
-    color:#014876;
-    font-size: 13px;
-    padding: 5px 25px;
-    background-color: #44C8F5;
-    margin: 5px;
+.nav-link:focus,
+.nav-link {
+  color: #014876;
+  font-size: 13px;
+  padding: 5px 25px;
+  background-color: #44C8F5;
+  margin: 5px;
 }
-.programm_img_content img{
-    width: 85%;
-    }
 
-    .liter_img{
-        width: 50%;
-    }
+.programm_img_content img {
+  width: 85%;
+}
 
-    .liter_content{
-        margin-left: 57px;
-    }
+.liter_img {
+  width: 50%;
+}
 
-  .fr_img_content img{
-    width: 80%;
+.liter_content {
+  margin-left: 57px;
+}
+
+.fr_img_content img {
+  width: 80%;
+}
+
+.title_content ul {
+  padding: 0;
+  line-height: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .overlay-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    max-width: 100% !important;
+    margin: 3rem 0;
   }
 
-  .title_content ul{
-    padding: 0; 
-    line-height: 30px;
+  .programm_img_content {
+    margin-top: 15px;
   }
 
-  @media screen and (max-width: 600px) {
-    .overlay-box {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 1rem 2rem;
-      max-width:100% !important;
-      margin: 3rem 0;
-    }
-    .programm_img_content{
-       margin-top: 15px;
-    }
-  li{
+  li {
     width: 100%;
   }
 
-  li button{
+  li button {
     width: 100%;
   }
-  }
-h2{
+}
+
+h2 {
   position: relative;
   z-index: 9;
-  font-size: 2.5rem;
   font-weight: 700;
   color: rgba(33, 37, 41, 1);
 }
 
-    .btn-custom {
-      background: rgba(72, 199, 244, 1);
-      color: rgba(0, 72, 119, 1);
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 600;
-      padding:4px 9px;
-    }
-    .btn-custom:hover {
-      background:rgba(72, 199, 244, 2);
-      color: rgba(0, 72, 119, 1)#fff;
-    }
-    h1{
-        overflow: hidden;
-        }
-
-    #about_content_bg h1{
-        position: relative;
-        z-index: 2;
-    }
-    #about_content_bg .text_bg{
-    width: 24%;
-    bottom: 1.6em;
-    height: 20px;
-    z-index: 1;
-    position: relative;
+h1 {
+  overflow: hidden;
 }
-.overlay-box p{
-    color: rgba(1, 72, 118, 1);
+
+#about_content_bg h1 {
+  position: relative;
+  z-index: 2;
+}
+
+#about_content_bg .text_bg {
+  width: 24%;
+  bottom: 1.6em;
+  height: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.overlay-box p {
+  color: rgba(1, 72, 118, 1);
 }
 
 .about-section {
-      background: url('../../../assets/img/MLZS/programm-base-img.png') center/cover no-repeat;
-      color: #002f5f;
-      width: 100%;
-    }
-    .overlay-box {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 1rem 2rem;
-      max-width:55%;
-      margin: 3rem 0;
-      text-align: center;
-    }
-    .stat-number {
-      font-weight: 800;
-      font-size: 1.5rem;
-    }
-    .stat-text {
-      font-size: 0.9rem;
-      color: #555;
-    }
-    .btn-custom {
-      background: rgba(72, 199, 244, 1);
-      color: rgba(0, 72, 119, 1);
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 600;
-      padding:4px 9px;
-    }
-    .btn-custom:hover {
-      background:rgba(72, 199, 244, 2);
-      color: rgba(0, 72, 119, 1)#fff;
-    }
-    h1{
-        overflow: hidden;
-        }
+  background: url('../../../assets/img/MLZS/programm-base-img.png') center/cover no-repeat;
+  color: #002f5f;
+  width: 100%;
+}
+.overlay-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: clamp(0.5rem, 2vw, 2rem);    
+  max-width: clamp(300px, 55%, 800px);  
+  margin: clamp(1rem, 0vh, 3rem); 
+  text-align: center;
+  border-radius: 8px;  
+}
 
-    #about_content_bg h1{
-        position: relative;
-        z-index: 2;
-    }
-    #about_content_bg .text_bg{
-    width: 24%;
-    bottom: 1.6em;
-    height: 20px;
-    z-index: 1;
-    position: relative;
+.stat-number {
+  font-weight: 800;
+  font-size: 1.5rem;
 }
-.overlay-box p{
-    color: rgba(1, 72, 118, 1);
+
+.stat-text {
+  font-size: 0.9rem;
+  color: #555;
 }
-.container{
+
+.btn-custom {
+  background: rgba(72, 199, 244, 1);
+  color: rgba(0, 72, 119, 1);
+  border-radius: 4px;
+     font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.btn-custom:hover {
+  background: rgba(72, 199, 244, 2);
+  color: rgba(0, 72, 119, 1)#fff;
+}
+
+h1 {
+  overflow: hidden;
+}
+
+#about_content_bg h1 {
+  position: relative;
+  z-index: 2;
+}
+
+#about_content_bg .text_bg {
+  width: 24%;
+  bottom: 1.6em;
+  height: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.overlay-box p {
+  color:#000;
+  text-align: left;
+}
+
+.container {
   display: flex;
   justify-content: flex-end;
 }
 
 .accordion-button:not(.collapsed) {
-    color: var(--bs-accordion-active-color);
-    background-color: rgba(68, 200, 245, 1);
-    color: #fff;
+  color: var(--bs-accordion-active-color);
+  background-color: rgba(68, 200, 245, 1);
+  color: #fff;
 }
-.accordion-button::after {
-    display: none !important;
-  }
-  .accordion-button{
-   padding: 10px 20px;
-   background-color: rgba(1, 72, 118, 1);
-   color:rgba(255, 255, 255, 1);
-   border-radius: 5px;
-  }
 
-  .accordion-header{
-    border-radius: 5px;
-  }
-  .accordion-item{
-    border-radius: 5px;
-  }
+.accordion-button::after {
+  display: none !important;
+}
+
+.accordion-button {
+  padding: 10px 20px;
+  background-color: rgba(1, 72, 118, 1);
+  color: #fff;
+  border-radius: 5px;
+  font-size: clamp(12px, 1vw, 18px); 
+}
+
+
+.accordion-header {
+  border-radius: 5px;
+  font-family: 'Poppins' !important;
+}
+
+.accordion-item {
+  border-radius: 5px;
+}

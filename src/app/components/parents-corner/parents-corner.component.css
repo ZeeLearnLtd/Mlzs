@@ -1,3 +1,19 @@
+.multi_img_group{
+    display: flex;
+    justify-content: center;
+}
+
+.multi_img_group img{
+width: 80%;
+}
+
+section{
+   background: url("../../../assets/img/MLZS/bg_svg/Parent-corner.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  }
+
 .menu_content{
     width: 40%;
     height: 50px;
@@ -6,139 +22,124 @@
     padding: 10px;
 }
 
-.start_school_banner{
-    margin-top: 9rem;
-}
-.faq_bg h2{
-    color: #fff !important;
-}
-.tab_btn{
-    color: #FFF;
-    width: 23%;
-    height: 52px;
-    font-size: 14px;
-    padding: 3px 25px;
-    background-color: #44C8F5;
-    margin: 5px;
-}
-
-.tab_btn:hover{
-    color: #FFF;
-    width: 23%;
-    height: 52px;
-    font-size: 14px;
-    padding: 3px 25px;
-    background-color: #44C8F5;
-    margin: 5px;
-}
-
-
-/* parent owl css */
-
-
-.about_content{
-    width: 100%;
-    padding: 55px 0px;
-    /* background-color: #004878; */
-}
-
-.parents_corner h2{
-    position: relative;
-    z-index: 9;
-    color: #212529 !important;
-}
-.title_content p{
-    margin: 0;
-    color: #000;
-}
-.text_bg{
+  .text_bg{
     width:23%;
     position: relative;
-    bottom:1.3rem;
+    bottom:1.5rem;
     z-index: 1;
-    height: 30px;
 }
 
-.about_img_content img{
-width: 80%;
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#FFF;
+    font-size: 13px;
+    padding: 12px 25px;
+    background-color:#014876;
+    margin: 5px;
 }
 
-.counter_text p{
-    font-size: 12px;
-}
-
-
-.home-demo .item {
-    background:transparent;
-    width: 95%;
-    margin: auto;
-    height: 305px;
-    border-radius: 5px;
-    padding: 30px 15px;
-}
-.home-demo h2 {
-    color: #FFF;
-    text-align: center;
-    /* padding: 5rem 0; */
-    margin: 0;
-    font-style: italic;
-    font-weight: 300;
-}
-
-::ng-deep.owl-carousel .owl-stage {
-    position: relative;
-    touch-action: manipulation;
-    height:320px;
-    overflow: hidden;
-}
-
-.item_text h6{
-    color: #FFF;
-}
-.item_text p{
-    font-size: 11px;
-    color: #014876;
-}
-
-.item_img_content img{
-    width: 100%;
-    height: 139px;
-}
-.item_text img{
-    width: 25px;
-}
-
-hr{
-    margin: 15px 0px 0px 0px;
-}
-
-::ng-deep .center{
-    background-color: #FFF !important;  /* Change background color of the active item */ 
-  }
-  ::ng-deep .owl-item{
+.nav-link:focus, .nav-link{
+    color:#FFF;
+    font-size: 13px;
+    padding: 12px 25px;
     background-color: #44C8F5;
+    margin: 5px;
+}
+.programm_img_content img{
+    width: 85%;
+    }
+
+    .liter_img{
+        width: 50%;
+    }
+
+    .liter_content{
+        margin-left: 57px;
+    }
+
+  .fr_img_content img{
+    width: 80%;
+  }
+
+  .title_content ul{
+    padding: 0; 
+    line-height: 30px;
   }
 
   @media screen and (max-width: 600px) {
     .start_school_banner{
-        margin-top: 2rem;
-      }
-      .tab_btn{
-        color: #FFF;
-        width: 100%;
-        height: 52px;
-        font-size: 14px;
-        padding:0;
-        background-color: #44C8F5;
-        margin: 5px;
+      margin-top: 2rem;
     }
-    .tab_btn:hover{
-        color: #FFF;
-        width: 100%;
-        height: 52px;
-        font-size: 14px;
-        padding:0;
-        background-color: #44C8F5;
-        margin: 5px;
-    }
+    .tab_btn{
+      color: #FFF;
+      width: 100%;
+      height: 52px;
+      font-size: 14px;
+      padding:0;
+      background-color: #44C8F5;
+      margin: 5px;
   }
+  .tab_btn:hover{
+      color: #FFF;
+      width: 100%;
+      height: 52px;
+      font-size: 14px;
+      padding:0;
+      background-color: #44C8F5;
+      margin: 5px;
+  }
+
+    .programm_para{
+      margin:38px 30px !important;
+      text-align: justify;
+    }
+    }
+  
+    .programm_para{
+      margin:38px 52px;
+      text-align: justify;
+    }
+
+    .home-demo .item {
+      background:transparent;
+      width: 95%;
+      margin: auto;
+      height: 305px;
+      border-radius: 5px;
+      padding: 30px 15px;
+  }
+  .home-demo h2 {
+      color: #FFF;
+      text-align: center;
+      /* padding: 5rem 0; */
+      margin: 0;
+      font-style: italic;
+      font-weight: 300;
+  }
+  
+  .item_text h6{
+      color: #FFF;
+  }
+  .item_text p{
+      font-size: 11px;
+      color: #014876;
+  }
+  
+  .item_img_content img{
+      width: 100%;
+      height: 139px;
+  }
+  .item_text img{
+      width: 25px;
+  }
+  
+  hr{
+      margin: 15px 0px 0px 0px;
+  }
+  
+  ::ng-deep .center{
+      background-color: #FFF !important;  /* Change background color of the active item */ 
+    }
+    ::ng-deep .owl-item{
+      background-color: #44C8F5;
+    }
+  

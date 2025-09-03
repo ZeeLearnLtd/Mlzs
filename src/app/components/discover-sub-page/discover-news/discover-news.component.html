@@ -38,7 +38,7 @@
             </div>
             <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and<br> updates about Mount Litera Zee School from our community.</p>
            <!-- <h4>{{category_name}}</h4> -->
-            <div class="news_list">
+            <div class="news_list mb-5">
                 <div class="row mt-5" *ngFor="let a of newsData">                   
                     <div class="col-md-3">
                         <div class="img_box">
@@ -54,7 +54,7 @@
                         <p [innerHTML]="a.short"></p>
                         <p class="long_para" [innerHTML]="a?.Long1"></p>
                         <p class="p-0 m-0"><small>Publisher - Zee News</small></p>
-                        <p class="date_text p-0 m-0"><i>Date: {{a?.StartDate}}</i></p>
+                        <p class="date_text p-0 m-0">Date: {{a?.StartDate}}</p>
                         <a href="{{a.slug}}" target="_blank">
                         <button class="btn read_mode mt-2">Know More1 <i class="fa fa-long-arrow-right mx-2"></i></button>
                     </a>   

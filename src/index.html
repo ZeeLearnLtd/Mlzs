@@ -211,12 +211,12 @@
   <script>
     $(document).ready(function () {
       "use strict";
-      var offSetTop =50;
+      var offSetTop =0;
       var $scrollToTopButton = $('.scrollToTop');
       $(window).scroll(function () {
         if ($(this).scrollTop() > offSetTop) {
 
-          document.getElementById('whiteHeader').style.background = "#EBE1FF"
+          document.getElementById('whiteHeader').style.background = "#fff"
         } else {
           document.getElementById('whiteHeader').style.background = "transparent"
         }

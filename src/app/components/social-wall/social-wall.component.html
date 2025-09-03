@@ -6,20 +6,6 @@
     </div>
         <p class="text-center m-0">Get a sneak peek into the vibrant life at Mount Litera Zee School, featuring snapshots of our latest activities, events,</p>
         <p class="text-center m-0">achievements, and moments shared by our students, staff, and community.</p>
-        <!-- <div class="cascade-slider_container" id="cascade-slider">
-            <div class="cascade-slider_slides">
-              <div class="cascade-slider_item" *ngFor="let a of socialData; let i = index" [attr.data-slide]="i">
-               <div class='card align'>
-                <iframe width="100%" [src]="a.slug | safeUrl" width="500" height="684" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-          </div>
-              </div>
-            </div>
-           </div>
-          <ol class="cascade-slider_nav">
-            <li class="cascade-slider_dot cur"></li>
-            <li class="cascade-slider_dot"></li>
-            <li class="cascade-slider_dot"></li>
-          </ol> -->
           <div class="cascade-slider_container" id="cascade-slider">
   <div class="cascade-slider_slides">
     <div
@@ -31,19 +17,9 @@
       [class.next]="i === nextIndex"
     >
       <div class="card align">
-        <div *ngFor="let img of a?.logofiles">
+        <div class="subcard_" *ngFor="let img of a?.logofiles">
         <img [src]="img?.value" alt="{{img.Title}}">
         </div>
-        <!-- <iframe
-          width="100%"
-          [src]="a.slug | safeUrl"
-          height="400"
-          style="border:none;overflow:hidden"
-          scrolling="no"
-          frameborder="0"
-          allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        ></iframe> -->
         <div class="card-title-overlay">
     <strong class="text-left mx-2">{{a.Title}}</strong>
   </div>

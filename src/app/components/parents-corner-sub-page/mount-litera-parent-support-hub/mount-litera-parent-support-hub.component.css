@@ -8,15 +8,11 @@ width: 80%;
 }
 
 section{
-    background-image: url('../../../../assets/img/MLZS/main_bg.png');
-    background-size: contain;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
+     background: url("../../../../assets/img/MLZS/bg_svg/Parent-corner.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
   }
-  .programmes_main_page{
-    margin-top:6.5rem;
-}
-
 .menu_content{
     width: 40%;
     height: 50px;
@@ -31,25 +27,27 @@ section{
     bottom:1.5rem;
     z-index: 1;
 }
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color:#FFF;
-    font-size: 13px;
-    padding: 12px 25px;
-    background-color:#014876;
-    margin: 5px;
+ .nav-pills
+.nav-link.active,
+.nav-pills
+.show > 
+.nav-link{
+  color: #fff;
+  background: #014876;
+  font-size: clamp(13px, 1vw, 14px);
+  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  margin: clamp(5px, 0.5vw, 6px);
+  border-radius: 6px;
 }
 
-.nav-link:focus, .nav-link{
-    color:#FFF;
-    font-size: 13px;
-    padding: 12px 25px;
-    background-color: #44C8F5;
-    margin: 5px;
+.nav-link:focus,
+.nav-link {
+  color: #014876;
+  font-size: clamp(13px, 1vw, 14px);
+  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  margin: clamp(5px, 0.5vw, 6px);
+  background-color: #44C8F5;
 }
-.programm_img_content img{
-    width: 85%;
-    }
 
     .liter_img{
         width: 50%;
@@ -69,9 +67,6 @@ section{
   }
 
   @media screen and (max-width: 600px) {
-    .programmes_main_page{
-        margin-top:14px;
-    }
     .start_school_banner{
       margin-top: 2rem;
     }
@@ -121,14 +116,6 @@ section{
       font-style: italic;
       font-weight: 300;
   }
-  
-  ::ng-deep.owl-carousel .owl-stage {
-      position: relative;
-      touch-action: manipulation;
-      height:320px;
-      overflow: hidden;
-  }
-  
   .item_text h6{
       color: #FFF;
   }
@@ -136,11 +123,7 @@ section{
       font-size: 11px;
       color: #014876;
   }
-  
-  .item_img_content img{
-      width: 100%;
-      height: 139px;
-  }
+
   .item_text img{
       width: 25px;
   }
