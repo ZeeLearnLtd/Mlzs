@@ -89,7 +89,7 @@ font-weight: 600;
 .school-card {
  border: 1px solid #eee;
   border-radius: 10px;
-  padding: clamp(12px, 1.2vw, 16px);
+  padding: 15px 5px;
   background: #fff;
   color: #014876;
   text-align: left;
@@ -114,6 +114,11 @@ font-weight: 600;
   border:rgba(1, 72, 118, 1);
  color:rgba(1, 72, 118, 1)
 }
+.school-card .btn-style:hover {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
 .rounded-2:hover {
   background: transparent;
   border: 1px solid #fff;
@@ -126,6 +131,7 @@ font-weight: 600;
     font-size: 14px;
     color: rgba(1, 72, 118, 1);
     text-decoration: none;
+    width: 100%;
 }
 .subcard_content{
    min-height: clamp(170px, 20vh, 220px);
@@ -136,7 +142,12 @@ font-weight: 600;
     color: rgba(0, 72, 119, 1);
     background: rgba(72, 199, 244, 1);
     font-size: 12px;
-    padding: 5px 10px
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 7px;
 }
 
 select{
@@ -150,4 +161,83 @@ select{
   pointer-events: none;
   color: #888;
   font-weight: 100;
+}
+
+.sub_para{
+    height:90px;
+    overflow-y: scroll;
+}
+.default-img{
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}
+.hover-img{
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}
+.phone-img{
+width:18px;
+height:20px;
+}
+.phone-img{
+width:18px;
+height:20px;
+}
+.phone_white-img{
+width:18px;
+height:20px;
+}
+.email-img{
+width:18px;
+height:20px;
+}
+.email_white-img{
+width:18px;
+height:20px;
+}
+.school-card .hover-img {
+display: none;
+}
+
+.school-card:hover .hover-img {
+display: block;
+}
+
+.school-card:hover .default-img {
+ display: none;
+}
+
+.school-card .phone-img {
+display: none;
+}
+
+.school-card:hover .phone-img {
+display: block;
+}
+
+.school-card:hover .phone_white-img {
+ display: none;
+}
+
+.school-card .email-img {
+display: none;
+}
+
+.school-card:hover .email-img {
+display: block;
+}
+
+.school-card:hover .email_white-img {
+ display: none;
+}
+.card_content{
+    width: 97%;
+    margin: auto;
+}
+.container {
+    width: 90%;
+    max-width: 1920px;
+    margin: 0 auto;
 }

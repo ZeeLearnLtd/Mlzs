@@ -9,7 +9,7 @@
 }
 section{
    background: url("../../../assets/img/MLZS/bg_svg/start-school-bg.svg") no-repeat center center;
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   min-height: 100vh;
 }
@@ -76,6 +76,7 @@ section{
 }
 .francine_form strong{
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .faq_title, .sources, .sources_content p {

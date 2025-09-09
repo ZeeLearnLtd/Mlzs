@@ -10,27 +10,11 @@ width: 80%;
 @media screen and (max-width: 600px) {
 }
 .text_bg{
-    width:23%;
+    width: 200px;
     position: relative;
-    bottom:1.5rem;
-    z-index: -1;
+    bottom: 1.5rem;
+    z-index: 0;
 }
-
-/* .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color:#FFF;
-    font-size: 13px;
-    padding: 5px 25px;
-    background-color:#014876;
-    margin: 5px;
-}
-
-.nav-link:focus, .nav-link{
-    color:#014876;
-    font-size: 13px;
-    padding: 5px 25px;
-    background-color: #44C8F5;
-    margin: 5px;
-} */
 
 .nav-pills
 .nav-link.active,

@@ -4,9 +4,11 @@
   display: flex;
   justify-content: center;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
 .multi_img_group img,
 .programm_img_content img,
 .fr_img_content img,
@@ -17,50 +19,56 @@ a{
   border-radius: 6px;
 
 }
-.long_para{
-   display: -webkit-box;
-  -webkit-line-clamp: 2;  
+
+.long_para {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.5rem;     
-  max-height: 3rem; 
+  line-height: 1.5rem;
+  max-height: 3rem;
 }
-.read_mode{
-  font-size: 12px !important;
-}
+
+
 section {
   background: url("../../../../assets/img/MLZS/bg_svg/Discover-more.svg") no-repeat center center;
   background-size: cover;
   width: 100%;
   min-height: 100vh;
 }
-p small{
+
+p small {
   color: #014876;
 }
+
 @media (max-width: 600px) {
-  li, li button { width: 100%; }
+
+  li,
+  li button {
+    width: 100%;
+  }
 }
 
 .text_bg {
-    width: 12%;
-    position: relative;
-    bottom: 1.9rem;
-    left: 4rem;
-    z-index: 1;
-    height: 21px;
+  width: 12%;
+  position: relative;
+  bottom: 1.9rem;
+  left: 4rem;
+  z-index: 1;
+  height: 21px;
 }
 
 .nav-pills .nav-link,
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   font-size: 13px;
   padding: 5px 25px;
   margin: 5px;
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   color: #fff;
   background: #014876;
 }
@@ -71,8 +79,13 @@ p small{
   background: #44C8F5;
 }
 
-.liter_img { width: 50%; }
-.liter_content { margin-left: 57px; }
+.liter_img {
+  width: 50%;
+}
+
+.liter_content {
+  margin-left: 57px;
+}
 
 .title_content ul {
   padding: 0;
@@ -84,9 +97,14 @@ p small{
   width: 85%;
 }
 
-p { margin-bottom: 0.5rem; }
+p {
+  margin-bottom: 0.5rem;
+}
 
-h1 { position: relative; z-index: 2; }
+h1 {
+  position: relative;
+  z-index: 2;
+}
 
 .form-control {
   display: block;
@@ -102,14 +120,17 @@ h1 { position: relative; z-index: 2; }
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.date_text { font-size: 12px; color: #3f3d3d; }
+.date_text {
+  font-size: 12px;
+  color: #3f3d3d;
+}
 
 .img_box {
   /* overflow: hidden;
   width: 100%;
   height: 196px;
   border: 1px solid #eee; */
-   width: 100%;
+  width: 100%;
   height: clamp(196px, 20vw, 250px);
   overflow: hidden;
   border: 1px solid #eee;

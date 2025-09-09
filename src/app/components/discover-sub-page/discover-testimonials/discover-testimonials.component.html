@@ -17,27 +17,33 @@
                 </div>
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <input name="" id="" placeholder="Search" class="form-control" (input)="onSearchChange($event)">
+                     <div style="position: relative; width: 250px;">
+  <input type="text" placeholder="Search" class="form-control" 
+         style="padding-left: 35px; width: 100%;" (input)="onSearchChange($event)">
+  <i class="fa fa-search" 
+     style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+</div>
+                    <!-- <input name="" id="" placeholder="Search" class="form-control" (input)="onSearchChange($event)"> -->
                 </div>
             </div>
-        <div class="mt-4">
+        <div class="my-5">
             <div class="title_content text-center">
                             <h1><b> Real Voices, Real Impact </b></h1>
                             <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
                         </div>
                         <p class="text-center">Explore the testimonials from our parents, students, and educators, sharing their experiences of the positive impact Mount Litera Zee School has made on their lives and how it has played a key role in shaping young minds and fostering a thriving learning community.</p>
-            <div *ngIf="(selectedcategory == '107' || selectedcategory == '') && SchoolTestimnoal.length" class="news_list">
+            <!-- <div *ngIf="(selectedcategory == '107' || selectedcategory == '') && SchoolTestimnoal.length" class="news_list">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title_content text-center">
                             <div>
-                                <h5 class="text-center mt-2"><b>School Testimonials</b></h5>
+                                <h5 class="text-center mt-5"><b>School Testimonials</b></h5>
                                 <p class="text-center">Hear from our parents as they reflect on the positive influence Mount Litera Zee School has had on their children's development and success.</p>
                             
                             </div>
                         </div>
 
-                        <div class="home-demo mt-3">
+                        <div class="home-demo mt-4">
                             <div class="owl-carousel owl-theme news_owl" id="">
                               <div class="item" *ngFor="let a of SchoolTestimnoal">
                         <div *ngIf="a.safeUrl">
@@ -63,23 +69,35 @@
                           </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
            <div *ngIf="(selectedcategory == '109' || selectedcategory == '') && ParentTestimonial.length" class="news_list mt-5">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title_content text-center">
                             <div>
-                                <p>Explore the testimonials from our parents, students, and educators, sharing their experiences of the positive impact Mount Litera Zee School has made on their lives and how it has played a key role in shaping young minds and fostering a thriving learning community.</p>
-                                <h5 class="text-center mt-2"><b>Parent Testimonials</b></h5>
+                              <h5 class="text-center"><b>Parent Testimonials</b></h5>
                                 <p class="text-center">Hear from our parents as they reflect on the positive influence Mount Litera Zee School has had on their children's development and success.</p>
                             
                             </div>
                         </div>
 
-                        <div class="home-demo mt-3">
+                        <div class="home-demo mt-4">
                             <div class="owl-carousel owl-theme news_owl" id="">
                     <div class="item" *ngFor="let a of ParentTestimonial">
-                         <div *ngIf="a.safeUrl">
+                        <div class="item_img">
+                            <div class="item_img_content" *ngIf="a.slug">
+                            <iframe class="" [src]="a.safeUrl" loading="lazy" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+                            <!-- <a [href]="a.safeUrl" data-fancybox="gallery1" class="fancybox" *ngIf="a.slug">
+            <img src="../../../assets/img/MLZS/youtube_img.png" loading="lazy" class="video_iframe pinchzoom_img" alt="youtube_img">
+            </a> -->
+                            <div *ngIf="!a.slug">
+                            <div class="item_img_content" *ngFor="let img of a.logofiles">
+                            <img src="{{img.value}}" alt="{{img.key}}">
+                            </div>
+                            </div>
+            </div>
+                         <!-- <div *ngIf="a.safeUrl">
                             <div class="item_img_content">
                             <iframe class="" [src]="a.safeUrl" loading="lazy" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                        </div>
@@ -90,7 +108,7 @@
                             <img src="{{dat.value}}" alt="">
                             </div>
                             </div>
-                        </div>
+                        </div> -->
                         <hr>
                         <div class="item_text mt-2">
                         <img src="../../../assets/img/MLZS/Quote.png" alt="">
@@ -108,12 +126,12 @@
                     <div class="col-md-12">
                         <div class="title_content text-center">
                             <div>
-                                <h5 class="text-center mt-2"><b>Student Testimonials</b></h5>
-                                <p class="text-center">Hear from our parents as they reflect on the positive influence Mount Litera Zee School has had on their children's development and success.</p>
+                                <h5 class="text-center mt-5"><b>Student Testimonials</b></h5>
+                                <p class="text-center">Discover how Mount Litera Zee School has impacted our students' journeys, as they share their personal experiences and achievements.</p>
                             </div>
                         </div>
 
-                        <div class="student-demo mt-3">
+                        <div class="student-demo mt-4">
                             <div class="owl-carousel owl-theme news_owl" id="">
                               <div class="item" *ngFor="let a of StudentTestimonial">
                          <!-- <div class="item_img_content" *ngIf="a.safeUrl">

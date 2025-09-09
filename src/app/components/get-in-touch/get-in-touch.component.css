@@ -1,10 +1,10 @@
 .text_bg1{
-    width: 24%;
+    width: clamp(80px, 120px, 240px);
+    height: clamp(18px, 3vw, 23px);
     position: relative;
-    bottom: 4.2rem;
+    bottom: clamp(1rem, 7vw, 4.7rem);
+    left: clamp(1rem, 9vw, 9.8rem);
     z-index: 1;
-    left: 6.8rem;
-    height: 26px;
 }
 
 .fa-angle-down{

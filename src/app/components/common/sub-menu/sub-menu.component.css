@@ -21,6 +21,6 @@ span a:hover{
 }
 
 .bold-text {
-  font-weight: bold;
+  font-weight: 600;
   color: rgba(1, 72, 118, 1);
 }

@@ -138,6 +138,7 @@ export class DiscoverTestimonialsComponent {
       this.SchoolTestimnoal = [...this.originalSchoolTestimonial];
       this.StudentTestimonial = [...this.originalStudentTestimonial];
       this.ParentTestimonial = [...this.originalParentTestimonial];
+      console.log('ParentTestimonial', this.ParentTestimonial)
     }
 
     this.SchoolTestimnoal = this.originalSchoolTestimonial.filter((item: any) =>
@@ -151,6 +152,7 @@ export class DiscoverTestimonialsComponent {
     this.ParentTestimonial = this.originalParentTestimonial.filter((item: any) =>
       item?.Title?.toLowerCase().includes(value) && item.category.includes(109)
     );
+    console.log('ParentTestimonial', this.ParentTestimonial)
   }
 
   assigndata() {
@@ -186,18 +188,20 @@ export class DiscoverTestimonialsComponent {
 
       };
     });
-
+    console.log('ParentTestimonial', this.ParentTestimonial)
     this.originalSchoolTestimonial = [...this.SchoolTestimnoal];
     this.originalStudentTestimonial = [...this.StudentTestimonial];
     this.originalParentTestimonial = [...this.ParentTestimonial];
   }
 
 
-  getSafeEmbedUrl(url: string): SafeResourceUrl {
+  getSafeEmbedUrl(url: string | undefined): SafeResourceUrl {
+    if (!url || typeof url !== 'string') {
+      // return a safe empty URL or some fallback
+      return this.sanitizer.bypassSecurityTrustResourceUrl('');
+    }
+
     let videoId = url;
-    // if (url == undefined) {
-    //   return ''
-    // }
     // if (url.includes('youtu.be/')) {
     //   videoId = url.split('youtu.be/')[1];
     // } else if (url.includes('watch?v=')) {

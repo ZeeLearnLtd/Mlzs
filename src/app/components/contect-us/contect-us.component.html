@@ -7,201 +7,205 @@
             <app-sub-menu></app-sub-menu>
         </div>
         <div class="">
-             <!-- <app-locate-us></app-locate-us> -->
-               <div class="locat_school mt-5">
-        <div class="box">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="title_content"> 
-                        <h1><b>Get in Touch <br>with Us!</b></h1>
-                        <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg1" alt="">
-                    </div>
-                   <p>Get in touch with us!</p>
-                   <p>We’d love to hear from you! Whether you have questions about admissions, programmes, or anything else related to Mount Litera Zee School, our team is here to assist you.</p>
-                   <p>Reach out to us through the options below, and we’ll get back to you as soon as possible. We look forward to connecting with you!</p>
-                    <div class="info_content mt-3">
-                        <div class="row">
-                            <div class="col-1">
-                                <img src="../../../assets/img/MLZS/home.png" class="media_icon" alt="">
+            <!-- <app-locate-us></app-locate-us> -->
+            <div class="locat_school">
+                <div class="box">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="title_content">
+                                <h1><b>Get in Touch <br>with Us!</b></h1>
+                                <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg1" alt="">
                             </div>
-                            <div class="col-11">
-                                <p><b>Head Office</b></p>
-                                <p>Zee Learn Limited
-                                   135, Continental Building,
-                                   Dr. Annie Besant Road, Worli
-                                   Mumbai - 400 018,
-                                   Maharashtra.</p>
-                            </div>
-                            <div class="col-1">
-                                <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-11">
-                                <p><b>For admissions and franchise enquiry:<br>
-                                   Call</b></p>
-                                   <a href="tel:+919320063100">
-                                <p class="mb-1">+91 93200 63100</p>
-                                </a>
-                            </div>
-                            <div class="col-1">
-                                <img src="../../../assets/img/MLZS/mail.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-11">
-                                <p class="mb-1"><b>Email</b></p>
-                                <a href="mailto:someone@example.com">partner&#64;mountlitera.com</a>
-                            </div>
+                            <p>We’d love to hear from you! Whether you have questions about admissions, programmes, or
+                                anything else related to Mount Litera Zee School, our team is here to assist you.</p>
+                            <p>Reach out to us through the options below, and we’ll get back to you as soon as possible.
+                                We look forward to connecting with you!</p>
+                            <div class="info_content my-3">
+                                <div class="row">
+                                    <div class="col-2 col-lg-1">
+                                        <img src="../../../assets/img/MLZS/media_icon.png" class="media_icon" alt="">
+                                    </div>
+                                    <div class="col-10 col-lg-11">
+                                        <p class="p-0 m-0"><b>Head Office</b></p>
+                                        <p>Zee Learn Limited<br>
+                                            135, Continental Building,<br>
+                                            Dr. Annie Besant Road, Worli<br>
+                                            Mumbai - 400 018,<br>
+                                            Maharashtra.</p>
+                                    </div>
+                                    <div class="col-2 col-lg-1">
+                                        <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
+                                    </div>
+                                    <div class="col-10 col-lg-11">
+                                        <p class="p-0 m-0"><b>For admissions and franchise enquiry:<br></b></p>
+                                        <a href="tel:+919320063100">
+                                            <p class="mb-1">+91 93200 63100</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-2 col-lg-1">
+                                        <img src="../../../assets/img/MLZS/mail.png" class="media_icon" alt="">
+                                    </div>
+                                    <div class="col-10 col-lg-11">
+                                        <p class="p-0 m-0"><b>Email</b></p>
+                                        <a href="mailto:someone@example.com">partner&#64;mountlitera.com</a>
+                                    </div>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="locat_form">
-                        <form [formGroup]="enquireForm">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                               <input type="text" class="form-control" placeholder="Your Name" name="" id=""
-                               formControlName="name"
-                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
-                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.name.touched || submitted) && f.name.errors?.required">
-                                        name is required
-                                    </span>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group mt-3">
-                                    <input type="text" class="form-control"  placeholder="Your Email" name="" id=""
-                                    formControlName="email"
-                                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
-                                   <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
-                                        Email is required
-                                    </span>
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="f.email.touched && f.email.errors?.email">
-                                        Enter a valid email address
-                                    </span>
-                                </div>
-                                  </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group mt-3">
-                                    <input type="text" class="form-control"  placeholder="Your Phone" name="" id=""
-                                     formControlName="mobile"
-                                   [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
-                                   <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback msg_txt">
-                                    <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
-                                    <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <textarea name="" id="" class="w-100"  placeholder="Your Message*"
-                                formControlName="massege"
-                                [ngClass]="{ 'is-invalid': submitted && f.massege.errors }"></textarea>
-                                <div *ngIf="submitted && f.massege.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.massege.touched || submitted) && f.massege.errors?.required">
-                                        Message is required
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group mt-4">
-                               <button class="btn reset_btn" (click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                        <div class="col-md-6">
+                            <div class="locat_form">
+                                <form [formGroup]="enquireForm">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Your Name" name=""
+                                                    id="" formControlName="name"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                                    <span class="text-danger msg_txt"
+                                                        *ngIf="(f.name.touched || submitted) && f.name.errors?.required">
+                                                        name is required
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group mt-3">
+                                                <input type="text" class="form-control" placeholder="Your Email" name=""
+                                                    id="" formControlName="email"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                    <span class="text-danger msg_txt"
+                                                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                                                        Email is required
+                                                    </span>
+                                                    <span class="text-danger msg_txt"
+                                                        *ngIf="f.email.touched && f.email.errors?.email">
+                                                        Enter a valid email address
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group mt-3">
+                                                <input type="text" class="form-control" placeholder="Your Phone" name=""
+                                                    id="" formControlName="mobile"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
+                                                <div *ngIf="submitted && f.mobile.errors"
+                                                    class="invalid-feedback msg_txt">
+                                                    <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
+                                                    <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit
+                                                        Mobile.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-3">
+                                            <textarea name="" id="" class="w-100" placeholder="Your Message*"
+                                                formControlName="massege"
+                                                [ngClass]="{ 'is-invalid': submitted && f.massege.errors }"></textarea>
+                                            <div *ngIf="submitted && f.massege.errors" class="invalid-feedback">
+                                                <span class="text-danger msg_txt"
+                                                    *ngIf="(f.massege.touched || submitted) && f.massege.errors?.required">
+                                                    Message is required
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group mt-4">
+                                                <button class="btn reset_btn" (click)="validationForm();">Send <i
+                                                        class="fa fa-long-arrow-right mx-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="../../../assets/img/MLZS/media_icon.png" class="media_icon" alt="">
+                                </div>
+                                <div class="col-10">
+                                    <p class="mt-2"><b>South Zone</b></p>
+                                    <p>34, Techno Park, 4th Floor,
+                                        AVS Compound, 4th Block,
+                                        Koramangala, Bangalore,
+                                        Karnataka - 560 034.</p>
+                                </div>
+                                <div class="col-2">
+                                    <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
+                                </div>
+                                <div class="col-10">
+                                    <a href="tel:+917506970760">+91 75069 70760
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="../../../assets/img/MLZS/media_icon.png" class="media_icon" alt="">
+                                </div>
+                                <div class="col-10">
+                                    <p class="mt-2"><b>East Zone</b></p>
+                                    <p>Mediasiti, 3rd Floor,
+                                        Plot - X1-4, Block - EP and GP,
+                                        SECTOR-V, Salt Lake,
+                                        Electronics Complex,
+                                        Kolkata – 700 091, West Bengal.</p>
+                                </div>
+                                <div class="col-2">
+                                    <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
+                                </div>
+                                <div class="col-10">
+                                    <a href="tel:+919748421058">+91 9748 421058
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="../../../assets/img/MLZS/media_icon.png" class="media_icon" alt="">
+                                </div>
+                                <div class="col-10">
+                                    <p class="mt-2"><b>North Zone</b></p>
+                                    <p>FC-19-20,
+                                        Upper Ground Floor,
+                                        Sector 16A Film City,
+                                        Noida - 201301.</p>
+                                </div>
+                                <div class="col-2">
+                                    <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
+                                </div>
+                                <div class="col-10">
+                                    <a href="tel:+919873414719">+91 98734 14719
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        <div class="row mt-3">
-            <div class="col-md-3">
-                <div class="row">
-                    <div class="col-2">
-                                <img src="../../../assets/img/MLZS/home.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-10">
-                                <p class="mt-2"><b>South Zone</b></p>
-                                <p>34, Techno Park, 4th Floor,
-                                   AVS Compound, 4th Block,
-                                   Koramangala, Bangalore,
-                                   Karnataka - 560 034.</p>
-                            </div>
-                             <div class="col-2">
-                                <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-10">
-                                   <a href="tel:+917506970760">+91 75069 70760
-                                </a>
-                            </div>
-                </div>
-            </div>
-             <div class="col-md-3">
-                <div class="row">
-                    <div class="col-2">
-                                <img src="../../../assets/img/MLZS/home.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-10">
-                                <p class="mt-2"><b>East Zone</b></p>
-                                <p>Mediasiti, 3rd Floor,
-                                   Plot - X1-4, Block - EP and GP,
-                                   SECTOR-V, Salt Lake,
-                                   Electronics Complex,
-                                   Kolkata – 700 091, West Bengal.</p>
-                            </div>
-                             <div class="col-2">
-                                <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-10">
-                                   <a href="tel:+919748421058">+91 9748 421058
-                                </a>
-                            </div>
-                </div>
-            </div>
-             <div class="col-md-3">
-                <div class="row">
-                    <div class="col-2">
-                                <img src="../../../assets/img/MLZS/home.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-10">
-                                <p class="mt-2"><b>North Zone</b></p>
-                                <p>FC-19-20,
-                                   Upper Ground Floor,
-                                   Sector 16A Film City,
-                                   Noida - 201301.</p>
-                            </div>
-                             <div class="col-2">
-                                <img src="../../../assets/img/MLZS/call.png" class="media_icon" alt="">
-                            </div>
-                            <div class="col-10">
-                                   <a href="tel:+919873414719">+91 98734 14719
-                                </a>
-                            </div>
-                </div>
-            </div>
         </div>
-        </div>
-    </div>
-        </div>
-        <div class="my-5 locat_us_content_white_bg">
+        <div class="locat_us_content_white_bg mb-5">
             <div class="text-center">
-             <h2 class="text-center">Locate A School</h2>
-           <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
-           </div>
-            <p class="text-center">Looking for a school near you? Our ‘Locate a School’ feature makes it easy to find educational institutions based on your location, preferences, and specific needs.</p>
-             <app-locate-aschool></app-locate-aschool>
+                <h2 class="text-center">Locate A School</h2>
+                <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+            </div>
+            <p class="text-center">Looking for a school near you? Our ‘Locate a School’ feature makes it easy to find
+                educational institutions based on your location, preferences, and specific needs.</p>
+            <app-locate-aschool></app-locate-aschool>
         </div>
         <a href="https://www.facebook.com/MountLiteraZeeSchool/" target="_blank">
-        <div class="feedback-btn">
-  Feedback
-  <img src="../../../assets/img/MLZS/fb_icon.png" class="fb_icon" alt=""> <!-- Bootstrap icon -->
-</div>
-</a>
+            <div class="feedback-btn">
+                Feedback
+                <img src="../../../assets/img/MLZS/fb_icon.png" class="fb_icon" alt=""> <!-- Bootstrap icon -->
+            </div>
+        </a>
     </div>
-   
+
 </section>

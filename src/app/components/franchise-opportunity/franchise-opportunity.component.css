@@ -23,6 +23,13 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
+  .about-section{
+    background-size: cover;
+    width: 100%;
+    height: auto !important;
+    min-height: 400px;
+    max-height: 755px;
+}
   #about_content_bg .text_bg {
     width: 20%;
     bottom: 2em;
@@ -80,14 +87,24 @@ h2 {
   font-size: 0.9rem;
   color: #555;
 }
-
 .btn-custom {
-  background: rgba(72, 199, 244, 1);
-  color: rgba(0, 72, 119, 1);
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 4px 9px;
+   display: flex;
+    padding: clamp(10px, 1.2vw, 10px) clamp(25px, 3vw, 44px);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+     background: rgba(72, 199, 244, 1);
+    color: #004877;
+    font-family: Poppins, sans-serif;
+    font-size: clamp(14px, 1.5vw, 14px);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.36px;
+}
+.programm_text_content h1{
+    font-size: 1.5rem !important;
+    font-family: 'Poppins' !important;
 }
 
 .btn-custom:hover {
@@ -105,12 +122,12 @@ h1 {
 }
 
 #about_content_bg .text_bg {
-  width: 20%;
-  bottom: 2em;
-  height: 28px;
-  z-index: 1;
-  left: 18rem;
-  position: relative;
+    width: 78px;
+    bottom: 2em;
+    height: 28px;
+    z-index: 1;
+    left: 14rem;
+    position: relative;
 }
 
 .container {

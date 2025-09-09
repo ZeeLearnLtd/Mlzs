@@ -56,12 +56,12 @@
 }
 
 ul li {
-    list-style-type: none;
-    color: #FFF;
-    font-size: 13px;
-    font-style: normal;
-    font-weight:500;
-    line-height: 22px;
+  list-style: none;
+  color: #fff;
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.6;   
 }
 .listContent{
     display: flex;

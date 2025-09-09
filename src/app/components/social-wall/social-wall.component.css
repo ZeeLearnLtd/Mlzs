@@ -297,14 +297,12 @@ background:#fff;
     .cascade-slider_nav {
         display: block;
     }
-
 }
-
 .text_bg {
-    width: 9%;
+    width: 90px;
     position: relative;
     bottom: 1.8rem;
-    left: 4rem;
+    left: 3rem;
     z-index: 1;
     height: 25px;
 }

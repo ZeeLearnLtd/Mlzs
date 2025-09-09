@@ -19,14 +19,6 @@
   }
   }
   
-  
-  .text_bg{
-    width:23%;
-    position: relative;
-    bottom:1.5rem;
-    z-index: 1;
-  }
-  
   .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color:#FFF;
     font-size: 13px;
@@ -82,13 +74,6 @@
   p{
     margin-bottom: 0.5rem;
   }
-  .text_bg{
-    width: 10%;
-    position: relative;
-    bottom: 1.5rem;
-    z-index: 1;
-    height: 21px;
-  }
   
   h2{
     position: relative;
@@ -128,11 +113,11 @@
 }
 
 .text_bg{
-    width:10%;
+    width: clamp(60px, 116px, 200px);
     position: relative;
-    bottom:1.3rem;
+    bottom: clamp(0.5rem, 2vw, 2.5rem);
     z-index: 1;
-    height: 30px;
+    height: clamp(20px, 3vw, 40px);
 }
 
 .mat-accordion .mat-expansion-panel{

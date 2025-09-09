@@ -3,11 +3,11 @@
         <div class="banner_content">
             <img src="../../../../assets/img/MLZS/banner/gallery_top_banner.png" class="w-100" alt="">
         </div>
-        <div class="subMenu_content">
+        <div class="subMenu_content mt-2">
             <app-sub-menu></app-sub-menu>
         </div>
 
-        <div class="box mt-3">
+        <div class="box mt-4">
             <div class="dropdown_tab">
                 <div class="row">
                     <div class="col-md-4">
@@ -20,7 +20,13 @@
                     </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <input name="" id="" placeholder="Search" class="form-control" (input)="onSearchChange($event)">
+                        <div style="position: relative; width: 250px;">
+  <input type="text" placeholder="Search" class="form-control" 
+         style="padding-left: 35px; width: 100%;" (input)="onSearchChange($event)">
+  <i class="fa fa-search" 
+     style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+</div>
+                        <!-- <input name="" id="" placeholder="Search" class="form-control" (input)="onSearchChange($event)"> -->
                     </div>
                 </div>
             </div>
@@ -63,7 +69,7 @@
                                             <div class="news_text">
                                                 <h6><strong>{{ img.Title }}</strong></h6>
                                                 <p class="m-0 p-0 long_para">{{ img.short }}</p>
-                                                <p class="m-0 p-0 date_content"><i>Date: {{img.StartDate}}</i></p>
+                                                <p class="m-0 p-0 date_content mt-2">Date: {{img.StartDate}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +89,7 @@
         </div>
 
         <div class="box mt-5">
-            <div class="video_gallery_content">
+            <div class="video_gallery_content my-5">
                     <div class="owl-carousel owl-theme news_owl" id="">
                       <div class="item" *ngFor="let a of videoGalleryList">
                         <div class="video_content" *ngIf="a.safeUrl">

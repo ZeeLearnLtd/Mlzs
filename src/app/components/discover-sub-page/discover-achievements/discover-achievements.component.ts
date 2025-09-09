@@ -122,7 +122,6 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
       this.assigndata();
     }
 
-
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         var owl = $(".news_owl");
@@ -149,27 +148,25 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
 
   }
 
-
-
   assigndata() {
     this.Schoolachievement = this.alldata.filter((dt: any) => {
       return dt.category.includes(104);         //School
     }).map((obj: any) => {
       return obj;
     });
-
+    console.log('Schoolachievement', this.Schoolachievement);
     this.Teacherachievement = this.alldata.filter((dt: any) => {
       return dt.category.includes(105);         //Teacher
     }).map((obj: any) => {
       return obj;
     });
-
+    console.log('Teacherachievement', this.Teacherachievement);
     this.Studentachievement = this.alldata.filter((dt: any) => {
       return dt.category.includes(106);         //Student
     }).map((obj: any) => {
       return obj;
     });
-
+    console.log('Studentachievement', this.Studentachievement);
 
   }
 

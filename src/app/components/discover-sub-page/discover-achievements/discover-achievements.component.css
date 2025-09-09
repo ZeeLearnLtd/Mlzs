@@ -15,15 +15,20 @@
   }
   
   @media screen and (max-width: 600px) {
+    .form-control{
+      margin-top: 1rem;
+    }
   .right_card{
   margin-top:20px;
   }
   }
   .text_bg{
-    width:23%;
+    width: 70px !important;
     position: relative;
-    bottom:1.5rem;
+    bottom: 1.9rem;
+    left: 5rem !important;
     z-index: 1;
+    height: 20px;
   }
   
   .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
@@ -82,12 +87,13 @@
     margin-bottom: 0.5rem;
   }
   .text_bg{
-    width: 10%;
+    width: 100px;
     position: relative;
-    bottom: 1.5rem;
+    bottom: 1.9rem;
+    left: 7rem;
     z-index: 1;
-    height: 21px;
-  }
+    height: 20px;
+}
   
   h2{
     position: relative;
@@ -146,14 +152,14 @@
   .title_content p{
     margin: 0;
   }
-  .text_bg{
+  /* .text_bg{
     width: 13%;
     position: relative;
     bottom: 1.9rem;
     left: 5rem;
     z-index: 1;
     height: 27px;
-  }
+  } */
   
   .about_img_content img{
   width: 80%;

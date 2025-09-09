@@ -15,6 +15,17 @@ section{
   }
 
 @media screen and (max-width: 600px) {
+  .text_bg {
+    width: 85px !important;
+    position: relative;
+    bottom: 1.8rem;
+    left: 6rem !important;
+    z-index: 1;
+    height: 20px;
+}
+h6{
+  margin-top: 1rem;
+}
   .carousel-inner {
     position: relative;
     width: 100%;
@@ -89,13 +100,13 @@ h4{
   p{
     margin-bottom: 0.5rem;
   }
-  .text_bg{
-    width: 13%;
+.text_bg{
+    width: 120px;
     position: relative;
     bottom: 1.8rem;
-    left: 9rem;
+    left: 8rem;
     z-index: 1;
-    height: 25px;
+    height: 20px;
 }
 
 h1{

@@ -4,10 +4,11 @@
     background-color: #004878;
 }
 .text_bg{
-    width:23%;
+    width: 180px;
     position: relative;
-    bottom:1.3rem;
+    bottom: 1.3rem;
     z-index: 1;
+    left: 3rem;
     height: 30px;
 }
 

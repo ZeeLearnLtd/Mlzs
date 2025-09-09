@@ -32,7 +32,7 @@ export class NewsComponent implements OnInit {
       setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
-          margin: 10,
+          margin: 25,
           loop: true,
           nav: false,
           center: true,

@@ -40,8 +40,14 @@ h1 {
 }
 .school-card:hover .btn-style{
  border:1px solid#fff;
- background-color:transparent;
- color: #fff;
+ background-color:#fff;
+ color: rgba(1, 72, 118, 1);
+}
+
+.school-card .btn-style:hover {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
 }
 
 .school-card h6{
