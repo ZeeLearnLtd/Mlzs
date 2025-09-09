@@ -104,7 +104,6 @@ h1 {
   max-width: clamp(300px, 55%, 800px);  
   margin: clamp(1rem, 0vh, 3rem); 
   text-align: center;
-  border-radius: 8px;  
 }
 
 .stat-number {
@@ -141,7 +140,7 @@ h1 {
 }
 
 #about_content_bg .text_bg {
-  width: 24%;
+  width:155px;
   bottom: 1.6em;
   height: 20px;
   z-index: 1;
@@ -174,6 +173,9 @@ h1 {
   color: #fff;
   border-radius: 5px;
   font-size: clamp(12px, 1vw, 18px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

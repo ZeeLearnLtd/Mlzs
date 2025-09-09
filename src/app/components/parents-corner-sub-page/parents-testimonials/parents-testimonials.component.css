@@ -140,3 +140,8 @@ section{
       background-color: #44C8F5;
     }
   
+     .parents_testimonial ::ng-deep .owl-carousel .owl-stage {
+  position: relative;
+  height: clamp(370px, 25vw, 450px);
+  overflow: hidden;
+   }

@@ -82,12 +82,13 @@ nav {
 }
 
 .whiteHeader {
-    top: 2.7rem;
+    top: 2.5rem;
     position: fixed;
     color: #fff;
     left: 0;
     right: 0;
     z-index: 99;
+    background-color: #fff;
 }
 
 ul li a {
@@ -442,16 +443,23 @@ ul li a {
     position: relative;
     left: 0rem;
 }
-
 .navbar-nav li>a {
     text-transform: capitalize;
     color: rgba(64, 60, 57, 0.80);
     transition: background-color .2s, color .2s;
-    &:hover,
+    &:hover{
+       color: #014876;
+        text-decoration: underline;
+    }
+}
+.navbar-nav li>a {
+    text-transform: capitalize;
+    color: rgba(64, 60, 57, 0.80);
+    transition: background-color .2s, color .2s;
     &:focus {
         /* background-color: #FFF200; */
        color: #014876;
-        font-weight: 700;
+        font-weight: 600;
         text-decoration: underline;
     }
 }
@@ -762,6 +770,7 @@ ul li a {
     border-radius: 0;
     transition: 0.6s;
     color: #fff;
+    padding: 0px 16px;
 }
 
 .right_botder_btn:hover {

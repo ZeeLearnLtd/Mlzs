@@ -95,6 +95,7 @@ import { PartnerWithUsComponent } from './components/partner-with-us/partner-wit
 import { ProgrammesSubTabComponent } from './components/programmes-sub-tab/programmes-sub-tab.component';
 import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-mlzs.component';
 import { AwardsSubPageComponent } from './components/awards-sub-page/awards-sub-page.component';
+import { AcademicsMainPageComponent } from './components/academics-beyond-sub-page/academics-main-page/academics-main-page.component';
 interface NgxSpinnerConfig {
   type?: string;
 }
@@ -186,7 +187,8 @@ interface NgxSpinnerConfig {
     ProgrammesSubTabComponent,
     SafeUrlPipe,
     ConvertToMLZSComponent,
-    AwardsSubPageComponent
+    AwardsSubPageComponent,
+    AcademicsMainPageComponent
   ],
   imports: [
 

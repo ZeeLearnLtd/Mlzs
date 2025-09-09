@@ -60,6 +60,7 @@ import { EventsDetailsComponent } from './components/discover-sub-page/events-de
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
 import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-mlzs.component';
+import { AcademicsMainPageComponent } from './components/academics-beyond-sub-page/academics-main-page/academics-main-page.component';
 const routes: Routes = [
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
@@ -69,7 +70,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'programmes', component: ProgrammesMainPageComponent },
-      { path: 'academics', component: LiteraExpComponent },
+      { path: 'academics', component: AcademicsMainPageComponent },
       { path: 'academics-beyond/litera-enrichment-programmes', component: AcademicsBeyondComponent },
       { path: 'start-school', component: StartSchoolComponent },
       { path: 'parents-corner', component: ParentsCornerComponent },

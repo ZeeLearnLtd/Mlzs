@@ -210,7 +210,9 @@ section{
 }
 
 .banner_content {
-    margin-top: 8.5rem;
+    margin-top: clamp(11rem, 8vh, 11.5rem);
+    position: relative;
+    z-index: 9;
 }
 
 .carousel-inner {
@@ -221,10 +223,10 @@ section{
 }
 
 .carousel-item img {
-  display: block;
+display: block;
   width: 100%;
-  height: auto;            
-  object-fit: cover;     
+  height: clamp(490px, 60vh, 700px); /* min 220px, scales with screen, max 500px */
+  object-fit: cover;  
 }
 /* About Us css */
 
@@ -236,10 +238,9 @@ section{
 
  .overlay-box {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: clamp(1rem, 2vw, 2rem);
+  padding: clamp(2rem, 2vw, 2rem);
   max-width: min(90%, 500px);
   margin: clamp(1rem, 0vh, 3rem);
-  border-radius: 10px;
 }
 
 .overlay-box h1 {
@@ -248,9 +249,16 @@ section{
 
 .stats-bar {
     background-color: rgba(255, 255, 255, 0.8);
+    width: 81%;
+    margin: auto;
 }
-
+.counter_content{
+   width: 95%;
+   max-width: 1400px;
+   margin: auto;
+}
 .stat-number {
+    font-family: 'Poppins';
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -259,7 +267,7 @@ section{
     color: #000 !important;
     font-size: 1rem;
 }
-.stat-text {
+.stat_text_counter {
     font-size: 0.9rem;
     color: #014876;;
 }
@@ -275,7 +283,7 @@ h1 {
 
 
 #about_content_bg .text_bg {
-    width: 24%;
+    width: 112px;
     bottom: 1.6em;
     height: 20px;
     z-index: 1;

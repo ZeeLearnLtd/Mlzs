@@ -35,21 +35,21 @@
     margin: auto;
 }
 .text_bg{
-    width: 10%;
+    width: clamp(54px, 150px, 160px);
     position: relative;
-    bottom: 1.7rem;
+    bottom: clamp(0.8rem, 2vw, 2rem);
     z-index: 0;
-    left: 5rem;
-    height: 30px;
+    left: clamp(1rem, 8vw, 5.5rem);
+    height: clamp(18px, 3vw, 22px);
 }
 
 .text_bg1{
-    width: 25%;
+    width: clamp(120px, 0vw, 200px);
     position: relative;
-    bottom: 4.8rem;
+    bottom: clamp(4.5rem, 5vw, 5rem);
     z-index: 1;
-    left: 9rem;
-    height: 25px;
+    left: clamp(1rem, 9vw, 12rem);
+    height: clamp(18px, 3vw, 27px);
 }
 
 .fa-angle-down{
@@ -104,6 +104,14 @@ textarea{
 }
 
 @media screen and (max-width: 600px) {
+    .text_bg1{
+    width: clamp(95px, 0vw, 200px);
+    position: relative;
+    bottom: clamp(3.5rem, 5vw, 5rem);
+    z-index: 1;
+    left: clamp(1rem, 22vw, 12rem);
+    height: clamp(18px, 3vw, 27px);
+    }
     .locat_form{
         width:100%;
         background-color: #014876;
@@ -115,7 +123,7 @@ textarea{
 
 .locat_school{
     width: 100%;
-    padding: 55px 0px;
+    padding:40px 0px;
     /* background-color: #004878; */
 }
 

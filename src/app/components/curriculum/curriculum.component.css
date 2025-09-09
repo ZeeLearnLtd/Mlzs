@@ -12,11 +12,20 @@ section{
     padding: 10px;
 }
 
-  .text_bg{
-    width: 26%;
-    height: 20px;
+.text_bg{
+    width: clamp(80px, 20vw, 100px);
+    height: clamp(16px, 2vw, 30px);
     position: relative;
-    bottom: 1.8rem;
+    bottom: clamp(0.8rem, 2vw, 2rem);
+    left: clamp(1rem, 31vw, 32rem);
+    z-index: -1;
+}
+.text_bg1{
+    width: clamp(80px, 100px, 220px);
+    height: clamp(16px, 1vw, 25px);
+    position: relative;
+    bottom: clamp(0.8rem, 2vw, 2rem);
+    left: clamp(0.5rem, 9vw, 9rem);
     z-index: -1;
 }
 h2{

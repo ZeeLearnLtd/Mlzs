@@ -18,6 +18,13 @@ small {
 }
 
 @media screen and (max-width: 600px) {
+  .cascade-slider_container{
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+}
   .img_box{
     width: 200px;
     margin-top: 1rem;

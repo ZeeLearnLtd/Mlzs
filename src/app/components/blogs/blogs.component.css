@@ -17,6 +17,9 @@
     z-index: 9;
     color: #212529 !important;
 }
+.blog-title-content{
+    margin-top: 4rem;
+}
 
 .blog-card {
     position: relative;
