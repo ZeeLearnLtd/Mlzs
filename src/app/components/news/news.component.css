@@ -124,3 +124,7 @@ hr{
         overflow: hidden;
     }
 }
+
+@media screen and (min-width: 1920px) {
+  
+}

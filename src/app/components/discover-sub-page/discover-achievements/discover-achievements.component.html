@@ -49,7 +49,7 @@
                 <div class="owl-carousel owl-theme news_owl" id="">
                   <div class="item" *ngFor="let a of Schoolachievement">
                     <div class="item_img_content">
-                      <div *ngFor="let img of a.OtherFiles">
+                      <div *ngFor="let img of a?.logofiles">
                         <img src="{{img.value}}" alt="{{a.Title}}">
                       </div>
                     </div>
@@ -78,7 +78,7 @@
                 <div class="owl-carousel owl-theme news_owl" id="">
                   <div class="item" *ngFor="let a of Studentachievement">
                     <div class="item_img_content">
-                      <div *ngFor="let img of a.OtherFiles">
+                      <div *ngFor="let img of a.logofiles">
                         <img src="{{img.value}}" alt="{{a.Title}}">
                       </div>
                     </div>
@@ -109,7 +109,7 @@
                 <div class="owl-carousel owl-theme news_owl" id="">
                   <div class="item" *ngFor="let a of Teacherachievement">
                     <div class="item_img_content">
-                      <div *ngFor="let img of a.OtherFiles">
+                      <div *ngFor="let img of a.logofiles">
                         <img src="{{img.value}}" alt="{{a.Title}}">
                       </div>
                     </div>

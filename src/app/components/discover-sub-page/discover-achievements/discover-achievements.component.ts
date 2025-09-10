@@ -118,6 +118,7 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
       this.Studentachievement = this.alldata.filter((item: any) =>
         item?.Title?.toLowerCase().includes(value?.toLowerCase()) && item.category.includes(106)
       );
+
     } else {
       this.assigndata();
     }
