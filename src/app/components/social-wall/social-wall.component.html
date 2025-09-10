@@ -8,22 +8,23 @@
         <p class="text-center m-0">achievements, and moments shared by our students, staff, and community.</p>
           <div class="cascade-slider_container" id="cascade-slider">
   <div class="cascade-slider_slides">
-    <div
-      class="cascade-slider_item"
-      *ngFor="let a of socialData; let i = index"
+    <div class="cascade-slider_item" *ngFor="let a of socialData; let i = index"
       [attr.data-slide]="i"
       [class.now]="i === currentIndex"
       [class.prev]="i === prevIndex"
-      [class.next]="i === nextIndex"
-    >
-      <div class="card align">
+      [class.next]="i === nextIndex"    >
+      <!-- *ngIf="!a.short" -->
+      <div class="card align" >
         <div class="subcard_" *ngFor="let img of a?.logofiles">
         <img [src]="img?.value" alt="{{img.Title}}">
         </div>
         <div class="card-title-overlay">
-    <strong class="text-left mx-2">{{a.Title}}</strong>
-  </div>
+          <strong class="text-left mx-2">{{a.Title}}</strong>
+        </div>
       </div>
+      <!-- <div class="card align" *ngIf="a.short">  
+          <div class="subcard_" [innerHTML]="a.short"></div>
+      </div> -->
     </div>
   </div>
 </div>

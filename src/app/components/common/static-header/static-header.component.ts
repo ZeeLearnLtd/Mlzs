@@ -16,10 +16,17 @@ export class StaticHeaderComponent {
     document.getElementById("trigger-overlay")?.click();
   }
 
-  closeMenu() {
-    // document.getElementById("dropdown_menu")?.click();
+  ngOnInit(): void {
+    // this.scrollPosition = window.scrollY;
+  }
+  toggleMenu() {
     const element = this.navbarCollapse.nativeElement;
-    const bsCollapse = Collapse.getInstance(element) || new Collapse(element);
-    bsCollapse.hide(); // Close the menu
+    const bsCollapse = Collapse.getInstance(element) || new Collapse(element, { toggle: false });
+    bsCollapse.toggle();
+  }
+  closeMenu() {
+    const element = this.navbarCollapse.nativeElement;
+    const bsCollapse = Collapse.getInstance(element) || new Collapse(element, { toggle: false });
+    bsCollapse.hide();
   }
 }

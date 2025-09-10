@@ -93,6 +93,10 @@ section{
     display: block;
 }
 @media screen and (max-width: 600px) {
+    .carousel-item img {
+    width: 100% !important;
+    height: auto !important;
+}
     .mobile{
     display: block;
 }
@@ -320,4 +324,19 @@ h1 {
     background-color: rgba(255, 255, 255, 0.8);
     left: 0;
     right: 0;
+}
+
+@media screen and (min-width: 1920px) {
+.banner_content{
+    margin-top: clamp(16rem, 8vh, 11.5rem) !important;
+    position: relative;
+    z-index: 9;
+}
+.carousel-item img {
+    display: block;
+    width: 100%;
+    height: clamp(100vh, 60vh, 700px) !important;
+    object-fit: cover;
+    /* margin-top: 6rem; */
+}
 }
