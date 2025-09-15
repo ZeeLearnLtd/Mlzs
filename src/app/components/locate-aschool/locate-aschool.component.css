@@ -106,7 +106,7 @@ font-weight: 600;
 
 .school-card:hover i,
 .school-card:hover p,
-.school-card:hover span {
+.school-card:hover label {
   color: #fff;
 }
 .school-card:hover .btn-style{
@@ -128,7 +128,7 @@ font-weight: 600;
 font-weight: 600;
 }
 .school-card p,a{
-    font-size: 14px;
+    font-size: 13px !important;
     color: rgba(1, 72, 118, 1);
     text-decoration: none;
     width: 100%;
@@ -148,6 +148,9 @@ font-weight: 600;
     align-items: center;
     width: 100%;
     padding: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 select{
@@ -156,11 +159,12 @@ select{
 }
 .select-arrow {
   position: relative;
-  bottom: 1.6rem;
-  left: 6.7rem;
+  bottom: 1.7rem;
+  left: 45%;
   pointer-events: none;
-  color: #888;
-  font-weight: 100;
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
 }
 
 .sub_para{

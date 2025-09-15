@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class LiteraFoundationalStage1Component {
 
   constructor(private apiService: ApicallService, private projectService: ProjectSeoService,) { }
-
+  programFaqs = "shadow"
   ngOnInit(): void {
     this.getseo();
   }

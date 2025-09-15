@@ -6,54 +6,76 @@
           <div class="title_content">
             <h2><b>What Our Parents
                 <br>and Students Say</b></h2>
-                <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg2" alt="">
+            <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg2" alt="">
             <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg1" alt="">
             <p>Explore inspiring stories of our students, parents, and alumni, as they reflect on how their experiences
               at Mount Litera Zee School has made a lasting impact on their educational paths, personal opinions and
               long-term success.</p>
-            <button class="btn btn-custom mt-4" routerLink="/testimonials">Know More<span class="material-symbols-outlined">
+            <button class="btn btn-custom mt-4" routerLink="/testimonials">Know More<span
+                class="material-symbols-outlined">
                 arrow_forward
-            </span></button>
+              </span></button>
           </div>
         </div>
         <div class="col-md-7">
-<div class="slider">
-  <div class="slides" [style.transform]="translateY">
-    <div
-      class="slide item_text" *ngFor="let slide of ParentTestimonial; let i = index"
-      [class.active]="i === currentIndex">
-      <div class="row">
-        <div class="col-2">
-          <div class="item_img">
-            <a [href]="slide.safeUrl" data-fancybox="gallery1" class="fancybox" *ngIf="slide.slug">
-            <img src="../../../assets/img/MLZS/youtube_img.png" loading="lazy" class="video_iframe pinchzoom_img" alt="youtube_img">
-            </a>
-                            <div *ngIf="!slide.slug">
-                            <div *ngFor="let img of slide.logofiles">
-                            <img src="{{img.value}}" alt="{{img.key}}">
-                            </div>
-                            </div>
+          <div class="slider desktop">
+            <div class="slides" [style.transform]="translateY">
+              <div class="slide item_text" *ngFor="let slide of ParentTestimonial; let i = index"
+                [class.active]="i === currentIndex">
+                <div class="row">
+                  <div class="col-2">
+                    <div class="item_img">
+                      <a [href]="slide.safeUrl" data-fancybox="gallery1" class="fancybox" *ngIf="slide.slug">
+                        <img src="../../../assets/img/MLZS/youtube_img.png" loading="lazy"
+                          class="video_iframe pinchzoom_img" alt="youtube_img">
+                      </a>
+                      <div *ngIf="!slide.slug">
+                        <div *ngFor="let img of slide.logofiles">
+                          <img src="{{img.value}}" alt="{{img.key}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <p class="shortPara" title="{{ slide.short }}">{{ slide.short }}</p>
+                    <strong>{{ slide.title }}</strong>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-      <div class="col-10">
-      <p>{{ slide.short }}</p>
-      <strong>{{ slide.title }}</strong>
-      </div>
-       <!-- <span>{{slide.CreatedDate}}</span> -->
-    </div>
-    </div>
-  </div>
-
-  <!-- dots -->
-  <div class="dots">
-    <div
-      class="dot"
-      *ngFor="let slide of ParentTestimonial; let i = index"
-      [class.active]="i + 1 === currentIndex"
-      (click)="moveToSlide(i)"
-    ></div>
-  </div>
-</div>
+            <div class="dots">
+              <div class="dot" *ngFor="let slide of ParentTestimonial; let i = index"
+                [class.active]="i + 1 === currentIndex" (click)="moveToSlide(i)"></div>
+            </div>
+          </div>
+          <div class="mobile">
+            <div class="home-demo mt-3">
+                    <div class="owl-carousel owl-theme news_owl" id="">
+                      <div class="item" *ngFor="let slide of ParentTestimonial; let i = index"
+                [class.active]="i === currentIndex">
+                       <div class="row">
+                  <div class="col-3">
+                    <div class="item_img">
+                      <a [href]="slide.safeUrl" data-fancybox="gallery1" class="fancybox" *ngIf="slide.slug">
+                        <img src="../../../assets/img/MLZS/youtube_img.png" loading="lazy"
+                          class="video_iframe pinchzoom_img" alt="youtube_img">
+                      </a>
+                      <div *ngIf="!slide.slug">
+                        <div *ngFor="let img of slide.logofiles">
+                          <img src="{{img.value}}" alt="{{img.key}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-9 p-1">
+                    <p class="shortPara" title="{{ slide.short }}">{{ slide.short }}</p>
+                    <strong>{{ slide.title }}</strong>
+                  </div>
+                </div>
+                      </div>
+                    </div>
+                  </div>
+          </div>
         </div>
       </div>
 

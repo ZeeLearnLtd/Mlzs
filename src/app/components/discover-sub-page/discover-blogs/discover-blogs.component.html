@@ -1,7 +1,10 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-            <img src="../../../../assets/img/MLZS/banner/discover_blog.png" class="w-100" alt="blog">
+             <img src="../../../../assets/img/MLZS/banner/discover_blog.png" class="img-fluid d-none d-md-block w-100"
+            alt="about banner">
+        <img src="../../../../assets/img/MLZS/banner/mobile_banner/Blogs.jpg"
+            class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
         </div>
         <div class="subMenu_content mt-2">
             <app-sub-menu></app-sub-menu>
@@ -47,7 +50,7 @@
                         <div *ngFor="let blog of category.blogsContent; let i = index">
                             <ng-container *ngIf="i === 0">
                                 <div class="img_box_big">
-                                    <div *ngFor="let img of blog.OtherFiles">
+                                    <div *ngFor="let img of blog.logofiles">
                                         <img src="{{img.value}}" alt="blog">
                                     </div>
                                 </div>
@@ -61,7 +64,7 @@
                                     <div class="row">
                                         <div class="col-md-5" routerLink="/blog/{{blog?.slug}}">
                                             <div class="img_box">
-                                                <div *ngFor="let img of blog.OtherFiles">
+                                                <div *ngFor="let img of blog.logofiles">
                                                     <img src="{{img.value}}" alt="blog">
                                                 </div>
                                             </div>

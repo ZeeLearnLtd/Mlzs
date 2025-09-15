@@ -35,13 +35,15 @@ export class LocateASchoolComponent {
   tindex: number = 50
   totalrecord: number = 0;
   virtual_url: any;
+  zoneList: any;
+  getZone: any;
 
 
   constructor(private _service: CommonService, private fb: FormBuilder, private ngxSpinner: NgxSpinnerService, public sanitizer: DomSanitizer,
     private projectService: ProjectSeoService, private router: Router,
     private apiService: ApicallService) {
     this.searchForm = fb.group({
-      country: [''],
+      zone: [''],
       city: [''],
       state: [''],
       location: [''],
@@ -72,8 +74,10 @@ export class LocateASchoolComponent {
     this.ngxSpinner.show();
     this._service.get_allCountryList().subscribe(
       res => {
+        // this.zoneList = res
         this.ngxSpinner.hide();
         this.all_data_list = res
+        console.log('all_data_list', this.all_data_list)
         this.india_country();
         this.setcountry();
       }
@@ -94,6 +98,10 @@ export class LocateASchoolComponent {
     }).map(function (lg: any) {
       return lg;
     })
+    this.zoneList = lgd.filter(
+      (item: any, index: any, self: any) =>
+        index === self.findIndex((t: any) => t.zone === item.zone)
+    );
     const key1 = 'State_Name';
     this.stateList = [...new Map(lgd.map((item: any) => [item[key1], item])).values()]
     this.stateList = this.stateList.sort((a: any, b: any) =>
@@ -108,11 +116,10 @@ export class LocateASchoolComponent {
     this.countryList = [...new Map(this.all_data_list.map((item: any) => [item[key], item])).values()]
   }
 
-  selectCountry(contryId: any) {
-    // this.ngxSpinner.show();
-    this.getContryId = contryId
+  selectZone(zone: any) {
+    this.getZone = zone
     let lgd = this.all_data_list.filter(function (lg: any) {
-      return lg.Country_Id === Number(contryId);
+      return lg.zone === zone;
     }).map(function (lg: any) {
       return lg;
     })
@@ -127,28 +134,28 @@ export class LocateASchoolComponent {
 
 
   selectState(stateId: any) {
-    if(stateId){
-    this.getStateId = stateId
-    let lgd = this.all_data_list.filter(function (lg: any) {
-      return lg.State_Id === Number(stateId);
-    }).map(function (lg: any) {
-      return lg;
-    })
-    const key = 'City_Name';
-    this.cityList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
-    this.cityList = this.cityList.sort((a: any, b: any) =>
-      a.City_Name !== b.City_Name ? (a.City_Name < b.City_Name ? -1 : 1) : 0
-    );
-    this.franchiseeList=[''];
-    this.filterData();
-    }else{
+    if (stateId) {
+      this.getStateId = stateId
+      let lgd = this.all_data_list.filter(function (lg: any) {
+        return lg.State_Id === Number(stateId);
+      }).map(function (lg: any) {
+        return lg;
+      })
+      const key = 'City_Name';
+      this.cityList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
+      this.cityList = this.cityList.sort((a: any, b: any) =>
+        a.City_Name !== b.City_Name ? (a.City_Name < b.City_Name ? -1 : 1) : 0
+      );
+      this.franchiseeList = [''];
+      this.filterData();
+    } else {
       this.india_country();
-    } 
-   
+    }
+
   }
 
   selectCity(cityId: any) {
-    if(cityId){
+    if (cityId) {
       this.getCityId = cityId
       let lgd = this.all_data_list.filter(function (lg: any) {
         return lg.City_Id === Number(cityId);
@@ -158,9 +165,9 @@ export class LocateASchoolComponent {
       const key = 'Franchisee_Name';
       this.franchiseeList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
       this.filterData();
-    }else{
-        this.selectState(this.searchForm.get('state')?.value);
-    }    
+    } else {
+      this.selectState(this.searchForm.get('state')?.value);
+    }
   }
 
   setcentrelist() {
@@ -175,7 +182,6 @@ export class LocateASchoolComponent {
     }
 
     this.centerList = this.ucenterList.slice(this.findex, this.tindex);
-
   }
   setcentrelistclick() {
     let dlenth = this.ucenterList.length;
@@ -201,13 +207,13 @@ export class LocateASchoolComponent {
     //this.centerList=data;
   }
   selectLocation(locationId: any) {
-    if(locationId){
+    if (locationId) {
       this.getLocationId = locationId
       this.filterData();
     }
-    else{
+    else {
       this.selectCity(this.searchForm.get('city')?.value);
-    }  
+    }
   }
 
   filterData() {
@@ -250,6 +256,14 @@ export class LocateASchoolComponent {
       })
       this.getLocationId = undefined
     }
+    if (this.getZone != undefined) {
+      this.lgd = this.all_data_list.filter((lg: any) => {
+        return lg.zone === this.getZone;
+      }).map(function (lg: any) {
+        return lg;
+      })
+      this.getZone = undefined
+    }
     this.ucenterList = this.lgd;
     this.setcentrelist();
   }
@@ -276,9 +290,9 @@ export class LocateASchoolComponent {
     //     console.log(error);
     //   }
     // })
-      // this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
-      // this.router.navigateByUrl('/admissions');
-        this.router.navigate(['/admissions',data?.Franchisee_Code])
+    // this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
+    // this.router.navigateByUrl('/admissions');
+    this.router.navigate(['/admissions', data?.Franchisee_Code])
   }
 
 }

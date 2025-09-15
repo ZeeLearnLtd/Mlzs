@@ -68,8 +68,10 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
     this.subscriptionnav = this.projectService
       .onseoMessage()
       .subscribe((message) => {
+        console.log('message', message)
         if (message) {
           this.testimonialData = message.text
+          console.log('message', this.testimonialData)
         }
         this.testimonialDataList = this.testimonialData.map((video: any) => ({
           ...video,
@@ -77,19 +79,20 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
           safeUrl: this.getSafeEmbedUrl(video.slug),
         }));
       });
+    console.log('testimonialDataList 1', this.testimonialDataList)
   }
 
 
   getSafeEmbedUrl(url: string): SafeResourceUrl {
     let videoId = url;
     if (url) {
-      // if (url.includes('youtu.be/')) {
-      //   videoId = url.split('youtu.be/')[1];
-      // } else if (url.includes('watch?v=')) {
-      //   videoId = new URL(url).searchParams.get('v') || '';
-      // } else if (url.includes('embed/')) {
-      //   videoId = url.split('embed/')[1];
-      // }
+      if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1];
+      } else if (url.includes('watch?v=')) {
+        videoId = new URL(url).searchParams.get('v') || '';
+      } else if (url.includes('embed/')) {
+        videoId = url.split('embed/')[1];
+      }
 
       const embedUrl = `https://www.youtube.com/embed/${videoId}`;
       return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);

@@ -147,6 +147,7 @@ export class DiscoverBlogsComponent {
             (typeof news.category === 'number' && news.category === cat.categoryId)
           )
         }));
+        console.log('categoryWiseData', this.categoryWiseData)
         this.prepareCategoryWiseData();
         this.spinner.hide();
       } else {

@@ -75,7 +75,7 @@ Your inquiries are important to us, and we look forward to connecting with you!
                     </div>
                     <div class="col-md-12">
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" placeholder="Your Phone" name="" id=""
+                            <input type="text" class="form-control" placeholder="Your Mobile No." name="" id=""
                                 formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
                             <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback msg_txt">
                                 <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
@@ -84,7 +84,7 @@ Your inquiries are important to us, and we look forward to connecting with you!
                         </div>
                     </div>
                     <div class="col-md-12 mt-3">
-                        <textarea name="" id="" class="w-100" placeholder="Your Message*" formControlName="massege"
+                        <textarea name="" id="" class="w-100" placeholder="Your Message" formControlName="massege"
                             [ngClass]="{ 'is-invalid': submitted && f.massege.errors }"></textarea>
                         <div *ngIf="submitted && f.massege.errors" class="invalid-feedback">
                             <span class="text-danger msg_txt"
