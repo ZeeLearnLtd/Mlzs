@@ -14,7 +14,7 @@
       [class.prev]="i === prevIndex"
       [class.next]="i === nextIndex"    >
       <!-- *ngIf="!a.short" -->
-      <div class="card align" >
+      <div class="card align" *ngIf="!a.short">
         <div class="subcard_" *ngFor="let img of a?.logofiles">
         <img [src]="img?.value" alt="{{img.Title}}">
         </div>
@@ -22,9 +22,9 @@
           <strong class="text-left mx-2">{{a.Title}}</strong>
         </div>
       </div>
-      <!-- <div class="card align" *ngIf="a.short">  
+      <div class="card align" *ngIf="a.short">  
           <div class="subcard_" [innerHTML]="a.short"></div>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
