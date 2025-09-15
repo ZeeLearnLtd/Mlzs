@@ -18,7 +18,7 @@ h1 {
 .school-card {
     border-radius: 10px;
     border: 1px solid#eee;
-    padding: 20px;
+    padding: 15px 5px;
     background: #fff;
     color: rgba(1, 72, 118, 1);
     transition: 0.3s;
@@ -35,7 +35,7 @@ h1 {
 
 .school-card:hover i,
 .school-card:hover p,
-.school-card:hover span {
+.school-card:hover label {
   color: #fff;
 }
 .school-card:hover .btn-style{
@@ -54,13 +54,23 @@ h1 {
 font-weight: 600;
 }
 .school-card p,a{
-    font-size: 14px;
+    font-size: 13px !important;
     color: rgba(1, 72, 118, 1);
     text-decoration: none;
 }
 .btn-style{
-     color: rgba(0, 72, 119, 1);
-     background: rgba(72, 199, 244, 1);
+    color: rgba(0, 72, 119, 1);
+    background: rgba(72, 199, 244, 1);
+    font-size: 12px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 select{
     font-size: 13px;
@@ -72,9 +82,86 @@ select{
 }
 .select-arrow {
   position: relative;
-  bottom: 1.6rem;
-  left: 14.3rem;
+  bottom: 1.7rem;
+  left: 90%;
   pointer-events: none;
-  color: #888;
-  font-weight: 100;
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+}
+.default-img{
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}
+.hover-img{
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+}
+.phone-img{
+width:18px;
+height:20px;
+}
+.phone-img{
+width:18px;
+height:20px;
+}
+.phone_white-img{
+width:18px;
+height:20px;
+}
+.email-img{
+width:18px;
+height:20px;
+}
+.email_white-img{
+width:18px;
+height:20px;
+}
+.school-card .hover-img {
+display: none;
+}
+
+.school-card:hover .hover-img {
+display: block;
+}
+
+.school-card:hover .default-img {
+ display: none;
+}
+
+.school-card .phone-img {
+display: none;
+}
+
+.school-card:hover .phone-img {
+display: block;
+}
+
+.school-card:hover .phone_white-img {
+ display: none;
+}
+
+.school-card .email-img {
+display: none;
+}
+
+.school-card:hover .email-img {
+display: block;
+}
+
+.school-card:hover .email_white-img {
+ display: none;
+}
+
+.school-card p, a {
+    font-size: 13px !important;
+    color: rgba(1, 72, 118, 1);
+    text-decoration: none;
+    width: 100%;
+}
+.sub_para{
+    height: 90px;
+    overflow-y: scroll;
 }

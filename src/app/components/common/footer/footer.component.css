@@ -234,6 +234,7 @@ color: #FFF;
     width: 100%;
 }
 @media screen and (max-width: 600px) {
+    
     .scrollToTop{
         left: 0%;
         bottom: 5rem;
@@ -320,11 +321,4 @@ ul li{
 
 .tab_text{
 font-size: 13px;
-}
-
-.calling_btn{
-    position: fixed;
-    bottom: 1.5rem;
-    right: -45px;
-    z-index: 99;
 }

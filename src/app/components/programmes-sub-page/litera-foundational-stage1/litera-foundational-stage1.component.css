@@ -8,22 +8,13 @@
 }
 
 section {
-  background: url("../../../../assets/img/MLZS/bg_svg/Programms-page-bg.svg") no-repeat center center;
+  background: url("../../../../assets/img/MLZS/bg_svg/start-school-bg.svg") no-repeat center center;
       background-size: cover;
       width: 100%;
       min-height: 100vh;
 }
 
 @media screen and (max-width: 600px) {}
-
-
-/* .text_bg {
-  width: 23%;
-  position: relative;
-  bottom: 1.5rem;
-  z-index: -1;
-} */
-
  .nav-pills
 .nav-link.active,
 .nav-pills
@@ -31,8 +22,8 @@ section {
 .nav-link{
   color: #fff;
   background: #014876;
-  font-size: clamp(13px, 1vw, 13px);
-  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  font-size: clamp(10px, 1vw, 10px);
+  padding: 6px 5px;
   margin: clamp(5px, 0.5vw, 6px);
   border-radius: 6px;
 }
@@ -40,8 +31,8 @@ section {
 .nav-link:focus,
 .nav-link {
   color: #014876;
-  font-size: clamp(13px, 1vw, 13px);
-  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  font-size: clamp(10px, 1vw, 10px);
+  padding: 6px 5px;
   margin: clamp(5px, 0.5vw, 6px);
   background-color: #44C8F5;
 }
@@ -86,3 +77,53 @@ section {
   margin: 38px 52px;
   text-align: justify;
 }
+
+
+@media (min-width: 1720px) and (max-width: 1750px) {
+   .nav-pills
+.nav-link.active,
+.nav-pills
+.show > 
+.nav-link{
+  color: #fff;
+  background: #014876;
+  font-size: clamp(12px, 1vw, 12px);
+  padding: 6px 10px;
+  margin: clamp(5px, 0.5vw, 6px);
+  border-radius: 6px;
+}
+
+.nav-link:focus,
+.nav-link {
+  color: #014876;
+  font-size: clamp(12px, 1vw, 12px);
+  padding: 6px 10px;
+  margin: clamp(5px, 0.5vw, 6px);
+  background-color: #44C8F5;
+}
+}
+
+@media (min-width: 1900px) {
+     .nav-pills
+.nav-link.active,
+.nav-pills
+.show > 
+.nav-link{
+  color: #fff;
+  background: #014876;
+  font-size: clamp(12px, 1vw, 12px);
+  padding: 6px 10px;
+  margin: clamp(5px, 0.5vw, 6px);
+  border-radius: 6px;
+}
+
+.nav-link:focus,
+.nav-link {
+  color: #014876;
+  font-size: clamp(12px, 1vw, 12px);
+  padding: 6px 10px;
+  margin: clamp(5px, 0.5vw, 6px);
+  background-color: #44C8F5;
+}
+}
+    

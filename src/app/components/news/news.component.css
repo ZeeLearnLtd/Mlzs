@@ -1,130 +1,159 @@
-.about_content{
-    width: 100%;
-    padding: 55px 0px;
-    background-color: #004878;
+.about_content {
+  width: 100%;
+  padding: 55px 0px;
+  background-color: #004878;
 }
 
-.title_content h2{
-    position: relative;
-    z-index: 9;
+.title_content h2 {
+  position: relative;
+  z-index: 9;
 }
-.title_content p{
-    margin: 0;
+
+.title_content p {
+  margin: 0;
 }
-.text_bg{
+
+.text_bg {
   width: 242px;
-    position: relative;
-    bottom: 1.8rem;
-    z-index: 1;
-    height: 35px;
-}
-a{
-    text-decoration: none;
-}
-.about_img_content img{
-width: 80%;
+  position: relative;
+  bottom: 1.8rem;
+  z-index: 1;
+  height: 35px;
 }
 
-.counter_text p{
-    font-size: 12px;
+a {
+  text-decoration: none;
 }
+
+.about_img_content img {
+  width: 80%;
+}
+
+.counter_text p {
+  font-size: 12px;
+}
+
 .home-demo .item {
   background: transparent;
   width: 95%;
   margin: auto;
-  height: clamp(320px, 40vh, 450px);
+  height: clamp(335px, 40vh, 460px);
   border-radius: 5px;
   padding: clamp(8px, 1vw, 20px) clamp(10px, 1vw, 30px);
   overflow: hidden;
 }
 
 .home-demo h2 {
-    color: #FFF;
-    text-align: center;
-    margin: 0;
-    font-style: italic;
-    font-weight: 300;
+  color: #FFF;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+  font-weight: 300;
 }
 
 .news ::ng-deep.owl-carousel .owl-stage {
   position: relative;
   touch-action: manipulation;
   -moz-backface-visibility: hidden;
-  height: clamp(340px, 40vh, 470px); /* responsive height */
+  height: clamp(340px, 40vh, 470px);
+  /* responsive height */
   overflow: hidden;
 }
 
 
-.item_text h6{
-    color: #014876;
-}
-.item_text p{
-    font-size: 13px;
-    color: #014876;
+.item_text h6 {
+  color: #014876;
 }
 
-hr{
-    margin: 15px 0px 0px 0px;
-    height: 2px;
-    background-color: #fff;
+.item_text p {
+  font-size: 13px;
+  color: #014876;
 }
+
+.item_text {
+  height: 100px;
+  overflow-y: scroll;
+}
+
+hr {
+  margin: 15px 0px 0px 0px;
+  height: 2px;
+  background-color: #fff;
+}
+
 ::ng-deep .owl-item.active.center .item hr {
- background-color: #212529;
+  background-color: #212529;
   height: 2px;
 }
+
 ::ng-deep .owl-item.active.center .item h6,
 ::ng-deep .owl-item.active.center .item h6 {
-  color: #004877 !important; /* make h6 white */
+  color: #004877 !important;
+  /* make h6 white */
 }
+
 ::ng-deep .news_owl .item h6 {
-  color: #fff !important; /* default black */
+  color: #fff !important;
 }
 
 ::ng-deep .owl-item.active.center .item p,
 ::ng-deep .owl-item.active.center .item p {
-  color: #004877 !important; /* make h6 white */
-   font-size:14px;
-   font-weight: 600;
+  color: #004877 !important;
+  font-size: 14px;
+  font-weight:500;
 }
+
 ::ng-deep .news_owl .item p {
-  color: #fff !important; /* default black */
-   font-size:14px;
-    font-weight: 600;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-
-
-  .short_para{
+.short_para {
   display: -webkit-box;
-  -webkit-line-clamp: 2;      /* Show only 2 lines */
+  -webkit-line-clamp: 2;
+  /* Show only 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 15px !important;
-  }
-
-  .item{
-    cursor: pointer;
-  }
-
-  ::ng-deep .center{
-    background-color: #FFF !important;  /* Change background color of the active item */ 
-    box-shadow: 0px 0px 10px 0px #0000003b !important;
-    color: #000 !important;
-  }
-  ::ng-deep .owl-item{
-    background-color: #44C8F5;
-    color: #fff;
-  }
-@media screen and (max-width: 600px) {
-    ::ng-deep .news .owl-carousel .owl-stage {
-        position: relative;
-        touch-action: manipulation;
-        height: auto !important;
-        overflow: hidden;
-    }
 }
 
-@media screen and (min-width: 1920px) {
-  
+.item {
+  cursor: pointer;
+}
+
+::ng-deep .center {
+  background-color: #FFF !important;
+  /* Change background color of the active item */
+  box-shadow: 0px 0px 10px 0px #0000003b !important;
+  color: #000 !important;
+}
+
+::ng-deep .owl-item {
+  background-color: #44C8F5;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  ::ng-deep .news .owl-carousel .owl-stage {
+    position: relative;
+    touch-action: manipulation;
+    height: auto !important;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1920px) {}
+
+input::placeholder {
+  color: rgba(34, 17, 34, 1)
+}
+
+input:-ms-input-placeholder {
+  color: rgba(34, 17, 34, 1)
+}
+
+input::-ms-input-placeholder {
+  color: rgba(34, 17, 34, 1)
 }

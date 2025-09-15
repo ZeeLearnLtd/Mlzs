@@ -10,7 +10,7 @@
             <div class="col-md-5 d-flex justify-content-end justify-align-center">
                 <div class="francine_form">
                     <strong class="text-left title">Join Mount Litera Zee School today!</strong>
-                    <div class="form">
+                    <div class="form mt-2">
                         <form [formGroup]="admissionForm">
                         <div class="col-md-row">
                             <div class="col-md-12">
@@ -69,6 +69,7 @@
                                 <option value="">Which state are you searching for schools in?</option>
                                 <option value="{{a.State_ID}}"*ngFor="let a of stateContentDataList">{{a.StateName}}</option>
                                </select>
+                            <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
@@ -80,9 +81,10 @@
                                 <select name="" id="" class="form-control"
                                 formControlName="city" (change)="onChangeCity($event.target)"
                                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
-                                 <option value="">Which City are you searching for schools in?</option>
+                                 <option value="">Which class do you want to enrol in?</option>
                                  <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
                                 </select>
+                                <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
@@ -98,6 +100,7 @@
                                  <option value="">Which School are you interested in?</option>
                                  <option value="{{franchisee.Franchisee_Code}}" *ngFor="let franchisee of selectFranchisee">{{franchisee.Franchisee_Name}}</option>
                                 </select>
+                             <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                  <div *ngIf="submitted && f.franchisee.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.franchisee.touched || submitted) && f.franchisee.errors?.required">
@@ -111,6 +114,7 @@
                                  <option value="">Admission for which class?</option>
                                  <option value="{{class.SchoolClassID}}" *ngFor="let class of selectClasslist">{{class.ClassName}}</option>
                                 </select>
+                                 <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.class.touched || submitted) && f.class.errors?.required">

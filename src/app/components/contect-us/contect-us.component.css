@@ -37,7 +37,7 @@
 .text_bg{
     width: clamp(54px, 150px, 160px);
     position: relative;
-    bottom: clamp(0.8rem, 2vw, 2rem);
+    bottom: clamp(1.6rem, 2vw, 2rem);
     z-index: 0;
     left: clamp(1rem, 8vw, 5.5rem);
     height: clamp(18px, 3vw, 22px);
@@ -94,8 +94,8 @@
 }
 
 .media_icon{
-    width:38px;
-    height:38px;
+    width:35px;
+    height:35px;
 }
 
 textarea{
@@ -167,7 +167,7 @@ p{
     .feedback-btn i {
       margin-top: 10px;
       display: block;
-      transform: rotate(180deg); /* To keep icon upright */
+      transform: rotate(180deg);
     }
 
     .fb_icon{
@@ -178,4 +178,13 @@ p{
     font-weight: 700;
     position: relative;
     z-index: 9;
+}
+
+.get_tuch_content{
+    width: 85%;
+}
+.contect_content{
+    width: 85%;
+    margin: auto;
+    padding: 0px 12px;
 }

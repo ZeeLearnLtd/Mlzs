@@ -5,10 +5,10 @@
   height: 40vw;
   min-height: 400px; 
   max-height: 755px;
- margin-top: clamp(2rem, 10vw, 10.2rem);
+ margin-top: clamp(2rem, 12vw, 10.2rem);
 }
 section{
-  background: url("../../../assets/img/MLZS/bg_svg/Admissions-bg.svg") no-repeat center center;
+  background: url("../../../assets/img/MLZS/bg_svg/start-school-bg.svg") no-repeat center center;
   background-size: cover;
   width: 100%;
   min-height: 100vh;
@@ -17,8 +17,8 @@ section{
   width: 100%;
   max-width: 70%;
   margin: 0rem 2.8rem;
-  padding: clamp(10px, 2vw, 25px);
-  background-color: #C4DEFD;
+  padding:8px 28px; 
+  /* background-color: #C4DEFD; */
   border-radius: 8px;
 }
 .francine_form strong{
@@ -46,7 +46,7 @@ section{
     font-size: 12px;
 }
 label{
-    font-size: 12px;
+    font-size: 11px;
 }
 .icon_list{
     position: relative;
@@ -317,5 +317,15 @@ margin-top: 10px;
     transition: 0.6s;
     font-size: 13px;
     width: 30%;
-    margin: 15px 15px;
+    margin: 15px 0px;
+}
+
+.select-arrow {
+  position: relative;
+  bottom: 1.6rem;
+  left:92%;
+  pointer-events: none;
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
 }

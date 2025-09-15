@@ -12,6 +12,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./convert-to-mlzs.component.css']
 })
 export class ConvertToMLZSComponent {
+  captchaText: string = '';
+  captchaForm!: FormGroup;
+  captchaValid: boolean | null = null;
   headerTitle = "Admissions";
   otpInput: boolean = false
   otp_msg: any;
@@ -51,6 +54,7 @@ export class ConvertToMLZSComponent {
       schoolCity: ['', Validators.required],
       schoolLocality: ['', Validators.required],
       otp: ['', Validators.required],
+      captchaInput: ['', Validators.required]
     })
   }
   ngOnInit(): void {
@@ -80,6 +84,7 @@ export class ConvertToMLZSComponent {
   }
 
   getAdmissionFormData() {
+    this.generateCaptcha();
     this.apiService.getAllAdmissionData().subscribe((
       res => {
         this.stateContentDataList = res.root.subroot;
@@ -219,5 +224,19 @@ export class ConvertToMLZSComponent {
         this.otp_ValidMsg = false;
       }
     }
+  }
+
+  generateCaptcha(): void {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+    this.captchaText = '';
+    for (let i = 0; i < 6; i++) {
+      this.captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    this.captchaValid = null;
+  }
+
+  verifyCaptcha(): void {
+    const input = this.captchaForm.get('captchaInput')?.value;
+    this.captchaValid = input === this.captchaText;
   }
 }

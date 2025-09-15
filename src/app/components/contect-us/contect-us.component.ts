@@ -54,6 +54,7 @@ export class ContectUsComponent {
       city: [''],
       state: [''],
       location: [''],
+      type: ['']
     })
     this.enquireForm = fb.group({
       name: ['', Validators.required],

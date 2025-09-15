@@ -15,8 +15,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./our-legacy.component.css']
 })
 export class OurLegacyComponent {
-
-
   constructor(
     private sanitizer: DomSanitizer,
     private route: ActivatedRoute,

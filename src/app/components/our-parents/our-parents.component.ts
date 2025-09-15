@@ -16,7 +16,7 @@ declare var $: any;  // Declare jQuery
 })
 export class OurParentsComponent {
   slides: any[] = [];
-  currentIndex = 1; // center active initially
+  currentIndex = 1;
   interval: any;
 
 
@@ -37,7 +37,6 @@ export class OurParentsComponent {
   ngOnInit(): void {
     this.gettestimonial_data();
   }
-
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {

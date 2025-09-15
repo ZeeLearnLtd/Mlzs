@@ -59,13 +59,14 @@
                                    <div *ngIf="otp_ValidMsg" class="validMsg">OTP verified successfully</div>
                                     <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-1 dropdownIcon">
                                <select name="" id="" class="form-control"
                                formControlName="state" (change)="onChangeState($event.target)"
                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
                                 <option value="">State</option>
                                 <option value="{{a.State_ID}}"*ngFor="let a of stateContentDataList">{{a.StateName}}</option>
                                </select>
+                                <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
@@ -73,13 +74,14 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-1 dropdownIcon">
                                 <select name="" id="" class="form-control"
                                 formControlName="city" 
                                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
                                  <option value="">City</option>
                                  <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
                                 </select>
+                                 <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
@@ -139,18 +141,21 @@
                                     </span>
                                 </div>
                              </div>
-                             <!-- <div class="col-md-12 mt-1">
-                                <div class="row">
-                                    <div class="col-1">
-                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                    </div>
-                                    <div class="col-11">
-                                        <label for="vehicle1">I authorize MLZS and its representatives to Call, SMS, Email or WhatsApp me about Admission Proccess. This consent overrides any registration for DNC/NDNC.</label>
-                                    </div>
-                                </div>
-                            </div> -->
+                            <!-- <div class="col-md-12 mt-1">
+                             <label for="captchaInput" class="form-label">Enter Captcha</label>
+    <div class="d-flex align-items-center gap-3">
+      <div class="captcha-text">{{ captchaText }}</div>
+      <input type="text" id="captchaInput" class="form-control"
+             placeholder="Enter Captcha" formControlName="captchaInput">
+      <button type="button" class="btn btn-outline-secondary btn-sm"
+              (click)="generateCaptcha()">↻</button>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Verify</button>
+    <div *ngIf="captchaValid === true" class="text-success mt-2">✅ Captcha Verified</div>
+    <div *ngIf="captchaValid === false" class="text-danger mt-2">❌ Incorrect Captcha</div>
+</div> -->
                              <div class="col-md-12 mt-1">
-                                <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
+                                <button class="btn read_mode w-100"(click)="validationForm();">Submit</button>
                              </div>
                         </div>
                         </form>
@@ -226,48 +231,6 @@
                                     </span>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-12 mt-1">
-                                <select name="" id="" class="form-control"
-                                formControlName="city" (change)="onChangeCity($event.target)"
-                                 [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
-                                 <option value="">Which City are you searching for schools in?</option>
-                                 <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
-                                </select>
-                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
-                                        City is required
-                                    </span>
-                                </div>
-                             </div> -->
-
-                             <!-- <div class="col-md-12 mt-1">
-                                <select name="" id="" class="form-control" 
-                                formControlName="franchisee"(change)="onChangeFranchisee($event.target)"
-                                [ngClass]="{ 'is-invalid': submitted && f.franchisee.errors }">
-                                 <option value="">Which School are you interested in?</option>
-                                 <option value="{{franchisee.Franchisee_Code}}" *ngFor="let franchisee of selectFranchisee">{{franchisee.Franchisee_Name}}</option>
-                                </select>
-                                 <div *ngIf="submitted && f.franchisee.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.franchisee.touched || submitted) && f.franchisee.errors?.required">
-                                        Franchisee is required
-                                    </span>
-                                </div>
-                             </div> -->
-                             <!-- <div class="col-md-12 mt-1">
-                                <select name="" id="" class="form-control" formControlName="class"
-                                 (change)="onchangeClass($event.target)"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
-                                 <option value="">Admission for which class?</option>
-                                 <option value="{{class.SchoolClassID}}" *ngFor="let class of selectClasslist">{{class.ClassName}}</option>
-                                </select>
-                                <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
-                                    <span class="text-danger msg_txt"
-                                        *ngIf="(f.class.touched || submitted) && f.class.errors?.required">
-                                        Class is required
-                                    </span>
-                                </div>
-                             </div> -->
                              <div class="col-md-12 mt-1">
                                 <div class="row">
                                     <div class="col-1">
@@ -532,7 +495,7 @@
             <h2 class="text-white"><b>FAQs</b></h2>
             <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="text-bg">
             <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
-            <app-faqs></app-faqs>
+            <app-faqs [shadowFaq]="false"></app-faqs>
         </div>
     </div>
  <div class="box_content award_box mt-4">
