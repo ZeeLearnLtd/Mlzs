@@ -1,7 +1,10 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-            <img src="../../../assets/img/MLZS/banner/programme_img.png" class="w-100" alt="">
+            <img src="../../../assets/img/MLZS/banner/programme_img.png" class="img-fluid d-none d-md-block w-100"
+                alt="about banner">
+            <img src="../../../../assets/img/MLZS/banner/mobile_banner/Programmes.jpg"
+                class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
         </div>
         <div class="subMenu_content">
             <app-sub-menu></app-sub-menu>
@@ -54,7 +57,10 @@
                                 <div class="row mt-3">
                                     <div class="col-md-6">
                                         <div class="programm_text_content">
-                                            <h1 class="tab_title"><span class="blue">Every</span><span class="purple"> child </span> <span class="blue"> is a</span><span class="purple"> star</span> <span class="blue"> in the</span><span class="purple"> making!</span></h1>
+                                            <h1 class="tab_title"><span class="blue">Every</span><span class="purple">
+                                                    child </span> <span class="blue"> is a</span><span class="purple">
+                                                    star</span> <span class="blue"> in the</span><span class="purple">
+                                                    making!</span></h1>
                                             <p class="mt-2">The Litera Foundational Stage 1 nurtures young minds through
                                                 an activity-based, experiential approach aligned with the NCF 2023
                                                 framework. We focus on building strong literacy and numeracy skills
@@ -586,11 +592,11 @@
                 <h2 class="text-white"><b>FAQs</b></h2>
                 <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
                 <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
-                <app-faqs></app-faqs>
+                <app-faqs [shadowFaq]="false"></app-faqs>
             </div>
         </div>
         <div class="mt-5">
-        <app-blogs></app-blogs>
+            <app-blogs></app-blogs>
         </div>
         <div class="my-5">
             <app-testimonial></app-testimonial>

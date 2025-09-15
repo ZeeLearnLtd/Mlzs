@@ -134,6 +134,9 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+    .programmes_main_page{
+        margin-top: 3.5rem !important;
+    }
     .form-control{
       margin-top: 1rem;
     }
@@ -366,13 +369,12 @@ h1 {
 }
 
 .programmes_main_page {
-    margin-top: clamp(2rem, 10vw, 10.2rem);
+    margin-top: clamp(2rem, 12vw, 10.2rem);
 }
 
 .shortPara {
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    /* Limit to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -606,4 +608,27 @@ width: clamp(60%, 0%, 100%);
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+}
+
+.nav_logo {
+    width: 18%;
+}
+.nav_logo img{
+width: 100%;
+object-fit: cover;
+margin: 5px;
+}
+
+.kidzee_logo_img {
+    position: relative;
+    left: 1rem;
+    cursor: pointer;
+}
+.card_subPara{
+  max-height:100px;
+  /* overflow-y: scroll; */
+}
+
+.programm_text_content{
+ padding: 0px 7px;
 }

@@ -5,7 +5,7 @@
   height: 40vw;
   min-height: 400px; 
   max-height: 755px;
- margin-top: clamp(2rem, 10vw, 10.2rem);
+   margin-top: 12%;;
 }
 
 .francine_form {

@@ -405,7 +405,7 @@
             <h2 class="faq_title text-center"><b>FAQs</b></h2>
             <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
             <p class="m-0">Have a burning question? We're here to answer the most common ones.</p>
-            <app-faqs></app-faqs>
+            <app-faqs [shadowFaq]="true"></app-faqs>
         </div>
         </div>
         </div>
@@ -429,3 +429,17 @@
       
     </div>
 </section>
+<div class="calling_btn_mobile d-block d-md-none">
+        <a href="tel:+919320063100">
+        <img src="../../../../assets/img/MLZS/banner/mobile_banner/call_me_mobile.png" alt="call me now">
+        </a>
+    </div>
+    <div class="calling_btn d-none d-md-block">
+        <a href="tel:+919320063100">
+        <!-- <img src="../../../../assets/img/MLZS/calling_btn.png" width="65%" alt="call me now"> -->
+         <button class="call-btn">
+    <span class="text">Call me now <img src="../../../assets/img/MLZS/banner/mobile_banner/Logo/call_icon.png" alt=""></span>
+    <span class="number">+919320063100</span>
+  </button>
+        </a>
+    </div>

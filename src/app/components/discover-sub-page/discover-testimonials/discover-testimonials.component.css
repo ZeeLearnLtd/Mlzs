@@ -198,15 +198,15 @@ width: 80%;
 .item_text h6{
   color: #014876;
 }
-.item_text p{
+/* .item_text p{
   font-size: 11px;
   color: #014876;
   display: -webkit-box;
-  -webkit-line-clamp: 3;       /* Show only 3 lines */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
+} */
 
 .item_img_content img{
   width: 100%;
@@ -240,9 +240,9 @@ hr{
   background: transparent;
   width: 95%;
   margin: auto;
-  height: clamp(190px, 15vw, 300px);
+  /* height: clamp(190px, 18vw, 300px); */
   border-radius: 5px;
-  padding: clamp(30px, 2vw, 30px) clamp(8px, 1.5vw, 15px);
+  padding: 10px 20px;
   overflow: hidden;
 }
 ::ng-deep .news_owl .owl-theme .owl-dots .owl-dot span{
@@ -256,9 +256,70 @@ hr{
     transition: opacity .2s ease;
     border-radius: 30px;
 }
-
+.card_subPara1 {
+    max-height: 120px;
+}
 ::ng-deep .owl-theme .owl-dots .owl-dot {
     display: inline-block;
     zoom: 1;
     box-shadow: none !important;
 }
+
+
+::ng-deep .owl-item.active.center .item,
+.owl-item.active .item {
+  z-index: 2;
+  overflow: hidden;
+}
+::ng-deep .owl-item.active.center .item h6,
+::ng-deep .owl-item.active.center .item h6 {
+  color: rgba(1, 1, 1, 1) !important; /* make h6 white */
+}
+::ng-deep .news_owl .item h6 {
+  color: #fff !important; /* default black */
+}
+
+::ng-deep .owl-item.active.center .item p,
+::ng-deep .owl-item.active.center .item p {
+  color: rgba(1, 1, 1, 1) !important; /* make h6 white */
+   font-size:14px;
+}
+::ng-deep .news_owl .item p {
+  color: #fff !important; /* default black */
+   font-size:14px;
+}
+.owl-item:not(.active) .item {
+  opacity: 0.7;
+  transform: scale(0.95);
+  overflow: hidden;
+}
+::ng-deep .owl-carousel.owl-drag .owl-item {
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+.white_quote .white-img {
+  display: none;
+}
+.white_quote .black-img {
+  display: block;
+}
+
+::ng-deep .owl-item.active.center .white_quote .white-img {
+  display: block;
+}
+::ng-deep .owl-item.active.center .white_quote .black-img {
+  display: none;
+}
+
+/* Non-active items → black image */
+::ng-deep .owl-item:not(.active.center) .white_quote .black-img {
+  display: block;
+}
+.white_quote img{
+    width: 33px;
+    height: 24px;
+}
+  

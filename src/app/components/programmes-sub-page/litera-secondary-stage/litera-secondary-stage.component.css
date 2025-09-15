@@ -1,83 +1,136 @@
  .banner {
-      position: relative;
-      background: url('../../../../assets/img/MLZS/banner/programme_img.png') no-repeat center center;
-      background-size: cover;
-      height: 35vh; /* responsive height */
-      min-height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
+   position: relative;
+   background: url('../../../../assets/img/MLZS/banner/programme_img.png') no-repeat center center;
+   background-size: cover;
+   height: 35vh;
+   /* responsive height */
+   min-height: 200px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+ }
 
-.multi_img_group{
-    display: flex;
-    justify-content: center;
-}
-.multi_img_group img{
-width: 80%;
-}
+ .multi_img_group {
+   display: flex;
+   justify-content: center;
+ }
 
-section{
-background: url("../../../../assets/img/MLZS/bg_svg/Programms-page-bg.svg") no-repeat center center;
-      background-size: cover;
-      width: 100%;
-      min-height: 100vh;
-    
-  }
-@media screen and (max-width: 600px) {}
- .nav-pills
-.nav-link.active,
-.nav-pills
-.show > 
-.nav-link{
-  color: #fff;
-  background: #014876;
-  font-size: clamp(13px, 1vw, 13px);
+ .multi_img_group img {
+   width: 80%;
+ }
+
+ section {
+   background: url("../../../../assets/img/MLZS/bg_svg/start-school-bg.svg") no-repeat center center;
+   background-size: cover;
+   width: 100%;
+   min-height: 100vh;
+
+ }
+
+ @media screen and (max-width: 600px) {}
+
+ .nav-pills .nav-link.active,
+ .nav-pills .show>.nav-link {
+   color: #fff;
+   background: #014876;
+   /* font-size: clamp(13px, 1vw, 13px);
   padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
-  margin: clamp(5px, 0.5vw, 6px);
-  border-radius: 6px;
-}
+  margin: clamp(5px, 0.5vw, 6px); */
+   font-size: clamp(10px, 1vw, 10px);
+   padding: 6px 5px;
+   margin: clamp(5px, 0.5vw, 6px);
+   border-radius: 6px;
+ }
 
-.nav-link:focus,
-.nav-link {
-  color: #014876;
-  font-size: clamp(13px, 1vw, 13px);
+ .nav-link:focus,
+ .nav-link {
+   color: #014876;
+   /* font-size: clamp(13px, 1vw, 13px);
   padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
-  margin: clamp(5px, 0.5vw, 6px);
-  background-color: #44C8F5;
-}
-    .liter_img{
-        width: 50%;
-    }
+  margin: clamp(5px, 0.5vw, 6px); */
+   font-size: clamp(10px, 1vw, 10px);
+   padding: 6px 5px;
+   margin: clamp(5px, 0.5vw, 6px);
+   background-color: #44C8F5;
+ }
 
-    .liter_content{
-        margin-left: 57px;
-    }
+ .liter_img {
+   width: 50%;
+ }
 
-  .fr_img_content img{
-    width: 80%;
-  }
+ .liter_content {
+   margin-left: 57px;
+ }
 
-  .title_content ul{
-    padding: 0; 
-    line-height: 30px;
-  }
+ .fr_img_content img {
+   width: 80%;
+ }
 
-  @media screen and (max-width: 600px) {
-  li{
-    width: 100%;
-  }
+ .title_content ul {
+   padding: 0;
+   line-height: 30px;
+ }
 
-  li button{
-    width: 100%;
-  }
-  .programm_para{
-    margin:38px 30px !important;
-    text-align: justify;
-  }
-  }
+ @media screen and (max-width: 600px) {
+   li {
+     width: 100%;
+   }
 
-  .programm_para{
-    margin:38px 38px;
-    text-align: justify;
-  }
+   li button {
+     width: 100%;
+   }
+
+   .programm_para {
+     margin: 38px 30px !important;
+     text-align: justify;
+   }
+ }
+
+ .programm_para {
+   margin: 38px 38px;
+   text-align: justify;
+ }
+
+ @media (min-width: 1720px) and (max-width: 1750px) {
+
+   .nav-pills .nav-link.active,
+   .nav-pills .show>.nav-link {
+     color: #fff;
+     background: #014876;
+     font-size: clamp(12px, 1vw, 12px);
+     padding: 6px 10px;
+     margin: clamp(5px, 0.5vw, 6px);
+     border-radius: 6px;
+   }
+
+   .nav-link:focus,
+   .nav-link {
+     color: #014876;
+     font-size: clamp(12px, 1vw, 12px);
+     padding: 6px 10px;
+     margin: clamp(5px, 0.5vw, 6px);
+     background-color: #44C8F5;
+   }
+ }
+
+ @media (min-width: 1900px) {
+
+   .nav-pills .nav-link.active,
+   .nav-pills .show>.nav-link {
+     color: #fff;
+     background: #014876;
+     font-size: clamp(12px, 1vw, 12px);
+     padding: 6px 10px;
+     margin: clamp(5px, 0.5vw, 6px);
+     border-radius: 6px;
+   }
+
+   .nav-link:focus,
+   .nav-link {
+     color: #014876;
+     font-size: clamp(12px, 1vw, 12px);
+     padding: 6px 10px;
+     margin: clamp(5px, 0.5vw, 6px);
+     background-color: #44C8F5;
+   }
+ }

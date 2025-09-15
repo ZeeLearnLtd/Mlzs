@@ -61,13 +61,13 @@ width: 80%;
     font-size: 13px;
     color: #014876;
 }
-.item_text p{
+/* .item_text p{
   display: -webkit-box;
   -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
+} */
 
 .item_img_content iframe{
     width: 100%;

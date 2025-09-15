@@ -1,48 +1,48 @@
 <section>
-    <div class="about_content testimonials">
+  <div class="about_content testimonials">
     <div class="">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="title_content text-center">
-                    <h2 class=""><b>Testimonials</b></h2>
-                    <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
-                    <div class="text-white text-center">
-                        <p>Explore inspiring stories of our students, parents, and alumni, as they reflect on how their experiences at Mount</p>
-                        <p>Litera Zee School has made a lasting impact on their educational paths, personal opinions and long-term success.</p>
-                       </div>
-                </div>
-                <div class="home-demo mt-5">
-                    <div class="owl-carousel owl-theme news_owl" id="">
-                      <div class="item" *ngFor="let a of testimonialDataList">
-                          <div class="item_img_content" *ngIf="a.safeUrl" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe [src]="a.safeUrl"
-          title="YouTube Video"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          loading="lazy"
-          allowfullscreen>
-  </iframe>
-</div>
-
-                        <div class="item_img_content" *ngIf="!a.safeUrl">
-                            <div *ngFor="let dat of a.files">
-                            <img src="{{dat.url}}" alt="{{a.filename}}">
-                            </div>
-                        </div>
-                        
-                        <div class="item_text mt-3 strong_title">
-                        <img src="../../../assets/img/MLZS/Quote.png" alt="">
-                          <p class="mt-2 mb-0">{{a.title}}</p>
-                          <p [innerHTML]="a.short"></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title_content text-center">
+            <h2 class=""><b>Testimonials</b></h2>
+            <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+            <div class="text-white text-center">
+              <p>Explore inspiring stories of our students, parents, and alumni, as they reflect on how their
+                experiences at Mount</p>
+              <p>Litera Zee School has made a lasting impact on their educational paths, personal opinions and long-term
+                success.</p>
             </div>
+          </div>
+          <div class="home-demo mt-5">
+            <div class="owl-carousel owl-theme news_owl" id="">
+              <div class="item" *ngFor="let a of testimonialDataList">
+                <div class="item_img_content" *ngIf="a.safeUrl"
+                  style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                  <iframe [src]="a.safeUrl" title="YouTube Video"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen>
+                  </iframe>
+                </div>
+
+                <div class="item_img_content" *ngIf="!a.safeUrl">
+                  <div *ngFor="let dat of a.files">
+                    <img src="{{dat.url}}" alt="{{a.filename}}">
+                  </div>
+                </div>
+
+                <div class="item_text mt-3 strong_title">
+                  <img src="../../../assets/img/MLZS/Quote.png" alt="">
+                  <p class="mt-2 mb-0">{{a.title}}</p>
+                  <div class="card_subPara">
+                  <p [innerHTML]="a.Short"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-       
+      </div>
     </div>
-</div>
+  </div>
 </section>

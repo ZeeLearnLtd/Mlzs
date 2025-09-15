@@ -36,7 +36,7 @@ section{
   color: #fff;
   background: #014876;
   font-size: clamp(13px, 1vw, 14px);
-  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  padding: 12px 40px;
   margin: clamp(5px, 0.5vw, 6px);
   border-radius: 6px;
 }
@@ -45,7 +45,7 @@ section{
 .nav-link {
   color: #014876;
   font-size: clamp(13px, 1vw, 14px);
-  padding: clamp(7px, 1vh, 8px) clamp(25px, 2vw, 25px);
+  padding: 12px 40px;
   margin: clamp(5px, 0.5vw, 6px);
   background-color: #44C8F5;
 }

@@ -36,13 +36,15 @@ export class LocateUsComponent implements OnInit {
   tindex: number = 50
   totalrecord: number = 0;
   virtual_url: any;
+  getZone: any;
+  zoneList: any;
 
 
   constructor(private _service: CommonService, private fb: FormBuilder, private ngxSpinner: NgxSpinnerService, public sanitizer: DomSanitizer,
     private projectService: ProjectSeoService, private router: Router,
     private apiService: ApicallService) {
     this.searchForm = fb.group({
-      country: [''],
+      zone: [''],
       city: [''],
       state: [''],
       location: [''],
@@ -90,6 +92,10 @@ export class LocateUsComponent implements OnInit {
     const key = 'India';
     this.indiaCountry = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
     this.searchForm.get('country')?.patchValue(this.indiaCountry[0].Country_Id)
+    this.zoneList = lgd.filter(
+      (item: any, index: any, self: any) =>
+        index === self.findIndex((t: any) => t.zone === item.zone)
+    );
     let lgd1 = this.all_data_list.filter((lg: any) => {
       return lg.Country_Id === Number(this.indiaCountry[0].Country_Id);
     }).map(function (lg: any) {
@@ -97,6 +103,7 @@ export class LocateUsComponent implements OnInit {
     })
     const key1 = 'State_Name';
     this.stateList = [...new Map(lgd.map((item: any) => [item[key1], item])).values()]
+
     this.stateList = this.stateList.sort((a: any, b: any) =>
       a.State_Name !== b.State_Name ? (a.State_Name < b.State_Name ? -1 : 1) : 0
     );
@@ -107,14 +114,12 @@ export class LocateUsComponent implements OnInit {
   setcountry(): any {
     const key = 'Country_Name';
     this.countryList = [...new Map(this.all_data_list.map((item: any) => [item[key], item])).values()]
-    console.log('countryList', this.countryList);
   }
 
-  selectCountry(contryId: any) {
-    // this.ngxSpinner.show();
-    this.getContryId = contryId
+  selectZone(zone: any) {
+    this.getZone = zone
     let lgd = this.all_data_list.filter(function (lg: any) {
-      return lg.Country_Id === Number(contryId);
+      return lg.zone === zone;
     }).map(function (lg: any) {
       return lg;
     })
@@ -176,7 +181,6 @@ export class LocateUsComponent implements OnInit {
     }
 
     this.centerList = this.ucenterList.slice(this.findex, this.tindex);
-
   }
   setcentrelistclick() {
     let dlenth = this.ucenterList.length;
@@ -250,6 +254,14 @@ export class LocateUsComponent implements OnInit {
         return lg;
       })
       this.getLocationId = undefined
+    }
+    if (this.getZone != undefined) {
+      this.lgd = this.all_data_list.filter((lg: any) => {
+        return lg.zone === this.getZone;
+      }).map(function (lg: any) {
+        return lg;
+      })
+      this.getZone = undefined
     }
     this.ucenterList = this.lgd;
     this.setcentrelist();

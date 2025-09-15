@@ -3,7 +3,8 @@
     <div class="faq_content">
         <div class="box mt-3">
             <mat-accordion>
-                <mat-expansion-panel *ngFor="let faq of faqsData">
+                <mat-expansion-panel *ngFor="let faq of faqsData"
+                [ngClass]="{ 'shadow-panel': shadowFaq }">
                         <mat-expansion-panel-header>
                             <div class="faq_title">{{faq.Title}}</div>
                         </mat-expansion-panel-header>

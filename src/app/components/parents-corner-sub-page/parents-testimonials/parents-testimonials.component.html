@@ -1,6 +1,9 @@
 <section>
     <div class="programmes_main_page">
-        <img src="../../../../assets/img/MLZS/banner/parent-corner.png" class="w-100" alt="">
+        <img src="../../../../assets/img/MLZS/banner/parent-corner.png" class="img-fluid d-none d-md-block w-100"
+            alt="about banner">
+        <img src="../../../../assets/img/MLZS/banner/mobile_banner/parentsCorner_mobile.jpg"
+            class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
         <div class="menu_content">
             <app-sub-menu></app-sub-menu>
         </div>
@@ -352,7 +355,7 @@
             <h2 class="text-white"><b>FAQs</b></h2>
             <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
             <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
-            <app-faqs></app-faqs>
+            <app-faqs [shadowFaq]="false"></app-faqs>
         </div>
     </div>
        <div class="mt-5">

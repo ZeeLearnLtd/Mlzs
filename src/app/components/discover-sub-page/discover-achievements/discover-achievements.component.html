@@ -1,7 +1,10 @@
 <section>
   <div class="programmes_main_page">
     <div class="banner_content">
-      <img src="../../../../assets/img/MLZS/banner/achievement_top_banner.png" class="w-100" alt="">
+      <img src="../../../../assets/img/MLZS/banner/achievement_top_banner.png" class="img-fluid d-none d-md-block w-100"
+            alt="about banner">
+        <img src="../../../../assets/img/MLZS/banner/mobile_banner/Achievements_mobile.jpg"
+            class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
     </div>
     <div class="subMenu_content">
       <app-sub-menu></app-sub-menu>
@@ -55,7 +58,9 @@
                     </div>
                     <div class="item_text mt-2">
                       <h6>{{a.Title}}</h6>
-                      <p class="shortPara" [innerHTML]="a.short"></p>
+                      <div class="card_subPara">
+                      <p [innerHTML]="a.short"></p>
+                      </div>
                       <!-- <p class="date">Date:{{a.StartDate}}</p> -->
                     </div>
                   </div>
@@ -84,7 +89,9 @@
                     </div>
                     <div class="item_text mt-2">
                       <h6>{{a.Title}}</h6>
-                      <p class="shortPara" [innerHTML]="a.short"></p>
+                      <div class="card_subPara">
+                      <p [innerHTML]="a.short"></p>
+                      </div>
                       <!-- <p class="date">Date:{{a.StartDate}}</p> -->
                     </div>
                   </div>
@@ -115,7 +122,9 @@
                     </div>
                     <div class="item_text mt-2">
                       <h6>{{a.Title}}</h6>
-                      <p class="shortPara" [innerHTML]="a.short"></p>
+                       <div class="card_subPara">
+                      <p [innerHTML]="a.short"></p>
+                     </div>
                       <!-- <p class="date">Date:{{a.StartDate}}</p> -->
                     </div>
                   </div>

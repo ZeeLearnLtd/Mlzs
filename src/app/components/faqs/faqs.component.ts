@@ -18,10 +18,11 @@ export class FaqsComponent {
   valCheck: boolean = false
   faqsData: any;
   img_content: any;
-
+  @Input() shadowFaq: boolean = false;
   constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
 
   ngOnInit(): void {
+    console.log('shadowFaq', this.shadowFaq);
     this.getfaqs_data();
   }
   getfaqs_data() {

@@ -53,6 +53,13 @@ export class SocialWallComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.socialData = JSON.parse(res);
+      this.socialData = this.socialData.map((obj: any) => {
+        if (obj.short) {
+          return { ...obj, short: this.sanitizer.bypassSecurityTrustHtml(obj?.short) }
+        } else {
+          return obj
+        }
+      })
     });
 
   }

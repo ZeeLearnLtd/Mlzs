@@ -10,13 +10,13 @@
           <div class="menu_icon" data-bs-toggle="collapse" data-bs-target="#navbarNav"></div>
           <div class="collapse navbar-collapse " id="navbarNav">
             <a href="" class="nav_logo">
-            <img src="../../../../assets/img/MLZS/mtl.png" width="90%" class="kidzee_logo_img" alt="">
+            <img src="../../../../assets/img/MLZS/MLZS.svg" class="kidzee_logo_img" alt="">
             </a>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
-                <a routerLink="/about-us" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                  ABOUT US
-                </a>
+                </button>
 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/about-us/legacy" >Our Legacy</li>
@@ -26,9 +26,9 @@
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" routerLink="/programmes" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   PROGRAMMES
-                </a>
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-1">Litera Foundational Stage 1</li>
                   <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-2">Litera Foundational Stage 2</li>
@@ -39,9 +39,9 @@
               </li>
           
               <li class="nav-item dropdown" >
-                <a class="nav-link dropdown-toggle" routerLink="/academics" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   ACADEMICS <br>AND BEYOND
-                </a>
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/academics/students-experience">Litera Experience</li>
                   <li class="dropdown-item" routerLink="/academics/co-curricular-activities">Litera Enrichment Programmes</li>
@@ -51,12 +51,12 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active menu5" aria-current="page" routerLink="/start-school">START A<br> SCHOOL</a>
+                <button class="nav-link active menu5" aria-current="page" routerLink="/start-school">START A<br> SCHOOL</button>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" routerLink="/parents-corner" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="nav-link dropdown-toggle" routerLink="/parents-corner" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   PARENTS’ <br>CORNER
-                </a>
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/parents-corner/childs-development">Child Development</li>
                   <li class="dropdown-item" routerLink="/parents-corner/personalized-guidance">Mount Litera Expert Connect</li>
@@ -65,15 +65,15 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" routerLink="/admissions">ADMISSIONS</a>
+                <button class="nav-link active" aria-current="page" routerLink="/admissions">ADMISSIONS</button>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" routerLink="/contact-us">CONTACT US</a>
+                <button class="nav-link active" aria-current="page" routerLink="/contact-us">CONTACT US</button>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 <span routerLink="/discover-more"> DISCOVER <br>MORE</span>
-                </a>
+                <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <span> DISCOVER <br>MORE</span>
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/news">News</li>
                   <li class="dropdown-item" routerLink="/events">Events</li>
@@ -95,14 +95,11 @@
           <div class="menu_icon" (click)="toggleMenu()"
            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="dropdown_menu"></div>
           <div class="collapse navbar-collapse "  id="navbarNav" #navbarCollapse>
-            <a href="https://demo.mountlitera.com/">
-            <img src="../../../../assets/img/MLZS/mtl.png" width="13%" class="kidzee_logo_img" alt="">
-            </a>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
-                <a routerLink="/about-us" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <label class="label_menu" (click)="closeMenu()">ABOUT US</label>  
-                </a>
+                <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               ABOUT US 
+                </button>
 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/about-us/legacy" (click)="closeMenu()">Our Legacy</li>
@@ -112,9 +109,9 @@
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" routerLink="/programmes" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <label class="label_menu"  (click)="closeMenu()"> PROGRAMMES</label>
-                </a>
+                <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 PROGRAMMES
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-1" (click)="closeMenu()">Litera Foundational Stage 1</li>
                   <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-2" (click)="closeMenu()">Litera Foundational Stage 2</li>
@@ -125,9 +122,9 @@
               </li>
           
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" routerLink="/academics" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <label class="label_menu" (click)="closeMenu()"> ACADEMICS AND BEYOND</label>
-                </a>
+                <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 ACADEMICS AND BEYOND
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/academics/students-experience" (click)="closeMenu()">Litera Experience</li>
                   <li class="dropdown-item" routerLink="/academics/co-curricular-activities" (click)="closeMenu()">Litera Enrichment Programmes</li>
@@ -137,12 +134,12 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active menu5" aria-current="page" (click)="closeMenu()" routerLink="/start-school">START A SCHOOL</a>
+                <button class="nav-link active menu5" aria-current="page" (click)="closeMenu()" routerLink="/start-school">START A SCHOOL</button>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" routerLink="/parents-corner" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <label class="label_menu" (click)="closeMenu()"> PARENTS’ CORNER</label>
-                </a>
+                <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  PARENTS’ CORNER
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/parents-corner/childs-development" (click)="closeMenu()">Child Development</li>
                   <li class="dropdown-item" routerLink="/parents-corner/personalized-guidance" (click)="closeMenu()">Mount Litera Expert Connect</li>
@@ -151,15 +148,15 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" (click)="closeMenu()" routerLink="/admissions">ADMISSIONS</a>
+                <button class="nav-link active" aria-current="page" (click)="closeMenu()" routerLink="/admissions">ADMISSIONS</button>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" (click)="closeMenu()" routerLink="/contact-us">CONTACT US</a>
+                <button class="nav-link active" aria-current="page" (click)="closeMenu()" routerLink="/contact-us">CONTACT US</button>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" routerLink="/discover-more" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <label class="label_menu"><span routerLink="/discover-more" (click)="closeMenu()"> DISCOVER MORE </span></label>
-                </a>
+                <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  DISCOVER MORE
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                    <li class="dropdown-item" routerLink="/news" (click)="closeMenu()">News</li>
@@ -175,6 +172,9 @@
           
           </div>
         </div>
+        <a href="https://demo.mountlitera.com/">
+            <img src="../../../../assets/img/MLZS/MLZS.svg" width="13%" class="kidzee_logo_img" alt="">
+            </a>
       </nav>
 </div>
 
