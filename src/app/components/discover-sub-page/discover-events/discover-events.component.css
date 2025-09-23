@@ -13,7 +13,9 @@ section{
   width: 100%;
   min-height: 100vh;
   }
-
+h6{
+  font-weight: 600;
+}
 @media screen and (max-width: 600px) {
   .text_bg {
     width: 85px !important;

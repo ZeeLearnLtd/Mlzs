@@ -3,7 +3,7 @@
         <div class="start_school_banner desktop_content">
             <div class="francine_form">
                 <strong class="text-white text-left">Start your Mount Litera Zee School Franchise today!</strong>
-                <div class="form">
+                <div class="form mt-3">
                     <form [formGroup]="admissionForm">
                         <div class="col-md-row">
                             <div class="col-md-12 mt-1">
@@ -53,7 +53,7 @@
                             <select name="" id="" class="form-control" formControlName="state"
                                 (change)="selectState($event)"
                                 [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
-                                <option value="">State/District</option>
+                                <option value="">State</option>
                                 <option value="{{state.StateName}}" *ngFor="let state of stateList">
                                     {{state.StateName}}
                                 </option>

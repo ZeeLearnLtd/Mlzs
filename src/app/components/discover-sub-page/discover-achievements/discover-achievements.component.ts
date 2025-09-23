@@ -33,7 +33,7 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
     private _service: ApicallService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
   ) { }
 
   ngOnInit(): void {
@@ -46,10 +46,10 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
         var owl = $(".news_owl");
         owl.owlCarousel({
           loop: true,
-          margin: 10,
-          nav: false,       // previous/next arrows
+          margin: 40,
+          nav: false,
           dots: true,
-          center: true,   // show dots
+          center: true,
           autoplay: true,
           autoplayTimeout: 5000,
           responsive: {
@@ -62,7 +62,14 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
       }, 1000)
     }
   }
-
+  ngOnDestroy() {
+    if (isPlatformBrowser(this.platformId)) {
+      const $owl = $('.news_owl');
+      if ($owl.hasClass('owl-loaded')) {
+        $owl.trigger('destroy.owl.carousel');
+      }
+    }
+  }
   getseo() {
     let tbody = {
       slug: 'achievements',
@@ -155,19 +162,16 @@ export class DiscoverAchievementsComponent implements OnInit, AfterViewInit {
     }).map((obj: any) => {
       return obj;
     });
-    console.log('Schoolachievement', this.Schoolachievement);
     this.Teacherachievement = this.alldata.filter((dt: any) => {
       return dt.category.includes(105);         //Teacher
     }).map((obj: any) => {
       return obj;
     });
-    console.log('Teacherachievement', this.Teacherachievement);
     this.Studentachievement = this.alldata.filter((dt: any) => {
       return dt.category.includes(106);         //Student
     }).map((obj: any) => {
       return obj;
     });
-    console.log('Studentachievement', this.Studentachievement);
 
   }
 

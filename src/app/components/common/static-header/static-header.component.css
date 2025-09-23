@@ -808,3 +808,21 @@ ul li a {
     font-family: 'Poppins';
 }
 }
+.material-symbols-outlined{
+    font-size: 22px !important;
+}
+
+.material-symbols-outlined:hover{
+    font-size: 22px !important;
+    color: #fff;
+}
+.media_icon img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin: 5px 7px;
+    object-fit: cover;
+}
+.media_icon{
+    margin: 0rem 1rem;
+}

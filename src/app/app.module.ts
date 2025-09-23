@@ -96,6 +96,8 @@ import { ProgrammesSubTabComponent } from './components/programmes-sub-tab/progr
 import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-mlzs.component';
 import { AwardsSubPageComponent } from './components/awards-sub-page/awards-sub-page.component';
 import { AcademicsMainPageComponent } from './components/academics-beyond-sub-page/academics-main-page/academics-main-page.component';
+import { TestimonialsDetailsComponent } from './testimonials-details/testimonials-details.component';
+import { SearchComponent } from './components/search/search.component';
 interface NgxSpinnerConfig {
   type?: string;
 }
@@ -188,7 +190,9 @@ interface NgxSpinnerConfig {
     SafeUrlPipe,
     ConvertToMLZSComponent,
     AwardsSubPageComponent,
-    AcademicsMainPageComponent
+    AcademicsMainPageComponent,
+    TestimonialsDetailsComponent,
+    SearchComponent
   ],
   imports: [
 

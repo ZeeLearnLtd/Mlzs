@@ -23,7 +23,9 @@ section {
 .right_card {
   margin-bottom: 20px;
 }
-
+h6{
+  font-weight: 600;
+}
 @media screen and (max-width: 600px) {
   .img_box_big img {
     object-fit: cover;
