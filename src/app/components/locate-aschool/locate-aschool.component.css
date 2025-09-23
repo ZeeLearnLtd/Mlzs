@@ -134,8 +134,9 @@ font-weight: 600;
     width: 100%;
 }
 .subcard_content{
-   min-height: clamp(170px, 20vh, 220px);
+  min-height: clamp(170px, 20vh, 220px);
   overflow: hidden;
+  padding: 0px 5px;
 }
 
 .btn-style{

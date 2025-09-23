@@ -16,7 +16,7 @@ section{
 .francine_form {
   width: 25%;
   float: right;
-  margin: 10px 15px 10px 10px;
+  margin: 18px 15px 10px 10px;
   padding: 10px;
 }
 
@@ -75,7 +75,7 @@ section{
   z-index: 10;
 }
 .francine_form strong{
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 

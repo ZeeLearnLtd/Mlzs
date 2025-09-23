@@ -136,6 +136,10 @@ width: 90%;
 }
 
 @media screen and (max-width: 600px) {
+    .dropdownIcon{
+    height:38px;
+    overflow: hidden;
+}
     .francine_form strong{
     color: rgba(1, 72, 118, 1);
     font-size: 1rem;
@@ -204,9 +208,10 @@ width: 90%;
 }
 
 .count_content{
+    font-family: 'Poppins';
+    font-weight: 700;
     font-size: 22px;
     margin-top:8px;
-    font-family:'Inter';
     color: #014876;
 }
 
@@ -283,6 +288,7 @@ width: 90%;
     align-items: center;
     transition: 0.6s;
     font-size: 13px;
+    border-radius: 5px;
     width: auto !important;
     margin: 15px 15px;
 }
@@ -316,6 +322,7 @@ margin-top: 10px;
     align-items: center;
     transition: 0.6s;
     font-size: 13px;
+    border-radius: 5px;
     width: 30%;
     margin: 15px 0px;
 }

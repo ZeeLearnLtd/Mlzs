@@ -193,7 +193,6 @@ export class DiscoverGalleryComponent {
       // } else if (url.includes('embed/')) {
       //   videoId = url.split('embed/')[1];
       // }
-      console.log('videoId2', videoId)
       const embedUrl = `https://www.youtube.com/embed/${videoId}`;
       return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
     } else {

@@ -22,6 +22,7 @@ export class DiscoverFaqsComponent {
   faqscategory: any = [];
   alldata: any = [];
   Selectedcategory: string = "";
+  sortedFaqs: any = [];
   constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
 
   ngOnInit(): void {
@@ -54,11 +55,15 @@ export class DiscoverFaqsComponent {
       Project_Id: this.projectId
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
-
       if (data?.data[0]?.contentData) {
         let res = data.data[0].contentData
         this.faqsData = JSON.parse(res);
         this.alldata = JSON.parse(res);
+        this.sortedFaqs = [...this.faqsData].sort((a, b) => {
+          const sortA = a.sort ? parseInt(a.sort, 10) : 9999;
+          const sortB = b.sort ? parseInt(b.sort, 10) : 9999;
+          return sortA - sortB;
+        });
       } else {
         this.faqsData = [];
         this.alldata = [];

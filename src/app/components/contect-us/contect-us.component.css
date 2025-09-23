@@ -60,7 +60,7 @@
 }
 
 .locat_form{
-  width: clamp(90%, 60vw, 58%);
+  width: clamp(82%, 60vw, 58%);
   margin: auto;
   padding: clamp(15px, 3vw, 35px);
   background: #014876;

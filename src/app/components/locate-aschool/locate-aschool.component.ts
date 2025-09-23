@@ -77,7 +77,6 @@ export class LocateASchoolComponent {
         // this.zoneList = res
         this.ngxSpinner.hide();
         this.all_data_list = res
-        console.log('all_data_list', this.all_data_list)
         this.india_country();
         this.setcountry();
       }

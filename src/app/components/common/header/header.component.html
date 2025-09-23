@@ -1,10 +1,26 @@
 
-<div class="top_header d-flex justify-content-center justify-align-center text-center" id="fix_header">
+<div class="top_header" id="fix_header">
     <button class="btn btn-sm admission_btn" routerLink="/admissions">Admissions now open at Mount Litera Zee School</button>
     <button class="btn btn-sm  right_botder_btn mx-3" routerLink="/partner-with-us">Partner with us</button>
     <button class="btn btn-sm  convert_btn" routerLink="/convert-to-an-mlzs">Convert to an MLZS</button>
+    <button class="btn search_btn" routerLink="/search">
+    <span class="material-symbols-outlined">
+        search
+       </span>
+   </button>
+   <div class="media_icon">
+                        <a href="https://www.facebook.com/MountLiteraZeeSchool/" target="_blank">
+                        <img src="../../../../assets/img/MLZS/footer/facebook.png" alt="">
+                        </a>
+                        <a href="https://x.com/Mount_Litera" target="_blank">
+                        <img src="../../../../assets/img/MLZS/footer/twitter.png" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/school/mountliterazeeschool" target="_blank">
+                        <img src="../../../../assets/img/MLZS/footer/in.png" alt="">
+                        </a>
+                    </div>
   </div>
-<div class="whiteHeader">
+<div class="whiteHeader" id="whiteHeader">
     <nav class="nav navbar navbar-expand-lg desktop_nav">
         <div class="container-fluid">
           <div class="menu_icon" data-bs-toggle="collapse" data-bs-target="#navbarNav"></div>
@@ -84,6 +100,8 @@
                   <li class="dropdown-item" routerLink="/achievements">Achievements</li>
                   
                 </ul>
+                <li class="nav-item">
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
               </li>
             </ul>
             <!-- <img src="../../../../assets/img/MLZS/imtb.png" class="brand_icon" width="13%" alt=""> -->
@@ -94,7 +112,11 @@
         <div class="container-fluid">
           <div class="menu_icon" (click)="toggleMenu()"
            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="dropdown_menu"></div>
-          <div class="collapse navbar-collapse "  id="navbarNav" #navbarCollapse>
+       
+           <a href="https://demo.mountlitera.com/">
+            <img src="../../../../assets/img/MLZS/banner/mobile_banner/mlzs_mobile.png" width="13%" class="kidzee_logo_img" alt="">
+            </a>
+           <div class="collapse navbar-collapse "  id="navbarNav" #navbarCollapse>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
                 <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -168,15 +190,18 @@
                   <li class="dropdown-item" routerLink="/achievements" (click)="closeMenu()">Achievements</li>
                 </ul>
               </li>
+               <li class="nav-item">
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
+              </li>
             </ul>
           
           </div>
         </div>
-        <a href="https://demo.mountlitera.com/">
-            <img src="../../../../assets/img/MLZS/MLZS.svg" width="13%" class="kidzee_logo_img" alt="">
-            </a>
+    
       </nav>
+      
 </div>
+
 
 
 <router-outlet></router-outlet>

@@ -19,10 +19,10 @@ export class FaqsComponent {
   faqsData: any;
   img_content: any;
   @Input() shadowFaq: boolean = false;
+  sortedFaqs: any = [];
   constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
 
   ngOnInit(): void {
-    console.log('shadowFaq', this.shadowFaq);
     this.getfaqs_data();
   }
   getfaqs_data() {
@@ -32,6 +32,11 @@ export class FaqsComponent {
         this.spinner = false
         if (message) {
           this.faqsData = message.text
+          this.sortedFaqs = [...this.faqsData].sort((a, b) => {
+            const sortA = a.sort ? parseInt(a.sort, 10) : 9999;
+            const sortB = b.sort ? parseInt(b.sort, 10) : 9999;
+            return sortA - sortB;
+          });
         }
       });
   }

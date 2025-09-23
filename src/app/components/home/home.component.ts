@@ -37,8 +37,16 @@ export class HomeComponent implements OnInit {
 
   }
 
+  ngOnInit(): void {
+    console.log('call1')
+    if (isPlatformBrowser(this.platformId)) {
+      this.getseo();
+    }
 
+
+  }
   ngAfterViewInit(): void {
+    console.log('call2')
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         var owl = $(".count_owl");
@@ -63,14 +71,18 @@ export class HomeComponent implements OnInit {
     }
   }
 
+
+  ngOnDestroy() {
+    if (isPlatformBrowser(this.platformId)) {
+      const $owl = $('.count_owl');
+      if ($owl.hasClass('owl-loaded')) {
+        $owl.trigger('destroy.owl.carousel');
+      }
+    }
+  }
+
   sanitizeUrl(url: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(url);
-  }
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.getseo();
-    }
-
   }
 
   getBanner() {
@@ -99,7 +111,6 @@ export class HomeComponent implements OnInit {
         this.projectService.sendMessageFaqs(data?.data?.faq);
         this.projectService.sendMessageNews(data?.data?.news);
         this.projectService.setmeta(data?.data);
-        console.log('home news', data?.data?.news);
       }
     });
   }

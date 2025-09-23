@@ -7,6 +7,7 @@ import { ProjectSeoService } from 'src/app/services/projectseo.service';
 import { environment } from 'src/environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { isPlatformBrowser } from '@angular/common';
+import { NgxSpinnerService } from 'ngx-spinner';
 declare var $: any;  // Declare jQuery
 @Component({
   selector: 'app-discover-testimonials',
@@ -37,7 +38,8 @@ export class DiscoverTestimonialsComponent {
     private projectService: ProjectSeoService,
     private apiService: ApicallService,
     private _service: ApicallService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private spinner: NgxSpinnerService,
   ) {
     //
   }
@@ -53,27 +55,34 @@ export class DiscoverTestimonialsComponent {
       setTimeout(() => {
         var owl = $(".news_owl");
         owl.owlCarousel({
-          margin: 10,
+          margin: 40,
           loop: true,
           nav: false,
           dots: true,
           center: true,
           responsive: {
             0: {
-              items: 1, // On mobile (0px and up), show 1 item
+              items: 1,
             },
             600: {
-              items: 2, // On tablets (600px and up), show 2 items
+              items: 2,
             },
             1000: {
-              items: 3, // On larger screens (1000px and up), show 3 items
+              items: 3,
             },
           }
         });
       }, 2000);
     }
   }
-
+  ngOnDestroy() {
+    if (isPlatformBrowser(this.platformId)) {
+      const $owl = $('.news_owl');
+      if ($owl.hasClass('owl-loaded')) {
+        $owl.trigger('destroy.owl.carousel');
+      }
+    }
+  }
   getseo() {
     let tbody = {
       slug: 'testimonial',
@@ -90,6 +99,7 @@ export class DiscoverTestimonialsComponent {
     });
   }
   gettestimonial_data() {
+    this.spinner.show();
     let tbody = {
       Type: "testimonial",
       pageurl: '',
@@ -97,6 +107,7 @@ export class DiscoverTestimonialsComponent {
     };
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       if (data?.data[0]?.contentData) {
+        this.spinner.hide();
         let res = data.data[0].contentData
         this.testimonialData = JSON.parse(res);
         this.alldata = JSON.parse(res);
@@ -132,13 +143,9 @@ export class DiscoverTestimonialsComponent {
     const value = (event.target as HTMLInputElement).value.toLowerCase();
 
     if (!value) {
-      console.log('[...this.originalSchoolTestimonial]', [...this.originalSchoolTestimonial])
-      console.log('[...this.originalStudentTestimonial]', [...this.originalStudentTestimonial])
-      console.log('[...this.originalParentTestimonial]', [...this.originalParentTestimonial])
       this.SchoolTestimnoal = [...this.originalSchoolTestimonial];
       this.StudentTestimonial = [...this.originalStudentTestimonial];
       this.ParentTestimonial = [...this.originalParentTestimonial];
-      console.log('ParentTestimonial', this.ParentTestimonial)
     }
 
     this.SchoolTestimnoal = this.originalSchoolTestimonial.filter((item: any) =>
@@ -152,7 +159,6 @@ export class DiscoverTestimonialsComponent {
     this.ParentTestimonial = this.originalParentTestimonial.filter((item: any) =>
       item?.Title?.toLowerCase().includes(value) && item.category.includes(109)
     );
-    console.log('ParentTestimonial', this.ParentTestimonial)
   }
 
   assigndata() {
@@ -188,7 +194,6 @@ export class DiscoverTestimonialsComponent {
 
       };
     });
-    console.log('ParentTestimonial', this.ParentTestimonial)
     this.originalSchoolTestimonial = [...this.SchoolTestimnoal];
     this.originalStudentTestimonial = [...this.StudentTestimonial];
     this.originalParentTestimonial = [...this.ParentTestimonial];

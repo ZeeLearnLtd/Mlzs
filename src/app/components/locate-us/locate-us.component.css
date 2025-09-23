@@ -79,6 +79,11 @@ select{
 .subcard_content{
   min-height: clamp(170px, 15vw, 250px);
   overflow: hidden;
+  padding: 0px 10px;
+}
+.dropDownList{
+    width: 80%;
+    margin: auto;
 }
 .select-arrow {
   position: relative;

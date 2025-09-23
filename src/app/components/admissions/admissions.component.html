@@ -23,7 +23,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-2">
                                 <input type="text" placeholder="Email*" class="form-control" formControlName="email"
                                 [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
                                 <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -37,7 +37,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-2 dropdownIcon">
                                 <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
                                 [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                  <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
@@ -62,7 +62,7 @@
                                    <div *ngIf="otp_ValidMsg" class="validMsg">OTP verified successfully</div>
                                     <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-2 dropdownIcon">
                                <select name="" id="" class="form-control"
                                formControlName="state" (change)="onChangeState($event.target)"
                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
@@ -77,7 +77,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-2 dropdownIcon">
                                 <select name="" id="" class="form-control"
                                 formControlName="city" (change)="onChangeCity($event.target)"
                                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
@@ -93,7 +93,7 @@
                                 </div>
                              </div>
 
-                             <div class="col-md-12 mt-1">
+                             <div class="col-md-12 mt-2 dropdownIcon">
                                 <select name="" id="" class="form-control" 
                                 formControlName="franchisee"(change)="onChangeFranchisee($event.target)"
                                 [ngClass]="{ 'is-invalid': submitted && f.franchisee.errors }">
@@ -108,7 +108,7 @@
                                     </span>
                                 </div>
                              </div>
-                             <div class="col-md-12 mt-1">
+                             <div class="col-md-12 mt-2 dropdownIcon">
                                 <select name="" id="" class="form-control" formControlName="class"
                                  (change)="onchangeClass($event.target)"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
                                  <option value="">Admission for which class?</option>
@@ -122,7 +122,7 @@
                                     </span>
                                 </div>
                              </div>
-                             <div class="col-md-12 mt-1">
+                             <div class="col-md-12 mt-2">
                                 <div class="row">
                                     <div class="col-1">
                                         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-12 mt-1">
+                             <div class="col-md-12 mt-2">
                                 <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
                              </div>
                         </div>
@@ -149,9 +149,9 @@
                   <img src="../../../assets/img/MLZS/banner/banner2.png" width="100%" alt="admission form">
                </div>
                <div class="col-md-5 d-flex justify-content-center justify-align-center">
-                   <div class="francine_form">
+                    <div class="francine_form">
                     <strong class="text-left title">Join Mount Litera Zee School today!</strong>
-                    <div class="form">
+                    <div class="form mt-2">
                         <form [formGroup]="admissionForm">
                         <div class="col-md-row">
                             <div class="col-md-12">
@@ -164,7 +164,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-2">
                                 <input type="text" placeholder="Email*" class="form-control" formControlName="email"
                                 [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
                                 <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -178,7 +178,15 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-2 dropdownIcon">
+                                <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
+                                [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                 <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
+                                <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
                                  <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
                                   (keyup)="getMobileNO();" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                    <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
@@ -195,13 +203,14 @@
                                    <div *ngIf="otp_ValidMsg" class="validMsg">OTP verified successfully</div>
                                     <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
                             </div>
-                            <div class="col-md-12 mt-1">
-                               <select name="" id="" class="form-control" 
+                            <div class="col-md-12 mt-2 dropdownIcon">
+                               <select name="" id="" class="form-control"
                                formControlName="state" (change)="onChangeState($event.target)"
                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
                                 <option value="">Which state are you searching for schools in?</option>
                                 <option value="{{a.State_ID}}"*ngFor="let a of stateContentDataList">{{a.StateName}}</option>
                                </select>
+                            <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
@@ -209,13 +218,14 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-2 dropdownIcon">
                                 <select name="" id="" class="form-control"
                                 formControlName="city" (change)="onChangeCity($event.target)"
                                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
-                                 <option value="">Which City are you searching for schools in?</option>
+                                 <option value="">Which class do you want to enrol in?</option>
                                  <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
                                 </select>
+                                <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
@@ -224,13 +234,14 @@
                                 </div>
                              </div>
 
-                             <div class="col-md-12 mt-1">
+                             <div class="col-md-12 mt-2 dropdownIcon">
                                 <select name="" id="" class="form-control" 
                                 formControlName="franchisee"(change)="onChangeFranchisee($event.target)"
                                 [ngClass]="{ 'is-invalid': submitted && f.franchisee.errors }">
                                  <option value="">Which School are you interested in?</option>
                                  <option value="{{franchisee.Franchisee_Code}}" *ngFor="let franchisee of selectFranchisee">{{franchisee.Franchisee_Name}}</option>
                                 </select>
+                             <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                  <div *ngIf="submitted && f.franchisee.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.franchisee.touched || submitted) && f.franchisee.errors?.required">
@@ -238,12 +249,13 @@
                                     </span>
                                 </div>
                              </div>
-                             <div class="col-md-12 mt-1">
+                             <div class="col-md-12 mt-2 dropdownIcon">
                                 <select name="" id="" class="form-control" formControlName="class"
                                  (change)="onchangeClass($event.target)"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
                                  <option value="">Admission for which class?</option>
                                  <option value="{{class.SchoolClassID}}" *ngFor="let class of selectClasslist">{{class.ClassName}}</option>
                                 </select>
+                                 <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.class.touched || submitted) && f.class.errors?.required">
@@ -251,19 +263,17 @@
                                     </span>
                                 </div>
                              </div>
-                             <div class="col-md-12 mt-1">
+                             <div class="col-md-12 mt-2">
                                 <div class="row">
                                     <div class="col-1">
-                                        <input type="checkbox" id="chk1" name="chk1" formControlName="autorization" value="false">
+                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
                                     </div>
                                     <div class="col-11">
-                                        <label for="chk1">I authorize MLZS and its representatives to Call, SMS, Email or WhatsApp me about Admission Proccess. This consent overrides any registration for DNC/NDNC.</label>
+                                        <label for="vehicle1">I authorize MLZS and its representatives to Call, SMS, Email or WhatsApp me about Admission Proccess. This consent overrides any registration for DNC/NDNC.</label>
                                     </div>
-                                    
                                 </div>
-                                
                             </div>
-                             <div class="col-md-12 mt-1">
+                             <div class="col-md-12 mt-2">
                                 <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
                              </div>
                         </div>

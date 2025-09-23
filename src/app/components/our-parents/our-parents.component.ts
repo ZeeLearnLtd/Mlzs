@@ -138,7 +138,6 @@ export class OurParentsComponent {
         safeUrl: this.getSafeEmbedUrl(obj.slug)
       };
     });
-    console.log('this.ParentTestimonial', this.ParentTestimonial)
   }
 
 

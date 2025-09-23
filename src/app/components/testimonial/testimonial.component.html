@@ -13,6 +13,11 @@
                 success.</p>
             </div>
           </div>
+          <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center mt-3 overflow-hidden">
+  <div class="spinner-border" role="status">
+  </div>
+</div>
+<div *ngIf="errorMsg ">No data available</div>
           <div class="home-demo mt-5">
             <div class="owl-carousel owl-theme news_owl" id="">
               <div class="item" *ngFor="let a of testimonialDataList">
@@ -33,10 +38,13 @@
 
                 <div class="item_text mt-3 strong_title">
                   <img src="../../../assets/img/MLZS/Quote.png" alt="">
-                  <p class="mt-2 mb-0">{{a.title}}</p>
-                  <div class="card_subPara">
-                  <p [innerHTML]="a.Short"></p>
+                  <div class="mt-2">
+                  <p class="shortPara m-0 p-0" [innerHTML]="a.Short"></p>
+                  <div class="d-flex justify-content-end">
+                  <button class="seeMore btn">See more</button>
                   </div>
+                  </div>
+                  <p class="mt-2 mb-0">-{{a.title}}</p>
                 </div>
               </div>
             </div>

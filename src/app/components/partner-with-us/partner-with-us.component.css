@@ -89,8 +89,8 @@
   transition: 0.6s;
   font-size: 13px;
   padding: 10px;
+  border-radius: 5px;
 }
-.read_mode:hover { color: #FFF; }
 
 .award_content .read_mode { width: 25%; margin: 10px 20px; }
 
