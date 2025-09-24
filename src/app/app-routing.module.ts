@@ -103,7 +103,7 @@ const routes: Routes = [
       { path: 'events', component: DiscoverEventsComponent },
       { path: 'gallery', component: DiscoverGalleryComponent },
       { path: 'blogs', component: DiscoverBlogsComponent },
-      { path: 'blog/:name', component: BlogDetailsComponent },
+      { path: 'blogs/:name', component: BlogDetailsComponent },
       { path: 'news/:name', component: NewsDetailsComponent },
       { path: 'events/:name', component: EventsDetailsComponent },
       { path: 'faqs', component: DiscoverFaqsComponent },

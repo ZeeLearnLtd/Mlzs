@@ -68,10 +68,10 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
     this.subscriptionnav = this.projectService
       .onseoMessage()
       .subscribe((message) => {
-        console.log('message', message)
+       // console.log('message', message)
         if (message) {
           this.testimonialData = message.text
-          console.log('message', this.testimonialData)
+          //console.log('message', this.testimonialData)
         }
         this.testimonialDataList = this.testimonialData.map((video: any) => ({
           ...video,
@@ -79,7 +79,7 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
           safeUrl: this.getSafeEmbedUrl(video.slug),
         }));
       });
-    console.log('testimonialDataList 1', this.testimonialDataList)
+    //console.log('testimonialDataList 1', this.testimonialDataList)
   }
 
 

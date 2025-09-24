@@ -39,7 +39,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/owl.carousel/dist/owl.carousel.min.js",
-              "node_modules/tiny-slider/dist/min/tiny-slider.js"
+              "node_modules/tiny-slider/dist/min/tiny-slider.js"              
             ],
             "vendorChunk": true,
             "extractLicenses": false,

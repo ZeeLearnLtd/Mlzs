@@ -132,13 +132,13 @@ export class DiscoverTestimonialsComponent {
     const value = (event.target as HTMLInputElement).value.toLowerCase();
 
     if (!value) {
-      console.log('[...this.originalSchoolTestimonial]', [...this.originalSchoolTestimonial])
-      console.log('[...this.originalStudentTestimonial]', [...this.originalStudentTestimonial])
-      console.log('[...this.originalParentTestimonial]', [...this.originalParentTestimonial])
+      // console.log('[...this.originalSchoolTestimonial]', [...this.originalSchoolTestimonial])
+      // console.log('[...this.originalStudentTestimonial]', [...this.originalStudentTestimonial])
+      // console.log('[...this.originalParentTestimonial]', [...this.originalParentTestimonial])
       this.SchoolTestimnoal = [...this.originalSchoolTestimonial];
       this.StudentTestimonial = [...this.originalStudentTestimonial];
       this.ParentTestimonial = [...this.originalParentTestimonial];
-      console.log('ParentTestimonial', this.ParentTestimonial)
+    //  console.log('ParentTestimonial', this.ParentTestimonial)
     }
 
     this.SchoolTestimnoal = this.originalSchoolTestimonial.filter((item: any) =>
@@ -152,7 +152,7 @@ export class DiscoverTestimonialsComponent {
     this.ParentTestimonial = this.originalParentTestimonial.filter((item: any) =>
       item?.Title?.toLowerCase().includes(value) && item.category.includes(109)
     );
-    console.log('ParentTestimonial', this.ParentTestimonial)
+    //console.log('ParentTestimonial', this.ParentTestimonial)
   }
 
   assigndata() {
@@ -188,7 +188,7 @@ export class DiscoverTestimonialsComponent {
 
       };
     });
-    console.log('ParentTestimonial', this.ParentTestimonial)
+    //console.log('ParentTestimonial', this.ParentTestimonial)
     this.originalSchoolTestimonial = [...this.SchoolTestimnoal];
     this.originalStudentTestimonial = [...this.StudentTestimonial];
     this.originalParentTestimonial = [...this.ParentTestimonial];

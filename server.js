@@ -44,6 +44,7 @@ app.get(
   })
 );
 app.get("/robots.txt", (req, res) => {
+  console.log("in response"+req);
   res.sendFile(_dir + "/robots.txt");
 });
 
@@ -55,14 +56,16 @@ app.get("/MusePlayPrivacyPolicy.html", (req, res) =>
 );
 app.get("/sitemap.xml", (req, res) => res.sendFile(_dir + "/sitemap.xml"));
 //console.log(indexHtml);
- app.get("*", (req, res) => {
-   res.sendFile(indexHtml);
- });
 
+ app.get('*', (req, res) => {
+    console.log('enterd');
+    console.log(req);
+    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+  });
 
 //app.use("/api/CMS", require("./api/CMS"));
 // Start the server on port 8080
 const PORT = 4040;
 app.listen(PORT, () => {
- // console.log(`Server running at http://localhost:${PORT}/`);
+  console.log(`Server running at http://localhost:${PORT}/`);
 });

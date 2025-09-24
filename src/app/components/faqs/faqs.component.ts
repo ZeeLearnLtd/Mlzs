@@ -22,7 +22,7 @@ export class FaqsComponent {
   constructor(private projectService: ProjectSeoService, private _service: ApicallService) { }
 
   ngOnInit(): void {
-    console.log('shadowFaq', this.shadowFaq);
+  //  console.log('shadowFaq', this.shadowFaq);
     this.getfaqs_data();
   }
   getfaqs_data() {
