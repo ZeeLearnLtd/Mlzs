@@ -177,7 +177,40 @@ ul li a {
         display: block !important;
     }
  } */
+  .mobile_footer{
+    display: none;
+  }
 @media screen and (max-width: 600px) {
+    .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 70% !important;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 13px;
+}
+.media_icon{
+    margin: 1rem 1rem !important;
+    display: flex
+;
+    justify-content: center;
+}
+    .right_botder_btn{
+    border-right: none !important;
+    border-left: none !important;
+    font-size: 14px;
+    transition: 0.6s;
+    color: #fff;
+    padding: 10px 16px;
+}
+    .mobile_footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid;
+    }
+
     .label_menu {
         width: 45%;
     }
@@ -197,7 +230,7 @@ ul li a {
         padding: 10px;
         top: auto !important;
         bottom: 0 !important;
-        display: block !important;
+        display: grid !important;
         z-index: 999;
         background-color: #004878;
     }
