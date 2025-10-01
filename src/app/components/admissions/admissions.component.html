@@ -37,15 +37,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-2 dropdownIcon">
-                                <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
-                                [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
-                                 <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
-                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
-                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
-                                </div>
-                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
-                                <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
+                            <div class="col-md-12 mt-2">
                                  <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
                                   (keyup)="getMobileNO();" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                    <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
@@ -62,14 +54,13 @@
                                    <div *ngIf="otp_ValidMsg" class="validMsg">OTP verified successfully</div>
                                     <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
                             </div>
-                            <div class="col-md-12 mt-2 dropdownIcon">
-                               <select name="" id="" class="form-control"
+                            <div class="col-md-12 mt-2">
+                               <select class="form-select form-control custom-dropdown"
                                formControlName="state" (change)="onChangeState($event.target)"
                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
                                 <option value="">Which state are you searching for schools in?</option>
                                 <option value="{{a.State_ID}}"*ngFor="let a of stateContentDataList">{{a.StateName}}</option>
                                </select>
-                            <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
@@ -77,14 +68,13 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-2 dropdownIcon">
-                                <select name="" id="" class="form-control"
+                            <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown"
                                 formControlName="city" (change)="onChangeCity($event.target)"
                                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
                                  <option value="">Which class do you want to enrol in?</option>
                                  <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
                                 </select>
-                                <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
@@ -93,14 +83,13 @@
                                 </div>
                              </div>
 
-                             <div class="col-md-12 mt-2 dropdownIcon">
-                                <select name="" id="" class="form-control" 
+                             <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown"
                                 formControlName="franchisee"(change)="onChangeFranchisee($event.target)"
                                 [ngClass]="{ 'is-invalid': submitted && f.franchisee.errors }">
                                  <option value="">Which School are you interested in?</option>
                                  <option value="{{franchisee.Franchisee_Code}}" *ngFor="let franchisee of selectFranchisee">{{franchisee.Franchisee_Name}}</option>
                                 </select>
-                             <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                  <div *ngIf="submitted && f.franchisee.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.franchisee.touched || submitted) && f.franchisee.errors?.required">
@@ -108,13 +97,12 @@
                                     </span>
                                 </div>
                              </div>
-                             <div class="col-md-12 mt-2 dropdownIcon">
-                                <select name="" id="" class="form-control" formControlName="class"
+                             <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown" formControlName="class"
                                  (change)="onchangeClass($event.target)"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
                                  <option value="">Admission for which class?</option>
                                  <option value="{{class.SchoolClassID}}" *ngFor="let class of selectClasslist">{{class.ClassName}}</option>
                                 </select>
-                                 <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.class.touched || submitted) && f.class.errors?.required">
@@ -178,15 +166,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-2 dropdownIcon">
-                                <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
-                                [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
-                                 <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
-                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
-                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
-                                </div>
-                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
-                                <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
+                            <div class="col-md-12 mt-2">
                                  <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
                                   (keyup)="getMobileNO();" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                    <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
@@ -203,14 +183,13 @@
                                    <div *ngIf="otp_ValidMsg" class="validMsg">OTP verified successfully</div>
                                     <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
                             </div>
-                            <div class="col-md-12 mt-2 dropdownIcon">
-                               <select name="" id="" class="form-control"
+                            <div class="col-md-12 mt-2">
+                               <select class="form-select form-control custom-dropdown"
                                formControlName="state" (change)="onChangeState($event.target)"
                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
                                 <option value="">Which state are you searching for schools in?</option>
                                 <option value="{{a.State_ID}}"*ngFor="let a of stateContentDataList">{{a.StateName}}</option>
                                </select>
-                            <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
@@ -218,14 +197,13 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-2 dropdownIcon">
-                                <select name="" id="" class="form-control"
+                            <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown"
                                 formControlName="city" (change)="onChangeCity($event.target)"
                                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
                                  <option value="">Which class do you want to enrol in?</option>
                                  <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
                                 </select>
-                                <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
@@ -234,14 +212,13 @@
                                 </div>
                              </div>
 
-                             <div class="col-md-12 mt-2 dropdownIcon">
-                                <select name="" id="" class="form-control" 
+                             <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown" 
                                 formControlName="franchisee"(change)="onChangeFranchisee($event.target)"
                                 [ngClass]="{ 'is-invalid': submitted && f.franchisee.errors }">
                                  <option value="">Which School are you interested in?</option>
                                  <option value="{{franchisee.Franchisee_Code}}" *ngFor="let franchisee of selectFranchisee">{{franchisee.Franchisee_Name}}</option>
                                 </select>
-                             <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                  <div *ngIf="submitted && f.franchisee.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.franchisee.touched || submitted) && f.franchisee.errors?.required">
@@ -249,13 +226,13 @@
                                     </span>
                                 </div>
                              </div>
-                             <div class="col-md-12 mt-2 dropdownIcon">
-                                <select name="" id="" class="form-control" formControlName="class"
+                             <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown"
+                                 formControlName="class"
                                  (change)="onchangeClass($event.target)"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
                                  <option value="">Admission for which class?</option>
                                  <option value="{{class.SchoolClassID}}" *ngFor="let class of selectClasslist">{{class.ClassName}}</option>
                                 </select>
-                                 <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                 <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.class.touched || submitted) && f.class.errors?.required">
@@ -263,7 +240,7 @@
                                     </span>
                                 </div>
                              </div>
-                             <div class="col-md-12 mt-2">
+                             <div class="col-md-12 mt-3">
                                 <div class="row">
                                     <div class="col-1">
                                         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">

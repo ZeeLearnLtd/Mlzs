@@ -1,1 +1,37 @@
-<p>search works!</p>
+<section>
+    <div class="programmes_main_page">
+        <!-- <div class="banner_content">
+        <img src="../../../assets/img/MLZS/banner/about_banner.png" class="img-fluid d-none d-md-block w-100" alt="about banner">
+        <img src="../../../../assets/img/MLZS/banner/mobile_banner/About-us.jpg"
+     class="img-fluid d-block d-md-none w-100"
+     alt="Mobile banner">
+    </div> -->
+        <div class="subMenu_content">
+         <app-sub-menu></app-sub-menu>
+        </div>
+
+        <div class="box search_content my-4">
+            <div class="row">
+                <div class="col-md-6">
+  <div class="search-wrapper">
+      
+      <input type="text" class="form-control search-box"
+      [(ngModel)]="inputValue"  placeholder="Search" (keyup.enter)="getSearchDataList()">
+      <button class="btn search_btn mx-3" (click)="getSearchDataList()"> <i class="bi bi-search mx-2" routerLink="/search"></i>Search</button>
+    </div>
+                </div>
+            </div>
+           
+            <h4 class="mt-4" *ngIf="this.receivedSearchData != ''">Found {{this.page_count}} pages for the search <strong>‘{{this.receivedSearchData}}’</strong></h4>
+            <div class="d-flex justify-content-center align-items-center overflow-hidden" *ngIf="spinner">
+             <div class="spinner-border loader" role="status">
+             </div>
+             </div>
+            <div class="card mt-3" *ngFor="let a of search_data_List">
+            <!-- <p>{{a?.metadata?.text}}</p> -->
+            <a href="{{a?.metadata?.url}}" target="_blank" class="url_link">{{a?.metadata?.url}}</a>
+             <div *ngIf="errorMsg" class="text-center">No results found</div>
+            </div>
+        </div>
+    </div>
+</section>

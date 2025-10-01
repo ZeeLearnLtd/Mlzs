@@ -1,14 +1,3 @@
-.btn_header {
-    background-color: #004878;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    padding: 7px;
-}
-
-
 .nav-sub-item {
     margin-left: 25px;
     font-weight: 600;
@@ -19,57 +8,9 @@ nav {
     padding: 0;
 }
 
-.btn_content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.white_btn:active {
-    scale: 0.9;
-}
-
-.startBtn:active {
-    scale: 0.9;
-}
-
-.white_btn {
-    background-color: #FFF;
-    padding: 5px 10px 5px 10px;
-    border-radius: 0px 53px 53px 53px;
-    border: none;
-    color: #004878;
-    font-weight: 500;
-    margin: 5px;
-    transition: all ease 0.2s;
-}
-
-.startBtn {
-    background-color: #FFF;
-    padding: 5px 10px 5px 10px;
-    border-radius: 0px 53px 53px 53px;
-    border: none;
-    color: #004878;
-    font-weight: 500;
-    margin: 5px;
-    transition: all ease 0.2s;
-}
-
-.whiteHeader_dark {
-    top: 0px;
-    position: fixed;
-    background-color: #004878;
-    color: #fff;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    display: none;
-}
-
 .whiteHeader {
     top: 2.5rem;
     position: fixed;
-    color: #fff;
     left: 0;
     right: 0;
     z-index: 99;
@@ -82,40 +23,8 @@ ul li a {
     cursor: pointer;
 }
 
-.whiteHeader_dark ul li a {
-    color: #FFF;
-    font-weight: normal;
-    cursor: pointer;
-}
-
-.header_logo {
-    background-image: url('../../../../assets/img/KidzeeFooterLogo.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 130px;
-    height: 35px;
-    margin: 0px 0px 0px 60px;
-    cursor: pointer;
-}
-
-.header_logo_whiteText {
-    background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 130px;
-    height: 35px;
-    margin: 0px 0px 0px 60px;
-    cursor: pointer;
-}
-
 .ul_content {
     margin: auto;
-}
-
-.navbar1 {
-    display: none;
 }
 
 .dropdown-menu a {
@@ -155,25 +64,13 @@ ul li a {
 }
 
 .dropdown-item {
-  color: rgba(64, 60, 57, 0.80);
+    color: rgba(64, 60, 57, 0.80);
     font-size: 13px;
     background-color: #fff;
 }
 
 .dropdown-item:hover {
     background-color: #004878;
-}
-
-#headerLogo {
-    display: none;
-}
-
-#mobileMenu {
-    display: none;
-}
-
-.mobileMenu {
-    display: none;
 }
 
 .navbar-toggler {
@@ -187,14 +84,30 @@ ul li a {
 .mobile_nav {
     display: none;
 }
- @media (orientation: landscape) and (max-height: 440px){
-       .desktop_nav {
-        display: block !important;
-    }
- }
+
 @media screen and (max-width: 600px) {
-    .label_menu {
-        width: 45%;
+    .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 70% !important;
+        transform: translateY(-50%);
+        color: gray;
+        font-size: 13px;
+    }
+
+    .media_icon {
+        margin: 1rem 1rem !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .right_botder_btn {
+        border-right: none !important;
+        border-left: none !important;
+        font-size: 14px;
+        transition: 0.6s;
+        color: #fff;
+        padding: 10px 16px;
     }
 
     .desktop_nav {
@@ -203,6 +116,7 @@ ul li a {
 
     .mobile_nav {
         display: block;
+        padding: 0 !important;
     }
 
     .top_header {
@@ -211,85 +125,17 @@ ul li a {
         padding: 10px;
         top: auto !important;
         bottom: 0 !important;
+        display: grid !important;
         z-index: 999;
         background-color: #004878;
-    }
-
-    .btn_content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 35px;
     }
 
     .nav-link {
         color: #FFF !important;
     }
 
-    .white_btn {
-        background-color: #FFF;
-        padding: 5px 3px 5px 3px;
-        border-radius: 0px 53px 53px 53px;
-        border: none;
-        color: #004878;
-        font-weight: 500;
-        font-size: 8px;
-        margin: 5px;
-        transition: all ease 0.2s;
-    }
-
-    .startBtn {
-        font-size: 8px;
-        margin: 5px 5px 5px 5px;
-    }
-
-    .navbar1 ul li a {
-        color: #FFF !important;
-        font-weight: normal;
-        cursor: pointer;
-    }
-
-    #headerLogo {
-        display: block;
-        cursor: pointer;
-    }
-
-    #mobileMenu {
-        display: block;
-    }
-
     #navbarNav {
         margin-top: 30px;
-    }
-
-    .whiteHeader_dark {
-        padding: 10px;
-    }
-
-    .header_logo {
-        background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 60px;
-        height: 20px;
-        margin: 0px 0px 0px 5px;
-        position: fixed;
-        top: 15px;
-        left: 0px;
-    }
-
-    .header_logo_whiteText {
-        background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 60px;
-        height: 20px;
-        margin: 0px 0px 0px 5px;
-        position: fixed;
-        top: 15px;
-        left: 0px;
     }
 
     .navbar-toggler-icon {
@@ -320,8 +166,8 @@ ul li a {
         width: 4px;
         height: 16px;
         position: fixed;
-        top: 18px;
-        right: 25px;
+        top: 18px !important;
+        right: 25px !important;
     }
 
     .toggle {
@@ -333,18 +179,6 @@ ul li a {
     #navbarNav {
         background-color: #004878;
         color: #FFF;
-    }
-
-    .navbar1 {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 50px;
-        z-index: 9999;
-        padding: 0;
-        color: #FFF;
-        background-color: #004878;
-        display: block;
     }
 
     .nav_body {
@@ -362,56 +196,9 @@ ul li a {
 
 }
 
-.btn_content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.white_btn:active {
-    scale: 0.9;
-}
-
-.startBtn:active {
-    scale: 0.9;
-}
-
-.white_btn {
-    background-color: #FFF;
-    padding: 5px 10px 5px 10px;
-    border-radius: 0px 53px 53px 53px;
-    border: none;
-    color: #004878;
-    font-weight: 500;
-    margin: 5px;
-    transition: all ease 0.2s;
-}
-
-.startBtn {
-    background-color: #FFF;
-    padding: 5px 10px 5px 10px;
-    border-radius: 0px 53px 53px 53px;
-    border: none;
-    color: #004878;
-    font-weight: 500;
-    margin: 5px;
-    transition: all ease 0.2s;
-}
-
 ul li a {
     color: #FFF;
     font-weight: normal;
-    cursor: pointer;
-}
-
-.header_logo {
-    background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 130px;
-    height: 35px;
-    margin: 0px 0px 0px 60px;
     cursor: pointer;
 }
 
@@ -427,21 +214,25 @@ ul li a {
     position: relative;
     left: 1%;
 }
+
 .navbar-nav li>button {
     text-transform: capitalize;
     color: rgba(64, 60, 57, 0.80);
     transition: background-color .2s, color .2s;
-    &:hover{
-       color: #014876;
+
+    &:hover {
+        color: #014876;
         text-decoration: underline;
         font-weight: 500;
     }
 }
+
 .navbar-nav li>button {
     text-transform: capitalize;
     color: rgba(64, 60, 57, 0.80);
     transition: background-color .2s, color .2s;
-     font-weight: 500;
+    font-weight: 500;
+
     &:focus {
         color: #014876;
         font-weight: 600;
@@ -450,12 +241,8 @@ ul li a {
 }
 
 .navbar-nav li.active>button {
-    /* background-color: #FFF200; */
-   color: rgba(64, 60, 57, 0.80);
+    color: rgba(64, 60, 57, 0.80);
     font-weight: 700;
-}
-.navbar1 {
-    display: none;
 }
 
 .dropdown-menu a {
@@ -499,27 +286,16 @@ ul li a {
 }
 
 .dropdown-item {
-   color: rgba(64, 60, 57, 0.80);
+    color: rgba(64, 60, 57, 0.80);
     font-size: 13px;
     transition: 0.6s;
 }
 
 .dropdown-item:hover {
-    background-color: #5dc9f0;;
+    background-color: #5dc9f0;
+    ;
     color: rgba(64, 60, 57, 0.80);
-    border-radius:7px;
-}
-
-#headerLogo {
-    display: none;
-}
-
-#mobileMenu {
-    display: none;
-}
-
-.mobileMenu {
-    display: none;
+    border-radius: 7px;
 }
 
 .navbar-toggler {
@@ -541,10 +317,9 @@ ul li a {
 
     .kidzee_logo_img {
         position: fixed;
-        top: 0px !important;
-        left: auto !important;
-        right: 10px !important;
-        width: 100px;
+        left: 50%;
+        transform: translate(-50%, 7%);
+        width: 50%;
         object-fit: cover;
         z-index: 99;
         background-color: #fff;
@@ -565,7 +340,7 @@ ul li a {
     .whiteHeader {
         top: 0px;
         position: fixed;
-        color: #fff;
+        /* color: #fff; */
         left: 0;
         background-color: #fff !important;
         right: 0;
@@ -574,63 +349,8 @@ ul li a {
         display: block;
     }
 
-    .btn_header {
-        background-color: #EBE1FF;
-    }
-
-    .btn_content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 35px;
-    }
-
-    .white_btn {
-        background-color: #FFF;
-        padding: 5px 3px 5px 3px;
-        border-radius: 0px 53px 53px 53px;
-        border: none;
-        color: #004878;
-        font-weight: 500;
-        font-size: 8px;
-        margin: 5px;
-        transition: all ease 0.2s;
-    }
-
-    .startBtn {
-        font-size: 8px;
-        margin: 5px 5px 5px 5px;
-    }
-
-    #headerLogo {
-        display: block;
-        cursor: pointer;
-    }
-
-    #mobileMenu {
-        display: block;
-    }
-
     #navbarNav {
         margin-top: 15px;
-    }
-
-    .whiteHeader_dark {
-        padding: 10px;
-    }
-
-    .header_logo {
-        background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 60px;
-        height: 20px;
-        margin: 0px 0px 0px 5px;
-        position: absolute;
-        top: 15px;
-        left: 0px;
-        cursor: pointer;
     }
 
     .navbar-toggler-icon {
@@ -655,23 +375,29 @@ ul li a {
     }
 
     .menu_icon {
-        background-image: url('../../../../assets/img/menu.png');
+        background-image: url('../../../../assets/img/MLZS/banner/mobile_banner/menu.png');
         background-repeat: no-repeat;
         background-position: center;
         height: 32px;
-        position: static;
+        position: fixed !important;
         background-repeat: no-repeat;
         background-position: center;
         height: 30px;
         width: 30px;
         padding: 0px;
         border-radius: 50%;
-        /* background-color: #FFF200; */
+        left: 1rem;
     }
 
     .navbar {
         overflow: hidden;
         height: auto !important;
+        height: 50px !important;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: #fff;
     }
 
     .toggle {
@@ -687,19 +413,6 @@ ul li a {
         left: 0px;
         right: 0px;
         top: 2.2rem;
-    }
-
-    .navbar1 {
-        position: fixed;
-        top: 150px;
-        left: 0;
-        right: 0;
-        top: 50px;
-        z-index: 9999;
-        padding: 0;
-        color: #FFF;
-        background-color: #004878;
-        display: block;
     }
 
     .nav_body {
@@ -718,15 +431,6 @@ ul li a {
         margin-top: 0;
         cursor: pointer;
     }
-
-    .navbar1 .open {
-        visibility: visible;
-        -webkit-transform: translateY(0%);
-        transform: translateY(0%);
-        -webkit-transition: -webkit-transform 0.4s ease-in-out;
-        transition: transform 0.4s ease-in-out;
-    }
-
 }
 
 /* mlzs css header */
@@ -759,26 +463,30 @@ ul li a {
     color: #dcd1d1 !important;
 }
 
-.convert_btn{
+.convert_btn {
     font-size: 12px;
     color: #fff;
     transition: 0.6s;
 }
-.convert_btn:hover{
+
+.convert_btn:hover {
     font-size: 12px;
     color: #dcd1d1 !important;
-    
+
 }
 
 .top_header {
     width: 100%;
     position: fixed;
-    padding: 10px;
+    padding: 5px 10px;
     left: 0;
     right: 0;
     top: 0;
     z-index: 999;
     background-color: #004878;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .mobile_nav .dropdown-toggle::after {
@@ -794,35 +502,101 @@ ul li a {
 }
 
 .nav-item {
-    margin-left: 25px;
+    margin-left: 20px;
     font-weight: 600;
     font-size: 12px;
     font-family: 'Poppins';
 }
+
 @media (min-width: 1727px) {
-  
-.nav-item {
-    margin-left: 25px;
-    font-weight: 600;
-    font-size: 13px;
-    font-family: 'Poppins';
+
+    .nav-item {
+        margin-left: 20px;
+        font-weight: 600;
+        font-size: 13px;
+        font-family: 'Poppins';
+    }
 }
+
+/* @media screen and (max-width: 800px) and (max-height: 600px) {
+    .desktop_nav {
+        display: none !important;
+    }
+
+    .mobile_nav {
+        display: block !important;
+    }
+} */
+@media screen and (max-width: 800px) {
+    .desktop_nav {
+        display: none !important;
+    }
+
+    .mobile_nav {
+        display: block !important;
+        padding: 15px 0px;
+    }
+
+    .menu_icon {
+        background-image: url('../../../../assets/img/menu.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        width: 28px;
+        height: 20px;
+        position: absolute;
+        top: 2rem;
+        overflow: hidden;
+        right: 25px;
+    }
+
+    #navbarNav {
+        background-color: #004878;
+        color: #FFF;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 2rem;
+    }
+
+    .navbar-nav li>button {
+        text-transform: capitalize;
+        color: #fff !important;
+        transition: background-color .2s, color .2s;
+        font-weight: 500;
+    }
+
+    .ul_content {
+        align-items: flex-start;
+        padding: 16px 0px 15px 0px;
+        position: relative;
+        left: 1%;
+        text-align: left;
+    }
 }
-.material-symbols-outlined{
+
+@media screen and (max-width: 1080px) {}
+
+.material-symbols-outlined {
     font-size: 22px !important;
 }
 
-.material-symbols-outlined:hover{
-    font-size: 22px !important;
+.material-symbols-outlined:hover {
     color: #fff;
 }
-.media_icon img{
+
+.media_icon img {
     width: 25px;
     height: 25px;
     cursor: pointer;
     margin: 5px 7px;
     object-fit: cover;
 }
-.media_icon{
+
+.media_icon {
     margin: 0rem 1rem;
+}
+
+.search-box {
+    font-size: 13px;
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RES, toFormat } from '../resources';
 import { IListParams, IProject } from './models';
 import { SeoService } from './SeoService';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,8 @@ export class ProjectSeoService extends SeoService {
   private seosubject = new Subject<any>();
   private breadsubject = new Subject<any>();
   private Faqssubject = new Subject<any>();
-
+  private searchMessage = new BehaviorSubject<string>('');
+  currentMessage = this.searchMessage.asObservable();
   // sendMessagenews(message: string) {
   //   this.newssubject.next({ text: message });
   // }
@@ -187,5 +188,8 @@ export class ProjectSeoService extends SeoService {
 
     // add a breadcrumb: Turtles > Turtle Rock
     //this.updateJsonSnippet(meta.breadcrumb);
+  }
+  changeSearchMessage(message: string) {
+    this.searchMessage.next(message);
   }
 }

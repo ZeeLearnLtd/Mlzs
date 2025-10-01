@@ -4,27 +4,9 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
-
-
 section {
     overflow-x: hidden;
 }
-
-/* @font-face {
-    font-family: 'Lato';
-    src: url('assets/font/lato/Lato-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Fredoka';
-    src: url('assets/font/static/Fredoka-Bold.ttf');
-}
-
-@font-face {
-    font-family: 'Fredoka_light';
-    src: url('assets/font/static/Fredoka-Light.ttf');
-}*/
-
 @font-face {
     font-family: 'Montserrat_bold';
     src: url('assets/font/montserrat/Montserrat-Bold.ttf');
@@ -647,23 +629,8 @@ font-size: 12px;
 border: none;
 color:#373636;
 }
-/* .search_btn{
-    background-color: transparent;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    padding: 0px 8px;
-    margin: 0rem 1rem;
-}
-.search_btn:hover{
-    color: #fff;
-    cursor: pointer;
-} */
-
  .search-section {
-      background-color: #0a4c73; /* Blue bar background */
-      /* padding: 15px; */
+      background-color: #0a4c73;
     }
 
     .search-box {
@@ -671,7 +638,7 @@ color:#373636;
       background-color: #e9ecef;
       border: none;
       padding-left: 35px;
-      height: 30px;
+      height:28px;
       border-radius: 9px;
     }
 
@@ -682,6 +649,7 @@ color:#373636;
       transform: translateY(-50%);
       color: gray;
       font-size: 13px;
+      cursor: pointer;
     }
 
     .search-wrapper {
