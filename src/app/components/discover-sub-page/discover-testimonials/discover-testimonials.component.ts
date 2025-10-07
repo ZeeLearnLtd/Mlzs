@@ -168,7 +168,7 @@ export class DiscoverTestimonialsComponent {
       return {
         ...obj,
         title: obj.Title,
-        safeUrl: this.getSafeEmbedUrl(obj.slug),
+        safeUrl: this.getSafeEmbedUrl(obj.Keywards),
 
       };
     });
@@ -179,7 +179,7 @@ export class DiscoverTestimonialsComponent {
       return {
         ...obj,
         title: obj.Title,
-        safeUrl: this.getSafeEmbedUrl(obj.slug),
+        safeUrl: this.getSafeEmbedUrl(obj.Keywards),
 
       };
     });
@@ -190,7 +190,7 @@ export class DiscoverTestimonialsComponent {
       return {
         ...obj,
         title: obj.Title,
-        safeUrl: this.getSafeEmbedUrl(obj?.slug),
+        safeUrl: this.getSafeEmbedUrl(obj?.Keywards),
 
       };
     });

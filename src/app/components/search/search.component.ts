@@ -45,7 +45,6 @@ export class SearchComponent implements OnInit {
         this.errorMsg = true
         this.spinner = false;
       }
-      console.log('receivedSearchData', this.receivedSearchData);
     });
   }
 

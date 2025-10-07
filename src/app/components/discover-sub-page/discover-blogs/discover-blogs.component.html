@@ -47,7 +47,7 @@
                     <h4>{{ category.categoryname }}</h4>
 
                     <div class="col-md-5 category_blog_content">
-                        <div *ngFor="let blog of category.blogsContent; let i = index">
+                        <div *ngFor="let blog of lgImg; let i = index">
                             <ng-container *ngIf="i === 0">
                                 <div class="img_box_big">
                                     <div *ngFor="let img of blog.logofiles">
@@ -62,7 +62,7 @@
                             <div class="cascade-slider_slides" [style.transform]="getTranslateY(category.categoryId)">
                                 <div class="cascade-slide" *ngFor="let blog of category.blogsContent">
                                     <div class="row">
-                                        <div class="col-md-5" routerLink="/blog/{{blog?.slug}}">
+                                        <div class="col-md-5" (click)="getBlogsItem(blog);">
                                             <div class="img_box">
                                                 <div *ngFor="let img of blog.logofiles">
                                                     <img src="{{img.value}}" alt="blog">

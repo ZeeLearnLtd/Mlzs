@@ -168,5 +168,5 @@ display: block;
 }
 .sub_para{
     height: 90px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }

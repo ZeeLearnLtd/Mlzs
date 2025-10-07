@@ -16,13 +16,22 @@ declare var $: any;  // Declare jQuery
 })
 export class OurParentsComponent {
   slides: any[] = [];
-  currentIndex = 1;
+  // currentIndex = 1;
   interval: any;
-
 
   projectId = environment.projectid;
   alldata: any = [];
-  ParentTestimonial: any = [];
+  // ParentTestimonial: any = [];
+  ParentTestimonial: any = [
+    { name: 'Item 1', text: 'This is item 1' },
+    { name: 'Item 2', text: 'This is item 2' },
+    { name: 'Item 3', text: 'This is item 3' },
+    { name: 'Item 4', text: 'This is item 4' },
+    { name: 'Item 5', text: 'This is item 5' },
+  ];
+  visibleSlides = 3;
+  currentIndex = 1;
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private route: ActivatedRoute,
@@ -80,37 +89,16 @@ export class OurParentsComponent {
   ngOnDestroy(): void {
     clearInterval(this.interval);
   }
-  startAutoSlide() {
-    this.interval = setInterval(() => {
-      this.next();
-    }, 3000);
+
+  get translateY() {
+    const itemHeight = 100; // height of each slide
+    const offset = Math.floor(this.visibleSlides / 2);
+    return `translateY(${-(this.currentIndex - offset) * itemHeight}px)`;
+  }
+  selectSlide(index: number) {
+    this.currentIndex = index;
   }
 
-  next() {
-    this.currentIndex++;
-    if (this.currentIndex === this.slides.length - 1) {
-      setTimeout(() => {
-        this.currentIndex = 1; // reset to 1st real slide
-      }, 600); // after transition
-    }
-  }
-
-  prev() {
-    this.currentIndex--;
-    if (this.currentIndex === 0) {
-      setTimeout(() => {
-        this.currentIndex = this.slides.length - 2; // jump to last real slide
-      }, 600);
-    }
-  }
-
-  moveToSlide(index: number) {
-    this.currentIndex = index + 1; // adjust because of clone
-  }
-
-  get translateY(): string {
-    return `translateY(-${(this.currentIndex - 1) * 140}px)`;
-  }
   gettestimonial_data() {
     let tbody = {
       Type: "testimonial",

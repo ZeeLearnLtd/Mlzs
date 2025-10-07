@@ -163,11 +163,6 @@
       var $scrollToTopButton = $('.scrollToTop');
 
           if ($(window).width() <= 600) {
-        // Mobile view
-        //  const el = document.getElementById('fix_header');
-        //   el.style.setProperty('display', 'none', 'important');
-        //   const el2 = document.getElementById('mobile_footer');
-        //   el2.style.setProperty('display', 'none', 'important');
          $(window).scroll(function () {
         if ($(this).scrollTop() > offSetTop) {
           const el = document.getElementById('fix_header');
@@ -184,7 +179,9 @@
           const el = document.getElementById('fix_header');
           el.style.setProperty('display', 'none', 'important');
           const el2 = document.getElementById('home_banner');
+          if (el2) {
           el2.style.setProperty('padding-top', '3rem', 'important');
+          }
         } else {
       
           document.getElementById('whiteHeader').style.display = "block"
@@ -194,7 +191,9 @@
           const el1 = document.getElementById('whiteHeader');
           el1.style.setProperty('top', '2.5rem', 'important');
           const el2 = document.getElementById('home_banner');
+          if (el2) {
           el2.style.setProperty('padding-top', '0rem', 'important');
+          }
         }  
      });
       $scrollToTopButton.click(function () {

@@ -1,5 +1,5 @@
 .text_bg {
-    width:100px;
+    width: 100px;
     position: relative;
     bottom: 2rem;
     z-index: 1;
@@ -12,12 +12,13 @@
 }
 
 
-.blog-title-content h2{
+.blog-title-content h2 {
     position: relative;
     z-index: 9;
     color: #212529 !important;
 }
-.blog-title-content{
+
+.blog-title-content {
     margin-top: 4rem;
 }
 
@@ -72,9 +73,23 @@
     font-size: 15px;
     margin-top: 2px;
 }
-
+ .blogs .box{
+        width: 85% !important;
+        margin: auto;
+    }
 @media screen and (max-width: 600px) {
     .blog-title-content {
         text-align: center;
+    }
+
+    .sub_blog_card {
+        width: 100% !important;
+    }
+
+    .blog-card {
+        width: 100% !important;
+    }
+    .blogs .box{
+        width: 100%;
     }
 }

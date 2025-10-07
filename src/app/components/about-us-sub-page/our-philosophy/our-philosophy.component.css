@@ -14,7 +14,15 @@ section {
       min-height: 100vh; 
 }
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+   li button {
+    width: 100%;
+    margin: 6px 0px !important;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    margin: 6px 0px;
+}
+}
 
 
 .text_bg {

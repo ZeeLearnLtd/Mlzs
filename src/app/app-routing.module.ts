@@ -61,8 +61,8 @@ import { CurriculumComponent } from './components/curriculum/curriculum.componen
 import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
 import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-mlzs.component';
 import { AcademicsMainPageComponent } from './components/academics-beyond-sub-page/academics-main-page/academics-main-page.component';
-import { TestimonialsDetailsComponent } from './testimonials-details/testimonials-details.component';
 import { SearchComponent } from './components/search/search.component';
+import { TestimonialDetailsComponent } from './components/testimonial-details/testimonial-details.component';
 const routes: Routes = [
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
@@ -111,7 +111,7 @@ const routes: Routes = [
       { path: 'events/:name', component: EventsDetailsComponent },
       { path: 'faqs', component: DiscoverFaqsComponent },
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
-      { path: 'testimonials/:name', component: TestimonialsDetailsComponent },
+      { path: 'testimonials/:name', component: TestimonialDetailsComponent },
 
       { path: 'achievements', component: DiscoverAchievementsComponent },
       { path: 'curriculum', component: CurriculumComponent },

@@ -201,15 +201,12 @@ h1 {
 }
 
 .img_box {
-  /* overflow: hidden;
-  width: 100%;
-  height: 196px;
-  border: 1px solid #eee; */
   width: 100%;
     height: clamp(196px, 18vw, 400px);
     object-fit: cover;
     border: 1px solid #eee;
     overflow: hidden;
+    cursor: pointer;
 }
 
 

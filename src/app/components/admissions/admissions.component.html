@@ -38,6 +38,14 @@
                                 </div>
                             </div>
                             <div class="col-md-12 mt-2">
+                                 <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
+                                [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                 <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
+                                <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
                                  <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
                                   (keyup)="getMobileNO();" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                    <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
@@ -120,7 +128,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-12 mt-2">
+                             <div class="col-md-12 mt-1">
                                 <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
                              </div>
                         </div>
@@ -167,6 +175,14 @@
                                 </div>
                             </div>
                             <div class="col-md-12 mt-2">
+                                 <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
+                                [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                 <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
+                                <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
                                  <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
                                   (keyup)="getMobileNO();" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                    <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
@@ -250,7 +266,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-12 mt-2">
+                             <div class="col-md-12 mt-1">
                                 <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
                              </div>
                         </div>
@@ -440,7 +456,7 @@
     <app-testimonial></app-testimonial>
 </div>
 <div class="faq_bg py-5">
-    <div class="title_content text-center">
+    <div class="box title_content text-center">
             <h2 class="text-white"><b>FAQs</b></h2>
             <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
             <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>

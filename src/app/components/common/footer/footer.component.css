@@ -234,7 +234,12 @@ color: #FFF;
     width: 100%;
 }
 @media screen and (max-width: 600px) {
-    
+    .media_icon{
+    color: #FFF;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
     .scrollToTop{
         left: 0%;
         bottom: 5rem;

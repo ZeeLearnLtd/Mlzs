@@ -303,6 +303,13 @@ ul li a {
 }
 
 @media screen and (max-width: 600px) {
+    .search_img{
+        width: 28px;
+        height: 28px;
+        margin-top: 15px;
+        margin-right: 5px;
+
+    }
     .navbar-toggler {
         position: fixed;
         display: block;
@@ -318,7 +325,7 @@ ul li a {
     .kidzee_logo_img {
         position: fixed;
         left: 50%;
-        transform: translate(-50%, 7%);
+        transform: translate(-50%, -43%);
         width: 50%;
         object-fit: cover;
         z-index: 99;
@@ -535,6 +542,7 @@ ul li a {
     .mobile_nav {
         display: block !important;
         padding: 15px 0px;
+        box-shadow: -5px -12px 10px 6px #000;
     }
 
     .menu_icon {
