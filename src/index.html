@@ -51,10 +51,14 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
   <!-- fancy box -->
@@ -159,11 +163,6 @@
       var $scrollToTopButton = $('.scrollToTop');
 
           if ($(window).width() <= 600) {
-        // Mobile view
-        //  const el = document.getElementById('fix_header');
-        //   el.style.setProperty('display', 'none', 'important');
-        //   const el2 = document.getElementById('mobile_footer');
-        //   el2.style.setProperty('display', 'none', 'important');
          $(window).scroll(function () {
         if ($(this).scrollTop() > offSetTop) {
           const el = document.getElementById('fix_header');
@@ -180,7 +179,9 @@
           const el = document.getElementById('fix_header');
           el.style.setProperty('display', 'none', 'important');
           const el2 = document.getElementById('home_banner');
+          if (el2) {
           el2.style.setProperty('padding-top', '3rem', 'important');
+          }
         } else {
       
           document.getElementById('whiteHeader').style.display = "block"
@@ -190,7 +191,9 @@
           const el1 = document.getElementById('whiteHeader');
           el1.style.setProperty('top', '2.5rem', 'important');
           const el2 = document.getElementById('home_banner');
+          if (el2) {
           el2.style.setProperty('padding-top', '0rem', 'important');
+          }
         }  
      });
       $scrollToTopButton.click(function () {

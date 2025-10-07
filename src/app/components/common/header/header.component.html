@@ -3,15 +3,11 @@
     <button class="btn btn-sm admission_btn" routerLink="/admissions">Admissions now open at Mount Litera Zee School</button>
     <button class="btn btn-sm  right_botder_btn mx-3" routerLink="/partner-with-us">Partner with us</button>
     <button class="btn btn-sm  convert_btn" routerLink="/convert-to-an-mlzs">Convert to an MLZS</button>
-    <!-- <button class="btn search_btn" routerLink="/search">
-    <span class="material-symbols-outlined">
-        search
-       </span>
-   </button> -->
-    <div class="search-section">
+    <div class="search-section d-none d-sm-block">
     <div class="search-wrapper">
-      <i class="bi bi-search search-icon"></i>
-      <input type="text" class="form-control search-box" placeholder="Search">
+      <i class="bi bi-search search-icon" (click)="sendMessage()" routerLink="/search"></i>
+      <input type="text" class="form-control search-box"
+      [(ngModel)]="inputValue"  placeholder="Search" (keyup.enter)="sendMessage()">
     </div>
   </div>
    <div class="media_icon">
@@ -26,25 +22,6 @@
                         </a>
                     </div>
   </div>
-  
-<!-- <footer class="mobile_footer" id="mobile_footer">
-  <div class="footer-item">Admissions now open at Mount Litera Zee School</div>
-  <div class="footer-item">Partner with us</div>
-  <div class="footer-item">Convo to an MLZS</div>
-  
-  <div class="footer-item footer-social">
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  
-  <div class="footer-item">
-    <input type="text" placeholder="Search..." />
-  </div>
-</footer> -->
-
-
-
 <div class="whiteHeader" id="whiteHeader">
     <nav class="nav navbar navbar-expand-lg desktop_nav">
         <div class="container-fluid">
@@ -126,7 +103,7 @@
                   
                 </ul>
                 <li class="nav-item">
-                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us">LOCATE US</button>
               </li>
             </ul>
             <!-- <img src="../../../../assets/img/MLZS/imtb.png" class="brand_icon" width="13%" alt=""> -->
@@ -141,6 +118,7 @@
            <a href="https://demo.mountlitera.com/">
             <img src="../../../../assets/img/MLZS/banner/mobile_banner/mlzs_mobile.png" width="13%" class="kidzee_logo_img" alt="">
             </a>
+            <img src="../../../../assets/img/MLZS/search_icon_img.png" class="search_img" routerLink="/search" alt="">
            <div class="collapse navbar-collapse "  id="navbarNav" #navbarCollapse>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
@@ -216,7 +194,7 @@
                 </ul>
               </li>
                <li class="nav-item">
-                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us">LOCATE US</button>
               </li>
             </ul>
           

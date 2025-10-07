@@ -1,12 +1,15 @@
+
 <div class="top_header" id="fix_header">
     <button class="btn btn-sm admission_btn" routerLink="/admissions">Admissions now open at Mount Litera Zee School</button>
     <button class="btn btn-sm  right_botder_btn mx-3" routerLink="/partner-with-us">Partner with us</button>
     <button class="btn btn-sm  convert_btn" routerLink="/convert-to-an-mlzs">Convert to an MLZS</button>
-    <button class="btn search_btn" routerLink="/search">
-    <span class="material-symbols-outlined">
-        search
-       </span>
-   </button>
+    <div class="search-section">
+    <div class="search-wrapper">
+      <i class="bi bi-search search-icon" (click)="sendMessage()" routerLink="/search"></i>
+      <input type="text" class="form-control search-box"
+      [(ngModel)]="inputValue"  placeholder="Search">
+    </div>
+  </div>
    <div class="media_icon">
                         <a href="https://www.facebook.com/MountLiteraZeeSchool/" target="_blank">
                         <img src="../../../../assets/img/MLZS/footer/facebook.png" alt="">
@@ -25,7 +28,7 @@
           <div class="menu_icon" data-bs-toggle="collapse" data-bs-target="#navbarNav"></div>
           <div class="collapse navbar-collapse " id="navbarNav">
             <a href="" class="nav_logo">
-            <img src="../../../../assets/img/MLZS/mtl.png" class="kidzee_logo_img" alt="">
+            <img src="../../../../assets/img/MLZS/MLZS.svg" class="kidzee_logo_img" alt="">
             </a>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
@@ -87,7 +90,7 @@
               </li>
               <li class="nav-item dropdown">
                 <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 <span routerLink="/discover-more"> DISCOVER <br>MORE</span>
+                 <span> DISCOVER <br>MORE</span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/news">News</li>
@@ -99,6 +102,8 @@
                   <li class="dropdown-item" routerLink="/achievements">Achievements</li>
                   
                 </ul>
+                <li class="nav-item">
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
               </li>
             </ul>
             <!-- <img src="../../../../assets/img/MLZS/imtb.png" class="brand_icon" width="13%" alt=""> -->
@@ -109,7 +114,11 @@
         <div class="container-fluid">
           <div class="menu_icon" (click)="toggleMenu()"
            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="dropdown_menu"></div>
-          <div class="collapse navbar-collapse "  id="navbarNav" #navbarCollapse>
+       
+           <a href="https://demo.mountlitera.com/">
+            <img src="../../../../assets/img/MLZS/banner/mobile_banner/mlzs_mobile.png" width="13%" class="kidzee_logo_img" alt="">
+            </a>
+           <div class="collapse navbar-collapse "  id="navbarNav" #navbarCollapse>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
                 <button class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -183,12 +192,12 @@
                   <li class="dropdown-item" routerLink="/achievements" (click)="closeMenu()">Achievements</li>
                 </ul>
               </li>
+               <li class="nav-item">
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
+              </li>
             </ul>
           
           </div>
         </div>
-        <a href="https://demo.mountlitera.com/">
-            <img src="../../../../assets/img/MLZS/mtl.png" width="13%" class="kidzee_logo_img" alt="">
-            </a>
       </nav>
 </div>

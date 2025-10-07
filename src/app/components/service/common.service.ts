@@ -7,8 +7,6 @@ import { isPlatformBrowser } from '@angular/common';
   providedIn: 'root'
 })
 export class CommonService {
-
-
   baseUrl = environment.api_url
   constructor(private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -31,7 +29,9 @@ export class CommonService {
   get_allCountryList(): Observable<any> {
     return this.http.post<any>(this.baseUrl + '/api/V1/mlzslist', {});
   }
-
+  searchDataList(obj: any): Observable<any> {
+    return this.http.post<any>('https://cmsapi.zeelearn.com' + '/searchwebsite', obj);
+  }
   public savesession(key: string, value: string): void {
     if (isPlatformBrowser(this.platformId)) {
       window.sessionStorage.removeItem(key);

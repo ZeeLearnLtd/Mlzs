@@ -60,7 +60,7 @@
                             <div class="cascade-slider_slides" [style.transform]="translateY">
                                 <div class="cascade-slide item_text"
                                     *ngFor="let img of photoGalleryData; let i = index">
-                                    <div class="row">
+                                    <div class="row" (click)="getGelleryItem(img);">
                                         <div class="col-md-4">
                                             <div class="img_box">
                                                 <div *ngFor="let img of img.logofiles">

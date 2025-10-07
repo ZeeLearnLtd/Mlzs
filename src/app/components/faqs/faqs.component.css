@@ -1,66 +1,63 @@
-.faq_content{
-    width: 100%;
+.faq_content {
+  width: 100%;
 }
-::ng-deep .faq_content .mat-expansion-panel-body {
-    padding: 0 0px 16px;
-    overflow: hidden;
-}
-::ng-deep .faq_content .mat-expansion-panel-body p{
-    padding: 0 10px 0px !important;
-}
-.text_bg{
-    width:10%;
-    position: relative;
-    bottom:1.3rem;
-    z-index: 1;
-    height: 30px;
-}
-.short_text{
-    text-align: left;
-    margin-bottom: 0 !important;
-}
-::ng-deep .short_text p{
-    margin-bottom: 0 !important;
-}
-/* .mat-accordion .mat-expansion-panel{
-    background-color: #fff;
-    padding: 11px 5px 7px 0px;
-    border: none;
-    margin: 7px 0px;
-    border-radius:5px;
-} */
 
-.mat-accordion 
-.mat-expansion-panel {
+::ng-deep .faq_content .mat-expansion-panel-body {
+  padding: 0 0px 16px;
+  overflow: hidden;
+}
+
+::ng-deep .faq_content .mat-expansion-panel-body p {
+  padding: 0 10px 0px !important;
+}
+
+.text_bg {
+  width: 10%;
+  position: relative;
+  bottom: 1.3rem;
+  z-index: 1;
+  height: 30px;
+}
+
+.short_text {
+  text-align: left;
+  margin-bottom: 0 !important;
+}
+
+::ng-deep .short_text p {
+  margin-bottom: 0 !important;
+}
+
+.mat-accordion .mat-expansion-panel {
   background: #fff;
-  padding: clamp(11px, 1.2vw, 12px) clamp(4px, 1vw, 8px); 
+  padding: clamp(11px, 1.2vw, 12px) clamp(4px, 1vw, 8px);
   border: none;
   border-radius: 5px;
   margin: 10px 20px;
-  /* box-shadow: 1px 3px 12px 0px #CCC; */
 }
-/* ::ng-deep .mat-expansion-panel {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-} */
 
 .shadow-panel {
-  margin-bottom: 12px; 
-  border-radius: 8px; 
-  background: #fff;  
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: #fff;
   padding: 1rem 1.25rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 @media screen and (max-width: 600px) {
-.faq_content{
+  .faq_content {
     width: 100%;
     padding: 5px 0px;
-    background-color: #004878;
-}
-.box{
-  width: 100%;
-}
+    /* background-color: #004878; */
+  }
 
+  .box {
+    width: 100%;
+  }
+
+  .mat-accordion .mat-expansion-panel {
+    margin: 10px 0px !important;
+  }
 }
 
 ::ng-deep.faq_content .mat-expansion-indicator::after {
@@ -72,17 +69,20 @@
 }
 
 .mat-expanded .mat-expansion-indicator::after {
-  transform: rotate(180deg); /* flip on expand */
+  transform: rotate(180deg);
+  /* flip on expand */
 }
+
 ::ng-deep.faq_content .mat-expansion-indicator::after {
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    content: "";
-    display: inline-block;
-    padding: 3px;
-    transform: none !important;
-    vertical-align: middle;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  content: "";
+  display: inline-block;
+  padding: 3px;
+  transform: none !important;
+  vertical-align: middle;
 }
-.mat-expansion-panel-header{
-    overflow: hidden;
+
+.mat-expansion-panel-header {
+  overflow: hidden;
 }

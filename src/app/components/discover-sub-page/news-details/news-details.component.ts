@@ -42,7 +42,7 @@ export class NewsDetailsComponent {
       Projectid: this.projectId
     }
 
-    this.apiService.getBlogsDetails
+    // this.apiService.getBlogsDetails
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
       this.newsDetailsData = data.data
     });

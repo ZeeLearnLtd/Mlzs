@@ -46,7 +46,8 @@ export class AdmissionsComponent implements OnInit {
     private fb: FormBuilder,
     private apiService: ApicallService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute, private common: CommonService) {
+    private activatedRoute: ActivatedRoute,
+    private common: CommonService) {
     this.admissionForm = fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -55,7 +56,7 @@ export class AdmissionsComponent implements OnInit {
       city: ['', Validators.required],
       class: ['', Validators.required],
       franchisee: ['', Validators.required],
-      // otp: ['', Validators.required],
+      otp: ['', Validators.required],
       // autorization: ['']
     })
   }
@@ -233,6 +234,7 @@ export class AdmissionsComponent implements OnInit {
 
   }
   onSubmit() {
+    this.spinner.show();
     let obj = {
       "utm_medium": "Website",
       "utm_source": "Website",
@@ -257,7 +259,7 @@ export class AdmissionsComponent implements OnInit {
       "Country": "India",
       "Product": "259262000039670041"
     }
-    this.spinner.show();
+
     this.apiService.postAdmissionForm(obj).subscribe(
       res => {
         this.spinner.hide();

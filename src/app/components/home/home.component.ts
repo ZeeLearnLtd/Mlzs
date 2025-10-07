@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('call1')
     if (isPlatformBrowser(this.platformId)) {
       this.getseo();
     }
@@ -46,7 +45,6 @@ export class HomeComponent implements OnInit {
 
   }
   ngAfterViewInit(): void {
-    console.log('call2')
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         var owl = $(".count_owl");

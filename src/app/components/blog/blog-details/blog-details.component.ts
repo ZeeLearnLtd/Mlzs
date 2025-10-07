@@ -65,8 +65,7 @@ export class BlogDetailsComponent implements OnInit {
       slug: param,
       Projectid: environment.projectid  //this.projectId
     }
-
-    this.apiService.getBlogsDetails
+    // this.apiService.getBlogsDetails
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
       this.blog_detailsData = data.data
     });

@@ -68,6 +68,22 @@ section{
   }
 
   @media screen and (max-width: 600px) {
+    li button{
+width: 98% !important;
+}
+  .nav-link:focus,
+  .nav-link {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+  }
+
+  .nav-link,
+  .nav-link {
+    width: 100%;
+  }
     .programm_para{
       margin:38px 30px !important;
       text-align: justify;

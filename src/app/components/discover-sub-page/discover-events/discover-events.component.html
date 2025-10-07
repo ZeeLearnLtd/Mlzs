@@ -81,7 +81,9 @@
             <!-- Content Section -->
             <div class="col-md-7" [routerLink]="'/events/' + a?.slug">
               <h6 >{{ a?.Title }}</h6>
+              <div class="main_conent_box">
               <div class="long_para clamp-3" [innerHTML]="a.Long1"></div>
+              </div>
               <button
                 class="btn read_mode mt-2"
                 [routerLink]="'/events/' + a.slug">
