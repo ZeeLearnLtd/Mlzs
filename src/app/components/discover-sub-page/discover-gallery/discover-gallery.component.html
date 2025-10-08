@@ -1,10 +1,10 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-               <img src="../../../../assets/img/MLZS/banner/gallery_top_banner.png" class="img-fluid d-none d-md-block w-100"
-            alt="about banner">
-        <img src="../../../../assets/img/MLZS/banner/mobile_banner/Gallery.jpg"
-            class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
+            <img src="../../../../assets/img/MLZS/banner/gallery_top_banner.png"
+                class="img-fluid d-none d-md-block w-100" alt="about banner">
+            <img src="../../../../assets/img/MLZS/banner/mobile_banner/Gallery.jpg"
+                class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
         </div>
         <div class="subMenu_content mt-2">
             <app-sub-menu></app-sub-menu>
@@ -24,11 +24,11 @@
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <div style="position: relative; width: 250px;">
-  <input type="text" placeholder="Search" class="form-control" 
-         style="padding-left: 35px; width: 100%;" (input)="onSearchChange($event)">
-  <i class="fa fa-search" 
-     style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #888;"></i>
-</div>
+                            <input type="text" placeholder="Search" class="form-control"
+                                style="padding-left: 35px; width: 100%;" (input)="onSearchChange($event)">
+                            <i class="fa fa-search"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                        </div>
                         <!-- <input name="" id="" placeholder="Search" class="form-control" (input)="onSearchChange($event)"> -->
                     </div>
                 </div>
@@ -44,7 +44,7 @@
             <div class="news_list mt-5">
                 <div class="row">
                     <div class="col-md-5">
-                        <div *ngIf="getFirstData && getFirstData.length">
+                        <!-- <div *ngIf="getFirstData && getFirstData.length">
                             <a [href]="getFirstData[0]?.value" data-fancybox="gallery1" class="fancybox">
                                 <img [src]="getFirstData[0]?.value" class="pinchzoom_img" id="image" width="100%"
                                     alt="Image" />
@@ -53,7 +53,36 @@
                                 <a [href]="a.value" data-fancybox="gallery1" style="display: none;"
                                     class="fancybox"></a>
                             </ng-container>
-                        </div>
+                        </div> -->
+                        <div *ngIf="getFirstData && getFirstData.length; else defaultGallery">
+  <a [href]="getFirstData[0]?.value || 'assets/img/MLZS/MLZS.svg'" 
+     data-fancybox="gallery1" 
+     class="fancybox">
+    <img 
+      [src]="getFirstData[0]?.value || 'assets/img/MLZS/MLZS.svg'" 
+      class="pinchzoom_img" 
+      id="image" 
+      width="100%"
+      alt="Image"
+    />
+  </a>
+  <ng-container *ngFor="let a of getFirstData.slice(1)">
+    <a 
+      [href]="a?.value || 'assets/img/MLZS/MLZS.svg'" 
+      data-fancybox="gallery1" 
+      style="display: none;"
+      class="fancybox">
+    </a>
+  </ng-container>
+</div>
+
+<!-- Fallback gallery if no images -->
+<ng-template #defaultGallery>
+  <a href="../../../../assets/img/MLZS/MLZS.svg" data-fancybox="gallery1" class="fancybox">
+    <img src="../../../../assets/img/MLZS/MLZS.svg" class="pinchzoom_img defaultImg" width="100%" alt="MLZS" />
+  </a>
+</ng-template>
+
                     </div>
                     <div class="col-md-7">
                         <div class="cascade-slider_container">
@@ -63,9 +92,28 @@
                                     <div class="row" (click)="getGelleryItem(img);">
                                         <div class="col-md-4">
                                             <div class="img_box">
-                                                <div *ngFor="let img of img.logofiles">
+                                                <!-- <div *ngFor="let img of img.logofiles">
                                                     <img src="{{img?.value}}" width="100%" alt="">
-                                                </div>
+                                                </div> -->
+                                                <div *ngIf="img?.logofiles?.length; else defaultImg">
+  <div *ngFor="let logo of img.logofiles">
+    <img 
+      [src]="logo?.value || 'assets/img/MLZS/MLZS.svg'" 
+      width="100%" 
+      alt="MLZS"
+    />
+  </div>
+</div>
+
+<ng-template #defaultImg>
+  <img 
+    src="assets/img/MLZS/MLZS.svg" 
+    width="100%" 
+    alt="MLZS"
+    class="defaultImg"
+  />
+</ng-template>
+
                                             </div>
                                         </div>
                                         <div class="col-md-8">
@@ -93,13 +141,17 @@
 
         <div class="box mt-5">
             <div class="video_gallery_content my-5">
-                    <div class="owl-carousel owl-theme news_owl" id="">
-                      <div class="item" *ngFor="let a of videoGalleryList">
+                <div class="owl-carousel owl-theme news_owl" id="">
+                    <div class="item" *ngFor="let a of videoGalleryList">
                         <div class="video_content" *ngIf="a.safeUrl">
-                            <iframe width="1082" height="609" [src]="a.safeUrl" loading="lazy" title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe width="1082" height="609" [src]="a.safeUrl" loading="lazy"
+                                title="Chiv Chiv Chimni in 3D - Marathi 3D Rhymes | Marathi Balgeet Song मराठी गाणी 2019"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
-                      </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,33 +1,36 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-             <img src="../../../../assets/img/MLZS/banner/news_top_banner.png" class="img-fluid d-none d-md-block w-100"
-            alt="about banner">
-        <img src="../../../../assets/img/MLZS/banner/mobile_banner/News.jpg"
-            class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
-    </div>
+            <img src="../../../../assets/img/MLZS/banner/news_top_banner.png" class="img-fluid d-none d-md-block w-100"
+                alt="about banner">
+            <img src="../../../../assets/img/MLZS/banner/mobile_banner/News.jpg"
+                class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
+        </div>
         <div class="subMenu_content">
             <app-sub-menu></app-sub-menu>
         </div>
-       
+
         <div class="box mt-4">
             <div class="dropdown_tab">
                 <div class="row">
                     <div class="col-md-4">
-                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control" (change)="onchangecategory(ddlcategory.value)">
+                        <select #ddlcategory name="" id="" [(ngModel)]="Selectedcategory" class="form-control"
+                            (change)="onchangecategory(ddlcategory.value)">
                             <option value="">All Category</option>
                             <option value="{{a.categoryId}}" *ngFor="let a of newscategory">{{a.categoryname}}</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <select #ddlyear name="" id="" [(ngModel)]="Selectedyear" class="form-control" (change)="onyearchange(ddlyear.value)">
+                        <select #ddlyear name="" id="" [(ngModel)]="Selectedyear" class="form-control"
+                            (change)="onyearchange(ddlyear.value)">
                             <option value="">All Year</option>
                             <option value="{{year}}" *ngFor="let year of distinctYears">{{year}}</option>
                         </select>
-                        
+
                     </div>
                     <div class="col-md-4">
-                        <select #ddlpublisher name="" id="" [(ngModel)]="Selectedpublisher" class="form-control" (click)="onpublisherchange(ddlpublisher.value)">
+                        <select #ddlpublisher name="" id="" [(ngModel)]="Selectedpublisher" class="form-control"
+                            (click)="onpublisherchange(ddlpublisher.value)">
                             <option value="">All Publishers</option>
                             <option value="{{pub}}" *ngFor="let pub of distinctKeywards">{{pub}}</option>
                         </select>
@@ -39,35 +42,43 @@
                 <h1 class="text-center"><b>Stay Updated</b></h1>
                 <img src="../../../../assets/img/MLZS/prg_text_bg.png" alt="" class="text_bg">
             </div>
-            <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news and<br> updates about Mount Litera Zee School from our community.</p>
-           <!-- <h4>{{category_name}}</h4> -->
+            <p class="text-center">From academic milestones to vibrant extracurriculars, discover all the latest news
+                and<br> updates about Mount Litera Zee School from our community.</p>
+            <!-- <h4>{{category_name}}</h4> -->
             <div class="news_list mb-5">
-                <div class="row mt-5" *ngFor="let a of newsData">                   
+                <div class="row mt-5" *ngFor="let a of newsData">
                     <div class="col-md-3">
                         <div class="img_box">
-                            <div *ngFor="let img of a?.logofiles">
+                            <!-- <div *ngFor="let img of a?.logofiles">
                             <img src="{{img.value}}" width="100%" alt="">
+                            </div> -->
+                            <div *ngIf="a?.logofiles?.length; else defaultImg">
+                                <img *ngFor="let img of a.logofiles" [src]="img.value" width="100%">
                             </div>
+                            <ng-template #defaultImg>
+                                <img src="../../../../assets/img/MLZS/MLZS.svg" class="defaultImg" width="100%">
+                            </ng-template>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-9">
-                       <div class="news_text">
-                        <h6>{{a?.Title}}</h6>
-                        <p [innerHTML]="a.short"></p>
-                        <p class="long_para" [innerHTML]="a?.Long1"></p>
-                        <p class="p-0 m-0"><small>Publisher - Zee News</small></p>
-                        <p class="date_text p-0 m-0">Date: {{a?.StartDate}}</p>
-                        <a href="news/{{a.slug}}" target="_blank">
-                        <button class="btn read_mode mt-2">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
-                    </a>   
-                    </div>
+                        <div class="news_text">
+                            <h6>{{a?.Title}}</h6>
+                            <p [innerHTML]="a.short"></p>
+                            <p class="long_para" [innerHTML]="a?.Long1"></p>
+                            <p class="p-0 m-0"><small>Publisher - Zee News</small></p>
+                            <p class="date_text p-0 m-0">Date: {{a?.StartDate}}</p>
+                            <a href="news/{{a.slug}}" target="_blank">
+                                <button class="btn read_mode mt-2">Know More <i
+                                        class="fa fa-long-arrow-right mx-2"></i></button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-       
+
         </div>
-       
-        
+
+
     </div>
 </section>

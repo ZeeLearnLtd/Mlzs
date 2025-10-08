@@ -117,18 +117,23 @@ export class LocateUsComponent implements OnInit {
   }
 
   selectZone(zone: any) {
-    this.getZone = zone
-    let lgd = this.all_data_list.filter(function (lg: any) {
-      return lg.zone === zone;
-    }).map(function (lg: any) {
-      return lg;
-    })
-    const key = 'State_Name';
-    this.stateList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
-    this.searchForm.get('state')?.setValue("");
-    this.searchForm.get('city')?.setValue("");
-    this.searchForm.get('location')?.setValue("");
-    this.filterData();
+    if (zone == "") {
+      this.getAllDataList();
+    } else {
+      this.getZone = zone
+      let lgd = this.all_data_list.filter(function (lg: any) {
+        return lg.zone === zone;
+      }).map(function (lg: any) {
+        return lg;
+      })
+      const key = 'State_Name';
+      this.stateList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
+      this.searchForm.get('state')?.setValue("");
+      this.searchForm.get('city')?.setValue("");
+      this.searchForm.get('location')?.setValue("");
+      this.filterData();
+    }
+
 
   }
 
@@ -270,25 +275,6 @@ export class LocateUsComponent implements OnInit {
     this.virtual_url = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
   setaddress(data: any) {
-    // let jdata = {
-    //   "franchisecode": data.Franchisee_Code
-    // }
-    // return this.apiService.checkMicrosite(jdata).subscribe({
-    //   next: (resp: any) => {
-    //     if (resp.data) {
-    //       if (resp.data[0]?.url) {
-    //         window.open(resp.data[0].url, "_blank");
-    //       }
-    //       else {
-    //         this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
-    //         this.router.navigateByUrl('/admissions');
-    //       }
-    //     }
-    //   },
-    //   error: (error) => {
-    //     console.log(error);
-    //   }
-    // })
     this.router.navigate(['/admissions', data?.Franchisee_Code])
   }
 

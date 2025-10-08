@@ -161,15 +161,22 @@
       "use strict";
       var offSetTop = 30;
       var $scrollToTopButton = $('.scrollToTop');
-
           if ($(window).width() <= 600) {
          $(window).scroll(function () {
         if ($(this).scrollTop() > offSetTop) {
           const el = document.getElementById('fix_header');
           el.style.setProperty('display', 'none', 'important');
+            const el2 = document.getElementById('home_banner');
+          if (el2) {
+          el2.style.setProperty('padding-top', '0rem', 'important');
+          }
          } else {
             const el = document.getElementById('fix_header');
           el.style.setProperty('display', 'grid', 'important');
+            const el2 = document.getElementById('home_banner');
+          if (el2) {
+          el2.style.setProperty('padding-top', '0rem', 'important');
+          }
         }  
      })
       } else {
@@ -182,6 +189,11 @@
           if (el2) {
           el2.style.setProperty('padding-top', '3rem', 'important');
           }
+            const el3 = document.getElementById('mobile_nav');
+             if (el3) {
+          el3.style.setProperty('margin-top', '0rem', 'important');
+             }
+          
         } else {
       
           document.getElementById('whiteHeader').style.display = "block"
@@ -190,6 +202,10 @@
           el.style.setProperty('display', 'flex', 'important');
           const el1 = document.getElementById('whiteHeader');
           el1.style.setProperty('top', '2.5rem', 'important');
+           const el3 = document.getElementById('mobile_nav');
+            if (el3) {
+          el3.style.setProperty('margin-top', '2.5rem', 'important');
+            }
           const el2 = document.getElementById('home_banner');
           if (el2) {
           el2.style.setProperty('padding-top', '0rem', 'important');

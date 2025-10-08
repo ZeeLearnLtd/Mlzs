@@ -85,7 +85,6 @@ export class TestimonialComponent implements OnInit {
             title: video.Title,
             safeUrl: this.getSafeEmbedUrl(video.Keywards),
           }));
-          console.log('testimonialDataList', this.testimonialDataList);
           this.errorMsg = false
           this.sliderCall();
         } else {

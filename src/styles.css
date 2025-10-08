@@ -117,7 +117,7 @@ section {
 
 @media screen and (max-width: 600px) {
     .programmes_main_page{
-        margin-top: 3.5rem !important;
+        margin-top:0rem !important;
     }
     .form-control{
       margin-top: 1rem;
@@ -659,4 +659,13 @@ color:#373636;
     }
     .search-box::placeholder {
   font-size: 13px !important;
+}
+
+@media screen and (max-width: 800px) {
+.banner_content{
+margin-top: 4rem;
+}
+}
+.defaultImg{
+    object-fit: contain !important;
 }

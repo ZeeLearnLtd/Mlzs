@@ -8,10 +8,10 @@ width: 80%;
 }
 
 section{
-    background-image: url('../../../../assets/img/MLZS/main_bg.png');
-    background-size: cover;
-    width: 100%;
-    padding: 25px 0px 50px 0px;
+  background: url("../../../../assets/img/MLZS/bg_svg/start-school-bg.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
   }
 .date_content{
   font-size: 12px;
