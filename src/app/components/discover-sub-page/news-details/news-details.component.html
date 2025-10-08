@@ -18,12 +18,31 @@
 
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div
-      class="carousel-item"
+    <!-- <div class="carousel-item"
       *ngFor="let item of newsDetailsData?.files; let i = index"
       [class.active]="i === 0">
       <img [src]="item.url" class="d-block w-100" [alt]="item.filename" />
-    </div>
+    </div> -->
+    <ng-container *ngIf="newsDetailsData?.files?.length; else defaultCarousel">
+      <div
+        class="carousel-item"
+        *ngFor="let item of newsDetailsData.files; let i = index"
+        [class.active]="i === 0">
+
+        <img
+          [src]="item?.url || 'assets/img/MLZS/MLZS.svg'" 
+          class="d-block w-100"
+          [alt]="item?.filename || 'MLZS'"
+        />
+      </div>
+    </ng-container>
+
+    <!-- Fallback if no files -->
+    <ng-template #defaultCarousel>
+      <div class="carousel-item active">
+        <img src="assets/img/MLZS/MLZS.svg" class="d-block w-100 defaultImg" alt="MLZS" />
+      </div>
+    </ng-template>
   </div>
 
   <button

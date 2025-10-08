@@ -3,11 +3,11 @@
     <button class="btn btn-sm admission_btn" routerLink="/admissions">Admissions now open at Mount Litera Zee School</button>
     <button class="btn btn-sm  right_botder_btn mx-3" routerLink="/partner-with-us">Partner with us</button>
     <button class="btn btn-sm  convert_btn" routerLink="/convert-to-an-mlzs">Convert to an MLZS</button>
-    <div class="search-section">
+    <div class="search-section d-none d-sm-block">
     <div class="search-wrapper">
       <i class="bi bi-search search-icon" (click)="sendMessage()" routerLink="/search"></i>
       <input type="text" class="form-control search-box"
-      [(ngModel)]="inputValue"  placeholder="Search">
+      [(ngModel)]="inputValue"  placeholder="Search" (keyup.enter)="sendMessage()">
     </div>
   </div>
    <div class="media_icon">
@@ -103,21 +103,22 @@
                   
                 </ul>
                 <li class="nav-item">
-                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us">LOCATE US</button>
               </li>
             </ul>
             <!-- <img src="../../../../assets/img/MLZS/imtb.png" class="brand_icon" width="13%" alt=""> -->
           </div>
         </div>
       </nav>
-      <nav class="nav navbar navbar-expand-lg mobile_nav">
+      <nav class="nav navbar navbar-expand-lg mobile_nav" id="mobile_nav">
         <div class="container-fluid">
           <div class="menu_icon" (click)="toggleMenu()"
            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="dropdown_menu"></div>
        
            <a href="https://demo.mountlitera.com/">
-            <img src="../../../../assets/img/MLZS/banner/mobile_banner/mlzs_mobile.png" width="13%" class="kidzee_logo_img" alt="">
+            <img src="../../../../assets/img/MLZS/banner/mobile_banner/mlzs_mobile.png" class="kidzee_logo_img" alt="">
             </a>
+            <img src="../../../../assets/img/MLZS/search_icon_img.png" class="search_img" routerLink="/search" alt="">
            <div class="collapse navbar-collapse "  id="navbarNav" #navbarCollapse>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
@@ -193,10 +194,9 @@
                 </ul>
               </li>
                <li class="nav-item">
-                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us">LOCATE US</button>
               </li>
             </ul>
-          
           </div>
         </div>
       </nav>

@@ -157,6 +157,9 @@ width: 100%;
 height: clamp(300px, 25vw, 350px);
 object-fit: cover;
 }
+.defaultImg{
+  object-fit: contain !important;
+}
 .carousel-indicators {
     position: absolute;
     right: 0;

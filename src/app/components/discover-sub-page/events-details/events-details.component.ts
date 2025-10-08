@@ -44,8 +44,8 @@ export class EventsDetailsComponent {
       Projectid: this.projectId
     }
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
-      this.eventsDetailsData = data.data
-      console.log('eventsDetailsData', this.eventsDetailsData);
+      this.eventsDetailsData = data.data;
+      this.projectService.setmeta(data?.data);
     });
   }
 

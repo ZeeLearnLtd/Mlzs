@@ -48,8 +48,8 @@ export class TestimonialDetailsComponent {
       Projectid: this.projectId
     }
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
-      this.testimonialsDetailsData = data.data
-      console.log('testimonialsDetailsData', this.testimonialsDetailsData);
+      this.testimonialsDetailsData = data.data;
+      this.projectService.setmeta(data?.data);
     });
   }
 }

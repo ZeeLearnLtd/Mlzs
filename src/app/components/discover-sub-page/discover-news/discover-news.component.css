@@ -137,4 +137,6 @@ h6{
   font-weight: 600;
 }
 
-
+.defaultImg{
+  object-fit: contain !important;
+}

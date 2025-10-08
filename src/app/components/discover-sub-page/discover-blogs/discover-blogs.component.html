@@ -1,10 +1,10 @@
 <section>
     <div class="programmes_main_page">
         <div class="banner_content">
-             <img src="../../../../assets/img/MLZS/banner/discover_blog.png" class="img-fluid d-none d-md-block w-100"
-            alt="about banner">
-        <img src="../../../../assets/img/MLZS/banner/mobile_banner/Blogs.jpg"
-            class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
+            <img src="../../../../assets/img/MLZS/banner/discover_blog.png" class="img-fluid d-none d-md-block w-100"
+                alt="about banner">
+            <img src="../../../../assets/img/MLZS/banner/mobile_banner/Blogs.jpg"
+                class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
         </div>
         <div class="subMenu_content mt-2">
             <app-sub-menu></app-sub-menu>
@@ -23,13 +23,13 @@
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <div style="position: relative; width: 250px;">
-  <input type="text" placeholder="Search" class="form-control" 
-         style="padding-left: 35px; width: 100%;" (input)="onSearchChange($event)">
-  <i class="fa fa-search" 
-     style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #888;"></i>
-</div>
+                            <input type="text" placeholder="Search" class="form-control"
+                                style="padding-left: 35px; width: 100%;" (input)="onSearchChange($event)">
+                            <i class="fa fa-search"
+                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+                        </div>
                         <!-- <input name="" id="" placeholder="Search" class="form-control" (input)="onSearchChange($event)"> -->
-                         
+
                     </div>
                 </div>
             </div>
@@ -50,9 +50,20 @@
                         <div *ngFor="let blog of lgImg; let i = index">
                             <ng-container *ngIf="i === 0">
                                 <div class="img_box_big">
-                                    <div *ngFor="let img of blog.logofiles">
+                                    <!-- <div *ngFor="let img of blog.logofiles">
                                         <img src="{{img.value}}" alt="blog">
+                                    </div> -->
+                                    <div *ngIf="blog?.logofiles?.length; else defaultBlogImg">
+                                        <div *ngFor="let img of blog.logofiles">
+                                            <img [src]="img?.value || 'assets/img/MLZS/MLZS.svg'" alt="Blog Image"
+                                                width="100%" />
+                                        </div>
                                     </div>
+
+                                    <ng-template #defaultBlogImg>
+                                        <img src="assets/img/MLZS/MLZS.svg" alt="MLZS" class="defaultImg"
+                                            width="100%" />
+                                    </ng-template>
                                 </div>
                             </ng-container>
                         </div>
@@ -64,9 +75,21 @@
                                     <div class="row">
                                         <div class="col-md-5" (click)="getBlogsItem(blog);">
                                             <div class="img_box">
-                                                <div *ngFor="let img of blog.logofiles">
+                                                <!-- <div *ngFor="let img of blog.logofiles">
                                                     <img src="{{img.value}}" alt="blog">
+                                                </div> -->
+                                                <div *ngIf="blog?.logofiles?.length; else defaultBlogImg">
+                                                    <div *ngFor="let img of blog.logofiles">
+                                                        <img [src]="img?.value || 'assets/img/MLZS/MLZS.svg'"
+                                                            alt="Blog Image" width="100%" />
+                                                    </div>
                                                 </div>
+
+                                                <ng-template #defaultBlogImg>
+                                                    <img src="assets/img/MLZS/MLZS.svg" alt="Default Blog Image"
+                                                        class="defaultImg" width="100%" />
+                                                </ng-template>
+
                                             </div>
                                         </div>
                                         <div class="col-md-7">
@@ -86,7 +109,8 @@
                             </div>
                             <div class="cascade-dots">
                                 <div class="dot" *ngFor="let dot of [].constructor(category.totalPages); let i = index"
-                                    [class.active]="(currentIndexMap[category.categoryId] || 0) / 3 === i" (click)="moveToSlide(category.categoryId,i)">
+                                    [class.active]="(currentIndexMap[category.categoryId] || 0) / 3 === i"
+                                    (click)="moveToSlide(category.categoryId,i)">
                                 </div>
                             </div>
                         </div>
