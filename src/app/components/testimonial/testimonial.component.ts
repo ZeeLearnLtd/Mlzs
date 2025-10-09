@@ -81,15 +81,18 @@ export class TestimonialComponent implements OnInit {
        // console.log('message', message)
         if (message) {
           this.testimonialData = message.text
-          //console.log('message', this.testimonialData)
+          this.testimonialDataList = this.testimonialData.map((video: any) => ({
+            ...video,
+            title: video.Title,
+            safeUrl: this.getSafeEmbedUrl(video.Keywards),
+          }));
+          this.errorMsg = false
+          this.sliderCall();
+        } else {
+          this.errorMsg = true
         }
-        this.testimonialDataList = this.testimonialData.map((video: any) => ({
-          ...video,
-          title: video.Title,
-          safeUrl: this.getSafeEmbedUrl(video.slug),
-        }));
+
       });
-    //console.log('testimonialDataList 1', this.testimonialDataList)
   }
 
 

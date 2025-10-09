@@ -40,13 +40,15 @@ export class AdmissionsComponent implements OnInit {
   cityListName: any;
   _franchise_code: string = "";
   stateListName: any;
+  ifLoader: boolean = false
   constructor(private _activeRoute: ActivatedRoute, private spinner: NgxSpinnerService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private projectService: ProjectSeoService, private router: Router,
     private fb: FormBuilder,
     private apiService: ApicallService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute, private common: CommonService) {
+    private activatedRoute: ActivatedRoute,
+    private common: CommonService) {
     this.admissionForm = fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -55,7 +57,7 @@ export class AdmissionsComponent implements OnInit {
       city: ['', Validators.required],
       class: ['', Validators.required],
       franchisee: ['', Validators.required],
-      // otp: ['', Validators.required],
+      otp: ['', Validators.required],
       // autorization: ['']
     })
   }
@@ -233,6 +235,8 @@ export class AdmissionsComponent implements OnInit {
 
   }
   onSubmit() {
+    this.ifLoader = true;
+    this.spinner.show();
     let obj = {
       "utm_medium": "Website",
       "utm_source": "Website",
@@ -257,11 +261,12 @@ export class AdmissionsComponent implements OnInit {
       "Country": "India",
       "Product": "259262000039670041"
     }
-    this.spinner.show();
+
     this.apiService.postAdmissionForm(obj).subscribe(
       res => {
         this.spinner.hide();
         this.toastr.success('Admission submit successfully!');
+        this.ifLoader = false;
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;
         this.router.navigate(['admission/thankyou'])

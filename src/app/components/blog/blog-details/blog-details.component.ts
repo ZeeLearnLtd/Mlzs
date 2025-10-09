@@ -59,16 +59,16 @@ export class BlogDetailsComponent implements OnInit {
     });
   }
   getNewsdata(param: string) {
-    this.getseo();
+    //this.getseo();
     let tbody = {
       Type: "blogs",
       slug: param,
       Projectid: environment.projectid  //this.projectId
     }
-
-    this.apiService.getBlogsDetails
+    // this.apiService.getBlogsDetails
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
       this.blog_detailsData = data.data
+      this.projectService.setmeta(data?.data);
     });
   }
 

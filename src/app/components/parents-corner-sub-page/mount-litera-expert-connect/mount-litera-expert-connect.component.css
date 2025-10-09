@@ -68,6 +68,18 @@ section{
   }
 
   @media screen and (max-width: 600px) {
+     li button {
+    width: 98% !important;
+  }
+
+  .nav-link:focus,
+  .nav-link {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+  }
     .start_school_banner{
       margin-top: 2rem;
     }

@@ -118,17 +118,24 @@ export class LocateASchoolComponent {
 
   selectZone(zone: any) {
     this.getZone = zone
-    let lgd = this.all_data_list.filter(function (lg: any) {
-      return lg.zone === zone;
-    }).map(function (lg: any) {
-      return lg;
-    })
-    const key = 'State_Name';
-    this.stateList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
-    this.searchForm.get('state')?.setValue("");
-    this.searchForm.get('city')?.setValue("");
-    this.searchForm.get('location')?.setValue("");
-    this.filterData();
+
+    if (zone == "") {
+      this.getAllDataList();
+    }
+    else {
+      let lgd = this.all_data_list.filter(function (lg: any) {
+        return lg.zone === zone;
+      }).map(function (lg: any) {
+        return lg;
+      })
+      const key = 'State_Name';
+      this.stateList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
+      this.searchForm.get('state')?.setValue("");
+      this.searchForm.get('city')?.setValue("");
+      this.searchForm.get('location')?.setValue("");
+      this.filterData();
+    }
+
 
   }
 

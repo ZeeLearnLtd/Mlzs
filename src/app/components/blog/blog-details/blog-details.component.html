@@ -10,27 +10,60 @@
             <app-sub-menu></app-sub-menu>
         </div>
        
-        <div class="box mt-3">
-            <div class="text-center mt-5">
-                <h1 class="text-center"><b>{{blog_detailsData.Title}}</b></h1>
+        <div class="box my-3">
+          <h1 class="text-center mt-5"><b>{{blog_detailsData?.Title}}</b></h1>
+            <div class="row my-4">
+              <div class="col-md-7">
+                <div class="content-box">
+            <div class="text-center">
                 <img src="../../../../assets/img/MLZS/prg_text_bg.png" alt="" class="text_bg">
             </div>
-            <p class="author_text">Author Name: {{blog_detailsData.MetaAuthor}}</p>
-            <p class="date_text">Date: {{blog_detailsData.dateCreated}}</p>
-            <div class="row">
-              <div class="col-md-7">
-                <p class="text-center m-0 p-0" [innerHTML]="blog_detailsData.long1"></p>
+            <p class="author_text">Author Name: {{blog_detailsData?.MetaAuthor}}</p>
+            <p class="date_text">Date: {{blog_detailsData?.dateCreated}}</p>
+            </div>
+                <p class="text-center m-0 p-0" [innerHTML]="blog_detailsData?.long1"></p>
               </div>
            
 <div class="col-md-5">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div
+    <!-- <div
       class="carousel-item"
       *ngFor="let item of blog_detailsData.files; let i = index"
       [class.active]="i === 0">
       <img [src]="item.url" class="d-block w-100" [alt]="item.filename" />
+    </div> -->
+    <div class="carousel-inner">
+
+  <!-- Check if files exist -->
+  <ng-container *ngIf="blog_detailsData?.files?.length; else defaultBlogCarousel">
+    <div
+      class="carousel-item"
+      *ngFor="let item of blog_detailsData.files; let i = index"
+      [class.active]="i === 0">
+
+      <img 
+        [src]="item?.url || 'assets/img/MLZS/MLZS.svg'" 
+        class="d-block w-100" 
+        [alt]="item?.filename || 'Default Blog Image'"
+      />
+
     </div>
+  </ng-container>
+
+  <!-- Fallback if no files -->
+  <ng-template #defaultBlogCarousel>
+    <div class="carousel-item active">
+      <img 
+        src="assets/img/MLZS/MLZS.svg" 
+        class="d-block w-100 defaultImg" 
+        alt="Default Blog Image"
+      />
+    </div>
+  </ng-template>
+
+</div>
+
   </div>
 
   <button

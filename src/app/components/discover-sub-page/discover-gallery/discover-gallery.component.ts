@@ -200,5 +200,7 @@ export class DiscoverGalleryComponent {
     }
 
   }
-
+  getGelleryItem(item: any) {
+    this.getFirstData = item.logofiles;
+  }
 }

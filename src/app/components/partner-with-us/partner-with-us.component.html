@@ -33,14 +33,14 @@
                             </div>
                             <div class="col-md-12 mt-3">
                                 <input type="text" placeholder="Mobile no*" class="form-control"
-                                    (keyup)="getMobileNO();" formControlName="mobile"
+                                   formControlName="mobile"
                                     [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
                                 <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
                                     <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
                                     <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
                                 </div>
                                 <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
-                                <!-- <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button> -->
+                                <button class="btn btn-sm verify_otp_btn"   (click)="getMobileNO();">Send OTP</button>
                                 <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
                                     formControlName="otp" [ngClass]="{ 'is-invalid': submitted && f.otp.errors }">
                                 <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
@@ -54,7 +54,7 @@
                             <select name="" id="" class="form-control" formControlName="state"
                                 (change)="selectState($event)"
                                 [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
-                                <option value="">State/District</option>
+                                <option value="">State</option>
                                 <option value="{{state.StateName}}" *ngFor="let state of stateList">
                                     {{state.StateName}}
                                 </option>
@@ -62,7 +62,7 @@
                             <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                 <span class="text-danger inValidMsg"
                                     *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
-                                    State/District is required
+                                    State is required
                                 </span>
                             </div>
                         </div>
@@ -81,7 +81,9 @@
                             </div>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <button class="btn read_mode w-100" (click)="validationForm()">Send</button>
+                            <button class="btn read_mode w-100" (click)="validationForm()">Send
+                                <span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span>
+                            </button>
                         </div>
 
                     </form>
@@ -126,14 +128,14 @@
                             </div>
                             <div class="col-md-12 mt-3">
                                 <input type="text" placeholder="Mobile no*" class="form-control"
-                                    (keyup)="getMobileNO();" formControlName="mobile"
+                                     formControlName="mobile"
                                     [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
                                 <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
                                     <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
                                     <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
                                 </div>
                                 <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
-                                <!-- <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button> -->
+                                <button class="btn btn-sm verify_otp_btn" (click)="getMobileNO();">Send OTP</button>
                                 <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
                                     formControlName="otp" [ngClass]="{ 'is-invalid': submitted && f.otp.errors }">
                                 <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
@@ -147,7 +149,7 @@
                             <select name="" id="" class="form-control" formControlName="state"
                                 (change)="selectState($event)"
                                 [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
-                                <option value="">State/District</option>
+                                <option value="">State</option>
                                 <option value="{{state.StateName}}" *ngFor="let state of stateList">
                                     {{state.StateName}}
                                 </option>
@@ -155,7 +157,7 @@
                             <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                 <span class="text-danger inValidMsg"
                                     *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
-                                    State/District is required
+                                    State is required
                                 </span>
                             </div>
                         </div>
@@ -174,7 +176,9 @@
                             </div>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <button class="btn read_mode w-100" (click)="validationForm()">Send</button>
+                            <button class="btn read_mode w-100" (click)="validationForm()">Send
+                                <span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span>
+                            </button>
                         </div>
 
                     </form>
@@ -353,7 +357,7 @@
         </div>
         <div class="faq_bg py-5">
             <div class="faq-box">
-              <div class="title_content text-center">
+              <div class="box title_content text-center">
             <h2 class="faq_title text-white text-center"><b>FAQs</b></h2>
             <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
             <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
@@ -363,67 +367,6 @@
         </div>
          <div class="award_content my-3">
     <app-awards-sub-page></app-awards-sub-page>
-            <!-- <div class="box my-3">
-                <div class="row mt-4">
-                    <div class="title_content text-left">
-                        <h2 class=""><b> Awards </b></h2>
-                        <img src="../../../assets/img/MLZS/prg_text_bg.png" class="award_bg_img" alt="">
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="">
-                            <p>At Mount Litera Zee School, our awards and recognitions are a testament to our dedication to educational excellence and innovation, setting new benchmarks in the academic world.</p>
-                            <p><strong>2023</strong></p>
-                            <div class="row mt-3">
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>Tech Circle Edge Insights - Business Transformation Award 2023</p></div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>The Economic Times Media Partner - Fortune Leadership Awards - Education Brand of the Year 2023</p></div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>Education Excellence Award</p></div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>Education Today - Ranked no. 1 for Best Sports Participation Opportunities</p></div>
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>Best CBSE School in North India</p></div>
-                              </div>
-
-                             <p class="mt-3"><strong>2024</strong></p>
-                            <div class="row mt-3">
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>Economic Times - Best Education Brands Zee Learn - 2024</p></div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>Elets World Education Summit 2024 - Excellence in Faculty Training</p></div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>Education Today - India School Merit Awards 2024</p></div>
-
-                                <div class="col-1"><img src="../../../assets/img/MLZS/right_icon.png" class="right_icon"
-                                        height="15px" alt=""></div>
-                                <div class="col-11 p-0"><p>India's Top CBSE Schools - Awarded for Holistic Education</p></div>
-                                
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="fr_img_content d-flex justify-content-center">
-                            <img src="../../../assets/img/MLZS/award.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>

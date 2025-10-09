@@ -8,10 +8,10 @@ width: 80%;
 }
 
 section{
-  background: url("../../../../assets/img/MLZS/bg_svg/start-school-bg.svg") no-repeat center center;
-  background-size: cover;
-  width: 100%;
-  min-height: 100vh;
+    background-image: url('../../../assets/img/MLZS/main_bg.png');
+    background-size: cover;
+    width: 100%;
+    padding: 25px 0px 50px 0px;
   }
 .date_content{
   font-size: 12px;
@@ -20,11 +20,6 @@ section{
 }
 .right_card{
   margin-bottom:20px;
-}
-::ng-deep p{
-  text-align: justify;
-  margin: 0;
-  padding: 0;
 }
 @media screen and (max-width: 600px) {
 .right_card{
@@ -55,22 +50,6 @@ section{
     background-color: #44C8F5;
     margin: 5px;
 }
-.programm_img_content img{
-    width: 85%;
-    }
-
-    .liter_img{
-        width: 50%;
-    }
-
-    .liter_content{
-        margin-left: 57px;
-    }
-
-  .fr_img_content img{
-    width: 80%;
-  }
-
   .title_content ul{
     padding: 0; 
     line-height: 30px;
@@ -103,51 +82,17 @@ section{
     height: 21px;
 }
 
-h1{
+h2{
     position: relative;
     z-index: 2;
-    font-size: 2rem;
 }
-::ng-deep p h2{
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  text-align: left;
-}
-::ng-deep p h3{
-  margin-top: 1rem;
-  text-align: left;
-}
-::ng-deep ul{
-  text-align: left;
-  padding-left: 0;
-}
-.form-control {
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #494a4b;
-    appearance:auto;
-    background-color: var(--bs-body-bg);
-    background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
 .date_text{
     font-size: 12px;
     color: #3f3d3d;
 }
 
-.input{
-    height: 30px;
-    font-size:14px;
-}
 
-.carousel-inner {
+.carousel-inner{
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -158,16 +103,4 @@ h1{
     object-fit: contain;
       height: 400px;
       width: 100%;
-}
-
-.author_text{
-  color: #014876;
-}
-
-.date_text{
-  color:#403C39;
-}
-
-.content-box{
-  /* margin-top: 2rem; */
 }

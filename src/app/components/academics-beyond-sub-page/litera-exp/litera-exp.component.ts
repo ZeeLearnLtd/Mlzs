@@ -21,7 +21,7 @@ export class LiteraExpComponent implements OnInit {
 
   getseo() {
     let tbody = {
-      slug: 'academics/students-experience',
+      slug: 'academics/litera-experience',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

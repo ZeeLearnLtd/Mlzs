@@ -3,15 +3,11 @@
     <button class="btn btn-sm admission_btn" routerLink="/admissions">Admissions now open at Mount Litera Zee School</button>
     <button class="btn btn-sm  right_botder_btn mx-3" routerLink="/partner-with-us">Partner with us</button>
     <button class="btn btn-sm  convert_btn" routerLink="/convert-to-an-mlzs">Convert to an MLZS</button>
-    <!-- <button class="btn search_btn" routerLink="/search">
-    <span class="material-symbols-outlined">
-        search
-       </span>
-   </button> -->
-    <div class="search-section">
+    <div class="search-section d-none d-sm-block">
     <div class="search-wrapper">
-      <i class="bi bi-search search-icon"></i>
-      <input type="text" class="form-control search-box" placeholder="Search">
+      <i class="bi bi-search search-icon" (click)="sendMessage()" routerLink="/search"></i>
+      <input type="text" class="form-control search-box"
+      [(ngModel)]="inputValue"  placeholder="Search" (keyup.enter)="sendMessage()">
     </div>
   </div>
    <div class="media_icon">
@@ -26,25 +22,6 @@
                         </a>
                     </div>
   </div>
-  
-<!-- <footer class="mobile_footer" id="mobile_footer">
-  <div class="footer-item">Admissions now open at Mount Litera Zee School</div>
-  <div class="footer-item">Partner with us</div>
-  <div class="footer-item">Convo to an MLZS</div>
-  
-  <div class="footer-item footer-social">
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  
-  <div class="footer-item">
-    <input type="text" placeholder="Search..." />
-  </div>
-</footer> -->
-
-
-
 <div class="whiteHeader" id="whiteHeader">
     <nav class="nav navbar navbar-expand-lg desktop_nav">
         <div class="container-fluid">
@@ -74,8 +51,8 @@
                   <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-1">Litera Foundational Stage 1</li>
                   <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-2">Litera Foundational Stage 2</li>
                   <li class="dropdown-item" routerLink="/programmes/litera-preparatory-stage">Litera Preparatory Stage</li>
-                  <li class="dropdown-item" routerLink="/programmes/middle-school">Litera Middle Stage</li>
-                  <li class="dropdown-item" routerLink="/programmes/secondary-school">Litera Secondary Stage</li>
+                  <li class="dropdown-item" routerLink="/programmes/litera-middle-stage">Litera Middle Stage</li>
+                  <li class="dropdown-item" routerLink="/programmes/litera-secondary-stage">Litera Secondary Stage</li>
                 </ul>
               </li>
           
@@ -84,9 +61,9 @@
                   ACADEMICS <br>AND BEYOND
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li class="dropdown-item" routerLink="/academics/students-experience">Litera Experience</li>
-                  <li class="dropdown-item" routerLink="/academics/co-curricular-activities">Litera Enrichment Programmes</li>
-                  <li class="dropdown-item" routerLink="/academics/nova">Litera Nova App</li>
+                  <li class="dropdown-item" routerLink="/academics/litera-experience">Litera Experience</li>
+                  <li class="dropdown-item" routerLink="/academics/litera-enrichment-programmes">Litera Enrichment Programmes</li>
+                  <li class="dropdown-item" routerLink="/academics/litera-nova-app">Litera Nova App</li>
                   <li class="dropdown-item" routerLink="/academics/literati">Literati</li>
                 </ul>
               </li>
@@ -100,9 +77,9 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item" routerLink="/parents-corner/childs-development">Child Development</li>
-                  <li class="dropdown-item" routerLink="/parents-corner/personalized-guidance">Mount Litera Expert Connect</li>
-                  <li class="dropdown-item" routerLink="/parents-corner/support">Mount Litera Parent Support Hub</li>
-                  <li class="dropdown-item" routerLink="/parents-corner/parents-experience">Parents' Testimonials</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/mount-litera-expert-connect">Mount Litera Expert Connect</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/mount-litera-parent-support-hub">Mount Litera Parent Support Hub</li>
+                  <li class="dropdown-item" routerLink="/parents-corner/parents-testimonials">Parents' Testimonials</li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -126,21 +103,22 @@
                   
                 </ul>
                 <li class="nav-item">
-                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us">LOCATE US</button>
               </li>
             </ul>
             <!-- <img src="../../../../assets/img/MLZS/imtb.png" class="brand_icon" width="13%" alt=""> -->
           </div>
         </div>
       </nav>
-      <nav class="nav navbar navbar-expand-lg mobile_nav">
+      <nav class="nav navbar navbar-expand-lg mobile_nav" id="mobile_nav">
         <div class="container-fluid">
           <div class="menu_icon" (click)="toggleMenu()"
            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="dropdown_menu"></div>
        
            <a href="https://demo.mountlitera.com/">
-            <img src="../../../../assets/img/MLZS/banner/mobile_banner/mlzs_mobile.png" width="13%" class="kidzee_logo_img" alt="">
+            <img src="../../../../assets/img/MLZS/banner/mobile_banner/mlzs_mobile.png" class="kidzee_logo_img" alt="">
             </a>
+            <img src="../../../../assets/img/MLZS/search_icon_img.png" class="search_img" routerLink="/search" alt="">
            <div class="collapse navbar-collapse "  id="navbarNav" #navbarCollapse>
             <ul class="navbar-nav ul_content">
               <li class="nav-item dropdown">
@@ -163,7 +141,7 @@
                   <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-1" (click)="closeMenu()">Litera Foundational Stage 1</li>
                   <li class="dropdown-item" routerLink="/programmes/litera-foundational-stage-2" (click)="closeMenu()">Litera Foundational Stage 2</li>
                   <li class="dropdown-item" routerLink="/programmes/litera-preparatory-stage" (click)="closeMenu()">Litera Preparatory Stage</li>
-                  <li class="dropdown-item" routerLink="/programmes/middle-school" (click)="closeMenu()">Litera Middle Stage</li>
+                  <li class="dropdown-item" routerLink="/programmes/litera-middle-stage" (click)="closeMenu()">Litera Middle Stage</li>
                   <li class="dropdown-item" routerLink="/programmes/secondary-school" (click)="closeMenu()">Litera Secondary Stage</li>
                 </ul>
               </li>
@@ -216,7 +194,7 @@
                 </ul>
               </li>
                <li class="nav-item">
-                <button class="nav-link active" aria-current="page" routerLink="/locate-us"> Locate Us</button>
+                <button class="nav-link active" aria-current="page" routerLink="/locate-us">LOCATE US</button>
               </li>
             </ul>
           

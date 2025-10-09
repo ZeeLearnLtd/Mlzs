@@ -9,16 +9,17 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-testimonials-details',
-  templateUrl: './testimonials-details.component.html',
-  styleUrls: ['./testimonials-details.component.css']
+  selector: 'app-testimonial-details',
+  templateUrl: './testimonial-details.component.html',
+  styleUrls: ['./testimonial-details.component.css']
 })
-export class TestimonialsDetailsComponent {
+export class TestimonialDetailsComponent {
   projectId = environment.projectid
 
   eventsDetailsData: any;
   img_content: any;
   getParms: any
+  testimonialsDetailsData: any;
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -42,13 +43,13 @@ export class TestimonialsDetailsComponent {
 
   getNewsdata(param: string) {
     let tbody = {
-      Type: "events",
+      Type: "testimonials",
       slug: param,
       Projectid: this.projectId
     }
-    this.apiService.getBlogsDetails
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
-      this.eventsDetailsData = data.data
+      this.testimonialsDetailsData = data.data;
+      this.projectService.setmeta(data?.data);
     });
   }
 }

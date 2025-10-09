@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="col-md-7">
-          <div class="slider desktop">
+          <!-- <div class="slider desktop">
             <div class="slides" [style.transform]="translateY">
               <div class="slide item_text" *ngFor="let slide of ParentTestimonial; let i = index"
                 [class.active]="i === currentIndex">
@@ -47,7 +47,51 @@
               <div class="dot" *ngFor="let slide of ParentTestimonial; let i = index"
                 [class.active]="i + 1 === currentIndex" (click)="moveToSlide(i)"></div>
             </div>
+          </div> -->
+         
+          <div class="desktop d-flex justify-content-center">
+            <div class="slider-container">
+  <div class="slider">
+    <div class="slides" [style.transform]="translateY">
+       <div class="slide item_text" *ngFor="let slide of ParentTestimonial; let i = index"
+                [class.active]="i === currentIndex">
+                <div class="row">
+                  <div class="col-2">
+                    <div class="item_img">
+                      <a [href]="slide.safeUrl" data-fancybox="gallery1" class="fancybox" *ngIf="slide.slug">
+                        <img src="../../../assets/img/MLZS/youtube_img.png" loading="lazy"
+                          class="video_iframe pinchzoom_img" alt="youtube_img">
+                      </a>
+                      <div *ngIf="!slide.slug">
+                        <div *ngFor="let img of slide.logofiles">
+                          <img src="{{img.value}}" alt="{{img.key}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <p class="shortPara" title="{{ slide.short }}">{{ slide.short }}</p>
+                    <strong>{{ slide.title }}</strong>
+                  </div>
+                </div>
+              </div>
+    </div>
+  </div>
+
+  <!-- Dots navigation on the right side -->
+  <div class="dots">
+    <span *ngFor="let slide of ParentTestimonial; let i = index"
+          class="dot"
+          [class.active]="i === currentIndex"
+          (click)="selectSlide(i)">
+    </span>
+  </div>
+</div>
+
           </div>
+         
+         
+         
           <div class="mobile">
             <div class="home-demo mt-3">
                     <div class="owl-carousel owl-theme news_owl" id="">

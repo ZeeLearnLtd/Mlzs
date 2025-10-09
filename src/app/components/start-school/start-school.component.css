@@ -156,6 +156,9 @@ h4 { font-family: Poppins; overflow: hidden; }
   margin-bottom:0.5rem;
 }
 @media (max-width: 600px) {
+  .about_img_content img{
+    width: 100%;
+}
   .calling_btn_mobile img{
         position: fixed;
         right: 0rem;

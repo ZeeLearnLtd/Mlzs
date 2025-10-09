@@ -43,13 +43,13 @@ export class EventsDetailsComponent {
       slug: param,
       Projectid: this.projectId
     }
-    this.apiService.getBlogsDetails
     this.apiService.getBlogsDetails(tbody).subscribe((data: any) => {
-      this.eventsDetailsData = data.data
+      this.eventsDetailsData = data.data;
+      this.projectService.setmeta(data?.data);
     });
   }
 
-  getsanitizehtml(data:any){
+  getsanitizehtml(data: any) {
     return this.sanitizer.bypassSecurityTrustHtml(data);
   }
 

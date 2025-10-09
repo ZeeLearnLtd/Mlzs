@@ -67,7 +67,7 @@ export class MountLiteraParentSupportHubComponent {
 
   getseo() {
     let tbody = {
-      slug: 'parents-corner/support',
+      slug: 'parents-corner/mount-litera-parent-support-hub',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

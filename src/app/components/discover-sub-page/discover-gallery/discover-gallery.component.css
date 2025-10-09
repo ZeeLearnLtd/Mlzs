@@ -35,6 +35,7 @@ small {
     border: 1px solid #eee;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
 }
   .cascade-slide{
     height:auto !important;

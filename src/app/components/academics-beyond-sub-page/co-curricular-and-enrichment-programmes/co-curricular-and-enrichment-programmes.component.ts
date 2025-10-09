@@ -17,7 +17,7 @@ export class CoCurricularAndEnrichmentProgrammesComponent {
 
   getseo() {
     let tbody = {
-      slug: 'academics/co-curricular-activities',
+      slug: 'academics/litera-enrichment-programmes',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

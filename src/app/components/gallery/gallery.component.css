@@ -29,8 +29,10 @@
 }
 
 .gallery_content {
-    width: 85%;
+    /* width: 85%; */
     margin: auto;
 }
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+
+}
