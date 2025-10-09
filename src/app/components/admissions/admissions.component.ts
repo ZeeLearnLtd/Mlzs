@@ -55,8 +55,8 @@ export class AdmissionsComponent implements OnInit {
       city: ['', Validators.required],
       class: ['', Validators.required],
       franchisee: ['', Validators.required],
-      otp: ['', Validators.required],
-      autorization: ['']
+      // otp: ['', Validators.required],
+      // autorization: ['']
     })
   }
   ngOnInit(): void {

@@ -12,7 +12,9 @@ section {
   width: 100%;
   min-height: 100vh;
 }
-
+h6{
+  font-weight: 600;
+}
 small {
   font-size: 11px;
 }
@@ -273,7 +275,7 @@ h1 {
 
 .dot.active {
     background: #673ab7;
-    height: 25px;
+    /* height: 25px; */
     border-radius: 10px;
 }
 

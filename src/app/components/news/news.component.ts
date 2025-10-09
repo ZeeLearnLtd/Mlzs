@@ -53,7 +53,14 @@ export class NewsComponent implements OnInit {
     }
 
   }
-
+  ngOnDestroy() {
+    if (isPlatformBrowser(this.platformId)) {
+      const $owl = $('.news_owl');
+      if ($owl.hasClass('owl-loaded')) {
+        $owl.trigger('destroy.owl.carousel');
+      }
+    }
+  }
   getEvents_data() {
     // let tbody = {
     //   Type: "news",

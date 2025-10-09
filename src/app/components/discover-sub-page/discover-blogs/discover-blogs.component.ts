@@ -78,13 +78,13 @@ export class DiscoverBlogsComponent {
             center: true,
             responsive: {
               0: {
-                items: 1, // On mobile (0px and up), show 1 item
+                items: 1,
               },
               600: {
-                items: 2, // On tablets (600px and up), show 2 items
+                items: 2,
               },
               1000: {
-                items: 3, // On larger screens (1000px and up), show 3 items
+                items: 3,
               },
             }
           });
@@ -147,7 +147,6 @@ export class DiscoverBlogsComponent {
             (typeof news.category === 'number' && news.category === cat.categoryId)
           )
         }));
-        console.log('categoryWiseData', this.categoryWiseData)
         this.prepareCategoryWiseData();
         this.spinner.hide();
       } else {

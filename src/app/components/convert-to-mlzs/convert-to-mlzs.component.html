@@ -2,9 +2,9 @@
     <div class="main_content">
         <div class="start_school_banner desktop_content">
          <div class="row">
-            <div class="col-md-7">
-            </div>
-            <div class="col-md-5 d-flex justify-content-end justify-align-center">
+            <!-- <div class="col-md-7">
+            </div> -->
+            <!-- <div class="col-md-12 d-flex justify-content-end justify-align-center"> -->
                 <div class="francine_form">
                     <h5 class="text-left title">Fill out the form to get started!</h5>
                     <div class="form">
@@ -141,7 +141,7 @@
                                     </span>
                                 </div>
                              </div>
-                            <!-- <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-1">
                              <label for="captchaInput" class="form-label">Enter Captcha</label>
     <div class="d-flex align-items-center gap-3">
       <div class="captcha-text">{{ captchaText }}</div>
@@ -150,10 +150,10 @@
       <button type="button" class="btn btn-outline-secondary btn-sm"
               (click)="generateCaptcha()">↻</button>
     </div>
-    <button type="submit" class="btn btn-primary mt-3">Verify</button>
+    <!-- <button type="submit" class="btn btn-primary mt-3">Verify</button> -->
     <div *ngIf="captchaValid === true" class="text-success mt-2">✅ Captcha Verified</div>
     <div *ngIf="captchaValid === false" class="text-danger mt-2">❌ Incorrect Captcha</div>
-</div> -->
+</div>
                              <div class="col-md-12 mt-1">
                                 <button class="btn read_mode w-100"(click)="validationForm();">Submit</button>
                              </div>
@@ -161,7 +161,7 @@
                         </form>
                     </div>
                   </div>
-            </div>
+            <!-- </div> -->
          </div>
         </div>
 
@@ -172,7 +172,7 @@
                </div>
                <div class="col-md-5 d-flex justify-content-center justify-align-center">
                    <div class="francine_form">
-                    <h5 class="text-left title">Admission Form</h5>
+                    <h5 class="text-left title">Fill out the form to get started!</h5>
                     <div class="form">
                         <form [formGroup]="admissionForm">
                         <div class="col-md-row">
@@ -201,6 +201,14 @@
                                 </div>
                             </div>
                             <div class="col-md-12 mt-1">
+                                <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
+                                [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                 <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
+                                <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
                                  <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
                                   (keyup)="getMobileNO();" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                    <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
@@ -217,13 +225,14 @@
                                    <div *ngIf="otp_ValidMsg" class="validMsg">OTP verified successfully</div>
                                     <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
                             </div>
-                            <div class="col-md-12 mt-1">
+                            <div class="col-md-12 mt-1 dropdownIcon">
                                <select name="" id="" class="form-control"
                                formControlName="state" (change)="onChangeState($event.target)"
                                [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
-                                <option value="">Which state are you searching for schools in?</option>
+                                <option value="">State</option>
                                 <option value="{{a.State_ID}}"*ngFor="let a of stateContentDataList">{{a.StateName}}</option>
                                </select>
+                                <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                     <span class="text-danger msg_txt"
                                         *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
@@ -231,18 +240,88 @@
                                     </span>
                                 </div>
                             </div>
-                             <div class="col-md-12 mt-1">
-                                <div class="row">
-                                    <div class="col-1">
-                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                    </div>
-                                    <div class="col-11">
-                                        <label for="vehicle1">I authorize MLZS and its representatives to Call, SMS, Email or WhatsApp me about Admission Proccess. This consent overrides any registration for DNC/NDNC.</label>
-                                    </div>
+                            <div class="col-md-12 mt-1 dropdownIcon">
+                                <select name="" id="" class="form-control"
+                                formControlName="city" 
+                                 [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                                 <option value="">City</option>
+                                 <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
+                                </select>
+                                 <img src="../../../assets/img/MLZS/down_arrow_icon.png" class="select-arrow" alt="down_arrow_icon">
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
+                                        City is required
+                                    </span>
                                 </div>
-                            </div>
+                             </div>
+
                              <div class="col-md-12 mt-1">
-                                <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
+                                <input type="text" placeholder="School Name" class="form-control" formControlName="schoolName"
+                                [ngClass]="{ 'is-invalid': submitted && f.schoolName.errors }">
+                                 <div *ngIf="submitted && f.schoolName.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.schoolName.touched || submitted) && f.schoolName.errors?.required">
+                                        School Name is required
+                                    </span>
+                                </div>
+                             </div>
+                             <div class="col-md-12 mt-1">
+                                <input type="text" placeholder="School Website URL" class="form-control" formControlName="schoolURL"
+                                [ngClass]="{ 'is-invalid': submitted && f.schoolURL.errors }">
+                                <div *ngIf="submitted && f.schoolURL.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.schoolURL.touched || submitted) && f.schoolURL.errors?.required">
+                                        School URL is required
+                                    </span>
+                                </div>
+                                <!-- <select name="" id="" class="form-control" formControlName="class"
+                                 (change)="onchangeClass($event.target)"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
+                                 <option value="">Admission for which class?</option>
+                                 <option value="{{class.SchoolClassID}}" *ngFor="let class of selectClasslist">{{class.ClassName}}</option>
+                                </select>
+                                <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.class.touched || submitted) && f.class.errors?.required">
+                                        Class is required
+                                    </span>
+                                </div> -->
+                             </div>
+                             <div class="col-md-12 mt-1">
+                                <input type="text" placeholder="School City" class="form-control" formControlName="schoolCity"
+                                [ngClass]="{ 'is-invalid': submitted && f.schoolCity.errors }">
+                                <div *ngIf="submitted && f.schoolCity.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.schoolCity.touched || submitted) && f.schoolCity.errors?.required">
+                                        School City is required
+                                    </span>
+                                </div>
+                             </div>
+                             <div class="col-md-12 mt-1">
+                                <input type="text" placeholder="School Locality" class="form-control" formControlName="schoolLocality"
+                                [ngClass]="{ 'is-invalid': submitted && f.schoolLocality.errors }">
+                                <div *ngIf="submitted && f.schoolLocality.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.schoolLocality.touched || submitted) && f.schoolLocality.errors?.required">
+                                        School Locality is required
+                                    </span>
+                                </div>
+                             </div>
+                            <div class="col-md-12 mt-1">
+                             <label for="captchaInput" class="form-label">Enter Captcha</label>
+    <div class="d-flex align-items-center gap-3">
+      <div class="captcha-text">{{ captchaText }}</div>
+      <input type="text" id="captchaInput" class="form-control"
+             placeholder="Enter Captcha" formControlName="captchaInput">
+      <button type="button" class="btn btn-outline-secondary btn-sm"
+              (click)="generateCaptcha()">↻</button>
+    </div>
+    <!-- <button type="submit" class="btn btn-primary mt-3">Verify</button> -->
+    <div *ngIf="captchaValid === true" class="text-success mt-2">✅ Captcha Verified</div>
+    <div *ngIf="captchaValid === false" class="text-danger mt-2">❌ Incorrect Captcha</div>
+</div>
+                             <div class="col-md-12 mt-1">
+                                <button class="btn read_mode w-100"(click)="validationForm();">Submit</button>
                              </div>
                         </div>
                         </form>

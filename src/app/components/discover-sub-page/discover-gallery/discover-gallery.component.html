@@ -61,16 +61,16 @@
                                 <div class="cascade-slide item_text"
                                     *ngFor="let img of photoGalleryData; let i = index">
                                     <div class="row">
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="img_box">
                                                 <div *ngFor="let img of img.logofiles">
                                                     <img src="{{img?.value}}" width="100%" alt="">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-7">
+                                        <div class="col-md-8">
                                             <div class="news_text">
-                                                <h6><strong>{{ img.Title }}</strong></h6>
+                                                <h6>{{ img.Title }}</h6>
                                                 <p class="m-0 p-0 long_para">{{ img.short }}</p>
                                                 <p class="m-0 p-0 date_content mt-2">Date: {{img.StartDate}}</p>
                                             </div>

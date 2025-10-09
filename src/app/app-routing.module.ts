@@ -61,6 +61,8 @@ import { CurriculumComponent } from './components/curriculum/curriculum.componen
 import { PartnerWithUsComponent } from './components/partner-with-us/partner-with-us.component';
 import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-mlzs.component';
 import { AcademicsMainPageComponent } from './components/academics-beyond-sub-page/academics-main-page/academics-main-page.component';
+import { TestimonialsDetailsComponent } from './testimonials-details/testimonials-details.component';
+import { SearchComponent } from './components/search/search.component';
 const routes: Routes = [
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
@@ -71,6 +73,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'programmes', component: ProgrammesMainPageComponent },
       { path: 'academics', component: AcademicsMainPageComponent },
+      { path: 'search', component: SearchComponent },
       { path: 'academics-beyond/litera-enrichment-programmes', component: AcademicsBeyondComponent },
       { path: 'start-school', component: StartSchoolComponent },
       { path: 'parents-corner', component: ParentsCornerComponent },
@@ -108,6 +111,8 @@ const routes: Routes = [
       { path: 'events/:name', component: EventsDetailsComponent },
       { path: 'faqs', component: DiscoverFaqsComponent },
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
+      { path: 'testimonials/:name', component: TestimonialsDetailsComponent },
+
       { path: 'achievements', component: DiscoverAchievementsComponent },
       { path: 'curriculum', component: CurriculumComponent },
       { path: 'partner-with-us', component: PartnerWithUsComponent },

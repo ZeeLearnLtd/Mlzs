@@ -13,13 +13,15 @@ declare var $: any;  // Declare jQuery
   templateUrl: './testimonial.component.html',
   styleUrls: ['./testimonial.component.css'],
 })
-export class TestimonialComponent implements AfterViewInit, OnInit {
+export class TestimonialComponent implements OnInit {
   projectId = environment.projectid
   project$: Observable<any> | undefined;
   subscriptionnav!: Subscription;
   testimonydata: any;
   testimonialData: any = [];
   testimonialDataList: any = [];
+  isLoading: boolean = true;
+  errorMsg: boolean = false;
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private route: ActivatedRoute,
@@ -32,9 +34,10 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
     //
   }
   ngOnInit(): void {
-
+    this.testimonialDataList = [''];
+    this.gettestimonial_data();
   }
-  ngAfterViewInit(): void {
+  sliderCall() {
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         var owl = $(".news_owl");
@@ -58,11 +61,18 @@ export class TestimonialComponent implements AfterViewInit, OnInit {
           }
         });
       }, 1000)
+      this.isLoading = false;
     }
-    this.gettestimonial_data();
   }
 
-
+  ngOnDestroy() {
+    if (isPlatformBrowser(this.platformId)) {
+      const $owl = $('.news_owl');
+      if ($owl.hasClass('owl-loaded')) {
+        $owl.trigger('destroy.owl.carousel');
+      }
+    }
+  }
 
   gettestimonial_data() {
     this.subscriptionnav = this.projectService
