@@ -48,7 +48,7 @@ export class ParentsTestimonialsComponent {
 
   getseo() {
     let tbody = {
-      slug: 'parents-corner/parents-experience',
+      slug: 'parents-corner/parents-testimonials',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

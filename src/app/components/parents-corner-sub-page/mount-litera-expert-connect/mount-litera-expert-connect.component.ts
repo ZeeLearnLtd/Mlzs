@@ -68,7 +68,7 @@ export class MountLiteraExpertConnectComponent {
 
   getseo() {
     let tbody = {
-      slug: 'parents-corner/personalized-guidance',
+      slug: 'parents-corner/mount-litera-expert-connect',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

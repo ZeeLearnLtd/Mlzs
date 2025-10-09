@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./convert-to-mlzs.component.css']
 })
 export class ConvertToMLZSComponent {
+  ifLoader: boolean = false;
   captchaText: string = '';
   captchaForm!: FormGroup;
   captchaValid: boolean | null = null;
@@ -154,6 +155,7 @@ export class ConvertToMLZSComponent {
 
   }
   onSubmit() {
+    this.ifLoader = true;
     let obj = {
       "utm_medium": "Website",
       "utm_source": "Website",
@@ -180,6 +182,7 @@ export class ConvertToMLZSComponent {
     this.apiService.savefranchiseeData(obj).subscribe(
       res => {
         this.toastr.success('Form submit successfully!');
+        this.ifLoader = true;
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;
         this.router.navigate(['franchise/thankyou'])

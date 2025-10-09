@@ -47,26 +47,45 @@
                     <h4>{{ category.categoryname }}</h4>
 
                     <div class="col-md-5 category_blog_content">
-                        <div *ngFor="let blog of lgImg; let i = index">
+                        <!-- <div *ngFor="let blog of lgImg; let i = index">
                             <ng-container *ngIf="i === 0">
                                 <div class="img_box_big">
-                                    <!-- <div *ngFor="let img of blog.logofiles">
+                                    <div *ngFor="let img of blog.logofiles">
                                         <img src="{{img.value}}" alt="blog">
-                                    </div> -->
-                                    <div *ngIf="blog?.logofiles?.length; else defaultBlogImg">
-                                        <div *ngFor="let img of blog.logofiles">
-                                            <img [src]="img?.value || 'assets/img/MLZS/MLZS.svg'" alt="Blog Image"
-                                                width="100%" />
-                                        </div>
                                     </div>
-
-                                    <ng-template #defaultBlogImg>
-                                        <img src="assets/img/MLZS/MLZS.svg" alt="MLZS" class="defaultImg"
-                                            width="100%" />
-                                    </ng-template>
                                 </div>
                             </ng-container>
-                        </div>
+                        </div> -->
+                         <ng-container *ngIf="category.blogsContent?.length; else noBlog">
+      <div class="img_box_big">
+        <ng-container *ngIf="category.blogsContent[0].logofiles?.length; else defaultBlogImg">
+          <img 
+            [src]="category.blogsContent[0].logofiles[0]?.value || 'assets/img/MLZS/MLZS.svg'" 
+            alt="{{ category.blogsContent[0].Title || 'Blog Image' }}" 
+            width="100%" 
+          />
+        </ng-container>
+        <ng-template #defaultBlogImg>
+          <img 
+            src="assets/img/MLZS/MLZS.svg" 
+            alt="Default Blog Image" 
+            width="100%" 
+            class="defaultImg"
+          />
+        </ng-template>
+
+      </div>
+    </ng-container>
+    <ng-template #noBlog>
+      <div class="img_box_big">
+        <img 
+          src="assets/img/MLZS/MLZS.svg" 
+          alt="No Blog" 
+          width="100%" 
+          class="defaultImg"
+        />
+      </div>
+    </ng-template>
                     </div>
                     <div class="col-md-7">
                         <div class="cascade-slider_container">

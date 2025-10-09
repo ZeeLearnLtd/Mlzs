@@ -669,3 +669,22 @@ margin-top: 4rem;
 .defaultImg{
     object-fit: contain !important;
 }
+.spinner-right {
+  position: absolute;
+  right: 10px;     /* border पासून 10px अंतर */
+  top: 50%;
+  transform: translateY(-50%);
+}
+.verify_otp_btn {
+  background-color: #44C8F5;
+  color: #00467A;
+  padding: 2px 10px;
+  font-size: 11px;
+  margin: 5px 0px 8px 0px;
+  float: right;
+}
+
+.verify_otp_btn:hover {
+  background-color: #44C8F5;
+  color: #00467A;
+}

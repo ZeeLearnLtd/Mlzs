@@ -47,12 +47,13 @@
                                 <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
                                 <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
                                  <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
-                                  (keyup)="getMobileNO();" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                   [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                    <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
                                     <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
                                     <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
                                 </div>
                                      <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
+                                     <button class="btn btn-sm verify_otp_btn"   (click)="getMobileNO();">Send OTP</button>
                                    <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
                                    [ngClass]="{ 'is-invalid': submitted && f.otp.errors }"formControlName="otp">
                                   <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
@@ -129,8 +130,9 @@
                                 </div>
                             </div>
                              <div class="col-md-12 mt-1">
-                                <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
-                             </div>
+                                <button class="btn read_mode w-100"(click)="validationForm();">Send<span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span></button>
+                           
+                            </div>
                         </div>
                         </form>
                     </div>
@@ -184,12 +186,13 @@
                                 <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
                                 <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
                                  <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
-                                  (keyup)="getMobileNO();" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                  [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
                                    <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
                                     <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
                                     <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
                                 </div>
                                      <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
+                                   <button class="btn btn-sm verify_otp_btn"   (click)="getMobileNO();">Send OTP</button>
                                    <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
                                    [ngClass]="{ 'is-invalid': submitted && f.otp.errors }"formControlName="otp">
                                   <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
@@ -267,7 +270,7 @@
                                 </div>
                             </div>
                              <div class="col-md-12 mt-1">
-                                <button class="btn read_mode w-100"(click)="validationForm();">Send <i class="fa fa-long-arrow-right mx-2"></i></button>
+                                <button class="btn read_mode w-100"(click)="validationForm();">Send <span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span></button>
                              </div>
                         </div>
                         </form>
