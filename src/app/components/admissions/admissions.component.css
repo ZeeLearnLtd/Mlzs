@@ -136,6 +136,10 @@ width: 90%;
 }
 
 @media screen and (max-width: 600px) {
+    form{
+  height:100% !important;
+  padding: 0 !important;
+}
     .francine_form strong{
     color: rgba(1, 72, 118, 1);
     font-size: 1rem;
@@ -287,6 +291,7 @@ width: 90%;
     border-radius: 5px;
     width: auto !important;
     margin: 15px 15px;
+    width: 100% !important;
 }
     #title_content h1{
     position: relative;
@@ -320,7 +325,12 @@ margin-top: 10px;
     font-size: 13px;
     border-radius: 5px;
     width: 30%;
-    margin: 15px 0px;
+    margin:0px;
+}
+.read_mode:hover{
+background-color: #44C8F5 !important;
+color: #004877 !important;
+border: none !important;
 }
 
 .select-arrow {
@@ -331,4 +341,8 @@ margin-top: 10px;
   width: 22px;
   height: 22px;
   object-fit: cover;
+}
+form{
+  height: 40vw;
+  padding: 1rem 0 3rem 0;
 }

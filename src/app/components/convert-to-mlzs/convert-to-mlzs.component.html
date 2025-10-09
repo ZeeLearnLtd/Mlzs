@@ -162,7 +162,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-1">
-                                    <button class="btn read_mode w-100" (click)="validationForm();">Submit</button>
+                                    <button class="btn read_mode w-100" (click)="validationForm();">Submit
+                                        <span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span>
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -329,7 +331,9 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12 mt-1">
-                                        <button class="btn read_mode w-100" (click)="validationForm();">Submit</button>
+                                        <button class="btn read_mode w-100" (click)="validationForm();">Submit
+                                            <span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span>
+                                        </button>
                                     </div>
                                 </div>
                             </form>

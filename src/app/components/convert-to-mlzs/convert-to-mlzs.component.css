@@ -113,8 +113,13 @@ width: 80%;
 .mobile_content{
     display: none;
 }
-
+form{
+    height: 42vw !important;
+}
 @media screen and (max-width: 600px) {
+    form{
+    height: 100% !important;
+}
     #desktop_content{
         display: none !important;
     }
@@ -290,6 +295,10 @@ margin-top: 10px;
     border-radius: 5px;
     width: 30%;
     margin: 15px 0px;
+}
+.read_mode:hover{
+    background-color: #44C8F5 !important;
+    color: #004877 !important;
 }
 .select-arrow {
   position: relative;

@@ -40,6 +40,7 @@ export class AdmissionsComponent implements OnInit {
   cityListName: any;
   _franchise_code: string = "";
   stateListName: any;
+  ifLoader: boolean = false
   constructor(private _activeRoute: ActivatedRoute, private spinner: NgxSpinnerService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private projectService: ProjectSeoService, private router: Router,
@@ -234,6 +235,7 @@ export class AdmissionsComponent implements OnInit {
 
   }
   onSubmit() {
+    this.ifLoader = true;
     this.spinner.show();
     let obj = {
       "utm_medium": "Website",
@@ -264,6 +266,7 @@ export class AdmissionsComponent implements OnInit {
       res => {
         this.spinner.hide();
         this.toastr.success('Admission submit successfully!');
+        this.ifLoader = false;
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;
         this.router.navigate(['admission/thankyou'])

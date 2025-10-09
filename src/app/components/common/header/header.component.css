@@ -313,8 +313,8 @@ ul li a {
         width: 28px;
         height: 28px;
         margin-top:22px !important;
-        margin-right: 5px;
-
+        position: relative !important;
+        bottom: 7px;
     }
 
     .navbar-toggler {
