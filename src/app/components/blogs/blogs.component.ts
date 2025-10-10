@@ -31,24 +31,25 @@ export class BlogsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => {
-        $('#carousel1').owlCarousel({
-          items: 1,
-          margin: 10,
-          loop: true,
-          autoplay: false,
-          nav: false,
-          dots: true
-        });
-      }, 2000);
-    }
+    // if (isPlatformBrowser(this.platformId)) {
+    //   setTimeout(() => {
+    //     $('#carousel1').owlCarousel({
+    //       items: 1,
+    //       margin: 10,
+    //       loop: true,
+    //       autoplay: false,
+    //       nav: false,
+    //       dots: true
+    //     });
+    //   }, 2000);
+    // }
     this.subscriptionnav = this.projectService
       .onblogMessage()
       .subscribe((message) => {
         this.spinner = false
         if (message) {
           this.blogdata = message.text;
+          console.log('blogdata', this.blogdata);
         }
       });
     this.getblog_data();

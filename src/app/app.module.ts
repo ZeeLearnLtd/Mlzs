@@ -98,6 +98,8 @@ import { AwardsSubPageComponent } from './components/awards-sub-page/awards-sub-
 import { AcademicsMainPageComponent } from './components/academics-beyond-sub-page/academics-main-page/academics-main-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { TestimonialDetailsComponent } from './components/testimonial-details/testimonial-details.component';
+import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
+import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 interface NgxSpinnerConfig {
   type?: string;
 }
@@ -192,7 +194,9 @@ interface NgxSpinnerConfig {
     AwardsSubPageComponent,
     AcademicsMainPageComponent,
     SearchComponent,
-    TestimonialDetailsComponent
+    TestimonialDetailsComponent,
+    TermsOfUseComponent,
+    DisclaimerComponent
   ],
   imports: [
 
