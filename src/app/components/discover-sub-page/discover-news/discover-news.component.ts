@@ -74,13 +74,21 @@ export class DiscoverNewsComponent {
         this.alldata = JSON.parse(res);
         this.distinctYears = Array.from(
           new Set(
-            this.alldata.map((item: any) => new Date(item.StartDate).getFullYear())
+            this.alldata
+              .map((item: any) => {
+                const date = new Date(item.StartDate);
+                return isNaN(date.getTime()) ? null : date.getFullYear();
+              })
+              .filter((year: any): year is number => year !== null) // remove nulls
           )
         );
         this.distinctKeywards = Array.from(
           new Set(
-            this.alldata.map((item: any) => item.Keywards))
-        )
+            this.alldata
+              .map((item: any) => item.Keywards?.trim()) // trim ने spaces काढले
+              .filter((kw: string) => kw && kw !== '')  // रिकामे values वगळले
+          )
+        );
       } else {
         this.newsData = [];
       }

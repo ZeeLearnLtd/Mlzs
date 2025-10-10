@@ -68,9 +68,19 @@ export class DiscoverEventsComponent {
         let res = data.data[0].contentData
         this.eventsData = JSON.parse(res);
         this.alldata = JSON.parse(res);
+        // this.distinctYears = Array.from(
+        //   new Set(
+        //     this.alldata.map((item: any) => new Date(item.StartDate).getFullYear())
+        //   )
+        // );
         this.distinctYears = Array.from(
           new Set(
-            this.alldata.map((item: any) => new Date(item.StartDate).getFullYear())
+            this.alldata
+              .map((item: any) => {
+                const date = new Date(item.StartDate);
+                return isNaN(date.getTime()) ? null : date.getFullYear();
+              })
+              .filter((year: any): year is number => year !== null) // remove nulls
           )
         );
 

@@ -32,14 +32,14 @@
                             </div>
                             <div class="col-md-12 mt-3">
                                 <input type="text" placeholder="Mobile no*" class="form-control"
-                                    (keyup)="getMobileNO();" formControlName="mobile"
+                                     formControlName="mobile"
                                     [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
                                 <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
                                     <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
                                     <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
                                 </div>
                                 <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
-                                <!-- <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button> -->
+                                <button class="btn btn-sm verify_otp_btn" (click)="getMobileNO();">Send OTP</button>
                                 <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
                                     formControlName="otp" [ngClass]="{ 'is-invalid': submitted && f.otp.errors }">
                                 <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
@@ -61,7 +61,7 @@
                             <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                 <span class="text-danger inValidMsg"
                                     *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
-                                    State/District is required
+                                    State is required
                                 </span>
                             </div>
                         </div>
@@ -80,7 +80,9 @@
                             </div>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <button class="btn read_mode w-100" (click)="validationForm()">Send</button>
+                            <button class="btn read_mode w-100" (click)="validationForm()">Send
+                                <span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span>
+                            </button>
                         </div>
 
                     </form>
@@ -122,14 +124,14 @@
                             </div>
                             <div class="col-md-12 mt-3">
                                 <input type="text" placeholder="Mobile no*" class="form-control"
-                                    (keyup)="getMobileNO();" formControlName="mobile"
+                                    formControlName="mobile"
                                     [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
                                 <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
                                     <span *ngIf="f.mobile.errors?.required">Mobile is required.</span>
                                     <span *ngIf="f.mobile.errors?.pattern">Please, Enter 10 digit Mobile.</span>
                                 </div>
                                 <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
-                                <!-- <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button> -->
+                                 <button class="btn btn-sm verify_otp_btn" (click)="getMobileNO();">Send OTP</button>
                                 <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
                                     formControlName="otp" [ngClass]="{ 'is-invalid': submitted && f.otp.errors }">
                                 <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
@@ -143,7 +145,7 @@
                             <select name="" id="" class="form-control" formControlName="state"
                                 (change)="selectState($event)"
                                 [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
-                                <option value="">State/District</option>
+                                <option value="">State</option>
                                 <option value="{{state.StateName}}" *ngFor="let state of stateList">
                                     {{state.StateName}}
                                 </option>
@@ -151,7 +153,7 @@
                             <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                 <span class="text-danger inValidMsg"
                                     *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
-                                    State/District is required
+                                    State is required
                                 </span>
                             </div>
                         </div>
@@ -170,7 +172,9 @@
                             </div>
                         </div>
                         <div class="col-md-12 mt-4">
-                            <button class="btn read_mode w-100" (click)="validationForm()">Send</button>
+                            <button class="btn read_mode w-100" (click)="validationForm()">Send
+                                <span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span>
+                            </button>
                         </div>
                     </form>
                 </div>

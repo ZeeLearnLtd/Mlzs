@@ -63,6 +63,8 @@ import { ConvertToMLZSComponent } from './components/convert-to-mlzs/convert-to-
 import { AcademicsMainPageComponent } from './components/academics-beyond-sub-page/academics-main-page/academics-main-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { TestimonialDetailsComponent } from './components/testimonial-details/testimonial-details.component';
+import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
+import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 const routes: Routes = [
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
@@ -80,6 +82,10 @@ const routes: Routes = [
       { path: 'admissions', component: AdmissionsComponent },
       { path: 'admissions/:frcode', component: AdmissionsComponent },
       { path: 'contact-us', component: ContectUsComponent },
+      { path: 'terms-of-use', component: TermsOfUseComponent },
+      { path: 'privacy-policy', component: PrivacyPolicyComponent },
+      { path: 'disclaimer', component: DisclaimerComponent },
+
       { path: 'convert-to-an-mlzs', component: ConvertToMLZSComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'discover-more', component: DiscoverMoreComponent },
