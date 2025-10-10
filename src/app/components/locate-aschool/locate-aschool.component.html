@@ -18,7 +18,7 @@
           <div class="form-group">
             <select name="" id="" class="form-control  dropdown-toggle" formControlName="state"
               (change)="selectState($any($event.target).value)">
-              <option value="">State/District</option>
+              <option value="">State</option>
               <option value="{{state.State_Id}}" *ngFor="let state of stateList">
                 {{state.State_Name}}</option>
             </select>

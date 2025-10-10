@@ -15,6 +15,7 @@ declare var $: any;
   styleUrls: ['./start-school.component.css']
 })
 export class StartSchoolComponent {
+  ifLoader: boolean = false;
   projectId = environment.projectid;
   otp_ValidMsg: boolean = false
   otp_inValidMsg: boolean = false
@@ -179,6 +180,7 @@ export class StartSchoolComponent {
     }
   }
   submitForm() {
+    this.ifLoader = true;
     if ((this.admissionForm.get('otp')?.value).length == 4) {
       if (this.randomOtp == this.admissionForm.get('otp')?.value) {
         this.ngxSpinner.show();
@@ -208,6 +210,7 @@ export class StartSchoolComponent {
         this.apiService.savefranchiseeData(obj).subscribe(
           res => {
             this.toastr.success('Admission submit successfully!');
+            this.ifLoader = false;
             this.otp_ValidMsg = false;
             this.otp_inValidMsg = false;
             this.router.navigate(['franchise/thankyou'])

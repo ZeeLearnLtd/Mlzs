@@ -117,6 +117,8 @@ export class LocateUsComponent implements OnInit {
   }
 
   selectZone(zone: any) {
+    this.searchForm.get('city')?.reset();
+    this.searchForm.get('location')?.reset();
     if (zone == "") {
       this.getAllDataList();
     } else {
@@ -151,7 +153,6 @@ export class LocateUsComponent implements OnInit {
       this.cityList = this.cityList.sort((a: any, b: any) =>
         a.City_Name !== b.City_Name ? (a.City_Name < b.City_Name ? -1 : 1) : 0
       );
-      this.franchiseeList = [''];
       this.filterData();
     } else {
       this.india_country();

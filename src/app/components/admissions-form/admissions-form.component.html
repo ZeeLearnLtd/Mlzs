@@ -88,12 +88,12 @@
         <div class="form-group mt-2">
             <select name="" id="" class="form-control" [(ngModel)]="selectedstate" formControlName="state" (change)="selectState($event)"
             [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
-                <option value="">State/District*</option>
+                <option value="">State*</option>
                 <option value="{{state.State_Name}}" *ngFor="let state of stateList">{{state.State_Name}}</option>
             </select>
             <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                 <span class="text-danger msg_txt" *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
-                    State/District is required
+                    State is required
                 </span>
             </div>
         </div>

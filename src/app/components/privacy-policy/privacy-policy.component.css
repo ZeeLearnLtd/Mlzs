@@ -1,4 +1,4 @@
-.mainDiv {
+/* .mainDiv {
     background-color: #EBE1FF;
     padding: 0px 0px 45px;
 }
@@ -156,4 +156,87 @@ ul {
     -moz-transform: rotate(315deg) scale(1.2);
     -o-transform: rotate(315deg) scale(1.2);
     transform: rotate(315deg) scale(1.2);
+} */
+
+.multi_img_group{
+    display: flex;
+    justify-content: center;
+}
+
+.multi_img_group img{
+width: 80%;
+}
+
+section{
+  background: url("../../../assets/img/MLZS/bg_svg/Parent-corner.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  }
+.subMenu_content {
+  margin-top: 1rem;
+  width: 85%;
+  margin: auto;
+}
+
+ul.custom-bullet {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.custom-bullet li {
+  position: relative;
+  padding-left: 25px;
+  font-size: 14px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+ul.custom-bullet li::before {
+  content: '•'; /* bullet character */
+  color: #000; /* bullet color */
+  font-weight: bold;
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  top: 0;
+}
+
+.banner-container {
+  position: relative; /* allows absolute positioning inside */
+  width: 100%;
+}
+
+.banner-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.banner-text {
+  position: absolute;
+  top: 40%;          
+  left: 15%;     
+  transform: translate(-35%, -50%); 
+  color: #9B1B6A; 
+  font-size: 4vw !important;
+  font-weight: bold; /* Makes it bold */
+  font-family:  'Playfair Display', 'Georgia', 'Times New Roman', serif !important;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+    .programmes_main_page {
+        margin-top: 3rem !important;
+    }
+    .banner-text{
+    position: absolute;
+    top: 11%;
+    left: 15%;
+    transform: translate(-35%, -50%);
+    color: #9B1B6A;
+    font-size: 4vw !important;
+    font-weight: bold;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif !important;
+    text-align: center;
+}
 }

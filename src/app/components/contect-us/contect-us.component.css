@@ -8,6 +8,9 @@
     left: 5.5rem;
     padding: 10px;
 }
+.mobile_no{
+    margin-top: 40px;
+}
 @media screen and (max-width: 600px) {
      .menu_content{
     width: 40%;
