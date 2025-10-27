@@ -8,9 +8,10 @@
            <div class="gallery_content">
             <div class="row my-5">
                 <div class="col-md-4 d-flex justify-content-center" *ngFor="let img of photoGalleryData">
-                    <div class="mt-2 gallery_img_content" *ngFor="let a of img?.logofiles" >
+                    <div>
+                    <div class="mt-2 gallery_img_content" *ngFor="let a of img?.logofiles" >    
                         <img src="{{a?.value}}" alt="" class="gallery_img" >
-                    </div>
+                    </div></div>
                 </div>
             </div>
            </div>
