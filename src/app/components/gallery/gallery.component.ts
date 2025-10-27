@@ -17,6 +17,7 @@ export class GalleryComponent {
   contentData: any;
   photoGalleryData: any;
   getFirstData: any;
+  allGalleryData: any;
 
   constructor(private projectService: ProjectSeoService, private sanitizer: DomSanitizer, private _service: ApicallService) { }
 
@@ -50,6 +51,13 @@ export class GalleryComponent {
     this._service.getContentDataList(tbody).subscribe((data: any) => {
       let res = data.data[0].contentData
       this.photoGalleryData = JSON.parse(res);
+      this.allGalleryData = this.photoGalleryData;
+      this.photoGalleryData = this.allGalleryData.filter((x: any) => {
+        if (x.logofiles) {
+          return x;
+        }
+      });
+      console.log('GALLERY', this.photoGalleryData);
     });
   }
 

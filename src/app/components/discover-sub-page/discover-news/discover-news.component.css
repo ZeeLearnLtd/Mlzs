@@ -21,13 +21,22 @@ a {
 }
 
 .long_para {
-  display: -webkit-box;
+  /* display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.5rem;
-  max-height: 3rem;
+  max-height: 3rem; */
+  display: -webkit-box; 
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.45;
+  max-height: calc(1.45em * 3); 
+  margin: 0 0 1rem 0;
+  word-wrap: break-word;
 }
 
 
@@ -139,4 +148,9 @@ h6{
 
 .defaultImg{
   object-fit: contain !important;
+}
+
+::ng-deep .news_text h3{
+  overflow: hidden !important;
+  font-size: 1.2rem !important;
 }

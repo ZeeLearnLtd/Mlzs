@@ -38,6 +38,7 @@ export class DiscoverBlogsComponent {
   searchValue: string = '';
   currentIndexMap: { [categoryId: string]: number } = {};
   lgImg: any;
+  show_img: any;
   constructor(
     private route: ActivatedRoute,
     private seoService: HomeSeoService,
@@ -215,8 +216,16 @@ export class DiscoverBlogsComponent {
     }
   }
 
-  getBlogsItem(item: any) {
-    this.lgImg = [item]
+  // getBlogsItem(item: any) {
+  //   this.lgImg = [item];
+  //   this.show_img = this.lgImg;
+  //   console.log('lgImg', this.lgImg);
+  // }
+
+  selectedIndexMap: { [categoryId: number]: number } = {};
+
+  getBlogsItem(categoryId: number, index: number) {
+    this.selectedIndexMap[categoryId] = index;
   }
 
 }

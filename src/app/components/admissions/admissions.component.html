@@ -81,7 +81,7 @@
                                 <select class="form-select form-control custom-dropdown"
                                 formControlName="city" (change)="onChangeCity($event.target)"
                                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
-                                 <option value="">Which class do you want to enrol in?</option>
+                                 <option value="">Which city do you want to enrol in?</option>
                                  <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
                                 </select>
                                 <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
@@ -220,7 +220,7 @@
                                 <select class="form-select form-control custom-dropdown"
                                 formControlName="city" (change)="onChangeCity($event.target)"
                                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
-                                 <option value="">Which class do you want to enrol in?</option>
+                                 <option value="">Which city do you want to enrol in?</option>
                                  <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
                                 </select>
                                 <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
