@@ -21,6 +21,9 @@ section{
   /* background-color: #C4DEFD; */
   border-radius: 8px;
 }
+.francine_form h3{
+    font-size: 1rem;
+}
 .francine_form strong{
     color: rgba(1, 72, 118, 1);
 }

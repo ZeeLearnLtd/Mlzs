@@ -13,8 +13,10 @@ section{
   width: 100%;
   min-height: 100vh;
   }
-h6{
+h3{
+  font-size: 1rem;
   font-weight: 600;
+  overflow: hidden;
 }
 @media screen and (max-width: 600px) {
   .text_bg {
