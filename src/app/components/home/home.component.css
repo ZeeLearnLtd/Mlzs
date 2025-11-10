@@ -249,7 +249,7 @@ display: block;
   margin: clamp(1rem, 0vh, 3rem);
 }
 
-.overlay-box h1 {
+.overlay-box h2 {
     font-weight: 800;
 }
 
@@ -278,11 +278,11 @@ display: block;
     color: #014876;;
 }
 
-h1 {
+h2 {
     overflow: hidden;
 }
 
-#about_content_bg h1 {
+#about_content_bg h2 {
     position: relative;
     z-index: 2;
 }

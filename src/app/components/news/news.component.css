@@ -209,17 +209,19 @@ color:#fff
   background-color: transparent;
   color: #fff;
 } */
-h6{
+h3{
     font-weight: 600;
+    overflow: hidden;
 }
-.item h6{
+.item h3{
     color: #FFF;
     text-align: left;
 
 }
-.item_white_bg h6{
+.item_white_bg h3{
     color: #004878;
     text-align: left;
+    font-size: 1rem;
 }
 .item_text p{
     font-size: 13px;

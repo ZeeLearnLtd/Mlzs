@@ -23,8 +23,10 @@ section {
 .right_card {
   margin-bottom: 20px;
 }
-h6{
+h3{
   font-weight: 600;
+  font-size: 1rem;
+  overflow: hidden;
 }
 @media screen and (max-width: 600px) {
   h4{

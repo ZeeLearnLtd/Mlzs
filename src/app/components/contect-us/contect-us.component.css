@@ -191,3 +191,9 @@ p{
     margin: auto;
     padding: 0px 12px;
 }
+
+.sm_h3{
+  font-family: 'Poppins' !important;
+  font-size: clamp(14px, 1vw, 2rem) !important;
+  overflow: hidden;
+}

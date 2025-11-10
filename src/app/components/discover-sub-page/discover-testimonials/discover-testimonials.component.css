@@ -128,10 +128,6 @@ h2 {
   font-size: 14px;
 }
 
-h5 {
-  color: #014876;
-}
-
 ::ng-deep.owl-carousel .owl-stage {
   position: relative;
   /* height: 370px !important; */
@@ -151,6 +147,9 @@ h5 {
 .title_content h2 {
   position: relative;
   z-index: 9;
+  color: #014876;
+  overflow: hidden;
+  font-size: 1.5rem !important;
 }
 
 .title_content p {

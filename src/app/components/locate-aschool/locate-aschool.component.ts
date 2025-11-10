@@ -83,6 +83,33 @@ export class LocateASchoolComponent {
     )
   }
 
+  // india_country() {
+  //   let lgd = this.all_data_list.filter(function (lg: any) {
+  //     return lg.Country_Name === "India";
+  //   }).map(function (lg: any) {
+  //     return lg;
+  //   })
+  //   const key = 'India';
+  //   this.indiaCountry = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
+  //   this.searchForm.get('country')?.patchValue(this.indiaCountry[0].Country_Id)
+  //   let lgd1 = this.all_data_list.filter((lg: any) => {
+  //     return lg.Country_Id === Number(this.indiaCountry[0].Country_Id);
+  //   }).map(function (lg: any) {
+  //     return lg;
+  //   })
+  //   this.zoneList = lgd.filter(
+  //     (item: any, index: any, self: any) =>
+  //       index === self.findIndex((t: any) => t.zone === item.zone)
+  //   );
+  //   const key1 = 'State_Name';
+  //   this.stateList = [...new Map(lgd.map((item: any) => [item[key1], item])).values()]
+  //   this.stateList = this.stateList.sort((a: any, b: any) =>
+  //     a.State_Name !== b.State_Name ? (a.State_Name < b.State_Name ? -1 : 1) : 0
+  //   );
+  //   this.ucenterList = lgd1;
+  //   this.setcentrelist();
+  // }
+
   india_country() {
     let lgd = this.all_data_list.filter(function (lg: any) {
       return lg.Country_Name === "India";
@@ -92,17 +119,18 @@ export class LocateASchoolComponent {
     const key = 'India';
     this.indiaCountry = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
     this.searchForm.get('country')?.patchValue(this.indiaCountry[0].Country_Id)
+    this.zoneList = lgd.filter(
+      (item: any, index: any, self: any) =>
+        index === self.findIndex((t: any) => t.zone === item.zone)
+    );
     let lgd1 = this.all_data_list.filter((lg: any) => {
       return lg.Country_Id === Number(this.indiaCountry[0].Country_Id);
     }).map(function (lg: any) {
       return lg;
     })
-    this.zoneList = lgd.filter(
-      (item: any, index: any, self: any) =>
-        index === self.findIndex((t: any) => t.zone === item.zone)
-    );
     const key1 = 'State_Name';
     this.stateList = [...new Map(lgd.map((item: any) => [item[key1], item])).values()]
+
     this.stateList = this.stateList.sort((a: any, b: any) =>
       a.State_Name !== b.State_Name ? (a.State_Name < b.State_Name ? -1 : 1) : 0
     );
@@ -110,18 +138,46 @@ export class LocateASchoolComponent {
     this.setcentrelist();
   }
 
+  // setcountry(): any {
+  //   const key = 'Country_Name';
+  //   this.countryList = [...new Map(this.all_data_list.map((item: any) => [item[key], item])).values()]
+  // }
+
+  // selectZone(zone: any) {
+  //   this.getZone = zone
+
+  //   if (zone == "") {
+  //     this.getAllDataList();
+  //   }
+  //   else {
+  //     let lgd = this.all_data_list.filter(function (lg: any) {
+  //       return lg.zone === zone;
+  //     }).map(function (lg: any) {
+  //       return lg;
+  //     })
+  //     const key = 'State_Name';
+  //     this.stateList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
+  //     this.searchForm.get('state')?.setValue("");
+  //     this.searchForm.get('city')?.setValue("");
+  //     this.searchForm.get('location')?.setValue("");
+  //     this.filterData();
+  //   }
+  // }
+
   setcountry(): any {
     const key = 'Country_Name';
     this.countryList = [...new Map(this.all_data_list.map((item: any) => [item[key], item])).values()]
   }
 
   selectZone(zone: any) {
-    this.getZone = zone
-
+    this.searchForm.get('city')?.reset();
+    this.searchForm.get('location')?.reset();
+    this.cityList = [];
+    this.franchiseeList = []
     if (zone == "") {
       this.getAllDataList();
-    }
-    else {
+    } else {
+      this.getZone = zone
       let lgd = this.all_data_list.filter(function (lg: any) {
         return lg.zone === zone;
       }).map(function (lg: any) {
@@ -134,10 +190,29 @@ export class LocateASchoolComponent {
       this.searchForm.get('location')?.setValue("");
       this.filterData();
     }
-
-
   }
 
+
+  // selectState(stateId: any) {
+  //   if (stateId) {
+  //     this.getStateId = stateId
+  //     let lgd = this.all_data_list.filter(function (lg: any) {
+  //       return lg.State_Id === Number(stateId);
+  //     }).map(function (lg: any) {
+  //       return lg;
+  //     })
+  //     const key = 'City_Name';
+  //     this.cityList = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
+  //     this.cityList = this.cityList.sort((a: any, b: any) =>
+  //       a.City_Name !== b.City_Name ? (a.City_Name < b.City_Name ? -1 : 1) : 0
+  //     );
+  //     this.franchiseeList = [''];
+  //     this.filterData();
+  //   } else {
+  //     this.india_country();
+  //   }
+
+  // }
 
   selectState(stateId: any) {
     if (stateId) {
@@ -152,12 +227,10 @@ export class LocateASchoolComponent {
       this.cityList = this.cityList.sort((a: any, b: any) =>
         a.City_Name !== b.City_Name ? (a.City_Name < b.City_Name ? -1 : 1) : 0
       );
-      this.franchiseeList = [''];
       this.filterData();
     } else {
       this.india_country();
     }
-
   }
 
   selectCity(cityId: any) {

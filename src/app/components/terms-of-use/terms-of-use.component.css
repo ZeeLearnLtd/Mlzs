@@ -31,7 +31,9 @@ ul.custom-bullet li {
   margin-top: 5px;
   overflow: hidden;
 }
-
+h2{
+  font-size: 1.25rem !important;
+}
 ul.custom-bullet li::before {
   content: '•';
   color: #000;

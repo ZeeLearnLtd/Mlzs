@@ -11,7 +11,9 @@
     border-radius: 10px;
 }
 
-
+h3{
+    overflow: hidden;
+}
 .blog-title-content h2 {
     position: relative;
     z-index: 9;
