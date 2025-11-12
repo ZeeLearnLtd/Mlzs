@@ -28,8 +28,11 @@ h3{
   font-size: 1rem;
   overflow: hidden;
 }
+h2{
+  font-size: 1.7rem !important;
+}
 @media screen and (max-width: 600px) {
-  h4{
+  h2{
     margin: 2rem 0;
   }
   .img_box_big img {

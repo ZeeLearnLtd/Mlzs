@@ -134,7 +134,7 @@
                 </div> -->
 
                 <div class="row" *ngFor="let category of categoryWiseData">
-                    <h4>{{ category.categoryname }}</h4>
+                    <h2>{{ category.categoryname }}</h2>
                     <!-- LEFT BIG IMAGE -->
                     <div class="col-md-5 category_blog_content">
                         <ng-container *ngIf="category.blogsContent?.length; else noBlog">
