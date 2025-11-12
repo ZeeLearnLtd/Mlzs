@@ -23,6 +23,7 @@ section{
 }
 .francine_form h3{
     font-size: 1rem;
+    overflow: hidden;
 }
 .francine_form strong{
     color: rgba(1, 72, 118, 1);

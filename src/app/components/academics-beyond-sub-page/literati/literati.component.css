@@ -137,8 +137,8 @@ h3{
 display: inline; 
 font-weight:700; 
 margin: 0;
-font-size: clamp(15px, 1vw, 2rem) !important;
+font-size: clamp(14px, 1vw, 2rem) !important;
 }
 .sm_text{
-  font-size: clamp(15px, 1vw, 2rem) !important;
+  font-size: clamp(14px, 1vw, 2rem) !important;
 }
