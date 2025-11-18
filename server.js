@@ -65,7 +65,7 @@ app.get("/sitemap.xml", (req, res) => res.sendFile(_dir + "/sitemap.xml"));
 
 //app.use("/api/CMS", require("./api/CMS"));
 // Start the server on port 8080
-const PORT = 4040;
+const PORT = 4050;
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });
