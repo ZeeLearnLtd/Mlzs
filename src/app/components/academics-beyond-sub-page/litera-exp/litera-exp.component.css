@@ -85,6 +85,19 @@ h2 {
   line-height: 30px;
 }
 
+.sm_title h2{
+  font-family: 'Poppins' !important;
+  font-size: clamp(14px, 1vw, 2rem) !important;
+}
+h3{
+display: inline; 
+font-weight:700; 
+margin: 0;
+font-size: clamp(15px, 1vw, 2rem) !important;
+}
+.sm_text{
+  font-size: clamp(15px, 1vw, 2rem) !important;
+}
 
 @media screen and (max-width: 600px) {
   li button {

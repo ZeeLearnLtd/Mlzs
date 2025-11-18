@@ -33,5 +33,9 @@ h2{
     z-index: 1;
     font-weight: 800;
 }
+.sm_h2 {
+    font-family: 'Poppins' !important;
+    font-size: clamp(14px, 1vw, 2rem) !important;
+}
   @media screen and (max-width: 600px) {
     }

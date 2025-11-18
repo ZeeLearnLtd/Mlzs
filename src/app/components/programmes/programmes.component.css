@@ -65,18 +65,14 @@
   }
 }
 
-h2 {
+h3 {
   position: relative;
   z-index: 9;
   font-weight: 700;
   color: rgba(33, 37, 41, 1);
 }
 
-h1 {
-  overflow: hidden;
-}
-
-#about_content_bg h1 {
+#about_content_bg h2 {
   position: relative;
   z-index: 2;
 }

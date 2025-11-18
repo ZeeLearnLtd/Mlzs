@@ -55,33 +55,25 @@
                             </ng-container>
                         </div> -->
                         <div *ngIf="getFirstData && getFirstData.length; else defaultGallery">
-  <a [href]="getFirstData[0]?.value || 'assets/img/MLZS/MLZS.svg'" 
-     data-fancybox="gallery1" 
-     class="fancybox">
-    <img 
-      [src]="getFirstData[0]?.value || 'assets/img/MLZS/MLZS.svg'" 
-      class="pinchzoom_img" 
-      id="image" 
-      width="100%"
-      alt="Image"
-    />
-  </a>
-  <ng-container *ngFor="let a of getFirstData.slice(1)">
-    <a 
-      [href]="a?.value || 'assets/img/MLZS/MLZS.svg'" 
-      data-fancybox="gallery1" 
-      style="display: none;"
-      class="fancybox">
-    </a>
-  </ng-container>
-</div>
+                            <a [href]="getFirstData[0]?.value || 'assets/img/MLZS/MLZS.svg'" data-fancybox="gallery1"
+                                class="fancybox">
+                                <img [src]="getFirstData[0]?.value || 'assets/img/MLZS/MLZS.svg'" class="pinchzoom_img"
+                                    id="image" width="100%" alt="Image" />
+                            </a>
+                            <ng-container *ngFor="let a of getFirstData.slice(1)">
+                                <a [href]="a?.value || 'assets/img/MLZS/MLZS.svg'" data-fancybox="gallery1"
+                                    style="display: none;" class="fancybox">
+                                </a>
+                            </ng-container>
+                        </div>
 
-<!-- Fallback gallery if no images -->
-<ng-template #defaultGallery>
-  <a href="../../../../assets/img/MLZS/MLZS.svg" data-fancybox="gallery1" class="fancybox">
-    <img src="../../../../assets/img/MLZS/MLZS.svg" class="pinchzoom_img defaultImg" width="100%" alt="MLZS" />
-  </a>
-</ng-template>
+                        <!-- Fallback gallery if no images -->
+                        <ng-template #defaultGallery>
+                            <a href="../../../../assets/img/MLZS/MLZS.svg" data-fancybox="gallery1" class="fancybox">
+                                <img src="../../../../assets/img/MLZS/MLZS.svg" class="pinchzoom_img defaultImg"
+                                    width="100%" alt="MLZS" />
+                            </a>
+                        </ng-template>
 
                     </div>
                     <div class="col-md-7">
@@ -96,29 +88,22 @@
                                                     <img src="{{img?.value}}" width="100%" alt="">
                                                 </div> -->
                                                 <div *ngIf="img?.logofiles?.length; else defaultImg">
-  <div *ngFor="let logo of img.logofiles">
-    <img 
-      [src]="logo?.value || 'assets/img/MLZS/MLZS.svg'" 
-      width="100%" 
-      alt="MLZS"
-    />
-  </div>
-</div>
+                                                    <div *ngFor="let logo of img.logofiles">
+                                                        <img [src]="logo?.value || 'assets/img/MLZS/MLZS.svg'"
+                                                            width="100%" alt="MLZS" />
+                                                    </div>
+                                                </div>
 
-<ng-template #defaultImg>
-  <img 
-    src="assets/img/MLZS/MLZS.svg" 
-    width="100%" 
-    alt="MLZS"
-    class="defaultImg"
-  />
-</ng-template>
+                                                <ng-template #defaultImg>
+                                                    <img src="assets/img/MLZS/MLZS.svg" width="100%" alt="MLZS"
+                                                        class="defaultImg" />
+                                                </ng-template>
 
                                             </div>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="news_text">
-                                                <h6>{{ img.Title }}</h6>
+                                                <h3>{{ img.Title }}</h3>
                                                 <p class="m-0 p-0 long_para">{{ img.short }}</p>
                                                 <p class="m-0 p-0 date_content mt-2">Date: {{img.StartDate}}</p>
                                             </div>

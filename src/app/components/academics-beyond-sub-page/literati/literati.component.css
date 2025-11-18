@@ -1,34 +1,35 @@
-.multi_img_group{
-    display: flex;
-    justify-content: center;
+.multi_img_group {
+  display: flex;
+  justify-content: center;
 }
 
-.multi_img_group img{
-width: 80%;
+.multi_img_group img {
+  width: 80%;
 }
 
-section{
+section {
   background: url("../../../../assets/img/MLZS/bg_svg/Academic-Beyond-Litera-Experience.bg.svg") no-repeat center center;
   background-size: cover;
   width: 100%;
   min-height: 100vh;
-  }
-
-.menu_content{
-    width: 40%;
-    height: 50px;
-    position: relative;
-    left: 5.5rem;
-    padding: 10px;
 }
 
-  .text_bg{
-    width:23%;
-    position: relative;
-    bottom:1.5rem;
-    z-index: 1;
+.menu_content {
+  width: 40%;
+  height: 50px;
+  position: relative;
+  left: 5.5rem;
+  padding: 10px;
 }
- .nav-pills .nav-link.active,
+
+.text_bg {
+  width: 23%;
+  position: relative;
+  bottom: 1.5rem;
+  z-index: 1;
+}
+
+.nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
   color: #fff;
   background: #014876;
@@ -47,30 +48,33 @@ section{
   background-color: #44C8F5;
 }
 
-    .liter_img{
-        width: 50%;
-    }
+.liter_img {
+  width: 50%;
+}
 
-    .liter_content{
-        margin-left: 57px;
-    }
+.liter_content {
+  margin-left: 57px;
+}
 
-  .fr_img_content img{
-    width: 80%;
+.fr_img_content img {
+  width: 80%;
+}
+
+.title_content ul {
+  padding: 0;
+  line-height: 30px;
+}
+
+.programm_para {
+  margin: 38px 52px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 600px) {
+  li button {
+    width: 98% !important;
   }
 
-  .title_content ul{
-    padding: 0; 
-    line-height: 30px;
-  }
-.programm_para{
-    margin: 38px 52px;
-    text-align: justify;
-}
-  @media screen and (max-width: 600px) {
-    li button{
-width: 98% !important;
-}
   .nav-link:focus,
   .nav-link {
     width: 100%;
@@ -84,39 +88,57 @@ width: 98% !important;
   .nav-link {
     width: 100%;
   }
-    .programm_para_right{
-      margin:38px 0px !important;
-      text-align: justify;
-    }
-     .programm_para_right .right_icon{
-      width:62% !important;
-    }
-    }
-   .programm_para_right .right_icon{
-      width:80%;
-      
-    }
-     .programm_para_right{
-      margin:38px 35px;
-      text-align: justify;
-    }
-    .programm_para{
-      margin:38px 52px;
-      text-align: justify;
-    }
+
+  .programm_para_right {
+    margin: 38px 0px !important;
+    text-align: justify;
+  }
+
+  .programm_para_right .right_icon {
+    width: 62% !important;
+  }
+}
+
+.programm_para_right .right_icon {
+  width: 80%;
+
+}
+
+.programm_para_right {
+  margin: 38px 35px;
+  text-align: justify;
+}
+
+.programm_para {
+  margin: 38px 52px;
+  text-align: justify;
+}
 
 
-    .pdf-icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-    }
-    .pdf-row {
-      margin-bottom: 30px;
-    }
-    .pdf-title {
-      font-weight: bold;
-    }
-    .subtitle {
-      color: #555;
-    }
+.pdf-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.pdf-row {
+  margin-bottom: 30px;
+}
+
+.pdf-title {
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #555;
+}
+
+h3{
+display: inline; 
+font-weight:700; 
+margin: 0;
+font-size: clamp(14px, 1vw, 2rem) !important;
+}
+.sm_text{
+  font-size: clamp(14px, 1vw, 2rem) !important;
+}

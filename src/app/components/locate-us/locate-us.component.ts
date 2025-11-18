@@ -119,6 +119,8 @@ export class LocateUsComponent implements OnInit {
   selectZone(zone: any) {
     this.searchForm.get('city')?.reset();
     this.searchForm.get('location')?.reset();
+    this.cityList = [];
+    this.franchiseeList = []
     if (zone == "") {
       this.getAllDataList();
     } else {
@@ -135,8 +137,6 @@ export class LocateUsComponent implements OnInit {
       this.searchForm.get('location')?.setValue("");
       this.filterData();
     }
-
-
   }
 
 

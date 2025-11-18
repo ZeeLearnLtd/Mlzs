@@ -43,9 +43,9 @@
                         <mat-accordion>
                             <mat-expansion-panel *ngFor="let faq of sortedFaqs">
                                 <mat-expansion-panel-header>
-                                    <h6>
+                                    <h3 class="m-0">
                                         <div class="faq_title">{{faq.Title}}</div>
-                                    </h6>
+                                    </h3>
                                 </mat-expansion-panel-header>
                                 <span>
                                     <p [innerHTML]="faq.Long1"></p>

@@ -6,7 +6,6 @@
   min-height: 400px;
   max-height: 755px;
   margin-top: 12%;
-  ;
 }
 
 .francine_form {
@@ -15,11 +14,12 @@
   margin: 10px 15px 10px 10px;
   padding: 10px;
 }
+
 .form-control {
   width: 100%;
   padding: .375rem .75rem;
   font-size: 13px;
-   color: #615a5a;
+  color: #615a5a;
 }
 
 .menu_content {
@@ -99,13 +99,15 @@
   align-items: center;
   transition: 0.6s;
   font-size: 13px;
-  padding:8px 10px;
+  padding: 8px 10px;
   border-radius: 5px;
 }
-.read_mode:hover{
- background-color: #44C8F5 !important;
+
+.read_mode:hover {
+  background-color: #44C8F5 !important;
   color: #00467A !important;
 }
+
 .award_content .read_mode {
   width: 25%;
   margin: 10px 20px;
@@ -181,6 +183,27 @@ h4 {
 
 .bg_box {
   background-color: rgba(1, 72, 118, 1);
+}
+
+.francine_form h3 {
+  font-size: 1.25rem;
+  overflow: hidden;
+}
+
+.sm_h2 {
+  font-family: 'Poppins' !important;
+  font-size: clamp(14px, 1vw, 2rem) !important;
+}
+
+h3 {
+  display: inline;
+  font-weight: 700;
+  margin: 0;
+  font-size: clamp(14px, 1vw, 2rem) !important;
+}
+
+.sm_text {
+  font-size: clamp(14px, 1vw, 2rem) !important;
 }
 
 @media (max-width: 600px) {

@@ -31,10 +31,12 @@ ul.custom-bullet li {
   margin-top: 5px;
   overflow: hidden;
 }
-
+h2{
+  font-size: 1.25rem !important;
+}
 ul.custom-bullet li::before {
-  content: '•'; /* bullet character */
-  color: #000; /* bullet color */
+  content: '•';
+  color: #000;
   font-weight: bold;
   position: absolute;
   font-size: 20px;
@@ -43,7 +45,7 @@ ul.custom-bullet li::before {
 }
 
 .banner-container {
-  position: relative; /* allows absolute positioning inside */
+  position: relative;
   width: 100%;
 }
 
@@ -60,10 +62,11 @@ ul.custom-bullet li::before {
   transform: translate(-35%, -50%); 
   color: #9B1B6A; 
   font-size: 4vw !important;
-  font-weight: bold; /* Makes it bold */
+  font-weight: bold; 
   font-family:  'Playfair Display', 'Georgia', 'Times New Roman', serif !important;
   text-align: center;
 }
+
 @media screen and (max-width: 600px) {
     .programmes_main_page {
         margin-top: 3rem !important;
