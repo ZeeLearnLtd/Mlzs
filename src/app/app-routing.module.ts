@@ -73,7 +73,7 @@ const routes: Routes = [
     component: HeaderComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'programmes', component: ProgrammesMainPageComponent },
+      { path: 'academic-programs', component: ProgrammesMainPageComponent },
       { path: 'academics', component: AcademicsMainPageComponent },
       { path: 'search', component: SearchComponent },
       { path: 'academics-beyond/litera-enrichment-programmes', component: AcademicsBeyondComponent },
@@ -109,7 +109,7 @@ const routes: Routes = [
       { path: 'parents-corner/mount-litera-parent-support-hub', component: MountLiteraParentSupportHubComponent },
       { path: 'parents-corner/parents-testimonials', component: ParentsTestimonialsComponent },
       { path: 'news', component: DiscoverNewsComponent },
-      { path: 'events', component: DiscoverEventsComponent },
+      // { path: 'events', component: DiscoverEventsComponent },
       { path: 'gallery', component: DiscoverGalleryComponent },
       { path: 'blogs', component: DiscoverBlogsComponent },
       { path: 'blogs/:name', component: BlogDetailsComponent },
@@ -119,7 +119,7 @@ const routes: Routes = [
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
       { path: 'testimonials/:name', component: TestimonialDetailsComponent },
 
-      { path: 'achievements', component: DiscoverAchievementsComponent },
+      // { path: 'achievements', component: DiscoverAchievementsComponent },
       { path: 'curriculum', component: CurriculumComponent },
       { path: 'partner-with-us', component: PartnerWithUsComponent },
     ],
