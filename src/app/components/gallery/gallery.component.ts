@@ -57,7 +57,7 @@ export class GalleryComponent {
           return x;
         }
       });
-      console.log('GALLERY', this.photoGalleryData);
+      //console.log('GALLERY', this.photoGalleryData);
     });
   }
 

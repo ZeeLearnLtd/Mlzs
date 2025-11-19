@@ -149,7 +149,7 @@ export class DiscoverBlogsComponent {
             (typeof news.category === 'number' && news.category === cat.categoryId)
           )
         }));
-        console.log('categoryWiseData', this.categoryWiseData);
+        //console.log('categoryWiseData', this.categoryWiseData);
         this.lgImg = this.categoryWiseData[0].blogsContent
 
         this.prepareCategoryWiseData();

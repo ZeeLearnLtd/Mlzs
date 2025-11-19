@@ -32,6 +32,7 @@ export class AboutUsComponent implements OnInit {
     this.getseo();
     const urlSegments = this.activatedRoute.snapshot.url;
     this.segment = urlSegments[0]?.path;
+     if (isPlatformBrowser(this.platformId)) {
     if (this.segment == 'admissions') {
       (document.getElementById('about_content_bg') as HTMLElement).style.backgroundColor = '#FFF',
         (document.getElementById('title_content') as HTMLElement).style.color = '#000',
@@ -43,6 +44,7 @@ export class AboutUsComponent implements OnInit {
         (document.getElementById('num_content') as HTMLElement).style.color = '#FFF'
     }
   }
+  }
 
   getseo() {
     let tbody = {
@@ -50,14 +52,14 @@ export class AboutUsComponent implements OnInit {
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
-      if (isPlatformBrowser(this.platformId)) {
-        this.projectService.sendMessagebread(data.data.breadcrumb);
+     
+        this.projectService.sendMessagebread(data?.data?.breadcrumb);
         this.projectService.sendMessageblog(data?.data?.blog);
         this.projectService.sendMessageseo(data?.data?.testimony);
         this.projectService.sendMessageFaqs(data?.data?.faq);
         this.projectService.sendMessageNews(data?.data?.news);
         this.projectService.setmeta(data?.data);
-      }
+     
     });
   }
 }
