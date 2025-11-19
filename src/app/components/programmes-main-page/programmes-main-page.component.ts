@@ -32,7 +32,7 @@ export class ProgrammesMainPageComponent {
   }
   getseo() {
     let tbody = {
-      slug: 'programmes',
+      slug: 'academic-programs',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
