@@ -14,7 +14,7 @@
                     <div class="row g-4">
                         <div class="col-12">
                             <div class="blog-card" *ngFor="let img of top_blog?.files">
-                                <div>
+                                <div routerLink="/blogs/{{top_blog?.slug}}">
                                     <img src="{{img.url}}" alt="Image with overlay" />
                                 </div>
                                 <div class="blog-overlay">
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12" *ngFor="let a of blogdata">
-                    <div class="sub_blog_card" routerLink="/blog/{{a?.slug}}">
+                    <div class="sub_blog_card" routerLink="/blogs/{{a?.slug}}">
                         <div *ngFor="let img of a?.files">
                             <img src="{{img?.url}}" alt="Image with overlay" />
                         </div>
