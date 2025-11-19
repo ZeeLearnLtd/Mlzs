@@ -130,7 +130,12 @@ h4 {
     overflow: hidden;
 }
 .item_img img{
-    width: 60px;
+    width: 60px !important;
+    height: 60px;
+    object-fit: cover;
+}
+.mlzs_profile{
+    width: 50px !important;
     height: 60px;
     object-fit: cover;
 }
