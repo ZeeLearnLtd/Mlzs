@@ -17,7 +17,7 @@ export class LiteraMiddleStageComponent {
 
   getseo() {
     let tbody = {
-      slug: 'programmes/litera-middle-stage',
+      slug: 'academic-programs/middle-school',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {

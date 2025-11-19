@@ -37,6 +37,7 @@ h3{
     height: clamp(350px, 50vh, 550px);
     object-fit: cover;
     display: block;
+    cursor: pointer;
 }
 
 .sub_blog_card {
@@ -53,6 +54,7 @@ h3{
     height: clamp(350px, 50vh, 550px);
     object-fit: cover;
     display: block;
+    cursor: pointer;
 }
 
 .blog-overlay {
