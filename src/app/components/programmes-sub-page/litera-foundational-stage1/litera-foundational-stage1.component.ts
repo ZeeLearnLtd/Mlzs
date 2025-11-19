@@ -17,7 +17,7 @@ export class LiteraFoundationalStage1Component {
 
   getseo() {
     let tbody = {
-      slug: 'programmes/litera-foundational-stage-1',
+      slug: 'academic-programs/pre-primary-school',
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
