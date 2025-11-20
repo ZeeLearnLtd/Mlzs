@@ -372,7 +372,12 @@ export class LocateASchoolComponent {
     // })
     // this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
     // this.router.navigateByUrl('/admissions');
-    this.router.navigate(['/admissions', data?.Franchisee_Code])
+    if(data?.franchiseeslug){
+      this.router.navigate(['/'+data?.franchiseeslug])
+    }else{
+      this.router.navigate(['/admissions', data?.Franchisee_Code])
+    }
+    
   }
 
 }
