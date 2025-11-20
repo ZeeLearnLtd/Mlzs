@@ -78,6 +78,7 @@ export class TestimonialComponent implements OnInit {
     this.subscriptionnav = this.projectService
       .onseoMessage()
       .subscribe((message) => {
+       // console.log('message', message)
         if (message) {
           this.testimonialData = message.text
           this.testimonialDataList = this.testimonialData.map((video: any) => ({

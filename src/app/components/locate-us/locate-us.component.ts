@@ -276,7 +276,12 @@ export class LocateUsComponent implements OnInit {
     this.virtual_url = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
   setaddress(data: any) {
-    this.router.navigate(['/admissions', data?.Franchisee_Code])
+    if(data?.franchiseeslug){
+      this.router.navigate(['/'+data?.franchiseeslug])
+    }else{
+      this.router.navigate(['/admissions', data?.Franchisee_Code])
+    }
+   // this.router.navigate(['/admissions', data?.Franchisee_Code])
   }
 
 }

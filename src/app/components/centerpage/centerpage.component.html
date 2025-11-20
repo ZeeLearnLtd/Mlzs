@@ -1,0 +1,474 @@
+<section>
+    <div class="main_content">
+        <div class="start_school_banner desktop_content">
+         <div class="row">
+            <div class="col-md-7">
+                <!-- <div class="icon_list">
+                    <img src="../../../assets/img/MLZS/banner_icon.png" width="80%" alt="banner">
+                </div> -->
+            </div>
+            <div class="col-md-5 d-flex justify-content-end justify-align-center">
+                <div class="francine_form">
+                    <h3><strong class="text-left title">Join Mount Litera Zee School today!</strong></h3>
+                    <div class="form mt-2">
+                        <form [formGroup]="admissionForm">
+                        <div class="col-md-row">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="Name*" class="form-control" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.name.touched || submitted) && f.name.errors?.required">
+                                        name is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <input type="text" placeholder="Email*" class="form-control" formControlName="email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                                        Email is required
+                                    </span>
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="f.email.touched && f.email.errors?.email">
+                                        Enter a valid email address
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                 <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
+                                [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                 <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
+                                <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
+                                 <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
+                                   [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                   <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                     <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
+                                     <button class="btn btn-sm verify_otp_btn"   (click)="getMobileNO();">Send OTP</button>
+                                   <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
+                                   [ngClass]="{ 'is-invalid': submitted && f.otp.errors }"formControlName="otp">
+                                  <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                                       <span *ngIf="f.otp.errors?.required" class="msg_txt">OTP is required.</span>
+                                          </div>
+                                 
+                                   <div *ngIf="otp_ValidMsg" class="validMsg">OTP verified successfully</div>
+                                    <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
+                            </div>
+                            <!-- <div class="col-md-12 mt-2">
+                               <select class="form-select form-control custom-dropdown"
+                               formControlName="state" (change)="onChangeState($event.target)"
+                               [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                                <option value="">Which state are you searching for schools in?</option>
+                                <option value="{{a.State_ID}}"*ngFor="let a of stateContentDataList">{{a.StateName}}</option>
+                               </select>
+                               <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
+                                        State is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown"
+                                formControlName="city" (change)="onChangeCity($event.target)"
+                                 [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                                 <option value="">Which city do you want to enrol in?</option>
+                                 <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
+                                </select>
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
+                                        City is required
+                                    </span>
+                                </div>
+                             </div>
+
+                             <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown"
+                                formControlName="franchisee"(change)="onChangeFranchisee($event.target)"
+                                [ngClass]="{ 'is-invalid': submitted && f.franchisee.errors }">
+                                 <option value="">Which School are you interested in?</option>
+                                 <option value="{{franchisee.Franchisee_Code}}" *ngFor="let franchisee of selectFranchisee">{{franchisee.Franchisee_Name}}</option>
+                                </select>
+                                 <div *ngIf="submitted && f.franchisee.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.franchisee.touched || submitted) && f.franchisee.errors?.required">
+                                        Franchisee is required
+                                    </span>
+                                </div>
+                             </div> -->
+                             <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown" formControlName="class"
+                                 (change)="onchangeClass($event.target)"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
+                                 <option value="">Admission for which class?</option>
+                                 <option value="{{class.SchoolClassID}}" *ngFor="let class of selectClasslist">{{class.ClassName}}</option>
+                                </select>
+                                <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.class.touched || submitted) && f.class.errors?.required">
+                                        Class is required
+                                    </span>
+                                </div>
+                             </div>
+                             <div class="col-md-12 mt-2">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                    </div>
+                                    <div class="col-11">
+                                        <label for="vehicle1">I authorize MLZS and its representatives to Call, SMS, Email or WhatsApp me about Admission Proccess. This consent overrides any registration for DNC/NDNC.</label>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-12 mt-1">
+                                <button class="btn read_mode w-100"(click)="validationForm();">Send<span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span></button>
+                           
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                  </div>
+            </div>
+         </div>
+        </div>
+
+        <div class="mobile_content">
+            <div class="row">
+               <div class="col-md-7">
+                  <img src="../../../assets/img/MLZS/banner/banner2.png" width="100%" alt="admission form">
+               </div>
+               <div class="col-md-5 d-flex justify-content-center justify-align-center">
+                    <div class="francine_form">
+                    <strong class="text-left title">Join Mount Litera Zee School today!</strong>
+                    <div class="form mt-2">
+                        <form [formGroup]="admissionForm">
+                        <div class="col-md-row">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="Name*" class="form-control" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.name.touched || submitted) && f.name.errors?.required">
+                                        name is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <input type="text" placeholder="Email*" class="form-control" formControlName="email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.email.touched || submitted) && f.email.errors?.required">
+                                        Email is required
+                                    </span>
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="f.email.touched && f.email.errors?.email">
+                                        Enter a valid email address
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                 <!-- <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
+                                [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                 <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                <button class="btn btn-sm read_mode verify_otp_btn">Verify OTP</button>
+                                <input type="text" placeholder="OTP" class="form-control mt-2" formControlName="otp"> -->
+                                 <input type="text" placeholder="Mobile no*" class="form-control" formControlName="mobileNo"
+                                  [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
+                                   <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback msg_txt">
+                                    <span *ngIf="f.mobileNo.errors?.required">Mobile is required.</span>
+                                    <span *ngIf="f.mobileNo.errors?.pattern">Please, Enter 10 digit Mobile.</span>
+                                </div>
+                                     <div *ngIf="otpInput" class="validMsg">OTP sent successfully</div>
+                                   <button class="btn btn-sm verify_otp_btn"   (click)="getMobileNO();">Send OTP</button>
+                                   <input type="text" placeholder="OTP" class="form-control mt-2" (keyup)="verifyOTP();"
+                                   [ngClass]="{ 'is-invalid': submitted && f.otp.errors }"formControlName="otp">
+                                  <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                                       <span *ngIf="f.otp.errors?.required" class="msg_txt">OTP is required.</span>
+                                          </div>
+                                 
+                                   <div *ngIf="otp_ValidMsg" class="validMsg">OTP verified successfully</div>
+                                    <div *ngIf="otp_inValidMsg" class="inValidMsg">please enter valid otp</div>
+                            </div>
+                            <!-- <div class="col-md-12 mt-2">
+                               <select class="form-select form-control custom-dropdown"
+                               formControlName="state" (change)="onChangeState($event.target)"
+                               [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                                <option value="">Which state are you searching for schools in?</option>
+                                <option value="{{a.State_ID}}"*ngFor="let a of stateContentDataList">{{a.StateName}}</option>
+                               </select>
+                               <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.state.touched || submitted) && f.state.errors?.required">
+                                        State is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown"
+                                formControlName="city" (change)="onChangeCity($event.target)"
+                                 [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                                 <option value="">Which city do you want to enrol in?</option>
+                                 <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}</option>
+                                </select>
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.city.touched || submitted) && f.city.errors?.required">
+                                        City is required
+                                    </span>
+                                </div>
+                             </div>
+
+                             <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown" 
+                                formControlName="franchisee"(change)="onChangeFranchisee($event.target)"
+                                [ngClass]="{ 'is-invalid': submitted && f.franchisee.errors }">
+                                 <option value="">Which School are you interested in?</option>
+                                 <option value="{{franchisee.Franchisee_Code}}" *ngFor="let franchisee of selectFranchisee">{{franchisee.Franchisee_Name}}</option>
+                                </select>
+                                 <div *ngIf="submitted && f.franchisee.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.franchisee.touched || submitted) && f.franchisee.errors?.required">
+                                        Franchisee is required
+                                    </span>
+                                </div>
+                             </div> -->
+                             <div class="col-md-12 mt-2">
+                                <select class="form-select form-control custom-dropdown"
+                                 formControlName="class"
+                                 (change)="onchangeClass($event.target)"  [ngClass]="{ 'is-invalid': submitted && f.class.errors }">
+                                 <option value="">Admission for which class?</option>
+                                 <option value="{{class.SchoolClassID}}" *ngFor="let class of selectClasslist">{{class.ClassName}}</option>
+                                </select>
+                                <div *ngIf="submitted && f.class.errors" class="invalid-feedback">
+                                    <span class="text-danger msg_txt"
+                                        *ngIf="(f.class.touched || submitted) && f.class.errors?.required">
+                                        Class is required
+                                    </span>
+                                </div>
+                             </div>
+                             <div class="col-md-12 mt-3">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                    </div>
+                                    <div class="col-11">
+                                        <label for="vehicle1">I authorize MLZS and its representatives to Call, SMS, Email or WhatsApp me about Admission Proccess. This consent overrides any registration for DNC/NDNC.</label>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-12 mt-1">
+                                <button class="btn read_mode w-100"(click)="validationForm();">Send <span class="spinner-border mx-3 spinner-border-sm" *ngIf="ifLoader" role="status" aria-hidden="true"></span></button>
+                             </div>
+                        </div>
+                        </form>
+                    </div>
+                  </div>
+               </div>
+            </div>
+           </div>
+        <div class="menu_content">
+            <app-sub-menu></app-sub-menu>
+        </div>
+        <div class="box_content">
+            <!-- <div class="title_content text-center">
+            <h2 class="text-center"><b>About Us</b></h2>
+            <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+            </div>
+            <div class="row">
+                <div class="col-md-6">      
+                        <div class="">
+                            <p>Mount Litera Zee School is an Endeavour by Zee Learn to bring about a quantum improvement in school education. The purpose is to help children realize their unique potential through their state-of-the-art infrastructure and facilities, well trained teachers, and a proprietary pedagogy.</p>
+                            <p>Awarded as the K12 School Chain Of the Year 2019, by Indian Educational Congress, Mount Litera Zee School is the fastest growing school network in India with more than 130+ Operational Schools in over 110+ cities across the country.</p>
+                            <button class="btn read_mode">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about_img_content w-10 d-flex justify-content-center">
+                    <img src="../../../assets/img/MLZS/about_img.png" alt="">
+                </div>
+                </div>
+            </div>
+            <div class="counter_box mt-5">
+                <img src="../../../assets/img/MLZS/counter_img.png" width="100%" alt="">
+            </div> -->
+        <!-- <app-about-us></app-about-us> -->
+        <div class="about_content" id="about_content_bg">
+            <div class="box">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="" id="title_content">
+                            <h1 class=""><b>Get to Know Us</b></h1>
+                            <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+                            <div class="">
+                                <p class="">Mount Litera Zee School is one of the leading and fastest-growing chains of K-12 schools in India. 
+                                    Started under the pioneering leadership of Zee Learn Ltd., Mount Litera Zee School is on a mission to redefine the education landscape in the country. 
+                                    The purpose is to empower India's youth and children through quality education and enable them to realise their unique potential. 
+                                    With exposure to state-of-the-art infrastructure and facilities, exceptional educators and innovative pedagogy, 
+                                    Mount Litera Zee School aims to nurture students by providing a robust and child-centric learning environment that prepares them for success in an ever-evolving world.</p>
+                                <!-- <button class="btn read_mode">Know More <i class="fa fa-long-arrow-right mx-2"></i></button> -->
+                            </div>
+                        </div>
+        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about_img_content w-10 d-flex justify-content-center">
+                        <img src="../../../assets/img/MLZS/Get-to-Know-Us.png" alt="admission">
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="box_content">
+                            <div class="img_box text-center">
+                                <div><img src="../../../assets/img/MLZS/no_of_school_color.png" alt="no of school"></div>
+                                <div class="count_content">
+                                    <b>130+</b>
+                                </div>
+                            </div>
+                            <div class="title_content text-center">
+                                <p>Number of schools</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box_content">
+                            <div class="img_box text-center">
+                                <img src="../../../assets/img/MLZS/no_of_state_color.png" alt="no of state">
+                                <div class="count_content">
+                                    <b>18+</b>
+                                </div>
+                            </div>
+                            <div class="title_content text-center">
+                                <p>Presence in number of states</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box_content">
+                            <div class="img_box text-center">
+                                <img src="../../../assets/img/MLZS/no_of_educators_color.png" alt="no of educators">
+                                <div class="count_content">
+                                   <b>25K+</b>
+                                </div>
+                            </div>
+                            <div class="title_content text-center">
+                                <p>Number of educators</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box_content">
+                            <div class="img_box text-center">
+                                <img src="../../../assets/img/MLZS/no_of_students_color.png" alt="no of students">
+                                <div class="count_content">
+                                  <b>56,600+</b>
+                                </div>
+                            </div>
+                            <div class="title_content text-center">
+                                <p>Number of students nurtured</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
+        </div>
+
+        <div class="box_content our_pedagogy_content">
+            <div class="box">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="about_img_content d-flex">
+                        <img src="../../assets/img/MLZS/Litera-Nova.png" alt="Litera Nova">
+                    </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="title_content" id="title_content">
+                            <h2 class="text-white"><b>Our Pedagogy<br>Litera Nova</b></h2>
+                            <img src="../../assets/img/MLZS/text-bg.png" class="text_bg1" alt="">
+                            <div class="nova_content">
+                                <p class="text-white">With Litera Nova, we are dedicated to nurturing the holistic development of students, empowering them to become the leaders of tomorrow. The key features of Litera Nova are as follows:</p>
+                                <div class="row mt-3">
+                                    <div class="col-1">
+                                        <img src="../../../assets/img/MLZS/right_icon_white.png" class="right_icon" alt="right_icon_white"></div>
+                                        <div class="col-11 text-white mt-2"><p>NCF 2023 aligned.</p></div>
+                                        <div class="col-1">
+                                            <img src="../../../assets/img/MLZS/right_icon_white.png" class="right_icon" alt="right_icon_white"></div>
+                                            <div class="col-11 text-white mt-2"><p>Learner-driven approach.</p></div>
+
+                                            <div class="col-1">
+                                                <img src="../../../assets/img/MLZS/right_icon_white.png" class="right_icon" alt="right_icon_white"></div>
+                                                <div class="col-11 text-white mt-2"><p>Immersive technology and AR integration.</p></div>
+
+                                                <div class="col-1">
+                                                    <img src="../../../assets/img/MLZS/right_icon_white.png" class="right_icon" alt="right_icon_white"></div>
+                                                    <div class="col-11 text-white mt-2"><p>10-fold competency-based learning and continuous assessments.</p></div>
+
+                                                    <div class="col-1">
+                                                        <img src="../../../assets/img/MLZS/right_icon_white.png" class="right_icon" alt="right_icon_white"></div>
+                                                        <div class="col-11 text-white mt-2"><p>Emphasis on 21st-century career-oriented competencies.</p></div>
+                                        </div>
+
+                                <button class="btn btn-custom-white mt-5" routerLink="/academics/litera-nova-app">Know More <i class="fa fa-long-arrow-right mx-2"></i></button>
+                            </div>
+                        </div>
+        
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+
+   <div class="box_content mb-5 mt-5">
+    <!-- <app-programmes></app-programmes> -->
+     <!-- <div class="title_content text-center mt-4">
+      <h2 class=""><b>Programmes</b></h2>
+    <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="">
+    </div> -->
+     <app-programmes-sub-tab></app-programmes-sub-tab>
+   </div>
+   <div class="box_content our_pedagogy_content">
+    <app-our-approach></app-our-approach>
+   </div>
+   <!-- <div class="box_content gallery_box  mt-4">
+   <app-gallery></app-gallery>
+</div> -->
+<div class="box_content mt-4">
+        <app-blogs></app-blogs>
+    </div>
+
+<div class="box_content my-5">
+    <app-testimonial></app-testimonial>
+</div>
+<div class="faq_bg py-5">
+    <div class="box title_content text-center">
+            <h2 class="text-white"><b>FAQs</b></h2>
+            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
+            <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
+            <app-faqs></app-faqs>
+        </div>
+    </div>
+ <div class="box_content award_box mt-4">
+    <app-awards-sub-page></app-awards-sub-page>
+</div>
+    </div>
+</section>
+<ngx-spinner type="ball-climbing-dot"></ngx-spinner>

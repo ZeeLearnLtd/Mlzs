@@ -29,6 +29,9 @@ export class CommonService {
   get_allCountryList(): Observable<any> {
     return this.http.post<any>(this.baseUrl + '/api/V1/mlzslist', {});
   }
+  get_centerdatabyslug(input:any): Observable<any> {
+    return this.http.post<any>(this.baseUrl + '/api/V1/mlzslist', input);
+  }
   searchDataList(obj: any): Observable<any> {
     return this.http.post<any>('https://cmsapi.zeelearn.com' + '/searchwebsite', obj);
   }

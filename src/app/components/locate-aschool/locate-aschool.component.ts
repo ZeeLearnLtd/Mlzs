@@ -53,23 +53,23 @@ export class LocateASchoolComponent {
   ngOnInit(): void {
     this.tindex = 50;
     this.getAllDataList();
-    this.getseo();
+    //this.getseo();
   }
 
-  getseo() {
-    let tbody = {
-      slug: 'locateus',
-      Projectid: environment.projectid,
-    };
-    this.apiService.getGetseo(tbody).subscribe((data: any) => {
-      if (data.data != undefined) {
-        this.projectService.sendMessagebread(data.data.breadcrumb);
-        this.projectService.sendMessageblog(data.data.blog);
-        this.projectService.sendMessageseo(data.data.testimony);
-        this.projectService.setmeta(data.data);
-      }
-    });
-  }
+  // getseo() {
+  //   let tbody = {
+  //     slug: 'locateus',
+  //     Projectid: environment.projectid,
+  //   };
+  //   this.apiService.getGetseo(tbody).subscribe((data: any) => {
+  //     if (data.data != undefined) {
+  //       this.projectService.sendMessagebread(data.data.breadcrumb);
+  //       this.projectService.sendMessageblog(data.data.blog);
+  //       this.projectService.sendMessageseo(data.data.testimony);
+  //       this.projectService.setmeta(data.data);
+  //     }
+  //   });
+  // }
   getAllDataList() {
     this.ngxSpinner.show();
     this._service.get_allCountryList().subscribe(
@@ -77,6 +77,7 @@ export class LocateASchoolComponent {
         // this.zoneList = res
         this.ngxSpinner.hide();
         this.all_data_list = res
+       // console.log('all_data_list', this.all_data_list)
         this.india_country();
         this.setcountry();
       }
@@ -371,7 +372,12 @@ export class LocateASchoolComponent {
     // })
     // this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
     // this.router.navigateByUrl('/admissions');
-    this.router.navigate(['/admissions', data?.Franchisee_Code])
+    if(data?.franchiseeslug){
+      this.router.navigate(['/'+data?.franchiseeslug])
+    }else{
+      this.router.navigate(['/admissions', data?.Franchisee_Code])
+    }
+    
   }
 
 }
