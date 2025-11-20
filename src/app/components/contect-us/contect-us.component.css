@@ -12,6 +12,9 @@
     margin-top: 40px;
 }
 @media screen and (max-width: 600px) {
+     .mobile_banner{
+    margin-top: 3rem;
+  }
      .menu_content{
     width: 40%;
     height: 50px;

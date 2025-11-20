@@ -234,6 +234,9 @@ h4 {
 }
 
 @media (max-width: 600px) {
+   .img_content{
+    margin-top: 1rem;
+  }
   .about_img_content img {
     width: 100%;
   }

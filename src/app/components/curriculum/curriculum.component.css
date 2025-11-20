@@ -38,4 +38,7 @@ h2{
     font-size: clamp(14px, 1vw, 2rem) !important;
 }
   @media screen and (max-width: 600px) {
+    .mobile_banner{
+    margin-top: 3rem;
+  }
     }

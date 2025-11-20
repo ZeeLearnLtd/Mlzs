@@ -82,7 +82,6 @@ export class DiscoverNewsComponent {
               .filter((year: any): year is number => year !== null) // remove nulls
           )
         );
-        //console.log('this.newsData ', this.newsData)
         this.distinctKeywards = Array.from(
           new Set(
             this.alldata

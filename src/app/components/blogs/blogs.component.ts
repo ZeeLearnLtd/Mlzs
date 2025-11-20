@@ -49,7 +49,6 @@ export class BlogsComponent implements OnInit {
         this.spinner = false
         if (message) {
           this.blogdata = message.text;
-         // console.log('blogdata', this.blogdata);
         }
       });
     this.getblog_data();
