@@ -71,6 +71,9 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+  .img_content{
+    margin-top: 1rem;
+  }
   li button {
     width: 98% !important;
   }

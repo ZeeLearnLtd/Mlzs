@@ -66,6 +66,9 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+  .mobile_banner{
+    margin-top: 3rem;
+  }
   li button {
     width: 98% !important;
   }
