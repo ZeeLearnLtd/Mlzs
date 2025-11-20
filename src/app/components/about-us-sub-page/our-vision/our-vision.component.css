@@ -14,7 +14,22 @@ section {
   min-height: 100vh;
 }
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+  .right_icon {
+  width:70px !important;
+  height: auto;
+  display: block;
+  margin: 5px auto;
+  object-fit: cover;
+}
+.right_icon_2{
+  width:75px !important;
+  height: auto;
+  display: block;
+  margin: 5px auto;
+  object-fit: cover;
+}
+}
 
 
 .text_bg {
@@ -87,7 +102,14 @@ p {
 }
 
 .right_icon {
-  width: 55px;
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 5px auto;
+  object-fit: cover;
+}
+.right_icon_2{
+  width:55px;
   height: auto;
   display: block;
   margin: 5px auto;
