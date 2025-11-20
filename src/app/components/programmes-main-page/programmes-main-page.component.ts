@@ -36,14 +36,14 @@ export class ProgrammesMainPageComponent {
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
-      if (isPlatformBrowser(this.platformId)) {
+      
         this.projectService.sendMessagebread(data.data.breadcrumb);
         this.projectService.sendMessageblog(data?.data?.blog);
         this.projectService.sendMessageseo(data?.data?.testimony);
         this.projectService.sendMessageFaqs(data?.data?.faq);
         this.projectService.sendMessageNews(data?.data?.news);
         this.projectService.setmeta(data?.data);
-      }
+      
     });
   }
 }

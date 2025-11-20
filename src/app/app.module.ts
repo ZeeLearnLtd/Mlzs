@@ -100,6 +100,7 @@ import { SearchComponent } from './components/search/search.component';
 import { TestimonialDetailsComponent } from './components/testimonial-details/testimonial-details.component';
 import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
+import { CenterpageComponent } from './components/centerpage/centerpage.component';
 interface NgxSpinnerConfig {
   type?: string;
 }
@@ -129,7 +130,7 @@ interface NgxSpinnerConfig {
     NurseryComponent,
     KindergartenComponent,
     TeacherTrainingComponent,
-    DayCareComponent,
+    DayCareComponent,CenterpageComponent,
     LocateUsComponent,
     OurApproachComponent,
     AwardsAndRecognitionComponent,
