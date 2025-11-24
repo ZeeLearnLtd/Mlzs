@@ -346,7 +346,8 @@ border: none !important;
   height: 22px;
   object-fit: cover;
 }
+
 form{
   height: 40vw;
-  padding: 1rem 0 3rem 0;
+  padding: 1rem 10px 3rem 0;
 }
