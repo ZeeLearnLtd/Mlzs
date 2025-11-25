@@ -38,6 +38,7 @@ export class ConvertToMLZSComponent {
   selectClassName: any;
   cityListName: any;
   stateListName: any;
+  cityName: any;
   constructor(private _activeRoute: ActivatedRoute,
     private projectService: ProjectSeoService, private router: Router,
     private fb: FormBuilder,
@@ -99,6 +100,7 @@ export class ConvertToMLZSComponent {
     this.selectCity = this.stateContentDataList.filter((item: any) => {
       return item.State_ID == this.stateId
     })
+
     this.cityList = this.selectCity[0].City;
 
     if (typeof this.cityList.CityName === 'string') {
@@ -141,7 +143,15 @@ export class ConvertToMLZSComponent {
     })
     this.selectClassName = this.selectClassName[0].ClassName
   }
-
+  onchangeCity(cityId: any) {
+    this.cityId = cityId.value;
+    let cityList = this.cityList.filter((x: any) => {
+      return this.cityId == x.CityID
+    })
+    this.cityName = cityList[0].CityName
+    console.log('cityid', this.cityId);
+    console.log('cityList', cityList);
+  }
   get f() {
     return this.admissionForm.controls;
   }
@@ -169,8 +179,8 @@ export class ConvertToMLZSComponent {
       "FirstName": this.admissionForm.get('name')?.value,
       "Email": this.admissionForm.get('email')?.value,
       "Mobile": this.admissionForm.get('mobileNo')?.value,
-      "State": this.admissionForm.get('state')?.value,
-      "City": this.admissionForm.get('city')?.value,
+      "State": this.stateListName,
+      "City": this.cityName,
       "LocationId": "",
       "class": "",
       "ProjectId": "3607",
@@ -181,7 +191,7 @@ export class ConvertToMLZSComponent {
     }
     this.apiService.savefranchiseeData(obj).subscribe(
       res => {
-        this.toastr.success('Form submit successfully!');
+        this.toastr.success('Request submit successfully!');
         this.ifLoader = true;
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;

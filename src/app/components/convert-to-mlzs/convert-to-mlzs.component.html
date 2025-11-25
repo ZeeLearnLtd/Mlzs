@@ -77,7 +77,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-1">
-                                    <select name="" id="" class="form-select form-control custom-dropdown"
+                                    <select name="" id="" class="form-select form-control custom-dropdown" (change)="onchangeCity($event.target)"
                                         formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
                                         <option value="">City</option>
                                         <option value="{{city.CityID}}" *ngFor="let city of cityList">{{city.CityName}}
