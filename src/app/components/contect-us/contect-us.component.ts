@@ -61,6 +61,7 @@ export class ContectUsComponent {
       email: ['', [Validators.required, Validators.email]],
       mobile: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       massege: ['', Validators.required],
+      type: ['', Validators.required],
     })
   }
 
