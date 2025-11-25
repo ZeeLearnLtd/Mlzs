@@ -30,24 +30,24 @@ export class CenterpageComponent {
   selectFranchisee: any;
   submitted: boolean = false
   franchiseeCode: any;
-  selectClasslist: any=[
-  { SchoolClassID: 5, ClassName: 'CLASS 1' },
-  { SchoolClassID: 6, ClassName: 'CLASS 2' },
-  { SchoolClassID: 7, ClassName: 'CLASS 3' },
-  { SchoolClassID: 8, ClassName: 'CLASS 4' },
-  { SchoolClassID: 9, ClassName: 'CLASS 5' },
-  { SchoolClassID: 10, ClassName: 'CLASS 6' },
-  { SchoolClassID: 11, ClassName: 'CLASS 7' },
-  { SchoolClassID: 12, ClassName: 'CLASS 8' },
-  { SchoolClassID: 13, ClassName: 'CLASS 9' },
-  { SchoolClassID: 14, ClassName: 'CLASS 10' },
-  { SchoolClassID: 15, ClassName: 'CLASS 11 – Science' },
-  { SchoolClassID: 16, ClassName: 'CLASS 11 – Commerce' },
-  { SchoolClassID: 17, ClassName: 'CLASS 11 – Arts' },
-  { SchoolClassID: 18, ClassName: 'CLASS 12 – Science' },
-  { SchoolClassID: 19, ClassName: 'CLASS 12 – Commerce' },
-  { SchoolClassID: 20, ClassName: 'CLASS 12 – Arts' },
-];
+  selectClasslist: any = [
+    { SchoolClassID: 5, ClassName: 'CLASS 1' },
+    { SchoolClassID: 6, ClassName: 'CLASS 2' },
+    { SchoolClassID: 7, ClassName: 'CLASS 3' },
+    { SchoolClassID: 8, ClassName: 'CLASS 4' },
+    { SchoolClassID: 9, ClassName: 'CLASS 5' },
+    { SchoolClassID: 10, ClassName: 'CLASS 6' },
+    { SchoolClassID: 11, ClassName: 'CLASS 7' },
+    { SchoolClassID: 12, ClassName: 'CLASS 8' },
+    { SchoolClassID: 13, ClassName: 'CLASS 9' },
+    { SchoolClassID: 14, ClassName: 'CLASS 10' },
+    { SchoolClassID: 15, ClassName: 'CLASS 11 – Science' },
+    { SchoolClassID: 16, ClassName: 'CLASS 11 – Commerce' },
+    { SchoolClassID: 17, ClassName: 'CLASS 11 – Arts' },
+    { SchoolClassID: 18, ClassName: 'CLASS 12 – Science' },
+    { SchoolClassID: 19, ClassName: 'CLASS 12 – Commerce' },
+    { SchoolClassID: 20, ClassName: 'CLASS 12 – Arts' },
+  ];
   admissionForm: FormGroup;
   randomOtp: any;
   selectFranchiseeCode: any;
@@ -58,7 +58,7 @@ export class CenterpageComponent {
   _franchise_code: string = "";
   stateListName: any;
   ifLoader: boolean = false;
-  centerdatabyslug:any=[];
+  centerdatabyslug: any = [];
   constructor(private _activeRoute: ActivatedRoute, private spinner: NgxSpinnerService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private projectService: ProjectSeoService, private router: Router,
@@ -81,47 +81,47 @@ export class CenterpageComponent {
   }
   ngOnInit(): void {
     this._franchise_code = this.activatedRoute.snapshot.paramMap.get('frcode')!;
-   this.activatedRoute.url.subscribe((urlSegments: UrlSegment[]) => {
+    this.activatedRoute.url.subscribe((urlSegments: UrlSegment[]) => {
       // Skip the first "admissions"
-         const parts = urlSegments.map(s => s.path);
-      if (parts.length === 0) {        
+      const parts = urlSegments.map(s => s.path);
+      if (parts.length === 0) {
         return;
       }
 
       const value = parts.join('/');
-     
-     this.get_centerdatabyslug(value);
-   });
-      //this.getAdmissionFormData();
+
+      this.get_centerdatabyslug(value);
+    });
+    //this.getAdmissionFormData();
     // const urlSegments = this.activatedRoute.snapshot.url;
     // this.segment = urlSegments[0]?.path;
     this._activeRoute.queryParams.subscribe(
       res => {
       }
     )
-    
+
   }
 
 
-  getseo(slug:string) {
+  getseo(slug: string) {
     this.spinner.show();
     let tbody = {
       slug: slug,
       Projectid: environment.projectid,
     };
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
-      this.spinner.hide();          
-      if(data?.data?.breadcrumb){
-          this.projectService.sendMessagebread(data?.data?.breadcrumb);
+      this.spinner.hide();
+      if (data?.data?.breadcrumb) {
+        this.projectService.sendMessagebread(data?.data?.breadcrumb);
       }
-      if(data?.data?.blog){
+      if (data?.data?.blog) {
         this.projectService.sendMessageblog(data?.data?.blog);
       }
-      if(data?.data?.testimony){
+      if (data?.data?.testimony) {
         this.projectService.sendMessageseo(data?.data?.testimony);
       }
-      if(data?.data?.faq){
-          this.projectService.sendMessageFaqs(data?.data?.faq);
+      if (data?.data?.faq) {
+        this.projectService.sendMessageFaqs(data?.data?.faq);
       }
       this.projectService.setmeta(data.data);
     });
@@ -129,15 +129,15 @@ export class CenterpageComponent {
   }
 
 
-  get_centerdatabyslug(slug:string) {
-   let input={
-      "slug":slug
+  get_centerdatabyslug(slug: string) {
+    let input = {
+      "slug": slug
     }
     this.common.get_centerdatabyslug(input).subscribe((
       res => {
         this.centerdatabyslug = res;
         this.getseo(slug);
-         this.setaddress();
+        this.setaddress();
         // if (this._franchise_code) {
         //  
         // }
@@ -145,17 +145,17 @@ export class CenterpageComponent {
     ))
   }
 
-  setaddress() {   
+  setaddress() {
 
-    if (this.centerdatabyslug.length==1) {
+    if (this.centerdatabyslug.length == 1) {
       let data = this.centerdatabyslug[0];
-      
+
       this.admissionForm.get('state')?.patchValue(data?.State_Id);
-      this.stateListName=data?.State_Name
+      this.stateListName = data?.State_Name
       this.admissionForm.get('state')?.disable();
-      
+
       this.admissionForm.get('city')?.patchValue(data?.City_Id);
-      this.cityListName=data?.City_Name
+      this.cityListName = data?.City_Name
       this.admissionForm.get('city')?.disable();
 
       this.franchiseeCode = data?.Franchisee_Code;
@@ -261,7 +261,7 @@ export class CenterpageComponent {
     this.apiService.postAdmissionForm(obj).subscribe(
       res => {
         this.spinner.hide();
-        this.toastr.success('Admission submit successfully!');
+        this.toastr.success('Request submit successfully!');
         this.ifLoader = false;
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;
@@ -283,7 +283,7 @@ export class CenterpageComponent {
     this.randomOtp = Math.floor(1000 + Math.random() * 9000);
     let mobNo = {
       "MobileNo": this.admissionForm.get('mobileNo')?.value,
-      "smsText": `To validate your interest in the MLZS Franchise, your OTP is ${this.randomOtp}` + `. Think Education. Think Zee Learn.`,
+      "smsText": `To validate your interest in MLZS Admission, your OTP is ${this.randomOtp}. Think Education. Think Zee Learn.`,
       "sResponse": "",
       "header": "ZLMLZS"
     }

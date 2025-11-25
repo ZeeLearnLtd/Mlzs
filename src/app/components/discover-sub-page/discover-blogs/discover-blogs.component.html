@@ -43,100 +43,10 @@
                 experiences, achievements, and innovations that shape our community.</p>
 
             <div class="news_list mt-5">
-                <!-- <div class="row" *ngFor="let category of categoryWiseData">
-                    <h4>{{ category.categoryname }}</h4>
-
-                    <div class="col-md-5 category_blog_content" *ngIf="!show_img">
-                        <ng-container *ngIf="category.blogsContent?.length; else noBlog">
-                            <div class="img_box_big">
-                                <ng-container *ngIf="category.blogsContent[0].logofiles?.length; else defaultBlogImg">
-                                    <img [src]="category.blogsContent[0].logofiles[0]?.value || 'assets/img/MLZS/MLZS.svg'"
-                                        alt="{{ category.blogsContent[0].Title || 'Blog Image' }}" width="100%" />
-                                </ng-container>
-                                <ng-template #defaultBlogImg>
-                                    <img src="assets/img/MLZS/MLZS.svg" alt="Default Blog Image" width="100%"
-                                        class="defaultImg" />
-                                </ng-template>
-
-                            </div>
-                        </ng-container>
-                        <ng-template #noBlog>
-                            <div class="img_box_big">
-                                <img src="assets/img/MLZS/MLZS.svg" alt="No Blog" width="100%" class="defaultImg" />
-                            </div>
-                        </ng-template>
-                    </div>
-                    <div class="col-md-5 category_blog_content" *ngIf="show_img">
-                        <ng-container *ngIf="show_img?.length; else noBlog">
-                            <div class="img_box_big">
-                                <ng-container *ngIf="show_img[0].logofiles?.length; else defaultBlogImg">
-                                    <img [src]="show_img[0].logofiles[0]?.value || 'assets/img/MLZS/MLZS.svg'"
-                                        alt="{{ show_img[0].Title || 'Blog Image' }}" width="100%" />
-                                </ng-container>
-                                <ng-template #defaultBlogImg>
-                                    <img src="assets/img/MLZS/MLZS.svg" alt="Default Blog Image" width="100%"
-                                        class="defaultImg" />
-                                </ng-template>
-
-                            </div>
-                        </ng-container>
-                        <ng-template #noBlog>
-                            <div class="img_box_big">
-                                <img src="assets/img/MLZS/MLZS.svg" alt="No Blog" width="100%" class="defaultImg" />
-                            </div>
-                        </ng-template>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="cascade-slider_container">
-                            <div class="cascade-slider_slides" [style.transform]="getTranslateY(category.categoryId)">
-                                <div class="cascade-slide" *ngFor="let blog of category.blogsContent">
-                                    <div class="row">
-                                        <div class="col-md-5" (click)="getBlogsItem(blog);">
-                                            <div class="img_box">
-                                                <div *ngIf="blog?.logofiles?.length; else defaultBlogImg">
-                                                    <div *ngFor="let img of blog.logofiles">
-                                                        <img [src]="img?.value || 'assets/img/MLZS/MLZS.svg'"
-                                                            alt="Blog Image" width="100%" />
-                                                    </div>
-                                                </div>
-
-                                                <ng-template #defaultBlogImg>
-                                                    <img src="assets/img/MLZS/MLZS.svg" alt="Default Blog Image"
-                                                        class="defaultImg" width="100%" />
-                                                </ng-template>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="news_text">
-                                                <h3>{{ blog.Title }}</h3>
-                                                <p class="m-0 p-0 long_para">{{ blog.short }}</p>
-                                                <p class="m-0 p-0 date_content">Date: {{blog.CreatedDate}}</p>
-                                                <div class="d-flex justify-content-start">
-                                                    <button class="btn read_mode mt-2"
-                                                        routerLink="/blogs/{{blog.slug}}">Know
-                                                        More <i class="fa fa-long-arrow-right mx-2"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cascade-dots">
-                                <div class="dot" *ngFor="let dot of [].constructor(category.totalPages); let i = index"
-                                    [class.active]="(currentIndexMap[category.categoryId] || 0) / 3 === i"
-                                    (click)="moveToSlide(category.categoryId,i)">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                </div> -->
-
                 <div class="row" *ngFor="let category of categoryWiseData">
                     <h2>{{ category.categoryname }}</h2>
                     <!-- LEFT BIG IMAGE -->
-                    <div class="col-md-5 category_blog_content">
+                    <div class="col-md-5 category_blog_content d-none d-sm-block">
                         <ng-container *ngIf="category.blogsContent?.length; else noBlog">
                             <div class="img_box_big">
                                 <ng-container *ngIf="
