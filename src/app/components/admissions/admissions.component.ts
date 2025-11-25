@@ -41,6 +41,7 @@ export class AdmissionsComponent implements OnInit {
   _franchise_code: string = "";
   stateListName: any;
   ifLoader: boolean = false
+  selectFranchiseeList: any;
   constructor(private _activeRoute: ActivatedRoute, private spinner: NgxSpinnerService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private projectService: ProjectSeoService, private router: Router,
@@ -211,17 +212,23 @@ export class AdmissionsComponent implements OnInit {
 
   onChangeCity(id: any) {
     this.cityId = id.value;
-    this.selectFranchisee = this.cityList.filter((item: any) => {
+    this.selectFranchiseeList = this.cityList.filter((item: any) => {
       return item.CityID == this.cityId
     })
-    this.selectFranchisee = [this.selectFranchisee[0].Franchisee]
+    this.selectFranchisee = this.selectFranchiseeList[0].Franchisee = Array.isArray(this.selectFranchiseeList[0].Franchisee)
+      ? this.selectFranchiseeList[0].Franchisee                 // already array → no change
+      : [this.selectFranchiseeList[0].Franchisee];
+    // [this.selectFranchisee[0].Franchisee]
+    console.log('selectFranchisee', this.selectFranchisee);
     this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
     this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
+
     this.cityListName = this.cityList.filter((item: any) => {
       return item.CityID == this.cityId
     })
 
     this.cityListName = this.cityListName[0].CityName
+
   }
   onChangeFranchisee(id: any) {
     this.franchiseeCode = id.value;
@@ -229,6 +236,8 @@ export class AdmissionsComponent implements OnInit {
       return item.Franchisee_Code == this.franchiseeCode
     })
     this.selectClasslist = this.selectClasslist[0].classlist
+
+    console.log('this.selectClasslist2', this.selectClasslist);
   }
 
   onchangeClass(id: any) {
@@ -282,7 +291,7 @@ export class AdmissionsComponent implements OnInit {
     this.apiService.postAdmissionForm(obj).subscribe(
       res => {
         this.spinner.hide();
-        this.toastr.success('Admission submit successfully!');
+        this.toastr.success('Request submit successfully!');
         this.ifLoader = false;
         this.otp_ValidMsg = false;
         this.otp_inValidMsg = false;

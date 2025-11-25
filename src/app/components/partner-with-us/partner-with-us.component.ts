@@ -172,7 +172,7 @@ export class PartnerWithUsComponent {
         }
         this.apiService.savefranchiseeData(obj).subscribe(
           res => {
-            this.toastr.success('Admission submit successfully!');
+            this.toastr.success('Request submit successfully!');
             this.ifLoader = false;
             this.otp_ValidMsg = false;
             this.otp_inValidMsg = false;
