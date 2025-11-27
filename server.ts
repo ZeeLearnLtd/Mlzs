@@ -33,6 +33,13 @@ export function app(): express.Express {
   server.get('*.*', express.static(distFolder, {
     maxAge: '1y'
   }));
+  server.use((req, res, next) => {
+  const lower = req.url.toLowerCase();
+  if (req.url !== lower) {
+    return res.redirect(301, lower);
+  }
+  next();
+  });
   server.use(
     expressStaticGzip(path.join(__dirname, 'dist', 'mlzs', 'browser'), {
       enableBrotli: true, // Enable Brotli compression
@@ -70,6 +77,8 @@ function run(): void {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
+
+
 
 // Webpack will replace 'require' with '__webpack_require__'
 // '__non_webpack_require__' is a proxy to Node 'require'
