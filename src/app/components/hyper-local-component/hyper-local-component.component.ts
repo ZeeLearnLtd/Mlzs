@@ -46,8 +46,6 @@ export class HyperLocalComponentComponent {
   ngOnInit(): void {
     this.state = this.route.snapshot.paramMap.get('state')!;
     this.city = this.route.snapshot.paramMap.get('city')!;
-    console.log(this.state);
-    console.log(this.city);
     this.getseo();
   }
 
@@ -94,7 +92,7 @@ export class HyperLocalComponentComponent {
           this.projectService.sendMessageNews(data?.data?.news);
           this.projectService.setmeta(data?.data);
         }else{
-           this.router.navigateByUrl('page-not-found');
+          //  this.router.navigateByUrl('page-not-found');
         }
           
           
