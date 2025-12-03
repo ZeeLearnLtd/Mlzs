@@ -66,14 +66,19 @@ import { TestimonialDetailsComponent } from './components/testimonial-details/te
 import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 import { CenterpageComponent } from './components/centerpage/centerpage.component';
+import { HyperLocalComponentComponent } from './components/hyper-local-component/hyper-local-component.component';
+import { LocationResolver } from './services/location.resolver';
 const routes: Routes = [
+  //   { path: '', component: HomeComponent },
+  { path: 'page-not-found', component: PagenotfoundComponent },
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
+ 
   {
     path: '',
     component: HeaderComponent,
     children: [
-      { path: '', component: HomeComponent },
+     { path: '', component: HomeComponent },
       { path: 'academic-programs', component: ProgrammesMainPageComponent },
       { path: 'academics', component: AcademicsMainPageComponent },
       { path: 'search', component: SearchComponent },
@@ -244,13 +249,28 @@ const routes: Routes = [
 { path: 'madhya-pradesh/balaghat/best-cbse-school-balaghat-mp',component:CenterpageComponent},
 
 
+
       // { path: 'achievements', component: DiscoverAchievementsComponent },
       { path: 'curriculum', component: CurriculumComponent },
       { path: 'partner-with-us', component: PartnerWithUsComponent },
+
+      {
+  path: ':state',
+  component: HyperLocalComponentComponent,
+  //resolve: { validLocation: LocationResolver }
+},
+{
+  path: ':state/:city',
+  component: HyperLocalComponentComponent,
+  //resolve: { validLocation: LocationResolver }
+},
+
     ],
   },
+ 
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
+  { path: 'page-not-found', component: PagenotfoundComponent },
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
 

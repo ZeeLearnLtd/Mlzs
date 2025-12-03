@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { from, Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { EMPTY, from, Observable, of, throwError } from 'rxjs';
+import { map, catchError, tap, filter } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { Route,Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -11,7 +13,7 @@ export class ApicallService {
   form_baseUrl = environment.api_url
   globelApi = environment.api_url;
   cmsBaseUrl = environment.cmsapi_url;
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private route:Router) { }
 
   getGetseo(tbody: any) {
     let headers: HttpHeaders = new HttpHeaders();
@@ -19,14 +21,27 @@ export class ApicallService {
     headers = headers.append('dbid', '0');
     return this.httpClient
       .post(environment.cmsapi_url + `Getseo`, tbody, { headers: headers })
-      .pipe(
+       .pipe(
         map((data: any) => {
-          return data;
+          
+            return data;
+                    
         }),
         catchError((error) => {
+          console.log(error);
           return throwError('Something went wrong!');
         })
-      );
+        
+      )
+      
+    //      map((res: any) => res?.data),
+    // tap(data => {
+    //   if (!data) {
+    //     this.route.navigateByUrl('page-not-found');
+    //   }
+    // }),
+    // filter(data => !!data) // 
+    //   );
   }
   getGetblog(tbody: any) {
     let headers: HttpHeaders = new HttpHeaders();
@@ -35,13 +50,24 @@ export class ApicallService {
     return this.httpClient
       .post(environment.cmsapi_url + `Getblogdata`, tbody, { headers: headers })
       .pipe(
-        map((data: any) => {
-          return data;
+         map((data: any) => {
+          if(data && Object.keys(data.data).length > 0){
+            return data;
+          }else{
+            this.route.navigateByUrl('page-not-found');
+          }
+          
         }),
         catchError((error) => {
+          console.log(error);
           return throwError('Something went wrong!');
         })
-      );
+             
+  )
+  }
+
+  fnnotfound(){
+    this.route.navigateByUrl('page-not-found');
   }
 
   checkMicrosite(data: any): Observable<any> {

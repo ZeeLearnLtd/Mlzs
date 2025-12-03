@@ -1,0 +1,94 @@
+<section>
+   
+    <div class="banner_content" id="home_banner">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+               <img src="../../../assets/img/MLZS/banner/banner1.png" class="img-fluid d-none d-md-block w-100"
+                    alt="about banner">
+                <img src="../../../assets/img/MLZS/banner/mobile_banner/Mob-Banner-01.png"
+                         class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
+           </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+ <!-- <div class="mobile_banner d-block d-md-none">
+
+ </div> -->
+    </div>
+    <div class="main_bg">
+ <div class="box_content">
+<div class="about-section" id="about_content_bg">
+  
+
+  <div class="stats-bar py-4 mt-auto">
+    <div class="counter_content">
+      <div class="row text-center">
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <img src="../../../assets/img/MLZS/number.png" alt="icon" class="mb-2 counter_img">
+          <div class="stat-number">130+</div>
+          <div class="stat_text_counter">Number of schools</div>
+        </div>
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <img src="../../../assets/img/MLZS/state.png" alt="icon" class="mb-2 counter_img">
+          <div class="stat-number">18+</div>
+          <div class="stat_text_counter">Presence in number of states</div>
+        </div>
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <img src="../../../assets/img/MLZS/school.png" alt="icon" class="mb-2 counter_img">
+          <div class="stat-number">25K+</div>
+          <div class="stat_text_counter">Number of educators</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="../../../assets/img/MLZS/no_of_students_color.png" alt="icon" class="mb-2 counter_img">
+          <div class="stat-number">756,600+</div>
+          <div class="stat_text_counter">Number of students nurtured</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ 
+ <div class="box_content">
+    <app-programmes></app-programmes>
+ </div>
+ <div class="our_pedagogy">
+    <app-our-pedagogy></app-our-pedagogy>
+ </div>
+ <div class="box_content mb-5">
+       <div class="py-5 locat_us_content">
+            <div class="text-center">
+             <h2 class="text-center">Locate A School</h2>
+           <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
+           </div>
+            <p class="text-center text-white">Looking for a school near you? Our ‘Locate a School’ feature makes it easy to find educational institutions based on your location, preferences, and specific needs.</p>
+             <app-locateusforhyperlocal [state]="state" [city]="city"></app-locateusforhyperlocal>
+        </div>
+    </div>
+ <div class="box_content">
+    <app-franchise-opportunity></app-franchise-opportunity>
+    </div>
+ 
+ <div class="box_content my-3">
+    <app-our-parents></app-our-parents>
+</div>
+<div class="faq_bg py-5">
+    <div class="box title_content text-center py-3">
+            <h2 class="text-white text-center"><b>FAQs</b></h2>
+            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
+            <p class="m-0 text-white">Have a burning question? We're here to answer the most common ones.</p>
+            <app-faqs></app-faqs>
+        </div>
+    </div>
+</div>
+   
+    
+ </section>
