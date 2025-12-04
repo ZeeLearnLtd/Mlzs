@@ -48,14 +48,14 @@ section{
     z-index: 2;
 }
 
-.sec_box_content {
+/* .sec_box_content {
     width: 100%;
     position: absolute;
     margin-top: -5rem;
     background: #fff;
     opacity: 0.9;
     z-index: 9;
-}
+} */
 
 .img_box img {
     width: 12%;
@@ -186,14 +186,13 @@ section{
         height: auto !important;
         overflow: hidden;
     }
-
-    .sec_box_content {
+    /* .sec_box_content {
         width: 100%;
         position: static;
         margin-top: -2rem;
         background: #fff;
         opacity: 0.9;
-    }
+    } */
 
     .desktop_counter_content {
         display: none;
