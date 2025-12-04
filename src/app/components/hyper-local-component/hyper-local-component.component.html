@@ -1,6 +1,9 @@
 <section>
    
-    <div class="banner_content" id="home_banner">
+    <div class="banner_content desktop" id="home_banner">
+       <div class="admission_form">
+                         <app-admissionforhyperlocal *ngIf="statecitydata.length" [state]="state" [city]="city" [inputdata]="statecitydata"></app-admissionforhyperlocal>
+  </div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="3000">
@@ -8,23 +11,29 @@
                     alt="about banner">
                 <img src="../../../assets/img/MLZS/banner/mobile_banner/Mob-Banner-01.png"
                          class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
-                <app-admissionforhyperlocal *ngIf="statecitydata.length" [state]="state" [city]="city" [inputdata]="statecitydata"></app-admissionforhyperlocal>
-  
+               
            </div>
         </div>
-        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button> -->
       </div>
- <!-- <div class="mobile_banner d-block d-md-none">
-
- </div> -->
     </div>
+
+    <div class="banner_content mobile" id="home_banner">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+               <img src="../../../assets/img/MLZS/banner/banner1.png" class="img-fluid d-none d-md-block w-100"
+                    alt="about banner">
+                <img src="../../../assets/img/MLZS/banner/mobile_banner/Mob-Banner-01.png"
+                         class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
+               
+           </div>
+        </div>
+      </div>
+      <div class="admission_form1">
+       <app-admissionforhyperlocal *ngIf="statecitydata.length" [state]="state" [city]="city" [inputdata]="statecitydata"></app-admissionforhyperlocal>
+  </div>
+    </div>
+
     <div class="main_bg">
  <div class="box_content">
 <div class="about-section" id="about_content_bg">

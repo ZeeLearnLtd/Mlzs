@@ -93,7 +93,30 @@ section{
 }
 .faq_bg{
     margin-top: 4rem;}
+     .desktop{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
 @media screen and (max-width: 600px) {
+    /* .carousel{
+    height:auto !important;
+} */
+    .mobile{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+    .admission_form{
+    width: 100% !important;
+    float: right;
+    position: relative;
+    z-index: 99;
+    right: auto;
+    top: auto;
+}
     .carousel-item img {
     width: 100% !important;
     height: auto !important;
@@ -370,7 +393,9 @@ h2 {
         object-fit: cover;          /* Force full screen on big Mac screens */
   }
 }
-
+/* .carousel{
+    height:90vh;
+} */
 @media (min-width: 1900px) {
       .banner_content {
     margin-top: 14rem;
@@ -382,3 +407,13 @@ h2 {
         object-fit: cover;          /* Force full screen on big Mac screens */
   }
 }
+
+.admission_form{
+    width: 30%;
+    float: right;
+    position: absolute;
+    z-index: 99;
+    right: 0.7rem;
+    top: -5px;
+}
+
