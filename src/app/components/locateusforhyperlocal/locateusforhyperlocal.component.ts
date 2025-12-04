@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
+import { AfterContentInit, Component, Inject, Input, OnChanges, OnInit, PLATFORM_ID, SimpleChanges } from '@angular/core';
 import { CommonService } from '../service/common.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
@@ -13,9 +13,10 @@ import { Router } from '@angular/router';
   templateUrl: './locateusforhyperlocal.component.html',
   styleUrls: ['./locateusforhyperlocal.component.css']
 })
-export class LocateusforhyperlocalComponent {
+export class LocateusforhyperlocalComponent implements OnChanges {
   @Input() state:string="";
   @Input() city:string="";
+  @Input() inputdata:any;
   headerTitle = "Locate Us"
   all_data_list: any;
   countryList: any = [];
@@ -51,16 +52,50 @@ export class LocateusforhyperlocalComponent {
       location: [''],
     })
   }
+ngOnChanges(changes: SimpleChanges) {
+    if (changes['inputdata']?.currentValue) {
+        this.inputdata=changes['inputdata']?.currentValue;
+        if(this.inputdata.length>0){
+          console.log('inputdata',this.inputdata);
+          this.all_data_list = this.inputdata
+          this.india_country();
+          this.setcountry();
+        }        
+        else {
+          //this.handleNoData();
+        }
+    }
+  }
+//   ngAfterContentInit() {
+//   if (this.inputdata.length==0) {
+//     console.log('afterview',this.inputdata);
+//     this.handleNoData();   // execute "else" only once at the very end
+//   }
+// }
 
-  ngOnInit(): void {
-    this.tindex = 50;
-    if(this.state && this.state!=''){
+handleNoData(){
+  if(this.state && this.state!=''){
       this.getcenterlist();
     }else if (this.city && this.city!=""){
       this.getcenterlist();
     }else{
       this.getAllDataList();
     }    
+}
+  ngOnInit(): void {
+    this.tindex = 50;
+    //   if(this.inputdata.length>0){
+    //     this.all_data_list = this.inputdata
+    //     this.india_country();
+    //     this.setcountry();
+    // }
+    // else if(this.state && this.state!=''){
+    //   this.getcenterlist();
+    // }else if (this.city && this.city!=""){
+    //   this.getcenterlist();
+    // }else{
+    //   this.getAllDataList();
+    // }    
     //this.getseo();
   }
 

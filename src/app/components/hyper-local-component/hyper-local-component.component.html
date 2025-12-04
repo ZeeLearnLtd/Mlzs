@@ -8,16 +8,18 @@
                     alt="about banner">
                 <img src="../../../assets/img/MLZS/banner/mobile_banner/Mob-Banner-01.png"
                          class="img-fluid d-block d-md-none w-100" alt="Mobile banner">
+                <app-admissionforhyperlocal *ngIf="statecitydata.length" [state]="state" [city]="city" [inputdata]="statecitydata"></app-admissionforhyperlocal>
+  
            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
-        </button>
+        </button> -->
       </div>
  <!-- <div class="mobile_banner d-block d-md-none">
 
@@ -26,7 +28,7 @@
     <div class="main_bg">
  <div class="box_content">
 <div class="about-section" id="about_content_bg">
-  
+                
 
   <div class="stats-bar py-4 mt-auto">
     <div class="counter_content">
@@ -70,7 +72,7 @@
            <img src="../../../assets/img/MLZS/text-bg.png" class="text_bg" alt="">
            </div>
             <p class="text-center text-white">Looking for a school near you? Our ‘Locate a School’ feature makes it easy to find educational institutions based on your location, preferences, and specific needs.</p>
-             <app-locateusforhyperlocal [state]="state" [city]="city"></app-locateusforhyperlocal>
+             <app-locateusforhyperlocal *ngIf="statecitydata" [state]="state" [city]="city" [inputdata]="statecitydata"></app-locateusforhyperlocal>
         </div>
     </div>
  <div class="box_content">

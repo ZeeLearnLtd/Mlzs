@@ -22,10 +22,8 @@ export class ApicallService {
     return this.httpClient
       .post(environment.cmsapi_url + `Getseo`, tbody, { headers: headers })
        .pipe(
-        map((data: any) => {
-          
-            return data;
-                    
+        map((data: any) => {          
+            return data;        
         }),
         catchError((error) => {
           console.log(error);
