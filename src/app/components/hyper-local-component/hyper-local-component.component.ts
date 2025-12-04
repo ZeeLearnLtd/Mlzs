@@ -27,7 +27,7 @@ export class HyperLocalComponentComponent {
     testimonydata: any = [];
     profile_title: any;
     bannerList: any;
-  
+  statecitydata:any=[];
  constructor(
       @Inject(PLATFORM_ID) private platformId: Object,
       private sanitizer: DomSanitizer,
@@ -47,6 +47,34 @@ export class HyperLocalComponentComponent {
     this.state = this.route.snapshot.paramMap.get('state')!;
     this.city = this.route.snapshot.paramMap.get('city')!;
     this.getseo();
+  }
+
+  getcenterlist(){
+    this.statecitydata=[];
+      this.ngxSpinner.show();
+      let slug
+      let type
+      if(this.state){
+        slug=this.state,
+        type='State'
+      }
+      if(this.city){
+        slug=this.state+'/'+this.city
+        type='City'
+      }
+       let tbody = {
+        slug: slug,
+        type:type
+      };
+    this.common.get_centerdatabyslug(tbody).subscribe(
+      res => {
+        // this.zoneList = res
+        this.ngxSpinner.hide();
+        this.statecitydata = res
+       // console.log('all_data_list', this.all_data_list)
+       
+      }
+    )
   }
 
   
@@ -80,7 +108,8 @@ export class HyperLocalComponentComponent {
         Projectid: environment.projectid,
       };
       this.apiService.getGetseo(tbody).subscribe((data: any) => {
-        this.getBanner();
+       // this.getBanner();
+        this.getcenterlist();
        // this.getcenter();
         if(data.data){
           if(data?.data?.breadcrumb){

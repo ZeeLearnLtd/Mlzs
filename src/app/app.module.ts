@@ -103,13 +103,14 @@ import { DisclaimerComponent } from './components/disclaimer/disclaimer.componen
 import { CenterpageComponent } from './components/centerpage/centerpage.component';
 import { HyperLocalComponentComponent } from './components/hyper-local-component/hyper-local-component.component';
 import { LocateusforhyperlocalComponent } from './components/locateusforhyperlocal/locateusforhyperlocal.component';
+import { AdmissionforhyperlocalComponent } from './components/admissionforhyperlocal/admissionforhyperlocal.component';
 
 interface NgxSpinnerConfig {
   type?: string;
 }
 @NgModule({
   declarations: [
-    AppComponent, LocateusforhyperlocalComponent,   HomeComponent,    BlogsComponent,   HeaderComponent,    FooterComponent,    LegancyComponent,
+    AppComponent, AdmissionforhyperlocalComponent,LocateusforhyperlocalComponent,   HomeComponent,    BlogsComponent,   HeaderComponent,    FooterComponent,    LegancyComponent,
     NewsComponent,    FaqsComponent,    AboutUsComponent,    HomeAboutUsComponent,HyperLocalComponentComponent,    KidzeePreeSchoolComponent,
     TestimonialComponent,    AdmissionsComponent,    FranchiseOpportunityComponent,    BlogComponent,
     AllBlogComponent,    BlogDetailsComponent,    StaticHeaderComponent,    SubMenuComponent,    PentemindComponent,
