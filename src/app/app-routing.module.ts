@@ -126,7 +126,7 @@ const routes: Routes = [
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
       { path: 'testimonials/:name', component: TestimonialDetailsComponent },
 
-//       { path: 'bihar/hajipur/best-cbse-school-hajipur',component:CenterpageComponent},
+// { path: 'bihar/hajipur/best-cbse-school-hajipur',component:CenterpageComponent},
 // { path: 'bihar/bhagalpur/best-cbse-school-bhagalpur',component:CenterpageComponent},
 // { path: 'bihar/muzaffarpur/best-cbse-school-muzaffarpur',component:CenterpageComponent},
 // { path: 'bihar/patna/best-cbse-school-patna-danapur',component:CenterpageComponent},

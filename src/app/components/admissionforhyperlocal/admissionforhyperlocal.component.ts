@@ -4,6 +4,7 @@ import { CommonService } from '../service/common.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { NgxSpinnerService } from "ngx-spinner";
 import { isPlatformBrowser } from '@angular/common';
+import { ApicallService } from 'src/app/services/apicall.service';
 
 @Component({
   selector: 'app-admissionforhyperlocal',
@@ -30,6 +31,7 @@ export class AdmissionforhyperlocalComponent {
   program_id: any;
   gen_captcha: any;
   filterFranchisee: any;
+  stateListName:string="";
   locationName: any;
   selectedcountry: string = "";
   selectedstate: string = "";
@@ -44,6 +46,7 @@ export class AdmissionforhyperlocalComponent {
   captchaEntered: String = ""
   classId: any;
   selectClassName: any;
+  cityListName:string="";
   ucenterList:any=[];
    selectFranchisee: any;
   ifLoader: boolean = false;
@@ -68,13 +71,13 @@ export class AdmissionforhyperlocalComponent {
   ];
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object, private fb: FormBuilder, private _servie: CommonService, private ngxSpinner: NgxSpinnerService,
-    private activatedRoute: ActivatedRoute,private _activeRoute: ActivatedRoute, private router: Router) {
+    private apiService:ApicallService,private activatedRoute: ActivatedRoute,private _activeRoute: ActivatedRoute, private router: Router) {
     this.admissionForm = fb.group({
       name: ['', Validators.required],
       // lname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       mobileNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      pinCode: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{6}$")]],
+     // pinCode: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{6}$")]],
       country: ['', Validators.required],
       state: ['', Validators.required],
       city: ['', Validators.required],
@@ -106,6 +109,7 @@ export class AdmissionforhyperlocalComponent {
     }).map(function (lg: any) {
       return lg;
     })
+    this.admissionForm.get('country')?.patchValue(lgd[0]?.Country_Name);
     const key = 'India';
     this.indiaCountry = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
     
@@ -116,7 +120,8 @@ export class AdmissionforhyperlocalComponent {
     })
     const key1 = 'State_Name';
     this.stateList = [...new Map(lgd.map((item: any) => [item[key1], item])).values()]
-    this.admissionForm.get('state')?.patchValue(this.stateList[0].State_Id)
+    this.admissionForm.get('state')?.patchValue(this.stateList[0].State_Id);
+    this.stateListName=this.stateList[0].State_Name
     this.stateList = this.stateList.sort((a: any, b: any) =>
       a.State_Name !== b.State_Name ? (a.State_Name < b.State_Name ? -1 : 1) : 0
     );
@@ -134,27 +139,17 @@ export class AdmissionforhyperlocalComponent {
   }
 
    onChangeFranchisee(id: any) {
-    this.franchiseeCode = this.admissionForm.get('franchisee')?.value!;
-    // if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
-    //   this.franchiseeList = [this.filterFranchisee[0].Franchisee];
-    //   this.locationName = this.franchiseeList[0].Franchisee_Name;
-    //   this.franchiseeMobileNo = this.franchiseeList[0].Mobile_No;
-    // }
-    // else 
-      if(this.franchiseeCode){
-      this.franchiseeList = this.filterFranchisee[0].Franchisee;
-      let dt = this.franchiseeList.filter((dt: any) => {
-        return dt.Franchisee_Code ==  this.franchiseeCode
+    let franchisee_Code = this.admissionForm.get('franchisee')?.value!;
+      if(franchisee_Code){
+      let dt = this.selectFranchisee.filter((dt: any) => {
+        return dt.Franchisee_Code ==  franchisee_Code
       }).map((obj: any) => {
         return obj
       })
       this.locationName = dt[0].Franchisee_Name;
       this.franchiseeMobileNo = dt[0].Mobile_No;
+      this.franchiseeCode = dt[0].ep_School_Innova_Id;
     }
-    // this.selectClasslist = this.selectFranchisee.filter((item: any) => {
-    //   return item.Franchisee_Code == this.franchiseeCode
-    // })
-    // this.selectClasslist = this.selectClasslist[0].classlist
   }
 
   selectState(stateId: any) {
@@ -184,6 +179,7 @@ export class AdmissionforhyperlocalComponent {
       }).map(function (lg: any) {
         return lg;
       })
+      this.cityListName = lgd[0].City_Name;
       const key = 'Franchisee_Name';
       this.selectFranchisee = [...new Map(lgd.map((item: any) => [item[key], item])).values()]
       this.admissionForm.get('class')?.patchValue('');
@@ -199,70 +195,14 @@ export class AdmissionforhyperlocalComponent {
     })
     this.selectClassName = this.selectClassName[0].ClassName
   }
-// selectCity(selectVal: any) {
-//     let city = selectVal.target.value
-//     this.filterFranchisee = this.cityList.filter((x: any) => {
-//       return x.City_Name == city
-//     })
-//     if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
-//       this.franchiseeList = [this.filterFranchisee[0].Franchisee]
-//     }
-//     else {
-//       this.franchiseeList = this.filterFranchisee[0].Franchisee
-//     }
 
-//   }
-
-  // setaddress(data: any) {
-  //   let filterState = this.countryList.filter((x: any) => {
-  //     return x.Country_Name == data.Country_Name;
-  //   });
-
-  //   this.stateList = filterState[0].State;
-  //   this.selectedcountry = data.Country_Name;
-
-  //   let filterCity = this.stateList.filter((x: any) => {
-  //     return x.State_Name == data.State_Name
-  //   })
-  //   this.cityList = filterCity[0].City
-  //   this.selectedstate = data.State_Name;
-
-
-  //   this.filterFranchisee = this.cityList.filter((x: any) => {
-  //     return x.City_Name == data.City_Name
-  //   })
-  //   this.selectedCity = data.City_Name;
-
-  //   if (!Array.isArray(this.filterFranchisee[0].Franchisee)) {
-  //     this.franchiseeList = [this.filterFranchisee[0].Franchisee];
-  //     this.locationName = this.franchiseeList[0].Franchisee_Name;
-  //     this.franchiseeMobileNo = this.franchiseeList[0].Mobile_No;
-  //   }
-  //   else {
-  //     this.franchiseeList = this.filterFranchisee[0].Franchisee;
-  //     let dt = this.franchiseeList.filter((dt: any) => {
-  //       return dt.Franchisee_Code == data.Franchisee_Code
-  //     }).map((obj: any) => {
-  //       return obj
-  //     })
-  //     this.locationName = dt[0].Franchisee_Name;
-  //     this.franchiseeMobileNo = dt[0].Mobile_No;
-
-  //   }
-
-  //   this.selectedpincode = data.Pin_Code;
-  //   this.selectedDevice = data.Franchisee_Code;
-  //   //this.locationName=this.franchiseeList[0].Franchisee_Name;
-  //   if (isPlatformBrowser(this.platformId)) {
-  //     window.sessionStorage.removeItem('uddixadd');
-  //   }
-  // }
 
   validationForm() {
     this.submitted = true;
 
     if (this.admissionForm.valid) {
-      this.submit_captcha();
+      //this.submit_captcha();
+       this.submitForm();
     } else {
       //this.submit_captcha();
     }
@@ -273,62 +213,32 @@ export class AdmissionforhyperlocalComponent {
     if ((this.admissionForm.get('otp')?.value).length == 4) {
       if (this.randomOtp == this.admissionForm.get('otp')?.value) {
         this.ngxSpinner.show();
+        
         let obj = {
-          // "City": this.admissionForm.get('city')?.value,
-          // "Country": this.admissionForm.get('country')?.value,
-          // "Email": this.admissionForm.get('email')?.value,
-          // "FirstName": this.admissionForm.get('fname')?.value,
-          // "HaveSpace": "",
-          // "LastName": this.admissionForm.get('lname')?.value,
-          // "Location": this.admissionForm.get('location')?.value,
-          // "LocationId": this.admissionForm.get('location')?.value,
-          // "Mobile": this.admissionForm.get('mobile')?.value,
-          // "PinCode": this.admissionForm.get('pinCode')?.value,
-          // "Product": "259262000004729208",
-          // "ProjectId": "1",
-          // "SoonStartsIn": "",
-          // "Source": "gclid",
-          // "gclid": "gclid",
-          // "State": this.admissionForm.get('state')?.value,
-          // "Type": "P",
-          // "WillingToInvest": "",
-          // "utm_compaign": "Website",
-          // "utm_medium": "Website",
-          // "utm_source": "Website",
-          // "utm_ad": "Website",
-          // "utm_Content": "Website",
-          // "utm_Term": "Website",
-
-
-          "City": this.admissionForm.get('city')?.value,
-          "Country": this.admissionForm.get('country')?.value,
-          "Email": this.admissionForm.get('email')?.value,
-          "FirstName": this.admissionForm.get('name')?.value,
-          "HaveSpace": "",
-          "LastName": this.admissionForm.get('name')?.value,
-          "Location": this.admissionForm.get('franchisee')?.value,
-          "Location_name": this.locationName,
-          "Mobile": this.admissionForm.get('mobileNo')?.value,
-          "PinCode": this.admissionForm.get('pinCode')?.value,
-          "class":this.admissionForm.get('class')?.value,
-          "Product": "259262000004729208",
-          "ProjectId": "1",
-          "SoonStartsIn": "",
-          "Source": "gclid",
-          "gclid": "gclid",
-          "State": this.admissionForm.get('state')?.value,
-          "Type": "P",
-          "WillingToInvest": "",
-          "utm_compaign": "Website",
-          "utm_medium": "Website",
-          "utm_source": "Website",
-          "utm_ad": "Website",
-          "utm_Content": "Website",
-          "utm_Term": "Website",
-          "Stream": "",
-          "Franchise_Mobile": this.franchiseeMobileNo
-        }
-        this._servie.saveData(obj).subscribe(
+      "utm_medium": "Website",
+      "utm_source": "Website",
+      "utm_compaign": "Website",
+      "utm_term": null,
+      "utm_content": null,
+      "utm_ad": null,
+      "gclid": null,
+      "Type": "P",
+      "Source": "Website",
+      "FirstName": this.admissionForm.get('name')?.value,
+      "Email": this.admissionForm.get('email')?.value,
+      "Mobile": this.admissionForm.get('mobileNo')?.value,
+      "State": this.stateListName,
+      "City": this.cityListName,
+      "LocationId": this.franchiseeCode,
+      "class": this.selectClassName,
+      "ClassId": this.admissionForm.get('class')?.value,
+      "ProjectId": "3607",
+      "Location": this.locationName,
+      "Location_name": this.locationName,//this.admissionForm.get('franchisee')?.value,
+      "Country": "India",
+      "Product": "259262000039670041"
+    }
+        this.apiService.postAdmissionForm(obj).subscribe(
           res => {
             this.ngxSpinner.hide();
             this.otp_ValidMsg = false;
@@ -376,7 +286,7 @@ export class AdmissionforhyperlocalComponent {
 
 
   getMobileNO() {
-    if ((this.admissionForm.get('mobile')?.value).length == 10) {
+    if ((this.admissionForm.get('mobileNo')?.value).length == 10) {
       this.sendMobNO();
     }
   }
@@ -384,12 +294,13 @@ export class AdmissionforhyperlocalComponent {
   sendMobNO() {
     this.ngxSpinner.show();
     this.randomOtp = Math.floor(1000 + Math.random() * 9000);
-    let mobNo = {
-      "MobileNo": this.admissionForm.get('mobile')?.value,
-      "smsText": `Your Kidzee Verification code is : ${this.randomOtp}`,
-      "sResponse": ""
+      let mobNo={
+        "MobileNo": this.admissionForm.get('mobileNo')?.value,
+      "smsText": `To validate your interest in MLZS Admission, your OTP is ${this.randomOtp}. Think Education. Think Zee Learn.`,
+      "sResponse": "",
+      "header": "ZLMLZS"
     }
-    this._servie.getOtp(mobNo).subscribe(
+    this.apiService.getOtp(mobNo).subscribe(
       res => {
         this.ngxSpinner.hide();
         this.otpInput = true;
@@ -433,16 +344,7 @@ export class AdmissionforhyperlocalComponent {
 
     this.stateList = filterState[0].State
   }
-
-  // selectState(selectVal: any) {
-  //   let state = selectVal.target.value
-  //   let filterCity = this.stateList.filter((x: any) => {
-  //     return x.State_Name == state
-  //   })
-  //   this.cityList = filterCity[0].City
-  // }
-
-  
+ 
 
   generateCAPTCHA() {
     "use strict";

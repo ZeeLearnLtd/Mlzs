@@ -112,14 +112,24 @@ export class HyperLocalComponentComponent {
         this.getcenterlist();
        // this.getcenter();
         if(data.data){
+          this.projectService.setmeta(data?.data);
           if(data?.data?.breadcrumb){
             this.projectService.sendMessagebread(data?.data?.breadcrumb);
-          }          
-          this.projectService.sendMessageblog(data?.data?.blog);
-          this.projectService.sendMessageseo(data?.data?.testimony);
-          this.projectService.sendMessageFaqs(data?.data?.faq);
-          this.projectService.sendMessageNews(data?.data?.news);
-          this.projectService.setmeta(data?.data);
+          }    
+          if(data?.data?.blog){
+            this.projectService.sendMessageblog(data?.data?.blog);
+          }      
+          if(data?.data?.testimony){ 
+            this.projectService.sendMessageseo(data?.data?.testimony);
+          } 
+          if(data?.data?.faq){
+            this.projectService.sendMessageFaqs(data?.data?.faq);
+          }
+          if(data?.data?.news){
+            this.projectService.sendMessageNews(data?.data?.news);
+          }
+          
+          
         }else{
           //  this.router.navigateByUrl('page-not-found');
         }
