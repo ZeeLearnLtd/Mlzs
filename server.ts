@@ -126,6 +126,11 @@ export function app(): express.Express {
   // next();
   // });
   server.get('*', (req, res, next) => {
+  if (req.path.length > 1 && req.path.endsWith('/')) {
+    const normalizedPath = req.path.slice(0, -1);
+    console.log(`Removing trailing slash: ${req.path} → ${normalizedPath}`);
+    return res.redirect(301, normalizedPath);
+  }
   // 1️⃣ Check old → new URL mapping
   const target = redirects[req.path];
   if (target) {
