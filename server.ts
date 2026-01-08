@@ -166,6 +166,10 @@ export function app(): express.Express {
     res.sendFile(_dir + '/MusePlayPrivacyPolicy.html')
   );
   server.get('/sitemap.xml', (req, res) => res.sendFile(_dir + '/sitemap.xml'));
+  server.get('/blog-sitemap.xml', (req, res) => res.sendFile(_dir + '/blog-sitemap.xml'));
+  server.get('/pages-sitemap.xml', (req, res) => res.sendFile(_dir + '/pages-sitemap.xml'));
+  server.get('/location-sitemap.xml', (req, res) => res.sendFile(_dir + '/location-sitemap.xml'));
+  server.get('/news-sitemap.xml', (req, res) => res.sendFile(_dir + '/news-sitemap.xml'));
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
     console.log('enterd');

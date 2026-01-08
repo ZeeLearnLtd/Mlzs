@@ -73,12 +73,12 @@ const routes: Routes = [
   { path: 'page-not-found', component: PagenotfoundComponent },
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
- 
+
   {
     path: '',
     component: HeaderComponent,
     children: [
-     { path: '', component: HomeComponent },
+      { path: '', component: HomeComponent },
       { path: 'academic-programs', component: ProgrammesMainPageComponent },
       { path: 'academics', component: AcademicsMainPageComponent },
       { path: 'search', component: SearchComponent },
@@ -86,7 +86,7 @@ const routes: Routes = [
       { path: 'start-school', component: StartSchoolComponent },
       { path: 'parents-corner', component: ParentsCornerComponent },
       { path: 'admissions', component: AdmissionsComponent },
-      { path: 'admissions/:frcode', component: AdmissionsComponent },     
+      { path: 'admissions/:frcode', component: AdmissionsComponent },
       //{ path: 'admissions/**', component: AdmissionsComponent }, 
       { path: 'contact-us', component: ContectUsComponent },
       { path: 'terms-of-use', component: TermsOfUseComponent },
@@ -255,24 +255,24 @@ const routes: Routes = [
       { path: 'partner-with-us', component: PartnerWithUsComponent },
 
       {
-  path: ':state',
-  component: HyperLocalComponentComponent,
-  resolve: { validLocation: LocationResolver }
-},
-{
-  path: ':state/:city',
-  component: HyperLocalComponentComponent,
-  resolve: { validLocation: LocationResolver }
-},
-{
-  path: ':state/:city/:center',
-  component: CenterpageComponent,
-  resolve: { validLocation: LocationResolver }
-},
+        path: ':state',
+        component: HyperLocalComponentComponent,
+        resolve: { validLocation: LocationResolver }
+      },
+      {
+        path: ':state/:city',
+        component: HyperLocalComponentComponent,
+        resolve: { validLocation: LocationResolver }
+      },
+      {
+        path: ':state/:city/:center',
+        component: CenterpageComponent,
+        resolve: { validLocation: LocationResolver }
+      },
 
     ],
   },
- 
+
   { path: 'admission/thankyou', component: AdmissionThankyouComponent },
   { path: 'franchise/thankyou', component: FranchiseThankyouComponent },
   { path: 'page-not-found', component: PagenotfoundComponent },
