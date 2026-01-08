@@ -121,7 +121,6 @@ export class AdmissionsComponent implements OnInit {
   }
 
   setaddress() {
-
     let alldata = this.stateContentDataList
     const filteredFranchisees = alldata.flatMap((state: any) => {
       const cities = Array.isArray(state.City) ? state.City : state.City ? [state.City] : [];
