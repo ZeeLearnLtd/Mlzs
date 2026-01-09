@@ -1,7 +1,7 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,12 @@ export class CommonService {
     return this.http.post<any>(this.baseUrl + '/api/V1/mlzslist', {});
   }
   get_centerdatabyslug(input:any): Observable<any> {
-    return this.http.post<any>(this.baseUrl + '/api/V1/mlzslist', input);
+    return this.http.post<any>(this.baseUrl + '/api/V1/mlzslist', input).pipe(
+      catchError((error) => {
+        console.error('get_centerdatabyslug API error:', error);
+        return throwError(() => error); // rethrow so subscriber can handle it
+      })
+    );
   }
   searchDataList(obj: any): Observable<any> {
     return this.http.post<any>('https://cmsapi.zeelearn.com' + '/searchwebsite', obj);

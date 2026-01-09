@@ -94,6 +94,9 @@ export class ApicallService {
     // return this.httpClient.post<any>(this.form_baseUrl + 'V1/SendSms_Clientbcbc', mobNo);
     return this.httpClient.post<any>(this.globelApi + 'Kidzeewebapi/V1/SendSms_Clientbcbc', mobNo)
   }
+  sendSms(otpobject:any) {
+    return this.httpClient.post(this.cmsBaseUrl+'/'+'SendSms_Clientbcbc', otpobject);
+  }
   getState_countryList(): Observable<any> {
     return this.httpClient.post<any>(this.globelApi + 'api/V1/GetFranchiseeDetailselp', {});
   }

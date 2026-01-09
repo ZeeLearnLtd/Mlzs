@@ -89,8 +89,8 @@ export class CenterpageComponent {
       }
 
       const value = parts.join('/');
-
-      this.get_centerdatabyslug(value);
+      this.getseo(value);
+      
     });
     //this.getAdmissionFormData();
     // const urlSegments = this.activatedRoute.snapshot.url;
@@ -105,12 +105,17 @@ export class CenterpageComponent {
 
   getseo(slug: string) {
     this.spinner.show();
+   
     let tbody = {
       slug: slug,
       Projectid: environment.projectid,
     };
+     
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
       this.spinner.hide();
+      this.get_centerdatabyslug(slug);      
+        this.projectService.setmeta(data.data);
+        
       if (data?.data?.breadcrumb) {
         this.projectService.sendMessagebread(data?.data?.breadcrumb);
       }
@@ -123,7 +128,7 @@ export class CenterpageComponent {
       if (data?.data?.faq) {
         this.projectService.sendMessageFaqs(data?.data?.faq);
       }
-      this.projectService.setmeta(data.data);
+      
     });
     this.spinner.hide();
   }
@@ -133,16 +138,23 @@ export class CenterpageComponent {
     let input = {
       "slug": slug
     }
-    this.common.get_centerdatabyslug(input).subscribe((
-      res => {
-        this.centerdatabyslug = res;
-        this.getseo(slug);
+    
+    // this.common.get_centerdatabyslug(input).subscribe((
+    //   res => {
+    //     this.centerdatabyslug = res;
+    //     this.getseo(slug);
+    //     this.setaddress();
+    //    }
+    // ))
+     this.common.get_centerdatabyslug(input).subscribe({
+      next:(resp)=>{
+        this.centerdatabyslug = resp;       
         this.setaddress();
-        // if (this._franchise_code) {
-        //  
-        // }
+      },
+      error:(error)=>{
+        console.log(error);
       }
-    ))
+     })
   }
 
   setaddress() {

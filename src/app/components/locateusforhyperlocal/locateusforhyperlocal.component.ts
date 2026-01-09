@@ -56,7 +56,6 @@ ngOnChanges(changes: SimpleChanges) {
     if (changes['inputdata']?.currentValue) {
         this.inputdata=changes['inputdata']?.currentValue;
         if(this.inputdata.length>0){
-          console.log('inputdata',this.inputdata);
           this.all_data_list = this.inputdata
           this.india_country();
           this.setcountry();
