@@ -116,7 +116,7 @@ export class ProjectSeoService extends SeoService {
     //this.updateJsonSnippet(meta.breadcrumb);
   }
 
-   setmeta_programme(meta: any,programme_name:string) {
+   setmeta_programme(meta: any,programme_name:string,educationalLevel:string) {
     // set title
     this.setTitle(meta?.MetaTitle);
 
@@ -146,6 +146,7 @@ export class ProjectSeoService extends SeoService {
         "@type": "Course",
         "name": programme_name,
         "description":meta?.MetaDescription,
+        "educationalLevel": educationalLevel,
         "provider": {
           "@type": "School",
           "name": "Mount Litera Zee School",
@@ -157,7 +158,6 @@ export class ProjectSeoService extends SeoService {
           "url": meta?.MetaUrl
         }]
     });
-  
   }
   setmetablog(meta: any) {
     // set title

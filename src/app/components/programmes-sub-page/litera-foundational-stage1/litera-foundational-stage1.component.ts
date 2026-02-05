@@ -25,7 +25,7 @@ export class LiteraFoundationalStage1Component {
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      this.projectService.setmeta_programme(data?.data,'Pre-Primary School Programme');
+      this.projectService.setmeta_programme(data?.data,'Pre-Primary School Programme','Pre-Primary Education');
 
     });
   }
