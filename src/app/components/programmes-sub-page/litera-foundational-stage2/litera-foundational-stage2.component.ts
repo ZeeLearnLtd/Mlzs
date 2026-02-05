@@ -24,7 +24,7 @@ export class LiteraFoundationalStage2Component {
       this.projectService.sendMessageblog(data?.data?.blog);
       this.projectService.sendMessageseo(data?.data?.testimony);
       this.projectService.sendMessageFaqs(data?.data?.faq);
-      this.projectService.setmeta(data?.data);
+      this.projectService.setmeta_programme(data?.data,'Primary School Programme');
 
     });
   }

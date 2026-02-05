@@ -115,6 +115,50 @@ export class ProjectSeoService extends SeoService {
     // add a breadcrumb: Turtles > Turtle Rock
     //this.updateJsonSnippet(meta.breadcrumb);
   }
+
+   setmeta_programme(meta: any,programme_name:string) {
+    // set title
+    this.setTitle(meta?.MetaTitle);
+
+    // set url
+    this.setcurl(meta?.MetaUrl);
+    this.setkeyword(meta?.MetaKeyword);
+    // set description
+    this.setDescription(meta?.MetaDescription);
+
+    // set image
+    this.setImage(meta?.MetaImageurl);
+    if (meta.breadcrumb != null && meta.breadcrumb != undefined) {
+      const arr = meta.breadcrumb.map((item: any) => {
+        return {
+          '@type': 'ListItem',
+          position: item.position,
+          name: item.name,
+          item: item.url,
+        };
+      });
+      this.updateJsonSnippet({
+        '@type': 'BreadcrumbList',
+        itemListElement: arr,
+      });
+    }
+    this.updateJsonSnippet({
+        "@type": "Course",
+        "name": programme_name,
+        "description":meta?.MetaDescription,
+        "provider": {
+          "@type": "School",
+          "name": "Mount Litera Zee School",
+          "sameAs": "https://www.mountlitera.com"
+        },
+        "hasCourseInstance": [{
+          "@type": "CourseInstance",
+          "courseMode": "InPerson",
+          "url": meta?.MetaUrl
+        }]
+    });
+  
+  }
   setmetablog(meta: any) {
     // set title
     this.setTitle(meta?.MetaTitle);
