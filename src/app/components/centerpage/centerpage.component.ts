@@ -147,8 +147,11 @@ export class CenterpageComponent {
     //    }
     // ))
      this.common.get_centerdatabyslug(input).subscribe({
-      next:(resp)=>{
+      next:(resp)=>{       
         this.centerdatabyslug = resp;       
+        if(resp){
+          this.projectService.setmeta_hyperlocal(resp[0]);
+        }        
         this.setaddress();
       },
       error:(error)=>{

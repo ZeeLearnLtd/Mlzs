@@ -159,6 +159,33 @@ export class ProjectSeoService extends SeoService {
         }]
     });
   }
+  setmeta_hyperlocal(meta: any) {
+    
+    this.updateJsonSnippet({
+       "@type": "EducationalOrganization",
+        "name": meta?.Franchisee_Name,
+        "url": 'https://mountlitera.com/'+meta?.franchiseeslug,
+        "description": "Mount Litera Zee School is among the best CBSE schools in "+ meta?.City_Name+", "+ meta?.State_Name+" offering quality education, skilled faculty and all-round student development. Enquire now.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": meta?.Address1 + meta?.Address2,
+          "addressLocality": meta?.City_Name,
+          "addressRegion":meta?.State_Name,
+          "postalCode": meta?.Pin_Code,
+          "addressCountry": "IN"
+        },
+        "telephone": meta?.Mobile_No,
+        "areaServed": {
+          "@type": "Place",
+          "name": meta?.Place+','+ meta?.City_Name,
+        },
+        "parentOrganization": [{
+          "@type": "EducationalOrganization",
+          "name": "Mount Litera Zee School",
+          "url": "https://mountlitera.com/"
+        }]
+    });
+  }
   setmetablog(meta: any) {
     // set title
     this.setTitle(meta?.MetaTitle);
