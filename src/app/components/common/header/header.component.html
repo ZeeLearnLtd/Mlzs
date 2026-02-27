@@ -1,8 +1,8 @@
 
 <div class="top_header" id="fix_header">
-    <button class="btn btn-sm admission_btn" routerLink="/admissions">Admissions now open at Mount Litera Zee School</button>
-    <button class="btn btn-sm  right_botder_btn mx-3" routerLink="/partner-with-us">Partner with us</button>
-    <button class="btn btn-sm  convert_btn" routerLink="/convert-to-an-mlzs">Convert to an MLZS</button>
+    <button class="btn btn-sm admission_btn d-none d-sm-block" routerLink="/admissions">Admissions now open at Mount Litera Zee School</button>
+    <button class="btn btn-sm  right_botder_btn mx-3 d-none d-sm-blocks" routerLink="/partner-with-us">Partner with us</button>
+    <button class="btn btn-sm  convert_btn d-none d-sm-block" routerLink="/convert-to-an-mlzs">Convert to an MLZS</button>
     <div class="search-section d-none d-sm-block">
     <div class="search-wrapper">
       <i class="bi bi-search search-icon" (click)="sendMessage()" routerLink="/search"></i>
@@ -10,7 +10,19 @@
       [(ngModel)]="inputValue"  placeholder="Search" (keyup.enter)="sendMessage()">
     </div>
   </div>
-   <div class="media_icon">
+  <div class="admission_btn_content d-block d-sm-none w-100">
+    <div class="w-100 d-flex">
+       <button class="btn footer_link_btn" routerLink="/admissions">Enrol Your Child</button>
+       <button class="btn footer_link_btn" routerLink="/partner-with-us">Become a Partner</button>
+      <!-- <div class="col-6">
+        <button class="btn footer_link_btn" routerLink="/admissions">Enrol Your Child</button>
+      </div>
+      <div class="col-6">
+        <button class="btn footer_link_btn" routerLink="/partner-with-us">Become a Partner</button>
+      </div> -->
+    </div>
+  </div>
+   <div class="media_icon d-none d-sm-block">
                         <a href="https://www.facebook.com/MountLiteraZeeSchool/" target="_blank">
                         <img src="../../../../assets/img/MLZS/footer/facebook.png" alt="">
                         </a>
