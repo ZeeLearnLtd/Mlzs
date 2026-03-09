@@ -138,13 +138,13 @@ ul li a {
     .top_header {
         width: 100%;
         position: fixed;
-        padding:10px !important;
+        padding: 19px 10px !important;
         top: auto !important;
         bottom: 0 !important;
         display: flex;
         justify-content: normal !important;
         z-index: 999;
-        background-color: #004878;
+        background-color: #fff !important;
     }
 
     .nav-link {
