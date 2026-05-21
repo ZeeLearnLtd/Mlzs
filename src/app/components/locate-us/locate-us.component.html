@@ -127,6 +127,37 @@
             </div>
           </div>
         </div>
+        <div class="text-center mt-3">
+
+  <!-- <button
+    *ngIf="more"
+    (click)="setcentrelistclick()"
+    class="read_more">
+
+    Read More
+
+  </button> -->
+
+  <button
+  *ngIf="more"
+  (click)="setcentrelistclick('more')"
+  class="read_more">
+
+  Read More
+
+</button>
+
+<!-- Read Less -->
+<button
+  *ngIf="tindex > 50"
+  (click)="setcentrelistclick('less')"
+  class="read_more">
+
+  Read Less
+
+</button>
+  
+</div>
       </div>
     </div>
   </div>

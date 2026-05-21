@@ -170,6 +170,29 @@ display: block;
     text-decoration: none;
     width: 100%;
 }
+.read_more{
+    color: rgba(1, 72, 118, 1);
+    background: transparent;
+    font-size: 13px;
+    border: 1px solid rgba(1, 72, 118, 1);
+    font-weight: 500;
+    padding: 3px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    transition: 0.6s;
+}
+
+.read_more:hover{
+    background-color: rgba(1, 72, 118, 1);
+   color: #fff;
+    font-size: 13px;
+    border: 1px solid rgba(1, 72, 118, 1);
+    font-weight: 500;
+    padding: 3px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+}
+
 .sub_para{
     height: 90px;
     overflow-y: auto;

@@ -90,7 +90,7 @@ export class CenterpageComponent {
 
       const value = parts.join('/');
       this.getseo(value);
-      
+
     });
     //this.getAdmissionFormData();
     // const urlSegments = this.activatedRoute.snapshot.url;
@@ -105,17 +105,17 @@ export class CenterpageComponent {
 
   getseo(slug: string) {
     this.spinner.show();
-   
+
     let tbody = {
       slug: slug,
       Projectid: environment.projectid,
     };
-     
+
     this.apiService.getGetseo(tbody).subscribe((data: any) => {
       this.spinner.hide();
-      this.get_centerdatabyslug(slug);      
-        this.projectService.setmeta(data.data);
-        
+      this.get_centerdatabyslug(slug);
+      this.projectService.setmeta(data.data);
+
       if (data?.data?.breadcrumb) {
         this.projectService.sendMessagebread(data?.data?.breadcrumb);
       }
@@ -128,7 +128,7 @@ export class CenterpageComponent {
       if (data?.data?.faq) {
         this.projectService.sendMessageFaqs(data?.data?.faq);
       }
-      
+
     });
     this.spinner.hide();
   }
@@ -138,7 +138,7 @@ export class CenterpageComponent {
     let input = {
       "slug": slug
     }
-    
+
     // this.common.get_centerdatabyslug(input).subscribe((
     //   res => {
     //     this.centerdatabyslug = res;
@@ -146,18 +146,18 @@ export class CenterpageComponent {
     //     this.setaddress();
     //    }
     // ))
-     this.common.get_centerdatabyslug(input).subscribe({
-      next:(resp)=>{       
-        this.centerdatabyslug = resp;       
-        if(resp){
+    this.common.get_centerdatabyslug(input).subscribe({
+      next: (resp) => {
+        this.centerdatabyslug = resp;
+        if (resp) {
           this.projectService.setmeta_hyperlocal(resp[0]);
-        }        
+        }
         this.setaddress();
       },
-      error:(error)=>{
+      error: (error) => {
         console.log(error);
       }
-     })
+    })
   }
 
   setaddress() {
@@ -252,8 +252,8 @@ export class CenterpageComponent {
       "utm_medium": "Website",
       "utm_source": "Website",
       "utm_compaign": "Website",
-      "utm_term": null,
-      "utm_content": null,
+      "utm_Term": null,
+      "utm_Content": null,
       "utm_ad": null,
       "gclid": null,
       "Type": "P",

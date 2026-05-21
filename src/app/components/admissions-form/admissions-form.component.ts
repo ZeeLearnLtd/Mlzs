@@ -34,12 +34,12 @@ export class AdmissionsFormComponent implements OnInit {
   franchiseeMobileNo: string = "";
   form_title: boolean = true;
   generatedcaptcha: string = "";
-  
+
   captchaText: any = []
   captchaEntered: String = ""
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object, private fb: FormBuilder, private _servie: CommonService, private ngxSpinner: NgxSpinnerService,
-    private activatedRoute: ActivatedRoute,private _activeRoute: ActivatedRoute, private router: Router) {
+    private activatedRoute: ActivatedRoute, private _activeRoute: ActivatedRoute, private router: Router) {
     this.admissionForm = fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
@@ -57,7 +57,7 @@ export class AdmissionsFormComponent implements OnInit {
 
   ngOnInit(): void {
     //this.generateCAPTCHA(); 
-    
+
     this.createCaptcha();
     this.selectCountry_State_cityList();
     //
@@ -128,32 +128,6 @@ export class AdmissionsFormComponent implements OnInit {
       if (this.randomOtp == this.admissionForm.get('otp')?.value) {
         this.ngxSpinner.show();
         let obj = {
-          // "City": this.admissionForm.get('city')?.value,
-          // "Country": this.admissionForm.get('country')?.value,
-          // "Email": this.admissionForm.get('email')?.value,
-          // "FirstName": this.admissionForm.get('fname')?.value,
-          // "HaveSpace": "",
-          // "LastName": this.admissionForm.get('lname')?.value,
-          // "Location": this.admissionForm.get('location')?.value,
-          // "LocationId": this.admissionForm.get('location')?.value,
-          // "Mobile": this.admissionForm.get('mobile')?.value,
-          // "PinCode": this.admissionForm.get('pinCode')?.value,
-          // "Product": "259262000004729208",
-          // "ProjectId": "1",
-          // "SoonStartsIn": "",
-          // "Source": "gclid",
-          // "gclid": "gclid",
-          // "State": this.admissionForm.get('state')?.value,
-          // "Type": "P",
-          // "WillingToInvest": "",
-          // "utm_compaign": "Website",
-          // "utm_medium": "Website",
-          // "utm_source": "Website",
-          // "utm_ad": "Website",
-          // "utm_Content": "Website",
-          // "utm_Term": "Website",
-
-
           "City": this.admissionForm.get('city')?.value,
           "Country": this.admissionForm.get('country')?.value,
           "Email": this.admissionForm.get('email')?.value,
@@ -180,7 +154,9 @@ export class AdmissionsFormComponent implements OnInit {
           "utm_Content": "Website",
           "utm_Term": "Website",
           "Stream": "",
-          "Franchise_Mobile": this.franchiseeMobileNo
+          "Franchise_Mobile": this.franchiseeMobileNo,
+          "DB_Sync": "Yes",
+
         }
         this._servie.saveData(obj).subscribe(
           res => {
@@ -241,7 +217,8 @@ export class AdmissionsFormComponent implements OnInit {
     let mobNo = {
       "MobileNo": this.admissionForm.get('mobile')?.value,
       "smsText": `Your Kidzee Verification code is : ${this.randomOtp}`,
-      "sResponse": ""
+      "sResponse": "",
+      "header": "ZLMLZS"
     }
     this._servie.getOtp(mobNo).subscribe(
       res => {
@@ -276,7 +253,7 @@ export class AdmissionsFormComponent implements OnInit {
     //       this.setaddress(dt);
     //     }
     //   })
-    
+
   }
 
   selectCountry(selectVal: any) {
