@@ -8,19 +8,23 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class CommonService {
   baseUrl = environment.api_url
+  base_kub_url = environment.kub_url
   constructor(private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
   saveData(obj: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl + 'V1/ZeeparentEnquiry', obj);
+    // return this.http.post<any>(this.baseUrl + 'V1/ZeeparentEnquiry', obj);
+    return this.http.post<any>(this.base_kub_url + 'Zohosync_parentEnquiry', obj);
   }
   savefranchiseeData(obj: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl + 'V1/ZeeEnquiry', obj);
+    // return this.http.post<any>(this.baseUrl + 'V1/ZeeEnquiry', obj);
+    return this.http.post<any>(this.base_kub_url + 'Zohosync_Enquiry', obj);
   }
 
   getOtp(mobNo: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl + 'V1/SendSms_Clientbcbc', mobNo);
+    // return this.http.post<any>(this.baseUrl + 'V1/SendSms_Clientbcbc', mobNo);
+    return this.http.post<any>(this.base_kub_url + 'SendSms_Clientbcbc', mobNo);
   }
   getState_countryList(): Observable<any> {
     return this.http.post<any>(this.baseUrl + 'V1/CentreList', {});
@@ -29,7 +33,7 @@ export class CommonService {
   get_allCountryList(): Observable<any> {
     return this.http.post<any>(this.baseUrl + '/api/V1/mlzslist', {});
   }
-  get_centerdatabyslug(input:any): Observable<any> {
+  get_centerdatabyslug(input: any): Observable<any> {
     return this.http.post<any>(this.baseUrl + '/api/V1/mlzslist', input).pipe(
       catchError((error) => {
         console.error('get_centerdatabyslug API error:', error);

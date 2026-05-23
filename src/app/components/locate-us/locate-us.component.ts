@@ -188,29 +188,62 @@ export class LocateUsComponent implements OnInit {
 
     this.centerList = this.ucenterList.slice(this.findex, this.tindex);
   }
-  setcentrelistclick() {
+  // setcentrelistclick() {
+  //   let dlenth = this.ucenterList.length;
+  //   let nindex = this.tindex + 50;
+
+  //   if (dlenth > this.tindex) {
+
+
+  //     if (nindex > dlenth) {
+  //       this.tindex = dlenth;
+  //       this.more = false;
+  //     }
+  //     else {
+  //       this.tindex += 50;
+  //     }
+  //   }
+  //   else {
+
+  //     this.more = false;
+  //   }
+
+  //   this.centerList = this.ucenterList.slice(this.findex, this.tindex);
+  //   //this.centerList=data;
+  // }
+
+
+  setcentrelistclick(type: any) {
+
     let dlenth = this.ucenterList.length;
-    let nindex = this.tindex + 50;
 
-    if (dlenth > this.tindex) {
+    if (type == 'more') {
 
+      let nindex = this.tindex + 50;
 
-      if (nindex > dlenth) {
+      if (nindex >= dlenth) {
         this.tindex = dlenth;
         this.more = false;
       }
       else {
         this.tindex += 50;
+        this.more = true;
       }
-    }
-    else {
 
-      this.more = false;
+    } else {
+
+      this.tindex -= 50;
+
+      if (this.tindex <= 50) {
+        this.tindex = 50;
+      }
+
+      this.more = true;
     }
 
     this.centerList = this.ucenterList.slice(this.findex, this.tindex);
-    //this.centerList=data;
   }
+
   selectLocation(locationId: any) {
     if (locationId) {
       this.getLocationId = locationId
@@ -276,12 +309,14 @@ export class LocateUsComponent implements OnInit {
     this.virtual_url = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
   setaddress(data: any) {
-    if(data?.franchiseeslug){
-      this.router.navigate(['/'+data?.franchiseeslug])
-    }else{
+    if (data?.franchiseeslug) {
+      this.router.navigate(['/' + data?.franchiseeslug])
+    } else {
       this.router.navigate(['/admissions', data?.Franchisee_Code])
     }
-   // this.router.navigate(['/admissions', data?.Franchisee_Code])
+    // this.router.navigate(['/admissions', data?.Franchisee_Code])
   }
+
+
 
 }
