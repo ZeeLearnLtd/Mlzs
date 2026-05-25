@@ -249,28 +249,30 @@ export class CenterpageComponent {
     this.ifLoader = true;
     this.spinner.show();
     let obj = {
-      "utm_medium": "Website",
-      "utm_source": "Website",
-      "utm_compaign": "Website",
-      "utm_Term": null,
-      "utm_Content": null,
-      "utm_ad": null,
-      "gclid": null,
       "Type": "P",
       "Source": "Website",
       "FirstName": this.admissionForm.get('name')?.value,
+      "LastName": "-",
       "Email": this.admissionForm.get('email')?.value,
       "Mobile": this.admissionForm.get('mobileNo')?.value,
       "State": this.stateListName,
       "City": this.cityListName,
-      "LocationId": this.selectFranchiseeCode,
+      // "LocationId": this.selectFranchiseeCode,
       "class": this.selectClassName,
-      "ClassId": this.admissionForm.get('class')?.value,
+      // "ClassId": this.admissionForm.get('class')?.value,
       "ProjectId": "3607",
-      "Location": this.selectedfranchisee_name,
+      "Location": this.selectFranchiseeCode,
       "Location_name": this.selectedfranchisee_name,//this.admissionForm.get('franchisee')?.value,
       "Country": "India",
-      "Product": "259262000039670041"
+      "Product": "259262000039670041",
+      "gclid": "",
+      "utm_compaign": "Website",
+      "utm_medium": "Website",
+      "utm_source": "Website",
+      "utm_ad": "Website",
+      "utm_Content": "Website",
+      "utm_Term": "Website",
+      "DB_Sync": null,
     }
 
     this.apiService.postAdmissionForm(obj).subscribe(
