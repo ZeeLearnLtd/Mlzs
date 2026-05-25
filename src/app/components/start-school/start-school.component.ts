@@ -185,27 +185,29 @@ export class StartSchoolComponent {
       if (this.randomOtp == this.admissionForm.get('otp')?.value) {
         this.ngxSpinner.show();
         let obj = {
-          "utm_medium": "Website",
-          "utm_source": "Website",
-          "utm_compaign": "Website",
-          "utm_Term": null,
-          "utm_Content": null,
-          "utm_ad": null,
           "gclid": null,
           "Type": "F",
           "Source": "Website",
           "FirstName": this.admissionForm.get('fname')?.value,
+          "LastName": "-",
           "Email": this.admissionForm.get('email')?.value,
           "Mobile": this.admissionForm.get('mobile')?.value,
           "State": this.admissionForm.get('state')?.value,
           "City": this.admissionForm.get('city')?.value,
-          "LocationId": "",
+          // "LocationId": "",
           "class": "",
           "ProjectId": "3607",
           "Location": "",
           "Location_name": "",
           "Country": "India",
-          "Product": "259262000000213037"
+          "Product": "259262000000213037",
+          "utm_compaign": "Website",
+          "utm_medium": "Website",
+          "utm_source": "Website",
+          "utm_ad": "Website",
+          "utm_Content": "Website",
+          "utm_Term": "Website",
+          "DB_Sync": "Yes",
         }
         this.apiService.savefranchiseeData(obj).subscribe(
           res => {
