@@ -8,7 +8,7 @@
       }">
           <a href="{{item.url}}">
    <ng-container *ngIf="item.name.toLowerCase() === 'home'; else showName">
-        <img src="../../../../assets/img/MLZS/home-icon.png" alt="Home" class="mx-2" width="15" height="15"> <span class="arrow" *ngIf="item.length"> > {{item}} </span>
+        <img src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/home-icon.png" alt="Home" class="mx-2" width="15" height="15"> <span class="arrow" *ngIf="item.length"> > {{item}} </span>
       </ng-container>
       <ng-template #showName>
         {{ item.name }}

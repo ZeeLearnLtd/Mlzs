@@ -90,7 +90,7 @@ h3 {
 }
 
 .about-section {
-  background: url('../../../assets/img/MLZS/programm-base-img.png') center/cover no-repeat;
+  background: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/programm-base-img.png') center/cover no-repeat;
   color: #002f5f;
   width: 100%;
 }

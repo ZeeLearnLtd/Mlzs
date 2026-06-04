@@ -4,7 +4,7 @@
 }
 
 .banner_content {
-    background-image: url('../../../assets/img/banner/Banner10.png');
+    background-image: url('../../../../assets/img/banner/Banner10.png');
     position: relative;
     width: 100%;
     min-height: 350px;

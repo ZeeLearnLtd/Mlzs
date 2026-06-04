@@ -180,7 +180,7 @@ ul li {
 }
 
 .legancyMonkey {
-    background-image: url('../../../assets/img/legancyMonkey.png');
+    background-image: url('../../../../assets/img/legancyMonkey.png');
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -193,7 +193,7 @@ ul li {
 }
 
 .standingMonkey {
-    background-image: url('../../../assets/img/standingMonkey.png');
+    background-image: url('../../../../assets/img/standingMonkey.png');
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -407,7 +407,7 @@ ul {
     } */
 
     .legancy_content_res {
-        background-image: url('../../../assets/img/banner/resBanner1.png');
+        background-image: url('../../../../assets/img/banner/resBanner1.png');
         position: relative;
         width: 100%;
         height: 125px;

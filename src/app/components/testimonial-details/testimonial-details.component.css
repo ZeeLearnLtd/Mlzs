@@ -8,7 +8,7 @@ width: 80%;
 }
 
 section{
-    background-image: url('../../../assets/img/MLZS/main_bg.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/main_bg.png');
     background-size: cover;
     width: 100%;
     padding: 25px 0px 50px 0px;

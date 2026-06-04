@@ -8,7 +8,7 @@ width: 80%;
 }
 
 section{
-  background: url("../../../assets/img/MLZS/bg_svg/Parent-corner.svg") no-repeat center center;
+  background: url("../../../../assets/img/MLZS/bg_svg/Parent-corner.svg") no-repeat center center;
   background-size: cover;
   width: 100%;
   min-height: 100vh;

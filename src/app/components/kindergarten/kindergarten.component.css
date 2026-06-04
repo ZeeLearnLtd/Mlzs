@@ -121,7 +121,7 @@ li{
     left: 16rem;
 }
 .paper_content{
-    background-image: url('../../../assets/img/new-kidzee/paper_img.png');
+    background-image: url('../../../../assets/img/new-kidzee/paper_img.png');
     background-position: center;
     background-size: 100% 100%;
     width: 700px;

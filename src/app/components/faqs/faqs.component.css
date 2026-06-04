@@ -61,7 +61,7 @@
 }
 
 ::ng-deep.faq_content .mat-expansion-indicator::after {
-  content: url('../../../assets/img/MLZS/down_arrow_icon.png') !important;
+  content: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/down_arrow_icon.png') !important;
   display: inline-block;
   margin-left: 8px;
   border: none !important;

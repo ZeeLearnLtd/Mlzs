@@ -5,8 +5,9 @@
     z-index: 1;
     height: 20px;
 }
+
 /* section{
-  background: url("../../../assets/img/MLZS/bg_svg/Convert-to-an.svg") no-repeat center center;
+  background: url("../../../../assets/img/MLZS/bg_svg/Convert-to-an.svg") no-repeat center center;
   background-size: cover;
   width: 100%;
   min-height: 100vh;
@@ -15,10 +16,12 @@ h1 {
     position: relative;
     z-index: 9;
 }
-h3{
+
+h3 {
     font-size: 1rem;
     overflow: hidden;
 }
+
 .school-card {
     border-radius: 10px;
     border: 1px solid#eee;
@@ -31,8 +34,9 @@ h3{
 }
 
 .school-card:hover {
-    background:rgba(60, 185, 233, 1);
-    cursor: pointer;;
+    background: rgba(60, 185, 233, 1);
+    cursor: pointer;
+    ;
     color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -40,29 +44,33 @@ h3{
 .school-card:hover i,
 .school-card:hover p,
 .school-card:hover label {
-  color: #fff;
+    color: #fff;
 }
-.school-card:hover .btn-style{
- border:1px solid#fff;
- background-color:#fff;
- color: rgba(1, 72, 118, 1);
+
+.school-card:hover .btn-style {
+    border: 1px solid#fff;
+    background-color: #fff;
+    color: rgba(1, 72, 118, 1);
 }
 
 .school-card .btn-style:hover {
-  border: 1px solid #fff;
-  background-color: transparent;
-  color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
 }
 
-.school-card h6{
-font-weight: 600;
+.school-card h6 {
+    font-weight: 600;
 }
-.school-card p,a{
+
+.school-card p,
+a {
     font-size: 13px !important;
     color: rgba(1, 72, 118, 1);
     text-decoration: none;
 }
-.btn-style{
+
+.btn-style {
     color: rgba(0, 72, 119, 1);
     background: rgba(72, 199, 244, 1);
     font-size: 12px;
@@ -76,101 +84,115 @@ font-weight: 600;
     justify-content: space-around;
     align-items: center;
 }
-select{
+
+select {
     font-size: 13px;
     height: 30px;
 }
-.subcard_content{
-  min-height: clamp(170px, 15vw, 250px);
-  overflow: hidden;
-  padding: 0px 10px;
+
+.subcard_content {
+    min-height: clamp(170px, 15vw, 250px);
+    overflow: hidden;
+    padding: 0px 10px;
 }
-.dropDownList{
+
+.dropDownList {
     width: 80%;
     margin: auto;
 }
+
 .select-arrow {
-  position: relative;
-  bottom: 1.7rem;
-  left: 90%;
-  pointer-events: none;
-  width: 22px;
-  height: 22px;
-  object-fit: cover;
+    position: relative;
+    bottom: 1.7rem;
+    left: 90%;
+    pointer-events: none;
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
 }
-.default-img{
+
+.default-img {
     width: 18px;
     height: 18px;
     object-fit: cover;
 }
-.hover-img{
+
+.hover-img {
     width: 18px;
     height: 18px;
     object-fit: cover;
 }
-.phone-img{
-width:18px;
-height:20px;
+
+.phone-img {
+    width: 18px;
+    height: 20px;
 }
-.phone-img{
-width:18px;
-height:20px;
+
+.phone-img {
+    width: 18px;
+    height: 20px;
 }
-.phone_white-img{
-width:18px;
-height:20px;
+
+.phone_white-img {
+    width: 18px;
+    height: 20px;
 }
-.email-img{
-width:18px;
-height:20px;
+
+.email-img {
+    width: 18px;
+    height: 20px;
 }
-.email_white-img{
-width:18px;
-height:20px;
+
+.email_white-img {
+    width: 18px;
+    height: 20px;
 }
+
 .school-card .hover-img {
-display: none;
+    display: none;
 }
 
 .school-card:hover .hover-img {
-display: block;
+    display: block;
 }
 
 .school-card:hover .default-img {
- display: none;
+    display: none;
 }
 
 .school-card .phone-img {
-display: none;
+    display: none;
 }
 
 .school-card:hover .phone-img {
-display: block;
+    display: block;
 }
 
 .school-card:hover .phone_white-img {
- display: none;
+    display: none;
 }
 
 .school-card .email-img {
-display: none;
+    display: none;
 }
 
 .school-card:hover .email-img {
-display: block;
+    display: block;
 }
 
 .school-card:hover .email_white-img {
- display: none;
+    display: none;
 }
 
-.school-card p, a {
+.school-card p,
+a {
     font-size: 13px !important;
     color: rgba(1, 72, 118, 1);
     text-decoration: none;
     width: 100%;
 }
-.read_more{
+
+.read_more {
     color: rgba(1, 72, 118, 1);
     background: transparent;
     font-size: 13px;
@@ -182,9 +204,9 @@ display: block;
     transition: 0.6s;
 }
 
-.read_more:hover{
+.read_more:hover {
     background-color: rgba(1, 72, 118, 1);
-   color: #fff;
+    color: #fff;
     font-size: 13px;
     border: 1px solid rgba(1, 72, 118, 1);
     font-weight: 500;
@@ -193,7 +215,7 @@ display: block;
     border-radius: 5px;
 }
 
-.sub_para{
+.sub_para {
     height: 90px;
     overflow-y: auto;
 }

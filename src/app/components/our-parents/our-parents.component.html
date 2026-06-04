@@ -6,8 +6,8 @@
           <div class="title_content">
             <h2><b>What Our Parents
                 <br>and Students Say</b></h2>
-            <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg2" alt="">
-            <img src="../../../assets/img/MLZS/prg_text_bg.png" class="text_bg1" alt="">
+            <img src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/prg_text_bg.png" class="text_bg2" alt="">
+            <img src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/prg_text_bg.png" class="text_bg1" alt="">
             <p>Explore inspiring stories of our students, parents, and alumni, as they reflect on how their experiences
               at Mount Litera Zee School has made a lasting impact on their educational paths, personal opinions and
               long-term success.</p>
@@ -28,14 +28,14 @@
                       <div class="col-2">
                         <div class="item_img">
                           <a [href]="slide.safeUrl" data-fancybox="gallery1" class="fancybox" *ngIf="slide.slug">
-                            <img src="../../../assets/img/MLZS/youtube_img.png" loading="lazy"
+                            <img src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/youtube_img.png" loading="lazy"
                               class="video_iframe pinchzoom_img" alt="youtube_img">
                           </a>
                           <div *ngIf="!slide.slug">
                             <div *ngFor="let img of slide.logofiles">
                               <!-- <img src="{{img.value}}" alt="{{img.key}}">
-                           <img src="../../../assets/img/MLZS/profileMLZS.png" class="mlzs_profile" alt=""> -->
-                              <img [src]="img.value ? img.value : '../../../assets/img/MLZS/profileMLZS.png'"
+                           <img src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/profileMLZS.png" class="mlzs_profile" alt=""> -->
+                              <img [src]="img.value ? img.value : 'https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/profileMLZS.png'"
                                 class="mlzs_profile" [alt]="img.key ? img.key : 'Profile Image'">
                             </div>
                           </div>
@@ -71,7 +71,7 @@
                     <div class="col-3">
                       <div class="item_img">
                         <a [href]="slide.safeUrl" data-fancybox="gallery1" class="fancybox" *ngIf="slide.slug">
-                          <img src="../../../assets/img/MLZS/youtube_img.png" loading="lazy"
+                          <img src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/youtube_img.png" loading="lazy"
                             class="video_iframe pinchzoom_img" alt="youtube_img">
                         </a>
                         <div *ngIf="!slide.slug">
