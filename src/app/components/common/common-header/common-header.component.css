@@ -67,7 +67,7 @@ ul li a {
 }
 
 .header_logo {
-    background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/KidzeeFooterLogo_whiteText.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -197,7 +197,7 @@ ul li a {
     }
 
     .header_logo {
-        background-image: url('../../../../assets/img/KidzeeFooterLogo_whiteText.png');
+        background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/KidzeeFooterLogo_whiteText.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -232,7 +232,7 @@ ul li a {
      }
 
     .menu_icon {
-        background-image: url('../../../../assets/img/menu.png');
+        background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/menu.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center;

@@ -17,7 +17,7 @@
     margin: 5px 7px;
 }
 .footerLogo {
-    background-image: url('../../../../assets/img/new-kidzee/kidzee_logo.svg');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/kidzee_logo.svg');
     cursor: pointer;
     width: 135px;
     height: 35px;
@@ -71,7 +71,7 @@ ul li {
     padding: 0px 65px 10px 10px;
 }
 .phone{
-    background-image: url('../../../../assets/img/call.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/call.png');
     width: 15px;
     height: 15px;
     background-position: center;
@@ -79,7 +79,7 @@ ul li {
     background-size: 100% 100%;
 }
 .email{
-    background-image: url('../../../../assets/img/email.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/email.png');
     width: 15px;
     height: 15px;
     background-position: center;
@@ -87,7 +87,7 @@ ul li {
     background-size: 100% 100%;
 }
 .time{
-    background-image: url('../../../../assets/img/watch.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/watch.png');
     width: 15px;
     height: 15px;
     background-position: center;
@@ -95,7 +95,7 @@ ul li {
     background-size: 100% 100%;
 }
 .locat{
-    background-image: url('../../../../assets/img/call.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/call.png');
     width: 15px;
     height: 15px;
     background-position: center;
@@ -270,7 +270,7 @@ color: #FFF;
         font-size: 12px;
     }
     .footerLogo {
-        background-image: url('../../../../assets/img/new-kidzee/kidzee_logo.svg');
+        background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/kidzee_logo.svg');
         width: 135px;
         background-position: center;
         background-repeat: no-repeat;

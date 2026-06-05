@@ -1,5 +1,5 @@
 .start_school_banner {
-    background: url('../../../assets/img/MLZS/banner/conver_to_mlzs.png') no-repeat center center;
+    background: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/banner/conver_to_mlzs.png') no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 48vw;
@@ -13,7 +13,7 @@
 }
 
 section {
-    background: url("../../../assets/img/MLZS/bg_svg/Convert-to-an-new.svg") no-repeat center center;
+    background: url("https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/bg_svg/Convert-to-an-new.svg") no-repeat center center;
     background-size: cover;
     width: 100%;
     min-height: 100vh;

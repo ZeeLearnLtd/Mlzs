@@ -83,7 +83,7 @@
         display: none;
     }
     .img_list{
-        background-image: url('../../../assets/img/new-kidzee/all_group.png');
+        background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/all_group.png');
         width: 100%;
         background-size: 100% auto;
         background-repeat: no-repeat;

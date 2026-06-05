@@ -4,7 +4,7 @@
     font-size: 14px;
 }
 section{
-     background: url("../../../assets/img/MLZS/bg_svg/Home-page-Bg.svg") no-repeat center center;
+     background: url("https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/bg_svg/Home-page-Bg.svg") no-repeat center center;
       background-size: contain;
       width: 100%;
       min-height: 100vh; 
@@ -259,7 +259,7 @@ display: block;
 /* About Us css */
 
 .about-section {
-    background: url('../../../assets/img/MLZS/about_us_bg.png') center/cover no-repeat;
+    background: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/about_us_bg.png') center/cover no-repeat;
     color: rgba(1, 72, 118, 1);
     width: 100%;
 }

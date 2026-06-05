@@ -106,7 +106,7 @@
     min-height:50px ;
 }
 .upperBg{
-    background-image:url('../../../../assets/img/bg2.png');
+    background-image:url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/bg2.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -155,14 +155,14 @@ margin: auto;
     cursor: pointer;
 }
 .profile_content{
-    background-color:url('../../../../assets/img/new-kidzee/white_bg.png');
+    background-color:url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/white_bg.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border-top-right-radius: 10px;
     width:270px;
 }
 .profile_text{
-    background-image:url('../../../../assets/img/new-kidzee/white_bg.png');
+    background-image:url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/white_bg.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
