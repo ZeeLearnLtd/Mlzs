@@ -115,7 +115,7 @@ ul{
     left: 16rem;
 }
 .paper_content{
-    background-image: url('../../../../assets/img/new-kidzee/paper_img.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/paper_img.png');
     background-position: center;
     background-size: 100% 100%;
     width:500px;
@@ -139,7 +139,7 @@ ul{
         width:35px;
     }
     .text_list_banner{
-        background-image: url('../../../../assets/img/new-kidzee/basic_paper.png');
+        background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/basic_paper.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100% 100%;

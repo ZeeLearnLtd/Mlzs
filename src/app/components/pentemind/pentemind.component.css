@@ -82,7 +82,7 @@ line-height: 28px;
     object-fit: cover;
 }
 .carousel-control-prev-icon {
-    background-image: url('../../../../assets/img/new-kidzee/left_arrow.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/left_arrow.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -100,7 +100,7 @@ line-height: 28px;
     left: 6rem;
   }
   .carousel-control-next-icon {
-    background-image: url('../../../../assets/img/new-kidzee/next_btn.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/next_btn.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -236,7 +236,7 @@ line-height: 28px;
     margin-right: auto;
 }
   .carousel-control-prev-icon {
-    background-image: url('../../../../assets/img/new-kidzee/left_arrow.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/left_arrow.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -252,7 +252,7 @@ line-height: 28px;
 }
 
 .carousel-control-next-icon {
-    background-image: url('../../../../assets/img/new-kidzee/next_btn.png');
+    background-image: url('https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/new-kidzee/next_btn.png');
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
