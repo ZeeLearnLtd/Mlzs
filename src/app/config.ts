@@ -12,15 +12,15 @@ export const Config = {
       {
         property: 'twitter:card',
         content:
-          'https://.kidzee.com/assets/img/KidzeeFooterLogo_whiteText.png',
+          'https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/KidzeeFooterLogo_whiteText.png',
       },
       { property: 'twitter:creator', content: '@sekrabbin' },
       { name: 'author', content: 'Mlzs' },
     ],
     defaultImage:
-      'https://kidzee.com/assets/img/KidzeeFooterLogo_whiteText.png',
+      'https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/KidzeeFooterLogo_whiteText.png',
     logoUrl:
-      'https://kidzee.com/assets/img/KidzeeFooterLogo_whiteText.png',
+      'https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/KidzeeFooterLogo_whiteText.png',
     baseUrl: 'https://www.mountlitera.com/',
     defaultLanguage: 'en',
     defaultRegion: 'www',
