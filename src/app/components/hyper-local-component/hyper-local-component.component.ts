@@ -1,14 +1,14 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-  import { ActivatedRoute,Router } from '@angular/router';
-  import { Observable, of, switchMap, tap, Subscription } from 'rxjs';
-  import { ApicallService } from 'src/app/services/apicall.service';
-  import { HomeSeoService } from 'src/app/services/homeseo.service';
-  import { ProjectSeoService } from 'src/app/services/projectseo.service';
-  import { environment } from 'src/environments/environment';
-  import { NgxSpinnerService } from 'ngx-spinner';
-  import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-  import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-  import { isPlatformBrowser } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, of, switchMap, tap, Subscription } from 'rxjs';
+import { ApicallService } from 'src/app/services/apicall.service';
+import { HomeSeoService } from 'src/app/services/homeseo.service';
+import { ProjectSeoService } from 'src/app/services/projectseo.service';
+import { environment } from 'src/environments/environment';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { isPlatformBrowser } from '@angular/common';
 import { CommonService } from '../service/common.service';
 
 
@@ -18,148 +18,155 @@ import { CommonService } from '../service/common.service';
   styleUrls: ['./hyper-local-component.component.css']
 })
 export class HyperLocalComponentComponent {
-  state:string="";
-  city:string="";
+  state: string = "";
+  city: string = "";
   projectId = environment.projectid
-    project$: Observable<any> | undefined;
-    subProfileInfo: any;
-    subscriptionnav!: Subscription;
-    testimonydata: any = [];
-    profile_title: any;
-    bannerList: any;
-  statecitydata:any=[];
- constructor(
-      @Inject(PLATFORM_ID) private platformId: Object,
-      private sanitizer: DomSanitizer,
-      private route: ActivatedRoute,
-      private seoService: HomeSeoService,
-      private projectService: ProjectSeoService,
-      private apiService: ApicallService,
-      private ngxSpinner: NgxSpinnerService,
-      private fb: FormBuilder
-      ,private router:Router,
-       private common: CommonService
-    ) {
-  
-    }
+  project$: Observable<any> | undefined;
+  subProfileInfo: any;
+  subscriptionnav!: Subscription;
+  testimonydata: any = [];
+  profile_title: any;
+  bannerList: any;
+  statecitydata: any = [];
+  lastParam: string = '';
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private sanitizer: DomSanitizer,
+    private route: ActivatedRoute,
+    private seoService: HomeSeoService,
+    private projectService: ProjectSeoService,
+    private apiService: ApicallService,
+    private ngxSpinner: NgxSpinnerService,
+    private fb: FormBuilder
+    , private router: Router,
+    private common: CommonService
+  ) {
+
+  }
 
   ngOnInit(): void {
+    this.route.url.subscribe(segments => {
+      this.lastParam =
+        (segments[segments.length - 1]?.path || '').charAt(0).toUpperCase() +
+        (segments[segments.length - 1]?.path || '').slice(1);
+    });
+
     this.state = this.route.snapshot.paramMap.get('state')!;
     this.city = this.route.snapshot.paramMap.get('city')!;
     this.getseo();
   }
 
-  getcenterlist(){
-    this.statecitydata=[];
-      this.ngxSpinner.show();
-      let slug
-      let type
-      if(this.state){
-        slug=this.state,
-        type='State'
-      }
-      if(this.city){
-        slug=this.state+'/'+this.city
-        type='City'
-      }
-       let tbody = {
-        slug: slug,
-        type:type
-      };
+  getcenterlist() {
+    this.statecitydata = [];
+    this.ngxSpinner.show();
+    let slug
+    let type
+    if (this.state) {
+      slug = this.state,
+        type = 'State'
+    }
+    if (this.city) {
+      slug = this.state + '/' + this.city
+      type = 'City'
+    }
+    let tbody = {
+      slug: slug,
+      type: type
+    };
     this.common.get_centerdatabyslug(tbody).subscribe(
       res => {
         // this.zoneList = res
         this.ngxSpinner.hide();
         this.statecitydata = res
-       // console.log('all_data_list', this.all_data_list)
-       
+        // console.log('all_data_list', this.all_data_list)
+
       }
     )
   }
 
-  
-    sanitizeUrl(url: string): SafeUrl {
-      return this.sanitizer.bypassSecurityTrustUrl(url);
-    }
-  
-    getBanner() {
-      let tbody = {
-        Type: "banner",
-        pageurl: '',
-        Project_Id: this.projectId
-      };
-      this.apiService.getContentDataList(tbody).subscribe((data: any) => {
-        let bannerData = data.data[0].contentData
-        this.bannerList = JSON.parse(bannerData)
-      })
-    }
-  
-    getseo() {
-      let slug
-      let type
-      if(this.state){
-        slug=this.state
-      }
-      if(this.city){
-        slug=this.state+'/'+this.city
-      }
-      let tbody = {
-        slug: slug,
-        Projectid: environment.projectid,
-      };
-      this.apiService.getGetseo(tbody).subscribe((data: any) => {
-       // this.getBanner();
-        this.getcenterlist();
-       // this.getcenter();
-        if(data.data){
-          this.projectService.setmeta(data?.data);
-          if(data?.data?.breadcrumb){
-            this.projectService.sendMessagebread(data?.data?.breadcrumb);
-          }    
-          if(data?.data?.blog){
-            this.projectService.sendMessageblog(data?.data?.blog);
-          }      
-          if(data?.data?.testimony){ 
-            this.projectService.sendMessageseo(data?.data?.testimony);
-          } 
-          if(data?.data?.faq){
-            this.projectService.sendMessageFaqs(data?.data?.faq);
-          }
-          if(data?.data?.news){
-            this.projectService.sendMessageNews(data?.data?.news);
-          }
-          
-          
-        }else{
-          //  this.router.navigateByUrl('page-not-found');
-        }
-          
-          
-      });
-    }
 
-    // getcenter(){
-    //    let slug
-    //   let type
-    //   if(this.state){
-    //     slug=this.state,
-    //     type='State'
-    //   }
-    //   if(this.city){
-    //     slug=this.state+'/'+this.city
-    //     type='City'
-    //   }
-    //    let tbody = {
-    //     slug: slug,
-    //     type:type
-    //   };
-    //   this.common.get_centerdatabyslug(tbody).subscribe((
-    //     res => {
-    //       console.log(res);
-    //   }
-    // ))
-    // }
-
+  sanitizeUrl(url: string): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
-  
+
+  getBanner() {
+    let tbody = {
+      Type: "banner",
+      pageurl: '',
+      Project_Id: this.projectId
+    };
+    this.apiService.getContentDataList(tbody).subscribe((data: any) => {
+      let bannerData = data.data[0].contentData
+      this.bannerList = JSON.parse(bannerData)
+    })
+  }
+
+  getseo() {
+    let slug
+    let type
+    if (this.state) {
+      slug = this.state
+    }
+    if (this.city) {
+      slug = this.state + '/' + this.city
+    }
+    let tbody = {
+      slug: slug,
+      Projectid: environment.projectid,
+    };
+    this.apiService.getGetseo(tbody).subscribe((data: any) => {
+      // this.getBanner();
+      this.getcenterlist();
+      // this.getcenter();
+      if (data.data) {
+        this.projectService.setmeta(data?.data);
+        if (data?.data?.breadcrumb) {
+          this.projectService.sendMessagebread(data?.data?.breadcrumb);
+        }
+        if (data?.data?.blog) {
+          this.projectService.sendMessageblog(data?.data?.blog);
+        }
+        if (data?.data?.testimony) {
+          this.projectService.sendMessageseo(data?.data?.testimony);
+        }
+        if (data?.data?.faq) {
+          this.projectService.sendMessageFaqs(data?.data?.faq);
+        }
+        if (data?.data?.news) {
+          this.projectService.sendMessageNews(data?.data?.news);
+        }
+
+
+      } else {
+        //  this.router.navigateByUrl('page-not-found');
+      }
+
+
+    });
+  }
+
+  // getcenter(){
+  //    let slug
+  //   let type
+  //   if(this.state){
+  //     slug=this.state,
+  //     type='State'
+  //   }
+  //   if(this.city){
+  //     slug=this.state+'/'+this.city
+  //     type='City'
+  //   }
+  //    let tbody = {
+  //     slug: slug,
+  //     type:type
+  //   };
+  //   this.common.get_centerdatabyslug(tbody).subscribe((
+  //     res => {
+  //       console.log(res);
+  //   }
+  // ))
+  // }
+
+}
+
 

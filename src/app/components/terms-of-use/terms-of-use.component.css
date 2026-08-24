@@ -6,7 +6,13 @@
 .multi_img_group img{
 width: 80%;
 }
-
+h3{
+  font-size: 1.4rem !important;
+  overflow: hidden;
+}
+p{
+  font-size: 15px;
+}
 section{
   background: url("https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/bg_svg/Parent-corner.svg") no-repeat center center;
   background-size: cover;
@@ -82,4 +88,57 @@ ul.custom-bullet li::before {
     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif !important;
     text-align: center;
 }
+}
+
+
+.main-list>li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.main-list .letter {
+  width: 30px;
+  flex-shrink: 0;
+}
+.box{
+font-size: 15px;
+}
+.sub-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+}
+
+.sub-list>li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.sub-list .number {
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.sub-list .text {
+  flex: 1;
+}
+
+.indent-content {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .content {
+    font-size: 15px;
+  }
+
+  .main-list .letter {
+    width: 30px;
+  }
+
+  .sub-list .number {
+    width: 55px;
+  }
 }

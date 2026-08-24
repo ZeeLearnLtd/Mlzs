@@ -58,6 +58,8 @@ export class CenterpageComponent {
   _franchise_code: string = "";
   stateListName: any;
   ifLoader: boolean = false;
+  city: string = '';
+  capitalizedCity: string = ''
   centerdatabyslug: any = [];
   constructor(private _activeRoute: ActivatedRoute, private spinner: NgxSpinnerService,
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -80,6 +82,13 @@ export class CenterpageComponent {
     })
   }
   ngOnInit(): void {
+
+    const segments = window.location.pathname
+      .split('/')
+      .filter(Boolean);
+
+    this.city = segments[1];
+    this.capitalizedCity = this.city.charAt(0).toUpperCase() + this.city.slice(1);
     this._franchise_code = this.activatedRoute.snapshot.paramMap.get('frcode')!;
     this.activatedRoute.url.subscribe((urlSegments: UrlSegment[]) => {
       // Skip the first "admissions"

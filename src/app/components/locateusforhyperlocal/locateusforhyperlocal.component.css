@@ -12,7 +12,9 @@
 @media screen and (max-width: 600px) {
     
 }
-
+h3{
+    line-height: 20px;
+}
 h2 {
     font-weight: 700;
     color: white;
