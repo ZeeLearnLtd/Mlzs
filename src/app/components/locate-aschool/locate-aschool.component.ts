@@ -77,7 +77,7 @@ export class LocateASchoolComponent {
         // this.zoneList = res
         this.ngxSpinner.hide();
         this.all_data_list = res
-       // console.log('all_data_list', this.all_data_list)
+        // console.log('all_data_list', this.all_data_list)
         this.india_country();
         this.setcountry();
       }
@@ -269,7 +269,6 @@ export class LocateASchoolComponent {
 
     if (dlenth > this.tindex) {
 
-
       if (nindex > dlenth) {
         this.tindex = dlenth;
         this.more = false;
@@ -372,12 +371,12 @@ export class LocateASchoolComponent {
     // })
     // this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
     // this.router.navigateByUrl('/admissions');
-    if(data?.franchiseeslug){
-      this.router.navigate(['/'+data?.franchiseeslug])
-    }else{
+    if (data?.franchiseeslug) {
+      this.router.navigate(['/' + data?.franchiseeslug])
+    } else {
       this.router.navigate(['/admissions', data?.Franchisee_Code])
     }
-    
+
   }
 
 }

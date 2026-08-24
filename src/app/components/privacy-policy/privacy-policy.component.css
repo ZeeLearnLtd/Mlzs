@@ -57,7 +57,7 @@ ul.custom-bullet li::before {
 .banner-text {
   position: absolute;
   top: 40%;          
-  left: 15%;     
+  left:28%;     
   transform: translate(-35%, -50%); 
   color: #9B1B6A; 
   font-size: 4vw !important;
@@ -88,4 +88,54 @@ h3{
     font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif !important;
     text-align: center;
 }
+}
+
+.main-list>li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.main-list .letter {
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.sub-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+}
+
+.sub-list>li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.sub-list .number {
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.sub-list .text {
+  flex: 1;
+}
+
+.indent-content {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .content {
+    font-size: 16px;
+  }
+
+  .main-list .letter {
+    width: 30px;
+  }
+
+  .sub-list .number {
+    width: 55px;
+  }
 }
