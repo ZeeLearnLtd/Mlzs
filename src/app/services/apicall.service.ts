@@ -32,15 +32,6 @@ export class ApicallService {
         })
 
       )
-
-    //      map((res: any) => res?.data),
-    // tap(data => {
-    //   if (!data) {
-    //     this.route.navigateByUrl('page-not-found');
-    //   }
-    // }),
-    // filter(data => !!data) // 
-    //   );
   }
   getGetblog(tbody: any) {
     let headers: HttpHeaders = new HttpHeaders();
