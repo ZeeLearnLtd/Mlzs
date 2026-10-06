@@ -75,10 +75,10 @@ export class TestimonialComponent implements OnInit {
   }
 
   gettestimonial_data() {
-    this.subscriptionnav = this.projectService
-      .onseoMessage()
+    console.log('call')
+    this.subscriptionnav = this.projectService.onseoMessage()
       .subscribe((message) => {
-        // console.log('message', message)
+        console.log('message', message)
         if (message) {
           this.testimonialData = message.text
           console.log('this.testimonialData', this.testimonialData);
@@ -95,6 +95,8 @@ export class TestimonialComponent implements OnInit {
         }
 
       });
+    console.log('this.testimonialDataList', this.testimonialDataList);
+    console.log('this.subscriptionnav', this.subscriptionnav);
   }
 
 

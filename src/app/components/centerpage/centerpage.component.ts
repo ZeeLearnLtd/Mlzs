@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../service/common.service';
 import { isPlatformBrowser } from '@angular/common';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-centerpage',
@@ -61,8 +62,14 @@ export class CenterpageComponent {
   city: string = '';
   capitalizedCity: string = ''
   centerdatabyslug: any = [];
+  stateName: any;
+  capitalizedState: any;
+  mapUrl!: SafeResourceUrl;
+  address_details: any;
+  description_paragraph: any;
   constructor(private _activeRoute: ActivatedRoute, private spinner: NgxSpinnerService,
     @Inject(PLATFORM_ID) private platformId: Object,
+    private sanitizer: DomSanitizer,
     private projectService: ProjectSeoService, private router: Router,
     private fb: FormBuilder,
     private apiService: ApicallService,
@@ -86,8 +93,9 @@ export class CenterpageComponent {
     const segments = window.location.pathname
       .split('/')
       .filter(Boolean);
-
+    this.stateName = segments[0];
     this.city = segments[1];
+    this.capitalizedState = this.stateName.charAt(0).toUpperCase() + this.stateName.slice(1);
     this.capitalizedCity = this.city.charAt(0).toUpperCase() + this.city.slice(1);
     this._franchise_code = this.activatedRoute.snapshot.paramMap.get('frcode')!;
     this.activatedRoute.url.subscribe((urlSegments: UrlSegment[]) => {
@@ -125,6 +133,7 @@ export class CenterpageComponent {
       this.get_centerdatabyslug(slug);
       this.projectService.setmeta(data.data);
 
+      this.description_paragraph = data?.data?.description_paragraph;
       if (data?.data?.breadcrumb) {
         this.projectService.sendMessagebread(data?.data?.breadcrumb);
       }
@@ -158,6 +167,15 @@ export class CenterpageComponent {
     this.common.get_centerdatabyslug(input).subscribe({
       next: (resp) => {
         this.centerdatabyslug = resp;
+        console.log('this.centerdatabyslug', this.centerdatabyslug[0]);
+        this.address_details = this.centerdatabyslug[0];
+        const address = this.address_details.full_address;
+
+        const url =
+          'https://maps.google.com/maps?q=' +
+          encodeURIComponent(address) +
+          '&z=15&output=embed';
+        this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
         if (resp) {
           this.projectService.setmeta_hyperlocal(resp[0]);
         }
