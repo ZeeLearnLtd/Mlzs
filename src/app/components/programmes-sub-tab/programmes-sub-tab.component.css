@@ -6,14 +6,25 @@
 .multi_img_group img{
 width: 80%;
 }
-
+.text_bg{
+    width:140px;
+    position: relative;
+    z-index: 1;
+    bottom: 1.9rem;
+    height: 20px;
+}
+.title_content h2{
+    position: relative;
+    z-index: 9;
+    color: #212529 !important;
+}
 @media screen and (max-width: 600px) {
 }
 .text_bg{
     width: 200px;
     position: relative;
-    bottom: 1.5rem;
-    z-index: 0;
+    bottom: 1.8rem;
+    z-index: -1;
 }
 
 .nav-pills
