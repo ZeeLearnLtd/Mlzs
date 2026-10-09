@@ -9,7 +9,9 @@
    align-items: center;
    justify-content: flex-start;
  }
-
+li a{
+  text-decoration: none;
+}
  .multi_img_group {
    display: flex;
    justify-content: center;

@@ -6,6 +6,9 @@
 .multi_img_group img {
   width: 80%;
 }
+li a {
+  text-decoration: none;
+}
 
 section {
  background: url("https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/bg_svg/Parent-corner.svg") no-repeat center center;
