@@ -7,25 +7,33 @@
   width: 80%;
 }
 
+li a {
+  text-decoration: none;
+}
+
 section {
   background: url("https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/bg_svg/start-school-bg.svg") no-repeat center center;
   background-size: cover;
   width: 100%;
   min-height: 100vh;
 }
-.sm_h2{
+
+.sm_h2 {
   font-family: 'Poppins' !important;
   font-size: clamp(14px, 1vw, 2rem) !important;
 }
-h3{
-display: inline; 
-font-weight:700; 
-margin: 0;
-font-size: clamp(14px, 1vw, 2rem) !important;
-}
-.sm_text{
+
+h3 {
+  display: inline;
+  font-weight: 700;
+  margin: 0;
   font-size: clamp(14px, 1vw, 2rem) !important;
 }
+
+.sm_text {
+  font-size: clamp(14px, 1vw, 2rem) !important;
+}
+
 @media screen and (max-width: 600px) {}
 
 .nav-pills .nav-link.active,

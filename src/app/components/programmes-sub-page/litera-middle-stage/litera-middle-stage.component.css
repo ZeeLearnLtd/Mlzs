@@ -13,7 +13,9 @@ section {
   width: 100%;
   min-height: 100vh;
 }
-
+li a{
+  text-decoration: none;
+}
 .sm_h2{
   font-family: 'Poppins' !important;
   font-size: clamp(14px, 1vw, 2rem) !important;
