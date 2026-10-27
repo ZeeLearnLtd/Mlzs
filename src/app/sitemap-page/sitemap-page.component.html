@@ -1,0 +1,193 @@
+<section>
+  <div class="sitemap-section">
+    <div class="sitemap-wrapper">
+
+      <!-- Header -->
+      <header class="sitemap-header">
+        <div>
+          <!-- <h1 class="text2">Sitemap</h1> -->
+           <h1 class="text2">Sitemap</h1>
+      <img src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="prg_text_bg">
+      
+        </div>
+      </header>
+
+      <!-- Search -->
+      <div class="sitemap-search">
+        <input
+          type="text"
+          class="search-input"
+          [value]="searchQuery"
+          (input)="searchQuery = $any($event.target).value"
+          placeholder="Search sitemap..."
+          aria-label="Search sitemap"
+        />
+      </div>
+
+      <!-- Loading State -->
+      <div *ngIf="isLoading" class="sitemap-status-box">
+        <div class="spinner"></div>
+        <p>Loading sitemap tiles...</p>
+      </div>
+
+      <!-- Error State -->
+      <div
+        *ngIf="hasError && !isLoading"
+        class="sitemap-status-box error-box"
+      >
+        <p>⚠️ Failed to load sitemap tiles.</p>
+        <button
+          type="button"
+          (click)="fetchSitemap()"
+          class="retry-btn"
+        >
+          Retry
+        </button>
+      </div>
+
+      <!-- No Results -->
+      <div
+        *ngIf="
+          !isLoading &&
+          !hasError &&
+          filteredCategories.length === 0
+        "
+        class="sitemap-status-box"
+      >
+        <p class="no-results">
+          No tiles found matching
+          "<strong>{{ searchQuery }}</strong>"
+        </p>
+
+        <button
+          type="button"
+          (click)="searchQuery = ''"
+          class="retry-btn"
+        >
+          Clear Search
+        </button>
+      </div>
+
+      <!-- Sitemap Tiles -->
+      <div
+        *ngIf="
+          !isLoading &&
+          !hasError &&
+          filteredCategories.length > 0
+        "
+        class="tiles-grid"
+      >
+        <div
+          *ngFor="let group of filteredCategories"
+          class="sitemap-tile"
+        >
+
+          <!-- Tile Header -->
+          <div class="tile-header">
+            <div class="tile-title-group">
+
+              <span class="tile-icon" *ngIf="!group.isNested">
+                📁
+              </span>
+
+              <span class="tile-icon" *ngIf="group.isNested">
+                📍
+              </span>
+
+              <a
+                [href]="
+                  group.isNested
+                    ? '#'
+                    : '/' + group.categoryName.toLowerCase()
+                "
+                class="category-heading-link"
+              >
+                <h2 class="card_tite">{{ group.categoryName }}</h2>
+              </a>
+
+            </div>
+
+            <span
+              class="tile-count"
+              *ngIf="!group.isNested"
+            >
+              {{ group.links?.length || 0 }}
+            </span>
+          </div>
+
+          <!-- Standard Category Links -->
+          <div
+            *ngIf="!group.isNested"
+            class="tile-links-container"
+          >
+            <ng-container *ngFor="let link of group.links">
+
+              <!-- External Link -->
+              <a
+                *ngIf="link.isExternal; else internalLink"
+                [href]="link.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="sub-tile-link"
+              >
+                <span class="link-text">{{ link.title }}</span>
+                <span class="link-arrow">↗</span>
+              </a>
+
+              <!-- Internal Link -->
+              <ng-template #internalLink>
+                <a
+                  [href]="link.url"
+                  class="sub-tile-link"
+                >
+                  <span class="link-text">{{ link.title }}</span>
+                  <span class="link-arrow">→</span>
+                </a>
+              </ng-template>
+
+            </ng-container>
+          </div>
+
+          <!-- Nested Location Groups -->
+          <div
+            *ngIf="group.isNested"
+            class="tile-nested-container"
+          >
+          <div class="" style="height:250px">
+          <div
+              *ngFor="let subGroup of group.subGroups"
+              class="city-tile-group"
+            >
+
+              <h3 class="city-tile-title">
+                <a
+                  [href]="subGroup.cityUrl || '#'"
+                  class="city-heading-link"
+                >
+                  {{ subGroup.subCategoryName }}
+                </a>
+              </h3>
+
+              <div class="city-links-grid">
+                <a
+                  *ngFor="let link of subGroup.links"
+                  href={{link.url}}
+                  class="sub-tile-link city-link-item"
+                >
+                  <span class="link-text">
+                    {{ link.title }}
+                  </span>
+                  <span class="link-arrow">→</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

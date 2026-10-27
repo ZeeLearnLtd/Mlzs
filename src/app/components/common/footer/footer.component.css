@@ -324,8 +324,10 @@ ul li{
     justify-content: center;
 }
 }
-
+.site_map{
+text-decoration: none;
+}
 .tab_text{
-font-size: 13px;
+font-size: 12px !important;
 cursor: pointer;
 }
