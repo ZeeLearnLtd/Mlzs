@@ -104,32 +104,33 @@ import { CenterpageComponent } from './components/centerpage/centerpage.componen
 import { HyperLocalComponentComponent } from './components/hyper-local-component/hyper-local-component.component';
 import { LocateusforhyperlocalComponent } from './components/locateusforhyperlocal/locateusforhyperlocal.component';
 import { AdmissionforhyperlocalComponent } from './components/admissionforhyperlocal/admissionforhyperlocal.component';
+import { TestSitemapComponent } from './components/test-site-map/test-site-map.component';
 
 interface NgxSpinnerConfig {
   type?: string;
 }
 @NgModule({
   declarations: [
-    AppComponent, AdmissionforhyperlocalComponent,LocateusforhyperlocalComponent,   HomeComponent,    BlogsComponent,   HeaderComponent,    FooterComponent,    LegancyComponent,
-    NewsComponent,    FaqsComponent,    AboutUsComponent,    HomeAboutUsComponent,HyperLocalComponentComponent,    KidzeePreeSchoolComponent,
-    TestimonialComponent,    AdmissionsComponent,    FranchiseOpportunityComponent,    BlogComponent,
-    AllBlogComponent,    BlogDetailsComponent,    StaticHeaderComponent,    SubMenuComponent,    PentemindComponent,
-    PlayGroupComponent,    NurseryComponent,    KindergartenComponent,    TeacherTrainingComponent,    DayCareComponent,CenterpageComponent,
-    LocateUsComponent,    OurApproachComponent,    AwardsAndRecognitionComponent,    ProgrammesComponent,
-    AdmissionsFormComponent,    PreschoolInCityComponent,    CentersInAgartalaComponent,    PartnerLandingComponent,
-    CommonHeaderComponent,    FranchiseThankyouComponent,    AdmissionThankyouComponent,    PagenotfoundComponent,
-    PrivacyPolicyComponent,    PartneradmissionComponent,    ProgrammesListComponent,    ProgrammesMainPageComponent,
-    SliderParentsComponent,    OurParentsComponent,    SocialWallComponent,    AcademicsBeyondComponent,    LiteraExperienceComponent,
-    GalleryComponent,    StartSchoolComponent,    ParentsCornerComponent,    ContectUsComponent,    LocateASchoolComponent,
-    DiscoverMoreComponent,    OurPedagogyComponent,    OurLegacyComponent,    OurVisionComponent,    OurPhilosophyComponent,
-    AwardsAndRecognitionsComponent,    LiteraFoundationalStage1Component,    LiteraFoundationalStage2Component,    LiteraPreparatoryStageComponent,
-    LiteraMiddleStageComponent,    LiteraSecondaryStageComponent,    CoCurricularAndEnrichmentProgrammesComponent,    LiteraNovaAppComponent,
-    LiteratiComponent,    LiteraExpComponent,    ChildDevelopmentComponent,    MountLiteraExpertConnectComponent,    MountLiteraParentSupportHubComponent,
-    ParentsTestimonialsComponent,    DiscoverEventsComponent,    DiscoverGalleryComponent,    DiscoverNewsComponent,    DiscoverFaqsComponent,
-    DiscoverBlogsComponent,    DiscoverTestimonialsComponent,    DiscoverAchievementsComponent,    MapviewComponent,    NewsDetailsComponent,
-    EventsDetailsComponent,    CurriculumComponent,    GetInTouchComponent,    PartnerWithUsComponent,    ProgrammesSubTabComponent,    SafeUrlPipe,
-    ConvertToMLZSComponent,    AwardsSubPageComponent,    AcademicsMainPageComponent,    SearchComponent,    TestimonialDetailsComponent,
-    TermsOfUseComponent,    DisclaimerComponent
+    AppComponent, AdmissionforhyperlocalComponent, LocateusforhyperlocalComponent, HomeComponent, BlogsComponent, HeaderComponent, FooterComponent, LegancyComponent,
+    NewsComponent, FaqsComponent, AboutUsComponent, HomeAboutUsComponent, HyperLocalComponentComponent, KidzeePreeSchoolComponent,
+    TestimonialComponent, AdmissionsComponent, FranchiseOpportunityComponent, BlogComponent,
+    AllBlogComponent, BlogDetailsComponent, StaticHeaderComponent, SubMenuComponent, PentemindComponent,
+    PlayGroupComponent, NurseryComponent, KindergartenComponent, TeacherTrainingComponent, DayCareComponent, CenterpageComponent,
+    LocateUsComponent, OurApproachComponent, AwardsAndRecognitionComponent, ProgrammesComponent,
+    AdmissionsFormComponent, PreschoolInCityComponent, CentersInAgartalaComponent, PartnerLandingComponent,
+    CommonHeaderComponent, FranchiseThankyouComponent, AdmissionThankyouComponent, PagenotfoundComponent,
+    PrivacyPolicyComponent, PartneradmissionComponent, ProgrammesListComponent, ProgrammesMainPageComponent,
+    SliderParentsComponent, OurParentsComponent, SocialWallComponent, AcademicsBeyondComponent, LiteraExperienceComponent,
+    GalleryComponent, StartSchoolComponent, ParentsCornerComponent, ContectUsComponent, LocateASchoolComponent,
+    DiscoverMoreComponent, OurPedagogyComponent, OurLegacyComponent, OurVisionComponent, OurPhilosophyComponent,
+    AwardsAndRecognitionsComponent, LiteraFoundationalStage1Component, LiteraFoundationalStage2Component, LiteraPreparatoryStageComponent,
+    LiteraMiddleStageComponent, LiteraSecondaryStageComponent, CoCurricularAndEnrichmentProgrammesComponent, LiteraNovaAppComponent,
+    LiteratiComponent, LiteraExpComponent, ChildDevelopmentComponent, MountLiteraExpertConnectComponent, MountLiteraParentSupportHubComponent,
+    ParentsTestimonialsComponent, DiscoverEventsComponent, DiscoverGalleryComponent, DiscoverNewsComponent, DiscoverFaqsComponent,
+    DiscoverBlogsComponent, DiscoverTestimonialsComponent, DiscoverAchievementsComponent, MapviewComponent, NewsDetailsComponent,
+    EventsDetailsComponent, CurriculumComponent, GetInTouchComponent, PartnerWithUsComponent, ProgrammesSubTabComponent, SafeUrlPipe,
+    ConvertToMLZSComponent, AwardsSubPageComponent, AcademicsMainPageComponent, SearchComponent, TestimonialDetailsComponent,
+    TermsOfUseComponent, DisclaimerComponent, TestSitemapComponent
   ],
   imports: [
 

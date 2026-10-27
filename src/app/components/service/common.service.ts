@@ -60,4 +60,9 @@ export class CommonService {
   getencrypt(value: string) {
     return atob(value);
   }
+  getsitemapurls(): Observable<any> {
+    const url = this.base_kub_url + 'GetSitemapUrls?projectId=3607';
+
+    return this.http.get<any>(url);
+  }
 }
