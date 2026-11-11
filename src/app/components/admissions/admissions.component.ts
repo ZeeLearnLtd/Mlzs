@@ -218,7 +218,6 @@ export class AdmissionsComponent implements OnInit {
       ? this.selectFranchiseeList[0].Franchisee                 // already array → no change
       : [this.selectFranchiseeList[0].Franchisee];
     // [this.selectFranchisee[0].Franchisee]
-    console.log('selectFranchisee', this.selectFranchisee);
     this.selectFranchiseeCode = this.selectFranchisee[0].Franchisee_Code
     this.selectedfranchisee_name = this.selectFranchisee[0].Franchisee_Name
 
@@ -235,8 +234,6 @@ export class AdmissionsComponent implements OnInit {
       return item.Franchisee_Code == this.franchiseeCode
     })
     this.selectClasslist = this.selectClasslist[0].classlist
-
-    console.log('this.selectClasslist2', this.selectClasslist);
   }
 
   onchangeClass(id: any) {

@@ -1,3 +1,4 @@
+
 <section>
   <div class="sitemap-section">
     <div class="sitemap-wrapper">
@@ -5,10 +6,12 @@
       <!-- Header -->
       <header class="sitemap-header">
         <div>
-          <!-- <h1 class="text2">Sitemap</h1> -->
-           <h1 class="text2">Sitemap</h1>
-      <img src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/prg_text_bg.png" class="text_bg" alt="prg_text_bg">
-      
+          <h1 class="text2">Sitemap</h1>
+          <img
+            src="https://cdn.zeelearn.com/zeecms/mlzsWeb-assets/img/MLZS/prg_text_bg.png"
+            class="text_bg"
+            alt="Sitemap decoration"
+          />
         </div>
       </header>
 
@@ -22,20 +25,31 @@
           placeholder="Search sitemap..."
           aria-label="Search sitemap"
         />
+
+        <button
+          *ngIf="searchQuery"
+          type="button"
+          (click)="searchQuery = ''"
+          class="clear-search"
+          aria-label="Clear search"
+        >
+          ✕
+        </button>
       </div>
 
-      <!-- Loading State -->
+      <!-- Loading -->
       <div *ngIf="isLoading" class="sitemap-status-box">
         <div class="spinner"></div>
         <p>Loading sitemap tiles...</p>
       </div>
 
-      <!-- Error State -->
+      <!-- Error -->
       <div
         *ngIf="hasError && !isLoading"
         class="sitemap-status-box error-box"
       >
         <p>⚠️ Failed to load sitemap tiles.</p>
+
         <button
           type="button"
           (click)="fetchSitemap()"
@@ -86,11 +100,11 @@
           <div class="tile-header">
             <div class="tile-title-group">
 
-              <span class="tile-icon" *ngIf="!group.isNested">
+              <span *ngIf="!group.isNested" class="tile-icon">
                 📁
               </span>
 
-              <span class="tile-icon" *ngIf="group.isNested">
+              <span *ngIf="group.isNested" class="tile-icon">
                 📍
               </span>
 
@@ -102,14 +116,16 @@
                 "
                 class="category-heading-link"
               >
-                <h2 class="card_tite">{{ group.categoryName }}</h2>
+                <h2 class="card_tite">
+                  {{ group.categoryName }}
+                </h2>
               </a>
 
             </div>
 
             <span
-              class="tile-count"
               *ngIf="!group.isNested"
+              class="tile-count"
             >
               {{ group.links?.length || 0 }}
             </span>
@@ -122,7 +138,7 @@
           >
             <ng-container *ngFor="let link of group.links">
 
-              <!-- External Link -->
+              <!-- External URL -->
               <a
                 *ngIf="link.isExternal; else internalLink"
                 [href]="link.url"
@@ -130,17 +146,23 @@
                 rel="noopener noreferrer"
                 class="sub-tile-link"
               >
-                <span class="link-text">{{ link.title }}</span>
+                <span class="link-text">
+                  {{ link.title }}
+                </span>
+
                 <span class="link-arrow">↗</span>
               </a>
 
-              <!-- Internal Link -->
+              <!-- Internal URL -->
               <ng-template #internalLink>
                 <a
                   [href]="link.url"
                   class="sub-tile-link"
                 >
-                  <span class="link-text">{{ link.title }}</span>
+                  <span class="link-text">
+                    {{ link.title }}
+                  </span>
+
                   <span class="link-arrow">→</span>
                 </a>
               </ng-template>
@@ -153,36 +175,52 @@
             *ngIf="group.isNested"
             class="tile-nested-container"
           >
-          <div class="" style="height:250px">
-          <div
-              *ngFor="let subGroup of group.subGroups"
-              class="city-tile-group"
-            >
+            <div class="location-scroll-container" style="height:300px">
 
-              <h3 class="city-tile-title">
-                <a
-                  [href]="subGroup.cityUrl || '#'"
-                  class="city-heading-link"
-                >
-                  {{ subGroup.subCategoryName }}
-                </a>
-              </h3>
+              <div 
+                *ngFor="let subGroup of group.subGroups"
+                class="city-tile-group"
+              >
 
-              <div class="city-links-grid">
-                <a
-                  *ngFor="let link of subGroup.links"
-                  href={{link.url}}
-                  class="sub-tile-link city-link-item"
-                >
-                  <span class="link-text">
-                    {{ link.title }}
-                  </span>
-                  <span class="link-arrow">→</span>
-                </a>
-              </div>
+                <!-- City Heading -->
+                <h3 class="city-tile-title">
+                  <a
+                    [href]="subGroup.cityUrl || '#'"
+                    class="city-heading-link"
+                  >
+                    {{ subGroup.subCategoryName }}
+                  </a>
+                </h3>
+
+                <!-- City Links -->
+                <div class="city-links-grid">
+
+                  <a
+                    *ngFor="let link of subGroup.links"
+                    [href]="link.url"
+                    [attr.target]="
+                      link.isExternal ? '_blank' : null
+                    "
+                    [attr.rel]="
+                      link.isExternal
+                        ? 'noopener noreferrer'
+                        : null
+                    "
+                    class="sub-tile-link city-link-item"
+                  >
+                    <span class="link-text">
+                      {{ link.title }}
+                    </span>
+
+                    <span class="link-arrow">
+                      {{ link.isExternal ? '↗' : '→' }}
+                    </span>
+                  </a>
+
+                </div>
+</div>
 
             </div>
-          </div>
           </div>
 
         </div>

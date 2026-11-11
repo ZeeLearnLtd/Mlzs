@@ -149,8 +149,6 @@ export class ConvertToMLZSComponent {
       return this.cityId == x.CityID
     })
     this.cityName = cityList[0].CityName
-    console.log('cityid', this.cityId);
-    console.log('cityList', cityList);
   }
   get f() {
     return this.admissionForm.controls;

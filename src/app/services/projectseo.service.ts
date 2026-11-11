@@ -15,13 +15,6 @@ export class ProjectSeoService extends SeoService {
   private Faqssubject = new Subject<any>();
   private searchMessage = new BehaviorSubject<string>('');
   currentMessage = this.searchMessage.asObservable();
-  // sendMessagenews(message: string) {
-  //   this.newssubject.next({ text: message });
-  // }
-
-  // clearnewssubject() {
-  //   this.newssubject.next({});
-  // }
   sendMessageblog(message: string) {
     this.blogsubject.next({ text: message });
   }
@@ -95,28 +88,9 @@ export class ProjectSeoService extends SeoService {
         itemListElement: arr,
       });
     }
-    // empty first
-    //this.emptyJsonSnippet();
-
-    // this.updateJsonSnippet({
-    //   '@type': 'Article',
-    //   headline: meta?.MetaTitle,
-    //   image: meta?.MetaImageurl,
-    //   datePublished: meta?.dateCreated,
-    //   author: [
-    //     {
-    //       '@type': 'Organization',
-    //       name: RES.SITE_NAME,
-    //       url: this.defaultUrl,
-    //     },
-    //   ],
-    // });
-
-    // add a breadcrumb: Turtles > Turtle Rock
-    //this.updateJsonSnippet(meta.breadcrumb);
   }
 
-   setmeta_programme(meta: any,programme_name:string,educationalLevel:string) {
+  setmeta_programme(meta: any, programme_name: string, educationalLevel: string) {
     // set title
     this.setTitle(meta?.MetaTitle);
 
@@ -143,47 +117,47 @@ export class ProjectSeoService extends SeoService {
       });
     }
     this.updateJsonSnippet({
-        "@type": "Course",
-        "name": programme_name,
-        "description":meta?.MetaDescription,
-        "educationalLevel": educationalLevel,
-        "provider": {
-          "@type": "School",
-          "name": "Mount Litera Zee School",
-          "sameAs": "https://www.mountlitera.com"
-        },
-        "hasCourseInstance": [{
-          "@type": "CourseInstance",
-          "courseMode": "InPerson",
-          "url": meta?.MetaUrl
-        }]
+      "@type": "Course",
+      "name": programme_name,
+      "description": meta?.MetaDescription,
+      "educationalLevel": educationalLevel,
+      "provider": {
+        "@type": "School",
+        "name": "Mount Litera Zee School",
+        "sameAs": "https://www.mountlitera.com"
+      },
+      "hasCourseInstance": [{
+        "@type": "CourseInstance",
+        "courseMode": "InPerson",
+        "url": meta?.MetaUrl
+      }]
     });
   }
   setmeta_hyperlocal(meta: any) {
-    
+
     this.updateJsonSnippet({
-       "@type": "EducationalOrganization",
-        "name": meta?.Franchisee_Name,
-        "url": 'https://mountlitera.com/'+meta?.franchiseeslug,
-        "description": "Mount Litera Zee School is among the best CBSE schools in "+ meta?.City_Name+", "+ meta?.State_Name+" offering quality education, skilled faculty and all-round student development. Enquire now.",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": meta?.Address1 + meta?.Address2,
-          "addressLocality": meta?.City_Name,
-          "addressRegion":meta?.State_Name,
-          "postalCode": meta?.Pin_Code,
-          "addressCountry": "IN"
-        },
-        "telephone": meta?.Mobile_No,
-        "areaServed": {
-          "@type": "Place",
-          "name": meta?.Place+','+ meta?.City_Name,
-        },
-        "parentOrganization": [{
-          "@type": "EducationalOrganization",
-          "name": "Mount Litera Zee School",
-          "url": "https://mountlitera.com/"
-        }]
+      "@type": "EducationalOrganization",
+      "name": meta?.Franchisee_Name,
+      "url": 'https://mountlitera.com/' + meta?.franchiseeslug,
+      "description": "Mount Litera Zee School is among the best CBSE schools in " + meta?.City_Name + ", " + meta?.State_Name + " offering quality education, skilled faculty and all-round student development. Enquire now.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": meta?.Address1 + meta?.Address2,
+        "addressLocality": meta?.City_Name,
+        "addressRegion": meta?.State_Name,
+        "postalCode": meta?.Pin_Code,
+        "addressCountry": "IN"
+      },
+      "telephone": meta?.Mobile_No,
+      "areaServed": {
+        "@type": "Place",
+        "name": meta?.Place + ',' + meta?.City_Name,
+      },
+      "parentOrganization": [{
+        "@type": "EducationalOrganization",
+        "name": "Mount Litera Zee School",
+        "url": "https://mountlitera.com/"
+      }]
     });
   }
   setmetablog(meta: any) {
@@ -239,26 +213,6 @@ export class ProjectSeoService extends SeoService {
       datePublished: meta?.dateCreated,
       dateModified: meta?.dateCreated,
     });
-
-    // empty first
-    //this.emptyJsonSnippet();
-
-    // this.updateJsonSnippet({
-    //   '@type': 'Article',
-    //   headline: meta?.MetaTitle,
-    //   image: meta?.MetaImageurl,
-    //   datePublished: meta?.dateCreated,
-    //   author: [
-    //     {
-    //       '@type': 'Organization',
-    //       name: RES.SITE_NAME,
-    //       url: this.defaultUrl,
-    //     },
-    //   ],
-    // });
-
-    // add a breadcrumb: Turtles > Turtle Rock
-    //this.updateJsonSnippet(meta.breadcrumb);
   }
   changeSearchMessage(message: string) {
     this.searchMessage.next(message);

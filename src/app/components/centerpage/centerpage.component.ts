@@ -90,7 +90,7 @@ export class CenterpageComponent {
   }
   ngOnInit(): void {
 
-    const segments = window.location.pathname
+    const segments = this.router.url //window.location.pathname
       .split('/')
       .filter(Boolean);
     this.stateName = segments[0];
@@ -167,7 +167,6 @@ export class CenterpageComponent {
     this.common.get_centerdatabyslug(input).subscribe({
       next: (resp) => {
         this.centerdatabyslug = resp;
-        console.log('this.centerdatabyslug', this.centerdatabyslug[0]);
         this.address_details = this.centerdatabyslug[0];
         const address = this.address_details.full_address;
 
@@ -265,7 +264,6 @@ export class CenterpageComponent {
   validationForm() {
     this.submitted = true;
     if (this.admissionForm.invalid) {
-      console.log(this.admissionForm.controls)
       return;
     } else {
       this.onSubmit()

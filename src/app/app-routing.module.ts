@@ -69,7 +69,6 @@ import { CenterpageComponent } from './components/centerpage/centerpage.componen
 import { HyperLocalComponentComponent } from './components/hyper-local-component/hyper-local-component.component';
 import { LocationResolver } from './services/location.resolver';
 import { SitemapComponent } from './sitemap-page/sitemap-page.component';
-import { TestSitemapComponent } from './components/test-site-map/test-site-map.component';
 const routes: Routes = [
   //   { path: '', component: HomeComponent },
   { path: 'page-not-found', component: PagenotfoundComponent },
@@ -128,7 +127,6 @@ const routes: Routes = [
       { path: 'testimonials', component: DiscoverTestimonialsComponent },
       { path: 'testimonials/:name', component: TestimonialDetailsComponent },
       { path: 'sitemap-page', component: SitemapComponent },
-      { path: 'test-sitemap-page', component: TestSitemapComponent },
       // { path: 'bihar/hajipur/best-cbse-school-hajipur',component:CenterpageComponent},
       // { path: 'bihar/bhagalpur/best-cbse-school-bhagalpur',component:CenterpageComponent},
       // { path: 'bihar/muzaffarpur/best-cbse-school-muzaffarpur',component:CenterpageComponent},
