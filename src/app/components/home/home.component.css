@@ -9,6 +9,65 @@ section{
       width: 100%;
       min-height: 100vh; 
 }
+
+.enroll_btn03{
+    position: absolute;
+    background-color: #48C7F4;
+    font-size: 20px;
+    font-weight: 600;
+    color: #004877;
+    z-index: 9;
+    padding: 7px 50px;
+    border-radius: 5px;
+    top: 65%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    display: block;
+}
+.enroll_btn03:hover{
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid #004877;
+    font-size: 20px;
+    font-weight: 600;
+    color: #004877;
+    z-index: 9;
+    padding: 7px 50px;
+    border-radius: 5px;
+    top: 65%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+.enroll_btn{
+    position: absolute;
+    background-color: #48C7F4;
+    font-size: 20px;
+    font-weight: 600;
+    color: #004877;
+    z-index: 9;
+    padding: 7px 50px;
+    border-radius: 5px;
+    top: 82%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    display: block;
+}
+.enroll_btn:hover{
+    position: absolute;
+    background-color: transparent;
+    font-size: 20px;
+    border: 1px solid #004877;
+    font-weight: 600;
+    color: #004877;
+    z-index: 9;
+     padding: 7px 50px;
+    border-radius: 5px;
+    top: 82%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
 .main_bg {
     background-size: contain;
     width: 100%;
@@ -94,6 +153,15 @@ section{
 .faq_bg{
     margin-top: 4rem;}
 @media screen and (max-width: 600px) {
+.enroll_btn{
+display: none;
+}
+
+    .enroll_btn03{
+    display: none;
+}
+  
+
     .carousel-item img {
     width: 100% !important;
     height: auto !important;
