@@ -104,7 +104,8 @@ import { CenterpageComponent } from './components/centerpage/centerpage.componen
 import { HyperLocalComponentComponent } from './components/hyper-local-component/hyper-local-component.component';
 import { LocateusforhyperlocalComponent } from './components/locateusforhyperlocal/locateusforhyperlocal.component';
 import { AdmissionforhyperlocalComponent } from './components/admissionforhyperlocal/admissionforhyperlocal.component';
-import { TestSitemapComponent } from './components/test-site-map/test-site-map.component';
+import { SitemapComponent } from './sitemap-page/sitemap-page.component';
+
 
 interface NgxSpinnerConfig {
   type?: string;
@@ -130,7 +131,7 @@ interface NgxSpinnerConfig {
     DiscoverBlogsComponent, DiscoverTestimonialsComponent, DiscoverAchievementsComponent, MapviewComponent, NewsDetailsComponent,
     EventsDetailsComponent, CurriculumComponent, GetInTouchComponent, PartnerWithUsComponent, ProgrammesSubTabComponent, SafeUrlPipe,
     ConvertToMLZSComponent, AwardsSubPageComponent, AcademicsMainPageComponent, SearchComponent, TestimonialDetailsComponent,
-    TermsOfUseComponent, DisclaimerComponent, TestSitemapComponent
+    TermsOfUseComponent, DisclaimerComponent, SitemapComponent
   ],
   imports: [
 

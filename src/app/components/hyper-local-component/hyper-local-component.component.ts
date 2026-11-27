@@ -78,8 +78,6 @@ export class HyperLocalComponentComponent {
         // this.zoneList = res
         this.ngxSpinner.hide();
         this.statecitydata = res
-        // console.log('all_data_list', this.all_data_list)
-
       }
     )
   }

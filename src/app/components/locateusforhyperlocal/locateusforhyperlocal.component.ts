@@ -14,9 +14,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./locateusforhyperlocal.component.css']
 })
 export class LocateusforhyperlocalComponent implements OnChanges {
-  @Input() state:string="";
-  @Input() city:string="";
-  @Input() inputdata:any;
+  @Input() state: string = "";
+  @Input() city: string = "";
+  @Input() inputdata: any;
   headerTitle = "Locate Us"
   all_data_list: any;
   countryList: any = [];
@@ -52,35 +52,28 @@ export class LocateusforhyperlocalComponent implements OnChanges {
       location: [''],
     })
   }
-ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) {
     if (changes['inputdata']?.currentValue) {
-        this.inputdata=changes['inputdata']?.currentValue;
-        if(this.inputdata.length>0){
-          this.all_data_list = this.inputdata
-          this.india_country();
-          this.setcountry();
-        }        
-        else {
-          //this.handleNoData();
-        }
+      this.inputdata = changes['inputdata']?.currentValue;
+      if (this.inputdata.length > 0) {
+        this.all_data_list = this.inputdata
+        this.india_country();
+        this.setcountry();
+      }
+      else {
+        //this.handleNoData();
+      }
     }
   }
-//   ngAfterContentInit() {
-//   if (this.inputdata.length==0) {
-//     console.log('afterview',this.inputdata);
-//     this.handleNoData();   // execute "else" only once at the very end
-//   }
-// }
-
-handleNoData(){
-  if(this.state && this.state!=''){
+  handleNoData() {
+    if (this.state && this.state != '') {
       this.getcenterlist();
-    }else if (this.city && this.city!=""){
+    } else if (this.city && this.city != "") {
       this.getcenterlist();
-    }else{
+    } else {
       this.getAllDataList();
-    }    
-}
+    }
+  }
   ngOnInit(): void {
     this.tindex = 50;
     //   if(this.inputdata.length>0){
@@ -105,35 +98,33 @@ handleNoData(){
         // this.zoneList = res
         this.ngxSpinner.hide();
         this.all_data_list = res
-       // console.log('all_data_list', this.all_data_list)
         this.india_country();
         this.setcountry();
       }
     )
   }
 
-  getcenterlist(){
-      this.ngxSpinner.show();
-      let slug
-      let type
-      if(this.state){
-        slug=this.state,
-        type='State'
-      }
-      if(this.city){
-        slug=this.state+'/'+this.city
-        type='City'
-      }
-       let tbody = {
-        slug: slug,
-        type:type
-      };
+  getcenterlist() {
+    this.ngxSpinner.show();
+    let slug
+    let type
+    if (this.state) {
+      slug = this.state,
+        type = 'State'
+    }
+    if (this.city) {
+      slug = this.state + '/' + this.city
+      type = 'City'
+    }
+    let tbody = {
+      slug: slug,
+      type: type
+    };
     this._service.get_centerdatabyslug(tbody).subscribe(
       res => {
         // this.zoneList = res
         this.ngxSpinner.hide();
         this.all_data_list = res
-       // console.log('all_data_list', this.all_data_list)
         this.india_country();
         this.setcountry();
       }
@@ -193,12 +184,12 @@ handleNoData(){
     );
     this.ucenterList = lgd1;
     this.selectState(this.stateList[0]?.State_Id)
-    if(this.city && this.city!=""){
+    if (this.city && this.city != "") {
       this.selectCity(this.stateList[0]?.City_Id);
       this.searchForm.get('city')?.patchValue(this.stateList[0]?.City_Id);
       this.searchForm.get('city')?.disable();
     }
-    
+
   }
 
   // setcountry(): any {
@@ -434,12 +425,12 @@ handleNoData(){
     // })
     // this._service.savesession("uddixadd", this._service.setencrypt(JSON.stringify(data)));
     // this.router.navigateByUrl('/admissions');
-    if(data?.franchiseeslug){
-      this.router.navigate(['/'+data?.franchiseeslug])
-    }else{
+    if (data?.franchiseeslug) {
+      this.router.navigate(['/' + data?.franchiseeslug])
+    } else {
       this.router.navigate(['/admissions', data?.Franchisee_Code])
     }
-    
+
   }
 
 }

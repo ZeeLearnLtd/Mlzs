@@ -75,19 +75,15 @@ export class TestimonialComponent implements OnInit {
   }
 
   gettestimonial_data() {
-    console.log('call')
     this.subscriptionnav = this.projectService.onseoMessage()
       .subscribe((message) => {
-        console.log('message', message)
         if (message) {
           this.testimonialData = message.text
-          console.log('this.testimonialData', this.testimonialData);
           this.testimonialDataList = this.testimonialData.map((video: any) => ({
             ...video,
             title: video.Title,
             safeUrl: this.getSafeEmbedUrl(video.Keywards),
           }));
-          console.log('this.testimonialDataList', this.testimonialDataList);
           this.errorMsg = false
           this.sliderCall();
         } else {
@@ -95,8 +91,6 @@ export class TestimonialComponent implements OnInit {
         }
 
       });
-    console.log('this.testimonialDataList', this.testimonialDataList);
-    console.log('this.subscriptionnav', this.subscriptionnav);
   }
 
 
